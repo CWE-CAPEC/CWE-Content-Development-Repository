@@ -25,12 +25,14 @@ After clicking “Submit,” you will receive a confirmation message and your su
 
 ## Summary of Stages and Phases
 
+**Disclaimer: This section needs modification to include the public GitHub space, currently under active development**
+
 The MITRE CWE team has several different stages and phases for external content submissions.  You will see that each issue in this repository has a label with it's associated phase, and the submission files themselves have the stage that the submission is.  The following outlines these stages and phases.
 
 ### STAGE 1: Initial Submission 
 An external submitter ("requester") provides a name, short description of the weakness, one or more references, and suggested relationships. The CWE Team works with the submitter to ensure that the initial submission is correctly described and able to be integrated into CWE content. In the future, it is planned that the broader CWE community will be able to contribute suggestions during this stage.
 
-#### Phase 1: Received.
+#### Phase 1: Received
 
 The CWE Team receives an initial submission from the public submission server and brings it into the internal gitlab repository for tracking.
 
