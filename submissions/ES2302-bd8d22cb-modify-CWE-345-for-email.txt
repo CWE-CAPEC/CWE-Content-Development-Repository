@@ -12,7 +12,11 @@ ISSUES: not-analyzed
 
 ISSUE DETAILS: 
 
-TRACKER: #728
+PUBTRACKER: #8
+
+MTRACKER: #728
+
+GITHUBUSER: mbiesiad
 
 SUBMISSION TYPE: Software
 

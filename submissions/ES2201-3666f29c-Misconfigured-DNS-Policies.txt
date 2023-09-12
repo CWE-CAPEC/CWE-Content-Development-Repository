@@ -12,7 +12,11 @@ ISSUES: yes/active
 
 ISSUE DETAILS: 
 
-TRACKER: #451
+PUBTRACKER: #27
+
+MTRACKER: #451
+
+GITHUBUSER: bugxploitoff
 
 SUBMISSION TYPE: Software
 
