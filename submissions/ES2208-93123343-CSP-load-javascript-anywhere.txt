@@ -1,0 +1,87 @@
+SUBMISSION COMMUNICATION ID: ES2208-93123343
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Review
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-08-23 20:19:05
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+TRACKER: #630
+
+SUBMISSION TYPE: Software
+
+NAME: Misconfigured Content Security policy can allow loading of JavaScript from anywhere
+
+DESCRIPTION:
+
+Misconfigured Content Security policy can allow loading of JavaScript from
+anywhere that can be used to execute unwanted JavaScript or do XSS
+injection
+
+RELATED WEAKNESSES:
+
+   Other CWE-829
+
+REFERENCES:
+
+Title: Mozilla Content Security Policy blog
+URL: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+
+Title: Content Security Policy (CSP) Quick Reference Guide
+URL: https://content-security-policy.com/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2022-08-23
+
+Ack-Receipt: 2022-08-29
+
+Init-Review: 2023-02-23
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

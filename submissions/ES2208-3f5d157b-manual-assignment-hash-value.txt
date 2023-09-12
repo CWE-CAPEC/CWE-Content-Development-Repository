@@ -1,0 +1,161 @@
+SUBMISSION COMMUNICATION ID: ES2208-3f5d157b
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Review
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-08-23 16:12:53
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ACTCHANGE  
+
+TRACKER: #629
+
+SUBMISSION TYPE: Software
+
+NAME: Manual assignment of a hash value
+
+DESCRIPTION:
+
+Hash values are often used to provide validation of data and ensure
+data structures are correct or unaltered with. If a hash value is
+manually assigned, especially if it is a special value such as
+\u201c0\u201d or \u201c00000000000\u201d it no longer represents the
+actual derived hash value of that data (excluding a statistically
+improbable chance that the manually entered value is indeed correct).
+If this hash value is later relied upon in some way it can result in a
+mismatch between what hash of the data should be and is.
+
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-328
+
+
+REFERENCES:
+
+Title: Nomad just got drained for over $150M in one of the most chaotic hacks that Web3 has ever seen.
+
+URL: https://twitter.com/samczsun/status/1554252024723546112
+
+
+Title: This attack against Nomad was something, I've never seen before.
+
+URL: https://twitter.com/leadinscientist/status/1554249634637389826
+
+
+Title: NOMAD BRIDGE - REKT
+
+URL: https://rekt.news/nomad-rekt/
+
+
+Title: White hat hackers have returned $32.6M worth of tokens to Nomad bridge  . The cross-chain bridge was drained of its assets in less than three hours.
+
+URL: https://twitter.com/yuzhu74223509/status/1558872773362999296
+
+
+
+ACTIVE ISSUES:
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This partially overlaps with CWE-328 because "Use of Weak Hash" focuses on this issue from an algorithm standpoint. However, the manual element is lacking in CWE-328, that can certainly be added to CWE-328 to make that more comprehensive. This doesn't need to be its own CWE. 
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: The specificity provided through the issue deals with manual creation/usage of hash, which may be possible, and may warrant a discussion. However, that by itself becomes too detailed for a wider community, therefore, not widely relevant. The topic of manual hash generation/usage can be included in CWE-328 to make that entry more robust, without the need for making this issue a children of CWE-328 or another CWE.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to the Production stage until
+the informational needs are addressed.
+
+Comments: This applies because the issue highlighted doesn't warrant a "New Entry". The information provided is relevant to CWE-328, so "Modification" is more appropriate.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+RESOLVED ISSUES:
+
+
+
+
+TIMELINE:
+
+Received: 2022-08-23
+
+Ack-Receipt: 2022-08-29
+
+Init-Review: 2023-02-07
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

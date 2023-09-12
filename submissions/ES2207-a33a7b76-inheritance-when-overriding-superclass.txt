@@ -1,0 +1,153 @@
+SUBMISSION COMMUNICATION ID: ES2207-a33a7b76
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Review
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-07-05 21:18:29
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.RELS, SUB.ABS.SUBTREE
+
+TRACKER: #599
+
+SUBMISSION TYPE: Software
+
+NAME: Improper use of inheritance when overriding methods of a uncontrolled superclass
+
+DESCRIPTION: 
+
+Improper use of inheritance can not only introduce fragility but break
+a programs security properties. For example, in the case of a
+superclass that implements a simple collection with a number of add
+methods we might have a subclass that is responsible for upholding a
+predicate or security property before calling the corresponding
+overridden superclass add method. If a new add method is added to the
+superclass (which could happen without notifying the owner of the
+subclass), any client can simply call the new superclass method thus
+bypassing the security in the security enforcing subclass. This is not
+a theoretical weakness and has previously impacted classes when
+hashtable and vector were brought into the Java Collections.The
+correct approach in such scenarios is to use composition, not
+inheritance.[CWE Team - its too much to type into this little box, but
+a good example of a forwarding class is in "effective java" book].In
+simple terms, there is no access control with inheritance.
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-1357
+
+
+REFERENCES:
+
+Title: Effective Java Book - "favour composition over inheritance"
+
+URL: https://books.google.co.uk/books?id=ka2VUBqHiWkC&lpg=PA83&ots=y-HmIhv_S-&dq=composition%20over%20inheritance%20security%20hashtable%20vector&pg=PA83#v=onepage&q=composition%20over%20inheritance%20security%20hashtable%20vector&f=false
+
+
+Title: Composition vs inheritance, mentions security aspect
+
+URL: https://www.journaldev.com/12086/composition-vs-inheritance
+
+
+Title: another Composition vs inheritance article, mentions security aspect
+
+URL: https://mymusing.co/composition-vs-inheritance/
+
+
+ACTIVE ISSUES:
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship
+is relevant; or, the weakness is apparent, but it is not clear what
+the best parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if
+SUB.UNCLEAR is present. It can progress to other phases if the CWE
+Team agrees that the potential relationships may require closer
+investigation.  The submission cannot progress to the publication
+stage until clear relationships and direct parents are identified. The
+CWE Team may decide to use high-level relationships (e.g., to Pillars)
+if deeper problems such as SUB.ABS.SUBTREE exist and cannot be quickly
+resolved.
+
+Comments: SUB.RELS is applied because this entry suggests that
+CWE-1357 should be its parent. However, CWE-1357 is largely
+architecture/design in nature, and this is an implementation
+weakness. Other CWEs such as CWE-1074 cover inheritance but are not
+necessarily directly relevant to this weakness. Because SUB.UNCLEAR
+does not apply to this submission, SUB.RELS does not prevent it from
+moving to the next phase.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+------------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or full) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: Managing "authorization" issues within code is not covered
+sufficiently well within CWE and is part of a larger effort to
+reorganize CWE better with respect to access control. There are many
+code weaknesses applicable to Java and other object-oriented languages
+that ultimately involve access control for individual fields, methods,
+etc. This submission is distinct enough - but generally applicable
+beyond Java - that it can progress to later phases, even if the
+subtree issues are not fully solved.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2022-07-05
+
+Ack-Receipt: 2022-07-08
+
+Init-Review: 2022-12-07
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

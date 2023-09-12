@@ -1,0 +1,112 @@
+SUBMISSION COMMUNICATION ID: ES2209-49c28f1b
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Production
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-09-13 05:10:17
+
+ISSUES: no
+
+ISSUE DETAILS: 
+
+TRACKER: #641
+
+SUBMISSION TYPE: Software
+
+NAME: uninitialized variable vulnerability - Problem with boolean variables that are forcibly initialized to false by the Java compiler
+
+DESCRIPTION:
+
+Sites such as CWE and VULNCAT all describe only code quality and
+memory problems, so I made an example code for the vulnerability of an
+uninitialized variable(CWE-457, CWE-456). In the Java language,
+boolean member variables that are not explicitly initialized are
+forcibly initialized to false by the compiler
+(https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5). This
+can lead to logic vulnerabilities(CWE-840). If Java had a type like
+Python's NoneType
+(https://docs.python.org/3.7/library/constants.html), this might not
+have happened. detail :
+https://github.com/windshock/uninitialized-variable-vulnerability
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-456
+   ChildOf CWE-457
+   Other CWE-840
+
+REFERENCES:
+
+Title: uninitialized variable vulnerability - Problem with boolean variables that are forcibly initialized to false by the Java compiler
+URL: https://github.com/windshock/uninitialized-variable-vulnerability/blob/main/README.md
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The related weaknesses identified, especially, CWE-456 and
+CWE-457 cover this issue well. This issue only highlights an example
+of a boolean type. In this case, we agree that it would be best to
+create a demonstrative example in one or both of these entries to
+cover the boolean type in Java (if that isn't covered already),
+instead of creating a new CWE entry.  CWE-456 and CWE-457 can also be
+improved overall using the information shared in this submission, but
+a new CWE isn't needed.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
+
+
+TIMELINE:
+
+Received: 2022-09-13
+
+Ack-Receipt: 2022-09-20
+
+Init-Review: 2022-11-28
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: 2023-01-06
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: 2023-02-27
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

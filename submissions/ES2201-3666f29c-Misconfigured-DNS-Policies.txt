@@ -1,0 +1,189 @@
+SUBMISSION COMMUNICATION ID: ES2201-3666f29c
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Full-Sub-Received
+
+ORIGIN: cwe-email
+
+SUBMISSION DATE: 2022-01-07 10:09:00
+
+ISSUES: yes/active
+
+ISSUE DETAILS: 
+
+TRACKER: #451
+
+SUBMISSION TYPE: Software
+
+NAME: Misconfigured DNS Policies
+
+
+DESCRIPTION:
+
+
+2. SUMMARY (required)
+
+	Misconfiguration leads to DNS mapping for the server without checking the strict policy
+
+
+3. EXTENDED DESCRIPTION (required)
+
+	because of lack strict poicies in the DNS and misconfigured SSL certificate we can access the  content of the server by pointing ouw domain/sub-domain to the server IP hence getting
+	full access control of the server which includes
+	->Database, Secret Files, Server Configuration, etc.
+
+
+
+INTROMODES:
+
+4. MODES OF INTRODUCTION (required)
+
++---------+-----------------------------------------+
+| Element |               Description               |
++---------+-----------------------------------------+
+| Phase   | POLICY : DOMAIN NAME SERVER             |
+|         | REQUIREMENTS | A DOMAIN			    |
+|         | IMPLEMENTION 				    |
+|	    | 1. Ping the domain The the server IP    | 
+|	    | 2. Point your subdomain DNS to the 	    |
+|	    |    particular Ip				    |
+|	    | 3. Browse your domain or subdomain	    |
+|         |                                         |
+|Note     | (optional) <<put the information here>> |
++---------+-----------------------------------------+
+
+
+MITIGATIONS:
+
+5. POTENTIAL MITIGATIONS (required)
+
++---------------------+------------------------------------------+
+|       Element       |               Description                |
++---------------------+------------------------------------------+
+| Phase               | MAKE A STRICT POLICY in you DNS ZONE     |
+| Description         | Use a proper SSL handshake feature       |
+| 			    |	Use a proxy server			     |
+| 			    |	Use and CDN         			     |
+| Effectiveness       | (optional) << put the information here>> |
+| Effectiveness Notes | (optional) <<put the information here>>  |
++---------------------+------------------------------------------+
+
+
+CONSEQUENCES:
+
+6. COMMON CONSEQUENCES (required)
+
+	
++------------+------------------------------------------+
+|  Element   |               Description                |
++------------+------------------------------------------+
+| Scope      | Domain				              |
+| Impact     | DNS MAPPING IN ATTACKERS DOMAIN          |
+| Likelihood | (optional) << put the information here>> |
+| Note       | (optional) <<put the information here>>  |
++------------+------------------------------------------+
+
+
+PLATFORMS:
+
+7. APPLICABLE PLATFORMS (required)
+	
++------------------+-------------------------------------+
+|     Element      |             Description             |
++------------------+-------------------------------------+
+| Language         | Name: <<put the information here>>  |
+|                  | Class: <<put the information here>> |
+|                  |                                     |
+| Operating System | Name: <<put the information here>>  |
+|                  | Class: <<put the information here>> |
+|                  |                                     |
+| Architecture     | Name: <<put the information here>>  |
+|                  | Class: <<put the information here>> |
+|                  |                                     |
+| Technology       | Name: DOMAIN NAME SERVER 		   |
+|                  | Class: Technology-Independent       |
++------------------+-------------------------------------+
+	
+
+DEMOX:
+
+8. DEMONSTRATIVE EXAMPLES (required)
+
+
++---------------------------------------------+------------------------------------------------------------------------------------+
+|                   Element                   |         Description          									     |
++---------------------------------------------+------------------------------------------------------------------------------------+
+| Introductory Text                           | original url: cert.lv 								     |
+|                                             |                                  								     |
+| "Bad" Code Snippets or Descriptive Example  | bad.png									     |
+|                                             |                              									     |
+| Explanatory Text                            | https://drive.google.com/file/d/1a-9-0M5O_yOXYh_jEj76ber7KutQLo2t/view?usp=sharing |
+|                                             |                       									           |
+| "Good" Code Snippets or Descriptive Example | good.png								     |
++---------------------------------------------+------------------------------------------------------------------------------------+
+
+
+OBEX:
+
+9. OBSERVED EXAMPLES (recommended, if possible)
+
++----------------+------------------------------+
+|    Element     |         Description          |
++----------------+------------------------------+
+| CVE Identifier | <<put the information here>> |
+| Link           | <<put the information here>> |
+| Summary        | <<put the information here>> |
++----------------+------------------------------+
+
+
+
+RELATED WEAKNESSES:
+
+	<<put the information here>>
+
+
+
+REFERENCES:
+	
+
+
+
+TIMELINE:
+
+Received: 2022-01-07
+
+Ack-Receipt: 2022-06-07
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: 2022-01-07
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

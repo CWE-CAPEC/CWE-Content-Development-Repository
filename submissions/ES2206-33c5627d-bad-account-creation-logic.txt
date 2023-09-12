@@ -1,0 +1,681 @@
+SUBMISSION COMMUNICATION ID: ES2206-33c5627d
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Accepted
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-06-22 02:27:15
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.RELS
+
+TRACKER: #593
+
+SUBMISSION TYPE: Software
+
+NAME: Account management with insufficient verification of owner's external identifier(s)
+
+SUMMARY:
+
+The product provides account creation with an identity that is unique
+(e.g., a chosen name) or attached to an external identifier (such as
+an email address, phone number, social media account, or DNS domain),
+but it does not ensure that the external identifier is actually under
+the control of the entity registering the account.
+
+EXTENDED DESCRIPTION: 
+
+Failure to do so can allow an attacker to attach an email address that
+they do not control. If the owner of that email later tries to create
+an account and is led to the account recovery process, it is possible
+that the user will recover an account that the attacker has access to
+(e.g. through API keys, recovery email, etc.).
+
+
+
+MODES OF INTRODUCTION:
+
+# This provides information about how and when a given weakness may be
+# introduced. Information should list the Phase of the development life
+# cycle in which the weakness can introduced. A descriptive Note is
+# optional but preferred.
+# 
+# If the weakness can be introduced in multiple phases, include separate
+# items for each Phase. Copy and paste as needed.
+# 
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation,, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
+
+
+Phase: <<PHASE1>>
+
+Note: <<put the information here>>
+
+
+Phase: <<PHASE2>>
+
+Note: <<put the information here>>
+
+
+************************************************************************************************
+
+APPLICABLE PLATFORMS:
+
+# This element specifies the programming languages, operating systems,
+# architectures, and technologies in which this weakness is usually
+# found. If an element does not apply to this submission, you can use
+# the "Not X-Specific" where "X" is the type of element.
+
+# If there are multiple languages, OSes, architectures, and/or
+# technologies, then list each one separately.
+# 
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#platforms
+
+
+# Values for Prevalence: Often, Sometimes, Rarely, Undetermined
+
+# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
+#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
+#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
+#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
+#    Assembly, Other
+
+Language Name: <<LANGUAGE1>>
+Prevalence: <<PREVALENCE1>>
+
+
+Language Name: <<LANGUAGE2>>
+Prevalence: <<PREVALENCE2>>
+
+
+Language Name: <<LANGUAGE3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Language Class: Assembly, Compiled, Hardware Description
+#    Language, Interpreted, Not Language-Specific
+
+Language Class: <<LANGCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Language Class: <<LANGCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Operating System Name: AIX, Android, BlackBerry OS,
+#    Chrome OS, Darwin, FreeBSD, iOS, macOS, NetBSD, OpenBSD, Red Hat,
+#    Solaris, SUSE, tvOS, Ubuntu, watchOS, Windows 9x, Windows
+#    Embedded, Windows NT
+
+Operating System Name: <<OS1>>
+Prevalence: <<PREVALENCE1>>
+
+Operating System Name: <<OS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Operating System Class: Linux, macOS, Unix, Windows,
+#    Not OS-Specific
+
+
+Operating System Class: <<OSCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Operating System Class: <<OSCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Architecture Name: Alpha, ARM, Itanium, Power
+#     Architecture, SPARC, x86, Other
+
+
+Architecture Name: <<ARCH1>>
+Prevalence: <<PREVALENCE1>>
+
+Architecture Name: <<ARCH2>>
+Prevalence: <<PREVALENCE2>>
+
+Architecture Name: <<ARCH3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Architecture Class: Embedded, Microcomputer, Workstation,
+#     Not Architecture-Specific
+
+Architecture Class: <<ARCHCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Architecture Class: <<ARCHCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Technology Name: Web Server, Database Server, Accelerator
+#    Hardware, Analog and Mixed Signal Hardware, Audio/Video Hardware,
+#    Bus/Interface Hardware, Clock/Counter Hardware, Communication
+#    Hardware, Controller Hardware, Memory Hardware, Microcontroller
+#    Hardware, Network on Chip Hardware, Power Management Hardware,
+#    Processor Hardware, Security Hardware, Sensor Hardware, Storage
+#    Hardware, Test/Debug Hardware,
+
+
+Technology Name: <<TECH1>>
+Prevalence: <<PREVALENCE1>>
+
+Technology Name: <<TECH2>>
+Prevalence: <<PREVALENCE2>>
+
+Technology Name: <<TECH3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Technology Class: Client Server, Cloud Computing, ICS/OT,
+#     Mainframe, Mobile, N-Tier, SOA, System on Chip, Web Based, Not
+#     Technology-Specific
+	
+Technology Class: <<TECHCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Technology Class: <<TECHCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+************************************************************************************************
+
+COMMON CONSEQUENCES:
+
+# This element will cover the typical negative security impact (or
+# impacts) that occurs if this weakness can be exploited by an
+# attacker. Each Consequence must include a Scope and Impact. Both the
+# Likelihood and Note elements are optional.
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#conseq
+
+
+
+# Values for Scope: Confidentiality, Integrity, Availability, Access
+#    Control, Accountability, Authentication, Authorization,
+#    Non-Repudiation, Other
+
+
+# Values for Impact: Modify Memory, Read Memory, Modify Files or
+#    Directories, Read Files or Directories, Modify Application Data,
+#    Read Application Data, DoS: Crash, Exit, or Restart, DoS:
+#    Amplification, DoS: Instability, DoS: Resource Consumption (CPU),
+#    DoS: Resource Consumption (Memory), DoS: Resource Consumption
+#    (Other), Execute Unauthorized Code or Commands, Gain Privileges
+#    or Assume Identity, Bypass Protection Mechanism, Hide Activities,
+#    Alter Execution Logic, Quality Degradation, Unexpected State,
+#    Varies by Context, Reduce Maintainability, Reduce Performance,
+#    Reduce Reliability, Other
+
+
+# Values for Likelihood: High, Medium, Low, Unknown
+
+
+Scope: <<SCOPE1>>
+
+Impact: <<IMPACT1a>>; <<IMPACT1b>>; <<IMPACT1c>>
+
+Likelihood: <LIKELIHOOD1>>
+
+Note: <<put the information here>>
+
+
+
+
+Scope: <<SCOPE2>>
+
+Impact: <<IMPACT2a>>; <<IMPACT2b>>; <<IMPACT2c>>
+
+Likelihood: <LIKELIHOOD2>>
+
+Note: <<put the information here>>
+
+
+
+
+Scope: <<SCOPE3>>
+
+Impact: <<IMPACT3a>>; <<IMPACT3b>>; <<IMPACT3c>>
+
+Likelihood: <LIKELIHOOD3>>
+
+Note: <<put the information here>>
+
+
+
+************************************************************************************************
+
+# 8. DEMONSTRATIVE EXAMPLES (required)
+
+DEMONSTRATIVE EXAMPLES:
+
+# The entry should have one or more demonstrative examples, but
+# submitters should not put significant effort into these until the CWE
+# team has reviewed and accepted the general concepts behind the
+# submission. Submissions can include example information for either
+# Software, Hardware, or both, as relevant.
+
+# "BAD CODE" and "GOOD CODE" can be code snippets, descriptions of a
+# design or architecture, or an algorithm or protocol.
+#
+# * If you would like to submit diagrams/images to support any
+# weakness descriptive examples, please attach it to the email
+# submission in a png format and reference it by filename where
+# desired. For an example, please see:
+# https://cwe.mitre.org/data/definitions/1256.html
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#demox
+
+# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
+#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
+#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
+#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
+#    Assembly, Other
+
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+
+<<put the information here>>
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+---------------
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+
+<<put the information here>>
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+
+<<put the information here>>
+
+
+
+************************************************************************************************
+
+OBSERVED EXAMPLES:
+
+# Where known, the submission should identify multiple
+# publicly-reported vulnerabilities in real-world products that
+# exhibit the weakness. If possible, include CVE Identifier, its
+# corresponding weblink, and a short summary. If a CVE ID is
+# unavailable, use the Link to point to the reference that explains
+# the vulnerability.
+
+# The ID should be the CVE Identifier, if available. If not available,
+# then supply a title or alternate ID used by the reference.
+
+# The Link should be the URL to the reference that explains the
+# weakness that leads to the vulnerability.
+
+# The ObexSummary should be a brief sentence or two that focuses solely on
+# the weakness in the affected product.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#obex
+
+ID: <<CVE1>>
+
+Link: <<LINK1>>
+
+ObexSummary: <<SUM1>>
+
+
+ID: <<CVE2>>
+
+Link: <<LINK2>>
+
+ObexSummary: <<SUM2>>
+
+
+ID: <<CVE3>>
+
+Link: <<LINK3>>
+
+ObexSummary: <<SUM3>>
+
+
+ID: <<CVE4>>
+
+Link: <<LINK4>>
+
+ObexSummary: <<SUM4>>
+
+
+
+************************************************************************************************
+
+POTENTIAL MITIGATIONS:
+
+# This element should cover one or more techniques that will eliminate
+# and/or reduce the frequency or impact of the weakness. Each mitigation
+# must include a Phase and Description, while the Effectiveness element
+# is optional. A descriptive Effectiveness Note is also optional.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#mitigations
+
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation,, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+# Values for Effectiveness: High, Moderate, Limited, Incidental,
+#    Discouraged Common Practice, Defense in Depth, None
+
+
+Phase: <<PHASE1>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT1>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: <<PHASE2>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT2>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: <<PHASE3>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT3>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+
+************************************************************************************************
+
+RELATED WEAKNESSES:
+
+
+# Identify the parent CWE(s) under which this weakness should be
+# classified. Ensure that these parents are Weakness types, not
+# categories. "MemberOf" relationships to categories are allowed, but
+# at least one parent must be a Weakness.  The CWE team will perform
+# additional analysis to ensure that the appropriate relationships
+# exist.
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#rels
+
+# Relationships should be of the form:
+#
+#   RelType ID View-ID
+#
+# Values for RelType: ChildOf, MemberOf, ParentOf, PeerOf, etc.
+#
+# The ID is the numeric CWE ID to which this submission has a relationship.
+#
+# The View-ID is the view under which the relationship is
+# defined, typically View-1000, or View-1194 (for hardware), etc.
+#
+# There should be at least one ChildOf relationship in view 1000.
+
+Other CWE-613
+
+Other ES2206-d46a8c14
+
+Other ES2206-feb8f4c9
+
+
+REFERENCES:
+
+Title: New Research Paper: Pre-hijacking Attacks on Web User Accounts
+
+URL: https://msrc-blog.microsoft.com/2022/05/23/pre-hijacking-attacks/
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+
+
+Title: Pre-hijacked accounts: An Empirical Study of Security Failures in User Account Creation on the Web
+
+URL: https://arxiv.org/abs/2205.10174
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+
+
+Title: <<put the information here>>
+
+URL: <<put the information here>>
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+
+
+Title: <<put the information here>>
+
+URL: <<put the information here>>
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+
+
+
+ACTIVE ISSUES:
+
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap". Submission might
+identify an issue for which there could be a broader gap or
+organizational challenge that requires analysis of CWE subtree
+relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of
+abstraction. Resolution: the submission might be allowed to progress
+to later stages if it is at an acceptable level of abstraction, and
+the subtree issue(s) can be resolved or addressed separately.
+
+Comments: Per August 16 change from submitter, the relationships to
+other submissions are noted. The relationships to existing CWE entries
+still need development, but the CWE Team defers this work to the
+Production stage, so this problem does not need to be resolved right
+now.  This seems like an authentication issue, which - as part of
+access control - is an area of CWE that requires significant research
+and reorganization.
+
+Response: Agreed, and we would like to work on this process with
+MITRE, especially in light of new account creation systems and
+strategies (e.g. cloud, OpenID, OAuth, etc.).
+
+------
+
+SUB.RELS - "Unclear relationships". Submission suggests some
+relationships, but the name/description is not explained in a way in
+which the relationship is relevant, or the weakness is apparent, but
+it is not clear what the best parent/child relationship(s) would be.
+Resolution: the submission cannot progress to publication stage until
+more clear relationships and direct parents are identified, but it can
+progress to other earlier stages if the CWE Team agrees that the
+potential relationships may require closer investigation.
+
+Comments: Relationships remain unclear because SUB.ABS.SUBTREE is still
+active. This problem can be resolved in the Production stage.
+
+Response: Agreed, also:
+
+Other CWE-613 - Insufficient Session Expiration - similar weakness but at a different stage of account lifecycle
+
+These two are different weaknesses, e.g. reporting and timeout:
+
+Other ES2206-d46a8c14 -  Lack of reporting in links to create or change account
+
+Other ES2206-feb8f4c9 - ”Persistant links to initiate privileged
+operation” or “Persistant links to initiate Critical Function”
+
+
+
+RESOLVED ISSUES:
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction". Submission identifies
+an issue, but its abstraction might be too low-level to merit its own
+CWE entry. If it is focused on a particular technology, framework,
+protocol, or function, then it might not be unique enough to get its
+own CWE ID.  This might lead to modification of an existing entry to
+include the additional details, or creation of a higher-level entry
+for which the submission is one example. (Note: some older CWE entries
+have this problem and would not be published today, generally because
+they were too specific to a particular language.) Resolution: the
+submission will be allowed to progress to later stages once the
+more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of
+the more general concept.
+
+Comments: this submission seems to imply a certain amount of
+authentication, i.e. "proof of identity" such as ownership of an email
+address or phone number. However, other kinds of "proof of identity"
+exist, and it seems that email/phone are too narrow. The submission
+can probably be expanded to include other kinds of "proof of
+identity". This can be addressed with more general language in later
+phases.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] changed in description
+
+------
+
+SUB.ATTACK - "Too attack-focused"
+
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: The August 16 modification to name and description attempted
+to resolve SUB.UNCLEAR, but the new name is too attack-focused by
+emphasizing "manipulation". What is the error that is allowing the
+manipulation? Consider: "Account management with insufficient
+verification of owner's external identifier"
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] Account management with
+insufficient verification of owner's external identifier(s)
+
+
+------
+
+SUB.MITIGATION - "Too mitigation-focused"
+
+Description: The submission's name and/or description emphasizes missing or
+incorrect mitigation without clarifying the weakness.
+
+Resolution: The submission cannot progress to later phases unless it also
+includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: The August 16 description resolved SUB.UNCLEAR somewhat, but
+it still remains focused on the absence of a mitigation. Consider this
+suggested rephrase that emphasizes the behavior and the mistake: "The
+product provides account creation with an identity that is unique
+(e.g., a chosen name) or attached to an external identifier (such as
+an email address, phone number, or social media account), but it does
+not ensure that the external identifier is actually under the control
+of the entity registering the account. Failure to do so can allow an
+attacker to attach an email address that they do not control. If the
+owner of that email later tries to create an account and is led to the
+account recovery process, it is possible that the user will recover an
+account that the attacker has access to (e.g. through API keys,
+recovery email, etc.).
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] The product provides account
+creation with an identity that is unique (e.g., a chosen name) or
+attached to an external identifier (such as an email address, phone
+number, social media account, or DNS domain), but it does not ensure
+that the external identifier is actually under the control of the
+entity registering the account. Failure to do so can allow an attacker
+to attach an email address that they do not control. If the owner of
+that email later tries to create an account and is led to the account
+recovery process, it is possible that the user will recover an account
+that the attacker has access to (e.g. through API keys, recovery
+email, etc.).
+
+
+
+
+TIMELINE:
+
+Received: 2022-06-22
+
+Ack-Receipt: 2022-07-06
+
+Init-Review: 2022-08-02
+
+Init-Consultation: 2022-08-02
+
+Init-Accepted: 2022-11-22
+
+Init-Rejected: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

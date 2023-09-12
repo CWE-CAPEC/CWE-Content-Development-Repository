@@ -1,0 +1,230 @@
+SUBMISSION COMMUNICATION ID: ES2205-11c3755f
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Consultation
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-05-27 18:08:03
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.MISC, SUB.GRAMMAR, SCOPE.SITUATIONS
+
+RESOLVED ISSUES: SCOPE.NOTREAL, SCOPE.CUSTREL
+
+TRACKER: #565
+
+SUBMISSION TYPE: Software
+
+NAME: Concurrent election voting token locking attack
+
+DESCRIPTION: 
+
+Blockchains and smart contracts that allow multiple concurrent votes
+to take place and use token locking to attach tokens and take them out
+of circulation are vulnerable to token locking attacks. If an attacker
+can create an initial election and then a second concurrent election
+the attacker can entice users of the system to vote in the first
+election, locking their tokens in, making them unavailable to vote in
+the second election until the first election ends.
+
+
+RELATED WEAKNESSES:
+
+     Other CWE-667
+
+
+
+REFERENCES:
+
+Title: Voting Options in DAOs
+
+URL: https://medium.com/daostack/voting-options-in-daos-b86e5c69a3e3
+
+
+ACTIVE ISSUES:
+
+
+SUB.UNCLEAR - "Unclear weakness".  Submission's name and/or
+description does not clearly identify a weakness, or it is written in
+a way that is vague and could cause the submission to be incorrectly
+mapped to.
+
+Comment: after 2022-08-30 modifications, it is still unclear what the
+specific mistake is. Is it that multiple elections are allowed to
+occur simultaneously? Or is there some (unstated) weakness that allows
+concurrent elections to occur in the first place?  Neither option is
+spelled out as a specific mistake. See SUB.ATTACK commentary.
+
+Response: <submitter should reply here>
+
+----------
+
+SUB.ATTACK - "Too attack-focused". Submission's name and/or
+description emphasizes the attack, not the weakness. Either the
+submission's weakness is not well-understood, or it is better
+described as an attack pattern, which may be suitable for inclusion in
+CAPEC. Resolution: an initial submission cannot progress to later
+stages unless it already includes a clear weakness (i.e., is not
+subject to SUB.UNCLEAR).
+
+Comment: the new name and description (submitted 2022-08-30) are still
+attack focused, as indicated by the use of the word "attack." Both
+name and description say "attack". Desc says "if an attacker can
+create a second election... the attacker can create an initial
+election."  However, this is a precondition for a vulnerability. There
+is still no indication of the mistake that makes the technology
+subject to "token locking attacks". If the weakness cannot be
+identified, consider submitting this issue to CAPEC.
+
+Response: <submitter should reply here>
+
+----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap". Submission might
+identify an issue for which there could be a broader gap or
+organizational challenge that requires analysis of CWE subtree
+relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Comment: Suspected issue, awaiting resolution of SUB.UNCLEAR. See
+SUB.ABS.LOWLEVEL.
+
+Response: <not necessary until SUB.UNCLEAR is resolved>
+
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction". Submission identifies a
+weakness, but its abstraction might be too low-level to merit its own
+CWE entry. If it is focused on a particular technology, framework,
+protocol, or function, then it might not be unique enough to get its
+own CWE ID.  This might lead to modification of an existing entry to
+include the additional details, or creation of a higher-level entry
+for which the submission is one example. (Note: some older CWE entries
+have this problem and would not be published today, generally because
+they were too specific to a particular language.)
+
+Comment: Due to SUB.UNCLEAR, this issue is uncertain. The desc is
+focused on "blockchains and smart contracts" although the name
+references "voting". Maybe there is a broader range of technologies or
+frameworks to which this attack or weakness applies.
+
+Response: <not necessary until SUB.UNCLEAR is resolved>
+
+
+----------
+
+SUB.RELS - "Unclear relationships". Submission suggests some
+relationships, but the name/description is not explained in a way in
+which the relationship is relevant.
+
+Comment: Relationships still remain unclear until name/desc are
+updated.
+
+Response: <not necessary until SUB.UNCLEAR is resolved>
+
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem". Submission has some other
+problem that is not covered elsewhere.
+
+Comment: 2022-08-30 modification to name/desc does not address the
+following concern as originally included in the request for
+consultation on 2022-07-12: provided reference mentions DAOs and
+"quorum voting" but neither phrase is included in desc/name. This
+might provide the clarity needed for SUB.UNCLEAR. Also might provide
+suggestions for SUB.ABS.LOWLEVEL.
+
+Response: <submitter should reply here>
+
+
+
+----------
+
+SUB.GRAMMAR - "Grammar/Spelling issues". Submission has multiple
+occurrences of errors with grammar, spelling, etc. that should be
+fixed before publication.
+
+Comment: grammar issues resolved in 2022-08-30 update. This problem
+will remain active until a clear weakness is identified.
+
+Response: <not necessary until SUB.UNCLEAR is resolved>
+
+----------
+
+SCOPE.SITUATIONS - "Focus on situations in which weaknesses may appear". The
+submission focuses on the conditions or situations in which weaknesses
+are more likely to appear. Rationale: these are modes of introduction,
+which is a separate field in a CWE entry.
+
+Comment: possibly a result of attack-focused nature of current
+name/desc.
+
+Response: <not necessary until SUB.UNCLEAR is resolved>
+
+
+RESOLVED ISSUES:
+
+SCOPE.NOTREAL - "not a real-world issue". The issue has not happened
+and cannot happen within real-world software or other electronic
+logic, and/or has no actual security implications.
+
+Comment: despite the controversy of some implementations of
+blockchain-based technologies, "blockchain" and "smart contracts"
+constitute software/electronic logic, and the real-world financial
+implications are frequently cited as part of the controversy.
+Therefore, this submission is not subject to SCOPE.NOTREAL.
+
+----------
+
+SCOPE.CUSTREL - "not customer-relevant". The issue is not relevant to the
+threat model or security concerns of the product's owner/operator
+(i.e., the customer).
+
+Comment: financial impact to users of this technology are well-known,
+so related weaknesses or attack patterns are
+customer-relevant. Therefore, this submission is not subject to
+SCOPE.CUSTREL.
+
+
+
+TIMELINE:
+
+Received: 2022-05-27
+
+Ack-Receipt: 2022-06-02
+
+Init-Review: 2022-07-11
+
+Init-Consultation: 2022-07-12
+
+Init-Accepted: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

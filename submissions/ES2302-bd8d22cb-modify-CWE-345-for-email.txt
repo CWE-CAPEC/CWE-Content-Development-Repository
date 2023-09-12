@@ -1,0 +1,95 @@
+SUBMISSION COMMUNICATION ID: ES2302-bd8d22cb
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-02-06 10:20:11
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+TRACKER: #728
+
+SUBMISSION TYPE: Software
+
+NAME: CWE-345: Insufficient Verification of Data Authenticity - emails and subscriptions
+
+DESCRIPTION:
+
+At this moment here https://cwe.mitre.org/data/definitions/345.html
+searching for 'email' or 'subscription' phrase I can not see results. We
+can add this content from me there as variants or examples: CWE-345 is
+quite important technical weakness from emails point of view (some email
+addresses can be recognized as PPI - with names and surnames). (1) During
+registration steps if CWE-345 occurs, bad actor can register as another
+person (using email which not own) - many scenarios, like real user can not
+register in, because email is used, or bad actor can do a forbidden actions
+there and get be banned - but in fact ban will be connected with victim's
+email. (2) CWE-345 is also about action like subscriptions, when occurs
+victims can get unwanted messages called spam. Proposed remediation:
+verification link send to proper email - if real user want to get some
+content it will be not a big deal to approve action, but thanks to this bad
+actor will can not exploit CWE-345.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-345
+
+REFERENCES:
+
+Title: CWE-345: Insufficient Verification of Data Authenticity
+URL: https://cwe.mitre.org/data/definitions/345.html
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-02-06
+
+Ack-Receipt: 2023-02-07
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

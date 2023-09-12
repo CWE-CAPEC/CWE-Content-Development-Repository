@@ -1,0 +1,225 @@
+
+SUBMISSION COMMUNICATION ID: ES2205-ccd1a3d2
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Consultation
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-05-17 15:45:34
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SCOPE.HUMANPROC, SCOPE.ADMINERR, SUB.UNCLEAR, SUB.RELS, SUB.ATTACK
+
+TRACKER: #566
+
+SUBMISSION TYPE: Software
+
+NAME: Insufficient diversity in key holders
+
+DESCRIPTION: 
+
+Insufficient diversity in key holders can render a system with
+multiple keyholders weak. For example if a system is configured to
+allow a majority of 9 keys to be used to make a decision there should
+be 9 distinct, unique key holders. Having a single key holder with 4
+keys for example means the attacker now only needs to compromise two
+unique keyholders (4+1) instead of 5 unique key holders. Additional
+weaknesses can be introduced if the systems used to secure keys are
+stored on a homogenous set of systems.
+
+
+RELATED WEAKNESSES:
+
+     Other CWE-308
+
+
+REFERENCES:
+
+Title: RONIN NETWORK - REKT
+
+URL: https://rekt.news/ronin-rekt/
+
+Title: Community Alert: Ronin Validators Compromised
+
+URL: https://roninblockchain.substack.com/p/community-alert-ronin-validators?s=r
+
+
+
+ACTIVE ISSUES:
+
+SCOPE.HUMANPROC - "Human/organizational process"
+
+Description: The submission focuses on a problem in a human or
+organizational process or policy (e.g., insufficient developer training)
+that is not measurable and does not produce concrete artifacts that
+identify weaknesses.
+
+Resolution: As of July 2022, such submissions will be rejected (if framed
+as "weaknesses") but could help modify existing CWEs for elements such as
+modes of introduction.
+
+Comments: this seems to be related to human practices, as opposed to
+some weakness within the product itself. Further discussion is needed.
+
+Response: This is a technical issue that has a human aspect of
+implementation, for example, if you define a process where 3 out of 5
+keys are needed to sign a transaction, then it is implied, but should
+also be clearly stated that the keys are not controlled by a single
+entity or party as defined by the technical specification (e.g. they
+may fall under the control of different people within the same
+organization, or they may be required to fall under the control of
+different organizations). A related case would be CWE-521: Weak
+Password Requirements, which does not specify any technical
+limitations but instead leaves it up to humans to decide what is
+strong or weak. At some point, many of these security considerations
+rely upon human input to decide what is secure and not secure.
+
+----
+
+SCOPE.ADMINERR - "Admin/user error"
+
+Description: The issue focuses on security errors that are made by an admin
+or user of the product/service, not the developer or maintainer of the
+product/service.
+
+Resolution: Submissions will be reviewed on a case-by-case basis, delayed,
+and possibly cited as examples until this exclusion is finalized after
+extensive community feedback.
+
+Comments: This submission seems to indicate that the administrators
+did not follow expected procedures by ensuring that all keyholders
+were unique. It does not seem like a problem in the product/service
+itself. Resolution: Submissions will be reviewed on a case-by-case
+basis, delayed, and possibly cited as examples until this exclusion is
+finalized after extensive community feedback.
+
+Response: This is the same type of admin/user error as in CWE-521:
+Weak Password Requirements, where it is up to humans to decide what is
+secure and not secure. In our case, it is much simpler to define
+security, e.g. “3 out of 5 keys must be used, and all 5 keys must be
+under the control of different organizations.”
+
+---------
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: "insufficient diversity in key holders" as a name is not
+likely to be understandable to most readers. The description does
+clarify the issue sufficiently, so the need for improved phrasing will
+not prevent this submission from moving to later stages (except
+publication). Mention of voting or consensus style problems might be
+important.
+
+Response: Weak key control due to insufficient diversity in key holders
+
+----------
+
+SUB.ATTACK - "Too attack-focused"
+
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: key management is not necessarily well-represented within
+CWE.
+
+Response: Systems using multiple encryption keys to sign and or
+decrypt data, where multiple keys are needed to conduct transactions,
+are vulnerable if multiple keys are under the control of a single
+entity. The majority of multiple encryption key systems assume that
+key control is distributed among a diverse set of key holders in order
+to ensure their security. When a multiple encryption key system is
+defined and the administrative boundaries are not sufficiently defined
+or enforced (e.g. a single person or organization holds too many keys)
+it is possible for an attacker to subvert the multiple key system by
+compromising a single key holder or a small subset of multiple key holders.
+
+
+----
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: as a new kind of voting/consensus-style problem,
+relationships to existing CWEs are not immediately clear. This does
+not prevent the submission from moving to the next stage.
+
+Response: Agreed, also part of this would be creating and submitting
+other new related entries.
+
+
+
+RESOLVED ISSUES:
+
+SUB.ABS.MULTWEAK - "Multiple weaknesses". Submission describes or
+suggests multiple independent weaknesses that each might deserve a
+separate ID.  Resolution: the submission cannot progress to later
+stages until the number of relevant weaknesses is identified. If there
+are multiple weaknesses, separate names and descriptions are needed.
+
+Comments: The desc says "Additional weaknesses can be introduced" but
+this submission is only being focused on the error of "distinct,
+unique key holders."
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
+
+TIMELINE:
+
+Received: 2022-05-17
+
+Ack-Receipt: 2022-06-02
+
+Init-Review: 2022-07-18
+
+Init-Consultation: 2022-07-18
+
+Init-Accepted: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+COMMUNICATIONS LOG:

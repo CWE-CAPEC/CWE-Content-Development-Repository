@@ -1,0 +1,128 @@
+SUBMISSION COMMUNICATION ID: ES2207-fde9b5fb
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Review
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-07-06 07:33:23
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.ABS.LOWLEVEL
+
+TRACKER: #600
+
+SUBMISSION TYPE: Software
+
+NAME: Inadvertent reliance on JVM cached DNS resolution
+
+DESCRIPTION: 
+
+There are a number of JVM implementations that by default, cache DNS
+resolution results. The expiry setting of the cached results might
+either be inappropriately long for the program or set to never expire.
+This results in a situation where changes to DNS records seemingly do
+not take effect in the program. Upon restarting the program, the
+updated DNS records are available to the program.
+
+To mitigate this situation, the DNS cache setting
+networkaddress.cache.ttl for the JVM need to be set appropriately.
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-435
+
+
+REFERENCES:
+
+Title: AWS JVM DNS Guidence
+
+URL: https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-jvm-ttl.html
+
+
+Title: Oracle JVM settings descriptions 
+
+URL: https://docs.oracle.com/javase/7/docs/technotes/guides/net/properties.html
+
+
+Title: example1
+
+URL: https://github.com/elastic/elasticsearch/issues/16412
+
+
+Title: example 2
+
+URL: https://community.openhab.org/t/dns-cache/47026
+
+
+ACTIVE ISSUES:
+
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: JVMs are too specific to have a separate CWE entry for
+them. However, it might make sense to create a weakness about caches
+(or other types of resources) that do not expire fast enough, and the
+which the JVMs and DNS could be cited as an example. Such an entry
+would fall underneath CWE-664: Improper Control of a Resource Through
+its Lifetime, and some additional subtree reorganization might be
+needed.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2022-07-06
+
+Ack-Receipt: 2022-07-08
+
+Init-Review: 2022-12-07
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

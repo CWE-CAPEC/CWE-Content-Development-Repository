@@ -1,0 +1,247 @@
+SUBMISSION COMMUNICATION ID: ES2206-31454fa8
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Consultation
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-06-28 15:50:51
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SCOPE.ADMINERR, SUB.ABS.MULTWEAK, SUB.ATTACK, SUB.GRAMMAR, SUB.OVERLAP, SUB.RELS, SUB.UNCLEAR
+
+TRACKER: #596
+
+SUBMISSION TYPE: Software
+
+NAME: Use of Certificate Transparency logs to attack new public facing websites
+
+DESCRIPTION: 
+
+Websites requiring administrative setup must use HTTPS to protect data
+(such as passwords). In order to get a browser supported HTTPS
+certificate (paid or free) a certificate authority must be used, many
+certificate authorities use the OCSP (Online Certificate Status
+Protocol) to share this data. OCSP data is public and timely,
+attackers monitoring OCSP sources can learn of new websites being
+setup within seconds of the certificate being registered and used. If
+the web interface then uses an administrative setup where a password
+and so on is setup the attacker can hijack the site, and take
+administrative control, and then configure it to present what looks
+like the administrative setup screen to the next requestor (so that
+the administrator doesn't know the site was hijacked).
+
+
+RELATED WEAKNESSES:
+
+     ChildOf CWE-200
+
+
+REFERENCES:
+
+Title: People are using the certificate transparency logs to find Wordpress installs to compromise before the install finishes https://feistyduck.com/bulletproof-tls-newsletter/issue_89_certificate_transparency_data_is_used_to_compromise_wordpress_before_installation by  @hanno
+
+URL: https://twitter.com/justincormack/status/1531578437105852416
+
+
+Title: Certificate Transparency data is used to compromise WordPress before installation
+
+URL: https://www.feistyduck.com/bulletproof-tls-newsletter/issue_89_certificate_transparency_data_is_used_to_compromise_wordpress_before_installation
+
+
+Title: Bought a domain, got a fresh droplet, opened port 80,443, added a simple flask app, monitored the logs, nothing super interesting.   Then I ran certbot, got a letsencrypt cert & within seconds the automation / bots came running smashing wp/exchange exploit payloads. interesting..
+
+URL: https://twitter.com/stokfredrik/status/1536586688406999040
+
+
+
+ACTIVE ISSUES:
+
+
+----------
+
+SCOPE.ADMINERR - "Admin/user error"
+
+Description: The issue focuses on security errors that are made by an admin
+or user of the product/service, not the developer or maintainer of the
+product/service.
+
+Resolution: Submissions will be reviewed on a case-by-case basis, delayed,
+and possibly cited as examples until this exclusion is finalized after
+extensive community feedback.
+
+Comments: It seems that the cause of this problem is related to
+administrators making their servers/systems available to the public
+before they should, which seems like human/administrator
+error. However, it would not be substantively different than if the
+administrator exposes a public service to the entire Internet when
+only an internal network is intended. It is not clear if this issue is
+in scope or not, but CWE is likely to be able to cover the insecure
+behaviors that occur because of "bad configuration."
+
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: The name does not mention the mistake at all. The
+description emphasizes the attack. The weakness might be intended to
+be covered by the phrase "the web interface then uses an
+administrative setup," but having a web-based admin setup is often
+legitimate behavior. There is no statement of the mistake that allows
+the server to be compromised.
+
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ATTACK - "Too attack-focused"
+
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: The name and description are primarily focused on the
+attack, with little or no mention of the weakness. The submitter
+should consider whether this would be better covered in CAPEC.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: Since the weakness is unclear, this problem cannot be
+evaluated. If the root cause is about a sort of race condition in
+which a web app is exposed to parties without certificate validation,
+then this might overlap or be part of CWE-362, CWE-295,
+CWE-923/descendants, or similar CWEs.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.MULTWEAK - "Multiple weaknesses"
+
+Description: The submission describes or suggests multiple independent
+weaknesses that each might deserve a separate CWE ID.
+
+Resolution: The submission cannot progress past the consultation phase
+until the number of relevant weaknesses is identified. If there are
+multiple weaknesses, separate names and descriptions are needed.
+
+Comments: It seems that many different weaknesses could allow
+attackers to compromise a web server.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: Relationships cannot be identified until the weakness is
+specified clearly.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.GRAMMAR - "Grammar/Spelling issues"
+
+Description: The submission has multiple occurrences of errors with
+grammar, spelling, etc. that should be fixed before publication.
+
+Resolution: The submission will not be allowed to progress to later phases
+if the grammar or spelling problems are so significant that they are likely
+to cause difficulty for readers to understand the weakness. If the issues
+are minor, then the submission could progress.	However, no submission can
+be published without grammar and spelling checks. American English is used
+for spelling.
+
+Comments: Minor grammar problems that might be addressed when the
+description is rewritten to emphasize the weakness.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+
+RESOLVED ISSUES:
+
+None
+
+
+
+TIMELINE:
+
+Received: 2022-06-28
+
+Ack-Receipt: 2022-07-06
+
+Init-Review: 2022-11-01
+
+Init-Consultation: 2022-11-01
+
+Init-Accepted: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

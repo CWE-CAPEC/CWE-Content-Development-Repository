@@ -1,0 +1,91 @@
+SUBMISSION COMMUNICATION ID: ES2302-1f7d9e54
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-02-12 19:35:12
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+TRACKER: #740
+
+SUBMISSION TYPE: Software
+
+NAME: Using HTTP instead of HTTPS with email and other content
+
+DESCRIPTION:
+
+While HTTPS forcing works correct, everything looks fine, but when failed
+that could be issue when sender will use as a link HTTP instead of HTTPS.
+Example: https://www.example.com marked as safe, when
+http://www.example.com is marked as unsafe by browsers. When sender gives a
+link like this form: 'example.com' will take a user to unsafe site like
+http://example.com/ Actually it doesn't have to be with sensitive data, in
+some cases some 'connection/traffic' user-site can be sufficient for bad
+actor. Proposed remediation: use https:// for provided site's links (skip
+the use forms like "example.com" or "http://example.com").
+
+RELATED WEAKNESSES:
+
+   Other CWE-319
+
+REFERENCES:
+
+Title: CWE-319: Cleartext Transmission of Sensitive Information
+URL: https://cwe.mitre.org/data/definitions/319.html
+
+
+
+
+ACTIVE ISSUES:
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-02-12
+
+Ack-Receipt: 2023-02-23
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

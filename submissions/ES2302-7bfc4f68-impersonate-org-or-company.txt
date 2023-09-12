@@ -1,0 +1,88 @@
+SUBMISSION COMMUNICATION ID: ES2302-7bfc4f68
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-02-08 09:21:42
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+TRACKER: #736
+
+SUBMISSION TYPE: Software
+
+NAME: Impersonation of organisation or company
+
+DESCRIPTION:
+
+Depends of service's type it can be included in the risk, not important or
+very important. Bad actor using keywords like name of org/company and
+'helpdesk/support/admin/security' and other keywords, etc, can easy make
+Impersonation. Many scenarios here - like 'authorized' phising action, lost
+of trust and so on. Proposed remediation: during registration or other
+connected (ie. with username) steps add regex with org/company name to
+avoid this scenario.
+
+RELATED WEAKNESSES:
+
+   Other CWE-345
+
+REFERENCES:
+
+Title: CWE-345: Insufficient Verification of Data Authenticity
+URL: https://cwe.mitre.org/data/definitions/345.html
+
+
+
+ACTIVE ISSUES:
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-02-08
+
+Ack-Receipt: 2023-02-22
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

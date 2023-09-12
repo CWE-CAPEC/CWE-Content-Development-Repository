@@ -1,0 +1,171 @@
+SUBMISSION COMMUNICATION ID: ES2206-d46a8c14
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Consultation
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-06-22 02:31:54
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.MITIGATION, SUB.RELS, SUB.RELREFS, SUB.ATTACK
+
+TRACKER: #595
+
+SUBMISSION TYPE: Software
+
+NAME: Lack of reporting attacker initiated creation or modification of account
+
+DESCRIPTION: 
+
+Systems that allow for account creation or modification of an account
+involving external identities or accounts (such as an email address,
+phone number or social media account) should send a notification or
+verification message (such as an email, text or voice message or
+message on the social media platform) to notify that identities or
+accounts that an account creation or modification event took place
+using an external identity or account. Failure to send a notification
+or verification message can allow attackers to silently create new
+accounts or modify existing ones without users being aware that their
+identity is being used or linked to attacker controlled accounts.
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-613
+
+REFERENCES:
+
+Title: New Research Paper: Pre-hijacking Attacks on Web User Accounts
+URL: https://msrc-blog.microsoft.com/2022/05/23/pre-hijacking-attacks/
+
+Title: Pre-hijacked accounts: An Empirical Study of Security Failures in User Account Creation on the Web
+URL: https://arxiv.org/abs/2205.10174
+
+Title: Experian, You Have Some Explaining to Do
+URL: https://krebsonsecurity.com/2022/07/experian-you-have-some-explaining-to-do/
+
+
+ACTIVE ISSUES:
+
+SUB.ATTACK - "Too attack-focused". Submission's name and/or
+description emphasizes the attack, not the weakness. Either the
+submission's weakness is not well-understood, or it is better
+described as an attack pattern, which may be suitable for inclusion in
+CAPEC.
+
+Comments: The name suggested on 2022-08-16 "Lack of reporting attacker
+initiated creation or modification of account" explicitly mentions an
+attacker, which should not be part of a name. The original name
+over-emphasized links.  Consider this name: "Missing Notification of
+Change Involving External Identities or Accounts"
+
+Response: <submitter should reply here>
+
+------
+
+
+SUB.MITIGATION - "Too mitigation-focused". Submission's name and/or
+description emphasizes missing or incorrect mitigation without
+clarifying the weakness. Resolution: an initial submission cannot
+progress to later phases unless it already includes a clear weakness
+(i.e., is not subject to SUB.UNCLEAR).
+
+Comments: the 2022-08-16 desc says "... should send a notification or
+verification message" which is a mitigation. The mistake - i.e., *NOT*
+sending a notification - should be front-loaded in the desc and should
+emphasize the behavior that contains the error.  Consider: "The
+product manages accounts that use important external identity
+information (such as an email address, phone number or social media
+account), but it does not send a notification or verification to that
+identity when an account for that identity is created or
+modified. Failure to send a notification or verification message can
+allow attackers to silently create new accounts or modify existing
+ones without users being aware that their identity is being used or
+linked to attacker controlled accounts."
+
+Response: <submitter should reply here>
+
+------
+
+SUB.RELS - "Unclear relationships". Submission suggests some
+relationships, but the name/description is not explained in a way in
+which the relationship is relevant. Resolution: the submission cannot
+progress to later phases until more clear relationships and direct
+parents are identified.
+
+Comments: it is not immediately clear what parent relationships might
+be appropriate, possibly forcing subtree modification. The CWE Team
+will need to coordinate about this issue.  However, this is not
+serious enough to prevent movement to the next phase.
+
+Response: <submitter should reply here>
+
+------
+
+SUB.RELREFS - "No relevant references".  Submission does not provide
+any references that explain the weakness, or the relevance is not
+easily found.  Resolution: the submission is not likely to progress to
+later phases if there are no applicable, easily-accessible
+references. The submitter could resolve by providing additional
+details such as a section name and quote from the reference.  If
+references still are not available, the CWE Team may decide to make an
+exception if no suitable reference is available.
+
+Comments: The 2022-08-16 update only added a new link. It did not
+address the following issue: it is not immediately clear which
+sub-section from the reference(s) are associated with this submission.
+These references appear to be focused on attacks. For at least one
+reference, please include a sub-section name and/or page number that
+highlights this issue, and for each reference, provide a brief quote
+of the related material so that CWE analysts can ensure the relevance.
+
+Response: <submitter should reply here>
+
+
+
+
+RESOLVED ISSUES:
+
+None.
+
+
+TIMELINE:
+
+Received: 2022-06-22
+
+Ack-Receipt: 2022-07-06
+
+Init-Review: 2022-07-13
+
+Init-Consultation: 2022-07-13
+
+Init-Accepted: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+COMMUNICATIONS LOG:

@@ -1,0 +1,128 @@
+SUBMISSION COMMUNICATION ID: ES2206-feb8f4c9
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Consultation
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-06-22 02:29:58
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.UNCLEAR, SUB.RELS
+
+TRACKER: #594
+
+SUBMISSION TYPE: Software
+
+NAME: Non expiring links to create or change account
+
+DESCRIPTION: 
+
+When sending links via email to either create an account or make
+changes to an account (e.g. password reset) there should be an expiry
+time, e.g. if the account creation is not completed or the password
+reset is not acted upon it should expire after a reasonable amount of
+time. Depending on the exact scenario this may be minutes (e.g. 5-10)
+or several hours or days (1-2 days for account creation). By not
+expiring these links an attacker can partially open up a new account
+and then complete creation later after they have hijacked or otherwise
+accessed the email account associated with the request.
+
+
+RELATED WEAKNESSES:
+
+  Other CWE-613
+
+
+REFERENCES:
+
+Title: Pre-hijacked accounts: An Empirical Study of Security Failures in User Account Creation on the Web
+URL: https://arxiv.org/abs/2205.10174
+
+Title: New Research Paper: Pre-hijacking Attacks on Web User Accounts
+URL: https://msrc-blog.microsoft.com/2022/05/23/pre-hijacking-attacks/
+
+
+ACTIVE ISSUES:
+
+
+SUB.UNCLEAR - "Unclear weakness".  Submission's name and/or
+description does not clearly identify a weakness, or it is written in
+a way that is vague and could cause the submission to be incorrectly
+mapped to. Resolution: an initial submission cannot progress to later
+stages until SUB.UNCLEAR is addressed.
+
+Comments: the name implies the mistake but could be modified to
+include the behavior, such as "Reliance on Non-expiring Links to
+Create or Change Account."  The description is too focused on the
+mitigation, although the text may be useful once Potential Mitigations
+are needed in a later phase.  The first sentence of the description
+could say something like "the product uses links to create an account
+or make changes to an account (e.g. password reset), but the links do
+not expire after a reasonable amount of time."
+
+Response: <submitter should reply here>
+
+------
+
+SUB.RELS - "Unclear relationships". Submission suggests some
+relationships, but the name/description is not explained in a way in
+which the relationship is relevant, or the weakness is apparent, but
+it is not clear what the best parent/child relationship(s) would be.
+Resolution: the submission cannot progress to publication stage until
+more clear relationships and direct parents are identified, but it can
+progress to other earlier stages if the CWE Team agrees that the
+potential relationships may require closer investigation.
+
+Comments: CWE Team agrees that the issue is similar to CWE-613, but
+closer investigation is needed. This does not prevent movement to the
+next phase.
+
+Response: <submitter should reply here>
+
+
+RESOLVED ISSUES:
+
+None.
+
+
+
+
+TIMELINE:
+
+Received: 2022-06-22
+
+Ack-Receipt: 2022-07-06
+
+Init-Review: 2022-08-02
+
+Init-Consultation: 2022-08-02
+
+Init-Accepted: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

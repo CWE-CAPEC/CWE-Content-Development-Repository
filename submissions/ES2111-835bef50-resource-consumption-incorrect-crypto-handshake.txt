@@ -1,0 +1,371 @@
+SUBMISSION COMMUNICATION ID: ES2111-835bef50
+
+ALTERNATE ID: HCWE108
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Full-Consultation
+
+ORIGIN: cwe-email
+
+SUBMISSION DATE: 2021-11-11 13:05:00
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.NOINIT
+
+TRACKER: #431
+
+SUBMISSION TYPE: Software
+
+NAME: Enforce Resource consumption with Incorrect cryptographic handshake
+
+
+SUMMARY:
+
+An Attacker can cause significant Resource consumption on a server by
+Filtering algorithms during the cryptographic handshake to the ones
+which are the most Resource intensive on the server side.
+
+
+DESCRIPTION:
+
+
+An Attacker can cause significant Resource consumption on a server by
+Filtering the cryptographic algorithms offered by the client to the
+ones which are the most Resource intensive on the server side. After
+discovering which cryptographic algorithms are supported by the
+server, a malicious client can send the initial cryptographic
+handshake messages that contain only the Resource intensive
+algorithms. For some cryptographic protocols these messages can be
+completely prefabricated as the Resource intensive part of the
+handshake happens on the server-side first (such as TLS), than on the
+client side. In the case of cryptographic protocols where the Resource
+intensive part should happen on the client-side first (such as SSH), a
+malicious client can send a forged/precalculated computation result,
+which seems correct to the server, so the Resource intensive part of
+the handshake is going to happen on the server side. Malicious client
+is required to send only the initial messages of a cryptographic
+handshake to initiate the Resource consumpting part of the
+cryptographic handshake. These messages are usually small and
+generating them requires minimal computational effort, enabling a
+denial-of-service attack. An additional risk is the fact that higher
+key size increases the effectiveness of the attack. Cryptographic
+protocols where the clients have influence over the size of the used
+key (such as TLS 1.3, SSH) are most at risk, as client can Enforce the
+highest key size supported by the server.
+
+
+MODES OF INTRODUCTION:
+
+Phase: Architecture and Design
+
+Note:
+
+-----
+
+Phase: Implementation
+
+Note:
+
+-----
+
+Phase: Operation
+
+Note:
+
+
+POTENTIAL MITIGATIONS:
+
+Phase: System Configuration
+
+Description: Disable resource intensive algorithms (eg: Diffie-Hellman key exchange) on the server side
+
+Effectiveness: High
+
+Effectiveness Notes: Business requirements may prevent disabling the resource intensive algorithms
+
+-----
+
+Phase: Implementation
+
+Description: Server implementation should make possible to control the number of unauthenticated sessions (eg: by source address)
+
+Effectiveness: Moderate
+
+Effectiveness Notes: It can reduce the efficiency, as it requires minor computation on client side, but the weakness remains effective
+
+-----
+
+Phase: Operation
+
+Description: During the operation clients should be rate limited especially the ones cause error during the cryptographic handshake
+
+Effectiveness: Moderate
+
+Effectiveness Notes: It can reduce the efficiency, as it requires minor computation on client side, but the weakness remains effective
+
+-----
+
+Phase: Implementation
+
+Description: Server implementation should provide information about failed cryptographic handshakes (not only in debug level)
+
+Effectiveness: Limited
+
+Effectiveness Notes: It makes possible the dynamic modification of firewall policies according to the information given by the servers
+
+-----
+
+Phase: Architecture and Design
+
+Description: Cryptographic protocol design should contain prevention mechanism, like cookie in the case of TLS 1.3, or IPsec
+
+Effectiveness: Limited
+
+Effectiveness Notes: It can reduce the efficiency, as it requires minor computation on client side, but the weakness remains effective
+
+
+COMMON CONSEQUENCES:
+
+Scope: Availability
+
+Impact: DoS: Resource Consumption (CPU)
+
+Likelihood: High
+
+-----
+
+Scope: Availability
+
+Impact: Reduce Performance
+
+Likelihood: High
+
+
+-----
+
+Scope: Availability
+
+Impact: DoS: Instability
+
+Likelihood: Medium
+
+Note: Depending on server implementation mistakes
+
+
+-----
+
+Scope: Availability
+
+Impact: DoS: Crash, Exit, or Restart
+
+Likelihood: Low
+
+Note: Depending on server implementation mistakes
+
+
+-----
+
+Scope: Availability
+
+Impact: DoS: Resource Consumption (Memory, File Descriptor, Other)
+
+Likelihood: Low
+
+
+APPLICABLE PLATFORMS:
+
+
+Language Name: 
+
+Language Class: Not Language-Specific
+
+Operating System Name: 
+
+Operating System Class: Not OS-Specific
+
+Architecture Name: 
+
+Architecture Class: Not Architecture-Specific
+
+Technology Name: 
+
+Technology Class: Client Server
+
+
+
+DEMONSTRATIVE EXAMPLES:
+
+
+OBSERVED EXAMPLES:
+
+
+ID: CVE-2002-20001
+
+Desc: (see references)
+
+ID: CVE-2022-40735
+
+Desc: 
+
+
+RELATED WEAKNESSES:
+
+
+REFERENCES:
+
+Title: Balasys/dheater: D(HE)ater is a security tool can perform DoS attack by enforcing the DHE key exchange
+
+URL: https://github.com/Balasys/dheater
+
+
+
+ACTIVE ISSUES:
+
+--------------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction". Submission identifies
+an issue, but its abstraction might be too low-level to merit its own
+CWE entry. If it is focused on a particular technology, framework,
+protocol, or function, then it might not be unique enough to get its
+own CWE ID.  This might lead to modification of an existing entry to
+include the additional details, or creation of a higher-level entry
+for which the submission is one example. (Note: some older CWE entries
+have this problem and would not be published today, generally because
+they were too specific to a particular language.) Resolution: the
+submission will be allowed to progress to later stages once the
+more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of
+the more general concept.
+
+Comment: this submission will be folded into a new, higher-level entry
+related to selection of inefficient algorithms in negotiation. For CWE
+4.10, the cited CVEs and some mitigations will be added as observed
+examples to CWE-405: Asymmetric Resource Consumption
+(Amplification). A demonstrative example will be created by adapting
+the primary description text and integrating portions of subsequent emails.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+--------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or full) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: The submitter has clarified why this issue does not belong
+with CWE-407, since that CWE is focused on worst-case situations, and
+this weakness can be used with any algorithm that is computationally
+expensive. A new entry like "protocol/product offers very
+computationally-expensive algorithms" might be appropriate under
+CWE-405, but it would then overlap other CWEs such as CWE-406 and
+CWE-409. So, the subtree under CWE-405 needs to be analyzed more
+carefully before a new entry can be created.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+--------
+
+SUB.NOINIT - "No Initial Review"
+
+Description: The submission did not go through the Initial Review /
+Initial Consultation phases (Proposal stage) and has significant
+problems that should have been resolved in that phase.  This primarily
+applies to situations when external requesters provided a Full
+Submission form (Production stage) in 2021 and 2022, before the CWE
+Team launched the external submission web server and process.
+
+Resolution: The submission must be treated as if in the
+Initial-Review/Initial-Consultation phase, and the Full submission will not
+be evaluated until the Proposal stage is complete.
+
+Comments: Submission was provided with full details. Review is
+progressing. Some parts of the full submission will be used to update
+CWE-405 for CWE 4.10.  After release of CWE 4.10, further
+consideration will be given to creating a new entry.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+
+RESOLVED ISSUES:
+
+SUB.ATTACK - "Too attack-focused". Submission's name and/or
+description emphasizes the attack, not the weakness. Either the
+submission's weakness is not well-understood, or it is better
+described as an attack pattern, which may be suitable for inclusion in
+CAPEC. Resolution: an initial submission cannot progress to later
+stages unless it already includes a clear weakness (i.e., is not
+subject to SUB.UNCLEAR).
+
+Comment: this submission will also be provided to the CAPEC team to
+determine if a new CAPEC entry is needed.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
+--------
+
+SUB.UNCLEAR - "Unclear weakness".  Submission's name and/or
+description does not clearly identify a weakness, or it is written in
+a way that is vague and could cause the submission to be incorrectly
+mapped to. Resolution: an initial submission cannot progress to later
+stages until SUB.UNCLEAR is addressed.
+
+Comment: Description will need to be clarified once the higher-level
+entry is created. However, the following explains much of the
+weakness: "In the case of cryptographic protocols where the Resource
+intensive part should happen on the client-side first (such as SSH), a
+malicious client can send a forged/precalculated computation result,
+which seems correct to the server, so the Resource intensive part of
+the handshake is going to happen on the server side."
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
+
+
+TIMELINE:
+
+Received: 2021-11-11
+
+Ack-Receipt: 2021-11-16
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: 2021-11-16
+
+Full-Review: 2022-07-25
+
+Full-Consultation: 2022-11-02
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

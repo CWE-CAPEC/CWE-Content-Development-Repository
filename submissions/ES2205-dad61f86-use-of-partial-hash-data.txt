@@ -1,0 +1,214 @@
+SUBMISSION COMMUNICATION ID: ES2205-dad61f86
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Consultation
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-05-03 15:39:37
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.UNCLEAR, SUB.MITIGATION, SUB.ABS.MULTWEAK, SUB.RELS
+
+TRACKER: #567
+
+SUBMISSION TYPE: Software
+
+NAME: Use of partial hash data
+
+DESCRIPTION: 
+
+When using the hash value of data the full value must be used to
+represent the data, not a partial value (e.g. the first 8 bytes),
+otherwise attacker complexity is lowered enough to allow an attacker
+to create an arbitrary input that has the same partial hash value.
+
+Please note that there are several failure scenarios, firstly a full
+hash is generated but a partial hash is displayed to the user,
+secondly that a full hash is generated, but a partial hash is verified
+by the software.
+
+
+RELATED WEAKNESSES:
+
+     Other CWE-328
+     Other CWE-223
+
+
+REFERENCES:
+
+Title: Polynews hack
+
+URL: https://rekt.news/polynetwork-rekt/
+
+Title: Evil32
+
+URL: https://evil32.com/
+
+
+
+ACTIVE ISSUES:
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: The 2022-08-16 reply from the submitter uses phrasing such
+as "When using the hash value of data, the full value of the hash must
+be used to represent the data" which is focused on the mitigation, not
+the weakness (see SUB.MITIGATION). After the CWE Team's further
+analysis of SUB.ABS.MULTWEAK, it seems that the following name could
+be used to cover both verification and display: "Reliance on a
+Substring of a Full Hash Value". For the description, consider: "The
+product relies on verification or display of a hash value of data, but
+it only uses a substring or partial value of the hash, which lowers
+the attack complexity. For example, using the first 16 bytes of a
+32-byte hash reduces attack complexity by 2^128. This allows an
+attacker to create a second input with the same substring or partial
+hash value as the original item, even though the full hash value is
+different. Or, if the user cannot view the full hash value and
+validate it, then they cannot safely validate the hash of the data."
+If you agree with this rephrasing, please let us know in your
+response.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+------------
+
+SUB.MITIGATION - "Too mitigation-focused"
+
+Description: The submission's name and/or description emphasizes missing or
+incorrect mitigation without clarifying the weakness.
+
+Resolution: The submission cannot progress to later phases unless it also
+includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: See SUB.UNCLEAR discussion. Phrasing such as "the full value
+must be used" as used in the 2022-08-16 reply is mitigation-oriented;
+however, it could be used in Potential Mitigations when this
+submission reaches the full-submission stage.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+------------
+
+
+SUB.ABS.MULTWEAK - "Multiple weaknesses"
+
+Description: The submission describes or suggests multiple independent
+weaknesses that each might deserve a separate CWE ID.
+
+Resolution: The submission cannot progress past the consultation phase
+until the number of relevant weaknesses is identified. If there are
+multiple weaknesses, separate names and descriptions are needed.
+
+Comments: While the 2022-08-16 reply from the requester suggested
+different phrasings for "partial hash is displayed" and "partial hash
+is verified" (as originally suggested by the CWE Team), one of the
+suggested names - "Reliance on a substring of the full hash value" -
+seems appropriate for both scenarios: relying on the partial hash for
+verification, *or* for display. So it doesn't seem that this issue
+needs to be split into multiple weaknesses anymore. If the submitter
+agrees, then SUB.ABS.MULTWEAK no longer applies. See SUB.UNCLEAR for
+more specific details. If you agree with this decision, please
+acknowledge in your response.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+------------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The submitter acknowledged in 2022-08-16 that "The web form
+forces you to put at least one relationship or other value for CWE."
+This issue is related to hashing but is not necessarily "weak
+hashing." The submission is not prevented from moving to the next
+phase, and it will fall to the CWE Team to determine appropriate
+relationships.  The team might consider classification under CWE-223:
+Omission of Security-relevant Information, which was added as another
+potential relationship under "RELATED WEAKNESSES".  If you agree with
+this decision, please acknowledge in your response.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+****************************************************************************
+
+RESOLVED ISSUES:
+
+SUB.GRAMMAR - "Grammar/Spelling issues"
+
+Description: The submission has multiple occurrences of errors with
+grammar, spelling, etc. that should be fixed before publication.
+
+Resolution: The submission will not be allowed to progress to later phases
+if the grammar or spelling problems are so significant that they are likely
+to cause difficulty for readers to understand the weakness. If the issues
+are minor, then the submission could progress.	However, no submission can
+be published without grammar and spelling checks. American English is used
+for spelling.
+
+Comment: grammar issues are minimal and do not prevent progression to
+the next phase.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] We put it through Grammarly
+and fixed a few things.
+
+
+TIMELINE:
+
+Received: 2022-05-03
+
+Ack-Receipt: 2022-06-02
+
+Init-Review: 2022-07-13
+
+Init-Consultation: 2022-07-13
+
+Init-Accepted: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

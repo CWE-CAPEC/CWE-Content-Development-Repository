@@ -1,0 +1,117 @@
+
+SUBMISSION COMMUNICATION ID: ES2302-1b1b9341
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Init-Review
+
+ORIGIN: cwe-email
+
+SUBMISSION DATE: 2023-02-06 02:23:00
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.MISC
+
+TRACKER: #729
+
+SUBMISSION TYPE: Software
+
+NAME: Correction of typo in CWE-124 Example 2
+
+DESCRIPTION:
+
+To Whom It May Concern:
+
+I notice that in CWE-124 Example 2, the code given is:
+```
+int main() {
+...
+strncpy(destBuf, &srcBuf[find(srcBuf, ch)], 1024); ...
+}
+```
+
+But after checking the implementation of libc, I think strncpy does
+not perform any write operation on the second parameter. So I wonder
+whether it is a typo, and the correct version should be:
+
+```
+int main() {
+...
+strncpy(&destBuf[find(destBuf, ch)], srcBuf, 1024); ...
+}
+```
+
+Thank you for your time and attention to this matter. I look forward
+to hearing from you soon.
+
+
+
+RELATED WEAKNESSES:
+
+  Other CWE-124
+
+
+REFERENCES:
+
+
+
+ACTIVE ISSUES:
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: After careful look at CWE-124, libc's strncpy(), find(), and related materials, the CWE team feels that the example in question is indeed correct. That said, we agree that we need to improve our explanation of what the code is doing, which we will certainly look to do. Please carefully review the code again and you'll see that it performs how it should.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-02-06
+
+Ack-Receipt: 2023-02-07
+
+Init-Review: 2023-02-07
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

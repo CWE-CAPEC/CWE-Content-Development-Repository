@@ -1,0 +1,115 @@
+SUBMISSION COMMUNICATION ID: ES2208-9fb81a1a
+
+ALTERNATE ID: HCWE111
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Review
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-08-25 15:18:55
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.OVERLAP
+
+TRACKER: #632
+
+SUBMISSION TYPE: Hardware
+
+NAME: Speculative propagation of requests for transaction before data validation in multi-manager bus architectures
+
+DESCRIPTION:
+
+In a multi-manager shared bus architecture, the on-chip interconnect based
+on a protocol enforcing the ordering of requests and data indefinitely
+locks the write access to a shared output link when a request for a write
+transaction is not efficiently fulfilled by a manager module.
+
+The interconnect propagates an address request before data validation. This
+speculatively reserves the bus to the manager transaction issuer, which is
+left free to delay its data provisioning phase. This can be exploited by a
+malicious/faulty/misbehaving manager module to generate a condition of
+denial-of-service in accessing the write data link from all of the other
+managers in the system, and unboundedly inhibit the write access to one or
+multiple peripherals in the system (i.e., memories, I/Os, etc.). 
+
+A full description and investigation of the issue for one of the most
+popular standards for on-chip communication deployed in modern systems on a
+chip is reported in [1] and [2]. 
+
+
+RELATED WEAKNESSES:
+
+
+REFERENCES:
+
+Title: Cut and Forward: Safe and Secure Communication for FPGA System on Chips
+URL: https://ieeexplore.ieee.org/document/9852740
+
+Title: Safely Preventing Unbounded Delays During Bus Transactions in FPGA-based SoC
+URL: https://ieeexplore.ieee.org/abstract/document/9114758
+
+
+
+ACTIVE ISSUES:
+----------
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: The weakness described in this submission appears to be very similar to
+CWE-179: Incorrect Behavior Order: Early Validation. Can you describe the how
+your submission differs?
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+TIMELINE:
+
+Received: 2022-08-25
+
+Ack-Receipt: 2022-08-29
+
+Init-Review: 2022-09-12
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

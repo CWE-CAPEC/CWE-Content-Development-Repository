@@ -1,0 +1,152 @@
+SUBMISSION COMMUNICATION ID: ES2301-82f13da2
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Init-Review
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-01-13 08:24:25
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELREFS 
+
+TRACKER: #719
+
+SUBMISSION TYPE: Software
+
+NAME: Open Redirect connected with images
+
+DESCRIPTION:
+
+Bad actor using type of Open Redirect connected with images can exploit it
+to make succesfull phishing easier - possibility to use QR codes. Moreover,
+link start with trusted name like organization or company name, so
+organization or company can lost trust and reputation, if bad actor want to
+show illegal and bad things.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-601
+
+REFERENCES:
+
+Title: QR Code
+URL: https://en.wikipedia.org/wiki/QR_code
+
+Title: CWE-601: URL Redirection to Untrusted Site ('Open Redirect')
+URL: https://cwe.mitre.org/data/definitions/601.html
+
+
+
+ACTIVE ISSUES:
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: The distinction between CWE-601 and this issue isn't
+highlighted. How do the images and QR present a weakness in addition
+to CWE-601? Further details are needed to better understand the
+underlying weakness. Alternately, this could be an example of an
+attack, so it might be more appropriate for CAPEC.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: This issue specifically calls out images, which is likely to
+be too low-level. Ideally, this would be added to CWE-601.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: SUB.RELREFS is applied because the submission cites
+Wikipedia and CWE as references, but neither of these specifically
+describes the role of images and QR codes. Please provide a reference
+that specifically discusses this issue.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+RESOLVED ISSUES:
+
+
+TIMELINE:
+
+Received: 2023-01-13
+
+Ack-Receipt: 2023-01-16
+
+Init-Review: 2023-01-17
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

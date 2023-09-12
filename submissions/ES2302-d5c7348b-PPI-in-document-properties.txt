@@ -1,0 +1,88 @@
+SUBMISSION COMMUNICATION ID: ES2302-d5c7348b
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Review
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-02-08 12:22:29
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+TRACKER: #739
+
+SUBMISSION TYPE: Software
+
+NAME: PPI and sensitive informations with documents properties
+
+DESCRIPTION:
+
+Depends of organisation/company approach it can be intentional or not -
+with documents like PDFs bad actor can check sensitive informations like
+PPI (name, forname) of Author. Informations like PPI can be later used for
+other parts of reconanse phrase. The same with software/device informations
+- connected with Edit and Create date - bad actor can check if organisation
+is using up-to-date software and so on.
+
+RELATED WEAKNESSES:
+
+   Other CWE-200
+
+REFERENCES:
+
+Title: CWE-200: Exposure of Sensitive Information to an Unauthorized Actor
+URL: https://cwe.mitre.org/data/definitions/200.html
+
+
+
+
+ACTIVE ISSUES:
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-02-08
+
+Ack-Receipt: 2023-02-22
+
+Init-Review: 2023-02-27
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

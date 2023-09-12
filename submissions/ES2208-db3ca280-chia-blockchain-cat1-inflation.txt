@@ -1,0 +1,258 @@
+SUBMISSION COMMUNICATION ID: ES2208-db3ca280
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Init-Consultation
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-08-22 21:00:49
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.ABS.LOWLEVEL SUB.OVERLAP SUB.MISC
+
+TRACKER: #631
+
+SUBMISSION TYPE: Software
+
+NAME: Chia Blockchain CAT1 inflation bug
+
+DESCRIPTION:
+
+A coin is represented by a variable length structure of the form
+`(parent_coin_id puzzle_hash amount)` where the first two fields are 32
+bytes, and the last is a `clvm varint` type.
+
+varint examples:
+
+0 = "" (the empty string)
+
+1 = 0x01
+
+50 = 0x32
+
+20000 = 0x4e20
+
+65000 = 0x00fde8 because a varint supports negative values, we prefix
+numbers that would otherwise have the high bit set with a 00 byte
+
+The solution to a CAT1 puzzle takes a triple of three values for the coin
+the puzzle is included in. It adds a condition `(ASSERT_MY_ID v)` where v
+is the calculated coin id using these values via `(sha256 parent_coin_id
+puzzle_hash amount)`. It further uses the amount value to ensure mojos are
+neither created nor burned (except when authorized by the tail).
+
+The problem is that sha256 concatenates the passed values when evaluating,
+and at no time do we ensure that parent_coin_id or puzzle_hash is 32 bytes
+as expected (or verified to be correct by any other means). That means the
+boundary between puzzle_hash and amount can be varied, changing the
+perceived amount of the coin.
+
+So slide over the last byte or two of the puzzle_hash to be the new
+first byte or two of amount, and you’ve just created a coin worth much
+more (or, if the first byte has the high bit set, a negative amount!).
+
+This also gives us an easy way to melt CAT coins: move the boundary
+all the way to the right, so the puzzle_hash field contains all the
+bytes from the actual puzzle_hash field and the amount field, so the
+amount field appears to be the empty string, which represents 0.
+
+
+RELATED WEAKNESSES:
+
+  Other CWE-130
+  Other CWE-135
+
+
+REFERENCES:
+
+Title: Chia Blog
+URL: https://www.chia.net/2022/07/29/cat1-vulnerability-explained-cve-and-cwe.en.html
+
+
+
+ACTIVE ISSUES:
+
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: Some CWEs exist that focus on the issue of length not being
+checked - CWE-130 and CWE-135.  Therefore, this doesn't warrant a new
+CWE, but certainly can be used to provide a demonstrative example for
+those CWEs.
+
+Response: We want to stress that while the linked issues are
+similar. this issue is explicitly for our custom on chain programming
+language and related to on chain assets with real world value. The
+CAT1 (Chia Asset Token 1) standard which this CWE is for, has a
+specific weakness that was patched when we replaced it with the CAT2
+(Chia Asset Token 2) standard.  We propose the following changes to
+the document to reflect a more abstract weakness definition and
+provide a specific exploit as an example.
+
+---
+DESCRIPTION
+
+The software does not verify the length of individual elements
+contatenated together as input for a hash function.
+
+---
+EXTENDED DESCRIPTION
+
+If an attacker can manipulate the length of input data fields
+concatenated together as input to a hash function such that it is
+inconsistent with the expected length of the inputs in a manner that
+shifts the boundaries between different data fields, this can be
+leveraged to cause the target application to behave in unexpected, and
+possibly, malicious ways.
+
+One of the possible motives for doing so is to pass a hash output
+comparisonson validation, with input data fields that are different
+from input data fields that originally resulted in the hash output.
+
+---
+DEMONSTRATIVE EXAMPLES
+
+A coin is represented by a variable length structure of the form
+`(parent_coin_id puzzle_hash amount)` where the first two fields are 32
+bytes, and the last is a `clvm varint` type.
+
+varint examples:
+
+0 = "" (the empty string)
+
+1 = 0x01
+
+50 = 0x32
+
+20000 = 0x4e20
+
+65000 = 0x00fde8 because a varint supports negative values, we prefix
+numbers that would otherwise have the high bit set with a 00 byte
+
+The solution to a CAT1 puzzle takes a triple of three values for the coin
+the puzzle is included in. It adds a condition `(ASSERT_MY_ID v)` where v
+is the calculated coin id using these values via `(sha256 parent_coin_id
+puzzle_hash amount)`. It further uses the amount value to ensure mojos are
+neither created nor burned (except when authorized by the tail).
+
+The problem is that sha256 concatenates the passed values when evaluating,
+and at no time do we ensure that parent_coin_id or puzzle_hash is 32 bytes
+as expected (or verified to be correct by any other means). That means the
+boundary between puzzle_hash and amount can be varied, changing the
+perceived amount of the coin.
+
+So slide over the last byte or two of the puzzle_hash to be the new
+first byte or two of amount, and you've just created a coin worth much
+more (or, if the first byte has the high bit set, a negative amount!).
+
+This also gives us an easy way to melt CAT coins: move the boundary
+all the way to the right, so the puzzle_hash field contains all the
+bytes from the actual puzzle_hash field and the amount field, so the
+amount field appears to be the empty string, which represents 0.
+
+
+ 
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: This aligns because the submission focuses on blockchain as
+the technology where creation/deletion of coins are concerned. This
+means it is better suited as a demonstrative example under one of the
+current CWEs.
+
+Response: added a higher level description in the previous response
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: This is not a problem for the requester, but the notion of
+"not enforcing proper boundaries between different data fields" could
+potentially produce a new CWE entry, but that does not need to prevent
+this submission from moving forward. The CWE Team has noted the
+possibility of including this example in that new entry.
+
+Response: Thanks for the feedback. please let me know if you have
+further questions.
+
+
+
+
+RESOLVED ISSUES:
+
+
+
+
+
+
+TIMELINE:
+
+Received: 2022-08-22
+
+Ack-Receipt: 2022-08-29
+
+Init-Review: 2022-11-01
+
+Init-Consultation: 2023-01-06
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

@@ -1,0 +1,100 @@
+SUBMISSION COMMUNICATION ID: ES2302-4359adeb
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-02-08 10:05:46
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+TRACKER: #738
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Authorization - used user ID
+
+DESCRIPTION:
+
+Some services like surveys are called anonymous, when in fact they are not.
+Bad actor can easy change parameter like user_id and send a message as
+another user. Impact: bad actor may make it worse relationship
+company-user/company - lost of trust and reputation. It is more dangerous
+when survey are using textFields with open answers - can write there
+bad/forbidden things as other person. POC - recently I've got an invitation
+from well-known org (called here first company) - they used survey from
+also well-known org/company (called here second company). The issue is -
+survey is called anonymous, when with parameter is used '&user_id=[number]'
+- bad actor can check IDs for customers of first company and send (change)
+as other people - first company will get answers and this can make worse a
+relationship between them (first company and their customers). In fact it
+is also bad even if survey are using just combobox answers - because still
+bad actor can send an answers as other people. 
+
+RELATED WEAKNESSES:
+
+   Other CWE-287
+   Other CWE-285
+
+REFERENCES:
+
+Title: CWE-285: Improper Authorization
+URL: https://cwe.mitre.org/data/definitions/285.html
+
+Title: CWE-287: Improper Authentication
+URL: https://cwe.mitre.org/data/definitions/287.html
+
+
+
+ACTIVE ISSUES:
+
+
+RESOLVED ISSUES:
+
+
+
+
+TIMELINE:
+
+Received: 2023-02-08
+
+Ack-Receipt: 2023-02-22
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

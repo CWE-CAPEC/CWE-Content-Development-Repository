@@ -1,0 +1,182 @@
+SUBMISSION COMMUNICATION ID: ES2212-38d17c8f
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Review
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-12-06 16:52:11
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.LOWLEVEL, SUB.RELREFS  
+
+TRACKER: #693
+
+SUBMISSION TYPE: Software
+
+NAME: Blockchain mining cost is insufficient to prevent data stuffing in blocks and long term DoS
+
+DESCRIPTION:
+
+In PoW, PoS and other blockchain systems the cost of mining a block of data
+is set through technical and non-technical means. If the cost of mining a
+block of data is sufficiently low an attacker can insert large volumes of
+data into blocks that must be stored in perpetuity resulting in a
+significant cost to nodes who must store and process all the data. This is
+especially problematic in Blockchains that have low transaction volumes
+(and thus typically small block sizes) but allow variable sized blocks that
+can be much large to be mined.
+
+RELATED WEAKNESSES:
+
+   Other CWE-400
+   Other CWE-770
+
+REFERENCES:
+
+Title: Somebody's having fun spamming the zcash blockchain and tripling its size to over 100 GB. Rough estimate is that this attack is costing them ~$10 a day in transaction fees.
+URL: https://twitter.com/lopp/status/1577718171468972033?s=43&t=L4xKiM1CLBGpGslbaBhcEA
+
+Title: Zcash blockchain size
+URL: https://blockchair.com/zcash/charts/blockchain-size
+
+Title: Zcash average block size
+URL: https://blockchair.com/zcash/charts/average-block-size
+
+
+ACTIVE ISSUES:
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: The actual weakess isn't highlighted in the description or references provided. Yes, the attacker can insert large amounts of data if the cost of mining is low, but why is the cost of mining low, what is the actual weakness that attacker takes advantage of isn't called out. Additional information is needed to better understand the actual weakness.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ATTACK - "Too attack-focused"
+
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: The actual weakess isn't highlighted in the description or references provided. The description and references focus on the Zcash attack that occured without details on what was the actual weakness that led to that attack. Additional information is needed to better understand the actual weakness.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: This applies because this issue only deals with blockchain when the cost of mining is low - this appears to be a very rare exception case. Additional information is needed to know how this weakness applies in other blockchain scenarios, and what the actual weakness is.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: Although it isn't necessary as part of Init-Review phase to have proper references, the references provided simply point out the Zcash attack that occured. No additional information is available on what the weakness is and how that relates to creating a new entry on this issue. 
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+RESOLVED ISSUES:
+
+(Could be moved from "ACTIVE ISSUES" section.)
+
+
+SUB.XXXXX - explanation here.
+
+Comments: any reviewer comments here.
+
+Response: <submitter should reply here>
+
+
+SUB.YYYYY - explanation here.
+
+Comments: any reviewer comments here.
+
+Response: <submitter should reply here>
+
+
+
+TIMELINE:
+
+Received: 2022-12-06
+
+Ack-Receipt: 2022-12-06
+
+Init-Review: 2023-02-07
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

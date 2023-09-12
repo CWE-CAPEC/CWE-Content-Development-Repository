@@ -1,0 +1,383 @@
+SUBMISSION COMMUNICATION ID: ES2208-26ac7ee6
+
+ALTERNATE ID: HCWE110
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Consultation
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-08-15 21:12:21
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELS, SCOPE.NOMITS
+
+TRACKER: #624
+
+SUBMISSION TYPE: Hardware
+
+NAME: Improper Protection of Intermediate Cryptographic State/Results
+
+DESCRIPTION:
+
+General Description:
+
+A module implementing a cryptographic algorithm leaks information
+about the intermediate state or results of its cryptographic
+operations via one of its output ports (typically the output
+containing the final result).
+
+Technical Impact:
+
+Mathematically sound cryptographic algorithms rely on their correct
+implementation for security. The algorithms assume that with a given
+set of inputs, they will produce a cryptographic result. These
+assumptions break when intermediate state or results of the encryption
+can be observed by an adversary. If intermediate state is observed, it
+can be used by an attacker to identify the secrets used in the
+cryptographic operation.
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-203
+
+
+REFERENCES:
+
+
+Title: Security Verification of an Open Source Hardware Root of Trust
+
+URL: https://cycuity.com/type/blog/security-verification-of-an-open-source-hardware-root-of-trust/
+
+Title: Complete reverse-engineering of AES-like block ciphers by SCARE and FIRE attacks
+
+URL: https://doi.org/10.1007/s12095-014-0112-7
+
+Title: Practical Reverse Engineering of Secret Sboxes by Side-Channel Analysis
+
+URL: https://doi.org/10.1109/ISCAS45731.2020.9180848
+
+
+ACTIVE ISSUES:
+
+
+SCOPE.NOMITS - "No actionable mitigations"
+
+Description: There are no actionable mitigations available to the
+developer/designer/manufacturer to prevent or reduce the weakness.
+
+Resolution: Submissions will be reviewed on a case-by-case basis, delayed,
+and possibly cited as examples until this exclusion is finalized after
+extensive community feedback.
+
+Comments: What would be the mitigation for the issue?
+
+Response: A module implementing a cryptographic algorithm should
+contain logic/mechanisms that allow non-sensitive information (i.e.,
+final cryptographic result or default values) to be driven to the
+appropriate outputs while simultaneously preventing sensitive
+information (i.e., intermediate state/results, input values, keys)
+from being driven to any of its outputs.
+
+The following SystemVerilog code shows an example of a generic crypto
+module with and without a “sanitizing” mechanism to mitigate the
+exposure of sensitive information (see line 50 in each example). The
+“sanitizing” mechanism drives a safe default value (i.e., 0) to
+“data_o” instead of the value of “data_state_q” while “data_state_q”
+does not contain the final result. In doing so,the mechanism prevents
+the exposure of intermediate state/results which could be used to
+break soundness of the cryptographic operation being performed. A
+real-world example of this weakness and mitigation can be seen in a
+pull request we submitted to the OpenTitan Github repository
+(available here:https://github.com/lowRISC/opentitan/pull/13043).
+
+
+//////////////////////////////////////////////////////////////
+// START: Example of module with weakness                   //
+//////////////////////////////////////////////////////////////
+01 | module crypto_core_with_leakage
+02 | (
+03 |     input  clk,
+04 |     input  rst,
+05 |     input  [127:0] data_i,
+06 |     output [127:0] data_o,
+07 |     output valid
+08 | );
+09 |
+10 | localparam int total_rounds = 10;
+11 | logic [3:0]   round_id_q;
+12 | logic [127:0] data_state_q, data_state_d;
+13 | logic [127:0] key_state_q, key_state_d;
+14 |
+15 | crypto_algo_round u_algo_round (
+16 |     .clk     (clk),
+17 |     .rst     (rst),
+18 |     .round_i (round_id_q  ),
+19 |     .key_i   (key_state_q ),
+20 |     .data_i  (data_state_q),
+21 |     .key_o   (key_state_d ),
+22 |     .data_o  (data_state_d)
+23 | );
+24 |
+25 | always @(posedge clk) begin
+26 |     if (rst) begin
+27 |         data_state_q <= 0;
+28 |         key_state_q  <= 0;
+29 |         round_id_q   <= 0;
+30 |     end
+31 |     else begin
+32 |         case (round_id_q)
+33 |             total_rounds: begin
+34 |                 data_state_q <= 0;
+35 |                 key_state_q  <= 0;
+36 |                 round_id_q   <= 0;
+37 |             end
+38 |
+39 |             default: begin
+40 |                 data_state_q <= data_state_d;
+41 |                 key_state_q  <= key_state_d;
+42 |                 round_id_q   <= round_id_q + 1;
+43 |             end
+44 |         endcase
+45 |     end
+46 | end
+47 |
+48 | assign valid  = (round_id_q == total_rounds) ? 1'b1 : 1'b0;
+49 |
+50 | assign data_o = data_state_q;
+51 |
+52 | endmodule
+//////////////////////////////////////////////////////////////
+// END  : Example of module with weakness                   //
+//////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////
+// START: Example of module without weakness                //
+//////////////////////////////////////////////////////////////
+01 | module crypto_core_without_leakage
+02 | (
+03 |     input  clk,
+04 |     input  rst,
+05 |     input  [127:0] data_i,
+06 |     output [127:0] data_o,
+07 |     output valid
+08 | );
+09 |
+10 | localparam int total_rounds = 10;
+11 | logic [3:0]   round_id_q;
+12 | logic [127:0] data_state_q, data_state_d;
+13 | logic [127:0] key_state_q, key_state_d;
+14 |
+15 | crypto_algo_round u_algo_round (
+16 |     .clk     (clk),
+17 |     .rst     (rst),
+18 |     .round_i (round_id_q  ),
+19 |     .key_i   (key_state_q ),
+20 |     .data_i  (data_state_q),
+21 |     .key_o   (key_state_d ),
+22 |     .data_o  (data_state_d)
+23 | );
+24 |
+25 | always @(posedge clk) begin
+26 |     if (rst) begin
+27 |         data_state_q <= 0;
+28 |         key_state_q  <= 0;
+29 |         round_id_q   <= 0;
+30 |     end
+31 |     else begin
+32 |         case (round_id_q)
+33 |             total_rounds: begin
+34 |                 data_state_q <= 0;
+35 |                 key_state_q  <= 0;
+36 |                 round_id_q   <= 0;
+37 |             end
+38 |
+39 |             default: begin
+40 |                 data_state_q <= data_state_d;
+41 |                 key_state_q  <= key_state_d;
+42 |                 round_id_q   <= round_id_q + 1;
+43 |             end
+44 |         endcase
+45 |     end
+46 | end
+47 |
+48 | assign valid  = (round_id_q == total_rounds) ? 1'b1 : 1'b0;
+49 |
+50 | assign data_o =  (valid) ? data_state_q : 0;
+51 |
+52 | endmodule
+//////////////////////////////////////////////////////////////
+// END  : Example of module without weakness                //
+//////////////////////////////////////////////////////////////
+
+
+
+------
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: Please provide more detail about the mistake that causes the
+          leakage of intermediate crypto data.  Is this mistake unique
+          to hardware or is does it apply to software as well?
+
+Response: The mistake which leads to the exposure of sensitive
+information (i.e., intermediate state/results, input values, keys) via
+a cryptographic hardware module’s output ports is a mistake of
+omission. If designers do not insert logic/mechanisms to allow
+non-sensitive information (i.e., final cryptographic result or a
+default value) to be driven to the appropriate outputs while
+simultaneously preventing sensitive information (i.e., intermediate
+state/results, input values, keys) from being driven to any outputs,
+they enable such exposure to occur since hardware designs must
+continuously drive values to their outputs (wires) (which can be
+sampled/accessed at any point in time). By contrast, software is not
+exposed to this weakness because software sequentially updates and
+accesses the values of program variables based on access protections
+put in place by the operating system or other forms of embedded memory
+management abstracted from the software. In order for the same
+exposure to occur in software, sensitive values would need to be
+written to variables which are accessible outside of the entity (e.g.,
+function, program, process, etc.) implementing the cryptographic
+algorithm which is only possible if there is a bug in the underlying
+protections abstracted from the software. Meaning this weakness would
+not be a weakness of the software itself.
+
+
+------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: Please provide more detail of why this is believed to be a 
+          child of CWE-203. More detail is needed about what is 
+	  being observed and how it is being observed?  Is it a direct
+	  observation, behavorial difference, timing diference or
+	  some other side channel? If a direct observation, then
+          CWE-203 probably does not apply.
+
+Response:
+
+The weakness we describe produces an exposure of sensitive information
+which is consistent across various execution conditions so, in
+retrospect, CWE-203 was not the most appropriate choice. A more
+appropriate relationship would be that this weakness is a child of
+CWE-200. Beyond this, there are other CWEs which are relevant and
+potentially merit a relationship (other than parent/child). In order
+of most to least relevant, these CWEs include: CWE-201, CWE-212,
+CWE-1295, and CWE-1258.
+
+Although the aforementioned CWEs do cover exposure of sensitive
+information, we believe that the way in which the weakness under
+review unnecessarily exposes sensitive information (i.e., via
+continuous driving/streaming) warrants its own entry.
+
+Additionally, we believe that this weakness would be appropriate to
+include within Category ID: 1205 (CWE CATEGORY: Security Primitives
+and Cryptography Issues) since it describes a weakness that would
+jeopardize the security of a cryptographic process.
+
+
+------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: Submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might
+not be unique enough to get its own CWE ID.  This might lead to
+modification of an existing entry to include the additional details,
+or creation of a higher-level entry for which the submission is one
+example. (Note: some older CWE entries have this problem and would not
+be published today, generally because they were too specific to a
+particular language.)
+
+Resolution: the submission will be allowed to progress to later phases
+once the more-general concept is appropriately identified and
+described. The original, lower-level submission will serve as a
+primary example of the more general concept.
+
+Comments: Is the weakness or mistake specific to a particular
+          technology? If so, then it might be too low-level to receive
+          its own CWE identifier. Also, "cryptographic state" is a
+          very specific type of information, which is likely too
+          low-level to receive its own entry.
+
+Response: The weakness is not specific to a particular technology and
+could reasonably arise in various types of designs (e.g. processor
+hardware, SoCs, crypto IP, Bus/Interfaces, etc.) which derive result
+data from sensitive information and continuously drive (or stream)
+those result data from a secure/trusted location to a potentially
+unsecure/untrusted location. However, this weakness is especially
+impactful for cryptographic designs.
+
+
+
+
+RESOLVED ISSUES:
+
+
+
+
+TIMELINE:
+
+Received: 2022-08-15
+
+Ack-Receipt: 2022-08-16
+
+Init-Review: 2022-10-26
+
+Init-Consultation: 2022-12-21
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

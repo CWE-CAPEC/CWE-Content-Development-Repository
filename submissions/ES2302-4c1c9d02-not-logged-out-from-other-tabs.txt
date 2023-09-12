@@ -1,0 +1,92 @@
+SUBMISSION COMMUNICATION ID: ES2302-4c1c9d02
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-02-20 23:23:35
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+TRACKER: #743
+
+SUBMISSION TYPE: Software
+
+NAME: Not logged out from other tabs during logging out in current tab
+
+DESCRIPTION:
+
+During logging out action user is not logged out from other opened in the
+same browser's window tabs from the same app or webapp. User can thinking
+that all data are safe, and don't have to or don't want to check other
+tabs, but bad actor (other user of device - public library, org/company,
+and so on, still can see sensitive data if check other tabs after logged
+out action). That is especially dangerous issue for services like invoices,
+payments and other situations where are containing sensitive data. This
+weakness is dangerous at all, because even initialy not sensitive data, can
+be next useful for bad actor - depends of situation.
+
+RELATED WEAKNESSES:
+
+   Other CWE-613
+
+REFERENCES:
+
+Title: Session Management Cheat Sheet
+URL: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html
+
+
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-02-20
+
+Ack-Receipt: 2023-02-23
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

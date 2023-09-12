@@ -1,0 +1,89 @@
+SUBMISSION COMMUNICATION ID: ES2302-c4107569
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-02-08 09:42:54
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+TRACKER: #737
+
+SUBMISSION TYPE: Software
+
+NAME: Lack of HTTPS Forcing
+
+DESCRIPTION:
+
+In some cases it can be not important, but in other - it can be very
+important (if bad actor can easy get info about some of user activity and
+'connection' with definite site using sniffing etc). We can add this as
+variant or new record - here I want to be focused on quite often overlooked
+case - no HTTPS forcing for used assets like images. POC - site/service has
+proper HTTPS forcing, but for assets like images it doesn't work properly
+(no HTTP forcing - HTTP instead of HTTPS). Proposed remediation: HTTPS
+Forcing also for used assets like images, and so on.
+
+RELATED WEAKNESSES:
+
+   Other CWE-319
+
+REFERENCES:
+
+Title: CWE-319: Cleartext Transmission of Sensitive Information
+URL: https://cwe.mitre.org/data/definitions/319.html
+
+
+
+
+ACTIVE ISSUES:
+
+
+RESOLVED ISSUES:
+
+
+TIMELINE:
+
+Received: 2023-02-08
+
+Ack-Receipt: 2023-02-22
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:
