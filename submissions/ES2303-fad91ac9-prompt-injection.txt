@@ -1,0 +1,95 @@
+SUBMISSION COMMUNICATION ID: ES2303-fad91ac9
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-03-27 10:58:16
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+TRACKER: #774
+
+SUBMISSION TYPE: Software
+
+NAME: Prompt Injection
+
+DESCRIPTION:
+
+Prompt injection is a new vulnerability that is affects some AI/ML models
+and, in particular, certain types of language models using prompt-based
+learning. It is the consequence of concatenating instructions and data, so
+the underlying engine cannot distinguish between them. If a system uses a
+LLM to generate code based on user input, and then executes that code ,
+prompt injection could easily be used to generate malicious code. 
+
+The main impact of prompt injection attacks is that it can be used to
+circumvent content filters. If successful, it can deliver sensitive
+information to an attacker.
+
+RELATED WEAKNESSES:
+
+
+REFERENCES:
+
+Title: Exploring Prompt Injection Attacks
+URL: https://research.nccgroup.com/2022/12/05/exploring-prompt-injection-attacks/
+
+Title:  Prompt injection attacks against GPT-3
+URL: https://simonwillison.net/2022/Sep/12/prompt-injection/
+
+
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-03-27
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:
