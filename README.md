@@ -1,5 +1,20 @@
 **Disclaimer: This page is currently under active development**
 
+# Table of Contents
+
+- [CWE-Submissions](#cwe-submissions)
+- [Pilot Program - September 12 to October 6, 2023](#pilot-program---september-12-to-october-6-2023)
+- [Repository Layout](#repository-layout)
+- [Guidelines for New Content Suggestions](#guidelines-for-new-content-suggestions)
+- [Summary of Stages and Phases](#summary-of-stages-and-phases)
+  - [STAGE 1: Initial Submission](#stage-1-initial-submission)
+  - [STAGE 2: Full Submission](#stage-2-full-submission)
+  - [STAGE 3: Production](#stage-3-production)
+  - [STAGE 4: Publication](#stage-4-publication)
+- [Common Problems with Integrating Content Suggestions Into CWE](#common-problems-with-integrating-content-suggestions-into-cwe)
+- [Additional Supporting Information](#additional-supporting-information)
+
+
 # CWE-Submissions
 
 The MITRE CWE team has created this public GitHub repository for the purpose of sharing external content submissions with the broader community.  We believe this will help provide more transparency and insight into the external content submission process, as well as allow for more community discussion.  Submissions are still being accepted through the [CWE Submission Form](https://cwesubmission.mitre.org/) on the CWE website, but previously internal submissions documents will be uploaded here for the community to view and discuss as they move along the submission process.
@@ -31,7 +46,7 @@ The web submission form has five required elements:
 
 After clicking “Submit,” you will receive a confirmation message and your suggestion will be added to the CWE team’s working queue. After internal processing, content suggestions will be added to our GitHub repository for the wider community to track and provide input.
 
-## Summary of Stages and Phases
+# Summary of Stages and Phases
 
 **Disclaimer: This section needs modification to include the public GitHub space, currently under active development**
 
@@ -124,7 +139,7 @@ The CWE Team closes the external submission, and no more action
 is necessary. Any future changes, if needed, would apply to the
 relevant CWE entry/entries.
 
-## Common Problems with Integrating Content Suggestions Into CWE
+# Common Problems with Integrating Content Suggestions Into CWE
 
 The CWE team has identified the following factors from previous content suggestions that may delay or ultimately affect whether your content suggestion is integrated into CWE.
 
@@ -135,6 +150,6 @@ The CWE team has identified the following factors from previous content suggesti
 - __Descriptions are not clearly written.__
 - __Submission elements are missing or do not follow guidelines.__
 
-## Additional Supporting Information
+# Additional Supporting Information
 
 Supplementary guidance on the submission process can be found on the CWE website [here](https://cwe.mitre.org/community/submissions/guidelines.html#other)
