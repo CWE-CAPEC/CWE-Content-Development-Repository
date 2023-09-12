@@ -4,9 +4,17 @@
 
 The MITRE CWE team has created this public GitHub repository for the purpose of sharing external content submissions with the broader community.  We believe this will help provide more transparency and insight into the external content submission process, as well as allow for more community discussion.  Submissions are still being accepted through the [CWE Submission Form](https://cwesubmission.mitre.org/) on the CWE website, but previously internal submissions documents will be uploaded here for the community to view and discuss as they move along the submission process.
 
+# Pilot Program - September 12 to October 6, 2023
+
+- This pilot will remain open until October 6th.  If you are having issues accessing the repository, please reach out and we will get you access as soon as we can.
+- Each submission has been given its own GitHub issue where discussion around that submission should take place.  Feel free to look through all issues with the label “External-Submission” and provide comments as you see fit.
+  - Each issue will also have a link to the submission file within the repository.  These files have more detailed process information and information about potential problems with the submission.
+- We are very interested in feedback, both good and bad.  Please provide feedback by creating a new issue and choosing the template called “Feedback Template”.  You may also reach out to cwe-submissions@mitre.org with any feedback as well.
+
+
 # Repository Layout
 
-Each content submission is given its own issue in the repository.  Each issue is titled with the unique submission ID followed by the name for the submission.  Each issue will also include the description of the submission as well as a link to the more detailed submission file, contained in this repository.  All submission files will be under the _submissions_ folder.  The CWE team expects the community to interact with each submission by posting comments directly to each issue.  The CWE team will take these comments into account when reviewing each submission.  When changes to a submission are made, they will also be pushed to this respository.  
+Each content submission is given its own issue in the repository.  Each issue is titled with the unique submission ID followed by the name for the submission.  Each issue will also include the description of the submission as well as a link to the more detailed submission file, contained in this repository.  All submission files will be under the _submissions_ folder.  The CWE team expects the community to interact with each submission by posting comments directly to each issue.  The CWE team will take these comments into account when reviewing each submission.  When changes to a submission are made, they will also be pushed to this repository.  
 
 # Guidelines for New Content Suggestions
 
