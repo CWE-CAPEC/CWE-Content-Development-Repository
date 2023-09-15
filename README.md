@@ -17,7 +17,9 @@
 
 # CWE-Submissions
 
-The CWE Program has created this public GitHub repository to increase transparency and third-party collaborative input into the CWE content development process.  Submissions are received through the [CWE Submission Form](https://cwesubmission.mitre.org/) on the CWE website, after which submission documentation is uploaded here for the entire CWE community to view and comment as the entry develops towards being ready for publication.
+The CWE Program has created this public GitHub repository to increase transparency and third-party collaborative input into the CWE content development process.  Submissions are received through the [CWE Submission Form](https://cwesubmission.mitre.org/), after which submission documentation is uploaded here for the entire CWE community to view and comment as the entry develops towards being ready for publication.
+
+All CWE content submissions must adhere to the [CWE Terms of Use](https://cwe.mitre.org/about/termsofuse.html).
 
 # Pilot Program - September 12 to October 6, 2023
 
@@ -35,7 +37,7 @@ Each content submission is given its own issue in the repository.  Each issue is
 
 When organizations or individuals wish to suggest new content for CWE, they should start the process by using the official [CWE Content Web Submission Form](https://cwesubmission.mitre.org/).
 
-<ins>All CWE content submissions must adhere to the</ins> [CWE Terms of Use](https://cwe.mitre.org/about/termsofuse.html).
+All CWE content submissions must adhere to the [CWE Terms of Use](https://cwe.mitre.org/about/termsofuse.html).
 
 The web submission form has five required elements:
 1. Submitter Contact Information (this will not be shared publicly on the GitHub site)
