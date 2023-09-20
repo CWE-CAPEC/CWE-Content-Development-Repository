@@ -46,7 +46,7 @@ The web submission form has five required elements:
 4. References
 5. Review & Submit
 
-After clicking “Submit,” you will receive a confirmation message and your suggestion will be added to the CWE team’s working queue. After internal processing, content suggestions will be added to our GitHub repository for the wider community to track and provide input.
+After clicking "Submit", you will receive a confirmation message and your suggestion will be added to the CWE team’s working queue. After internal processing, content suggestions will be added to our GitHub repository for the wider community to track and provide input.
 
 # Summary of Stages and Phases
 
@@ -59,7 +59,7 @@ An external submitter ("requester") provides a name, short description of the we
 
 #### Phase 1: Received
 
-The CWE Team receives an initial submission from the public submission server and brings it into the internal gitlab repository for tracking.
+The CWE Team receives an initial submission from the public submission server and brings it into the internal GitLab repository for tracking.
 
 #### Phase 2: Ack-Receipt
 
