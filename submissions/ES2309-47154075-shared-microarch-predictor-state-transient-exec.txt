@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-47154075
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Received
+SUBMISSION STATUS: Init-Accepted
 
 ORIGIN: sub-server
 
@@ -20,7 +20,7 @@ GITHUBUSER: scottconstable
 
 SUBMISSION TYPE: Hardware
 
-NAME: Exposure of Sensitive Information caused by Shared Microarchitectural Predictor State that influences Transient Executionu202f
+NAME: Exposure of Sensitive Information caused by Shared Microarchitectural Predictor State that influences Transient Execution
 
 DESCRIPTION:
 
@@ -28,14 +28,498 @@ Shared microarchitectural predictor state may allow code to influence
 transient execution across a hardware boundary, potentially exposing data
 that is accessible beyond the boundary.
 
+EXTENDED DESCRIPTION:
+
+<<put the information here>>
+
+
+************************************************************************************************
+
+
+MODES OF INTRODUCTION:
+
+# This provides information about how and when a given weakness may be
+# introduced. Information should list the Phase of the development life
+# cycle in which the weakness can introduced. A descriptive Note is
+# optional but preferred.
+# 
+# If the weakness can be introduced in multiple phases, include separate
+# items for each Phase. Copy and paste as needed.
+# 
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation,, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
+
+
+Phase: <<PHASE1>>
+
+Note: <<put the information here>>
+
+
+Phase: <<PHASE2>>
+
+Note: <<put the information here>>
+
+
+************************************************************************************************
+
+APPLICABLE PLATFORMS:
+
+# This element specifies the programming languages, operating systems,
+# architectures, and technologies in which this weakness is usually
+# found. If an element does not apply to this submission, you can use
+# the "Not X-Specific" where "X" is the type of element.
+
+# If there are multiple languages, OSes, architectures, and/or
+# technologies, then list each one separately.
+# 
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#platforms
+
+
+# Values for Prevalence: Often, Sometimes, Rarely, Undetermined
+
+# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
+#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
+#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
+#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
+#    Assembly, Other
+
+Language Name: <<LANGUAGE1>>
+Prevalence: <<PREVALENCE1>>
+
+
+Language Name: <<LANGUAGE2>>
+Prevalence: <<PREVALENCE2>>
+
+
+Language Name: <<LANGUAGE3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Language Class: Assembly, Compiled, Hardware Description
+#    Language, Interpreted, Not Language-Specific
+
+Language Class: <<LANGCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Language Class: <<LANGCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Operating System Name: AIX, Android, BlackBerry OS,
+#    Chrome OS, Darwin, FreeBSD, iOS, macOS, NetBSD, OpenBSD, Red Hat,
+#    Solaris, SUSE, tvOS, Ubuntu, watchOS, Windows 9x, Windows
+#    Embedded, Windows NT
+
+Operating System Name: <<OS1>>
+Prevalence: <<PREVALENCE1>>
+
+Operating System Name: <<OS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Operating System Class: Linux, macOS, Unix, Windows,
+#    Not OS-Specific
+
+
+Operating System Class: <<OSCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Operating System Class: <<OSCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Architecture Name: Alpha, ARM, Itanium, Power
+#     Architecture, SPARC, x86, Other
+
+
+Architecture Name: <<ARCH1>>
+Prevalence: <<PREVALENCE1>>
+
+Architecture Name: <<ARCH2>>
+Prevalence: <<PREVALENCE2>>
+
+Architecture Name: <<ARCH3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Architecture Class: Embedded, Microcomputer, Workstation,
+#     Not Architecture-Specific
+
+Architecture Class: <<ARCHCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Architecture Class: <<ARCHCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Technology Name: Web Server, Database Server, Accelerator
+#    Hardware, Analog and Mixed Signal Hardware, Audio/Video Hardware,
+#    Bus/Interface Hardware, Clock/Counter Hardware, Communication
+#    Hardware, Controller Hardware, Memory Hardware, Microcontroller
+#    Hardware, Network on Chip Hardware, Power Management Hardware,
+#    Processor Hardware, Security Hardware, Sensor Hardware, Storage
+#    Hardware, Test/Debug Hardware,
+
+
+Technology Name: <<TECH1>>
+Prevalence: <<PREVALENCE1>>
+
+Technology Name: <<TECH2>>
+Prevalence: <<PREVALENCE2>>
+
+Technology Name: <<TECH3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Technology Class: Client Server, Cloud Computing, ICS/OT,
+#     Mainframe, Mobile, N-Tier, SOA, System on Chip, Web Based, Not
+#     Technology-Specific
+	
+Technology Class: <<TECHCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Technology Class: <<TECHCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+************************************************************************************************
+
+COMMON CONSEQUENCES:
+
+# This element will cover the typical negative security impact (or
+# impacts) that occurs if this weakness can be exploited by an
+# attacker. Each Consequence must include a Scope and Impact. Both the
+# Likelihood and Note elements are optional.
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#conseq
+
+
+
+# Values for Scope: Confidentiality, Integrity, Availability, Access
+#    Control, Accountability, Authentication, Authorization,
+#    Non-Repudiation, Other
+
+
+# Values for Impact: Modify Memory, Read Memory, Modify Files or
+#    Directories, Read Files or Directories, Modify Application Data,
+#    Read Application Data, DoS: Crash, Exit, or Restart, DoS:
+#    Amplification, DoS: Instability, DoS: Resource Consumption (CPU),
+#    DoS: Resource Consumption (Memory), DoS: Resource Consumption
+#    (Other), Execute Unauthorized Code or Commands, Gain Privileges
+#    or Assume Identity, Bypass Protection Mechanism, Hide Activities,
+#    Alter Execution Logic, Quality Degradation, Unexpected State,
+#    Varies by Context, Reduce Maintainability, Reduce Performance,
+#    Reduce Reliability, Other
+
+
+# Values for Likelihood: High, Medium, Low, Unknown
+
+
+Scope: <<SCOPE1>>
+
+Impact: <<IMPACT1a>>; <<IMPACT1b>>; <<IMPACT1c>>
+
+Likelihood: <LIKELIHOOD1>>
+
+Note: <<put the information here>>
+
+
+
+
+Scope: <<SCOPE2>>
+
+Impact: <<IMPACT2a>>; <<IMPACT2b>>; <<IMPACT2c>>
+
+Likelihood: <LIKELIHOOD2>>
+
+Note: <<put the information here>>
+
+
+
+
+Scope: <<SCOPE3>>
+
+Impact: <<IMPACT3a>>; <<IMPACT3b>>; <<IMPACT3c>>
+
+Likelihood: <LIKELIHOOD3>>
+
+Note: <<put the information here>>
+
+
+
+************************************************************************************************
+
+# 8. DEMONSTRATIVE EXAMPLES (required)
+
+DEMONSTRATIVE EXAMPLES:
+
+# The entry should have one or more demonstrative examples, but
+# submitters should not put significant effort into these until the CWE
+# team has reviewed and accepted the general concepts behind the
+# submission. Submissions can include example information for either
+# Software, Hardware, or both, as relevant.
+
+# "BAD CODE" and "GOOD CODE" can be code snippets, descriptions of a
+# design or architecture, or an algorithm or protocol.
+#
+# * If you would like to submit diagrams/images to support any
+# weakness descriptive examples, please attach it to the email
+# submission in a png format and reference it by filename where
+# desired. For an example, please see:
+# https://cwe.mitre.org/data/definitions/1256.html
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#demox
+
+# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
+#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
+#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
+#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
+#    Assembly, Other
+
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+---------------
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+
+************************************************************************************************
+
+OBSERVED EXAMPLES:
+
+# Where known, the submission should identify multiple
+# publicly-reported vulnerabilities in real-world products that
+# exhibit the weakness. If possible, include CVE Identifier, its
+# corresponding weblink, and a short summary. If a CVE ID is
+# unavailable, use the Link to point to the reference that explains
+# the vulnerability.
+
+# The ID should be the CVE Identifier, if available. If not available,
+# then supply a title or alternate ID used by the reference.
+
+# The Link should be the URL to the reference that explains the
+# weakness that leads to the vulnerability.
+
+# The ObexSummary should be a brief sentence or two that focuses solely on
+# the weakness in the affected product.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#obex
+
+ID: <<CVE1>>
+
+Link: <<LINK1>>
+
+ObexSummary: <<SUM1>>
+
+
+ID: <<CVE2>>
+
+Link: <<LINK2>>
+
+ObexSummary: <<SUM2>>
+
+
+ID: <<CVE3>>
+
+Link: <<LINK3>>
+
+ObexSummary: <<SUM3>>
+
+
+ID: <<CVE4>>
+
+Link: <<LINK4>>
+
+ObexSummary: <<SUM4>>
+
+
+
+************************************************************************************************
+
+POTENTIAL MITIGATIONS:
+
+# This element should cover one or more techniques that will eliminate
+# and/or reduce the frequency or impact of the weakness. Each mitigation
+# must include a Phase and Description, while the Effectiveness element
+# is optional. A descriptive Effectiveness Note is also optional.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#mitigations
+
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation,, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+# Values for Effectiveness: High, Moderate, Limited, Incidental,
+#    Discouraged Common Practice, Defense in Depth, None
+
+
+Phase: <<PHASE1>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT1>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: <<PHASE2>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT2>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: <<PHASE3>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT3>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+
+************************************************************************************************
+
 RELATED WEAKNESSES:
 
-   ChildOf CWE-200
+# Identify the parent CWE(s) under which this weakness should be
+# classified. Ensure that these parents are Weakness types, not
+# categories. "MemberOf" relationships to categories are allowed, but
+# at least one parent must be a Weakness.  The CWE team will perform
+# additional analysis to ensure that the appropriate relationships
+# exist.
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#rels
+
+# Relationships are of the form:
+#
+#   RelactionshipType ID View-ID
+#
+# For example, CWE-78 (OS command injection) is a ChildOf CWE-77
+# (command injection) under View-ID 1000 (the Research view).
+# 
+# Values for RelType: ChildOf, MemberOf, ParentOf, PeerOf, etc.
+#
+# The ID is the numeric CWE ID to which this submission has a relationship.
+#
+# The View-ID is the view under which the relationship is
+# defined, typically View-1000, or View-1194 (for hardware), etc.
+#
+# There should be at least one ChildOf relationship in view 1000.
+
+RelType: ChildOf
+ID: CWE-200
+View-ID: CWE-1000
+
+RelType: <<RelationshipType>>
+ID: <<CWE-ID>>
+View-ID: <<ID of the view in which this relationship exists>>
+
+
+RelType: <<RelationshipType>>
+ID: <<CWE-ID>>
+View-ID: <<ID of the view in which this relationship exists>>
+
+
 
 REFERENCES:
 
+# The submission should have one or more references that explain the
+# weakness, how to mitigate it, or some other relevant details.
+# 
+# References can include one or more academic papers, white papers, blog
+# posts, slide presentations, or videos that describe the weakness, with
+# URLs.
+# 
+# References should be easy to understand, freely available at their
+# URL, and clearly applicable to the weakness.
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#references
+
 Title: Intel Corporation., "Refined Speculative Execution Terminology," Intel, 5 April 2021. 
+
 URL: https://www.intel.com/content/www/us/en/developer/articles/technical/softwaresecurity-guidance/best-practices/refined-speculative-execution-terminology.html
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+
+
+Title: <<put the information here>>
+
+URL: <<put the information here>>
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+
+
+Title: <<put the information here>>
+
+URL: <<put the information here>>
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+
 
 
 ACTIVE ISSUES:
@@ -44,19 +528,21 @@ ACTIVE ISSUES:
 RESOLVED ISSUES:
 
 
+
+
 TIMELINE:
 
 Received: 2023-09-19
 
-Ack-Receipt: YYYY-MM-DD
+Ack-Receipt: 2023-09-19
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2023-09-19
 
 Init-Consultation: YYYY-MM-DD
 
 Init-Rejected: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2023-09-19
 
 Full-Sub-Requested: YYYY-MM-DD
 
