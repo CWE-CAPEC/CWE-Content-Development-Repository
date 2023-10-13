@@ -2,7 +2,7 @@
 
 # Table of Contents
 
-- [CWE-Submissions](#cwe-submissions)
+- [CWE Content Development Repository](#cwe-content-development-repository)
 - [Pilot Program - September 12 to October 6, 2023](#pilot-program---september-12-to-october-6-2023)
 - [Repository Layout](#repository-layout)
 - [Guidelines for New Content Suggestions](#guidelines-for-new-content-suggestions)
@@ -15,7 +15,7 @@
 - [Additional Supporting Information](#additional-supporting-information)
 
 
-# CWE-Submissions
+# CWE-Content-Development-Repository
 
 The CWE Program has created this public GitHub repository to increase transparency and third-party collaborative input into the CWE content development process.  Submissions are received through the [CWE Submission Form](https://cwesubmission.mitre.org/), after which submission documentation is uploaded here for the entire CWE community to view and comment as the entry develops towards being ready for publication.
 
