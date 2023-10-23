@@ -3,7 +3,7 @@
 # Table of Contents
 
 - [CWE Content Development Repository](#cwe-content-development-repository)
-- [Pilot Program - September 12 to October 6, 2023](#pilot-program---september-12-to-october-6-2023)
+- [Pilot Program](#pilot-program)
 - [Repository Layout](#repository-layout)
 - [Guidelines for New Content Suggestions](#guidelines-for-new-content-suggestions)
 - [Summary of Stages and Phases](#summary-of-stages-and-phases)
