@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-a1334d32
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Received
+SUBMISSION STATUS: Init-Accepted
 
 ORIGIN: sub-server
 
@@ -48,15 +48,15 @@ TIMELINE:
 
 Received: 2023-09-19
 
-Ack-Receipt: YYYY-MM-DD
+Ack-Receipt: 2023-09-19
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2023-09-19
 
 Init-Consultation: YYYY-MM-DD
 
 Init-Rejected: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2023-09-19
 
 Full-Sub-Requested: YYYY-MM-DD
 

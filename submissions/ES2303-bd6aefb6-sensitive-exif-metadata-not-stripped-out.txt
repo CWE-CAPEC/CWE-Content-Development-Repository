@@ -1,0 +1,90 @@
+SUBMISSION COMMUNICATION ID: ES2303-bd6aefb6
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-03-29 23:36:51
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER:
+
+MTRACKER: #854
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Sensitive Exif metadata not stripped out during upload by user when redundant
+
+DESCRIPTION:
+
+In cases when product or service don't need an informations like GPS data
+it is redundant from point of view of product and service, but at the same
+time it is a threat for users. It can leads to expose of sensitive data
+like home address and similar. Example: typical chat or forum where users
+can upload their photos as avatars - bad actor can check in manual or
+automatic way photos' Exif data and get to know about geolocalization data.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-359
+
+REFERENCES:
+
+Title: CWE-359: Exposure of Private Personal Information to an Unauthorized Actor
+URL: https://cwe.mitre.org/data/definitions/359.html
+
+
+ACTIVE ISSUES:
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-03-29
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:
