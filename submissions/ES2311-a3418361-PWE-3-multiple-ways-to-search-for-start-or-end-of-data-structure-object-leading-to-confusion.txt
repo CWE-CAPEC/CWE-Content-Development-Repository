@@ -1,0 +1,100 @@
+SUBMISSION COMMUNICATION ID: ES2311-a3418361
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-11-14 23:38:10
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #42
+
+MTRACKER: #955
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: PWE-3: Multiple ways to search for start or end of data structure object leading to confusion
+
+DESCRIPTION:
+
+File formats specification often have identifying u2018magicu2019 markers
+to identify the file format or the start and end of the format. Polygot
+files exist whenever different file formats can co-exist in the same file.
+Depending on the parser, each will parse the start location differently for
+each format. For example, a polygot file can contain both a PDF and ZIP at
+the same time. Beside the initial entry point, this weakness can encompass
+locating the start or end of data structures within the data format. A
+malicious actor can manipulate the file by modifying data structures such
+that a parser may become confused and parse from the wrong start or end
+location. This can happen because the parser is being overly lenient,
+confusing error handling, unclear specification, or badly defined search
+functions.
+
+RELATED WEAKNESSES:
+
+   Other CWE-125
+   Other CWE-427
+
+REFERENCES:
+
+Title: Parser Weakness Enumeration: Definition and Preliminary Assessment
+URL: https://ieeexplore.ieee.org/document/10305625
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-11-14
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:

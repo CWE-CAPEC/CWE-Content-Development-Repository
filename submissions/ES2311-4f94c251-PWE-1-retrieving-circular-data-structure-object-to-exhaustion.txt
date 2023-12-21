@@ -1,0 +1,99 @@
+SUBMISSION COMMUNICATION ID: ES2311-4f94c251
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-11-14 23:31:41
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #45
+
+MTRACKER: #952
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: PWE-1: Retrieving circular data structure object to exhaustion
+
+DESCRIPTION:
+
+When parsing data structures, it is possible for data references to go down
+a circular logic path in an infinite referencing loop. This error commonly
+occurs in cyclic tree type structures. Besides loops, it can also occur in
+infinite recursion. A self-referencing object pointer will consume memory
+and processor usage until the process is terminated, resulting in a denial
+of service. However, if the memory can be controlled, it can lead to the
+attacker gaining remote execution. This is the same genre of bugs as
+compression bombs, commonly occurring in archive or zip bombs that
+decompress a large amount of data in memory, causing memory exhaustion, and
+the process to crash. Other uncommon compression formats are also
+susceptible: jpeg, png, webp, nitf, etc.
+
+RELATED WEAKNESSES:
+
+   Other CWE-409
+   Other CWE-1047
+
+REFERENCES:
+
+Title: Parser Weakness Enumeration: Definition and Preliminary Assessment
+URL: https://ieeexplore.ieee.org/document/10305625
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-11-14
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:

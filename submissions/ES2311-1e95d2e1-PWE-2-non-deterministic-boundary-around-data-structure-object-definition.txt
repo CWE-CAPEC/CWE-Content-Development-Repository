@@ -1,0 +1,99 @@
+SUBMISSION COMMUNICATION ID: ES2311-1e95d2e1
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-11-14 23:34:30
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #43
+
+MTRACKER: #954
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: PWE-2: Non-deterministic boundary around data structure object definition
+
+DESCRIPTION:
+
+The complexity of certain file formats introduces ambiguities that may lead
+to different interpretations on how to read and construct the model of the
+document. The format specification inadvertently or does not proscribe
+against undefined data cavities around or between data object structures.
+In file formats that contain random access, references to data objects may
+contain location calculations that leave openings between objects. This can
+also occur in sequential file formats if boundaries are not clearly
+defined. A side effect of cavities is hidden data. The data cavity may
+contain untrusted code that the parser assume is trusted. Any parser code
+that mishandles untrusted data due to lax boundary conditions can
+potentially lead to an overflow and possibly code execution.
+
+RELATED WEAKNESSES:
+
+   Other CWE-231
+   Other CWE-912
+
+REFERENCES:
+
+Title: Parser Weakness Enumeration: Definition and Preliminary Assessment
+URL: https://ieeexplore.ieee.org/document/10305625
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-11-14
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:

@@ -1,0 +1,101 @@
+SUBMISSION COMMUNICATION ID: ES2303-af57ba9e
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-03-31 16:32:59
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #55
+
+MTRACKER: #937
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Insufficient protection of 2FA SMS Code
+
+DESCRIPTION:
+
+When 2FA SMS code is displayed at the beginning of the SMS message, quite
+often it is possible to get to know code value without unblock device
+action. That means, bad actor without knowing how to unblock victim device
+can get to know this sensitive information, because it is displayed often
+in 'bar' - shortcut/preview of message. Safer approach is to place this
+code after part displayed message's shortcut. Example: victim leave a
+mobile device in the room, because it is PIN or pattern protected and go
+out for few minutes, bad actor from the same room can try exploit. Example:
+'CODE Lorem ips--um' vs 'Lorem ipsum C--ODE' ; here "--" means ending of
+visible part without unblocked device. Thanks to this real user who know
+how to unblock device will get to know 2FA SMS code, but bad actor will can
+not exploit this. This scenario assumes that bad actor is close to victim's
+device - physicial part, but message form with 2FA Code is software part.
+
+RELATED WEAKNESSES:
+
+   Other CWE-308
+   Other CWE-200
+   ChildOf CWE-522
+
+REFERENCES:
+
+Title: CWE-522: Insufficiently Protected Credentials
+URL: https://cwe.mitre.org/data/definitions/522.html
+
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-03-31
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

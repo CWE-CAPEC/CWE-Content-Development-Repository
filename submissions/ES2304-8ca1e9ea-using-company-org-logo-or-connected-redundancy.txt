@@ -1,0 +1,102 @@
+SUBMISSION COMMUNICATION ID: ES2304-8ca1e9ea
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-04-07 22:40:22
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #54
+
+MTRACKER: #938
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Using company/org logo or connected with them items in redundancy situations
+
+DESCRIPTION:
+
+From time to time some orgs/companies are using logo or connected with them
+items in redundancy situations which can provide to unwanted actions like
+be an 'authorized' by them for bad actors (illegal actions). Example:
+company as an added feature let to all users make a QR code for site or
+something else with logo company or company connected - feature should just
+make a QR code which works correct (from user point of view and usability),
+but adding a company's logo by default can be read as redundant and
+unwanted action, because they don't know how users (so also bad actors)
+will exploit this feature. In short words bad actors can exploits that QR
+code with company's logo in really easy way - some victims will be remember
+the malicious results with company's logo. There can be many examples of
+redundant adding of org/company connected items - exploiting of
+bussiness/marketing logic where intentions of some feature were good, but
+possibility of exploits by bad actors are large.
+
+RELATED WEAKNESSES:
+
+   Other CWE-451
+
+REFERENCES:
+
+Title: CAPEC-148: Content Spoofing
+URL: https://capec.mitre.org/data/definitions/148.html
+
+Title: CWE CATEGORY: Business Logic Errors
+URL: https://cwe.mitre.org/data/definitions/840.html
+
+
+
+
+ACTIVE ISSUES:
+
+
+RESOLVED ISSUES:
+
+
+TIMELINE:
+
+Received: 2023-04-07
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

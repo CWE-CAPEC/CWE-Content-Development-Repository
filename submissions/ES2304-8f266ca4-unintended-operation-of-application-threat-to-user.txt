@@ -1,0 +1,107 @@
+SUBMISSION COMMUNICATION ID: ES2304-8f266ca4
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-04-11 21:31:47
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #53
+
+MTRACKER: #939
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Unintended operation of the application results in a threat to the user
+
+DESCRIPTION:
+
+It can be exploited by bad actor in phising attacks, as well as in general
+with social engineering. But the main point is that there can be situation
+where webapp is like bad actor. Example: automatic translation service is
+translating website address as well as other plain text, it provide to
+result like "example.com" is "przyklad.com" (case English-Polish), please
+notice that translated website address is totally different one. Example:
+automatic translation is translating email addresses similar like for
+example about website address: address@example.com vs adres@przyklad.com.
+The consequences may be dire. Please notice that it is not about just
+translating only these cases, but case where these important (external
+website address or email address) are concluded inside translated content.
+User can be in hurry and copy translated results (large text with incorrect
+and malicious results). Proposed solution - proper regex for parts which
+shoudn't be translated.
+
+RELATED WEAKNESSES:
+
+   Other CWE-451
+
+REFERENCES:
+
+Title: CAPEC-148: Content Spoofing
+URL: https://capec.mitre.org/data/definitions/148.html
+
+Title: Clickjacking
+URL: https://owasp.org/www-community/attacks/Clickjacking
+
+Title: Content Spoofing
+URL: https://owasp.org/www-community/attacks/Content_Spoofing
+
+
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-04-11
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

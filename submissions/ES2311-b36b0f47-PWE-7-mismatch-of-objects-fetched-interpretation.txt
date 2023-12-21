@@ -1,0 +1,98 @@
+SUBMISSION COMMUNICATION ID: ES2311-b36b0f47
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-11-14 23:44:21
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #40
+
+MTRACKER: #957
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: PWE-7: Mismatch of objectu2019s fetched interpretation
+
+DESCRIPTION:
+
+This weakness is closely related to CWE-843: Type confusion. In unsafe
+languages where there is no type safety, a different type can be cast into
+another type. A mismatch in object type in a parser can lead to a cascade
+of parsing failures. For this weakness, we additionally want to call
+attention to externally fetched APIs that are commonly trusted. Data
+formats are not self-contained and may contain child elements that require
+separate libraries, files, or network for retrieval. Fetching from a
+third-party library can result in misinterpretation of the actual type
+compared to the expectant type. This can be difficult to identify when data
+flows through a chain of different parsers.
+
+RELATED WEAKNESSES:
+
+   Other CWE-843
+   Other CWE-99
+
+REFERENCES:
+
+Title: Parser Weakness Enumeration: Definition and Preliminary Assessment
+URL: https://ieeexplore.ieee.org/document/10305625
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-11-14
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:

@@ -1,0 +1,91 @@
+SUBMISSION COMMUNICATION ID: ES2304-1f8e1526
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-04-12 19:47:23
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #52
+
+MTRACKER: #940
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Error 404 on external pages - or just possibility to org/company ATO
+
+DESCRIPTION:
+
+It is org and companies duty to provide for users and clients checked
+resources. Example: provided external site to social media account - result
+404, bad actor can create account with this name (ATO). Example: provided
+external site to social media account - result improper account (account
+taken over).
+
+RELATED WEAKNESSES:
+
+   Other CWE-451
+
+REFERENCES:
+
+Title: CAPEC-103: Clickjacking
+URL: https://capec.mitre.org/data/definitions/103.html
+
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-04-12
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

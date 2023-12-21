@@ -1,0 +1,95 @@
+SUBMISSION COMMUNICATION ID: ES2311-7fcf708c
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-11-14 23:39:47
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #46
+
+MTRACKER: #951
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: PWE-4: Mishandling of duplicate data structure object
+
+DESCRIPTION:
+
+In parsing code, when designing data structure objects; check that
+duplicate objects do not exist. Duplicate keys may result in parser
+differentials. Parsers may take individually defined methods of resolving a
+duplicate entry. Often file formats do not restrict or prohibit duplicate
+objects and leaves error handling up to the parser. In most cases,
+duplicate keys are an error. However, the parser may want to handle it
+gracefully, leading to ambiguous behavior.
+
+RELATED WEAKNESSES:
+
+   Other CWE-694
+   Other CWE-825
+
+REFERENCES:
+
+Title: Parser Weakness Enumeration: Definition and Preliminary Assessment
+URL: https://ieeexplore.ieee.org/document/10305625
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-11-14
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:

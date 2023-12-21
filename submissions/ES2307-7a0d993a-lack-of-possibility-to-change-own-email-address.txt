@@ -1,0 +1,93 @@
+SUBMISSION COMMUNICATION ID: ES2307-7a0d993a
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-07-07 22:01:50
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #49
+
+MTRACKER: #946
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Lack of possibility to change own email address
+
+DESCRIPTION:
+
+Applications should allow to user (account owner) to changing own email
+address (ie. in account settings), especialy when it is part of credentials
+or recover account mechanism. This is important in cases like data
+compromised, where user's reaction/action should be quick and user should
+have opportunity to change own email address, as part of protection of own
+account. It is similar like possibility to change own password.
+
+RELATED WEAKNESSES:
+
+   Other CWE-522
+
+REFERENCES:
+
+Title: CAPEC-560: Use of Known Domain Credentials
+URL: https://capec.mitre.org/data/definitions/560.html
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-07-07
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:

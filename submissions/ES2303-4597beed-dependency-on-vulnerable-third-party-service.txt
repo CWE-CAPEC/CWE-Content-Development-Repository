@@ -1,0 +1,96 @@
+SUBMISSION COMMUNICATION ID: ES2303-4597beed
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-03-30 00:14:34
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #56
+
+MTRACKER: #936
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Dependency on Vulnerable Third-Party service
+
+DESCRIPTION:
+
+The product is using third-party service that contains at least one known
+vulnerability. Example: product use external (third-party) service (ie. to
+fetch images or other activity) where occurs Open Redirect issue, that
+leads in some cases to weak point also in the product. Example: other
+popular case is - product don't allow to upload dangerous type files, but
+is using external service delegated to minor tasks and there it is allowed
+- bad actor can exploit this connection, upload payloads and use link which
+contain product name, victim as customer will be more focused on the known
+name (product) and can skip the other part (third-party service where
+product occurs as customer) and in fact in will be real valid link (mix of
+product name and external service).
+
+RELATED WEAKNESSES:
+
+   Other CWE-1395
+
+REFERENCES:
+
+Title: CWE-1395: Dependency on Vulnerable Third-Party Component
+URL: https://cwe.mitre.org/data/definitions/1395.html
+
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+TIMELINE:
+
+Received: 2023-03-30
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

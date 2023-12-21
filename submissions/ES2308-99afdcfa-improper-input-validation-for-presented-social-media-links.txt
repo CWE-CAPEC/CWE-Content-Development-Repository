@@ -1,0 +1,99 @@
+SUBMISSION COMMUNICATION ID: ES2308-99afdcfa
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-08-22 12:25:55
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #47
+
+MTRACKER: #949
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Improper input validation for presented social media links
+
+DESCRIPTION:
+
+When webapp or website allows for users to add in Profile Settings own
+social media links and it is displayed with proper icon for each social
+media link - should be validated. In case where GitHub icon is displayed on
+user profile - should be validated for real GitHub handle
+(https://www.github.com/, https://github.com/ and so on), should not be
+allowed to enter other content like http://evilsite.com, because profile
+visitors want to see valid, real user external profile, not malicious site.
+Other example - if visitor see Twitter icon - link should be proper
+validated. In other way it leads to type of Clickjacking (UI redressing) -
+user see presented by webapp/website social media icon - during click want
+to see real content, should not see not-related site.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-20
+   Other CWE-451
+
+REFERENCES:
+
+Title: CWE-20: Improper Input Validation
+URL: https://cwe.mitre.org/data/definitions/20.html
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-08-22
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:

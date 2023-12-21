@@ -1,0 +1,96 @@
+SUBMISSION COMMUNICATION ID: ES2311-17601269
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-11-25 16:40:16
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #39
+
+MTRACKER: #958
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: CWE-601: URL Redirection to Untrusted Site ('Open Redirect')
+
+DESCRIPTION:
+
+A web application accepts a user-controlled input that specifies a link to
+an external site, and uses that link in a Redirect. This simplifies
+phishing attacks. Open Redirect allow also to immediately download a file
+without user permission in some cases (because it is about redirection to
+external site, some endpoints on external sites can trigger download
+action).
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-601
+
+REFERENCES:
+
+Title: Drive-by download
+URL: https://en.wikipedia.org/wiki/Drive-by_download
+
+Title: What Is a Drive by Download
+URL: https://www.kaspersky.com/resource-center/definitions/drive-by-download
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-11-25
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:

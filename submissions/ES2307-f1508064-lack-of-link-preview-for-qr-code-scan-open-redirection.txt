@@ -1,0 +1,95 @@
+SUBMISSION COMMUNICATION ID: ES2307-f1508064
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-07-07 21:35:21
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #51
+
+MTRACKER: #944
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Lack of link preview for QR code scan can leads to type of Open Redirection
+
+DESCRIPTION:
+
+Applications which allows to QR code scanning should show target link
+preview for users safety. If application will directly, at once redirect
+user to target site, it allows attackers for more successful phishing
+attacks and similar. Showing preview of target site is helpful and more
+secure for end-users.
+
+RELATED WEAKNESSES:
+
+   Other CWE-601
+
+REFERENCES:
+
+Title: CAPEC-98: Phishing
+URL: https://capec.mitre.org/data/definitions/98.html
+
+Title: QR code
+URL: https://en.wikipedia.org/wiki/QR_code
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-07-07
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
