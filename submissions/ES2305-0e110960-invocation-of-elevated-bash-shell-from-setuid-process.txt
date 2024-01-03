@@ -1,0 +1,108 @@
+SUBMISSION COMMUNICATION ID: ES2305-0e110960
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-05-08 18:52:35
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #59
+
+MTRACKER: #941
+
+GITHUBUSER: thezdi
+
+SUBMISSION TYPE: Software
+
+NAME: Invocation of Elevated Bash Shell Without Privileged Mode From a Setuid Process
+
+DESCRIPTION:
+
+Description
+Bash shell is executed with the effective privileges of a setuid process by
+setting its real identifiers to
+that of the effective identifiers instead of using privileged mode.
+
+Extended Description
+When bash shell is started with an effective user identifier not equal to
+the real user identifier, bash
+by default drops privileges by setting the effective user identifier to the
+real user identifier. The same
+applies to group identifiers. For cases in which it instead desired to run
+bash with the higher
+privileges of the effective user and group identifiers, bash provides a
+privileged mode u201c-pu201d option.
+For security, specifying u201c-pu201d also causes bash to ignore sensitive
+variables and shell functions from
+the environment.
+
+In some software implementations, instead of relying on privileged mode,
+the setuid process uses
+any of the user identifier setting system calls such as setuid, setreuid or
+setresuid to set the real user
+identifier to that of the effective user identifier befor
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-454
+
+REFERENCES:
+
+Title: Bash Privileged-Mode Vulnerabilities in Parallels Desktop and CDPATH Handling in MacOS
+URL: https://www.zerodayinitiative.com/blog/2023/4/5/bash-privileged-mode-vulnerabilities-in-parallels-desktop-and-cdpath-handling-in-macos
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-05-08
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

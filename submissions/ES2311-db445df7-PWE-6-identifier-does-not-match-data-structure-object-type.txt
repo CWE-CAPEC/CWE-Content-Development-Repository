@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2311-db445df7
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Received
+SUBMISSION STATUS: Ack-Receipt
 
 ORIGIN: sub-server
 
@@ -16,7 +16,7 @@ PUBTRACKER: #41
 
 MTRACKER: #956
 
-GITHUBUSER: 
+GITHUBUSER: dtlam01
 
 SUBMISSION TYPE: Software
 
@@ -54,7 +54,7 @@ TIMELINE:
 
 Received: 2023-11-14
 
-Ack-Receipt: YYYY-MM-DD
+Ack-Receipt: 2023-12-28
 
 Init-Review: YYYY-MM-DD
 
