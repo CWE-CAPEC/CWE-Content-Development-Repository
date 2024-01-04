@@ -1,0 +1,107 @@
+SUBMISSION COMMUNICATION ID: ES2306-c0b52346
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-06-23 21:01:10
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #60
+
+MTRACKER: #943
+
+GITHUBUSER: davidmcgrew
+
+SUBMISSION TYPE: Hardware, Software
+
+NAME: Use of a Quantum-Vulnerable Cryptographic Algorithm
+
+DESCRIPTION:
+
+Cryptographic algorithms are used to protect the confidentiality and
+authenticity stored in or transmitted through an untrusted medium. 
+Quantum-vulnerable algorithms will be exploitable if or when a
+Cryptographically Relevant Quantum Computer (CRQC) is built, in which case
+sensitive information could be exposed, data could be undetectably
+modified, and the identities of users and devices could be spoofed, among
+other impacts.	
+
+Data that is encrypted by a quantum-vulnerable encryption or key
+establishment algorithm, and has a long data protection period, is
+especially at risk, because an adversary can store encrypted data today and
+decrypt it later with a CRQC . Such an attack is called
+harvest-now-decrypt-later, and it creates significant risk for long-term
+data confidentiality.  Additionally, an adversary with a CRQC could forge
+signatures for quantum-vulnerable algorithms, creating a risk for
+signatures with a long data protection period, especially those used to
+sign software ima
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-327
+
+REFERENCES:
+
+Title: Announcing the Commercial National Security Algorithm Suite 2.0
+URL: https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF
+
+Title: NIST Post-Quantum Cryptography
+URL: https://csrc.nist.gov/projects/post-quantum-cryptography
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-06-23
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
