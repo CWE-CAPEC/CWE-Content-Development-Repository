@@ -31,8 +31,8 @@ tabs, but bad actor (other user of device - public library, org/company,
 and so on, still can see sensitive data if check other tabs after logged
 out action). That is especially dangerous issue for services like invoices,
 payments and other situations where are containing sensitive data. This
-weakness is dangerous at all, because even initialy not sensitive data, can
-be next useful for bad actor - depends of situation.
+weakness is dangerous at all, because even initially not sensitive data, can
+be next useful for bad actor - depends on situation.
 
 RELATED WEAKNESSES:
 
@@ -43,6 +43,8 @@ REFERENCES:
 Title: Session Management Cheat Sheet
 URL: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html
 
+Title: How to Logout of Multiple Tabs | React Web App
+URL: https://dev.to/demawo/how-to-logout-of-multiple-tabs-react-web-app-2egf
 
 
 

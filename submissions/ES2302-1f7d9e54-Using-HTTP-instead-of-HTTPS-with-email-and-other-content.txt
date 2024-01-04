@@ -25,7 +25,7 @@ NAME: Using HTTP instead of HTTPS with email and other content
 DESCRIPTION:
 
 While HTTPS forcing works correct, everything looks fine, but when failed
-that could be issue when sender will use as a link HTTP instead of HTTPS.
+that could be an issue when sender will use as a link HTTP instead of HTTPS.
 Example: https://www.example.com marked as safe, when
 http://www.example.com is marked as unsafe by browsers. When sender gives a
 link like this form: 'example.com' will take a user to unsafe site like
@@ -43,6 +43,11 @@ REFERENCES:
 Title: CWE-319: Cleartext Transmission of Sensitive Information
 URL: https://cwe.mitre.org/data/definitions/319.html
 
+Title: Mixed content
+URL: https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content
+
+Title: Fixing mixed content
+URL: https://web.dev/articles/fixing-mixed-content
 
 
 
