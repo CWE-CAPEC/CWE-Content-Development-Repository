@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-f7b489ac
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Full-Sub-Received
 
 ORIGIN: sub-server
 
@@ -24,19 +24,481 @@ NAME: Exposure of Sensitive Information in Shared Microarchitectural Structures 
 
 DESCRIPTION:
 
-A processor event may allow transient operations to access architecturally
-restricted data (for example, in another address space) in a shared
-microarchitectural structure (for example, a CPU cache), potentially
-exposing the data over a covert channel.
+A processor event may allow transient operations to access
+architecturally restricted data (for example, in another address
+space) in a shared microarchitectural structure (for example, a CPU
+cache), potentially exposing the data over a covert channel.
+
+EXTENDED DESCRIPTION:
+
+Many commodity processors have Instruction Set Architecture (ISA)
+features that protect software components from one another. These
+features can include memory segmentation, virtual memory, privilege
+rings, trusted execution environments, and virtual machines, among
+others. For example, virtual memory provides each process with its own
+address space, which prevents processes from accessing each other’s
+private data. Many of these features can be used to form
+hardware-enforced security boundaries between software components.
+
+Many commodity processors also share microarchitectural resources that
+cache (temporarily store) data, which may be confidential. These
+resources may be shared across processor contexts, including across
+SMT threads, privilege rings, or others.
+
+When transient operations allow access to ISA-protected data in a
+shared microarchitectural resource, this might violate users’
+expectations of the ISA feature that is bypassed. For example, if
+transient operations can access a victim’s private data in a shared
+microarchitectural resource, then the operations’ microarchitectural
+side effects may correspond to the accessed data. If an attacker can
+trigger these transient operations and observe their side effects
+through a covert channel, then the attacker may be able to infer the
+victim’s private data. Private data could include sensitive program
+data, OS/VMM data, page table data (such as memory addresses), system
+configuration data (see Demonstrative Example 3), or any other data
+that the attacker does not have the required privileges to access.
+
+MODES OF INTRODUCTION:
+
+Phase: Architecture and Design
+
+Note: This weakness can be introduced during hardware architecture and
+design if a data path allows architecturally restricted data to
+propagate to operations that execute before an older mis-prediction or
+processor event (such as an exception) is caught.
+
+Phase: Implementation
+
+Note: This weakness can be introduced during system software
+implementation if state-sanitizing operations are not invoked when
+switching from one context to another, according to the hardware
+vendor’s recommendations for mitigating the weakness.
+
+Phase: System Configuration
+
+Note: This weakness can be introduced if the system has not been
+configured according to the hardware vendor’s recommendations for
+mitigating the weakness.
+
+
+APPLICABLE PLATFORMS:
+
+Language Class: Not Language-Specific
+Prevalence: Undetermined
+
+Operating System Class: Not OS-Specific
+Prevalence: Undetermined
+
+Architecture Class: Not Architecture-Specific
+Prevalence: Undetermined
+
+Technology Class: Not Technology-Specific
+Prevalence: Undetermined
+
+
+COMMON CONSEQUENCES:
+
+Scope: Confidentiality
+Impact: Technical Impact: Read Memory, Read System Registers 
+Likelihood: Medium
+Note: <<put the information here>>
+
+DEMONSTRATIVE EXAMPLES:
+
+EXAMPLE 1
+
+INTRO TEXT:
+
+Some processors may perform access control checks in parallel with
+memory read/write operations. For example, when a user-mode program
+attempts to read data from memory, the processor may also need to
+check whether the memory address is mapped into user space or kernel
+space. If the processor performs the access concurrently with the
+check, then the access may be able to transiently read kernel data
+before the check completes. This race condition is demonstrated in the
+following code:
+
+BAD CODE: 
+1 ; rcx = kernel address, rbx = probe array
+2 xor rax, rax                # set rax to 0
+3 retry:
+4 mov al, byte [rcx]          # attempt to read kernel memory
+5 shl rax, 0xc                # multiply result by page size (4KB)
+6 jz retry                    # if the result is zero, try again
+7 mov rbx, qword [rbx + rax]  # transmit result over a cache covert channel
+
+LANGUAGE: x86-64 Assembly Language
+<<put the information here>>
+
+EXPLANATORY TEXT:
+
+Vulnerable processors may return kernel data from a shared
+microarchitectural resource in line 4, for example, from the
+processor’s L1 data cache. Since this vulnerability involves a race
+condition, the mov in line 4 may not always return kernel data (that
+is, whenever the check "wins" the race), in which case this
+demonstration code re-attempts the access in line 6. The accessed data
+is multiplied by 4KB, a common page size, to make it easier to observe
+via a cache covert channel after the transmission in line 7. The use
+of cache covert channels to observe the side effects of transient
+execution has been described in [REF-5].
+
+Code snippet is from [REF-5], with additional annotations.
+
+GOOD CODE:
+
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+EXAMPLE 2
+
+INTRO TEXT:
+
+Many commodity processors share microarchitectural fill buffers
+between sibling hardware threads on simultaneous multithreaded (SMT)
+processors. Fill buffers can serve as temporary storage for data that
+passes to and from the processor’s caches. Microarchitectural Fill
+Buffer Data Sampling (MFBDS) is a vulnerability that can allow a
+hardware thread to access its sibling’s private data in a shared fill
+buffer. The access may be prohibited by the processor’s ISA, but MFBDS
+can allow the access to occur during transient execution, in
+particular during a faulting operation or an operation that triggers a
+microcode assist.
+
+More information on MFBDS can be found in [REF-2] and [REF-6].
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+<<put the information here>>
+EXPLANATORY TEXT:
+<<put the information here>>
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+<<put the information here>>
+
+EXAMPLE 3
+
+INTRO TEXT:
+
+Some processors may allow access to system registers (for example,
+system coprocessor registers or model-specific registers) during
+transient execution. This scenario is depicted in the code snippet
+below. Under ordinary operating circumstances, code in exception level
+0 (EL0) is not permitted to access registers that are restricted to
+EL1, such as TTBR0_EL1. However, on some processors an earlier
+mis-prediction can cause the MRS instruction to transiently read the
+value in an EL1 register. In this example, a conditional branch (line
+2) can be mis-predicted as "not taken" while waiting for a slow load
+(line 1). This allows MRS (line 3) to transiently read the value in
+the TTBR0_EL1 register. The subsequent memory access (line 6) can
+allow the restricted register’s value to become observable, for
+example, over a cache covert channel.
+
+Code snippet is from [REF-7]. See also [REF-8].
+
+BAD CODE:
+
+1 LDR X1, [X2] ; arranged to miss in the cache
+2 CBZ X1, over ; This will be taken 
+3 MRS X3, TTBR0_EL1; 
+4 LSL X3, X3, #imm 
+5 AND X3, X3, #0xFC0
+6 LDR X5, [X6,X3] ; X6 is an EL0 base address
+7 over
+
+LANGUAGE: Arm Assembly Language
+
+<<put the information here>>
+
+EXPLANATORY TEXT:
+<<put the information here>>
+
+GOOD CODE:
+
+LANGUAGE: <<LANGUAGE>>
+<<put the information here>>
+
+
+OBSERVED EXAMPLES:
+
+ID: CVE-2017-5715
+
+Link: https://www.cve.org/CVERecord?id=CVE-2017-5715
+
+ObexSummary: A fault may allow transient user-mode operations to
+access kernel data cached in the L1D, potentially exposing the data
+over a covert channel.
+
+ID: CVE-2018-3615
+
+Link: https://www.cve.org/CVERecord?id=CVE-2018-3615
+
+ObexSummary: A fault may allow transient non-enclave operations to
+access SGX enclave data cached in the L1D, potentially exposing the
+data over a covert channel.
+
+ID: CVE-2019-1135
+
+Link: https://www.cve.org/CVERecord?id=CVE-2019-1135
+
+ObexSummary: A TSX Asynchronous Abort may allow transient operations
+to access architecturally restricted data, potentially exposing the
+data over a covert channel.
+
+
+POTENTIAL MITIGATIONS:
+
+
+Phase: Architecture and Design
+
+Description: Hardware designers may choose to engineer the processor’s
+pipeline to prevent architecturally restricted data from being used by
+operations that can execute transiently.
+
+Effectiveness: High
+
+Effectiveness Notes:
+
+
+Phase: Architecture and Design
+
+Description: Hardware designers may choose not to share
+microarchitectural resources that can contain sensitive data, such as
+fill buffers and store buffers.
+
+Effectiveness: Moderate
+
+Effectiveness Notes: This can be highly effective at preventing this
+weakness from being exposed across different SMT threads or different
+processor cores. It is generally less practical to isolate these
+resources between different contexts (for example, user and kernel)
+that may execute on the same SMT thread or processor core.
+
+
+Phase: Architecture and Design
+
+Description: Hardware designers may choose to sanitize specific
+microarchitectural state (for example, store buffers) when the
+processor transitions to a different context, such as whenever a
+system call is invoked. Alternatively, the hardware may expose
+instruction(s) that allow software to sanitize microarchitectural
+state according to the user or system administrator’s threat
+model. These mitigation approaches are similar to those that address
+CWE-226; however, sanitizing microarchitectural state may not be the
+optimal or best way to mitigate this weakness on every processor
+design.
+
+Effectiveness: Moderate
+
+Effectiveness Notes: Sanitizing shared state on context transitions
+may not be practical for all processors, especially when the amount of
+shared state affected by the weakness is relatively
+large. Additionally, this technique may not be practical unless there
+is a synchronous transition between two processor contexts that would
+allow the affected resource to be sanitized. For example, this
+technique alone may not suffice to mitigate asynchronous access to a
+resource that is shared by two SMT threads.
+
+
+Phase: Architecture and Design
+
+Description: Software architects may design software to enforce strong
+isolation between different contexts. For example, kernel page table
+isolation (KPTI) mitigates the Meltdown vulnerability [REF-4] by
+separating user-mode page tables from kernel-mode page tables, which
+prevents user-mode processes from using Meltdown to transiently access
+kernel memory [REF-1].
+
+Effectiveness: Limited
+
+Effectiveness Notes: Isolating different contexts across a process
+boundary (or another kind of architectural boundary) may only be
+effective for some weaknesses.
+
+
+Phase: Build and Compilation
+
+Description: If the weakness is exposed by a single instruction (or a
+small set of instructions), then the compiler (or JIT, etc.) can be
+configured to prevent the affected instruction(s) from being
+generated, and instead generate an alternate sequence of instructions
+that is not affected by the weakness.
+
+Effectiveness: Limited
+
+Effectiveness Notes: This technique may only be fully effective if it
+is applied to all software that runs on the system. Also, relatively
+few observed examples of this weakness have exposed data through only
+a single instruction.
+
+
+Phase: Implementation
+
+Description: System software can mitigate this weakness by invoking
+state-sanitizing operations when switching from one context to
+another, according to the hardware vendor’s recommendations.
+
+Effectiveness: Limited
+
+Effectiveness Notes: This technique may not be able to mitigate
+weaknesses that arise from resource sharing across SMT threads.
+
+
+Phase: System Configuration
+
+Description: Some systems may allow the user to disable (for example,
+in the BIOS) sharing of the affected resource.
+
+Effectiveness: Limited
+
+Effectiveness Notes: Disabling resource sharing (for example, by
+disabling SMT) may result in significant performance overhead.
+
+
+Phase: System Configuration
+
+Description: Some systems may allow the user to disable (for example,
+in the BIOS) microarchitectural features that allow transient access
+to architecturally restricted data.
+
+Effectiveness: Limited
+
+Effectiveness Notes: Disabling microarchitectural features such as
+predictors may result in significant performance overhead.
+
+
+Phase: Patching and Maintenance
+
+Description: The hardware vendor may provide a patch to sanitize the
+affected shared microarchitectural state when the processor
+transitions to a different context.
+
+Effectiveness: Moderate
+
+Effectiveness Notes: This technique may not be able to mitigate
+weaknesses that arise from resource sharing across SMT threads.
+
+
+Phase: Patching and Maintenance
+
+Description: The hardware vendor may provide a patch to prevent
+transient operations from accessing architecturally restricted data in
+shared microarchitectural resources.
+
+Effectiveness: Limited
+
+Effectiveness Description: This kind of patch may not be feasible or
+implementable for all processors or all weaknesses.
+
+
+DETECTION METHODS:
+
+Phase: Manual Analysis
+
+Description: This weakness can be detected in hardware by
+manually inspecting processor specifications. Features that exhibit
+this weakness may include microarchitectural predictors, access
+control checks that occur out-of-order, or any other features that can
+allow operations to execute without committing to architectural
+state. Academic researchers have demonstrated that new hardware
+weaknesses can be discovered by examining publicly available patent
+filings, for example [REF-2] and [REF-3].
+
+
+Phase: Automated Analysis Pre-Discovery
+
+Description: This weakness can be detected in hardware by
+employing static or dynamic taint analysis methods [REF-4]. These
+methods can label data in one context (for example, kernel data) and
+perform information flow analysis (or a simulation, etc.) to determine
+whether tainted data can appear in another context (for example, user
+mode). Alternatively, stale or invalid data in shared
+microarchitectural resources can be marked as tainted, and the taint
+analysis framework can identify when transient operations encounter
+tainted data.
+
+
+Phase: Automated Analysis Post-Discovery
+
+Description: Software vendors can release tools that detect
+presence of known weaknesses on a processor. For example, some of
+these tools can attempt to transiently execute a vulnerable code
+sequence and detect whether code successfully leaks data in a manner
+consistent with the weakness under test. Alternatively, some hardware
+vendors provide enumeration for the presence of a weakness (or lack of
+a weakness). These enumeration bits can be checked and reported by
+system software. For example, Linux supports these checks for many
+commodity processors:
+
+$ cat /proc/cpuinfo | grep bugs | head -n 1
+
+bugs : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit srbds mmio_stale_data retbleed
+
+
+
 
 RELATED WEAKNESSES:
 
-   ChildOf CWE-200
+RelType: ChildOf
+ID: CWE-A
+View-ID: CWE-1194
+
+RelType: MemberOf
+ID: CWE-1198
+View-ID: CWE-1194
+
+RelType: MemberOf
+ID: CWE-1201
+View-ID: CWE-1194
+
+RelType: MemberOf
+ID: CWE-1202
+View-ID: CWE-1194
+
 
 REFERENCES:
 
-Title: Intel Corporation., "Refined Speculative Execution Terminology," Intel, 5 April 2021. 
-URL: https://www.intel.com/content/www/us/en/developer/articles/technical/softwaresecurity-guidance/best-practices/refined-speculative-execution-terminology.html
+Title: The kernel development community. “Page Table Isolation (PTI)”
+URL: https://kernel.org/doc/html/next/x86/pti.html 
+Author: The kernel development community
+Date: 2023-01-30
+
+Title: RIDL: Rogue In-Flight Data Load
+URL: https://mdsattacks.com/files/ridl.pdf 
+Author: Stephan van Schaik, Alyssa Milburn, Sebastian Österlund, Pietro Frigo, Giorgi Maisuradze, Kaveh Razavi, Herbert Bos, Cristiano Giuffrida.
+Date: 2019-05-19
+
+Title: Downfall: Exploiting Speculative Data Gathering
+URL: https://www.usenix.org/system/files/usenixsecurity23-moghimi.pdf 
+Author: Daniel Moghimi
+Date: 2023
+
+Title: Hardware Security Leak Detection by Symbolic Simulation
+URL: https://ieeexplore.ieee.org/document/9617727 
+Author: Neta Bar Kama, Roope Kaivola
+Date: November, 2021
+
+Title: Meltdown: Reading Kernel Memory from User Space
+URL: https://meltdownattack.com/meltdown.pdf 
+Author: Moritz Lipp, Michael Schwarz, Daniel Gruss, Thomas Prescher, Werner Haas, Stefan Mangard, Paul Kocher, Daniel Genkin, Yuval Yarom, Mike Hamburg
+Date: 2020-05-21
+
+Title: Microarchitectural Data Sampling
+URL: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/intel-analysis-microarchitectural-data-sampling.html 
+Author: Intel Corporation
+Date: 2021-03-11
+
+Title: Whitepaper Cache Speculation Side-channels
+URL: https://armkeil.blob.core.windows.net/developer/Files/pdf/Cache_Speculation_Side-channels.pdf 
+Author: ARM
+Date: January, 2018
+
+Title: Rogue System Register Read/CVE-2018-3640/INTEL-SA-00115
+URL: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/advisory-guidance/rogue-system-register-read.html 
+Author: Intel Corporation
+Date: 2018-05-21
 
 
 ACTIVE ISSUES:
@@ -61,7 +523,7 @@ Init-Accepted: 2023-09-19
 
 Full-Sub-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Full-Sub-Received: 2023-12-21
 
 Full-Review: YYYY-MM-DD
 

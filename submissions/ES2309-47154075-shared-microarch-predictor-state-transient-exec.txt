@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-47154075
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Full-Sub-Received
 
 ORIGIN: sub-server
 
@@ -25,501 +25,445 @@ NAME: Exposure of Sensitive Information caused by Shared Microarchitectural Pred
 DESCRIPTION:
 
 Shared microarchitectural predictor state may allow code to influence
-transient execution across a hardware boundary, potentially exposing data
-that is accessible beyond the boundary.
+transient execution across a hardware boundary, potentially exposing
+data that is accessible beyond the boundary over a covert channel.
 
 EXTENDED DESCRIPTION:
 
-<<put the information here>>
+Many commodity processors have Instruction Set Architecture (ISA)
+features that protect software components from one another. These
+features can include memory segmentation, virtual memory, privilege
+rings, trusted execution environments, and virtual machines, among
+others. For example, virtual memory provides each process with its own
+address space, which prevents processes from accessing each other’s
+private data. Many of these features can be used to form
+hardware-enforced security boundaries between software components.
 
+When separate software components (for example, two processes) share
+microarchitectural predictor state across a hardware boundary, code in
+one component may be able to influence microarchitectural predictor
+behavior in another component. If the predictor can cause transient
+execution, the shared predictor state may allow an attacker to
+influence transient execution in a victim, and in a manner that could
+allow the attacker to infer private data from the victim.
 
-************************************************************************************************
+Predictor state may be shared when the processor transitions from one
+component to another (for example, when a process makes a system call
+to enter the kernel). Many commodity processors have features which
+prevent microarchitectural predictions that occur before a boundary
+from influencing predictions that occur after the boundary.
+
+Predictor state may also be shared between hardware threads, for
+example, sibling hardware threads on a processor that supports
+simultaneous multithreading (SMT). This sharing may be benign if the
+hardware threads are simultaneously executing in the same software
+component, or it could expose a weakness if one sibling is a malicious
+software component, and the other sibling is a victim software
+component. Processors that share microarchitectural predictors between
+hardware threads may have features which prevent microarchitectural
+predictions that occur on one hardware thread from influencing
+predictions that occur on another hardware thread.
+
+Features that restrict predictor state sharing across transitions or
+between hardware threads may be always-on, on by default, or may
+require opt-in from software.
 
 
 MODES OF INTRODUCTION:
 
-# This provides information about how and when a given weakness may be
-# introduced. Information should list the Phase of the development life
-# cycle in which the weakness can introduced. A descriptive Note is
-# optional but preferred.
-# 
-# If the weakness can be introduced in multiple phases, include separate
-# items for each Phase. Copy and paste as needed.
-# 
+Phase: Architecture and Design
 
-# Values for Phase: Policy, Requirements, Architecture and Design,
-#    Implementation, Build and Compilation, Testing, Documentation,,
-#    Bundling, Distribution, Installation, System Configuration,
-#    Operation,, Patching and Maintenance, Porting, Integration,
-#    Manufacturing, Decommissioning and End-of-Life
-
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
+Note: This weakness can be introduced during hardware architecture and
+design if predictor state is not properly isolated between modes (for
+example, user mode and kernel mode), if predictor state is not
+isolated between hardware threads, or if it is not isolated between
+other kinds of execution contexts supported by the processor.
 
 
-Phase: <<PHASE1>>
+Phase: Implementation
 
-Note: <<put the information here>>
-
-
-Phase: <<PHASE2>>
-
-Note: <<put the information here>>
+Note: This weakness can be introduced during system software
+implementation if predictor-state-sanitizing operations (for example,
+the indirect branch prediction barrier on Intel x86) are not invoked
+when switching from one context to another.
 
 
-************************************************************************************************
+Phase: System Configuration
+
+Note: This weakness can be introduced if the system has not been
+configured according to the hardware vendor’s recommendations for
+mitigating the weakness.
+
 
 APPLICABLE PLATFORMS:
 
-# This element specifies the programming languages, operating systems,
-# architectures, and technologies in which this weakness is usually
-# found. If an element does not apply to this submission, you can use
-# the "Not X-Specific" where "X" is the type of element.
+Language Class: Not Language-Specific
+Prevalence: Undetermined
 
-# If there are multiple languages, OSes, architectures, and/or
-# technologies, then list each one separately.
-# 
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#platforms
+Operating System Name: 
+Prevalence: Undetermined
 
+Operating System Class: Not OS-Specific
+Prevalence: Undetermined
 
-# Values for Prevalence: Often, Sometimes, Rarely, Undetermined
+Architecture Name: 
+Prevalence: Undetermined
 
-# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
-#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
-#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
-#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
-#    Assembly, Other
+Architecture Class: Not Architecture-Specific
+Prevalence: Undetermined
 
-Language Name: <<LANGUAGE1>>
-Prevalence: <<PREVALENCE1>>
+Technology Name: Microcontroller Hardware
+Prevalence: Rarely
 
+Technology Name: Processor Hardware
+Prevalence: Rarely
 
-Language Name: <<LANGUAGE2>>
-Prevalence: <<PREVALENCE2>>
+Technology Name: Memory Hardware
+Prevalence: Rarely
 
+Technology Class: System on Chip
+Prevalence: Undetermined
 
-Language Name: <<LANGUAGE3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Language Class: Assembly, Compiled, Hardware Description
-#    Language, Interpreted, Not Language-Specific
-
-Language Class: <<LANGCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Language Class: <<LANGCLASS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Operating System Name: AIX, Android, BlackBerry OS,
-#    Chrome OS, Darwin, FreeBSD, iOS, macOS, NetBSD, OpenBSD, Red Hat,
-#    Solaris, SUSE, tvOS, Ubuntu, watchOS, Windows 9x, Windows
-#    Embedded, Windows NT
-
-Operating System Name: <<OS1>>
-Prevalence: <<PREVALENCE1>>
-
-Operating System Name: <<OS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Operating System Class: Linux, macOS, Unix, Windows,
-#    Not OS-Specific
-
-
-Operating System Class: <<OSCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Operating System Class: <<OSCLASS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Architecture Name: Alpha, ARM, Itanium, Power
-#     Architecture, SPARC, x86, Other
-
-
-Architecture Name: <<ARCH1>>
-Prevalence: <<PREVALENCE1>>
-
-Architecture Name: <<ARCH2>>
-Prevalence: <<PREVALENCE2>>
-
-Architecture Name: <<ARCH3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Architecture Class: Embedded, Microcomputer, Workstation,
-#     Not Architecture-Specific
-
-Architecture Class: <<ARCHCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Architecture Class: <<ARCHCLASS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Technology Name: Web Server, Database Server, Accelerator
-#    Hardware, Analog and Mixed Signal Hardware, Audio/Video Hardware,
-#    Bus/Interface Hardware, Clock/Counter Hardware, Communication
-#    Hardware, Controller Hardware, Memory Hardware, Microcontroller
-#    Hardware, Network on Chip Hardware, Power Management Hardware,
-#    Processor Hardware, Security Hardware, Sensor Hardware, Storage
-#    Hardware, Test/Debug Hardware,
-
-
-Technology Name: <<TECH1>>
-Prevalence: <<PREVALENCE1>>
-
-Technology Name: <<TECH2>>
-Prevalence: <<PREVALENCE2>>
-
-Technology Name: <<TECH3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Technology Class: Client Server, Cloud Computing, ICS/OT,
-#     Mainframe, Mobile, N-Tier, SOA, System on Chip, Web Based, Not
-#     Technology-Specific
-	
-Technology Class: <<TECHCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Technology Class: <<TECHCLASS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-************************************************************************************************
 
 COMMON CONSEQUENCES:
 
-# This element will cover the typical negative security impact (or
-# impacts) that occurs if this weakness can be exploited by an
-# attacker. Each Consequence must include a Scope and Impact. Both the
-# Likelihood and Note elements are optional.
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#conseq
+Scope: Confidentiality
 
+Impact: Read Memory
 
-
-# Values for Scope: Confidentiality, Integrity, Availability, Access
-#    Control, Accountability, Authentication, Authorization,
-#    Non-Repudiation, Other
-
-
-# Values for Impact: Modify Memory, Read Memory, Modify Files or
-#    Directories, Read Files or Directories, Modify Application Data,
-#    Read Application Data, DoS: Crash, Exit, or Restart, DoS:
-#    Amplification, DoS: Instability, DoS: Resource Consumption (CPU),
-#    DoS: Resource Consumption (Memory), DoS: Resource Consumption
-#    (Other), Execute Unauthorized Code or Commands, Gain Privileges
-#    or Assume Identity, Bypass Protection Mechanism, Hide Activities,
-#    Alter Execution Logic, Quality Degradation, Unexpected State,
-#    Varies by Context, Reduce Maintainability, Reduce Performance,
-#    Reduce Reliability, Other
-
-
-# Values for Likelihood: High, Medium, Low, Unknown
-
-
-Scope: <<SCOPE1>>
-
-Impact: <<IMPACT1a>>; <<IMPACT1b>>; <<IMPACT1c>>
-
-Likelihood: <LIKELIHOOD1>>
+Likelihood: Medium
 
 Note: <<put the information here>>
 
-
-
-
-Scope: <<SCOPE2>>
-
-Impact: <<IMPACT2a>>; <<IMPACT2b>>; <<IMPACT2c>>
-
-Likelihood: <LIKELIHOOD2>>
-
-Note: <<put the information here>>
-
-
-
-
-Scope: <<SCOPE3>>
-
-Impact: <<IMPACT3a>>; <<IMPACT3b>>; <<IMPACT3c>>
-
-Likelihood: <LIKELIHOOD3>>
-
-Note: <<put the information here>>
-
-
-
-************************************************************************************************
-
-# 8. DEMONSTRATIVE EXAMPLES (required)
 
 DEMONSTRATIVE EXAMPLES:
 
-# The entry should have one or more demonstrative examples, but
-# submitters should not put significant effort into these until the CWE
-# team has reviewed and accepted the general concepts behind the
-# submission. Submissions can include example information for either
-# Software, Hardware, or both, as relevant.
-
-# "BAD CODE" and "GOOD CODE" can be code snippets, descriptions of a
-# design or architecture, or an algorithm or protocol.
-#
-# * If you would like to submit diagrams/images to support any
-# weakness descriptive examples, please attach it to the email
-# submission in a png format and reference it by filename where
-# desired. For an example, please see:
-# https://cwe.mitre.org/data/definitions/1256.html
-
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#demox
-
-# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
-#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
-#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
-#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
-#    Assembly, Other
-
+EXAMPLE 1
 
 INTRO TEXT:
 
-<<put the information here>>
+Branch Target Injection (BTI) is a vulnerability that can allow an SMT
+hardware thread to maliciously train the indirect branch predictor
+state that is shared with its sibling hardware thread. A cross-thread
+BTI attack requires the attacker to find a vulnerable code sequence
+within the victim software. For example, the authors of [REF-2]
+identified the following code sequence in the Windows library
+ntdll.dll:
 
 BAD CODE:
-LANGUAGE: <<LANGUAGE>>
 
-<<put the information here>>
+LANGUAGE: x86-64 Assembly Language
+
+  adc edi,dword ptr [ebx+edx+13BE13BDh]
+  adc dl,byte ptr [edi]
+  ...
+indirect_branch_site:
+  jmp dword ptr [rsi]   # at this point attacker knows edx, controls edi and ebx
 
 
 EXPLANATORY TEXT:
 
-<<put the information here>>
+To successfully exploit this code sequence to disclose the victim’s
+private data, the attacker must also be able to find an indirect
+branch site within the victim, where the attacker controls the values
+in edi and ebx, and the attacker knows the value in edx as shown above
+at the indirect branch site.
 
-GOOD CODE:
-LANGUAGE: <<LANGUAGE>>
+A proof-of-concept cross-thread BTI attack might proceed as follows:
 
-<<put the information here>>
+1. The attacker thread and victim thread must be co-scheduled on the
+same physical processor core.
+
+2. The attacker thread must train the shared branch predictor so that
+when the victim thread reaches indirect_branch_site, the jmp
+instruction will be predicted to target example_code_sequence instead
+of the correct architectural target. The training procedure may vary
+by processor, and the attacker may need to reverse-engineer the branch
+predictor to identify a suitable training algorithm.
+
+3. This step assumes that the attacker can control some values in the
+victim program, specifically the values in edi and ebx at
+indirect_branch_site. When the victim reaches indirect_branch_site the
+processor will (mis)predict example_code_sequence as the target and
+(transiently) execute the adc instructions. If the attacker chooses
+ebx so that `ebx = m
+
+	o 0x13BE13BD - edx, then the first adcwill load 32 bits from
+addressmin the victim’s address space and add*m(the data loaded fromm)
+to the attacker-controlled base address in edi. The second
+adcinstruction accesses a location in memory whose address corresponds
+to*m`.
+
+4. The adversary uses a covert channel analysis technique such as
+Flush+Reload ([REF-3]) to infer the value of the victim’s private data
+*m.
 
 
----------------
+EXAMPLE 2
 
 INTRO TEXT:
 
-<<put the information here>>
+BTI can also allow software in one execution context to maliciously
+train branch predictor entries that can be used in another
+context. For example, on some processors user-mode software may be
+able to train predictor entries that can also be used after
+transitioning into kernel mode, such as after invoking a system
+call. This vulnerability does not necessarily require SMT and may
+instead be performed in synchronous steps, though it does require the
+attacker to find an exploitable code sequence in the victim’s code,
+for example, in the kernel.
+
 
 BAD CODE:
-LANGUAGE: <<LANGUAGE>>
 
-<<put the information here>>
+LANGUAGE:
 
 
 EXPLANATORY TEXT:
 
-<<put the information here>>
-
-GOOD CODE:
-LANGUAGE: <<LANGUAGE>>
-
-<<put the information here>>
-
-
-
-************************************************************************************************
 
 OBSERVED EXAMPLES:
 
-# Where known, the submission should identify multiple
-# publicly-reported vulnerabilities in real-world products that
-# exhibit the weakness. If possible, include CVE Identifier, its
-# corresponding weblink, and a short summary. If a CVE ID is
-# unavailable, use the Link to point to the reference that explains
-# the vulnerability.
+ID: CVE-2017-5754
 
-# The ID should be the CVE Identifier, if available. If not available,
-# then supply a title or alternate ID used by the reference.
+Link: https://www.cve.org/CVERecord?id=CVE-2017-5754 
 
-# The Link should be the URL to the reference that explains the
-# weakness that leads to the vulnerability.
-
-# The ObexSummary should be a brief sentence or two that focuses solely on
-# the weakness in the affected product.
-
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#obex
-
-ID: <<CVE1>>
-
-Link: <<LINK1>>
-
-ObexSummary: <<SUM1>>
+ObexSummary: (Branch Target Injection, BTI, Spectre v2). Shared
+microarchitectural indirect branch predictor state may allow code to
+influence transient execution across a process, VM, or privilege
+boundary, potentially exposing data that is accessible beyond the
+boundary.
 
 
-ID: <<CVE2>>
+ID: CVE-2022-0001
 
-Link: <<LINK2>>
+Link: https://www.cve.org/CVERecord?id=CVE-2022-0001 
 
-ObexSummary: <<SUM2>>
-
-
-ID: <<CVE3>>
-
-Link: <<LINK3>>
-
-ObexSummary: <<SUM3>>
+ObexSummary: (Branch History Injection, BHI, Spectre-BHB). Shared
+branch history state may allow user-mode code to influence transient
+execution in the kernel, potentially exposing kernel data over a
+covert channel.
 
 
-ID: <<CVE4>>
+ID: CVE-2021-33149
 
-Link: <<LINK4>>
+Link: https://www.cve.org/CVERecord?id=CVE-2021-33149 
 
-ObexSummary: <<SUM4>>
+ObexSummary: (RSB underflow, Retbleed). Shared return stack buffer
+state may allow code that executes before a prediction barrier to
+influence transient execution after the prediction barrier,
+potentially exposing data that is accessible beyond the barrier over a
+covert channel.
 
 
+DETECTION METHODS:
 
-************************************************************************************************
+Method: Manual Analysis
+
+Notes: This weakness can be detected in hardware by manually
+inspecting processor specifications. Features that exhibit this
+weakness may have microarchitectural predictor state that is shared
+between hardware threads, execution contexts (for example, user and
+kernel), or other components that may host mutually distrusting
+software (or firmware, etc.).
+
+
+Method: Automated Analysis
+
+Notes: Software vendors can release tools that detect presence of
+known weaknesses on a processor. For example, some of these tools can
+attempt to transiently execute a vulnerable code sequence and detect
+whether code successfully leaks data in a manner consistent with the
+weakness under test. Alternatively, some hardware vendors provide
+enumeration for the presence of a weakness (or lack of a
+weakness). These enumeration bits can be checked and reported by
+system software. For example, Linux supports these checks for many
+commodity processors:
+
+$ cat /proc/cpuinfo | grep bugs | head -n 1
+
+bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit srbds mmio_stale_data retbleed
+
 
 POTENTIAL MITIGATIONS:
 
-# This element should cover one or more techniques that will eliminate
-# and/or reduce the frequency or impact of the weakness. Each mitigation
-# must include a Phase and Description, while the Effectiveness element
-# is optional. A descriptive Effectiveness Note is also optional.
+Phase: Architecture and Design
 
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#mitigations
+Description: Hardware designers may choose to use microarchitectural
+bits to tag predictor entries. For example, each predictor entry may
+be tagged with a kernel-mode bit which, when set, indicates that the
+predictor entry was created in kernel mode. The processor can use this
+bit to enforce that predictions in the current mode must have been
+trained in the current mode. This can prevent malicious cross-mode
+training, such as when user-mode software attempts to create predictor
+entries that influence transient execution in the kernel. Predictor
+entry tags can also be used to associate each predictor entry with the
+SMT thread that created it, and thus the processor can enforce that
+each predictor entry can only be used by the SMT thread that created
+it. This can prevent an SMT thread from using predictor entries
+crafted by a malicious sibling SMT thread.
 
+Effectiveness: Moderate
 
-# Values for Phase: Policy, Requirements, Architecture and Design,
-#    Implementation, Build and Compilation, Testing, Documentation,,
-#    Bundling, Distribution, Installation, System Configuration,
-#    Operation,, Patching and Maintenance, Porting, Integration,
-#    Manufacturing, Decommissioning and End-of-Life
-
-# Values for Effectiveness: High, Moderate, Limited, Incidental,
-#    Discouraged Common Practice, Defense in Depth, None
-
-
-Phase: <<PHASE1>>
-
-Description: <<put the information here>>
-
-Effectiveness: <<EFFECT1>>
-
-Effectiveness Notes: <<put the information here>>
-
-
-Phase: <<PHASE2>>
-
-Description: <<put the information here>>
-
-Effectiveness: <<EFFECT2>>
-
-Effectiveness Notes: <<put the information here>>
+Effectiveness Notes: Tagging can be highly effective for predictor
+state that is comprised of discrete elements, such as an array of
+recently visited branch targets. Predictor state can also have
+different representations that are not conducive to tagging. For
+example, some processors keep a compressed digest of branch history
+which does not contain discrete elements that can be individually
+tagged.
 
 
-Phase: <<PHASE3>>
+Phase: Architecture and Design
 
-Description: <<put the information here>>
+Description: Hardware designers may choose to sanitize
+microarchitectural predictor state (for example, branch prediction
+history) when the processor transitions to a different context, for
+example, whenever a system call is invoked. Alternatively, the
+hardware may expose instruction(s) that allow software to sanitize
+predictor state according to the user’s threat model. For example,
+this can allow operating system software to sanitize predictor state
+when performing a context switch from one process to another.
 
-Effectiveness: <<EFFECT3>>
+Effectiveness: Moderate
 
-Effectiveness Notes: <<put the information here>>
+Effectiveness Notes: This technique may not be able to mitigate
+weaknesses that arise from predictor state that is shared across SMT
+threads. Sanitizing predictor state on context switches may also
+negatively impact performance, either by removing predictor entries
+that could be reused when returning to the previous context, or by
+slowing down the context switch itself.
 
 
+Phase: Implementation
 
-************************************************************************************************
+Description: System software can mitigate this weakness by invoking
+predictor-state-sanitizing operations (for example, the indirect
+branch prediction barrier on Intel x86) when switching from one
+context to another, according to the hardware vendor’s
+recommendations.
+
+Effectiveness: Moderate
+
+Effectiveness Notes: This technique may not be able to mitigate
+weaknesses that arise from predictor state shared across SMT
+threads. Sanitizing predictor state may also negatively impact
+performance in some circumstances.
+
+
+Phase: Build and Compilation
+
+Description: If the weakness is exposed by a single instruction (or a
+small set of instructions), then the compiler (or JIT, etc.) can be
+configured to prevent the affected instruction(s) from being
+generated. One prominent example of this mitigation is retpoline
+([REF-1]).
+
+Effectiveness: Limited
+
+Effectiveness Notes: This technique is only effective for software
+that is compiled with this mitigation. Additionally, an alternate
+instruction sequence may mitigate the weakness on some processors but
+not others, even when the processors share the same ISA. For example,
+retpoline has been documented as effective on some x86 processors, but
+not fully effective on other x86 processors.
+
+
+Phase: System Configuration
+
+Description: Some systems may allow the user to disable predictor
+sharing. For example, this could be a BIOS configuration, or a
+model-specific register (MSR) that can be configured by the operating
+system or virtual machine monitor.
+
+Effectiveness: Moderate
+
+Effectiveness Notes: Disabling predictor sharing can negatively impact
+performance for some workloads that benefit from shared predictor
+state.
+
+
+Phase: Patching and Maintenance
+
+Description: The hardware vendor may provide a patch to, for example,
+sanitize predictor state when the processor transitions to a different
+context, or to prevent predictor entries from being shared across SMT
+threads. A patch may also introduce new ISA that allows software to
+toggle a mitigation.
+
+Effectiveness: Moderate
+
+Effectiveness Notes: This mitigation may only be fully effective if
+the patch prevents predictor sharing across all contexts that are
+affected by the weakness. Additionally, sanitizing predictor state
+and/or preventing shared predictor state can negatively impact
+performance in some circumstances.
+
+
+Phase: Documentation
+
+Description: If a hardware feature can allow microarchitectural
+predictor state to be shared between contexts, SMT threads, or other
+architecturally defined boundaries, the hardware designer may opt to
+disclose this behavior in architecture documentation. This
+documentation can inform users about potential consequences and
+effective mitigations.
+
+Effectiveness: High
+
+Effectiveness Notes: <<PUT INFORMATION HERE>>
+
 
 RELATED WEAKNESSES:
 
-# Identify the parent CWE(s) under which this weakness should be
-# classified. Ensure that these parents are Weakness types, not
-# categories. "MemberOf" relationships to categories are allowed, but
-# at least one parent must be a Weakness.  The CWE team will perform
-# additional analysis to ensure that the appropriate relationships
-# exist.
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#rels
-
-# Relationships are of the form:
-#
-#   RelactionshipType ID View-ID
-#
-# For example, CWE-78 (OS command injection) is a ChildOf CWE-77
-# (command injection) under View-ID 1000 (the Research view).
-# 
-# Values for RelType: ChildOf, MemberOf, ParentOf, PeerOf, etc.
-#
-# The ID is the numeric CWE ID to which this submission has a relationship.
-#
-# The View-ID is the view under which the relationship is
-# defined, typically View-1000, or View-1194 (for hardware), etc.
-#
-# There should be at least one ChildOf relationship in view 1000.
-
 RelType: ChildOf
-ID: CWE-200
+ID: CWE-A
 View-ID: CWE-1000
 
-RelType: <<RelationshipType>>
-ID: <<CWE-ID>>
-View-ID: <<ID of the view in which this relationship exists>>
+RelType: ChildOf
+ID: CWE-A
+View-ID: CWE-1194
 
+RelType: MemberOf
+ID: CWE-1198
+View-ID: CWE-1194
 
-RelType: <<RelationshipType>>
-ID: <<CWE-ID>>
-View-ID: <<ID of the view in which this relationship exists>>
+RelType: MemberOf
+ID: CWE-1201
+View-ID: CWE-1194
 
+RelType: MemberOf
+ID: CWE-1202
+View-ID: CWE-1194
 
 
 REFERENCES:
 
-# The submission should have one or more references that explain the
-# weakness, how to mitigate it, or some other relevant details.
-# 
-# References can include one or more academic papers, white papers, blog
-# posts, slide presentations, or videos that describe the weakness, with
-# URLs.
-# 
-# References should be easy to understand, freely available at their
-# URL, and clearly applicable to the weakness.
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#references
+Title: Intel Corporation. “Retpoline: A Branch Target Injection Mitigation”.
 
-Title: Intel Corporation., "Refined Speculative Execution Terminology," Intel, 5 April 2021. 
+URL: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/retpoline-branch-target-injection-mitigation.html
 
-URL: https://www.intel.com/content/www/us/en/developer/articles/technical/softwaresecurity-guidance/best-practices/refined-speculative-execution-terminology.html
+Author: Intel
 
-Author: <<put the information here>>
-
-Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+Date: 2022-08-22
 
 
-Title: <<put the information here>>
+Title: Spectre Attacks: Exploiting Speculative Execution
 
-URL: <<put the information here>>
+URL: https://spectreattack.com/spectre.pdf 
 
-Author: <<put the information here>>
+Author: Paul Kocher, Jann Horn, Anders Fogh, Daniel Genkin, Daniel Gruss, Werner Haas, Mike Hamburg, Moritz Lipp, Stefan Mangard, Thomas Prescher, Michael Schwarz, Yuval Yarom
 
-Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+Date: 2020-06-18
 
 
-Title: <<put the information here>>
+Title: Flush+Reload: A High Resolution, Low Noise, L3 Cache Side-Channel Attack
 
-URL: <<put the information here>>
+URL: https://www.usenix.org/system/files/conference/usenixsecurity14/sec14-paper-yarom.pdf
 
-Author: <<put the information here>>
+Author: Yuval Yarom, Katrina Falkner
 
-Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
-
+Date: 2014
 
 
 ACTIVE ISSUES:
@@ -546,7 +490,7 @@ Init-Accepted: 2023-09-19
 
 Full-Sub-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Full-Sub-Received: 2024-01-10
 
 Full-Review: YYYY-MM-DD
 

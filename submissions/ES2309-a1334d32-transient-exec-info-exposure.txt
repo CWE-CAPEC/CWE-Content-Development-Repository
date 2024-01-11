@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-a1334d32
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Full-Sub-Received
 
 ORIGIN: sub-server
 
@@ -24,18 +24,443 @@ NAME: Exposure of Sensitive Information during Transient Execution
 
 DESCRIPTION:
 
-A processor event or prediction may allow incorrect operations (or correct
-operations with incorrect data) to execute transiently, potentially
-exposing data over a covert channel.
+A processor event or prediction may allow incorrect operations (or
+correct operations with incorrect data) to execute transiently,
+potentially exposing data over a covert channel.
+
+
+EXTENDED DESCRIPTION:
+
+When operations execute but do not commit to the processor’s
+architectural state, this is commonly referred to as transient
+execution. This behavior can occur when the processor mis-predicts an
+outcome (such as a branch target), or when a processor event (such as
+an exception or microcode assist, etc.) is handled after younger
+operations have already executed. Operations that execute transiently
+may exhibit observable discrepancies (CWE-203) in covert channels such
+as data caches . Observable discrepancies of this kind can be detected
+and analyzed using timing or power analysis techniques, which may
+allow an attacker to infer information about the operations that
+executed transiently. For example, the attacker may be able to infer
+confidential data that was accessed or used by those operations.
+
+Transient execution weaknesses may be exploited using one of two
+methods. In the first method, the attacker generates a code sequence
+that exposes data through a covert channel when it is executed
+transiently (the attacker must also be able to trigger transient
+execution). Some transient execution weaknesses can only expose data
+that is accessible within the attacker’s processor context. For
+example, an attacker executing code in a software sandbox may be able
+to use a transient execution weakness to expose data within the same
+address space, but outside of the attacker’s sandbox. Other transient
+execution weaknesses can expose data that is architecturally
+inaccessible, that is, data protected by hardware-enforced boundaries
+such as page tables or privilege rings. These weaknesses are the
+subject of CWE-B.
+
+In the second exploitation method, the attacker first identifies a
+code sequence in a victim program that, when executed transiently, can
+expose data that is architecturally accessible within the victim’s
+processor context. For instance, the attacker may search the victim
+program for code sequences that resemble a bounds-check bypass
+sequence (see Demonstrative Example 1).  If the attacker can trigger a
+mis-prediction of the conditional branch and influence the index of
+the out-of-bounds array access, then the attacker may be able to infer
+the value of out-of-bounds data by monitoring observable discrepancies
+in a covert channel.
+
+MODES OF INTRODUCTION:
+
+Phase: Architecture and Design
+
+Note: This weakness can be introduced when a computing unit (such as a
+CPU, GPU, accelerator, or any other processor) uses out-of-order
+execution, speculation, or any other microarchitectural feature that
+can allow microarchitectural operations to execute without committing
+to architectural state.
+
+Phase: Implementation
+
+Note: This weakness can be introduced when sandboxes or managed
+runtimes are not properly isolated by using hardware-enforced
+boundaries. Developers of sandbox or managed runtime software should
+exercise caution when relying on software techniques (such as bounds
+checking) to prevent code in one sandbox from accessing confidential
+data in another sandbox. For example, an attacker sandbox may be able
+to trigger a processor event or mis-prediction in a manner that allows
+it to transiently read a victim sandbox’s private data.
+
+APPLICABLE PLATFORMS:
+
+Language Name: Not Language-Specific
+
+Prevalence: Undetermined
+
+Language Class: Not Language-Specific
+
+Prevalence: Undetermined
+
+Operating System Name: Not OS-Specific
+
+Prevalence: Undetermined
+
+Operating System Class: Not OS-Specific
+
+Prevalence: Undetermined
+
+Architecture Name: Not Architecture-Specific
+
+Prevalence: Undetermined
+
+Architecture Class: Not Architecture-Specific
+
+Prevalence: Undetermined
+
+Technology Name: Not Technology-Specific
+
+Prevalence: Undetermined
+
+Technology Class: Not Technology-Specific
+
+Prevalence: Undetermined
+
+COMMON CONSEQUENCES:
+
+Scope: Confidentiality
+Impact: Read Memory;
+Likelihood: Medium
+Note: None
+
+DEMONSTRATIVE EXAMPLES:
+
+INTRO TEXT:
+
+Secure programs perform bounds checking before accessing an array if
+the source of the array index is provided by an untrusted source such
+as user input. In the code below, data from array1 will not be
+accessed if x is out of bounds.
+
+BAD CODE:
+
+LANGUAGE: C
+
+if (x < array1_size)
+    y = array2[array1[x] * 4096];
+
+Code snippet is from [REF-14]  
+
+EXPLANATORY TEXT:
+
+However, if this code executes on a processor that performs
+conditional branch prediction the outcome of the if statement could be
+mis-predicted and the access on the next line will occur with a value
+of x that can point to an out-of-bounds location (within the program’s
+memory).
+
+Even though the processor does not commit the architectural effects of
+the mis-predicted branch, the memory accesses alter data cache state,
+which is not rolled back after the branch is resolved. The cache state
+can reveal array1[x] thereby providing a mechanism to recover the data
+value located at address array1 + x
+
+GOOD CODE:
+
+LANGUAGE: N/A
+
+None provided.
+
+INTRO TEXT:
+
+Some managed runtimes or just-in-time (JIT) compilers may overwrite
+recently executed code with new code. When the instruction pointer
+enters the new code, the processor may inadvertently execute the stale
+code that had been overwritten. This can happen, for instance, when
+the processor issues a store that overwrites a sequence of code, but
+the processor fetches and executes the (stale) code before the store
+updates memory. Similar to the first example, the processor does not
+commit the stale code’s architectural effects, though
+microarchitectural side effects can persist. Hence, confidential
+information accessed or used by the stale code may be inferred via an
+observable discrepancy in a covert channel.
+
+This vulnerability is described in more detail in [REF-11].
+
+BAD CODE:
+
+LANGUAGE: N/A
+
+None provided.
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+
+LANGUAGE: N/A
+
+None provided.
+
+OBSERVED EXAMPLES:
+
+ID: CVE-2017-5753
+
+Link: https://www.cve.org/CVERecord?id=CVE-2017-5753
+
+ObexSummary: Microarchitectural conditional branch predictors may allow operations to execute transiently after a misprediction, potentially exposing data over a covert channel.
+
+ID: CVE-2021-0089
+
+Link: https://www.cve.org/CVERecord?id=CVE-2021-0089
+
+ObexSummary: A machine clear triggered by self-modifying code may allow incorrect operations to execute transiently, potentially exposing data over a covert channel.
+
+ID: CVE-2022-0002
+
+Link: https://www.cve.org/CVERecord?id=CVE-2022-0002
+
+ObexSummary: Microarchitectural indirect branch predictors may allow incorrect operations to execute transiently after a misprediction, potentially exposing data over a covert channel.
+
+POTENTIAL MITIGATIONS:
+
+Phase: Architecture and Design
+
+Description: The hardware designer can attempt to prevent transient execution from causing observable discrepancies in specific covert channels.
+
+Effectiveness: Limited
+
+Effectiveness Notes: This technique has many pitfalls. For example,
+InvisiSpec was an early attempt to mitigate this weakness by blocking
+"micro-architectural covert and side channels through the
+multiprocessor data cache hierarchy due to speculative loads" [REF-1].
+Commodity processors and SoCs have many covert and side channels that
+exist outside of the data cache hierarchy. Even when some of these
+channels are blocked, others (such as execution ports [REF-2]) may
+allow an attacker to infer confidential data. Mitigation strategies
+that attempt to prevent transient execution from causing observable
+discrepancies also have other pitfalls, for example, see [REF-3].
+
+Phase: Requirements
+
+Description: Processor designers may expose instructions or other architectural features that allow software to mitigate the effects of transient execution, but without disabling predictors. These features may also help to limit opportunities for data exposure.
+
+Effectiveness: Moderate
+
+Effectiveness Notes: Instructions or features that constrain transient execution or suppress its side effects may impact performance.
+
+Phase: Requirements
+
+Description: Processor designers may expose registers (for example, control registers or model-specific registers) that allow privileged and/or user software to disable specific predictors or other hardware features that can cause confidential data to be exposed during transient execution.
+
+Effectiveness: Limited
+
+Effectiveness Notes: Disabling specific predictors or other hardware features may result in significant performance overhead.
+
+Phase: Requirements
+
+Description: Processor designers, system software vendors, or other agents may choose to restrict the ability of unprivileged software to access to high-resolution timers that are commonly used to monitor covert channels.
+
+Effectiveness: Defense in Depth
+
+Effectiveness Notes: Specific software algorithms can be used by an attacker to compensate for a lack of a high-resolution time source [REF-4].
+
+Phase: Build and Compilation
+
+Description: Isolate sandboxes or managed runtimes in separate address spaces (separate processes). For examples, see [REF-5].
+
+Effectiveness: High
+
+Effectiveness Notes: None
+
+Phase: Build and Compilation
+
+Description: Include serialization instructions (for example, LFENCE) that prevent processor events or mis-predictions prior to the serialization instruction from causing transient execution after the serialization instruction. For some weaknesses, a serialization instruction can also prevent a processor event or a mis-prediction from occurring after the serialization instruction (for example, CVE-2018-3639 can allow a processor to predict that a load will not depend on an older store; a serialization instruction between the store and the load may allow the store to update memory and prevent the prediction from happening at all).
+
+Effectiveness: Moderate
+
+Effectiveness Notes: When used to comprehensively mitigate a transient execution weakness (for example, by inserting an LFENCE after every instruction in a program), serialization instructions can introduce significant performance overhead. On the other hand, when used to mitigate only a relatively small number of high-risk code sequences, serialization instructions may have a low or negligible impact on performance.
+
+Phase: Build and Compilation
+
+Description: Use control-flow integrity (CFI) techniques to constrain the behavior of instructions that redirect the instruction pointer, such as indirect branch instructions.
+
+Effectiveness: Moderate
+
+Effectiveness Notes: Some CFI techniques may not be able to constrain transient execution, even though they are effective at constraining architectural execution. Or they may be able to provide some additional protection against a transient execution weakness, but without comprehensively mitigating the weakness. For example, Clang-CFI provides strong architectural CFI properties and can make some transient execution weaknesses more difficult to exploit [REF-6].
+
+Phase: Build and Compilation
+
+Description: If the weakness is exposed by a single instruction (or a small set of instructions), then the compiler (or JIT, etc.) can be configured to prevent the affected instruction(s) from being generated, and instead generate an alternate sequence of instructions that is not affected by the weakness. One prominent example of this mitigation is retpoline ([REF-7]).
+
+Effectiveness: Limited
+
+Effectiveness Notes: This technique may only be effective for software that is compiled with this mitigation. For some transient execution weaknesses, this technique may not be sufficient to protect software that is compiled without the affected instruction(s). For example, see CWE-B.
+
+Phase: Build and Compilation
+
+Description: Use software techniques that can mitigate the consequences of transient execution. For example, address masking can be used in some circumstances to prevent out-of-bounds transient reads.
+
+Effectiveness: Limited
+
+Effectiveness Notes: Address masking and related software mitigation techniques have been used to harden specific code sequences that could potentially be exploited via transient execution. For example, the Linux kernel makes limited use of manually inserted address masks to mitigate bounds-check bypass [REF-8].   Compiler-based techniques have also been used to automatically harden software [REF-9].
+
+Phase: Build and Compilation
+
+Description: Use software techniques (including the use of serialization instructions) that are intended to reduce the number of instructions that can be executed transiently after a processor event or misprediction.
+
+Effectiveness: Incidental
+
+Effectiveness Notes: Note: Some transient execution weaknesses can be exploited even if a single instruction is executed transiently after a processor event or mis-prediction. This mitigation strategy has many other pitfalls that prevent it from eliminating this weakness entirely. For example, see [REF-10].
+
+Phase: Documentation
+
+Description: If a hardware feature can allow incorrect operations (or correct operations with incorrect data) to execute transiently, the hardware designer may opt to disclose this behavior in architecture documentation. This documentation can inform users about potential consequences and effective mitigations.
+
+Effectiveness: High
+
+Effectiveness Notes: None
+
+
+DETECTION METHODS: 
+
+Method: Manual Analysis
+
+Notes: This weakness can be detected in hardware by manually
+inspecting processor specifications. Features that exhibit this
+weakness may include microarchitectural predictors, access control
+checks that occur out-of-order, or any other features that can allow
+operations to execute without committing to architectural
+state. Academic researchers have demonstrated that new hardware
+weaknesses can be discovered by exhaustively analyzing a processor’s
+machine clear (or nuke) conditions ([REF-11]).
+
+Method: Fuzzing - Hardware
+
+Notes: Academic researchers have demonstrated that this weakness can
+be detected in hardware using software fuzzing tools that treat the
+underlying hardware as a black box ([REF-12]).
+
+Method: Fuzzing - Software
+
+Notes: Academic researchers have demonstrated that this weakness can
+be detected in software using software fuzzing tools ([REF-13]).
+
+Method: Automated Static Analysis
+
+Notes: A variety of automated static analysis tools can identify
+potentially exploitable code sequences in software. These tools may
+perform the analysis on source code, on binary code, or on an
+intermediate code representation (for example, during compilation).
+
+Method: Automated Analysis
+
+Notes: Software vendors can release tools that detect presence of
+known weaknesses on a processor. For example, some of these tools can
+attempt to transiently execute a vulnerable code sequence and detect
+whether code successfully leaks data in a manner consistent with the
+weakness under test. Alternatively, some hardware vendors provide
+enumeration for the presence of a weakness (or lack of a
+weakness). These enumeration bits can be checked and reported by
+system software. For example, Linux supports these checks for many
+commodity processors:
+
+$ cat /proc/cpuinfo | grep bugs | head -n 1
+
+bugs : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit srbds mmio_stale_data retbleed
 
 RELATED WEAKNESSES:
 
-   ChildOf CWE-200
+RelType: ChildOf
+ID: CWE-669
+View-ID: CWE-1000
+
+
+RelType: MemberOf
+ID: CWE-1198
+View-ID: CWE-1194
+
+
+RelType: MemberOf
+ID: CWE-1201
+View-ID: CWE-1194
+
+
+RelType: MemberOf
+ID: CWE-1202
+View-ID: CWE-1194
+
 
 REFERENCES:
 
-Title: Intel Corporation., "Refined Speculative Execution Terminology," Intel, 5 April 2021. 
-URL: https://www.intel.com/content/www/us/en/developer/articles/technical/softwaresecurity-guidance/best-practices/refined-speculative-execution-terminology.html
+Author: Mengjia Yan, Jiho Choi, Dimitrios Skarlatos, Adam Morrison, Christopher W. Fletcher, Josep Torrella
+Date: October, 2018
+Title: [REF-1] InvisiSpec: making speculative execution invisible in the cache hierarchy.
+URL: http://iacoma.cs.uiuc.edu/iacoma-papers/micro18.pdf
+
+Author: Alejandro Cabrera Aldaya, Billy Bob Brumley, Sohaib ul Hassan, Cesar Pereida García, Nicola Tuveri
+Date: May, 2019
+Title: [REF-2] Port Contention for Fun and Profit".
+URL: https://eprint.iacr.org/2018/1060.pdf
+
+Author: Mohammad Behnia, Prateek Sahu, Riccardo Paccagnella, Jiyong Yu, Zirui Zhao, Xiang Zou, Thomas Unterluggauer, Josep Torrellas, Carlos Rozas, Adam Morrison, Frank Mckeen, Fangfei Liu, Ron Gabor, Christopher W. Fletcher, Abhishek Basak, Alaa Alameldeen
+Date: April, 2021
+Title: [REF-3] Speculative Interference Attacks: Breaking Invisible Speculation Schemes.
+URL: https://arxiv.org/abs/2007.11818
+
+Author: Ross Mcilroy, Jaroslav Sevcik, Tobias Tebbi, Ben L. Titzer, Toon Verwaest
+Date: 2019-02-14
+Title: [REF-4] Spectre is here to stay: An analysis of side-channels and speculative execution.
+URL: https://arxiv.org/pdf/1902.05178.pdf
+
+Author: Intel Corporation
+Date: 2018-01-03
+Title: [REF-5] Managed Runtime Speculative Execution Side Channel Mitigations.
+URL: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/runtime-speculative-side-channel-mitigations.html
+
+Author: The Clang Team
+Date: No Date
+Title: [REF-6] Control Flow Integrity.
+URL: https://clang.llvm.org/docs/ControlFlowIntegrity.html
+
+Author: Intel Corporation
+Date: 2022-08-22
+Title: [REF-7] Retpoline: A Branch Target Injection Mitigation.
+URL: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/retpoline-branch-target-injection-mitigation.html
+
+Author: The kernel development community
+Date: No Date
+Title: [REF-8] Speculation.
+URL: https://docs.kernel.org/6.6/staging/speculation.html
+
+Author: Chandler Carruth
+Date: No Date
+Title: [REF-9] Speculative Load Hardening.
+URL: https://llvm.org/docs/SpeculativeLoadHardening.html
+
+Author: Alyssa Milburn, Ke Sun, Henrique Kawakami
+Date: 2022-03-08
+Title: [REF-10] You Cannot Always Win the Race: Analyzing the LFENCE/JMP Mitigation for Branch Target Injection.
+URL: https://arxiv.org/abs/2203.04277
+
+Author: Hany Ragab, Enrico Barberis, Herbert Bos, Cristiano Giuffrida
+Date: August 2021
+Title: [REF-11] Rage Against the Machine Clear: A Systematic Analysis of Machine Clears and Their Implications for Transient Execution Attacks.
+URL: https://www.usenix.org/system/files/sec21-ragab.pdf.
+
+Author: Oleksii Oleksenko, Marco Guarnieri, Boris Köpf, Mark Silberstein
+Date: 2023-01-18
+Title: [REF-12] Hide and Seek with Spectres: Efficient discovery of speculative information leaks with random testing.
+URL: https://arxiv.org/pdf/2301.07642.pdf
+
+Author: Oleksii Oleksenko, Bohdan Trach, Mark Silberstein, Christof Fetzer
+Date: August 2020
+Title: [REF-13] SpecFuzz: Bringing Spectre-type vulnerabilities to the surface.
+URL: https://www.usenix.org/system/files/sec20-oleksenko.pdf
+
+Author: Paul Kocher, Jann Horn, Anders Fogh, Daniel Genkin, Daniel Gruss, Werner Haas, Mike Hamburg, Moritz Lipp, Stefan Mangard, Thomas Prescher, Michael Schwarz, Yuval Yarom
+Date: May 2019
+Title: [REF-14] Spectre Attacks: Exploiting Speculative Execution.
+URL: https://spectreattack.com/spectre.pdf
 
 
 ACTIVE ISSUES:
@@ -60,7 +485,7 @@ Init-Accepted: 2023-09-19
 
 Full-Sub-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Full-Sub-Received: 2023-12-21
 
 Full-Review: YYYY-MM-DD
 
