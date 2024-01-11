@@ -1,0 +1,93 @@
+SUBMISSION COMMUNICATION ID: ES2307-3ffe7565
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-07-31 11:06:38
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #62
+
+MTRACKER: #948
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Unverified Email Change
+
+DESCRIPTION:
+
+Similar like for CWE-620: Unverified Password Change - email address is a
+part of credentials, as login part (email address and password - Login
+form) or main part for Reset/Forgot password feature. Email Change action
+should be protected by typing current password or similar method - proofing
+that person is a real user, account owner. Otherwise it can lead to ATO
+account takeover.
+
+RELATED WEAKNESSES:
+
+   Other CWE-620
+
+REFERENCES:
+
+Title: CWE-620: Unverified Password Change
+URL: https://cwe.mitre.org/data/definitions/620.html
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-07-31
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:

@@ -1,0 +1,236 @@
+SUBMISSION COMMUNICATION ID: ES2210-49c940f6
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Consultation
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-10-25 13:02:26
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SCOPE.HUMANPROC, SUB.UNCLEAR, SUB.RELS, SUB.RELREFS, SUB.ABS.MULTWEAK
+
+PUBTRACKER: #66
+
+MTRACKER: #669
+
+GITHUBUSER: royb-legit
+
+SUBMISSION TYPE: Software
+
+NAME: Unchecked pipeline submission
+
+DESCRIPTION:
+
+Pipeline and Code submissions are a fundamental part of the SDLC
+process. A project that allows unchecked submission –default branch
+protection, minimum required reviewers or required approval for
+first-time contributors is exposed to malicious code and backdoors
+contributions. The repository branches configurations needs to be
+observed and verified to restrict pushing to default branch.
+Repository owner needs to prevent pushes directly to main branch and
+request all changes go through a separate branch and a code-review
+process.
+
+RELATED WEAKNESSES:
+
+   Other CWE-710
+
+REFERENCES:
+
+Title: malicious code submitted to PHP repository
+URL: https://www.zdnet.com/article/official-php-git-server-targeted-in-attempt-to-bury-malware-in-code-base/
+
+Title: Report on University of Minnesota Breach-of-Trust Incident
+https://lore.kernel.org/lkml/202105051005.49BFABCE@keescook/
+
+
+ACTIVE ISSUES:
+
+SCOPE.HUMANPROC - "Human/organizational process"
+
+Description: The submission focuses on a problem in a human or
+organizational process or policy (e.g., insufficient developer training)
+that is not measurable and does not produce concrete artifacts that
+identify weaknesses.
+
+Resolution: As of July 2022, such submissions will be rejected (if framed
+as "weaknesses") but could help modify existing CWEs for elements such as
+modes of introduction.
+
+Comments: The description suggested on 2022-11-02 still seems to
+emphasize human practices: "[no] minimum required reviewers or
+required approval for first-time contributors." If a repository
+contains artifacts that can be observed or "queried" to reflect this
+type of human-oriented policy, then we might be able to cover it in
+CWE - but would need the technical details.  Please also clarify what
+"default branch protection" means from a technical perspective, i.e.,
+what types of operations developers should take on default branches in
+terms of configurations or other actions that enforce this policy.
+
+Response: I am updating the description to be as followed :
+Pipeline and Code submissions are a fundamental part of the SDLC
+process. A project that allows unchecked submission –default branch
+protection, minimum required reviewers or required approval for
+first-time contributors is exposed to malicious code and backdoors
+contributions. The repository branches configurations needs to be
+observed and verified to restrict pushing to default branch.
+Repository owner needs to prevent pushes directly to main branch and
+request all changes go through a separate branch and a code-review
+process.
+
+
+----------
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: Description was updated to the 2022-11-02 recommendation. As
+mentioned in the SCOPE.HUMANPROC comments, this needs more details
+that are specific to actions/configurations/etc. as reflected in
+observable artifacts within the repository. Please see SCOPE.HUMANPROC
+comments and suggest appropriate details.
+
+Response: Description was updated as part of the SCOPE.HUMANPROC comment.
+
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: As acknowledged by the requester 2022-11-02, CWE-710 is
+tangentially relevant but is focused on the software itself, and
+whether it follows coding standards. This submission seems more
+focused on the infrastructure in which the software is developed. The
+technical weaknesses still remain unclear. The CWE Team will defer
+relationship analysis to the Production stage - that is, this problem
+does not need to be resolved right now.
+
+Response: As suggested, we will address this issue in the production stage.
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: Requester added a Linux-kernel attack reference on
+2022-11-02. However, both this and the "malicious code submitted to
+PHP repository" still focus on the attack of inserting malicious code,
+not on the weakness(es) in the pipeline that would allow the
+malicious-code insertion to succeed. Please quote the relevant
+portions from the reference(s) that talk about the technical
+weaknesses that allowed this to happen.
+
+Response: updating the incident link to a more technical post:
+  Title: Update on git.php.net incident
+  Link: https://news-web.php.net/php.internals/113981
+  Quote:
+  git.php.net (intentionally) supported pushing changes not only via SSH
+  (using the gitolite infrastructure and public key cryptography), but
+  also via HTTPS. The latter did not use gitolite, and instead used
+  git-http-backend behind Apache2 Digest authentication against the
+  master.php.net user database.
+
+
+----------
+
+SUB.ABS.MULTWEAK - "Multiple weaknesses"
+
+Description: The submission describes or suggests multiple independent
+weaknesses that each might deserve a separate CWE ID.
+
+Resolution: The submission cannot progress past the consultation phase
+until the number of relevant weaknesses is identified. If there are
+multiple weaknesses, separate names and descriptions are needed.
+
+Comments: The 2022-11-02 updated description is more clear, but it
+seems to suggest that multiple weaknesses might exist. Based on the
+next response, this submission might need to be split into multiple
+CWEs. This is not a "problem" per se but might require additional
+work.
+
+Response: As I see it, we could split this issue to the following sub
+issues:
+1.	Direct push allowed to default branch
+2.	Code-review is not enforced
+3.	Required identification for first time contributes
+I’m afraid that these issues might not be abstract enough.
+
+
+
+
+RESOLVED ISSUES:
+
+None.
+
+
+TIMELINE:
+
+Received: 2022-10-25
+
+Ack-Receipt: 2022-10-26
+
+Init-Review: 2022-10-31
+
+Init-Consultation: 2022-10-31
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

@@ -1,0 +1,223 @@
+SUBMISSION COMMUNICATION ID: ES2210-1282270c
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Consultation
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-10-25 12:22:36
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL
+
+PUBTRACKER: #67
+
+MTRACKER: #668
+
+GITHUBUSER: royb-legit
+
+SUBMISSION TYPE: Software
+
+NAME: Use of third-party dependencies without verification in pipeline
+
+DESCRIPTION:
+
+Whenever a pipeline makes usage of third-party dependencies via import or
+downloads without verification, it exposes itself to software supply chain
+attacks.
+
+RELATED WEAKNESSES:
+
+   Other CWE-1357
+   Other CWE-1104
+
+REFERENCES:
+
+Title: Codecov attack
+URL: https://about.codecov.io/security-update/
+
+Title: Protestware - How node-ipc turned into malware
+URL: https://www.lunasec.io/docs/blog/node-ipc-protestware/
+
+
+
+ACTIVE ISSUES:
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: this issue seems to have some overlap with CWE-1357:
+Reliance on Uncontrolled Component and CWE-494: Download of Code
+Without Integrity Check. It's likely best captured as an example of
+CWE-494.  See SUB.ABS.SUBTREE and SUB.ABS.LOWLEVEL.
+
+Response: I agree that there is some overlapping with the mentioned
+CWEs and I will address each separately:
+
+1. CWE-1357 : This CWE could be the parent of the suggested CWE (Use
+of third-party dependencies without verification in pipeline.). Almost
+every 3rd party dependency can be considered uncontrolled whereas the
+weakness lays whenever there is no verification and malicious/buggy
+changes cannot be prevented.
+
+2. CWE-494 : In many cases, the action of downloading the 3rd party is
+done internally in the framework (e.g., GitHub Actions) and the
+developer is not actively performing a download action.
+
+----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or full) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: this submission is closely related to CWE-1357: Reliance on
+Uncontrolled Component and CWE-494: Download of Code Without Integrity
+Check. CWE-1357 and other CWEs about product/system components need to
+be better organized within CWE.
+
+Response: I suggest the following relationships:
+
+1. Child of CWE-1357
+
+2. Parent of CWE - 494
+
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: The best CWE for this issue is CWE-494: Download of Code
+Without Integrity Check. Since pipelines are just one type of
+functionality that performs code downloads, it is probably
+inappropriate to create a new CWE entry focused solely on that
+variation. It may be better to update CWE-494 to ensure that it
+includes pipelines (perhaps in the extended description, demonstrative
+examples, and other elements).
+
+Response: As mentioned in the other issues – The difference between
+“downloading” and “using” makes a big difference. Downloading is a
+specific use case of how 3rd party dependencies can be used. Most of
+the time, the downloading action is provided via a framework abstraction.
+
+
+
+RESOLVED ISSUES:
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: The name describes "Insecure" usage, but "insecure" could
+imply many different weaknesses. The desc provides more
+explanation. Consider a different name: "Use of third-party
+dependencies without verification in pipeline."
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] Thank you for clarifying
+this point for us. I agree that the name “Use of third-party
+dependencies without verification in pipeline.” Will emphasize the
+weakness better.
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: The provided reference about the "Codecov attack" focuses on
+an incident in which a software package was maliciously modified at
+its point of distribution.  Are there references that better describe
+the type of software error that allows these downloads of
+maliciously-modified software to succeed?
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] I believe that this article
+- https://www.lunasec.io/docs/blog/node-ipc-protestware/ could provide
+another great example of how important it is to perform 3rd party
+dependencies verification.
+
+
+
+
+
+TIMELINE:
+
+Received: 2022-10-25
+
+Ack-Receipt: 2022-10-26
+
+Init-Review: 2022-11-16
+
+Init-Consultation: 2022-11-16
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

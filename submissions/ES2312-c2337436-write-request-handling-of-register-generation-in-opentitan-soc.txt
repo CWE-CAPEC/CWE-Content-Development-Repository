@@ -1,0 +1,102 @@
+SUBMISSION COMMUNICATION ID: ES2312-c2337436
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Received
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-12-20 03:53:09
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #61
+
+MTRACKER: #964
+
+GITHUBUSER: srivastava-amisha
+
+SUBMISSION TYPE: Hardware
+
+NAME: Improper Neutralization in Write Request Handling of Register Generation in OpenTitan SoC
+
+DESCRIPTION:
+
+The weakness lies in the handling of write requests to reserved addresses
+in the module for register generation (scmi_reg_top) of the OpenTitan SoC.
+When a write request is made to a reserved address, the system correctly
+identifies this as an error and discards the write operation. However, it
+fails to provide feedback about this discarded operation. This lack of
+feedback mechanism is a concern because it could lead to lost data or
+unpredictable system behavior, as the system might silently ignore a write
+during an error without notification. This could potentially be exploited
+by an attacker to insert malicious writes into the code. The primary
+technical impact of this vulnerability is the potential for data loss and
+can be used to gain unauthorized access by attackers. Moreover, if the
+system discards a write operation but fails to notify the user or the rest
+of the system, it could lead to decisions or actions based on incorrect
+data.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-1191
+   ChildOf CWE-1256
+
+REFERENCES:
+
+Title: Improper Neutralization in Write Request Handling of Register Generation in OpenTitan SoC
+URL: https://docs.google.com/presentation/d/1mw7d3muWdAJa6RSuKzJVbeBHTE38kzSL/edit?usp=sharing&ouid=107690590607250324314&rtpof=true&sd=true
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-12-20
+
+Ack-Receipt: YYYY-MM-DD
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:

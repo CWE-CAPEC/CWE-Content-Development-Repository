@@ -1,0 +1,100 @@
+SUBMISSION COMMUNICATION ID: ES2302-f091f80c
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-02-17 22:58:34
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #65
+
+MTRACKER: #741
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Improper implemented email address contact or weblinks support unintended results
+
+DESCRIPTION:
+
+It is very important for site owners or team members responsible for site
+content to provide corrects data. From time to time we can see incorrect
+provided email addresses to contact or incorrect website links. User will
+doesn't know if it is intentional, accidental or made by bad actors (but
+this source is for visitor/user trust, authorized). Depends on focus part -
+incorrect email addresses are a threat, as well as incorrect given website
+links. Examples: example@example.com vs exampe@example.com, or
+example@example.co and so on. For sites also many cases, the same with
+added comapny's social links - when added incorrect, bad actor can easy
+attack (ie. if given nonexistent (typo for example) social media account -
+bad actor can create with this name).
+
+RELATED WEAKNESSES:
+
+   Other CWE-451
+
+REFERENCES:
+
+Title: Content Spoofing
+URL: https://owasp.org/www-community/attacks/Content_Spoofing
+
+
+
+
+ACTIVE ISSUES:
+
+
+
+
+RESOLVED ISSUES:
+
+
+
+
+TIMELINE:
+
+Received: 2023-02-17
+
+Ack-Receipt: 2023-02-23
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

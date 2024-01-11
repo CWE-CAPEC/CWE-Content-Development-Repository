@@ -1,0 +1,96 @@
+SUBMISSION COMMUNICATION ID: ES2302-0697c4d4
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-02-17 23:12:48
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #64
+
+MTRACKER: #742
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Improper site protection against using email aliases can provide to ATO and account issues
+
+DESCRIPTION:
+
+Some site focused on bug hunting security don't allowed using email aliases
+- but that was quite dangerous case, because when user wanted to change an
+email to email with alias (example+alias@example.com) the result without
+any notification was: examplealias@example.com (removed + sign) Example:
+bughunter@example.com vs bughunter1@example.com instead of
+bughunter+1@example.com When site has proper email notifications, the email
+will be send on incorrect address (about Email changed) and in many cases
+bad actor can make ATO (using Reset password feature).
+
+RELATED WEAKNESSES:
+
+   Other CWE-451
+
+REFERENCES:
+
+Title: Email alias
+URL: https://en.wikipedia.org/wiki/Email_alias
+
+
+
+
+ACTIVE ISSUES:
+
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-02-17
+
+Ack-Receipt: 2023-02-23
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:

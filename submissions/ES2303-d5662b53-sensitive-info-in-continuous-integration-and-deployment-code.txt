@@ -1,0 +1,89 @@
+SUBMISSION COMMUNICATION ID: ES2303-d5662b53
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-03-12 14:00:50
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #63
+
+MTRACKER: #768
+
+GITHUBUSER: royb-legit
+
+SUBMISSION TYPE: Software
+
+NAME: Inclusion of Sensitive Information in Continuous Integration and Deployment Code
+
+DESCRIPTION:
+
+Accessible continuous integration and deployment scripts can pose a variety
+of security risks. Since developers or administrators often consider these
+pipeline scripts as not part of the application or production leaving
+hardcoded values and other sensitive information or functions.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-540
+
+REFERENCES:
+
+
+
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-03-12
+
+Ack-Receipt: 2023-03-17
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:
