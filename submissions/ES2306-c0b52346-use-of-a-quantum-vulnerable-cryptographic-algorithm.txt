@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2306-c0b52346
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Received
+SUBMISSION STATUS: Ack-Receipt
 
 ORIGIN: sub-server
 
@@ -67,7 +67,7 @@ TIMELINE:
 
 Received: 2023-06-23
 
-Ack-Receipt: YYYY-MM-DD
+Ack-Receipt: 2024-01-05
 
 Init-Review: YYYY-MM-DD
 
