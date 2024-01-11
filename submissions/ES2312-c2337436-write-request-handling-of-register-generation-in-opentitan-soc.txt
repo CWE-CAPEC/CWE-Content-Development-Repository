@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2312-c2337436
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Received
+SUBMISSION STATUS: Init-Review
 
 ORIGIN: sub-server
 
@@ -62,9 +62,9 @@ TIMELINE:
 
 Received: 2023-12-20
 
-Ack-Receipt: YYYY-MM-DD
+Ack-Receipt: 2024-01-11
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2024-01-11
 
 Init-Consultation: YYYY-MM-DD
 
