@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2301-82f13da2
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 ORIGIN: sub-server
 
@@ -10,7 +10,7 @@ SUBMISSION DATE: 2023-01-13 08:24:25
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELREFS 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.ATTACK, SUB.GRAMMAR
 
 PUBTRACKER: #9
 
@@ -20,15 +20,48 @@ GITHUBUSER: mbiesiad
 
 SUBMISSION TYPE: Software
 
-NAME: Open Redirect connected with images
+NAME: Allowing modifications of displayed assets by unauthorized actor leads to content spoofing
 
 DESCRIPTION:
 
-Bad actor using type of Open Redirect connected with images can exploit it
-to make succesfull phishing easier - possibility to use QR codes. Moreover,
-link start with trusted name like organization or company name, so
-organization or company can lost trust and reputation, if bad actor want to
-show illegal and bad things.
+When product allow to modify content like ie. assets by unauthorized
+actor and it is not intended feature, content spoofing can be
+exploited.
+
+Bad actor using images with QR codes can exploit the weakness and make
+more successful phishing. Moreover, link start with trusted name like
+organization or company name - organization or company can lost trust
+and reputation, if bad actor want to show illegal and bad things, the
+same with possible legal issues, because from victim point of view
+(ie.: scanned QR code from vulnerable site) the org allowed to attack
+victim.
+
+See image at https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/9#issuecomment-1728507339
+
+(mentioned examples sites from my side are accidental and unintentional)
+
+I will use here [...] as other part of URL here, because current
+solutions can be little different (in details), but idea is the same.
+
+Example - www.verygoodwebsiteee.com/[...]/https://cdn.[...].verygoodwebsiteee-logo.png
+Bad actor can change and obfuscate the parameter where image is
+fetched (ie. using URL encoding like %2F) to make for victim visible
+(before click/interaction) mainly trusted site part (start of URL). If
+bad actor will make similar like (here presented is with not
+obfuscated form):
+www.verygoodwebsiteee.com/[...]/https://somesiteee.com/qrimage.png
+
+Image qrimage.png (what end user will see) can be with text like
+"Please scan this QR Code", not "raw" QR code - as image can contain
+written content. From victim point of view the most important is part
+www.verygoodwebsiteee.com/ - next [...] can be quite long, and part
+with payload /https://somesiteee.com/qrimage.png is easy to not
+noticed. Seeing trusted site and displayed QR code can easily be a
+victim.
+
+Mitigation - Using white/allow list for external assets sites - don't
+allow to load assets from untrusted sources by unauthorized actors
+
 
 RELATED WEAKNESSES:
 
@@ -36,11 +69,17 @@ RELATED WEAKNESSES:
 
 REFERENCES:
 
-Title: QR Code
-URL: https://en.wikipedia.org/wiki/QR_code
+Title: QR code security risks
+URL: https://www.malwarebytes.com/cybersecurity/basics/what-is-a-qr-code
+
+Title: Content Spoofing
+URL: https://owasp.org/www-community/attacks/Content_Spoofing
 
 Title: CWE-601: URL Redirection to Untrusted Site ('Open Redirect')
 URL: https://cwe.mitre.org/data/definitions/601.html
+
+Title: CAPEC-148: Content Spoofing
+URL: https://capec.mitre.org/data/definitions/148.html
 
 
 
@@ -55,11 +94,9 @@ cause the submission to be incorrectly mapped to.
 Resolution: An initial submission (or full submission) cannot progress past
 the consultation phase until SUB.UNCLEAR is addressed.
 
-Comments: The distinction between CWE-601 and this issue isn't
-highlighted. How do the images and QR present a weakness in addition
-to CWE-601? Further details are needed to better understand the
-underlying weakness. Alternately, this could be an example of an
-attack, so it might be more appropriate for CAPEC.
+Comments: This seems more like some sort of stored XSS, but the
+payload is a QR code that will load a malicious site.  Further details
+are needed to better understand the underlying weakness.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -82,13 +119,56 @@ the more-general concept is appropriately identified and described. The
 original, lower-level submission will serve as a primary example of the
 more general concept.
 
-Comments: This issue specifically calls out images, which is likely to
-be too low-level. Ideally, this would be added to CWE-601.
+Comments: This issue specifically calls out QR images, which is likely
+to be too low-level to create a new CWE entry.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 ----------
+
+SUB.ATTACK - "Too attack-focused"
+
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: this submission is too focused on how an adversary can phish
+a user using images, more specifically QR codes. The proposed
+mitigation seems to cover the core mistake - "don't allow to load
+assets from untrusted sources by unauthorized actors."
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.GRAMMAR - "Grammar/Spelling issues"
+
+Description: The submission has multiple occurrences of errors with
+grammar, spelling, etc. that should be fixed before publication.
+
+Resolution: The submission will not be allowed to progress to later phases
+if the grammar or spelling problems are so significant that they are likely
+to cause difficulty for readers to understand the weakness. If the issues
+are minor, then the submission could progress.	However, no submission can
+be published without grammar and spelling checks. American English is used
+for spelling.
+
+Comments: once the weakness is clear, the grammar can be changed.  The
+submitter does not need to do this.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+
+RESOLVED ISSUES:
 
 SUB.RELREFS - "No relevant references"
 
@@ -106,12 +186,8 @@ Wikipedia and CWE as references, but neither of these specifically
 describes the role of images and QR codes. Please provide a reference
 that specifically discusses this issue.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [RESOLVED ISSUE; DO NOT CHANGE] New references provided by submitter.
 
-
-----------
-
-RESOLVED ISSUES:
 
 
 TIMELINE:
@@ -122,7 +198,7 @@ Ack-Receipt: 2023-01-16
 
 Init-Review: 2023-01-17
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-01-16
 
 Init-Rejected: YYYY-MM-DD
 

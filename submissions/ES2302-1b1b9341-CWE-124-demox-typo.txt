@@ -69,7 +69,12 @@ elsewhere.
 
 Resolution: This will depend on the nature of the problem.
 
-Comments: After careful look at CWE-124, libc's strncpy(), find(), and related materials, the CWE team feels that the example in question is indeed correct. That said, we agree that we need to improve our explanation of what the code is doing, which we will certainly look to do. Please carefully review the code again and you'll see that it performs how it should.
+Comments: After careful look at CWE-124, libc's strncpy(), find(), and
+related materials, the CWE team feels that the example in question is
+indeed correct. That said, we agree that we need to improve our
+explanation of what the code is doing, which we will certainly look to
+do. Please carefully review the code again and you'll see that it
+performs how it should.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 

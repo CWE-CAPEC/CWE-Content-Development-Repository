@@ -20,20 +20,20 @@ GITHUBUSER: kurtseifried
 
 SUBMISSION TYPE: Software
 
-NAME: Non expiring links to create or change account
+NAME: Persistant links to create or change account or other privileged operation
 
 DESCRIPTION: 
 
-When sending links via email to either create an account or make
-changes to an account (e.g. password reset) there should be an expiry
-time, e.g. if the account creation is not completed or the password
-reset is not acted upon it should expire after a reasonable amount of
-time. Depending on the exact scenario this may be minutes (e.g. 5-10)
-or several hours or days (1-2 days for account creation). By not
-expiring these links an attacker can partially open up a new account
-and then complete creation later after they have hijacked or otherwise
-accessed the email account associated with the request.
+When sending messages that allow for account creation or modification
+(such as via an email address, text message via phone number or
+message to a social media account) the message should have a
+reasonable validity time period after which it is no longer valid.
 
+Depending on the exact scenario this may be minutes (e.g. 5-10) or
+several hours or days (1-2 days for account creation). By not expiring
+these links an attacker can partially open up a new account and then
+complete creation later after they have hijacked or otherwise accessed
+the email account associated with the request.
 
 RELATED WEAKNESSES:
 
@@ -84,7 +84,7 @@ Comments: CWE Team agrees that the issue is similar to CWE-613, but
 closer investigation is needed. This does not prevent movement to the
 next phase.
 
-Response: <submitter should reply here>
+Response: The form requires a related CWE so we picked the least worst option.
 
 
 RESOLVED ISSUES:

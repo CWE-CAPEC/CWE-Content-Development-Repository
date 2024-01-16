@@ -24,15 +24,31 @@ NAME: Use of partial hash data
 
 DESCRIPTION: 
 
-When using the hash value of data the full value must be used to
-represent the data, not a partial value (e.g. the first 8 bytes),
-otherwise attacker complexity is lowered enough to allow an attacker
-to create an arbitrary input that has the same partial hash value.
+When using a partial hash value to represent data instead of the full
+hash value (e.g. using the first 8 bytes of a 32 byte hash), the
+attacker's complexity is significantly reduced, making it easier for
+them to create an arbitrary input that produces the same partial hash
+value. This vulnerability can arise in two scenarios:
 
-Please note that there are several failure scenarios, firstly a full
-hash is generated but a partial hash is displayed to the user,
-secondly that a full hash is generated, but a partial hash is verified
-by the software.
+Firstly, when a full hash value is generated, but only a partial hash
+value is displayed to the user. This can potentially mislead the user
+into thinking that the hash value represents the full data, when in
+fact it represents only a partial value.
+
+Secondly when a partial hash value is displayed and the user must
+compare it to another value they may validate it against the wrong
+hash value (e.g. PGP key short identities suffered this problem).
+
+Thirdly, when a full hash value is generated, but only a partial hash
+value is verified by the software. In this case, an attacker could
+create an arbitrary input that produces the same partial hash value as
+the verified value, thereby bypassing the verification process and
+gaining access to sensitive data or systems.
+
+In all scenarios, the use of partial hash values can lead to serious
+security vulnerabilities and should be avoided. The full hash value
+must be used to represent the data to ensure the security and
+integrity of the system.
 
 
 RELATED WEAKNESSES:
@@ -82,7 +98,7 @@ validate it, then they cannot safely validate the hash of the data."
 If you agree with this rephrasing, please let us know in your
 response.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: The title “Reliance on a Substring of a Full Hash Value” is fine
 
 ------------
 
@@ -99,7 +115,7 @@ must be used" as used in the 2022-08-16 reply is mitigation-oriented;
 however, it could be used in Potential Mitigations when this
 submission reaches the full-submission stage.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: see above description rewritten
 
 ------------
 
@@ -124,7 +140,8 @@ agrees, then SUB.ABS.MULTWEAK no longer applies. See SUB.UNCLEAR for
 more specific details. If you agree with this decision, please
 acknowledge in your response.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: title updated, this maybe needs children weaknesses long
+term to clealry enumerate each avenue of attack?
 
 
 ------------
@@ -154,7 +171,10 @@ Omission of Security-relevant Information, which was added as another
 potential relationship under "RELATED WEAKNESSES".  If you agree with
 this decision, please acknowledge in your response.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Using “CWE-223: Omission of Security-relevant Information”
+probably would map to the display of a partial hash, but does not
+mentioned he processing of a partial hash value. One suggestion would
+be to update CWE-223 to mention processing of data.
 
 
 ****************************************************************************

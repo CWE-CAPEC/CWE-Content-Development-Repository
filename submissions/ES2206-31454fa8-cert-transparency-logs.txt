@@ -22,7 +22,7 @@ SUBMISSION TYPE: Software
 
 NAME: Use of Certificate Transparency logs to attack new public facing websites
 
-DESCRIPTION: 
+DESCRIPTION:
 
 Websites requiring administrative setup must use HTTPS to protect data
 (such as passwords). In order to get a browser supported HTTPS
@@ -86,7 +86,19 @@ in scope or not, but CWE is likely to be able to cover the insecure
 behaviors that occur because of "bad configuration."
 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Many services now require a TLS certificate to function,
+e.g. WordPress. Additionally, these services cannot always be set up
+securely on hosting providers, they are simply set up and exposed
+publicly, and the user must log in to secure them (e.g. configure a
+password). The system may not support a preshared or preconfigured
+password at install time. Additionally, this does not account for
+patching the service, e.g. a new installation is provisioned and then
+must be updated through the administrative interface.
+
+This is different from CWE-306: Missing Authentication for Critical
+Function in that the use of certificate transparency logs gives
+attackers a direct list of new services to attack, as well as the lack
+of patching as a weakness.
 
 ----------
 
@@ -107,7 +119,9 @@ legitimate behavior. There is no statement of the mistake that allows
 the server to be compromised.
 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Software requiring TLS and first user login without
+authentication for initial configuration resulting in race condition
+due to certificate transparency log information disclosure
 
 
 ----------
@@ -126,7 +140,17 @@ Comments: The name and description are primarily focused on the
 attack, with little or no mention of the weakness. The submitter
 should consider whether this would be better covered in CAPEC.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Services requiring a first user login to configure a
+password, or implement other security controls can suffer from a race
+condition. Attackers that connect to the server before the
+administrator can login first and set the password and compromise the
+system, also resetting the interface so that when the actual
+administrator logs in they do not realize the system has been
+compromised. This problem is exacerbated by services like TLS
+certificate transparency logs which provide attackers with a list of
+new servers within seconds of them being instantiated. As most
+services require TLS support these online certificate transparency
+logs provide a significant source of information to attackers.
 
 
 ----------
@@ -147,7 +171,12 @@ which a web app is exposed to parties without certificate validation,
 then this might overlap or be part of CWE-362, CWE-295,
 CWE-923/descendants, or similar CWEs.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Re CWE-362 this is not a synchronization issue.  CWE-295
+this is not at all improper certificate validation, quite the opposite
+the certificates are valid.  CWE-923 this isn’t a communications
+channel issue, it’s access control in the sense of configuring an
+account password.
+
 
 
 ----------
@@ -164,7 +193,7 @@ multiple weaknesses, separate names and descriptions are needed.
 Comments: It seems that many different weaknesses could allow
 attackers to compromise a web server.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: see rewrite of title/description
 
 
 ----------
@@ -187,7 +216,9 @@ exist and cannot be quickly resolved.
 Comments: Relationships cannot be identified until the weakness is
 specified clearly.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Related to CWE-306: Missing Authentication for Critical
+Function.  I can’t find any CWE related to patchin/updating a product
+prior to instantiation
 
 
 ----------
@@ -207,7 +238,7 @@ for spelling.
 Comments: Minor grammar problems that might be addressed when the
 description is rewritten to emphasize the weakness.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: It passed grammarly.
 
 
 
