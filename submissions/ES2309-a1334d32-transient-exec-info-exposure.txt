@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-a1334d32
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Full-Sub-Received
+SUBMISSION STATUS: Full-Review
 
 ORIGIN: sub-server
 
@@ -37,12 +37,13 @@ execution. This behavior can occur when the processor mis-predicts an
 outcome (such as a branch target), or when a processor event (such as
 an exception or microcode assist, etc.) is handled after younger
 operations have already executed. Operations that execute transiently
-may exhibit observable discrepancies (CWE-203) in covert channels such
-as data caches . Observable discrepancies of this kind can be detected
-and analyzed using timing or power analysis techniques, which may
-allow an attacker to infer information about the operations that
-executed transiently. For example, the attacker may be able to infer
-confidential data that was accessed or used by those operations.
+may exhibit observable discrepancies (CWE-203) in covert channels
+[REF-15] such as data caches. Observable discrepancies of this kind
+can be detected and analyzed using timing or power analysis
+techniques, which may allow an attacker to infer information about the
+operations that executed transiently. For example, the attacker may be
+able to infer confidential data that was accessed or used by those
+operations.
 
 Transient execution weaknesses may be exploited using one of two
 methods. In the first method, the attacker generates a code sequence
@@ -462,6 +463,12 @@ Date: May 2019
 Title: [REF-14] Spectre Attacks: Exploiting Speculative Execution.
 URL: https://spectreattack.com/spectre.pdf
 
+Author: Intel Corporation
+Date: March 11, 2022
+Title: [REF-15] Refined Speculative Execution Terminology
+URL: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/refined-speculative-execution-terminology.html
+
+
 
 ACTIVE ISSUES:
 
@@ -487,7 +494,7 @@ Full-Sub-Requested: YYYY-MM-DD
 
 Full-Sub-Received: 2023-12-21
 
-Full-Review: YYYY-MM-DD
+Full-Review: 2024-01-02
 
 Full-Consultation: YYYY-MM-DD
 

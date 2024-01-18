@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-78afd2b1
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Full-Sub-Received
+SUBMISSION STATUS: Full-Review
 
 ORIGIN: sub-server
 
@@ -245,6 +245,21 @@ potentially exposing data over a covert channel.
 
 POTENTIAL MITIGATIONS:
 
+Phase: Architecture and Design
+
+Description: The hardware designer can attempt to prevent transient
+execution from causing observable discrepancies in specific covert
+channels.
+
+
+Phase: Requirements
+
+Description: Processor designers, system software vendors, or other
+agents may choose to restrict the ability of unprivileged software to
+access to high-resolution timers that are commonly used to monitor
+covert channels.
+
+
 Phase: Requirements
 
 Description: Processor designers may expose instructions or other
@@ -270,6 +285,22 @@ Effectiveness: Limited
 
 Effectiveness Notes: Disabling specific predictors or other hardware
 features may result in significant performance overhead.
+
+
+Phase: Build and Compilation
+
+Description: Use software techniques (including the use of
+serialization instructions) that are intended to reduce the number of
+instructions that can be executed transiently after a processor event
+or misprediction.
+
+Effectiveness: Incidental
+
+Effectiveness Notes: Some transient execution weaknesses can be
+exploited even if a single instruction is executed transiently after a
+processor event or mis-prediction. This mitigation strategy has many
+other pitfalls that prevent it from eliminating this weakness
+entirely. For example, see [REF-10].
 
 
 Phase: Build and Compilation
@@ -382,6 +413,22 @@ $ cat /proc/cpuinfo | grep bugs | head -n 1
 bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit srbds mmio_stale_data retbleed
 
 
+VULNERABILITY MAPPING NOTES:
+
+Usage: Allowed
+
+Reason: Acceptable-Use
+
+Rationale: Use only when the weakness arises from forwarding of
+incorrect/stale data, and the data is not architecturally restricted
+(that is, the forwarded data is accessible within the current
+processor context).
+
+Comments: If a weakness arises from forwarding of incorrect/stale data
+that is not accessible within the current processor context, then
+CWE-B may be more appropriate for the mapping task.
+
+
 RELATED WEAKNESSES:
 
 RelType: ChildOf
@@ -452,6 +499,15 @@ Title: [REF-4] Security Analysis Of AMD Predictive Store Forwarding
 URL: https://www.amd.com/system/files/documents/security-analysis-predictive-store-forwarding.pdf
 
 
+Author: Alyssa Milburn, Ke Sun, Henrique Kawakami.
+
+Date: 2022-03-08
+
+Title: [REF-10] You Cannot Always Win the Race: Analyzing the LFENCE/JMP Mitigation for Branch Target Injection.
+
+URL: https://arxiv.org/abs/2203.04277
+
+
 ACTIVE ISSUES:
 
 
@@ -478,7 +534,7 @@ Full-Sub-Requested: YYYY-MM-DD
 
 Full-Sub-Received: 2023-12-21
 
-Full-Review: YYYY-MM-DD
+Full-Review: 2024-01-02
 
 Full-Consultation: YYYY-MM-DD
 

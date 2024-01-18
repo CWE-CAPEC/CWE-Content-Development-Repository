@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-f7b489ac
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Full-Sub-Received
+SUBMISSION STATUS: Full-Review
 
 ORIGIN: sub-server
 
@@ -52,7 +52,7 @@ transient operations can access a victim’s private data in a shared
 microarchitectural resource, then the operations’ microarchitectural
 side effects may correspond to the accessed data. If an attacker can
 trigger these transient operations and observe their side effects
-through a covert channel, then the attacker may be able to infer the
+through a covert channel [REF-15], then the attacker may be able to infer the
 victim’s private data. Private data could include sensitive program
 data, OS/VMM data, page table data (such as memory addresses), system
 configuration data (see Demonstrative Example 3), or any other data
@@ -79,6 +79,16 @@ Phase: System Configuration
 Note: This weakness can be introduced if the system has not been
 configured according to the hardware vendor’s recommendations for
 mitigating the weakness.
+
+Phase: Architecture and Design
+
+Note: This weakness can be introduced when an access control check
+(for example, checking page permissions) can proceed in parallel with
+the access operation (for example, a load) that is being checked. If
+the processor can allow the access operation to execute before the
+check completes, this race condition may allow subsequent transient
+operations to expose sensitive information.
+
 
 
 APPLICABLE PLATFORMS:
@@ -304,6 +314,13 @@ resource that is shared by two SMT threads.
 
 Phase: Architecture and Design
 
+Description: The hardware designer can attempt to prevent transient
+execution from causing observable discrepancies in specific covert
+channels.
+
+
+Phase: Architecture and Design
+
 Description: Software architects may design software to enforce strong
 isolation between different contexts. For example, kernel page table
 isolation (KPTI) mitigates the Meltdown vulnerability [REF-4] by
@@ -333,6 +350,21 @@ is applied to all software that runs on the system. Also, relatively
 few observed examples of this weakness have exposed data through only
 a single instruction.
 
+
+Phase: Build and Compilation
+
+Description: Use software techniques (including the use of
+serialization instructions) that are intended to reduce the number of
+instructions that can be executed transiently after a processor event
+or misprediction.
+
+Effectiveness: Incidental
+
+Effectiveness Notes: Note: Some transient execution weaknesses can be
+exploited even if a single instruction is executed transiently after a
+processor event or mis-prediction. This mitigation strategy has many
+other pitfalls that prevent it from eliminating this weakness
+entirely. For example, see [REF-10].
 
 Phase: Implementation
 
@@ -391,6 +423,14 @@ Effectiveness: Limited
 
 Effectiveness Description: This kind of patch may not be feasible or
 implementable for all processors or all weaknesses.
+
+
+Phase: Requirements
+
+Description: Processor designers, system software vendors, or other
+agents may choose to restrict the ability of unprivileged software to
+access to high-resolution timers that are commonly used to monitor
+covert channels.
 
 
 DETECTION METHODS:
@@ -500,6 +540,25 @@ URL: https://www.intel.com/content/www/us/en/developer/articles/technical/softwa
 Author: Intel Corporation
 Date: 2018-05-21
 
+Author: Alyssa Milburn, Ke Sun, Henrique Kawakami.
+
+Date: 2022-03-08
+
+Title: [REF-10] You Cannot Always Win the Race: Analyzing the LFENCE/JMP Mitigation for Branch Target
+Injection.
+
+URL: https://arxiv.org/abs/2203.04277
+
+
+Author: Intel Corporation
+
+Date: March 11, 2022
+
+Title: [REF-15] Refined Speculative Execution Terminology
+
+URL: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/refined-speculative-execution-terminology.html
+
+
 
 ACTIVE ISSUES:
 
@@ -525,7 +584,7 @@ Full-Sub-Requested: YYYY-MM-DD
 
 Full-Sub-Received: 2023-12-21
 
-Full-Review: YYYY-MM-DD
+Full-Review: 2024-01-02
 
 Full-Consultation: YYYY-MM-DD
 

@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-47154075
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Full-Sub-Received
+SUBMISSION STATUS: Full-Review
 
 ORIGIN: sub-server
 
@@ -20,7 +20,7 @@ GITHUBUSER: scottconstable
 
 SUBMISSION TYPE: Hardware
 
-NAME: Exposure of Sensitive Information caused by Shared Microarchitectural Predictor State that influences Transient Execution
+NAME: Exposure of Sensitive Information caused by Shared Microarchitectural Predictor State that Influences Transient Execution
 
 DESCRIPTION:
 
@@ -45,7 +45,8 @@ one component may be able to influence microarchitectural predictor
 behavior in another component. If the predictor can cause transient
 execution, the shared predictor state may allow an attacker to
 influence transient execution in a victim, and in a manner that could
-allow the attacker to infer private data from the victim.
+allow the attacker to infer private data from the victim by monitoring
+observable discrepancies (CWE-203) in a covert channel [REF-15].
 
 Predictor state may be shared when the processor transitions from one
 component to another (for example, when a process makes a system call
@@ -285,7 +286,24 @@ $ cat /proc/cpuinfo | grep bugs | head -n 1
 bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit srbds mmio_stale_data retbleed
 
 
+Method: Automated Analysis Pre-Analysis
+
+Notes: This weakness can be detected in hardware by employing static
+or dynamic taint analysis methods [REF-4]. These methods can label
+each predictor entry (or prediction history, etc.) according to the
+processor context that created it. Taint analysis or information flow
+analysis can then be applied to detect when predictor state created in
+one context can influence predictions made in another context.
+
+
 POTENTIAL MITIGATIONS:
+
+Phase: Architecture and Design
+
+Description: The hardware designer can attempt to prevent transient
+execution from causing observable discrepancies in specific covert
+channels.
+
 
 Phase: Architecture and Design
 
@@ -369,6 +387,39 @@ retpoline has been documented as effective on some x86 processors, but
 not fully effective on other x86 processors.
 
 
+Phase: Build and Compilation
+
+Description: Use control-flow integrity (CFI) techniques to constrain
+the behavior of instructions that redirect the instruction pointer,
+such as indirect branch instructions.
+
+Effectiveness: Moderate
+
+Effectiveness Notes: Some CFI techniques may not be able to constrain
+transient execution, even though they are effective at constraining
+architectural execution. Or they may be able to provide some
+additional protection against a transient execution weakness, but
+without comprehensively mitigating the weakness. For example,
+Clang-CFI provides strong architectural CFI properties and can make
+some transient execution weaknesses more difficult to exploit [REF-6].
+
+
+Phase: Build and Compilation
+
+Description: Use software techniques (including the use of
+serialization instructions) that are intended to reduce the number of
+instructions that can be executed transiently after a processor event
+or misprediction.
+
+Effectiveness: Incidental
+
+Effectiveness Notes: Note: Some transient execution weaknesses can be
+exploited even if a single instruction is executed transiently after a
+processor event or mis-prediction. This mitigation strategy has many
+other pitfalls that prevent it from eliminating this weakness
+entirely. For example, see [REF-10].
+
+
 Phase: System Configuration
 
 Description: Some systems may allow the user to disable predictor
@@ -412,6 +463,39 @@ effective mitigations.
 Effectiveness: High
 
 Effectiveness Notes: <<PUT INFORMATION HERE>>
+
+
+Phase: Requirements
+
+Description: Processor designers, system software vendors, or other
+agents may choose to restrict the ability of unprivileged software to
+access to high-resolution timers that are commonly used to monitor
+covert channels.
+
+
+VULNERABILITY MAPPING NOTES:
+
+Usage: Allowed
+
+Reason: Acceptable-Use
+
+Rationale: Use only when the weakness allows code in one processor
+context to influence the predictions of code in another processor
+context via predictor state that is shared between the two contexts.
+
+Note: For example, Branch Target Injection, an instance of CWE-D, can
+be mitigated by tagging each indirect branch predictor entry according
+to the processor context in which the entry was created, thus
+preventing entries created in one context from being used in a
+different context. However, the mitigated indirect branch predictor
+can still expose different weaknesses where malicious predictor
+entries created in one context are used later in the same context
+(context tags cannot prevent this). One such example is Intra-mode
+Branch Target Injection. Weaknesses of this sort can map to CWE-A.
+
+Suggestions: If a weakness involves a microarchitectural predictor
+whose state is not shared across processor contexts, then CWE-A may be
+more appropriate for the mapping task.
 
 
 RELATED WEAKNESSES:
@@ -492,7 +576,7 @@ Full-Sub-Requested: YYYY-MM-DD
 
 Full-Sub-Received: 2024-01-10
 
-Full-Review: YYYY-MM-DD
+Full-Review: 2024-01-02
 
 Full-Consultation: YYYY-MM-DD
 

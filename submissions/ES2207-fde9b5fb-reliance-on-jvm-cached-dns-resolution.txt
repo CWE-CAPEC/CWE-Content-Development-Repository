@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2207-fde9b5fb
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 ORIGIN: sub-server
 
@@ -83,11 +83,12 @@ more general concept.
 
 Comments: JVMs are too specific to have a separate CWE entry for
 them. However, it might be reasonable to create a weakness about
-caches (or other types of resources) that do not expire fast enough,
-and this JVM/DNS issue could be cited as an example. Such a new entry
-would fall underneath CWE-664: Improper Control of a Resource Through
-its Lifetime, and some additional subtree reorganization might be
-needed. Please let us know if you agree with this.
+caches (or other types of resources) that are stored too long (i.e.,
+do not expire fast enough), and this JVM/DNS issue could be cited as
+an example. Such a new entry would fall underneath CWE-664: Improper
+Control of a Resource Through its Lifetime, and some additional
+subtree reorganization might be needed. Please let us know if you
+agree with this.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -106,7 +107,7 @@ Ack-Receipt: 2022-07-08
 
 Init-Review: 2022-12-07
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-01-16
 
 Init-Accepted: YYYY-MM-DD
 

@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2207-a33a7b76
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 ORIGIN: sub-server
 
@@ -131,7 +131,7 @@ Ack-Receipt: 2022-07-08
 
 Init-Review: 2022-12-07
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-01-16
 
 Init-Accepted: YYYY-MM-DD
 
