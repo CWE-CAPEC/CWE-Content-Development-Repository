@@ -1,0 +1,218 @@
+SUBMISSION COMMUNICATION ID: ES2207-771a1a87
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Init-Consultation
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2022-07-04 05:42:11
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.UNCLEAR, SUB.RELS
+
+PUBTRACKER: #70
+
+MTRACKER: #598
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Single Sign On (SSO) Provider Authorization
+
+DESCRIPTION: 
+
+Some website will trust any of their SSO to always be a valid way to
+connect to any account.
+
+Giving the right to all their SSO provider without ensuring the user
+signup/link their SSO account allow staff at the SSO provider company
+or anybody who would find a security issue with one of those provider
+to forge their access to the user account.
+
+The website with that weakness will rarely let their user know that
+they will blindly trust any SSO to be a valid way to connect to their
+system.  So user may not be aware the SSO provider is having direct
+access to their account.  In many cases they may not even have an
+account with this SSO provider which would mean no binding contract
+between the user/sso provider.
+
+The secured flow would be: Ensure the SSO provider has been allowed to
+connect to the account either by signing up with this SSO provider or
+having a way to link the sso provider to the account after being
+signed in.
+
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-287
+
+
+REFERENCES:
+
+Title: Atlassian doesn't give users a way to prevent Apple, Microsoft, Google & Slack to sign in to any accounts
+
+URL: https://bugcrowd.com/disclosures/ff0e1b7e-c7db-42a9-b6c5-cb1d65086090/slack-is-able-to-connect-any-user-to-a-confluence-page-without-even-prompting-anything
+
+
+ACTIVE ISSUES:
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: SUB.UNCLEAR is applied because the way the information is
+provided requires additional details to better understand the
+underlying weakness. It sounds like the core issue is: "Giving the
+right to all their SSO provider without ensuring the user signup/link
+their SSO account" and "The website with that weakness will rarely let
+their user know that they will blindly trust any SSO to be a valid way
+to connect to their system.  So user may not be aware the SSO provider
+is having direct access to their account." The name "Improper Single
+Sign On Flow" is vague, because "Single Sign On Flow" is a common,
+valid behavior. It's not clear if the weakness is giving the rights to
+the SSO provider, not ensuring user signup/link their SSO, the website
+isn't notifying the user, or something else. Please change the name
+and description to better explain the weakness.
+
+Response: the weakness is related to the improper authorization of
+Single Sign-On (SSO) providers without explicit user consent, which
+can result in security vulnerabilities. The current configuration of
+the SSO flow appears to be inherently flawed, and may require
+additional verifications to ensure that SSO providers are properly
+authorized to connect to the service.
+
+To accurately identify and address the weakness, I agree that it would
+be more appropriate to revise the submission name and description to
+"Improper SSO Provider Authorization."
+
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: Although CWE-287 is applicable, further analysis is required
+to better understand the weakness, therefore, its connection to the
+current CWE hierarchy. However, it is the CWE Team's responsibility to
+conduct further analysis, so this issue does not prevent the
+submission from advancing to the next phase.
+
+Response: CWE-287 describes weaknesses in authentication mechanisms
+that can allow an attacker to gain access to a system or service
+without proper authorization.
+
+In this case, if SSO providers are authorized without proper user
+consent, it can lead to security vulnerabilities and potentially allow
+an attacker to gain access to a user's account without proper
+authentication. Therefore, addressing the weakness you described is
+important to mitigate the risk of improper authentication and to
+ensure that SSO providers are properly authorized before being granted
+access to a user's account.
+
+
+
+----------
+
+RESOLVED ISSUES:
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: only 1 reference to Bugcrowd is provided. Is there a better
+reference that covers the broader issue, or are other
+references/disclosures for other products/services with "excessive SSO
+trust" besides Atlassian?
+
+Response: [Redacted Organization] didn't let me disclose, [Redacted
+Organization] is currently being assessed.
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: The reference is Atlassian-specific, but neither the
+proposed name nor the desc mention Atlassian. Does this more-general
+submission apply to other SSO providers?  We prefer more examples
+besides Atlassian.
+
+Response: [Redacted Organization] and [Redacted Organization] seem to
+have the same issue.
+
+
+
+
+TIMELINE:
+
+Received: 2022-07-04
+
+Ack-Receipt: 2022-07-05
+
+Init-Review: 2023-01-10
+
+Init-Consultation: 2023-03-10
+
+Init-Accepted: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+COMMUNICATIONS LOG:
