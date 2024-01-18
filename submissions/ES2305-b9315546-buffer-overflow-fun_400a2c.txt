@@ -1,0 +1,182 @@
+SUBMISSION COMMUNICATION ID: ES2305-b9315546
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Init-Consultation
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2023-05-13 18:42:02
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.UNCLEAR, SUB.IPR, SUB.ABS.LOWLEVEL, SUB.RELREFS
+
+PUBTRACKER: #71
+
+MTRACKER: #942
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Hardware
+
+NAME: Buffer Overflow:  FUN_400a2c
+
+DESCRIPTION:
+
+Buffer overflows happen when a program attempts to write more data to a
+buffer than it can hold, or when a program attempts to write data at an
+offset that is outside the boundaries of the buffer. The most common cause
+of buffer overflows is copying data to a buffer without setting an upper
+bound on the length of the data being copied. The analysis detected a
+potentially insecure use of strcpy(). The source buffer passed into the
+call can be arbitrarily large, and copying it into fixed-length arrays
+without first determining the size and allocating adequate storage can
+result in a buffer overflow.
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-120
+
+REFERENCES:
+
+Title: Buffer Overflow
+URL: https://cwe.mitre.org/data/definitions/120.html
+
+
+ACTIVE ISSUES:
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: It is not clear what change is intended by this
+submission. The proposed description seems to be a rephrase of the
+current extended description, adding in a specific detail about
+strcpy(). What change is being proposed?
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.IPR - "IP Rights Concerns"
+
+Description: The submission might have concerns related to intellectual
+property rights, e.g., by citing or deriving content from sources that are
+subject to significant restrictions, or if the content is copied verbatim
+from a source without attribution (i.e., plagiarism).
+
+Resolution: The submission cannot progress to later phases until it is
+clear that there are no IP concerns.
+
+Comments: Some of this submission might have been taken from a code
+analysis and/or reverse engineering tool. The "FUN_400a2c" in the name
+seems like it would be from some reverse engineering tool. Part of the
+paragraph says "The analysis detected a potentially insecure use of
+strcpy()" which suggests that some kind of report is being cited. If
+this text has been taken from a tool - which tool did this come from?
+Is this phrasing already protected by copyright?
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: It would be too low-level to create a new CWE entry that is
+specific to strcpy(), so this submission is assumed to be a suggested
+modification to CWE-120. Please confirm.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: The only reference is to CWE's web page for CWE-120. Is
+there another reference that could be suggested? If the submitter is
+only suggesting changes to the description or extended description,
+then it is not necessary to provide additional references.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2023-05-13
+
+Ack-Receipt: 2023-12-21
+
+Init-Review: 2024-01-15
+
+Init-Consultation: 2024-01-15
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
