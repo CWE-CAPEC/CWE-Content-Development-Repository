@@ -69,12 +69,19 @@ elsewhere.
 
 Resolution: This will depend on the nature of the problem.
 
-Comments: After careful look at CWE-124, libc's strncpy(), find(), and
-related materials, the CWE team feels that the example in question is
-indeed correct. That said, we agree that we need to improve our
-explanation of what the code is doing, which we will certainly look to
-do. Please carefully review the code again and you'll see that it
-performs how it should.
+Comments: After a careful look at CWE-124, libc's strncpy(), find(),
+and related materials, the CWE team feels that the example in question
+exhibits CWE-127: Buffer Under-read, since the result from find() is
+being used to read from srcBuf. So, we will move that code to a
+demonstrative example for CWE-127.
+
+We believe that the proposed code change is valid for CWE-124, but we
+will change the explanations to make the example easier to understand.
+
+Finally, the code should be labeled as C++, not C, due to the use of
+find().
+
+Please let us know if you agree with this approach.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
