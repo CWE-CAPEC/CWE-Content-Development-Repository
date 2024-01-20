@@ -3,7 +3,7 @@ SUBMISSION COMMUNICATION ID: ES2302-1b1b9341
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 ORIGIN: cwe-email
 
@@ -79,9 +79,7 @@ We believe that the proposed code change is valid for CWE-124, but we
 will change the explanations to make the example easier to understand.
 
 Finally, the code should be labeled as C++, not C, due to the use of
-find().
-
-Please let us know if you agree with this approach.
+find(). Please let us know if you agree with this approach.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -99,7 +97,7 @@ Ack-Receipt: 2023-02-07
 
 Init-Review: 2023-02-07
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-01-18
 
 Init-Rejected: YYYY-MM-DD
 
