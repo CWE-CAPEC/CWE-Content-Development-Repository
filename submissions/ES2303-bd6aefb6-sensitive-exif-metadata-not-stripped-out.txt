@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2303-bd6aefb6
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 ORIGIN: sub-server
 
@@ -171,7 +171,7 @@ Ack-Receipt: 2024-01-05
 
 Init-Review: 2024-01-22
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-01-22
 
 Init-Rejected: YYYY-MM-DD
 
