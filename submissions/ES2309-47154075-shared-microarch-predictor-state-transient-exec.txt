@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-47154075
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Full-Review
+SUBMISSION STATUS: Full-Accepted
 
 ORIGIN: sub-server
 
@@ -493,7 +493,7 @@ entries created in one context are used later in the same context
 (context tags cannot prevent this). One such example is Intra-mode
 Branch Target Injection. Weaknesses of this sort can map to CWE-A.
 
-Suggestions: If a weakness involves a microarchitectural predictor
+If a weakness involves a microarchitectural predictor
 whose state is not shared across processor contexts, then CWE-A may be
 more appropriate for the mapping task.
 
@@ -580,7 +580,7 @@ Full-Review: 2024-01-02
 
 Full-Consultation: YYYY-MM-DD
 
-Full-Accepted: YYYY-MM-DD
+Full-Accepted: 2024-01-22
 
 Production: YYYY-MM-DD
 
