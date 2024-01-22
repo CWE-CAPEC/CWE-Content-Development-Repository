@@ -2,13 +2,13 @@ SUBMISSION COMMUNICATION ID: ES2309-f7b489ac
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Full-Review
+SUBMISSION STATUS: Full-Accepted
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-09-19 17:40:49
 
-ISSUES: not-analyzed
+ISSUES: no
 
 ISSUE DETAILS: 
 
@@ -138,7 +138,6 @@ BAD CODE:
 7 mov rbx, qword [rbx + rax]  # transmit result over a cache covert channel
 
 LANGUAGE: x86-64 Assembly Language
-<<put the information here>>
 
 EXPLANATORY TEXT:
 
@@ -154,12 +153,6 @@ of cache covert channels to observe the side effects of transient
 execution has been described in [REF-5].
 
 Code snippet is from [REF-5], with additional annotations.
-
-GOOD CODE:
-
-LANGUAGE: <<LANGUAGE>>
-
-<<put the information here>>
 
 
 EXAMPLE 2
@@ -178,15 +171,6 @@ particular during a faulting operation or an operation that triggers a
 microcode assist.
 
 More information on MFBDS can be found in [REF-2] and [REF-6].
-
-BAD CODE:
-LANGUAGE: <<LANGUAGE>>
-<<put the information here>>
-EXPLANATORY TEXT:
-<<put the information here>>
-GOOD CODE:
-LANGUAGE: <<LANGUAGE>>
-<<put the information here>>
 
 EXAMPLE 3
 
@@ -220,15 +204,7 @@ BAD CODE:
 
 LANGUAGE: Arm Assembly Language
 
-<<put the information here>>
 
-EXPLANATORY TEXT:
-<<put the information here>>
-
-GOOD CODE:
-
-LANGUAGE: <<LANGUAGE>>
-<<put the information here>>
 
 
 OBSERVED EXAMPLES:
@@ -421,7 +397,7 @@ shared microarchitectural resources.
 
 Effectiveness: Limited
 
-Effectiveness Description: This kind of patch may not be feasible or
+Description: This kind of patch may not be feasible or
 implementable for all processors or all weaknesses.
 
 
@@ -588,7 +564,7 @@ Full-Review: 2024-01-02
 
 Full-Consultation: YYYY-MM-DD
 
-Full-Accepted: YYYY-MM-DD
+Full-Accepted: 2024-01-22
 
 Production: YYYY-MM-DD
 
