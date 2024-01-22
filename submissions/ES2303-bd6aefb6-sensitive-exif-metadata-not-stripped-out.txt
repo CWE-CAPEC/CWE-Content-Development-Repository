@@ -1,6 +1,6 @@
 SUBMISSION COMMUNICATION ID: ES2303-bd6aefb6
 
-ACTION TYPE: New Entry
+ACTION TYPE: Modification
 
 SUBMISSION STATUS: Init-Review
 
@@ -8,9 +8,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-03-29 23:36:51
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.ACTCHANGE
 
 PUBTRACKER: #38
 
@@ -40,11 +40,126 @@ REFERENCES:
 Title: CWE-359: Exposure of Private Personal Information to an Unauthorized Actor
 URL: https://cwe.mitre.org/data/definitions/359.html
 
+Title: Sensitive Data Exposure / EXIF Geolocation Data Not Stripped From Uploaded Images Automatic User Enumeration
+URL: https://bugcrowd.com/vulnerability-rating-taxonomy
+
+Title: Sensitive Data Exposure / Sensitive Data Exposure	EXIF Geolocation Data Not Stripped From Uploaded Images Manual User Enumeration
+URL: https://bugcrowd.com/vulnerability-rating-taxonomy
+
+Title: Do your online photos respect your privacy?
+URL: https://www.kaspersky.com/blog/exif-privacy/13356/
+
 
 ACTIVE ISSUES:
 
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: Since EXIF data is effectively metadata, it might seem that
+CWE-1230: Exposure of Sensitive Information Through Metadata would
+apply - however, CWE-1230's focus is more on databases and other
+resources where the metadata/search-indices are external to the
+resource in question. CWE-1230 might need to be changed. More
+appropriate would be CWE-212: Improper Removal of Sensitive
+Information Before Storage or Transfer. However, CWE-359 also applies,
+but the overlap between CWE-212 and CWE-359 requires larger research
+efforts to resolve.  We plan to update CWE-212 and CWE-359 to include
+EXIF as a consideration. Please let us know if you agree.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or full) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: The relationship between CWE-212 and CWE-359 requires larger
+research efforts to resolve, but it can be resolved
+independently. This is simply to notify you of the additional work
+that is needed by the CWE Team. Please acknowledge that you've seen
+this item.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: It is not appropriate to create CWEs unique to EXIF data (or
+any particular kind of technology-specific data at such a low level),
+since these are probably even lower-level than Variants. We plan to
+perform a Modification of the existing CWE-212 and CWE-359 instead of
+creating a new entry. Please acknowledge this point or let us know if
+you disagree.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to the Production stage until
+the informational needs are addressed.
+
+Comments: This is being treated as a Modification - not a New Entry.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
 
 RESOLVED ISSUES:
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: The submitter posted additional references to CDR on
+December 4.  This issue no longer applies.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
 
 
 
