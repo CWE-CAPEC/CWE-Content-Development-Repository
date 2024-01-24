@@ -1,6 +1,6 @@
 SUBMISSION COMMUNICATION ID: ES2303-4eae8c29
 
-ACTION TYPE: New Entry
+ACTION TYPE: Modification
 
 SUBMISSION STATUS: Init-Review
 
@@ -8,9 +8,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-03-08 09:58:02
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.LOWLEVEL, SUB.ACTCHANGE, SUB.MISC
 
 PUBTRACKER: #69
 
@@ -29,7 +29,7 @@ combines CRLF injection, HTTP request header injection and XSS, exploiting
 a poorly configured reverse proxy deployed with a shared hosting
 environment, allowing attackers to inject a new host header, hijack the
 frontend server and replace the accessed server with an attacker-controlled
-server.This enables the attacker to execute any reflected XSS and phishing
+server. This enables the attacker to execute any reflected XSS and phishing
 related payloads while bypassing any defensive mechanisms including CSP
 (Content Security Policy), HttpOnly cookie attributes, WAFs (Web
 Application Firewalls), CORS (Cross Origin Resource Sharing) and HTTPS
@@ -53,8 +53,122 @@ URL: https://static.sched.com/hosted_files/owasp2023globalappsecdublin/72/Down%2
 ACTIVE ISSUES:
 
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: The description does not clarify what the weakness is,
+focusing more on the attack. What is the key mistake that allows the
+attack to succeed?
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ATTACK - "Too attack-focused"
+
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: The description does not clarify what the weakness is,
+focusing more on the attack with phrases such as "server hijacking" -
+but there is an even greater emphasis on the potential impacts such as
+"bypassing any defensive mechanisms."  What is the key mistake that
+allows the attack to succeed?
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: the emphasis on "server hijacking" related to a "poorly
+configured reverse proxy" is too narrow for a particular
+technology. So, instead of creating a new CWE entry, it would be
+better to integrate this information into existing CWEs (e.g., CWE-93,
+CWE-79, and/or "header injection" somewhere under CWE-74)
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to the Production stage until
+the informational needs are addressed.
+
+Comments: Instead of creating a new entry, we plan to update one or
+more existing CWEs to account for this attack somehow: CWE-93, CWE-79,
+and/or "header injection" somewhere under CWE-74).
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: While a modification might be possible, we are not sure what
+changes to make until we better understand what the root cause
+weakness is.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+
 
 RESOLVED ISSUES:
+
+SUB.IPR - "IP Rights Concerns"
+
+Description: The submission might have concerns related to intellectual
+property rights, e.g., by citing or deriving content from sources that are
+subject to significant restrictions, or if the content is copied verbatim
+from a source without attribution (i.e., plagiarism).
+
+Resolution: The submission cannot progress to later phases until it is
+clear that there are no IP concerns.
+
+Comments: This proposal is from the submitter's own presentation, so
+there are no IP concerns.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
 
 
 
