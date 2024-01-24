@@ -8,9 +8,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-02-08 09:42:54
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.MISC
 
 PUBTRACKER: #5
 
@@ -33,11 +33,37 @@ proper HTTPS forcing, but for assets like images it doesn't work properly
 (no HTTP forcing - HTTP instead of HTTPS). Proposed remediation: HTTPS
 Forcing also for used assets like images, and so on.
 
+Despite of articles like
+https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content
+https://web.dev/fixing-mixed-content/
+nowadays mixed HTTP and HTTPS protocols are common.
+
+Assets are often omitted with using HTTPS.
+
+(mentioned examples sites from my side are accidental and
+unintentional) Example: https://banksitezxc.example and used there
+HTTP://cdn.banksitezxc.example/logo.png - bad actor can get to know
+about user - bank relation (or interaction) in this case (sniffing).
+
+
 RELATED WEAKNESSES:
 
-   Other CWE-319
+RelType: Other
+ID: CWE-319
+View-ID: 1000
+
+RelType: Other
+ID: ES2302-1f7d9e54 Using HTTP instead of HTTPS with email and other content
+
+   
 
 REFERENCES:
+
+Title: Mixed content
+URL: https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content
+
+Title: Fixing mixed content
+URL: https://web.dev/fixing-mixed-content/
 
 Title: CWE-319: Cleartext Transmission of Sensitive Information
 URL: https://cwe.mitre.org/data/definitions/319.html
@@ -46,6 +72,129 @@ URL: https://cwe.mitre.org/data/definitions/319.html
 
 
 ACTIVE ISSUES:
+
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: While there is no overlap with existing CWEs, there is a
+separate submission in this general area - ES2302-1f7d9e54 "Using HTTP
+instead of HTTPS with email and other content" - as well as some
+discussion on the CWE-Research mailing list in January 2024. While
+this overlap can probably be resolved without too much effort, it
+still must be noted.  Please indicate agreement or explain why the
+differences are big enough that separate CWE identifiers might be
+needed.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or full) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: CWE-319 is pretty high level (maybe it should be a level-2
+Class, although it's currently treated as a Base.) However, given
+discussion on the CWE-Research mailing list in January 2024, it might
+be reasonable to create a child, Base-level CWE for "using a cleartext
+protocol when an encrypted equivalent is available" or something like
+that. It might even be reasonable to create a new, Variant-level entry
+for "use of HTTP instead of HTTPS" - possibly covering "lack of HTTPS
+forcing".  Regardless of the decision for new entries, it's reasonable
+to somehow cover the lack of HTTPS forcing.  More research and
+discussion is needed. Please provide your thoughts on this proposal.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: See SUB.ABS.SUBTREE comments. A variant-level "lack of HTTPS
+forcing" might be too low-level to include in CWE, but it is an
+extremely common issue. This decision does not need to be made for
+initial review.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: The mixed-content references are related to this weakness,
+but are there other references that are more narrowly focused on the
+lack of HTTPS forcing?
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: Since other submissions touch on "use of http instead of
+https" and there is discussion on the CWE-Research list on this topic,
+it is not yet clear how to handle these changes within CDR. It's
+possible that a separate submission (or an independent new entry) will
+be created, and the results of this submission will be integrated into
+the new entry.  Please acknowledge this and provide any additional
+comments.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+
 
 
 RESOLVED ISSUES:
