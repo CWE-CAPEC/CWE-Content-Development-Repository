@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-47154075
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Full-Accepted
+SUBMISSION STATUS: Production
 
 ORIGIN: sub-server
 
@@ -582,7 +582,7 @@ Full-Consultation: YYYY-MM-DD
 
 Full-Accepted: 2024-01-22
 
-Production: YYYY-MM-DD
+Production: 2024-01-24
 
 Final-Coord: YYYY-MM-DD
 
