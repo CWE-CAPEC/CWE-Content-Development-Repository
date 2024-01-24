@@ -36,7 +36,12 @@ the use forms like "example.com" or "http://example.com").
 
 RELATED WEAKNESSES:
 
-   Other CWE-319
+RelType: Other
+ID: CWE-319
+
+RelType: Other
+ID: ES2302-1f7d9e54 Using HTTP instead of HTTPS with email and other content
+
 
 REFERENCES:
 
