@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2206-33c5627d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Full-Sub-Requested
 
 ORIGIN: sub-server
 
@@ -263,8 +263,6 @@ Note: <<put the information here>>
 
 ************************************************************************************************
 
-# 8. DEMONSTRATIVE EXAMPLES (required)
-
 DEMONSTRATIVE EXAMPLES:
 
 # The entry should have one or more demonstrative examples, but
@@ -463,11 +461,18 @@ RELATED WEAKNESSES:
 #
 # There should be at least one ChildOf relationship in view 1000.
 
-Other CWE-613
+RelType: Other
+ID: CWE-613
+View-ID: 1000
 
-Other ES2206-d46a8c14
+RelType: Other
+ID: ES2206-d46a8c14
+View-ID:
 
-Other ES2206-feb8f4c9
+RelType: Other
+ID: ES2206-feb8f4c9
+View-ID:
+
 
 
 REFERENCES:
@@ -521,7 +526,7 @@ abstraction. Resolution: the submission might be allowed to progress
 to later stages if it is at an acceptable level of abstraction, and
 the subtree issue(s) can be resolved or addressed separately.
 
-Comments: Per August 16 change from submitter, the relationships to
+Comments: Per 2022-08-16 change from submitter, the relationships to
 other submissions are noted. The relationships to existing CWE entries
 still need development, but the CWE Team defers this work to the
 Production stage, so this problem does not need to be resolved right
@@ -661,7 +666,7 @@ Init-Accepted: 2022-11-22
 
 Init-Rejected: YYYY-MM-DD
 
-Full-Sub-Requested: YYYY-MM-DD
+Full-Sub-Requested: 2024-01-24
 
 Full-Sub-Received: YYYY-MM-DD
 
