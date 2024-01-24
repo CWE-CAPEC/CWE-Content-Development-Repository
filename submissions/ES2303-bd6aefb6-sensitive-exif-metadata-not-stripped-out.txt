@@ -8,9 +8,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-03-29 23:36:51
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.ACTCHANGE
+ISSUE DETAILS: 
 
 PUBTRACKER: #38
 
@@ -43,7 +43,7 @@ URL: https://cwe.mitre.org/data/definitions/359.html
 Title: Sensitive Data Exposure / EXIF Geolocation Data Not Stripped From Uploaded Images Automatic User Enumeration
 URL: https://bugcrowd.com/vulnerability-rating-taxonomy
 
-Title: Sensitive Data Exposure / Sensitive Data Exposure	EXIF Geolocation Data Not Stripped From Uploaded Images Manual User Enumeration
+Title: Sensitive Data Exposure / EXIF Geolocation Data Not Stripped From Uploaded Images Manual User Enumeration
 URL: https://bugcrowd.com/vulnerability-rating-taxonomy
 
 Title: Do your online photos respect your privacy?
@@ -51,6 +51,8 @@ URL: https://www.kaspersky.com/blog/exif-privacy/13356/
 
 
 ACTIVE ISSUES:
+
+RESOLVED ISSUES:
 
 SUB.OVERLAP - "Duplicate/Overlap"
 
@@ -73,7 +75,7 @@ but the overlap between CWE-212 and CWE-359 requires larger research
 efforts to resolve.  We plan to update CWE-212 and CWE-359 to include
 EXIF as a consideration. Please let us know if you agree.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [RESOLVED ISSUE; DO NOT CHANGE] Sounds great. I agree with you.
 
 
 ----------
@@ -96,7 +98,7 @@ independently. This is simply to notify you of the additional work
 that is needed by the CWE Team. Please acknowledge that you've seen
 this item.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [RESOLVED ISSUE; DO NOT CHANGE] I agree with you.
 
 
 ----------
@@ -124,7 +126,7 @@ perform a Modification of the existing CWE-212 and CWE-359 instead of
 creating a new entry. Please acknowledge this point or let us know if
 you disagree.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [RESOLVED ISSUE; DO NOT CHANGE] I agree with you.
 
 ----------
 
@@ -139,10 +141,8 @@ the informational needs are addressed.
 
 Comments: This is being treated as a Modification - not a New Entry.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [RESOLVED ISSUE; DO NOT CHANGE] I agree with you.
 
-
-RESOLVED ISSUES:
 
 SUB.RELREFS - "No relevant references"
 
