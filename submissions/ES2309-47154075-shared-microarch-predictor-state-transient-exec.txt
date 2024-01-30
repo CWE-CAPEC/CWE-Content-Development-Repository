@@ -20,11 +20,11 @@ GITHUBUSER: scottconstable
 
 SUBMISSION TYPE: Hardware
 
-NAME: Exposure of Sensitive Information caused by Shared Microarchitectural Predictor State that Influences Transient Execution
+NAME: (CWE-D) Exposure of Sensitive Information caused by Shared Microarchitectural Predictor State that Influences Transient Execution
 
 DESCRIPTION:
 
-Shared microarchitectural predictor state may allow code to influence
+(CWE-D) Shared microarchitectural predictor state may allow code to influence
 transient execution across a hardware boundary, potentially exposing
 data that is accessible beyond the boundary over a covert channel.
 

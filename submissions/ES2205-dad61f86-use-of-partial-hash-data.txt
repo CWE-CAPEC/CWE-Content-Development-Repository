@@ -10,7 +10,7 @@ SUBMISSION DATE: 2022-05-03 15:39:37
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.MITIGATION, SUB.ABS.MULTWEAK, SUB.RELS
+ISSUE DETAILS: SUB.ABS.MULTWEAK, SUB.RELS
 
 PUBTRACKER: #24
 
@@ -20,15 +20,18 @@ GITHUBUSER: kurtseifried
 
 SUBMISSION TYPE: Software
 
-NAME: Use of partial hash data
+NAME: Reliance on a Substring of a Full Hash Value
 
 DESCRIPTION: 
 
-When using a partial hash value to represent data instead of the full
-hash value (e.g. using the first 8 bytes of a 32 byte hash), the
-attacker's complexity is significantly reduced, making it easier for
-them to create an arbitrary input that produces the same partial hash
-value. This vulnerability can arise in two scenarios:
+The product relies on verification or display of a hash value of data,
+but it only uses a substring or partial value of the hash, which
+lowers the attack complexity. For example, using the first 16 bytes of
+a 32-byte hash reduces attack complexity by 2^128. This allows an
+attacker to create a second input with the same substring or partial
+hash value as the original item, even though the full hash value is
+different. Or, if the user cannot view the full hash value and
+validate it, then they cannot safely validate the hash of the data.
 
 Firstly, when a full hash value is generated, but only a partial hash
 value is displayed to the user. This can potentially mislead the user
@@ -71,54 +74,6 @@ URL: https://evil32.com/
 
 ACTIVE ISSUES:
 
-SUB.UNCLEAR - "Unclear weakness"
-
-Description: The submission's name and/or description does not clearly
-identify a weakness, or it is written in a way that is vague and could
-cause the submission to be incorrectly mapped to.
-
-Resolution: An initial submission (or full submission) cannot progress past
-the consultation phase until SUB.UNCLEAR is addressed.
-
-Comments: The 2022-08-16 reply from the submitter uses phrasing such
-as "When using the hash value of data, the full value of the hash must
-be used to represent the data" which is focused on the mitigation, not
-the weakness (see SUB.MITIGATION). After the CWE Team's further
-analysis of SUB.ABS.MULTWEAK, it seems that the following name could
-be used to cover both verification and display: "Reliance on a
-Substring of a Full Hash Value". For the description, consider: "The
-product relies on verification or display of a hash value of data, but
-it only uses a substring or partial value of the hash, which lowers
-the attack complexity. For example, using the first 16 bytes of a
-32-byte hash reduces attack complexity by 2^128. This allows an
-attacker to create a second input with the same substring or partial
-hash value as the original item, even though the full hash value is
-different. Or, if the user cannot view the full hash value and
-validate it, then they cannot safely validate the hash of the data."
-If you agree with this rephrasing, please let us know in your
-response.
-
-Response: The title “Reliance on a Substring of a Full Hash Value” is fine
-
-------------
-
-SUB.MITIGATION - "Too mitigation-focused"
-
-Description: The submission's name and/or description emphasizes missing or
-incorrect mitigation without clarifying the weakness.
-
-Resolution: The submission cannot progress to later phases unless it also
-includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
-
-Comments: See SUB.UNCLEAR discussion. Phrasing such as "the full value
-must be used" as used in the 2022-08-16 reply is mitigation-oriented;
-however, it could be used in Potential Mitigations when this
-submission reaches the full-submission stage.
-
-Response: see above description rewritten
-
-------------
-
 
 SUB.ABS.MULTWEAK - "Multiple weaknesses"
 
@@ -141,7 +96,7 @@ more specific details. If you agree with this decision, please
 acknowledge in your response.
 
 Response: title updated, this maybe needs children weaknesses long
-term to clealry enumerate each avenue of attack?
+term to clearly enumerate each avenue of attack?
 
 
 ------------
@@ -180,6 +135,55 @@ be to update CWE-223 to mention processing of data.
 ****************************************************************************
 
 RESOLVED ISSUES:
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: The 2022-08-16 reply from the submitter uses phrasing such
+as "When using the hash value of data, the full value of the hash must
+be used to represent the data" which is focused on the mitigation, not
+the weakness (see SUB.MITIGATION). After the CWE Team's further
+analysis of SUB.ABS.MULTWEAK, it seems that the following name could
+be used to cover both verification and display: "Reliance on a
+Substring of a Full Hash Value". For the description, consider: "The
+product relies on verification or display of a hash value of data, but
+it only uses a substring or partial value of the hash, which lowers
+the attack complexity. For example, using the first 16 bytes of a
+32-byte hash reduces attack complexity by 2^128. This allows an
+attacker to create a second input with the same substring or partial
+hash value as the original item, even though the full hash value is
+different. Or, if the user cannot view the full hash value and
+validate it, then they cannot safely validate the hash of the data."
+If you agree with this rephrasing, please let us know in your
+response.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] The title “Reliance on a
+Substring of a Full Hash Value” is fine
+
+
+SUB.MITIGATION - "Too mitigation-focused"
+
+Description: The submission's name and/or description emphasizes missing or
+incorrect mitigation without clarifying the weakness.
+
+Resolution: The submission cannot progress to later phases unless it also
+includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: See SUB.UNCLEAR discussion. Phrasing such as "the full value
+must be used" as used in the 2022-08-16 reply is mitigation-oriented;
+however, it could be used in Potential Mitigations when this
+submission reaches the full-submission stage.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] see above description
+rewritten
+
+
 
 SUB.GRAMMAR - "Grammar/Spelling issues"
 

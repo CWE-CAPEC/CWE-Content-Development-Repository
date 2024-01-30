@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-a1334d32
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Full-Accepted
+SUBMISSION STATUS: Production
 
 ORIGIN: sub-server
 
@@ -20,11 +20,11 @@ GITHUBUSER: scottconstable
 
 SUBMISSION TYPE: Hardware
 
-NAME: Exposure of Sensitive Information during Transient Execution
+NAME: (CWE-A) Exposure of Sensitive Information during Transient Execution
 
 DESCRIPTION:
 
-A processor event or prediction may allow incorrect operations (or
+(CWE-A) A processor event or prediction may allow incorrect operations (or
 correct operations with incorrect data) to execute transiently,
 potentially exposing data over a covert channel.
 
@@ -500,7 +500,7 @@ Full-Consultation: YYYY-MM-DD
 
 Full-Accepted: 2024-01-22
 
-Production: YYYY-MM-DD
+Production: 2024-01-24
 
 Final-Coord: YYYY-MM-DD
 

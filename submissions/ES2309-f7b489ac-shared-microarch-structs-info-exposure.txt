@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-f7b489ac
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Full-Accepted
+SUBMISSION STATUS: Production
 
 ORIGIN: sub-server
 
@@ -20,11 +20,11 @@ GITHUBUSER: scottconstable
 
 SUBMISSION TYPE: Hardware
 
-NAME: Exposure of Sensitive Information in Shared Microarchitectural Structures during Transient Execution
+NAME: (CWE-B) Exposure of Sensitive Information in Shared Microarchitectural Structures during Transient Execution
 
 DESCRIPTION:
 
-A processor event may allow transient operations to access
+(CWE-B) A processor event may allow transient operations to access
 architecturally restricted data (for example, in another address
 space) in a shared microarchitectural structure (for example, a CPU
 cache), potentially exposing the data over a covert channel.
@@ -566,7 +566,7 @@ Full-Consultation: YYYY-MM-DD
 
 Full-Accepted: 2024-01-22
 
-Production: YYYY-MM-DD
+Production: 2024-01-24
 
 Final-Coord: YYYY-MM-DD
 

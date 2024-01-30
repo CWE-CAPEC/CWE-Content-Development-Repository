@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-78afd2b1
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Full-Accepted
+SUBMISSION STATUS: Production
 
 ORIGIN: sub-server
 
@@ -20,11 +20,11 @@ GITHUBUSER: scottconstable
 
 SUBMISSION TYPE: Hardware
 
-NAME: Exposure of Sensitive Information caused by Incorrect Data Forwarding during Transient Execution
+NAME: (CWE-C) Exposure of Sensitive Information caused by Incorrect Data Forwarding during Transient Execution
 
 DESCRIPTION:
 
-A processor event or prediction may allow incorrect or stale data to
+(CWE-C) A processor event or prediction may allow incorrect or stale data to
 be forwarded to transient operations, potentially exposing data over a
 covert channel.
 
@@ -540,7 +540,7 @@ Full-Consultation: YYYY-MM-DD
 
 Full-Accepted: 2024-01-22
 
-Production: YYYY-MM-DD
+Production: 2024-01-24
 
 Final-Coord: YYYY-MM-DD
 

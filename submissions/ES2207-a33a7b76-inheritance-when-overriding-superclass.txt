@@ -87,7 +87,10 @@ architecture/design in nature, and this is an implementation
 weakness. Other CWEs such as CWE-1074 cover inheritance but are not
 necessarily directly relevant to this weakness. Because SUB.UNCLEAR
 does not apply to this submission, SUB.RELS does not prevent it from
-moving to the next phase.
+moving to the next phase.  At worst, this could go under CWE-710:
+Improper Adherence to Coding Standards but the best match (under
+access control) would probably be CWE-749: Exposed Dangerous Method or
+Function.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 

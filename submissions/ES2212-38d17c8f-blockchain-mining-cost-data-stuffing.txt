@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2212-38d17c8f
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 ORIGIN: sub-server
 
@@ -78,7 +78,11 @@ be suitable for inclusion in CAPEC.
 Resolution: An initial submission cannot progress to later phases unless it
 also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
 
-Comments: The actual weakess isn't highlighted in the description or references provided. The description and references focus on the Zcash attack that occured without details on what was the actual weakness that led to that attack. Additional information is needed to better understand the actual weakness.
+Comments: The actual weakess isn't highlighted in the description or
+references provided. The description and references focus on the Zcash
+attack that occured without details on what was the actual weakness
+that led to that attack. Additional information is needed to better
+understand the actual weakness.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -100,7 +104,11 @@ the more-general concept is appropriately identified and described. The
 original, lower-level submission will serve as a primary example of the
 more general concept.
 
-Comments: This applies because this issue only deals with blockchain when the cost of mining is low - this appears to be a very rare exception case. Additional information is needed to know how this weakness applies in other blockchain scenarios, and what the actual weakness is.
+Comments: This applies because this issue only deals with blockchain
+when the cost of mining is low - this appears to be a very rare
+exception case. Additional information is needed to know how this
+weakness applies in other blockchain scenarios, and what the actual
+weakness is.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -117,7 +125,11 @@ resolve by providing additional details such as a section name and quote
 from the reference.  If references still are not available, the CWE Team
 may decide to make an exception if no suitable reference is available.
 
-Comments: Although it isn't necessary as part of Init-Review phase to have proper references, the references provided simply point out the Zcash attack that occured. No additional information is available on what the weakness is and how that relates to creating a new entry on this issue. 
+Comments: Although it isn't necessary as part of Init-Review phase to
+have proper references, the references provided simply point out the
+Zcash attack that occured. No additional information is available on
+what the weakness is and how that relates to creating a new entry on
+this issue.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -125,22 +137,6 @@ Response: <SUBMITTER SHOULD REPLY HERE>
 ----------
 
 RESOLVED ISSUES:
-
-(Could be moved from "ACTIVE ISSUES" section.)
-
-
-SUB.XXXXX - explanation here.
-
-Comments: any reviewer comments here.
-
-Response: <submitter should reply here>
-
-
-SUB.YYYYY - explanation here.
-
-Comments: any reviewer comments here.
-
-Response: <submitter should reply here>
 
 
 
@@ -152,7 +148,7 @@ Ack-Receipt: 2022-12-06
 
 Init-Review: 2023-02-07
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-01-25
 
 Init-Rejected: YYYY-MM-DD
 
