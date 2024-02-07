@@ -62,89 +62,65 @@ MITIGATIONS:
 
 5. POTENTIAL MITIGATIONS (required)
 
-+---------------------+------------------------------------------+
-|       Element       |               Description                |
-+---------------------+------------------------------------------+
-| Phase               | MAKE A STRICT POLICY in you DNS ZONE     |
-| Description         | Use a proper SSL handshake feature       |
-| 			    |	Use a proxy server			     |
-| 			    |	Use and CDN         			     |
-| Effectiveness       | (optional) << put the information here>> |
-| Effectiveness Notes | (optional) <<put the information here>>  |
-+---------------------+------------------------------------------+
+Phase: 
+
+Description: 
+
+- MAKE A STRICT POLICY in you DNS ZONE
+- Use a proper SSL handshake feature
+- Use a proxy server
+- Use and CDN
+
+Effectiveness: << put the information here>>
+
+Effectiveness Notes: <<put the information here>>  |
 
 
 CONSEQUENCES:
 
-6. COMMON CONSEQUENCES (required)
+Scope: Domain
 
-	
-+------------+------------------------------------------+
-|  Element   |               Description                |
-+------------+------------------------------------------+
-| Scope      | Domain				              |
-| Impact     | DNS MAPPING IN ATTACKERS DOMAIN          |
-| Likelihood | (optional) << put the information here>> |
-| Note       | (optional) <<put the information here>>  |
-+------------+------------------------------------------+
+Impact: DNS MAPPING IN ATTACKERS DOMAIN
+
+Likelihood: << put the information here>>
+
+Note: <<put the information here>>
 
 
-PLATFORMS:
+APPLICABLE PLATFORMS:
 
-7. APPLICABLE PLATFORMS (required)
-	
-+------------------+-------------------------------------+
-|     Element      |             Description             |
-+------------------+-------------------------------------+
-| Language         | Name: <<put the information here>>  |
-|                  | Class: <<put the information here>> |
-|                  |                                     |
-| Operating System | Name: <<put the information here>>  |
-|                  | Class: <<put the information here>> |
-|                  |                                     |
-| Architecture     | Name: <<put the information here>>  |
-|                  | Class: <<put the information here>> |
-|                  |                                     |
-| Technology       | Name: DOMAIN NAME SERVER 		   |
-|                  | Class: Technology-Independent       |
-+------------------+-------------------------------------+
-	
+Technology Class: Not Technology-Specific
 
-DEMOX:
-
-8. DEMONSTRATIVE EXAMPLES (required)
+Technology Name: DOMAIN NAME SERVER
 
 
-+---------------------------------------------+------------------------------------------------------------------------------------+
-|                   Element                   |         Description          									     |
-+---------------------------------------------+------------------------------------------------------------------------------------+
-| Introductory Text                           | original url: cert.lv 								     |
-|                                             |                                  								     |
-| "Bad" Code Snippets or Descriptive Example  | bad.png									     |
-|                                             |                              									     |
-| Explanatory Text                            | https://drive.google.com/file/d/1a-9-0M5O_yOXYh_jEj76ber7KutQLo2t/view?usp=sharing |
-|                                             |                       									           |
-| "Good" Code Snippets or Descriptive Example | good.png								     |
-+---------------------------------------------+------------------------------------------------------------------------------------+
+
+DEMONSTRATIVE EXAMPLES:
+
+
+INTRO TEXT:
+
+original url: cert.lv
+
+BAD CODE:
+
+[see bad.png]
+
+EXPLANATORY TEXT:
+
+https://drive.google.com/file/d/1a-9-0M5O_yOXYh_jEj76ber7KutQLo2t/view?usp=sharing
+
+GOOD CODE:
+
+[see good.png]
+
 
 
 OBEX:
 
-9. OBSERVED EXAMPLES (recommended, if possible)
-
-+----------------+------------------------------+
-|    Element     |         Description          |
-+----------------+------------------------------+
-| CVE Identifier | <<put the information here>> |
-| Link           | <<put the information here>> |
-| Summary        | <<put the information here>> |
-+----------------+------------------------------+
-
 
 
 RELATED WEAKNESSES:
-
-	<<put the information here>>
 
 
 

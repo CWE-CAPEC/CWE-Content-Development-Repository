@@ -2,15 +2,15 @@ SUBMISSION COMMUNICATION ID: ES2312-c2337436
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-12-20 03:53:09
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELS
 
 PUBTRACKER: #61
 
@@ -52,6 +52,83 @@ URL: https://docs.google.com/presentation/d/1mw7d3muWdAJa6RSuKzJVbeBHTE38kzSL/ed
 
 ACTIVE ISSUES:
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: This submission appears to be a report about a specific
+vulnerability in a specific product, which the submitter wants to
+disclose in a public report.  If that is the case, then the
+appropriate action is to request a CVE identifier via
+https://cveform.mitre.org/ .
+
+If this is not a request about a specific vulnerability, then this
+submission could possibly be used as a demonstrative example in the
+appropriate CWE entry - as long as the vulnerability has been
+published.
+
+Please clarify the situation.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: this appears to be an example of CWE-392: Missing Report of
+Error Condition.  It does not appear to be related to CWE-1191 or
+CWE-1256, since both are related to the ability for an adversary to
+bypass intended access control, but the submission is not saying that
+there is a problem with restricting access to the write
+operation. Please confirm.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: This submission appears to be a report about a specific
+vulnerability (not reporting errors) in a specific product
+(OpenTitan), but CWE entries are about the types of weaknesses that
+lead to vulnerabilities. Unless other problems are resolved (see
+above), we cannot move forward with this submission.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
 
 
 RESOLVED ISSUES:
@@ -66,7 +143,7 @@ Ack-Receipt: 2024-01-11
 
 Init-Review: 2024-01-11
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-02-06
 
 Init-Rejected: YYYY-MM-DD
 

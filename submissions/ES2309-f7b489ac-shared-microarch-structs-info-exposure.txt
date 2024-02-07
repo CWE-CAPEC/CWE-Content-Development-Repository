@@ -411,9 +411,9 @@ covert channels.
 
 DETECTION METHODS:
 
-Phase: Manual Analysis
+Method: Manual Analysis
 
-Description: This weakness can be detected in hardware by
+Desc: This weakness can be detected in hardware by
 manually inspecting processor specifications. Features that exhibit
 this weakness may include microarchitectural predictors, access
 control checks that occur out-of-order, or any other features that can
@@ -423,9 +423,9 @@ weaknesses can be discovered by examining publicly available patent
 filings, for example [REF-2] and [REF-3].
 
 
-Phase: Automated Analysis Pre-Discovery
+Method: Automated Analysis Pre-Discovery
 
-Description: This weakness can be detected in hardware by
+Desc: This weakness can be detected in hardware by
 employing static or dynamic taint analysis methods [REF-4]. These
 methods can label data in one context (for example, kernel data) and
 perform information flow analysis (or a simulation, etc.) to determine
@@ -436,9 +436,9 @@ analysis framework can identify when transient operations encounter
 tainted data.
 
 
-Phase: Automated Analysis Post-Discovery
+Method: Automated Analysis Post-Discovery
 
-Description: Software vendors can release tools that detect
+Desc: Software vendors can release tools that detect
 presence of known weaknesses on a processor. For example, some of
 these tools can attempt to transiently execute a vulnerable code
 sequence and detect whether code successfully leaks data in a manner

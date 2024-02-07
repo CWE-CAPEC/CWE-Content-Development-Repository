@@ -239,7 +239,7 @@ ID: CVE-2020-8698
 Link: https://www.cve.org/CVERecord?id=CVE-2020-8698
 
 ObexSummary: A fast store forwarding predictor may allow store
-operations to forward incorrect data to transient load oper ations,
+operations to forward incorrect data to transient load operations,
 potentially exposing data over a covert channel.
 
 
@@ -381,7 +381,7 @@ DETECTION METHODS:
 
 Method: Automated Static Analysis
 
-Notes: A variety of automated static analysis tools can identify
+Desc: A variety of automated static analysis tools can identify
 potentially exploitable code sequences in software. These tools may
 perform the analysis on source code, on binary code, or on an
 intermediate code representation (for example, during compilation).
@@ -389,7 +389,7 @@ intermediate code representation (for example, during compilation).
 
 Method: Manual Analysis
 
-Notes: This weakness can be detected in hardware by manually
+Desc: This weakness can be detected in hardware by manually
 inspecting processor specifications. Features that exhibit this
 weakness may include microarchitectural predictors, access control
 checks that occur out-of-order, or any other features that can allow
@@ -398,7 +398,7 @@ operations to execute without committing to architectural state.
 
 Method: Automated Analysis
 
-Software vendors can release tools that detect presence of known
+Desc: Software vendors can release tools that detect presence of known
 weaknesses on a processor. For example, some of these tools can
 attempt to transiently execute a vulnerable code sequence and detect
 whether code successfully leaks data in a manner consistent with the

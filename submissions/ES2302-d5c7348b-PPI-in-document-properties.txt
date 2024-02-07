@@ -10,7 +10,7 @@ SUBMISSION DATE: 2023-02-08 12:22:29
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.ACTCHANGE, SUB.RELREFS
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.ACTCHANGE
 
 PUBTRACKER: #3
 
@@ -40,6 +40,29 @@ REFERENCES:
 Title: CWE-200: Exposure of Sensitive Information to an Unauthorized Actor
 URL: https://cwe.mitre.org/data/definitions/200.html
 
+Title: Sensitive Data Exposure - Disclosure of Secrets - PII Leakage/Exposure
+URL: https://bugcrowd.com/vulnerability-rating-taxonomy
+
+Title: A3:2017-Sensitive Data Exposure
+URL: https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure
+
+Title: Sensitive data exposure: What is it and how it’s different from a data breach
+URL: https://us.norton.com/blog/privacy/sensitive-data-exposure-how-its-different-from-data-breach
+
+Title: What Is Personally Identifiable Information (PII)?
+URL: https://www.proofpoint.com/uk/threat-reference/personal-identifiable-information
+
+Title: Information disclosure vulnerabilities
+URL: https://portswigger.net/web-security/information-disclosure
+
+Title: Reconnaissance 101: Active & Passive Reconnaissance
+URL: https://blog.projectdiscovery.io/reconnaissance-a-deep-dive-in-active-passive-reconnaissance/
+
+Title: WHAT IS THE CYBER KILL CHAIN? PROCESS & MODEL (8 Phases of the Cyber Kill Chain Process - Phase 1: Reconnaissance)
+URL: https://www.crowdstrike.com/cybersecurity-101/cyber-kill-chain/
+
+Title: Cyber Kill Chains Explained: Phases, Pros/Cons & Security Tactics (1. Reconnaissance)
+URL: https://www.splunk.com/en_us/blog/learn/cyber-kill-chains.html
 
 
 ACTIVE ISSUES:
@@ -62,7 +85,7 @@ requires larger research efforts to resolve.  We plan to update
 CWE-212 and CWE-359 to include PPI as a consideration. Please let us
 know if you agree.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree with you.
 
 ----------
 
@@ -84,7 +107,7 @@ independently. This is simply to notify you of the additional work
 that is needed by the CWE Team. Please acknowledge that you've seen
 this item.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree with you.
 
 
 ----------
@@ -112,7 +135,7 @@ than Variants. We plan to perform a Modification of the existing
 CWE-212 and CWE-359 instead of creating a new entry. Please
 acknowledge this point or let us know if you disagree.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree with you.
 
 ----------
 
@@ -127,9 +150,12 @@ the informational needs are addressed.
 
 Comments: This is being treated as a Modification - not a New Entry.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree with you.
 
-----------
+
+
+
+RESOLVED ISSUES:
 
 SUB.RELREFS - "No relevant references"
 
@@ -145,11 +171,7 @@ may decide to make an exception if no suitable reference is available.
 Comments: The only provided reference is for CWE-200. Is there a more
 appropriate reference that could be added?
 
-Response: <SUBMITTER SHOULD REPLY HERE>
-
-
-
-RESOLVED ISSUES:
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
 
 
