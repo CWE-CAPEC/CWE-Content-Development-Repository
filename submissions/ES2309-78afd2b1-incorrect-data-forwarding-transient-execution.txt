@@ -20,11 +20,11 @@ GITHUBUSER: scottconstable
 
 SUBMISSION TYPE: Hardware
 
-NAME: (CWE-C) Exposure of Sensitive Information caused by Incorrect Data Forwarding during Transient Execution
+NAME: (CWE-C / CWE-1422) Exposure of Sensitive Information caused by Incorrect Data Forwarding during Transient Execution
 
 DESCRIPTION:
 
-(CWE-C) A processor event or prediction may allow incorrect or stale data to
+(CWE-C / CWE-1422) A processor event or prediction may allow incorrect or stale data to
 be forwarded to transient operations, potentially exposing data over a
 covert channel.
 
@@ -67,12 +67,12 @@ Phase: Architecture and Design
 Note: This weakness can be introduced by data speculation techniques,
 or when the processor pipeline is designed to check exception
 conditions concurrently with other operations. This weakness can also
-persist after a CWE-B weakness has been mitigated. For example,
+persist after a CWE-B (CWE-1421) weakness has been mitigated. For example,
 suppose that a processor can forward stale data from a shared
 microarchitectural buffer to dependent transient operations, and
 furthermore suppose that the processor has been patched to flush the
-buffer on context switches. This mitigates the CWE-B weakness, but the
-stale-data forwarding behavior may persist as a CWE-C weakness unless
+buffer on context switches. This mitigates the CWE-B (CWE-1421) weakness, but the
+stale-data forwarding behavior may persist as a CWE-C (CWE-1422) weakness unless
 this behavior is also patched.
 
 APPLICABLE PLATFORMS:
@@ -426,14 +426,14 @@ processor context).
 
 Comments: If a weakness arises from forwarding of incorrect/stale data
 that is not accessible within the current processor context, then
-CWE-B may be more appropriate for the mapping task.
+CWE-B (CWE-1421) may be more appropriate for the mapping task.
 
 
 RELATED WEAKNESSES:
 
 RelType: ChildOf
 
-ID: CWE-A
+ID: CWE-A / CWE-1420
 
 View-ID: CWE-1000
 
@@ -463,47 +463,47 @@ View-ID: CWE-1194
 
 REFERENCES:
 
+Title: [REF-1] Speculation
+
 Author: The kernel development community.
 
 Date: 2020-08-16
 
-Title: [REF-1] Speculation.
-
 URL: https://docs.kernel.org/6.6/staging/speculation.html
 
+
+Title: [REF-2] LVI : Hijacking Transient Execution through Microarchitectural Load Value Injection
 
 Author: Jo Van Bulck, Daniel Moghimi, Michael Schwarz, Moritz Lipp, Marina Minkin, Daniel Genkin, Yuval Yarom, Berk Sunar, Daniel Gruss, and Frank Piessens.
 
 Date: 2020-01-09
 
-Title: [REF-2] LVI : Hijacking Transient Execution through Microarchitectural Load Value Injection
-
 URL: https://lviattack.eu/lvi.pdf
 
+
+Title: [REF-3] Fast Store Forwarding Predictor
 
 Author: Intel Corporation.
 
 Date: 2022-02-08
 
-Title: [REF-3] Fast Store Forwarding Predictor
-
 URL: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/fast-store-forwarding-predictor.html
 
+
+Title: [REF-4] Security Analysis Of AMD Predictive Store Forwarding
 
 Author: AMD
 
 Date: No Date
 
-Title: [REF-4] Security Analysis Of AMD Predictive Store Forwarding
-
 URL: https://www.amd.com/system/files/documents/security-analysis-predictive-store-forwarding.pdf
 
+
+Title: [REF-10] You Cannot Always Win the Race: Analyzing the LFENCE/JMP Mitigation for Branch Target Injection.
 
 Author: Alyssa Milburn, Ke Sun, Henrique Kawakami.
 
 Date: 2022-03-08
-
-Title: [REF-10] You Cannot Always Win the Race: Analyzing the LFENCE/JMP Mitigation for Branch Target Injection.
 
 URL: https://arxiv.org/abs/2203.04277
 
