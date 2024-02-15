@@ -20,11 +20,11 @@ GITHUBUSER: scottconstable
 
 SUBMISSION TYPE: Hardware
 
-NAME: (CWE-B) Exposure of Sensitive Information in Shared Microarchitectural Structures during Transient Execution
+NAME: (CWE-B / CWE-1421) Exposure of Sensitive Information in Shared Microarchitectural Structures during Transient Execution
 
 DESCRIPTION:
 
-(CWE-B) A processor event may allow transient operations to access
+(CWE-B / CWE-1421) A processor event may allow transient operations to access
 architecturally restricted data (for example, in another address
 space) in a shared microarchitectural structure (for example, a CPU
 cache), potentially exposing the data over a covert channel.
@@ -458,7 +458,7 @@ bugs : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa 
 RELATED WEAKNESSES:
 
 RelType: ChildOf
-ID: CWE-A
+ID: CWE-A / CWE-1420
 View-ID: CWE-1194
 
 RelType: MemberOf
