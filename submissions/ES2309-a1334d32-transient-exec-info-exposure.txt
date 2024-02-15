@@ -20,11 +20,11 @@ GITHUBUSER: scottconstable
 
 SUBMISSION TYPE: Hardware
 
-NAME: (CWE-A) Exposure of Sensitive Information during Transient Execution
+NAME: (CWE-A / CWE-1420) Exposure of Sensitive Information during Transient Execution
 
 DESCRIPTION:
 
-(CWE-A) A processor event or prediction may allow incorrect operations (or
+(CWE-A / CWE-1420) A processor event or prediction may allow incorrect operations (or
 correct operations with incorrect data) to execute transiently,
 potentially exposing data over a covert channel.
 
@@ -57,7 +57,7 @@ address space, but outside of the attacker’s sandbox. Other transient
 execution weaknesses can expose data that is architecturally
 inaccessible, that is, data protected by hardware-enforced boundaries
 such as page tables or privilege rings. These weaknesses are the
-subject of CWE-B.
+subject of CWE-B (CWE-1421).
 
 In the second exploitation method, the attacker first identifies a
 code sequence in a victim program that, when executed transiently, can
@@ -295,7 +295,7 @@ Description: If the weakness is exposed by a single instruction (or a small set 
 
 Effectiveness: Limited
 
-Effectiveness Notes: This technique may only be effective for software that is compiled with this mitigation. For some transient execution weaknesses, this technique may not be sufficient to protect software that is compiled without the affected instruction(s). For example, see CWE-B.
+Effectiveness Notes: This technique may only be effective for software that is compiled with this mitigation. For some transient execution weaknesses, this technique may not be sufficient to protect software that is compiled without the affected instruction(s). For example, see CWE-B (CWE-1421).
 
 Phase: Build and Compilation
 
@@ -393,79 +393,79 @@ View-ID: CWE-1194
 
 REFERENCES:
 
+Title: [REF-1] InvisiSpec: making speculative execution invisible in the cache hierarchy.
 Author: Mengjia Yan, Jiho Choi, Dimitrios Skarlatos, Adam Morrison, Christopher W. Fletcher, Josep Torrella
 Date: October, 2018
-Title: [REF-1] InvisiSpec: making speculative execution invisible in the cache hierarchy.
 URL: http://iacoma.cs.uiuc.edu/iacoma-papers/micro18.pdf
 
+Title: [REF-2] Port Contention for Fun and Profit".
 Author: Alejandro Cabrera Aldaya, Billy Bob Brumley, Sohaib ul Hassan, Cesar Pereida García, Nicola Tuveri
 Date: May, 2019
-Title: [REF-2] Port Contention for Fun and Profit".
 URL: https://eprint.iacr.org/2018/1060.pdf
 
+Title: [REF-3] Speculative Interference Attacks: Breaking Invisible Speculation Schemes.
 Author: Mohammad Behnia, Prateek Sahu, Riccardo Paccagnella, Jiyong Yu, Zirui Zhao, Xiang Zou, Thomas Unterluggauer, Josep Torrellas, Carlos Rozas, Adam Morrison, Frank Mckeen, Fangfei Liu, Ron Gabor, Christopher W. Fletcher, Abhishek Basak, Alaa Alameldeen
 Date: April, 2021
-Title: [REF-3] Speculative Interference Attacks: Breaking Invisible Speculation Schemes.
 URL: https://arxiv.org/abs/2007.11818
 
+Title: [REF-4] Spectre is here to stay: An analysis of side-channels and speculative execution.
 Author: Ross Mcilroy, Jaroslav Sevcik, Tobias Tebbi, Ben L. Titzer, Toon Verwaest
 Date: 2019-02-14
-Title: [REF-4] Spectre is here to stay: An analysis of side-channels and speculative execution.
 URL: https://arxiv.org/pdf/1902.05178.pdf
 
+Title: [REF-5] Managed Runtime Speculative Execution Side Channel Mitigations.
 Author: Intel Corporation
 Date: 2018-01-03
-Title: [REF-5] Managed Runtime Speculative Execution Side Channel Mitigations.
 URL: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/runtime-speculative-side-channel-mitigations.html
 
+Title: [REF-6] Control Flow Integrity.
 Author: The Clang Team
 Date: No Date
-Title: [REF-6] Control Flow Integrity.
 URL: https://clang.llvm.org/docs/ControlFlowIntegrity.html
 
+Title: [REF-7] Retpoline: A Branch Target Injection Mitigation.
 Author: Intel Corporation
 Date: 2022-08-22
-Title: [REF-7] Retpoline: A Branch Target Injection Mitigation.
 URL: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/technical-documentation/retpoline-branch-target-injection-mitigation.html
 
+Title: [REF-8] Speculation.
 Author: The kernel development community
 Date: No Date
-Title: [REF-8] Speculation.
 URL: https://docs.kernel.org/6.6/staging/speculation.html
 
+Title: [REF-9] Speculative Load Hardening.
 Author: Chandler Carruth
 Date: No Date
-Title: [REF-9] Speculative Load Hardening.
 URL: https://llvm.org/docs/SpeculativeLoadHardening.html
 
+Title: [REF-10] You Cannot Always Win the Race: Analyzing the LFENCE/JMP Mitigation for Branch Target Injection.
 Author: Alyssa Milburn, Ke Sun, Henrique Kawakami
 Date: 2022-03-08
-Title: [REF-10] You Cannot Always Win the Race: Analyzing the LFENCE/JMP Mitigation for Branch Target Injection.
 URL: https://arxiv.org/abs/2203.04277
 
+Title: [REF-11] Rage Against the Machine Clear: A Systematic Analysis of Machine Clears and Their Implications for Transient Execution Attacks.
 Author: Hany Ragab, Enrico Barberis, Herbert Bos, Cristiano Giuffrida
 Date: August 2021
-Title: [REF-11] Rage Against the Machine Clear: A Systematic Analysis of Machine Clears and Their Implications for Transient Execution Attacks.
 URL: https://www.usenix.org/system/files/sec21-ragab.pdf.
 
+Title: [REF-12] Hide and Seek with Spectres: Efficient discovery of speculative information leaks with random testing.
 Author: Oleksii Oleksenko, Marco Guarnieri, Boris Köpf, Mark Silberstein
 Date: 2023-01-18
-Title: [REF-12] Hide and Seek with Spectres: Efficient discovery of speculative information leaks with random testing.
 URL: https://arxiv.org/pdf/2301.07642.pdf
 
+Title: [REF-13] SpecFuzz: Bringing Spectre-type vulnerabilities to the surface.
 Author: Oleksii Oleksenko, Bohdan Trach, Mark Silberstein, Christof Fetzer
 Date: August 2020
-Title: [REF-13] SpecFuzz: Bringing Spectre-type vulnerabilities to the surface.
 URL: https://www.usenix.org/system/files/sec20-oleksenko.pdf
 
+Title: [REF-14] Spectre Attacks: Exploiting Speculative Execution.
 Author: Paul Kocher, Jann Horn, Anders Fogh, Daniel Genkin, Daniel Gruss, Werner Haas, Mike Hamburg, Moritz Lipp, Stefan Mangard, Thomas Prescher, Michael Schwarz, Yuval Yarom
 Date: May 2019
-Title: [REF-14] Spectre Attacks: Exploiting Speculative Execution.
 URL: https://spectreattack.com/spectre.pdf
 
+Title: [REF-15] Refined Speculative Execution Terminology
 Author: Intel Corporation
 Date: March 11, 2022
-Title: [REF-15] Refined Speculative Execution Terminology
 URL: https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/refined-speculative-execution-terminology.html
 
 
