@@ -20,11 +20,11 @@ GITHUBUSER: scottconstable
 
 SUBMISSION TYPE: Hardware
 
-NAME: (CWE-D) Exposure of Sensitive Information caused by Shared Microarchitectural Predictor State that Influences Transient Execution
+NAME: (CWE-D / CWE-1423) Exposure of Sensitive Information caused by Shared Microarchitectural Predictor State that Influences Transient Execution
 
 DESCRIPTION:
 
-(CWE-D) Shared microarchitectural predictor state may allow code to influence
+(CWE-D / CWE-1423) Shared microarchitectural predictor state may allow code to influence
 transient execution across a hardware boundary, potentially exposing
 data that is accessible beyond the boundary over a covert channel.
 
@@ -483,7 +483,7 @@ Rationale: Use only when the weakness allows code in one processor
 context to influence the predictions of code in another processor
 context via predictor state that is shared between the two contexts.
 
-Note: For example, Branch Target Injection, an instance of CWE-D, can
+Note: For example, Branch Target Injection, an instance of CWE-D / CWE-1423, can
 be mitigated by tagging each indirect branch predictor entry according
 to the processor context in which the entry was created, thus
 preventing entries created in one context from being used in a
@@ -491,21 +491,21 @@ different context. However, the mitigated indirect branch predictor
 can still expose different weaknesses where malicious predictor
 entries created in one context are used later in the same context
 (context tags cannot prevent this). One such example is Intra-mode
-Branch Target Injection. Weaknesses of this sort can map to CWE-A.
+Branch Target Injection. Weaknesses of this sort can map to CWE-A / CWE-1420.
 
 If a weakness involves a microarchitectural predictor
-whose state is not shared across processor contexts, then CWE-A may be
+whose state is not shared across processor contexts, then CWE-A / CWE-1420 may be
 more appropriate for the mapping task.
 
 
 RELATED WEAKNESSES:
 
 RelType: ChildOf
-ID: CWE-A
+ID: CWE-A / CWE-1420
 View-ID: CWE-1000
 
 RelType: ChildOf
-ID: CWE-A
+ID: CWE-A / CWE-1420
 View-ID: CWE-1194
 
 RelType: MemberOf
