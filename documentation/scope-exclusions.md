@@ -1,23 +1,23 @@
-Last generated: 2023-12-17 23:37:15
+# CWE Scope Exclusions
+
+Last generated: 2024-02-15 16:39:06
 
 WARNING: this file was automatically generated. Do not edit.
 
-[[_TOC_]]
-
-# CWE Scope Exclusions - Summary
+## Scope Exclusions - Summary
 
 | ID | Name |
 |----|------|
-|SCOPE.NOTREAL|Not a real-world issue|
-|SCOPE.HUMANPROC|Human/organizational process|
-|SCOPE.MOTIVE|Motivation instead of the mistake|
-|SCOPE.SITUATIONS|Focus on situations in which weaknesses may appear|
-|SCOPE.GROUPING|Grouping of issues without a common behavior|
-|SCOPE.NOMITS|No actionable mitigations|
-|SCOPE.CUSTREL|Not customer-relevant|
-|SCOPE.CONFLICT|Conflict/contradiction with other weaknesses|
-|SCOPE.NOSEC|Not security-related|
-|SCOPE.ADMINERR|Admin/user error|
+|[SCOPE.NOTREAL](#SCOPE.NOTREAL)|Not a real-world issue|
+|[SCOPE.HUMANPROC](#SCOPE.HUMANPROC)|Human/organizational process|
+|[SCOPE.MOTIVE](#SCOPE.MOTIVE)|Motivation instead of the mistake|
+|[SCOPE.SITUATIONS](#SCOPE.SITUATIONS)|Focus on situations in which weaknesses may appear|
+|[SCOPE.GROUPING](#SCOPE.GROUPING)|Grouping of issues without a common behavior|
+|[SCOPE.NOMITS](#SCOPE.NOMITS)|No actionable mitigations|
+|[SCOPE.CUSTREL](#SCOPE.CUSTREL)|Not customer-relevant|
+|[SCOPE.CONFLICT](#SCOPE.CONFLICT)|Conflict/contradiction with other weaknesses|
+|[SCOPE.NOSEC](#SCOPE.NOSEC)|Not security-related|
+|[SCOPE.ADMINERR](#SCOPE.ADMINERR)|Admin/user error|
 
 
 ## Details

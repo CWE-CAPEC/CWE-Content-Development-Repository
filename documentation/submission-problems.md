@@ -1,10 +1,9 @@
 # CWE - Submission Problems
 
-Last generated: 2023-12-17 23:18:15
+Last generated: 2024-02-15 16:39:40
 
 WARNING: this file was automatically generated. Do not edit.
 
-[[_TOC_]]
 # Submission Problem Summary
 
 | ID | Name |
