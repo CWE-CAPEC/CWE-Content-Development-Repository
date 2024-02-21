@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2307-f1508064
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 ORIGIN: sub-server
 
@@ -57,7 +57,7 @@ Received: 2023-07-07
 
 Ack-Receipt: 2024-01-05
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2024-02-20
 
 Init-Consultation: YYYY-MM-DD
 

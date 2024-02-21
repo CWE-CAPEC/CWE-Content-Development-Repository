@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2303-4eae8c29
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 ORIGIN: sub-server
 
@@ -16,7 +16,7 @@ PUBTRACKER: #69
 
 MTRACKER: #756
 
-GITHUBUSER: 
+GITHUBUSER: omriman067
 
 SUBMISSION TYPE: Software
 
@@ -112,7 +112,8 @@ Comments: the emphasis on "server hijacking" related to a "poorly
 configured reverse proxy" is too narrow for a particular
 technology. So, instead of creating a new CWE entry, it would be
 better to integrate this information into existing CWEs (e.g., CWE-93,
-CWE-79, and/or "header injection" somewhere under CWE-74)
+CWE-79, and/or "header injection" somewhere under CWE-74). Please let
+us know what you think about this proposal.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -129,7 +130,8 @@ the informational needs are addressed.
 
 Comments: Instead of creating a new entry, we plan to update one or
 more existing CWEs to account for this attack somehow: CWE-93, CWE-79,
-and/or "header injection" somewhere under CWE-74).
+and/or "header injection" somewhere under CWE-74).  Please let us know
+what you think about this proposal.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -180,7 +182,7 @@ Ack-Receipt: 2023-03-09
 
 Init-Review: 2024-01-24
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-02-20
 
 Init-Rejected: YYYY-MM-DD
 

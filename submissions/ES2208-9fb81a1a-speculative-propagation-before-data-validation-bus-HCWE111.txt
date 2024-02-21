@@ -70,7 +70,7 @@ duplicate/overlap is understood and (2) it is clear how to resolve this
 duplicate/overlap.
 
 Comments: The weakness described in this submission appears to be very similar to
-CWE-179: Incorrect Behavior Order: Early Validation. Can you describe the how
+CWE-179: Incorrect Behavior Order: Early Validation. Can you describe how
 your submission differs?
 
 Response: <SUBMITTER SHOULD REPLY HERE>

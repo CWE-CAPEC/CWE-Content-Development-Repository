@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2208-3f5d157b
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 ORIGIN: sub-server
 
@@ -75,7 +75,11 @@ Resolution: The submission cannot progress to later phases until (1) the
 duplicate/overlap is understood and (2) it is clear how to resolve this
 duplicate/overlap.
 
-Comments: This partially overlaps with CWE-328 because "Use of Weak Hash" focuses on this issue from an algorithm standpoint. However, the manual element is lacking in CWE-328, that can certainly be added to CWE-328 to make that more comprehensive. This doesn't need to be its own CWE. 
+Comments: This partially overlaps with CWE-328 because "Use of Weak
+Hash" focuses on this issue from an algorithm standpoint. However, the
+manual element is lacking in CWE-328, that can certainly be added to
+CWE-328 to make that more comprehensive. This doesn't need to be its
+own CWE.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -97,7 +101,13 @@ the more-general concept is appropriately identified and described. The
 original, lower-level submission will serve as a primary example of the
 more general concept.
 
-Comments: The specificity provided through the issue deals with manual creation/usage of hash, which may be possible, and may warrant a discussion. However, that by itself becomes too detailed for a wider community, therefore, not widely relevant. The topic of manual hash generation/usage can be included in CWE-328 to make that entry more robust, without the need for making this issue a children of CWE-328 or another CWE.
+Comments: The specificity provided through the issue deals with manual
+creation/usage of hash, which may be possible, and may warrant a
+discussion. However, that by itself becomes too detailed for a wider
+community, therefore, not widely relevant. The topic of manual hash
+generation/usage can be included in CWE-328 to make that entry more
+robust, without the need for making this issue a children of CWE-328
+or another CWE.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -112,7 +122,9 @@ to the kinds of information that will need to be provided.
 Resolution: The submission cannot progress to the Production stage until
 the informational needs are addressed.
 
-Comments: This applies because the issue highlighted doesn't warrant a "New Entry". The information provided is relevant to CWE-328, so "Modification" is more appropriate.
+Comments: This applies because the issue highlighted doesn't warrant a
+"New Entry". The information provided is relevant to CWE-328, so
+"Modification" is more appropriate.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -131,7 +143,7 @@ Ack-Receipt: 2022-08-29
 
 Init-Review: 2023-02-07
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-02-20
 
 Init-Rejected: YYYY-MM-DD
 

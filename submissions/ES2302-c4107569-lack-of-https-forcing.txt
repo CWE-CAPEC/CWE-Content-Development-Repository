@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2302-c4107569
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 ORIGIN: sub-server
 
@@ -208,7 +208,7 @@ Ack-Receipt: 2023-02-22
 
 Init-Review: 2024-01-19
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-02-20
 
 Init-Rejected: YYYY-MM-DD
 
