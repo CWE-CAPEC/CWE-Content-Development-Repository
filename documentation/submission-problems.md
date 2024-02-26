@@ -1,6 +1,6 @@
 # CWE - Submission Problems
 
-Last generated: 2024-02-15 16:39:40
+Last generated: 2024-02-20 17:06:34
 
 WARNING: this file was automatically generated. Do not edit.
 
@@ -28,7 +28,8 @@ WARNING: this file was automatically generated. Do not edit.
 
 # Submission Problem Details
 
-## <a name="SUB.UNCLEAR">SUB.UNCLEAR</a> - Unclear weakness
+<a name="SUB.UNCLEAR"></a>
+## SUB.UNCLEAR - Unclear weakness
 **Block Phase** - Init-Consultation
 
 
@@ -48,7 +49,8 @@ consultation phase until SUB.UNCLEAR is addressed.
 
 
 
-## <a name="SUB.ATTACK">SUB.ATTACK</a> - Too attack-focused
+<a name="SUB.ATTACK"></a>
+## SUB.ATTACK - Too attack-focused
 **Block Phase** - Init-Consultation
 
 
@@ -69,7 +71,8 @@ includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
 
 
 
-## <a name="SUB.MITIGATION">SUB.MITIGATION</a> - Too mitigation-focused
+<a name="SUB.MITIGATION"></a>
+## SUB.MITIGATION - Too mitigation-focused
 **Block Phase** - Init-Consultation
 
 
@@ -88,7 +91,8 @@ a clear weakness (i.e., is not subject to SUB.UNCLEAR).
 
 
 
-## <a name="SUB.OVERLAP">SUB.OVERLAP</a> - Duplicate/Overlap
+<a name="SUB.OVERLAP"></a>
+## SUB.OVERLAP - Duplicate/Overlap
 **Block Phase** - Init-Consultation
 
 
@@ -109,7 +113,8 @@ this duplicate/overlap.
 
 
 
-## <a name="SUB.ABS.SUBTREE">SUB.ABS.SUBTREE</a> - Potential subtree issue/gap
+<a name="SUB.ABS.SUBTREE"></a>
+## SUB.ABS.SUBTREE - Potential subtree issue/gap
 **Block Phase** - Production
 
 
@@ -131,7 +136,8 @@ and the subtree issue(s) can be resolved or addressed independently.
 
 
 
-## <a name="SUB.ABS.LOWLEVEL">SUB.ABS.LOWLEVEL</a> - Low level of abstraction
+<a name="SUB.ABS.LOWLEVEL"></a>
+## SUB.ABS.LOWLEVEL - Low level of abstraction
 **Block Phase** - Init-Consultation
 
 
@@ -159,7 +165,8 @@ the more general concept.
 
 
 
-## <a name="SUB.ABS.MULTWEAK">SUB.ABS.MULTWEAK</a> - Multiple weaknesses
+<a name="SUB.ABS.MULTWEAK"></a>
+## SUB.ABS.MULTWEAK - Multiple weaknesses
 **Block Phase** - Init-Consultation
 
 
@@ -179,7 +186,8 @@ weaknesses, separate names and descriptions are needed.
 
 
 
-## <a name="SUB.RELS">SUB.RELS</a> - Unclear relationships
+<a name="SUB.RELS"></a>
+## SUB.RELS - Unclear relationships
 **Block Phase** - Production
 
 
@@ -205,7 +213,8 @@ problems such as SUB.ABS.SUBTREE exist and cannot be quickly resolved.
 
 
 
-## <a name="SUB.MISSDET">SUB.MISSDET</a> - Missing details
+<a name="SUB.MISSDET"></a>
+## SUB.MISSDET - Missing details
 **Block Phase** - any
 
 
@@ -224,7 +233,8 @@ required fields.
 
 
 
-## <a name="SUB.IPR">SUB.IPR</a> - IP Rights Concerns
+<a name="SUB.IPR"></a>
+## SUB.IPR - IP Rights Concerns
 **Block Phase** - any
 
 
@@ -245,7 +255,8 @@ there are no IP concerns.
 
 
 
-## <a name="SUB.RELREFS">SUB.RELREFS</a> - No relevant references
+<a name="SUB.RELREFS"></a>
+## SUB.RELREFS - No relevant references
 **Block Phase** - Production
 
 
@@ -268,7 +279,8 @@ available.
 
 
 
-## <a name="SUB.GRAMMAR">SUB.GRAMMAR</a> - Grammar/Spelling issues
+<a name="SUB.GRAMMAR"></a>
+## SUB.GRAMMAR - Grammar/Spelling issues
 **Block Phase** - Production
 
 
@@ -291,7 +303,8 @@ checks. American English is used for spelling.
 
 
 
-## <a name="SUB.NOINIT">SUB.NOINIT</a> - Full Submission with No Initial Review
+<a name="SUB.NOINIT"></a>
+## SUB.NOINIT - Full Submission with No Initial Review
 **Block Phase** - Init-Consultation, Production
 
 
@@ -316,7 +329,8 @@ will not be evaluated until the Proposal stage is complete.
 
 
 
-## <a name="SUB.ACTION">SUB.ACTION</a> - Unable to determine action
+<a name="SUB.ACTION"></a>
+## SUB.ACTION - Unable to determine action
 **Block Phase** - Init-Consultation
 
 
@@ -335,7 +349,8 @@ relevant actions(s) are identified.
 
 
 
-## <a name="SUB.ACTCHANGE">SUB.ACTCHANGE</a> - Change in action for submission
+<a name="SUB.ACTCHANGE"></a>
+## SUB.ACTCHANGE - Change in action for submission
 **Block Phase** - Init-Consultation
 
 
@@ -355,7 +370,8 @@ informational needs are addressed.
 
 
 
-## <a name="SUB.MISC">SUB.MISC</a> - Miscellaneous/other problem
+<a name="SUB.MISC"></a>
+## SUB.MISC - Miscellaneous/other problem
 **Block Phase** - any
 
 
