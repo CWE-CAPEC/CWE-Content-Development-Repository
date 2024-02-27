@@ -1,6 +1,6 @@
 SUBMISSION COMMUNICATION ID: ES2208-93123343
 
-ACTION TYPE: New Entry
+ACTION TYPE: Undetermined
 
 SUBMISSION STATUS: Init-Review
 
@@ -8,9 +8,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2022-08-23 20:19:05
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.OVERLAP, SUB.RELREFS
 
 PUBTRACKER: #15
 
@@ -45,6 +45,84 @@ ACTIVE ISSUES:
 
 
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: While it is clear that there is some weakness present in the submission, it is unclear
+what specific weakness is being discussed.  The main term used is "misconfigured", which is very
+broad and could have several meanings.  Please provide more detail about what weakness is present
+when configuring a content security policy.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: With the present information we have about this submission, it seems to overlap with
+CWE-942: Permissive Cross-domain Policy with Untrusted Domains.  While a content security policy
+is slightly different than a Cross-domain Policy, it is possible that if the "misconfigured" policy
+discussed in the submission is related being overly permissive, then it might be best as a modification
+to CWE-942.  More details are needed to determine if this submission is suitable for it's own entry 
+adjacent to CWE-942.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: While the provided references describe what a content security policy is and are revelent to the 
+proposed entry, there should be references that help describe the weakness itself.  For instance, a reference 
+describing specifically how a content security policy could be misconfigured would be benificial in supporting
+a new entry.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ACTION - "Unable to determine action"
+
+Description: It is not clear what action to perform based on the
+submission, e.g., create new entry, update existing entry, etc.
+
+Resolution: The submission cannot progress to the Production stage until
+the relevant actions(s) are identified.
+
+Comments: As discussed eariler, because of potential overlaps with CWE-942 and a lack of specific weakness details,
+it is uncertain if this would require a new entry of a modification to CWE-942 until we have more details.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+
+
 RESOLVED ISSUES:
 
 
@@ -55,7 +133,7 @@ Received: 2022-08-23
 
 Ack-Receipt: 2022-08-29
 
-Init-Review: 2023-02-23
+Init-Review: 2024-02-23
 
 Init-Consultation: YYYY-MM-DD
 

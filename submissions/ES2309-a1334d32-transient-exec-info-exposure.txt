@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2309-a1334d32
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Production
+SUBMISSION STATUS: Final-Coord
 
 ORIGIN: sub-server
 
@@ -502,11 +502,11 @@ Full-Accepted: 2024-01-22
 
 Production: 2024-01-24
 
-Final-Coord: YYYY-MM-DD
-
-CWE-Assigned: YYYY-MM-DD
+CWE-Assigned: 2024-01-30
 
 CWE-Modified: YYYY-MM-DD
+
+Final-Coord: 2024-02-14
 
 CWE-Published: YYYY-MM-DD
 
