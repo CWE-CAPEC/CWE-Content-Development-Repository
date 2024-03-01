@@ -1,0 +1,96 @@
+SUBMISSION COMMUNICATION ID: ES2402-38e20ce6
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-02-26 06:42:18
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #73
+
+MTRACKER: #994
+
+GITHUBUSER: kurtseifried
+
+SUBMISSION TYPE: Software
+
+NAME: Bias in AI Models
+
+DESCRIPTION:
+
+This weakness occurs when an AI model processes inputs so that it
+systematically and unfairly discriminates against certain groups or
+individuals based on inherent biases in the training data, model design, or
+operational context. These biases can manifest in various forms, including
+but not limited to gender, ethnicity, age, or socioeconomic status, leading
+to outcomes that perpetuate stereotypes, unfair treatment, or unequal
+access to benefits and services. The weakness is rooted in failing to
+adequately identify, mitigate, and monitor biases throughout the AI
+system's lifecycle, from data collection and model training to deployment
+and operation.
+
+RELATED WEAKNESSES:
+
+
+REFERENCES:
+
+Title: AVID-2022-V001
+URL: https://raw.githubusercontent.com/avidml/avid-db/main/vulnerabilities/2022/AVID-2022-V001.json
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-02-26
+
+Ack-Receipt: 2024-03-01
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
