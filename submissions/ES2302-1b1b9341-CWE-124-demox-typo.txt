@@ -3,7 +3,7 @@ SUBMISSION COMMUNICATION ID: ES2302-1b1b9341
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Modified
+SUBMISSION STATUS: Final-Coord
 
 ORIGIN: cwe-email
 
@@ -115,7 +115,7 @@ Full-Accepted: YYYY-MM-DD
 
 Production: 2024-02-19
 
-Final-Coord: YYYY-MM-DD
+Final-Coord: 2024-02-26
 
 CWE-Assigned: YYYY-MM-DD
 
