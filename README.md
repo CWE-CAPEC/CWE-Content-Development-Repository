@@ -21,7 +21,7 @@ The CWE Program has created this public GitHub repository to increase transparen
 
 All CWE content submissions must adhere to the [CWE Terms of Use](https://cwe.mitre.org/about/termsofuse.html).
 
-# Pilot Program - September 12th - TBD
+# Pilot Program - September 12th, 2023 to March 2024
 
 - This pilot will remain open for all community members with a current CWE content suggestion (as of September 12) until we are ready for a full release.  If you are having issues accessing the repository, please reach out and we will get you access as soon as we can.
 - Each submission has been given its own GitHub issue where discussion around that submission should take place.  Feel free to look through all issues with the label “External-Submission” and provide comments as you see fit.
