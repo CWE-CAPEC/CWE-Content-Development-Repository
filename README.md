@@ -1,157 +1,123 @@
 **Disclaimer: This page is currently under active development**
 
 # Table of Contents
-
-- [CWE Content Development Repository](#cwe-content-development-repository)
-- [Pilot Program](#pilot-program)
+- [Important Resources](#important-resources)
+- [CWE-Content-Development-Repository](#cwe-content-development-repository)
+- [Pilot Program - September 12th, 2023 - March 2024](#pilot-program---september-12th-2023---march-2024)
 - [Repository Layout](#repository-layout)
-- [Guidelines for New Content Suggestions](#guidelines-for-new-content-suggestions)
-- [Summary of Stages and Phases](#summary-of-stages-and-phases)
-  - [STAGE 1: Initial Submission](#stage-1-initial-submission)
-  - [STAGE 2: Full Submission](#stage-2-full-submission)
-  - [STAGE 3: Production](#stage-3-production)
-  - [STAGE 4: Publication](#stage-4-publication)
-- [Common Problems with Integrating Content Suggestions Into CWE](#common-problems-with-integrating-content-suggestions-into-cwe)
-- [Additional Supporting Information](#additional-supporting-information)
+  - [Directory Structure](#directory-structure)
+  - [Issues](#issues)
+    - [Issue labels](#issue-labels)
+  - [Submission Files](#submission-files)
+    - [Submission File Elements](#submission-file-elements)
+  - [Reports](#reports)
+    - [sub-index-phases](#sub-index-phases)
+    - [sub-index-problems](#sub-index-problems)
+- [How to Collaborate](#how-to-collaborate)
 
+
+# Important Resources
+
+ - [Guidelines for New Content Submissions](documentation/submission-guidelines.md)
+ - [Potential Submission Problems](documentation/submission-problems.md)
+ - [Potential Scope Exclusions](documentation/scope-exclusions.md)
 
 # CWE-Content-Development-Repository
 
-The CWE Program has created this public GitHub repository to increase transparency and third-party collaborative input into the CWE content development process.  Submissions are received through the [CWE Submission Form](https://cwesubmission.mitre.org/), after which submission documentation is uploaded here for the entire CWE community to view and comment as the entry develops towards being ready for publication.
+The CWE Program has created the CWE Content Development Repository, a public GitHub repository to increase transparency and third-party collaborative input into the CWE content development process.  Content Suggestions are received through the [CWE Submission Form](https://cwesubmission.mitre.org/) and, after being processed by the CWE team, is tranferred here for the entire CWE community to view and comment as the submission moves through various stages.
 
 All CWE content submissions must adhere to the [CWE Terms of Use](https://cwe.mitre.org/about/termsofuse.html).
 
-# Pilot Program - September 12th, 2023 to March 2024
+# Pilot Program - September 12th, 2023 - March 2024
 
-- This pilot will remain open for all community members with a current CWE content suggestion (as of September 12) until we are ready for a full release.  If you are having issues accessing the repository, please reach out and we will get you access as soon as we can.
+- This pilot will remain open for all community members with a current CWE content suggestion (as of September 12) until we are ready for a full release.  The purpose of this is work through the process in a closed environment to figure out issues and gather feedback before turning the repository public.
 - Each submission has been given its own GitHub issue where discussion around that submission should take place.  Feel free to look through all issues with the label “External-Submission” and provide comments as you see fit.
   - Each issue will also have a link to the submission file within the repository.  These files have more detailed process information and information about potential problems with the submission.
 - We are very interested in feedback, both good and bad.  Please provide feedback by creating a new issue and choosing the template called “Feedback Template”.  You may also reach out to cwe-submissions@mitre.org with any feedback as well.
 
-
 # Repository Layout
 
-Each content submission is given its own issue in the repository.  Each issue is titled with the unique submission ID followed by the name for the submission.  Each issue will also include the description of the submission as well as a link to the more detailed submission file, contained in this repository.  All submission files will be under the _submissions_ folder.  The CWE team expects the community to interact with each submission by posting comments directly to each issue.  The CWE team will take these comments into account when reviewing each submission.  When changes to a submission are made, they will also be pushed to this repository.  
+## Directory Structure
 
-# Guidelines for New Content Suggestions
+The CDR currently has the following directory structure:
 
-When organizations or individuals wish to suggest new content for CWE, they should start the process by using the official [CWE Content Web Submission Form](https://cwesubmission.mitre.org/).
+- **documentation/**: contains various documentation files which are linked to in the README
+- **reports/**: contains report files on the various statuses for all submissions, including phases and submission problems
+- **submissions/**: contains all of the submission files for tracking, which are linked to in each corresponding submission issue
 
-All CWE content submissions must adhere to the [CWE Terms of Use](https://cwe.mitre.org/about/termsofuse.html).
+## Issues
 
-The web submission form has five required elements:
-1. Submitter Contact Information (this will not be shared publicly on the GitHub site)
-2. Submission Details
-3. Related Weaknesses
-4. References
-5. Review & Submit
+Each content submission is assigned its own issue in the repository.  Each issue is titled with the unique submission ID followed by the name for the submission.  Each issue will also include the description of the submission as well as a link to the more detailed [submission file](#submission-files) contained in this repository.  All submission files will be under the _submissions_ folder.  The CWE team expects the community to interact with each submission by posting comments directly to each issue.  The CWE team will take any comments and discussion into account when reviewing each submission. 
 
-After clicking "Submit", you will receive a confirmation message and your suggestion will be added to the CWE team’s working queue. After internal processing, content suggestions will be added to our GitHub repository for the wider community to track and provide input.
+### Issue labels
 
-# Summary of Stages and Phases
+Each individual submission will be given one of several different labels.  When searching for submission issues, filters can be set for various issue labels.  The following are the different kinds of issue labels:
 
-**Disclaimer: This section needs modification to include the public GitHub space, currently under active development**
+- **External-Submission**: Indicates that the issue is a submission issue.  We currently allow issues to be created for feedback and may also introduce other issues which are not directly related to a particular submission.  This label helps identify only the issues that are specifically related to a submission.
+- **Feedback**: Indicates an issue created by the community to give feedback on the CDR as a whole.  Submission related feedback should be added as a comment under the submission issue.
+- **Phase**: There are various phase labels which indicate where the submission is in the [submission review process](documentation/submission-guidelines.md#external-submissions-review-process).  Currently, there are 18 possible phases.
+- **SCOPE**: Labels that start with "SCOPE." indicate any number of problems a submission currently has related to it's scope, referred to as [scope exclusions](documentation/scope-exclusions.md).  These labels are assigned during initial review of a submission and are removed once the scope exclusion has been resolved.
+- **SUB**: Labels that start with "SUB." indicate any number of [submission problems](documentation/submission-problems.md), a submission currently has. These labels are assigned during initial review of a submission and are removed once the submission problem has been resolved.
 
-The CWE team has several different stages and phases for external content submissions.  You will see that each issue in this repository has a label with it's associated phase, and the submission files themselves have the stage that the submission is.  The following outlines these stages and phases.
+## Submission Files
 
-### STAGE 1: Initial Submission 
-An external submitter ("requester") provides a name, short description of the weakness, one or more references, and suggested relationships. The CWE Team works with the submitter to ensure that the initial submission is correctly described and able to be integrated into CWE content. In the future, it is planned that the broader CWE community will be able to contribute suggestions during this stage.
+For each submission, a submission file is created to track the progress of the submission.  While submission issues have the basic information needed to understand a submission, these text files have additional information that is filled out by the CWE team to track the submissions.  These files are not to be edited by the submitter or the community, the CWE team will make the necessary edits as the submission is moved through the process.  
 
-#### Phase 1: Received
+### Submission File Elements
+Submission files contain the following elements.  Once the submission moves to a full submission, it will include new elements described [here](documentation/submission-guidelines.md#elements-to-include).
 
-The CWE Team receives an initial submission from the public submission server and brings it into the internal GitLab repository for tracking.
+| Element                     | Description                                                                                                                                                                                                                                                                                                                                                                    |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| SUBMISSION COMMUNICATION ID | A unique ID to identify the submission.  It starts with "ES" to indicate "External Submission", followed by the submission date, and then a unique 8 character identifier                                                                                                                                                                                                      |
+| ACTION TYPE                 | This identifies what action is needed for this submission.  The options are "New Entry", "Modification", or "Undetermined"                                                                                                                                                                                                                                                     |
+| SUBMISSION STATUS           | This indicates what phase the submission is currently in.                                                                                                                                                                                                                                                                                                                      |
+| ORIGIN                      | This indicates where the submission originated from.  Moving forward, all submissions should originate from the "sub-server" (the web submission form), but some past submissions may have originated through other means                                                                                                                                                      |
+| SUBMISSION DATE             | The date of submission                                                                                                                                                                                                                                                                                                                                                         |
+| ISSUES                      | This indicates if there are any current issues with the submission.  Possible values are "yes/active", "no", or "not-analyzed"                                                                                                                                                                                                                                                 |
+| ISSUE DETAILS               | The titles of any active issues for the submission                                                                                                                                                                                                                                                                                                                             |
+| PUBTRACKER                  | This indicates the public issue ID on the CDR GitHub for the submission, otherwise referred to as the "public tracker"                                                                                                                                                                                                                                                         |
+| MTRACKER                    | This indicates the MITRE internal tracker ID.  TODO: should this be scrubbed from the submission file on CDR?                                                                                                                                                                                                                                                                  |
+| GITHUBUSER                  | This indicates the GitHub username of the submitter if provided                                                                                                                                                                                                                                                                                                                |
+| SUBMISSION TYPE             | This indicates the type of submission in terms of scope.  Currently, the possible values are "Software" and "Hardware", although additional values may be added in the future as needed                                                                                                                                                                                        |
+| NAME                        | The proposed name for the submission                                                                                                                                                                                                                                                                                                                                           |
+| DESCRIPTION                 | The proposed description for the submission                                                                                                                                                                                                                                                                                                                                    |
+| RELATED WEAKNESSES          | Any CWEs which are thought to be related to the current submission                                                                                                                                                                                                                                                                                                             |
+| REFERENCES                  | Any relevant references to the submission provided by the submitter                                                                                                                                                                                                                                                                                                            |
+| ACTIVE ISSUES               | This section describes all of the currently identified submission problems.  Each problem has a description of the general problem, a comment about why the submission problem applies to this current submission, with a potential action for the submitter to resolve the problem, and a response section where a CWE team member can paste the response from the submitter. |
+| RESOLVED ISSUES             | Similar to ACTIVE ISSUES, except this section descibes all of the submission problems which have been resolved                                                                                                                                                                                                                                                                 |
+| TIMELINE                    | This section shows the dates at which the submission has progressed to different phases                                                                                                                                                                                                                                                                                        |
+| COMMUNICATION LOG           | This section keeps a log of any communication between the CWE team and the submitter |
 
-#### Phase 2: Ack-Receipt
+## Reports
 
-The CWE Team notifies the original submitter that the initial submission has been received.
+The CDR has various reports to aid with assessing the status of all current submissions.  These can be found in the top level *reports/* directory.  Currently, the reports are in html format, which is best viewed if the file is downloaded and viewed with your browser of choice.  In the future, we will look to output these reports to markdown format to be more easily viewed directly on the CDR.
 
-#### Phase 3: Init-Review
+Currently there are two different reports to view:
 
-A member of the CWE Team performs an initial review of the submission, using a checklist to identify any potential problems with the submission, or any relevant scope exclusions.
+### sub-index-phases
 
-#### Phase 4: Init-Consultation
+This reports details all of the current submissions grouped by their phases.  Under each phases is a table containing the submissions for that phase.  Each row contains the CDR GitHub ID for that submission (which links to the submission issue), the submitter GitHub username, submission date, submission ID (which links to the submission file for that issue), and the submission name.  For submissions with active issues, you will also see these issues listed below.
 
-Members of the CWE Team work with the submitter to resolve any critical problems. Note: this phase only occurs when significant problems arise.
+### sub-index-problems
 
-#### Phase 5: Init-Rejected
+This reports details all of the current submissions grouped by their submission problems.  Because submissions often have multiple submission problems, you will see individual submissions appear more than once in this report.  Under each submission problem is a table containing the submissions for that phase.  Each row contains the CDR GitHub ID for that submission (which links to the submission issue), the submitter GitHub username, submission date, submission ID (which links to the submission file for that issue), and the submission name. The active issues for each submission will also be listed in a following row.
 
-The CWE Team rejects the initial submission and notifies the submitter.
+# How to Collaborate
 
-#### Phase 6: Init-Accepted
+The main collaboration on the CDR should be through issue comments.  The CWE team will use issue comments to communicate with the content submitter and the community can use issue comments
+to provide feedback and thoughts on the submission.  It is important that anyone contributing to the CDR is respectful in their feedback and follows the [code of conduct](CODE_OF_CONDUCT.md).
+The CWE team reserves the right to restrict access to anyone who is in violation of the code of conduct.  
 
-The CWE Team accepts the initial submission and notifies the submitter.
+It is important that members of the community do not attempt to do their own reviews or tell submitters what they should do with their submissions.  This will cause confusion as MITRE team
+members are the only ones who will direct changes to a submission or move the submission through different phases.
 
-### STAGE 2: Full Submission
-If the initial submission is accepted, then the CWE Team asks the submitter to provide full details for the submission, including over 10 different fields that will make the basis of a new CWE entry, such as potential mitigations, common consequences, demonstrative code examples, and others. The CWE Team works with the submitter to ensure that the full submission has appropriate, correct details.  In the future, it is planned that the broader CWE community will be able to contribute suggestions during this stage.
+Please do not create new content submissions as issues on the CDR.  We have opened up the ability for community members to create issues for the purpose of giving feedback on the CDR as a whole,
+but any issues created to submit content will be deleted.  Please only create issues by using one of the issue templates provided.
 
-#### Phase 7: Full-Sub-Requested
 
-The CWE Team asks the submitter to provide full details for their submission, as described in a detailed text form.
 
-#### Phase 8: Full-Sub-Received
 
-The submitter provides a completed full-detail text form.
 
-#### Phase 9: Full-Review
 
-The CWE Team reviews the form, ensures that all requested details are provided, and performs a quality check on each field within the submission.
 
-#### Phase 10: Full-Consultation
 
-If necessary, the CWE Team works directly with the submitter to resolve any gaps or identified quality concerns.
-
-#### Phase 11: Full-Accepted
-
-The CWE Team accepts the full, detailed submission.
-
-### STAGE 3: Production
-At this stage, all relevant details should have been provided. The CWE Team prepares the content for inclusion in the next CWE version, whether as a new CWE entry, a modification to an existing entry/entries, or both. The CWE Team works with the submitter and/or the community to address any small errors or omissions that might not have been addressed during earlier stages.
-
-#### Phase 12: Production
-
-The CWE Team begins to integrate appropriate details into its internal repository of CWE content, which is used to generate new CWE versions.
-
-#### Phase 13: CWE-Assigned
-
-For any new entry/entries, the CWE Team assigns a CWE identifier and translates the full submission's content into XML format.
-
-#### Phase 14: CWE-Modified
-
-For any entry/entries requiring modification, the CWE Team integrates any modifications into XML format.
-
-#### Phase 15: Final-Coordination
-
-The CWE Team performs final coordination with the submitter before the content is published, such as confirming credits to the submitter, final review of the changes, etc.
-
-### STAGE 4: Publication
-The changes are included in a new CWE version, whether as a new CWE entry, a modification to an existing entry/entries, or both.
-
-#### Phase 16: CWE-Published
-
-The CWE changes and/or new entries are published in a new CWE version.
-
-#### Phase 17: Post-Publication
-
-The CWE Team notifies the submitter of the publication and
-determines if any additional changes are necessary.
-
-#### Phase 18: Closed
-
-The CWE Team closes the external submission, and no more action
-is necessary. Any future changes, if needed, would apply to the
-relevant CWE entry/entries.
-
-# Common Problems with Integrating Content Suggestions Into CWE
-
-The CWE Program has identified the following factors from previous content suggestions that may delay or ultimately affect whether your content suggestion is integrated into CWE.
-
-- __Submission is not Weakness-focused.__ Weaknesses are sometimes more easily understood based on their attacks, or when expressed as a lack of a particular protection mechanism. This is not how CWE entries are defined. It may require additional effort to conduct the root-cause analysis to identify the underlying weakness.
-- __Submission requires additional reorganization within CWE.__ While weaknesses related to numeric calculation, buffer overflows, injection, etc. have been researched extensively and have a stable organizational scheme within CWE, other portions of CWE are less mature. Submissions related to these parts of CWE might require broader reorganization of associated relationships across multiple views, possibly forcing the creation or deprecation of multiple entries, not just the original submission.
-- __Submission requires additional research to include.__ This is especially the case with newly discovered weaknesses. In some cases, if original research is needed, it may be too resource-intensive to conduct the original research to address the submission quickly, or when highly specialized knowledge is required to understand the issue.
-- __Not all requested information is provided.__
-- __Descriptions are not clearly written.__
-- __Submission elements are missing or do not follow guidelines.__
-
-# Additional Supporting Information
-
-Supplementary guidance on the submission process can be found on the CWE website [here](https://cwe.mitre.org/community/submissions/guidelines.html#other)
