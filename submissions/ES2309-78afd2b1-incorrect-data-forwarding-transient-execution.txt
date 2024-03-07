@@ -2,7 +2,11 @@ SUBMISSION COMMUNICATION ID: ES2309-78afd2b1
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Final-Coord
+AFFECTED CWES: CWE-1422
+
+CDRAPPROVED: yes
+
+SUBMISSION STATUS: CWE-Published
 
 ORIGIN: sub-server
 
@@ -548,7 +552,7 @@ CWE-Modified: YYYY-MM-DD
 
 Final-Coord: 2024-02-14
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2024-02-29
 
 Post-Publication: YYYY-MM-DD
 
