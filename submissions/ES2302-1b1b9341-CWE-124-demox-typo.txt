@@ -3,7 +3,7 @@ SUBMISSION COMMUNICATION ID: ES2302-1b1b9341
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Published
+SUBMISSION STATUS: Post-Publication
 
 CDRAPPROVED: yes
 
@@ -13,9 +13,9 @@ ORIGIN: cwe-email
 
 SUBMISSION DATE: 2023-02-06 02:23:00
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.MISC
+ISSUE DETAILS: 
 
 PUBTRACKER: #7
 
@@ -66,6 +66,10 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+----------
+
+RESOLVED ISSUES:
+
 SUB.MISC - "Miscellaneous/other problem"
 
 Description: The submission has some other problem that is not covered
@@ -86,10 +90,6 @@ Finally, the code should be labeled as C++, not C, due to the use of
 find(). Please let us know if you agree with this approach.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
-
-----------
-
-RESOLVED ISSUES:
 
 
 
@@ -127,7 +127,7 @@ CWE-Modified: 2024-02-23
 
 CWE-Published: 2024-02-29
 
-Post-Publication: YYYY-MM-DD
+Post-Publication: 2024-03-08
 
 Closed: YYYY-MM-DD
 
