@@ -3,7 +3,11 @@ SUBMISSION COMMUNICATION ID: ES2302-1b1b9341
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Final-Coord
+SUBMISSION STATUS: CWE-Published
+
+CDRAPPROVED: yes
+
+AFFECTED CWES: CWE-124
 
 ORIGIN: cwe-email
 
@@ -121,7 +125,7 @@ CWE-Assigned: YYYY-MM-DD
 
 CWE-Modified: 2024-02-23
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2024-02-29
 
 Post-Publication: YYYY-MM-DD
 
