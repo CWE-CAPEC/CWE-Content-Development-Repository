@@ -4,6 +4,8 @@ ACTION TYPE: Modification
 
 SUBMISSION STATUS: Init-Consultation
 
+AFFECTED CWES: 
+
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-02-08 12:22:29

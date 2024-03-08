@@ -4,6 +4,8 @@ ACTION TYPE: Modification
 
 SUBMISSION STATUS: Production
 
+AFFECTED CWES: 
+
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2022-09-13 05:10:17

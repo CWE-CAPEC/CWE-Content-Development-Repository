@@ -5,8 +5,6 @@ ACTION TYPE: Modification
 
 SUBMISSION STATUS: Post-Publication
 
-CDRAPPROVED: yes
-
 AFFECTED CWES: CWE-124
 
 ORIGIN: cwe-email

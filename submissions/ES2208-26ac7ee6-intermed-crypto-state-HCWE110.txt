@@ -6,6 +6,8 @@ ACTION TYPE: New Entry
 
 SUBMISSION STATUS: Init-Consultation
 
+AFFECTED CWES: 
+
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2022-08-15 21:12:21

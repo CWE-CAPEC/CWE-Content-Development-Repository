@@ -4,6 +4,8 @@ ALTERNATE ID: HCWE108
 
 ACTION TYPE: New Entry
 
+AFFECTED CWES: 
+
 SUBMISSION STATUS: Full-Consultation
 
 ORIGIN: cwe-email

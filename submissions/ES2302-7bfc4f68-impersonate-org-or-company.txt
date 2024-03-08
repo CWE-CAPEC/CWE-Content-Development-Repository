@@ -4,6 +4,8 @@ ACTION TYPE: Undetermined
 
 SUBMISSION STATUS: Init-Consultation
 
+AFFECTED CWES: 
+
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-02-08 09:21:42
