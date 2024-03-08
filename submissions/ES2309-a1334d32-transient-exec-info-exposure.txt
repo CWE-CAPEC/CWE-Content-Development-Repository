@@ -6,7 +6,7 @@ AFFECTED CWES: CWE-1420
 
 CDRAPPROVED: yes
 
-SUBMISSION STATUS: CWE-Published
+SUBMISSION STATUS: Post-Publication
 
 ORIGIN: sub-server
 
@@ -514,7 +514,7 @@ Final-Coord: 2024-02-14
 
 CWE-Published: 2024-02-29
 
-Post-Publication: YYYY-MM-DD
+Post-Publication: 2024-03-08
 
 Closed: YYYY-MM-DD
 
