@@ -4,13 +4,15 @@ ACTION TYPE: Undetermined
 
 SUBMISSION STATUS: Init-Review
 
+AFFECTED CWES:
+
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2022-08-23 20:19:05
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.OVERLAP, SUB.RELREFS
+ISSUE DETAILS: SUB.UNCLEAR, SUB.OVERLAP, SUB.RELREFS, SUB.ACTION
 
 PUBTRACKER: #15
 
@@ -54,10 +56,11 @@ cause the submission to be incorrectly mapped to.
 Resolution: An initial submission (or full submission) cannot progress past
 the consultation phase until SUB.UNCLEAR is addressed.
 
-Comments: While it is clear that there is some weakness present in the submission, it is unclear
-what specific weakness is being discussed.  The main term used is "misconfigured", which is very
-broad and could have several meanings.  Please provide more detail about what weakness is present
-when configuring a content security policy.
+Comments: While it is clear that there is some weakness present in the
+submission, it is unclear what specific weakness is being discussed.
+The main term used is "misconfigured", which is very broad and could
+have several meanings. Please provide more detail about what weakness
+is present when configuring a content security policy.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -74,12 +77,15 @@ Resolution: The submission cannot progress to later phases until (1) the
 duplicate/overlap is understood and (2) it is clear how to resolve this
 duplicate/overlap.
 
-Comments: With the present information we have about this submission, it seems to overlap with
-CWE-942: Permissive Cross-domain Policy with Untrusted Domains.  While a content security policy
-is slightly different than a Cross-domain Policy, it is possible that if the "misconfigured" policy
-discussed in the submission is related being overly permissive, then it might be best as a modification
-to CWE-942.  More details are needed to determine if this submission is suitable for it's own entry 
-adjacent to CWE-942.
+Comments: With the present information we have about this submission,
+it seems to overlap with CWE-942: Permissive Cross-domain Policy with
+Untrusted Domains.  While a content security policy is slightly
+different than a Cross-domain Policy, it is possible that if the
+"misconfigured" policy discussed in the submission is related being
+overly permissive, then it might be best as a modification to CWE-942,
+or to create a more general parent.  More details are needed to
+determine if this submission is suitable for its own entry adjacent to
+CWE-942.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -97,10 +103,12 @@ resolve by providing additional details such as a section name and quote
 from the reference.  If references still are not available, the CWE Team
 may decide to make an exception if no suitable reference is available.
 
-Comments: While the provided references describe what a content security policy is and are revelent to the 
-proposed entry, there should be references that help describe the weakness itself.  For instance, a reference 
-describing specifically how a content security policy could be misconfigured would be benificial in supporting
-a new entry.
+Comments: While the provided references describe what a content
+security policy is and are revelent to the proposed entry, there
+should be references that help describe the weakness itself.  For
+instance, a reference describing specifically how a content security
+policy could be misconfigured would be benificial in supporting a new
+entry.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -115,8 +123,10 @@ submission, e.g., create new entry, update existing entry, etc.
 Resolution: The submission cannot progress to the Production stage until
 the relevant actions(s) are identified.
 
-Comments: As discussed eariler, because of potential overlaps with CWE-942 and a lack of specific weakness details,
-it is uncertain if this would require a new entry of a modification to CWE-942 until we have more details.
+Comments: As discussed earlier, because of potential overlaps with
+CWE-942 and a lack of specific weakness details, it is uncertain if
+this would require a new entry or a modification to CWE-942 until we
+have more details.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
