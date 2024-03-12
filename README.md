@@ -11,8 +11,8 @@
   - [Submission Files](#submission-files)
     - [Submission File Elements](#submission-file-elements)
   - [Reports](#reports)
-    - [sub-index-phases](#sub-index-phases)
-    - [sub-index-problems](#sub-index-problems)
+    - [sub-index-phases - Index of Active Submissions by Phase](#sub-index-phases)
+    - [sub-index-problems - Index of Active Submissions by Problem Type](#sub-index-problems)
 - [How to Collaborate](#how-to-collaborate)
 
 
