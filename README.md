@@ -99,6 +99,8 @@ directory.  The reports are in two formats:
 
 Currently there are two different reports to view:
 
+<a name="sub-index-phases"></a>
+
 ### sub-index-phases - Index of Active Submissions by Phase
 
 This report details all of the current submissions grouped by their
@@ -111,6 +113,8 @@ issues, you will also see these issues listed below.
 
 - [markdown format](reports/sub-index-phases.md)
 - [html format](reports/sub-index-phases.html)
+
+<a name="sub-index-problems"></a>
 
 ### sub-index-problems - Index of Active Submissions by Problem Type
 
