@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2208-93123343
 
 ACTION TYPE: Undetermined
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES:
 
@@ -145,7 +145,7 @@ Ack-Receipt: 2022-08-29
 
 Init-Review: 2024-02-23
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-03-13
 
 Init-Rejected: YYYY-MM-DD
 
