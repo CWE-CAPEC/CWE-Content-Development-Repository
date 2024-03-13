@@ -76,7 +76,52 @@ published.
 
 Please clarify the situation.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Thank you for your feedback. To clarify, our submission
+identifies a generalized weakness that can be better titled “Lack of
+Feedback for Unexecuted Operations Across System Interfaces”. Unlike
+the broader issue of failing to indicate error conditions with status
+codes or return values, this weakness focuses on the silent omission
+of feedback when operations are not just errored, but unexecuted or
+ignored due to system constraints or design decisions. This weakness
+is not limited to any specific technology or context, but can occur in
+any system where operations can be discarded without feedback or
+notification. A primary example of this weakness is found in the
+OpenTitan System-on-Chip’s scmi_reg_top module, where write requests
+to reserved addresses are correctly identified as errors and
+discarded, but without any feedback provided.
+
+Therefore, this weakness category captures issues across various
+hardware interfaces where operations are discarded without any
+feedback, error handling, or logging. Such omissions can lead to data
+loss, security vulnerabilities, and system instability, with potential
+impacts ranging from minor to catastrophic.
+
+1) SoC systems, like OpenTitan: The example of write operations to
+reserved addresses being discarded without feedback directly
+exemplifies the weakness. It showcases a specific case where the
+system's failure to inform about discarded operations could lead to
+misinterpretations about the system's state or the success of
+operations, fitting the weakness perfectly.
+
+2) Microcontroller interrupt systems: Ignored interrupts due to
+priority conflicts or system errors without signaling highlight a
+failure in the system's communication about operational
+decisions. This directly contributes to the weakness by showing how
+critical feedback mechanisms are absent in scenarios where system
+limitations affect operation execution.
+
+3) Network interface controllers: The failure to report buffer
+overflows and the subsequent dropping of packets without notification
+is a clear instance of the system not providing feedback on crucial
+operational failures, leading to data loss and potential communication
+breakdowns.
+
+In addition, to address the specific instance within the OpenTitan
+SoC, a CVE report can be submitted, where: the CVE identification
+process will address the particular vulnerability, while this CWE
+submission will serve to inform the broader software and hardware
+development communities about the general weakness.
+
 
 ----------
 
@@ -102,7 +147,14 @@ bypass intended access control, but the submission is not saying that
 there is a problem with restricting access to the write
 operation. Please confirm.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: The submission intended to highlight a weakness where write
+operations to reserved addresses are not reported back to the user due
+to a lack of feedback mechanisms. This indeed aligns more closely with
+CWE-392: "Missing Report of Error Condition" as it directly concerns
+the system's failure to notify the user of unsuccessful
+operations. Given this clarification, I propose that the primary
+relationship of this vulnerability should be with CWE-392 as the
+direct parent, clarifying the misalignment with CWE-1191 and CWE-1256.
 
 ----------
 
@@ -128,9 +180,18 @@ vulnerability (not reporting errors) in a specific product
 lead to vulnerabilities. Unless other problems are resolved (see
 above), we cannot move forward with this submission.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
-
-
+Response: Acknowledging the feedback on the specificity of our
+submission, we have refined our focus to present a more generalized
+weakness, aptly titled "Lack of Feedback for Unexecuted Operations
+Across System Interfaces." This weakness encapsulates the critical
+issue where systems, spanning a spectrum of technologies, fail to
+notify or log the non-execution or disregard of operations due to
+various reasons including system constraints, design decisions, or
+errors. This can occur across a broad range of system interfaces, from
+hardware components like SoC modules to communication protocols, thus
+leading to vulnerabilities. The responses for the aforementioned
+problems aim to resolve the issue about the generalizability of this
+weakness.
 
 
 RESOLVED ISSUES:
