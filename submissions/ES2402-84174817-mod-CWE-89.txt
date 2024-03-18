@@ -1,0 +1,88 @@
+SUBMISSION COMMUNICATION ID: ES2402-84174817
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-02-29 12:04:45
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #80
+
+MTRACKER: #1000
+
+GITHUBUSER: Abhi-M
+
+SUBMISSION TYPE: Unknown
+
+NAME: Diagram for CWE-89
+
+DESCRIPTION:
+
+Diagram -
+https://pentest-report-pro-max.web.app/assets/cwe-89-improper-neutralization-of-special-elements-used-in-an-sql-command-sql-injection.png
+
+RELATED WEAKNESSES:
+
+   Other CWE-89
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-02-29
+
+Ack-Receipt: 2024-03-18
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
