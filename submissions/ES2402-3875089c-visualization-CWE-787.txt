@@ -31,6 +31,7 @@ https://pentest-report-pro-max.web.app/assets/cwe-787-out-of-binds-write.png
 
 RELATED WEAKNESSES:
 
+   Other CWE-787
 
 REFERENCES:
 
