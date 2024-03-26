@@ -94,7 +94,19 @@ Improper Adherence to Coding Standards but the best match (under
 access control) would probably be CWE-749: Exposed Dangerous Method or
 Function.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Is it a viable option to just have this proposal a MemberOf
+CWE-1006 Bad Coding Practices with no other relationship? I appreciate
+it is difficult to create a relationship to existing inheritance
+related CWE.
+
+...
+
+I notice a number of CWE in the CWE-1006 category are also under the
+CWE-710 view, so it's not uncommon in terms of relationships. It is
+not a neat fit into CWE-749 as that is it is more to do with exposing
+an operation with the adversary being the client. In the proposed CWE,
+the defender is the client and the adversary controls the potentially
+dangerous function. I would be ok with which ever you see fit
 
 ------------
 
@@ -119,8 +131,8 @@ etc. This submission is distinct enough - but generally applicable
 beyond Java - that it can progress to later phases, even if the
 subtree issues are not fully solved.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
-
+Response: I agree with the comments, no further opinion from me at
+this time.
 
 
 
