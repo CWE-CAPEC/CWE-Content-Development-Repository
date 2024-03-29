@@ -22,20 +22,22 @@ GITHUBUSER: kurtseifried
 
 SUBMISSION TYPE: Software
 
-NAME: Persistant links to create or change account or other privileged operation
+NAME: Reliance on Non-expiring Links for Critical Operations
 
 DESCRIPTION: 
 
-When sending messages that allow for account creation or modification
-(such as via an email address, text message via phone number or
-message to a social media account) the message should have a
-reasonable validity time period after which it is no longer valid.
+This weakness involves the insecure practice of sending non-expiring links via
+email for critical account operations, such as account creation or password
+resets. Secure design principles dictate that such links should have a limited
+validity period to minimize the window of opportunity for attackers. The absence
+of an expiration mechanism for these links poses a significant security risk.
+Ideally, the expiry timeframe should be tailored to the sensitivity of the
+action being performed—ranging from a few minutes (e.g., 5-10 minutes for
+password resets) to a longer duration (e.g., 1-2 days for account creation
+processes). Failure to implement link expiration allows attackers to exploit
+these links at their convenience, potentially after gaining unauthorized access
+to the associated email account.
 
-Depending on the exact scenario this may be minutes (e.g. 5-10) or
-several hours or days (1-2 days for account creation). By not expiring
-these links an attacker can partially open up a new account and then
-complete creation later after they have hijacked or otherwise accessed
-the email account associated with the request.
 
 RELATED WEAKNESSES:
 
@@ -60,16 +62,14 @@ a way that is vague and could cause the submission to be incorrectly
 mapped to. Resolution: an initial submission cannot progress to later
 stages until SUB.UNCLEAR is addressed.
 
-Comments: the name implies the mistake but could be modified to
-include the behavior, such as "Reliance on Non-expiring Links to
-Create or Change Account."  The description is too focused on the
-mitigation, although the text may be useful once Potential Mitigations
-are needed in a later phase.  The first sentence of the description
-could say something like "the product uses links to create an account
-or make changes to an account (e.g. password reset), but the links do
-not expire after a reasonable amount of time."
+Comments: The CDR responses on 2024-02-24 provided an acceptable
+description, but they did not address the name issue.  The CWE Team
+has changed the name of this submission to "Reliance on Non-expiring
+Links for Critical Operations" which borrows some phrasing from your
+original name. Please acknowledge this change or let us know if you
+disagree.
 
-Response: <submitter should reply here>
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 ------
 
