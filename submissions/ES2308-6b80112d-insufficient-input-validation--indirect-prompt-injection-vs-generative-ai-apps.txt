@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2308-6b80112d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -67,7 +67,7 @@ Received: 2023-08-22
 
 Ack-Receipt: 2024-01-05
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2024-03-29
 
 Init-Consultation: YYYY-MM-DD
 
