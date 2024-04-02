@@ -1,6 +1,6 @@
 # CWE - Submission Problems
 
-Last generated: 2024-02-20 17:06:34
+Last generated: 2024-04-01 08:11:43
 
 WARNING: this file was automatically generated. Do not edit.
 
@@ -24,6 +24,7 @@ WARNING: this file was automatically generated. Do not edit.
 |[SUB.ACTION](#SUB.ACTION)|Unable to determine action|
 |[SUB.ACTCHANGE](#SUB.ACTCHANGE)|Change in action for submission|
 |[SUB.MISC](#SUB.MISC)|Miscellaneous/other problem|
+|[SUB.COORD](#SUB.COORD)|Requires extensive coordination|
 
 
 # Submission Problem Details
@@ -385,6 +386,32 @@ The submission has some other problem that is not covered elsewhere.
 ### Resolution
 
 This will depend on the nature of the problem.
+
+
+
+<a name="SUB.COORD"></a>
+## SUB.COORD - Requires extensive coordination
+**Block Phase** - Init-Consultation, Full-Consultation
+
+
+### Description
+
+The submission will require or is currently undergoing close
+coordination, discussion, and debate between multiple parties with
+different perspectives and opinions.  The communication could be
+taking place in CDR itself, or outside of CDR.  As a result, it might
+take longer to move the submission to later phases, although the
+submission is expected to be more robust and well-defined as a result
+of this coordination.
+
+
+
+
+### Resolution
+
+The submission cannot progress past the Init-Consultation or
+Full-Consultation phases until sufficient consensus has been reached,
+or if the CWE Team decides to move the submission to the next phase.
 
 
 
