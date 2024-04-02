@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2303-fad91ac9
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-03-27 10:58:16
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC
 
 PUBTRACKER: #29
 
@@ -53,6 +53,92 @@ URL: https://simonwillison.net/2022/Sep/12/prompt-injection/
 
 ACTIVE ISSUES:
 
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This submission overlaps ES2308-6b80112d "Insufficient Input
+Validation leading to Indirect Prompt Injection against Generative AI
+Applications". Both involve prompt injection.  To avoid duplicate work
+on each of these submissions, the CWE Team proposes merging these two
+submissions into one. Since ES2308-6b80112d already has some
+discussion history on CDR, we propose focusing discussion on
+developing that submission in CDR. This submission, ES2303-fad91ac9,
+would be closed as a duplicate/overlap with pointers to
+ES2308-6b80112d. Both submitters would receive appropriate credit in
+any new entry/entries. Relevant information from ES2303-fad91ac9 would
+be integrated into ES2308-6b80112d, such as references, description,
+etc. Please let us know if you agree with this action.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.MULTWEAK - "Multiple weaknesses"
+
+Description: The submission describes or suggests multiple independent
+weaknesses that each might deserve a separate CWE ID.
+
+Resolution: The submission cannot progress past the consultation phase
+until the number of relevant weaknesses is identified. If there are
+multiple weaknesses, separate names and descriptions are needed.
+
+Comments: Since "prompt injection" is an attack, it is not clear
+whether there is a single weakness that enables prompt injection to
+succeed. Further discussion is needed to determine if "prompt
+injection" needs to be split into multiple weaknesses.  If you can
+think of multiple weaknesses that enable prompt injection, please
+provide them here.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.COORD - "Requires extensive coordination"
+
+Description: The submission will require or is currently undergoing close
+coordination, discussion, and debate between multiple parties with
+different perspectives and opinions.  The communication could be taking
+place in CDR itself, or outside of CDR.  As a result, it might take longer
+to move the submission to later phases, although the submission is expected
+to be more robust and well-defined as a result of this coordination.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Full-Consultation phases until sufficient consensus has been reached, or if
+the CWE Team decides to move the submission to the next phase.
+
+Comments: Since prompt injection has active interest on CDR and in the
+general community, its resolution will require close
+coordination. Please acknowledge this and feel free to ask any
+followup questions.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: As noted elsewhere, this submission overlaps another
+submission. CDR has not been used to resolve duplicates in the past,
+so there might be some challenges as the CWE Team figures out the best
+way to process these duplicates. Please acknowledge this and feel free
+to ask any followup questions.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
 
 
 RESOLVED ISSUES:
@@ -67,7 +153,7 @@ Ack-Receipt: 2023-09-07
 
 Init-Review: 2024-03-29
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-04-02
 
 Init-Rejected: YYYY-MM-DD
 
