@@ -1,7 +1,7 @@
 # Report: CWE Submissions By Problems
 
 
-*Report Generated: 20240329-144941*
+*Report Generated: 20240402-111041*
 
 # Submission Problem Index
 
@@ -61,7 +61,7 @@
 
 ## SUB.ABS.LOWLEVEL
 
-**Total Submissions: 16 (0 others not in CDR)**
+**Total Submissions: 17 (0 others not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -108,6 +108,9 @@
 |[51](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/51)|mbiesiad|2023-07-07|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2307-f1508064-lack-of-link-preview-for-qr-code-scan-open-redirection.txt" target="_blank">ES2307-f1508064</a>|Lack of link preview for QR code scan can leads to type of Open Redirection|
 ||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
 |||||SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS|
+|[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
+||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
+|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 |[61](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/61)|srivastava-amisha|2023-12-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2312-c2337436-write-request-handling-of-register-generation-in-opentitan-soc.txt" target="_blank">ES2312-c2337436</a>|Improper Neutralization in Write Request Handling of Register Generation in OpenTitan SoC|
 ||||| activeIssues=3 missing-comments=0 missing-responses=0|
 |||||SUB.UNCLEAR, SUB.RELS, SUB.ABS.LOWLEVEL|
@@ -116,7 +119,7 @@
 
 ## SUB.ABS.MULTWEAK
 
-**Total Submissions: 3 (0 others not in CDR)**
+**Total Submissions: 5 (0 others not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -129,6 +132,12 @@
 |[66](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/66)|royb-legit|2022-10-25|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2210-49c940f6-unchecked-pipeline-submission.txt" target="_blank">ES2210-49c940f6</a>|Unchecked pipeline submission|
 ||||| activeIssues=5 missing-comments=0 missing-responses=0|
 |||||SCOPE.HUMANPROC, SUB.UNCLEAR, SUB.RELS, SUB.RELREFS, SUB.ABS.MULTWEAK|
+|[29](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/29)|Manjesh24|2023-03-27|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-fad91ac9-prompt-injection.txt" target="_blank">ES2303-fad91ac9</a>|Prompt Injection|
+||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
+|||||SUB.OVERLAP, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
+|[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
+||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
+|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 
 
 
@@ -143,9 +152,7 @@
 ||||| activeIssues=8 missing-comments=0 missing-responses=**8**|
 |||||SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.MISC, SUB.GRAMMAR, SCOPE.SITUATIONS|
 |[23](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/23)|kurtseifried|2022-06-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2206-33c5627d-bad-account-creation-logic.txt" target="_blank">ES2206-33c5627d</a>|Account management with insufficient verification of owner's external identifier(s)|
-|[19](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/19)|jharv1|2022-07-05|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2207-a33a7b76-inheritance-when-overriding-superclass.txt" target="_blank">ES2207-a33a7b76</a>|Improper use of inheritance when overriding methods of a uncontrolled superclass|
-||||| activeIssues=2 missing-comments=0 missing-responses=0|
-|||||SUB.RELS, SUB.ABS.SUBTREE|
+|[19](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/19)|jharv1|2022-07-05|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2207-a33a7b76-inheritance-when-overriding-superclass.txt" target="_blank">ES2207-a33a7b76</a>|Improper use of inheritance when overriding methods of an uncontrolled superclass|
 |[67](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/67)|royb-legit|2022-10-25|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2210-1282270c-insecure-third-party-usage-in-pipeline.txt" target="_blank">ES2210-1282270c</a>|Use of third-party dependencies without verification in pipeline|
 ||||| activeIssues=3 missing-comments=0 missing-responses=0|
 |||||SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL|
@@ -199,7 +206,7 @@
 
 ## SUB.ATTACK
 
-**Total Submissions: 7 (0 others not in CDR)**
+**Total Submissions: 8 (0 others not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -224,6 +231,24 @@
 |[69](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/69)|omriman067|2023-03-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-4eae8c29-reverse-proxy-flow-interference-frontjacking.txt" target="_blank">ES2303-4eae8c29</a>|Reverse Proxy Flow Interference (Frontjacking)|
 ||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
 |||||SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.LOWLEVEL, SUB.ACTCHANGE, SUB.MISC|
+|[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
+||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
+|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
+
+
+
+## SUB.COORD
+
+**Total Submissions: 2 (0 others not in CDR)**
+
+| CDR | Submitter | Sub Date | Sub ID | Name 
+| --- | --- | --- | --- | --- |
+|[29](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/29)|Manjesh24|2023-03-27|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-fad91ac9-prompt-injection.txt" target="_blank">ES2303-fad91ac9</a>|Prompt Injection|
+||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
+|||||SUB.OVERLAP, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
+|[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
+||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
+|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 
 
 
@@ -262,7 +287,7 @@
 
 ## SUB.MISC
 
-**Total Submissions: 4 (0 others not in CDR)**
+**Total Submissions: 6 (0 others not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -278,6 +303,12 @@
 |[69](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/69)|omriman067|2023-03-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-4eae8c29-reverse-proxy-flow-interference-frontjacking.txt" target="_blank">ES2303-4eae8c29</a>|Reverse Proxy Flow Interference (Frontjacking)|
 ||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
 |||||SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.LOWLEVEL, SUB.ACTCHANGE, SUB.MISC|
+|[29](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/29)|Manjesh24|2023-03-27|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-fad91ac9-prompt-injection.txt" target="_blank">ES2303-fad91ac9</a>|Prompt Injection|
+||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
+|||||SUB.OVERLAP, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
+|[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
+||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
+|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 
 
 
@@ -317,7 +348,7 @@
 
 ## SUB.OVERLAP
 
-**Total Submissions: 8 (3 others not in CDR)**
+**Total Submissions: 10 (3 others not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -345,6 +376,12 @@
 |[3](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/3)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-d5c7348b-PPI-in-document-properties.txt" target="_blank">ES2302-d5c7348b</a>|PPI and sensitive informations with documents properties|
 ||||| activeIssues=2 missing-comments=0 missing-responses=0|
 |||||SUB.OVERLAP, SUB.ABS.SUBTREE|
+|[29](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/29)|Manjesh24|2023-03-27|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-fad91ac9-prompt-injection.txt" target="_blank">ES2303-fad91ac9</a>|Prompt Injection|
+||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
+|||||SUB.OVERLAP, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
+|[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
+||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
+|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 
 
 
@@ -409,9 +446,7 @@
 |[70](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/70)||2022-07-04|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2207-771a1a87-improper-SSO-flow.txt" target="_blank">ES2207-771a1a87</a>|Improper Single Sign On (SSO) Provider Authorization|
 ||||| activeIssues=2 missing-comments=0 missing-responses=0|
 |||||SUB.UNCLEAR, SUB.RELS|
-|[19](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/19)|jharv1|2022-07-05|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2207-a33a7b76-inheritance-when-overriding-superclass.txt" target="_blank">ES2207-a33a7b76</a>|Improper use of inheritance when overriding methods of a uncontrolled superclass|
-||||| activeIssues=2 missing-comments=0 missing-responses=0|
-|||||SUB.RELS, SUB.ABS.SUBTREE|
+|[19](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/19)|jharv1|2022-07-05|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2207-a33a7b76-inheritance-when-overriding-superclass.txt" target="_blank">ES2207-a33a7b76</a>|Improper use of inheritance when overriding methods of an uncontrolled superclass|
 |[17](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/17)|anmeza|2022-08-15|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2208-26ac7ee6-intermed-crypto-state-HCWE110.txt" target="_blank">ES2208-26ac7ee6</a>|Improper Protection of Intermediate Cryptographic State/Results|
 ||||| activeIssues=4 missing-comments=0 missing-responses=0|
 |||||SCOPE.NOMITS, SUB.UNCLEAR, SUB.RELS, SUB.ABS.LOWLEVEL|
@@ -435,7 +470,7 @@
 
 ## SUB.UNCLEAR
 
-**Total Submissions: 15 (0 others not in CDR)**
+**Total Submissions: 16 (0 others not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -481,6 +516,9 @@
 |[71](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/71)||2023-05-13|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2305-b9315546-buffer-overflow-fun_400a2c.txt" target="_blank">ES2305-b9315546</a>|Buffer Overflow:  FUN_400a2c|
 ||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
 |||||SUB.UNCLEAR, SUB.IPR, SUB.ABS.LOWLEVEL, SUB.RELREFS|
+|[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
+||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
+|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 |[61](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/61)|srivastava-amisha|2023-12-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2312-c2337436-write-request-handling-of-register-generation-in-opentitan-soc.txt" target="_blank">ES2312-c2337436</a>|Improper Neutralization in Write Request Handling of Register Generation in OpenTitan SoC|
 ||||| activeIssues=3 missing-comments=0 missing-responses=0|
 |||||SUB.UNCLEAR, SUB.RELS, SUB.ABS.LOWLEVEL|

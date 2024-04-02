@@ -1,7 +1,7 @@
 # Report: CWE Submissions By Phase
 
 
-*Report Generated: 20240329-144941*
+*Report Generated: 20240402-111041*
 
 ## Phase 1: Received
 
@@ -52,7 +52,7 @@
 
 ## Phase 3: Init-Review
 
-**Total Submissions: 7 (0 others not in CDR)**
+**Total Submissions: 5 (0 others not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -64,21 +64,17 @@
 |||||SUB.UNCLEAR, SUB.OVERLAP|
 |[2](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/2)|mbiesiad|2023-02-12|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-1f7d9e54-Using-HTTP-instead-of-HTTPS-with-email-and-other-content.txt" target="_blank">ES2302-1f7d9e54</a>|Using HTTP instead of HTTPS with email and other content|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
-|[29](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/29)|Manjesh24|2023-03-27|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-fad91ac9-prompt-injection.txt" target="_blank">ES2303-fad91ac9</a>|Prompt Injection|
-||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[59](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/59)|thezdi|2023-05-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2305-0e110960-invocation-of-elevated-bash-shell-from-setuid-process.txt" target="_blank">ES2305-0e110960</a>|Invocation of Elevated Bash Shell Without Privileged Mode From a Setuid Process|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[51](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/51)|mbiesiad|2023-07-07|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2307-f1508064-lack-of-link-preview-for-qr-code-scan-open-redirection.txt" target="_blank">ES2307-f1508064</a>|Lack of link preview for QR code scan can leads to type of Open Redirection|
 ||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
 |||||SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS|
-|[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
-||||| activeIssues=0 missing-comments=0 missing-responses=0|
 
 
 
 ## Phase 4: Init-Consultation
 
-**Total Submissions: 25 (0 others not in CDR)**
+**Total Submissions: 26 (0 others not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -103,9 +99,6 @@
 |[70](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/70)||2022-07-04|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2207-771a1a87-improper-SSO-flow.txt" target="_blank">ES2207-771a1a87</a>|Improper Single Sign On (SSO) Provider Authorization|
 ||||| activeIssues=2 missing-comments=0 missing-responses=0|
 |||||SUB.UNCLEAR, SUB.RELS|
-|[19](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/19)|jharv1|2022-07-05|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2207-a33a7b76-inheritance-when-overriding-superclass.txt" target="_blank">ES2207-a33a7b76</a>|Improper use of inheritance when overriding methods of a uncontrolled superclass|
-||||| activeIssues=2 missing-comments=0 missing-responses=0|
-|||||SUB.RELS, SUB.ABS.SUBTREE|
 |[18](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/18)|jharv1|2022-07-06|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2207-fde9b5fb-reliance-on-jvm-cached-dns-resolution.txt" target="_blank">ES2207-fde9b5fb</a>|Inadvertent reliance on JVM cached DNS resolution|
 ||||| activeIssues=1 missing-comments=0 missing-responses=0|
 |||||SUB.ABS.LOWLEVEL|
@@ -148,11 +141,17 @@
 |[69](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/69)|omriman067|2023-03-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-4eae8c29-reverse-proxy-flow-interference-frontjacking.txt" target="_blank">ES2303-4eae8c29</a>|Reverse Proxy Flow Interference (Frontjacking)|
 ||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
 |||||SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.LOWLEVEL, SUB.ACTCHANGE, SUB.MISC|
+|[29](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/29)|Manjesh24|2023-03-27|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-fad91ac9-prompt-injection.txt" target="_blank">ES2303-fad91ac9</a>|Prompt Injection|
+||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
+|||||SUB.OVERLAP, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 |[38](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/38)|mbiesiad|2023-03-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-bd6aefb6-sensitive-exif-metadata-not-stripped-out.txt" target="_blank">ES2303-bd6aefb6</a>|Sensitive Exif metadata not stripped out during upload by user when redundant|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[71](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/71)||2023-05-13|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2305-b9315546-buffer-overflow-fun_400a2c.txt" target="_blank">ES2305-b9315546</a>|Buffer Overflow:  FUN_400a2c|
 ||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
 |||||SUB.UNCLEAR, SUB.IPR, SUB.ABS.LOWLEVEL, SUB.RELREFS|
+|[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
+||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
+|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 |[61](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/61)|srivastava-amisha|2023-12-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2312-c2337436-write-request-handling-of-register-generation-in-opentitan-soc.txt" target="_blank">ES2312-c2337436</a>|Improper Neutralization in Write Request Handling of Register Generation in OpenTitan SoC|
 ||||| activeIssues=3 missing-comments=0 missing-responses=0|
 |||||SUB.UNCLEAR, SUB.RELS, SUB.ABS.LOWLEVEL|
@@ -166,7 +165,12 @@
 
 ## Phase 6: Init-Accepted
 
-**Total Submissions: 0 (0 others not in CDR)**
+**Total Submissions: 1 (0 others not in CDR)**
+
+| CDR | Submitter | Sub Date | Sub ID | Name 
+| --- | --- | --- | --- | --- |
+|[19](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/19)|jharv1|2022-07-05|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2207-a33a7b76-inheritance-when-overriding-superclass.txt" target="_blank">ES2207-a33a7b76</a>|Improper use of inheritance when overriding methods of an uncontrolled superclass|
+
 
 
 ## Phase 7: Full-Sub-Requested
