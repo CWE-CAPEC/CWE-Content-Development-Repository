@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2207-a33a7b76
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -22,12 +22,12 @@ GITHUBUSER: jharv1
 
 SUBMISSION TYPE: Software
 
-NAME: Improper use of inheritance when overriding methods of a uncontrolled superclass
+NAME: Improper use of inheritance when overriding methods of an uncontrolled superclass
 
 DESCRIPTION: 
 
 Improper use of inheritance can not only introduce fragility but break
-a programs security properties. For example, in the case of a
+a program's security properties. For example, in the case of a
 superclass that implements a simple collection with a number of add
 methods we might have a subclass that is responsible for upholding a
 predicate or security property before calling the corresponding
@@ -150,7 +150,7 @@ Init-Review: 2022-12-07
 
 Init-Consultation: 2024-01-16
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-04-01
 
 Init-Rejected: YYYY-MM-DD
 
