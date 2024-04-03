@@ -1,0 +1,88 @@
+SUBMISSION COMMUNICATION ID: ES2402-231ee973
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-02-29 12:12:44
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #86
+
+MTRACKER: #1012
+
+GITHUBUSER: Abhi-M
+
+SUBMISSION TYPE: Unknown
+
+NAME: Diagram for CWE-434
+
+DESCRIPTION:
+
+Diagram -
+https://pentest-report-pro-max.web.app/assets/cwe-434-unrestricted-upload-of-file-with-dangerous-type.png
+
+RELATED WEAKNESSES:
+
+   Other CWE-434
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-02-29
+
+Ack-Receipt: 2024-04-03
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
