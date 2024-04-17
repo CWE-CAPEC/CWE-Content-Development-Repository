@@ -1,0 +1,107 @@
+SUBMISSION COMMUNICATION ID: ES2404-6745d8f8
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-04-03 20:10:18
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #105
+
+MTRACKER: #1035
+
+GITHUBUSER: RedYetiDev
+
+SUBMISSION TYPE: Software
+
+NAME: Unauthorized iFrame Injection
+
+DESCRIPTION:
+
+CWE-XXXX represents a vulnerability where an attacker can inject
+unauthorized iFrames into a webpage without the ability to execute
+Cross-Site Scripting (XSS). This vulnerability allows attackers to embed
+malicious content from external sources into legitimate web pages,
+potentially leading to various security risks such as phishing attacks,
+malware distribution, or unauthorized data access.
+
+Attackers can exploit this vulnerability by manipulating input parameters
+or crafting specially crafted URLs that bypass input validation mechanisms.
+For example, an attacker may inject an iFrame pointing to a malicious
+website by manipulating the URL parameters, such as
+example.com?url=//evil.com.
+
+
+(This is essentially the opposite of CWE-1021, where an iFrame is injected
+into the victim page, rather than the victim page being injected into a
+malicious site)
+
+RELATED WEAKNESSES:
+
+   Other CWE-1021
+   Other CWE-601
+
+REFERENCES:
+
+Title: BugCrowd VRT (Server-Side Injection > Content Spoofing > iframe Injection)
+URL: https://bugcrowd.com/vulnerability-rating-taxonomy
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-04-03
+
+Ack-Receipt: 2024-04-17
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
