@@ -1,21 +1,20 @@
 # Report: CWE Submissions By Phase
 
 
-*Report Generated: 20240402-111041*
+*Report Generated: 20240425-185144*
 
 ## Phase 1: Received
 
-**Total Submissions: 0 (0 others not in CDR)**
+**Total Submissions: 0 (0 not in CDR)**
 
 
 ## Phase 2: Ack-Receipt
 
-**Total Submissions: 33 (0 others not in CDR)**
+**Total Submissions: 55 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
 |[8](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/8)|mbiesiad|2023-02-06|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-bd8d22cb-modify-CWE-345-for-email.txt" target="_blank">ES2302-bd8d22cb</a>|CWE-345: Insufficient Verification of Data Authenticity - emails and subscriptions|
-|[4](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/4)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-4359adeb-improper-authZ-used-user-id.txt" target="_blank">ES2302-4359adeb</a>|Improper Authorization - used user ID|
 |[65](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/65)|mbiesiad|2023-02-17|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-f091f80c-Improper-implemented-email-address-contact-or-weblinks-support.txt" target="_blank">ES2302-f091f80c</a>|Improper implemented email address contact or weblinks support unintended results|
 |[64](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/64)|mbiesiad|2023-02-17|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-0697c4d4-improper-site-protection-email-aliases.txt" target="_blank">ES2302-0697c4d4</a>|Improper site protection against using email aliases can provide to ATO and account issues|
 |[1](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/1)|mbiesiad|2023-02-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-4c1c9d02-not-logged-out-from-other-tabs.txt" target="_blank">ES2302-4c1c9d02</a>|Not logged out from other tabs during logging out in current tab|
@@ -47,12 +46,35 @@
 |[80](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/80)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-84174817-mod-CWE-89.txt" target="_blank">ES2402-84174817</a>|Diagram for CWE-89|
 |[84](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/84)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-3ad3fb4a-mod-CWE-416.txt" target="_blank">ES2402-3ad3fb4a</a>|Diagram for CWE-416|
 |[83](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/83)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-4cde2c8c-mod-CWE-78.txt" target="_blank">ES2402-4cde2c8c</a>|Diagram for CWE-78|
+|[85](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/85)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-e1534783-diagram-CWE-20.txt" target="_blank">ES2402-e1534783</a>|Diagram for CWE-20|
+|[99](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/99)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-c4902a6d-diagram-CWE-125.txt" target="_blank">ES2402-c4902a6d</a>|Diagram for CWE-125|
+|[98](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/98)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-2236113e-diagram-CWE-22.txt" target="_blank">ES2402-2236113e</a>|Diagram for CWE-22|
+|[94](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/94)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-9d3e3df2-diagram-CWE-352.txt" target="_blank">ES2402-9d3e3df2</a>|Diagram for CWE-352|
+|[86](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/86)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-231ee973-diagram-CWE-434.txt" target="_blank">ES2402-231ee973</a>|Diagram for CWE-434|
+|[89](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/89)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-3e27f5e7-diagram-CWE-862.txt" target="_blank">ES2402-3e27f5e7</a>|Diagram for CWE-862|
+|[90](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/90)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-5e01b6ea-diagram-CWE-476.txt" target="_blank">ES2402-5e01b6ea</a>|Diagram for CWE-476|
+|[100](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/100)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-c6ebc8d1-diagram-CWE-287.txt" target="_blank">ES2402-c6ebc8d1</a>|Diagram for CWE-287|
+|[91](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/91)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-79594537-diagram-CWE-190.txt" target="_blank">ES2402-79594537</a>|Diagram for CWE-190|
+|[103](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/103)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-f2f69697-diagram-CWE-502.txt" target="_blank">ES2402-f2f69697</a>|Diagram for CWE-502|
+|[101](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/101)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-d30c8d64-diagram-CWE-77.txt" target="_blank">ES2402-d30c8d64</a>|Diagram for CWE-77|
+|[95](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/95)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-a0e2310f-diagram-CWE-119.txt" target="_blank">ES2402-a0e2310f</a>|Diagram for CWE-119|
+|[92](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/92)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-85b0d075-diagram-CWE-798.txt" target="_blank">ES2402-85b0d075</a>|Diagram for CWE-798|
+|[96](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/96)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-b79e687e-diagram-CWE-918.txt" target="_blank">ES2402-b79e687e</a>|Diagram for CWE-918|
+|[93](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/93)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-8c4670ec-diagram-CWE-306.txt" target="_blank">ES2402-8c4670ec</a>|Diagram for CWE-306|
+|[102](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/102)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-dab59305-diagram-CWE-362.txt" target="_blank">ES2402-dab59305</a>|Diagram for CWE-362|
+|[104](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/104)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-fd9a1b33-diagram-CWE-269.txt" target="_blank">ES2402-fd9a1b33</a>|Diagram for CWE-269|
+|[97](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/97)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-b862a128-diagram-CWE-94.txt" target="_blank">ES2402-b862a128</a>|Diagram for CWE-94|
+|[87](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/87)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-30075533-diagram-CWE-863.txt" target="_blank">ES2402-30075533</a>|Diagram for CWE-863|
+|[88](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/88)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-323ad815-diagram-CWE-276.txt" target="_blank">ES2402-323ad815</a>|Diagram for CWE-276|
+|[105](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/105)|RedYetiDev|2024-04-03|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2404-6745d8f8-new-unauthorized-iframe-injection.txt" target="_blank">ES2404-6745d8f8</a>|Unauthorized iFrame Injection|
+|[107](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/107)||2024-04-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2404-44282f83-new-weak-authorization-mechanism.txt" target="_blank">ES2404-44282f83</a>|Weak Authorization Mechanism|
+|[108](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/108)||2024-04-23|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2404-8f35cdac-mod-CWE-1246.txt" target="_blank">ES2404-8f35cdac</a>|Broken link in CWE-1246 demox|
 
 
 
 ## Phase 3: Init-Review
 
-**Total Submissions: 5 (0 others not in CDR)**
+**Total Submissions: 6 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -62,6 +84,9 @@
 |[11](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/11)|mbiesiad|2022-11-30|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2211-684d4e45-user-validation-password-recovery.txt" target="_blank">ES2211-684d4e45</a>|Improper validation of user identity during changing password action leads to Account Takeover|
 ||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
 |||||SUB.UNCLEAR, SUB.OVERLAP|
+|[4](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/4)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-4359adeb-improper-authZ-used-user-id.txt" target="_blank">ES2302-4359adeb</a>|Improper Authorization - used user ID|
+||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
+|||||SUB.OVERLAP, SUB.RELREFS|
 |[2](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/2)|mbiesiad|2023-02-12|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-1f7d9e54-Using-HTTP-instead-of-HTTPS-with-email-and-other-content.txt" target="_blank">ES2302-1f7d9e54</a>|Using HTTP instead of HTTPS with email and other content|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[59](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/59)|thezdi|2023-05-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2305-0e110960-invocation-of-elevated-bash-shell-from-setuid-process.txt" target="_blank">ES2305-0e110960</a>|Invocation of Elevated Bash Shell Without Privileged Mode From a Setuid Process|
@@ -74,7 +99,7 @@
 
 ## Phase 4: Init-Consultation
 
-**Total Submissions: 26 (0 others not in CDR)**
+**Total Submissions: 26 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -160,12 +185,12 @@
 
 ## Phase 5: Init-Rejected
 
-**Total Submissions: 0 (3 others not in CDR)**
+**Total Submissions: 0 (0 not in CDR)**
 
 
 ## Phase 6: Init-Accepted
 
-**Total Submissions: 1 (0 others not in CDR)**
+**Total Submissions: 1 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -175,7 +200,7 @@
 
 ## Phase 7: Full-Sub-Requested
 
-**Total Submissions: 1 (0 others not in CDR)**
+**Total Submissions: 1 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -185,7 +210,7 @@
 
 ## Phase 8: Full-Sub-Received
 
-**Total Submissions: 1 (0 others not in CDR)**
+**Total Submissions: 1 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -195,12 +220,12 @@
 
 ## Phase 9: Full-Review
 
-**Total Submissions: 0 (0 others not in CDR)**
+**Total Submissions: 0 (0 not in CDR)**
 
 
 ## Phase 10: Full-Consultation
 
-**Total Submissions: 1 (0 others not in CDR)**
+**Total Submissions: 1 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -210,12 +235,12 @@
 
 ## Phase 11: Full-Accepted
 
-**Total Submissions: 0 (0 others not in CDR)**
+**Total Submissions: 0 (0 not in CDR)**
 
 
 ## Phase 12: Production
 
-**Total Submissions: 1 (0 others not in CDR)**
+**Total Submissions: 1 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -225,31 +250,31 @@
 
 ## Phase 13: CWE-Assigned
 
-**Total Submissions: 0 (0 others not in CDR)**
+**Total Submissions: 0 (0 not in CDR)**
 
 
 ## Phase 14: CWE-Modified
 
-**Total Submissions: 0 (0 others not in CDR)**
+**Total Submissions: 0 (0 not in CDR)**
 
 
 ## Phase 15: Final-Coord
 
-**Total Submissions: 0 (0 others not in CDR)**
+**Total Submissions: 0 (0 not in CDR)**
 
 
 ## Phase 16: CWE-Published
 
-**Total Submissions: 0 (0 others not in CDR)**
+**Total Submissions: 0 (0 not in CDR)**
 
 
 ## Phase 17: Post-Publication
 
-**Total Submissions: 0 (0 others not in CDR)**
+**Total Submissions: 0 (0 not in CDR)**
 
 
 ## Phase 18: Closed
 
-**Total Submissions: 0 (0 others not in CDR)**
+**Total Submissions: 0 (0 not in CDR)**
 
 

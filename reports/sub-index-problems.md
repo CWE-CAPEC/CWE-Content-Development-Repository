@@ -1,13 +1,13 @@
 # Report: CWE Submissions By Problems
 
 
-*Report Generated: 20240402-111041*
+*Report Generated: 20240425-185145*
 
 # Submission Problem Index
 
 ## SCOPE.ADMINERR
 
-**Total Submissions: 2 (0 others not in CDR)**
+**Total Submissions: 2 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -22,7 +22,7 @@
 
 ## SCOPE.HUMANPROC
 
-**Total Submissions: 2 (0 others not in CDR)**
+**Total Submissions: 2 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -37,7 +37,7 @@
 
 ## SCOPE.NOMITS
 
-**Total Submissions: 1 (0 others not in CDR)**
+**Total Submissions: 1 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -49,7 +49,7 @@
 
 ## SCOPE.SITUATIONS
 
-**Total Submissions: 1 (0 others not in CDR)**
+**Total Submissions: 1 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -61,7 +61,7 @@
 
 ## SUB.ABS.LOWLEVEL
 
-**Total Submissions: 17 (0 others not in CDR)**
+**Total Submissions: 17 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -119,7 +119,7 @@
 
 ## SUB.ABS.MULTWEAK
 
-**Total Submissions: 5 (0 others not in CDR)**
+**Total Submissions: 5 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -143,7 +143,7 @@
 
 ## SUB.ABS.SUBTREE
 
-**Total Submissions: 9 (0 others not in CDR)**
+**Total Submissions: 9 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -173,7 +173,7 @@
 
 ## SUB.ACTCHANGE
 
-**Total Submissions: 3 (0 others not in CDR)**
+**Total Submissions: 3 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -191,7 +191,7 @@
 
 ## SUB.ACTION
 
-**Total Submissions: 2 (0 others not in CDR)**
+**Total Submissions: 2 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -206,7 +206,7 @@
 
 ## SUB.ATTACK
 
-**Total Submissions: 8 (0 others not in CDR)**
+**Total Submissions: 8 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -239,7 +239,7 @@
 
 ## SUB.COORD
 
-**Total Submissions: 2 (0 others not in CDR)**
+**Total Submissions: 2 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -254,7 +254,7 @@
 
 ## SUB.GRAMMAR
 
-**Total Submissions: 4 (0 others not in CDR)**
+**Total Submissions: 4 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -275,7 +275,7 @@
 
 ## SUB.IPR
 
-**Total Submissions: 1 (0 others not in CDR)**
+**Total Submissions: 1 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -287,7 +287,7 @@
 
 ## SUB.MISC
 
-**Total Submissions: 6 (0 others not in CDR)**
+**Total Submissions: 6 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -314,7 +314,7 @@
 
 ## SUB.MISSDET
 
-**Total Submissions: 1 (0 others not in CDR)**
+**Total Submissions: 1 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -326,7 +326,7 @@
 
 ## SUB.MITIGATION
 
-**Total Submissions: 1 (0 others not in CDR)**
+**Total Submissions: 1 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -338,7 +338,7 @@
 
 ## SUB.NOINIT
 
-**Total Submissions: 1 (0 others not in CDR)**
+**Total Submissions: 1 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -348,7 +348,7 @@
 
 ## SUB.OVERLAP
 
-**Total Submissions: 10 (3 others not in CDR)**
+**Total Submissions: 11 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -370,6 +370,9 @@
 |[11](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/11)|mbiesiad|2022-11-30|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2211-684d4e45-user-validation-password-recovery.txt" target="_blank">ES2211-684d4e45</a>|Improper validation of user identity during changing password action leads to Account Takeover|
 ||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
 |||||SUB.UNCLEAR, SUB.OVERLAP|
+|[4](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/4)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-4359adeb-improper-authZ-used-user-id.txt" target="_blank">ES2302-4359adeb</a>|Improper Authorization - used user ID|
+||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
+|||||SUB.OVERLAP, SUB.RELREFS|
 |[5](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/5)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-c4107569-lack-of-https-forcing.txt" target="_blank">ES2302-c4107569</a>|Lack of HTTPS Forcing|
 ||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
 |||||SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.MISC|
@@ -387,7 +390,7 @@
 
 ## SUB.RELREFS
 
-**Total Submissions: 8 (0 others not in CDR)**
+**Total Submissions: 9 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -403,6 +406,9 @@
 |[10](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/10)|kurtseifried|2022-12-06|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2212-38d17c8f-blockchain-mining-cost-data-stuffing.txt" target="_blank">ES2212-38d17c8f</a>|Insufficient Deterrents in Blockchain Consensus Mechanisms Leading to Potential Blockchain Bloat|
 ||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
 |||||SUB.ABS.LOWLEVEL, SUB.RELREFS|
+|[4](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/4)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-4359adeb-improper-authZ-used-user-id.txt" target="_blank">ES2302-4359adeb</a>|Improper Authorization - used user ID|
+||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
+|||||SUB.OVERLAP, SUB.RELREFS|
 |[6](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/6)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-7bfc4f68-impersonate-org-or-company.txt" target="_blank">ES2302-7bfc4f68</a>|Impersonation of organisation or company|
 ||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
 |||||SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS, SUB.GRAMMAR, SUB.ACTION|
@@ -420,7 +426,7 @@
 
 ## SUB.RELS
 
-**Total Submissions: 15 (0 others not in CDR)**
+**Total Submissions: 15 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -470,7 +476,7 @@
 
 ## SUB.UNCLEAR
 
-**Total Submissions: 16 (0 others not in CDR)**
+**Total Submissions: 16 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
