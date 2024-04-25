@@ -1,0 +1,107 @@
+SUBMISSION COMMUNICATION ID: ES2404-44282f83
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-04-22 06:50:40
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #107
+
+MTRACKER: #1038
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: Weak Authorization Mechanism
+
+DESCRIPTION:
+
+1.  An EV charging app developed by TCS, was implemented with a login page
+for their android application.
+
+2. The login page consisted of sign-in, sign-up and forget password
+features.
+
+3. The account creation was based on phone number, which was flawed as any
+random 10 digits number would be accepted.
+
+4. The main flawed part was of their authorization, to create account and
+to login, the application would send OTP on the registered phone number.
+But, the way it was implemented was very insecure as they were displaying
+the OTP sent to registered number in the response.
+
+5. Meaning an attack agent can not only create bot accounts as OTPs where
+getting reflected in the response, but also could reset password for legit
+user and block them out of their account as they wouldn't get notified that
+their password has been changed.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-285
+
+REFERENCES:
+
+Title: How a simple IDOR impacted the data of thousands of customers of an Indian automotive giant
+URL: https://medium.com/@kushjain0107/how-simple-idor-impacted-the-data-of-thousands-of-customers-of-an-indian-automotive-giant-fdbd2ef1c2c6?source=friends_link&sk=fd21a3452cb7ffb6b698b2a61e226b82
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-04-22
+
+Ack-Receipt: 2024-04-25
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
