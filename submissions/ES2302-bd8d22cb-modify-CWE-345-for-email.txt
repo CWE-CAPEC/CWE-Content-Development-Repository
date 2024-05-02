@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2302-bd8d22cb
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-02-06 10:20:11
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.RELS, SUB.RELREFS
 
 PUBTRACKER: #8
 
@@ -45,6 +45,8 @@ RELATED WEAKNESSES:
 
    ChildOf CWE-345
 
+   Overlap ES2206-33c5627d
+
 REFERENCES:
 
 Title: CWE-345: Insufficient Verification of Data Authenticity
@@ -53,6 +55,96 @@ URL: https://cwe.mitre.org/data/definitions/345.html
 
 ACTIVE ISSUES:
 
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: While this submission does not overlap an existing CWE entry, it does
+overlap with an existing submission; ES2206-33c5627d - Account management with
+insufficient verification of owner's external identifier(s).  This submission
+can be viewed here
+https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/23
+(file: https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2206-33c5627d-bad-account-creation-logic.txt), which has already moved to the Full Submission Requested phase.  The concept of
+accepting subscriptions without verifying ownership of the email is not covered
+in the overlapped submission and could be added as an additional example.
+Please review the linked submission and let us know if you agree with the
+overlap.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or full) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: While this subission references CWE-345, the weakness is more targeted
+towards a proof of identity, which would fall under authentication, something
+like CWE-287. Because this falls under access control, an area of CWE that
+requires significant research and reorganization, there could be a subtree
+issue/gap where this weakness would fit in better.  This will likely be resolved
+once ES2206-33c5627d is resolved.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: Relationships remain unclear because SUB.ABS.SUBTREE is still active
+and the relationships have not been identified for the overlapping submission
+ES2206-33c5627d. This problem can be resolved in the Production stage for
+ES2206-33c5627d.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: While this weakness is easily understood, the submitter did not
+provide any references to support the weakness or examples.  If you have any
+references to provide they would be gladly accepted.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 RESOLVED ISSUES:
@@ -67,7 +159,7 @@ Ack-Receipt: 2023-02-07
 
 Init-Review: 2024-04-29
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-05-02
 
 Init-Rejected: YYYY-MM-DD
 
