@@ -1,7 +1,7 @@
 # Report: CWE Submissions By Problems
 
 
-*Report Generated: 20240425-185145*
+*Report Generated: 20240502-155514*
 
 # Submission Problem Index
 
@@ -143,7 +143,7 @@
 
 ## SUB.ABS.SUBTREE
 
-**Total Submissions: 9 (0 not in CDR)**
+**Total Submissions: 10 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -159,6 +159,9 @@
 |[68](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/68)|royb-legit|2022-10-24|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2210-163ab1df-pipeline-env-variable-injection.txt" target="_blank">ES2210-163ab1df</a>|Improper Neutralization of Pipeline Variables|
 ||||| activeIssues=3 missing-comments=0 missing-responses=**3**|
 |||||SUB.ACTCHANGE, SUB.MISSDET, SUB.ABS.SUBTREE|
+|[8](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/8)|mbiesiad|2023-02-06|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-bd8d22cb-modify-CWE-345-for-email.txt" target="_blank">ES2302-bd8d22cb</a>|CWE-345: Insufficient Verification of Data Authenticity - emails and subscriptions|
+||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
+|||||SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.RELS, SUB.RELREFS|
 |[5](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/5)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-c4107569-lack-of-https-forcing.txt" target="_blank">ES2302-c4107569</a>|Lack of HTTPS Forcing|
 ||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
 |||||SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.MISC|
@@ -348,7 +351,7 @@
 
 ## SUB.OVERLAP
 
-**Total Submissions: 11 (0 not in CDR)**
+**Total Submissions: 12 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -373,6 +376,9 @@
 |[4](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/4)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-4359adeb-improper-authZ-used-user-id.txt" target="_blank">ES2302-4359adeb</a>|Improper Authorization - used user ID|
 ||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
 |||||SUB.OVERLAP, SUB.RELREFS|
+|[8](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/8)|mbiesiad|2023-02-06|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-bd8d22cb-modify-CWE-345-for-email.txt" target="_blank">ES2302-bd8d22cb</a>|CWE-345: Insufficient Verification of Data Authenticity - emails and subscriptions|
+||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
+|||||SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.RELS, SUB.RELREFS|
 |[5](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/5)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-c4107569-lack-of-https-forcing.txt" target="_blank">ES2302-c4107569</a>|Lack of HTTPS Forcing|
 ||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
 |||||SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.MISC|
@@ -390,7 +396,7 @@
 
 ## SUB.RELREFS
 
-**Total Submissions: 9 (0 not in CDR)**
+**Total Submissions: 10 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -412,6 +418,9 @@
 |[6](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/6)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-7bfc4f68-impersonate-org-or-company.txt" target="_blank">ES2302-7bfc4f68</a>|Impersonation of organisation or company|
 ||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
 |||||SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS, SUB.GRAMMAR, SUB.ACTION|
+|[8](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/8)|mbiesiad|2023-02-06|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-bd8d22cb-modify-CWE-345-for-email.txt" target="_blank">ES2302-bd8d22cb</a>|CWE-345: Insufficient Verification of Data Authenticity - emails and subscriptions|
+||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
+|||||SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.RELS, SUB.RELREFS|
 |[5](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/5)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-c4107569-lack-of-https-forcing.txt" target="_blank">ES2302-c4107569</a>|Lack of HTTPS Forcing|
 ||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
 |||||SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.MISC|
@@ -426,7 +435,7 @@
 
 ## SUB.RELS
 
-**Total Submissions: 15 (0 not in CDR)**
+**Total Submissions: 16 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -465,6 +474,9 @@
 |[6](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/6)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-7bfc4f68-impersonate-org-or-company.txt" target="_blank">ES2302-7bfc4f68</a>|Impersonation of organisation or company|
 ||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
 |||||SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS, SUB.GRAMMAR, SUB.ACTION|
+|[8](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/8)|mbiesiad|2023-02-06|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-bd8d22cb-modify-CWE-345-for-email.txt" target="_blank">ES2302-bd8d22cb</a>|CWE-345: Insufficient Verification of Data Authenticity - emails and subscriptions|
+||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
+|||||SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.RELS, SUB.RELREFS|
 |[51](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/51)|mbiesiad|2023-07-07|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2307-f1508064-lack-of-link-preview-for-qr-code-scan-open-redirection.txt" target="_blank">ES2307-f1508064</a>|Lack of link preview for QR code scan can leads to type of Open Redirection|
 ||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
 |||||SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS|
