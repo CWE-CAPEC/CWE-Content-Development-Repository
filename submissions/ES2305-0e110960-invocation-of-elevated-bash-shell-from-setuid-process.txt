@@ -18,7 +18,7 @@ PUBTRACKER: #59
 
 MTRACKER: #941
 
-GITHUBUSER: thezdi
+GITHUBUSER: renorobert
 
 SUBMISSION TYPE: Software
 
@@ -32,23 +32,24 @@ setting its real identifiers to
 that of the effective identifiers instead of using privileged mode.
 
 Extended Description
-When bash shell is started with an effective user identifier not equal to
-the real user identifier, bash
-by default drops privileges by setting the effective user identifier to the
-real user identifier. The same
-applies to group identifiers. For cases in which it instead desired to run
-bash with the higher
-privileges of the effective user and group identifiers, bash provides a
-privileged mode u201c-pu201d option.
-For security, specifying u201c-pu201d also causes bash to ignore sensitive
-variables and shell functions from
-the environment.
 
-In some software implementations, instead of relying on privileged mode,
-the setuid process uses
-any of the user identifier setting system calls such as setuid, setreuid or
-setresuid to set the real user
-identifier to that of the effective user identifier befor
+When bash shell is started with an effective user identifier not equal
+to the real user identifier, bash by default drops privileges by
+setting the effective user identifier to the real user identifier. The
+same applies to group identifiers. For cases in which it instead
+desired to run bash with the higher privileges of the effective user
+and group identifiers, bash provides a privileged mode “-p”
+option. For security, specifying “-p” also causes bash to ignore
+sensitive variables and shell functions from the environment.
+
+In some software implementations, instead of relying on privileged
+mode, the setuid process uses any of the user identifier setting
+system calls such as setuid, setreuid or setresuid to set the real
+user identifier to that of the effective user identifier before
+invoking the bash shell. However, in such implementations, bash trusts
+the environment and therefore sensitive variables and shell functions
+from the environment are honored, which may allow unprivileged users
+to gain the higher privileges of the setuid process.
 
 RELATED WEAKNESSES:
 
