@@ -1,7 +1,7 @@
 # Report: CWE Submissions By Problems
 
 
-*Report Generated: 20240502-155514*
+*Report Generated: 20240509-163021*
 
 # Submission Problem Index
 
@@ -109,8 +109,6 @@
 ||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
 |||||SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS|
 |[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
-||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
-|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 |[61](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/61)|srivastava-amisha|2023-12-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2312-c2337436-write-request-handling-of-register-generation-in-opentitan-soc.txt" target="_blank">ES2312-c2337436</a>|Improper Neutralization in Write Request Handling of Register Generation in OpenTitan SoC|
 ||||| activeIssues=3 missing-comments=0 missing-responses=0|
 |||||SUB.UNCLEAR, SUB.RELS, SUB.ABS.LOWLEVEL|
@@ -133,17 +131,13 @@
 ||||| activeIssues=5 missing-comments=0 missing-responses=0|
 |||||SCOPE.HUMANPROC, SUB.UNCLEAR, SUB.RELS, SUB.RELREFS, SUB.ABS.MULTWEAK|
 |[29](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/29)|Manjesh24|2023-03-27|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-fad91ac9-prompt-injection.txt" target="_blank">ES2303-fad91ac9</a>|Prompt Injection|
-||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
-|||||SUB.OVERLAP, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 |[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
-||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
-|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 
 
 
 ## SUB.ABS.SUBTREE
 
-**Total Submissions: 10 (0 not in CDR)**
+**Total Submissions: 11 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -171,6 +165,9 @@
 |[51](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/51)|mbiesiad|2023-07-07|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2307-f1508064-lack-of-link-preview-for-qr-code-scan-open-redirection.txt" target="_blank">ES2307-f1508064</a>|Lack of link preview for QR code scan can leads to type of Open Redirection|
 ||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
 |||||SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS|
+|[41](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/41)|dtlam01|2023-11-14|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2311-db445df7-PWE-6-identifier-does-not-match-data-structure-object-type.txt" target="_blank">ES2311-db445df7</a>|PWE-6: Identifier does not match data structure object type|
+||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
+|||||SUB.ABS.SUBTREE, SUB.RELS|
 
 
 
@@ -235,8 +232,6 @@
 ||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
 |||||SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.LOWLEVEL, SUB.ACTCHANGE, SUB.MISC|
 |[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
-||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
-|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 
 
 
@@ -247,11 +242,7 @@
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
 |[29](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/29)|Manjesh24|2023-03-27|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-fad91ac9-prompt-injection.txt" target="_blank">ES2303-fad91ac9</a>|Prompt Injection|
-||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
-|||||SUB.OVERLAP, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 |[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
-||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
-|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 
 
 
@@ -307,11 +298,7 @@
 ||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
 |||||SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.LOWLEVEL, SUB.ACTCHANGE, SUB.MISC|
 |[29](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/29)|Manjesh24|2023-03-27|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-fad91ac9-prompt-injection.txt" target="_blank">ES2303-fad91ac9</a>|Prompt Injection|
-||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
-|||||SUB.OVERLAP, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 |[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
-||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
-|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 
 
 
@@ -386,11 +373,7 @@
 ||||| activeIssues=2 missing-comments=0 missing-responses=0|
 |||||SUB.OVERLAP, SUB.ABS.SUBTREE|
 |[29](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/29)|Manjesh24|2023-03-27|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-fad91ac9-prompt-injection.txt" target="_blank">ES2303-fad91ac9</a>|Prompt Injection|
-||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
-|||||SUB.OVERLAP, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 |[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
-||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
-|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 
 
 
@@ -435,7 +418,7 @@
 
 ## SUB.RELS
 
-**Total Submissions: 16 (0 not in CDR)**
+**Total Submissions: 17 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -480,6 +463,9 @@
 |[51](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/51)|mbiesiad|2023-07-07|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2307-f1508064-lack-of-link-preview-for-qr-code-scan-open-redirection.txt" target="_blank">ES2307-f1508064</a>|Lack of link preview for QR code scan can leads to type of Open Redirection|
 ||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
 |||||SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS|
+|[41](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/41)|dtlam01|2023-11-14|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2311-db445df7-PWE-6-identifier-does-not-match-data-structure-object-type.txt" target="_blank">ES2311-db445df7</a>|PWE-6: Identifier does not match data structure object type|
+||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
+|||||SUB.ABS.SUBTREE, SUB.RELS|
 |[61](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/61)|srivastava-amisha|2023-12-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2312-c2337436-write-request-handling-of-register-generation-in-opentitan-soc.txt" target="_blank">ES2312-c2337436</a>|Improper Neutralization in Write Request Handling of Register Generation in OpenTitan SoC|
 ||||| activeIssues=3 missing-comments=0 missing-responses=0|
 |||||SUB.UNCLEAR, SUB.RELS, SUB.ABS.LOWLEVEL|
@@ -535,8 +521,6 @@
 ||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
 |||||SUB.UNCLEAR, SUB.IPR, SUB.ABS.LOWLEVEL, SUB.RELREFS|
 |[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
-||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
-|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 |[61](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/61)|srivastava-amisha|2023-12-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2312-c2337436-write-request-handling-of-register-generation-in-opentitan-soc.txt" target="_blank">ES2312-c2337436</a>|Improper Neutralization in Write Request Handling of Register Generation in OpenTitan SoC|
 ||||| activeIssues=3 missing-comments=0 missing-responses=0|
 |||||SUB.UNCLEAR, SUB.RELS, SUB.ABS.LOWLEVEL|

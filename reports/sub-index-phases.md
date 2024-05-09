@@ -1,7 +1,7 @@
 # Report: CWE Submissions By Phase
 
 
-*Report Generated: 20240502-155514*
+*Report Generated: 20240509-163020*
 
 ## Phase 1: Received
 
@@ -10,14 +10,13 @@
 
 ## Phase 2: Ack-Receipt
 
-**Total Submissions: 47 (0 not in CDR)**
+**Total Submissions: 46 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
 |[65](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/65)|mbiesiad|2023-02-17|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-f091f80c-Improper-implemented-email-address-contact-or-weblinks-support.txt" target="_blank">ES2302-f091f80c</a>|Improper implemented email address contact or weblinks support unintended results|
 |[64](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/64)|mbiesiad|2023-02-17|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-0697c4d4-improper-site-protection-email-aliases.txt" target="_blank">ES2302-0697c4d4</a>|Improper site protection against using email aliases can provide to ATO and account issues|
 |[1](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/1)|mbiesiad|2023-02-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-4c1c9d02-not-logged-out-from-other-tabs.txt" target="_blank">ES2302-4c1c9d02</a>|Not logged out from other tabs during logging out in current tab|
-|[63](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/63)|royb-legit|2023-03-12|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-d5662b53-sensitive-info-in-continuous-integration-and-deployment-code.txt" target="_blank">ES2303-d5662b53</a>|Inclusion of Sensitive Information in Continuous Integration and Deployment Code|
 |[57](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/57)|mbiesiad|2023-03-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-496ceefb-failure-to-invalidate-session-when-password-was-changed.txt" target="_blank">ES2303-496ceefb</a>|Failure to Invalidate Session when password was changed|
 |[56](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/56)|mbiesiad|2023-03-30|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-4597beed-dependency-on-vulnerable-third-party-service.txt" target="_blank">ES2303-4597beed</a>|Dependency on Vulnerable Third-Party service|
 |[55](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/55)|mbiesiad|2023-03-31|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-af57ba9e-insufficient-protection-of-2fa-sms-code.txt" target="_blank">ES2303-af57ba9e</a>|Insufficient protection of 2FA SMS Code|
@@ -66,7 +65,7 @@
 
 ## Phase 3: Init-Review
 
-**Total Submissions: 13 (0 not in CDR)**
+**Total Submissions: 15 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -81,13 +80,16 @@
 |||||SUB.OVERLAP, SUB.RELREFS|
 |[2](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/2)|mbiesiad|2023-02-12|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-1f7d9e54-Using-HTTP-instead-of-HTTPS-with-email-and-other-content.txt" target="_blank">ES2302-1f7d9e54</a>|Using HTTP instead of HTTPS with email and other content|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
-|[59](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/59)|thezdi|2023-05-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2305-0e110960-invocation-of-elevated-bash-shell-from-setuid-process.txt" target="_blank">ES2305-0e110960</a>|Invocation of Elevated Bash Shell Without Privileged Mode From a Setuid Process|
+|[63](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/63)|royb-legit|2023-03-12|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-d5662b53-sensitive-info-in-continuous-integration-and-deployment-code.txt" target="_blank">ES2303-d5662b53</a>|Inclusion of Sensitive Information in Continuous Integration and Deployment Code|
+||||| activeIssues=0 missing-comments=0 missing-responses=0|
+|[59](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/59)|renorobert|2023-05-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2305-0e110960-invocation-of-elevated-bash-shell-from-setuid-process.txt" target="_blank">ES2305-0e110960</a>|Invocation of Elevated Bash Shell Without Privileged Mode From a Setuid Process|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[51](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/51)|mbiesiad|2023-07-07|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2307-f1508064-lack-of-link-preview-for-qr-code-scan-open-redirection.txt" target="_blank">ES2307-f1508064</a>|Lack of link preview for QR code scan can leads to type of Open Redirection|
 ||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
 |||||SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS|
 |[41](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/41)|dtlam01|2023-11-14|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2311-db445df7-PWE-6-identifier-does-not-match-data-structure-object-type.txt" target="_blank">ES2311-db445df7</a>|PWE-6: Identifier does not match data structure object type|
-||||| activeIssues=0 missing-comments=0 missing-responses=0|
+||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
+|||||SUB.ABS.SUBTREE, SUB.RELS|
 |[81](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/81)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-3875089c-visualization-CWE-787.txt" target="_blank">ES2402-3875089c</a>|Visualization for CWE-787|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[82](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/82)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-4f02537b-diagram-CWE-79.txt" target="_blank">ES2402-4f02537b</a>|Visualization for CWE-79|
@@ -100,12 +102,14 @@
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[93](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/93)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-8c4670ec-diagram-CWE-306.txt" target="_blank">ES2402-8c4670ec</a>|Diagram for CWE-306|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
+|[109](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/109)|stevechristeycoley|2024-05-09|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2405-84711fc4-new-insufficient-input-validation-generative-ai-applications.txt" target="_blank">ES2405-84711fc4</a>|Insufficient Input Validation in Generative AI Applications|
+||||| activeIssues=0 missing-comments=0 missing-responses=0|
 
 
 
 ## Phase 4: Init-Consultation
 
-**Total Submissions: 27 (0 not in CDR)**
+**Total Submissions: 25 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -175,17 +179,11 @@
 |[69](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/69)|omriman067|2023-03-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-4eae8c29-reverse-proxy-flow-interference-frontjacking.txt" target="_blank">ES2303-4eae8c29</a>|Reverse Proxy Flow Interference (Frontjacking)|
 ||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
 |||||SUB.UNCLEAR, SUB.ATTACK, SUB.ABS.LOWLEVEL, SUB.ACTCHANGE, SUB.MISC|
-|[29](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/29)|Manjesh24|2023-03-27|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-fad91ac9-prompt-injection.txt" target="_blank">ES2303-fad91ac9</a>|Prompt Injection|
-||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
-|||||SUB.OVERLAP, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 |[38](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/38)|mbiesiad|2023-03-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-bd6aefb6-sensitive-exif-metadata-not-stripped-out.txt" target="_blank">ES2303-bd6aefb6</a>|Sensitive Exif metadata not stripped out during upload by user when redundant|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[71](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/71)||2023-05-13|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2305-b9315546-buffer-overflow-fun_400a2c.txt" target="_blank">ES2305-b9315546</a>|Buffer Overflow:  FUN_400a2c|
 ||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
 |||||SUB.UNCLEAR, SUB.IPR, SUB.ABS.LOWLEVEL, SUB.RELREFS|
-|[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
-||||| activeIssues=7 missing-comments=0 missing-responses=**7**|
-|||||SUB.UNCLEAR, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISC|
 |[61](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/61)|srivastava-amisha|2023-12-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2312-c2337436-write-request-handling-of-register-generation-in-opentitan-soc.txt" target="_blank">ES2312-c2337436</a>|Improper Neutralization in Write Request Handling of Register Generation in OpenTitan SoC|
 ||||| activeIssues=3 missing-comments=0 missing-responses=0|
 |||||SUB.UNCLEAR, SUB.RELS, SUB.ABS.LOWLEVEL|
@@ -194,7 +192,13 @@
 
 ## Phase 5: Init-Rejected
 
-**Total Submissions: 0 (0 not in CDR)**
+**Total Submissions: 2 (0 not in CDR)**
+
+| CDR | Submitter | Sub Date | Sub ID | Name 
+| --- | --- | --- | --- | --- |
+|[29](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/29)|Manjesh24|2023-03-27|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-fad91ac9-prompt-injection.txt" target="_blank">ES2303-fad91ac9</a>|Prompt Injection|
+|[58](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/58)|JosephTLucas|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-6b80112d-insufficient-input-validation--indirect-prompt-injection-vs-generative-ai-apps.txt" target="_blank">ES2308-6b80112d</a>|Insufficient Input Validation leading to Indirect Prompt Injection against Generative AI Applications|
+
 
 
 ## Phase 6: Init-Accepted
