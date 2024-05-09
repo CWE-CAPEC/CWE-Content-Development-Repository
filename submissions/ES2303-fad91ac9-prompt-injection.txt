@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2303-fad91ac9
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Rejected
 
 AFFECTED CWES: 
 
@@ -65,18 +65,16 @@ duplicate/overlap.
 
 Comments: This submission overlaps ES2308-6b80112d "Insufficient Input
 Validation leading to Indirect Prompt Injection against Generative AI
-Applications". Both involve prompt injection.  To avoid duplicate work
-on each of these submissions, the CWE Team proposes merging these two
-submissions into one. Since ES2308-6b80112d already has some
-discussion history on CDR, we propose focusing discussion on
-developing that submission in CDR. This submission, ES2303-fad91ac9,
-would be closed as a duplicate/overlap with pointers to
-ES2308-6b80112d. Both submitters would receive appropriate credit in
-any new entry/entries. Relevant information from ES2303-fad91ac9 would
-be integrated into ES2308-6b80112d, such as references, description,
-etc. Please let us know if you agree with this action.
+Applications". Both are being declined in favor of a new, more
+weakness-focused submission ES2405-84711fc4 (CDR #109), titled
+"Insufficient Input Validation in Generative AI Applications". The CWE
+Team will work with the AI/ML community and CDR participants to move
+that new submission through the process of publication. This
+submission, ES2303-fad91ac9, would be closed as a duplicate/overlap
+with pointers to ES2308-6b80112d. Both submitters of the original
+submissions will receive appropriate credit in any new entry/entries.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO REPLY NEEDED]
 
 
 ----------
@@ -97,7 +95,7 @@ injection" needs to be split into multiple weaknesses.  If you can
 think of multiple weaknesses that enable prompt injection, please
 provide them here.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO REPLY NEEDED]
 
 ----------
 
@@ -119,7 +117,8 @@ general community, its resolution will require close
 coordination. Please acknowledge this and feel free to ask any
 followup questions.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO REPLY NEEDED]
+
 
 ----------
 
@@ -136,7 +135,7 @@ so there might be some challenges as the CWE Team figures out the best
 way to process these duplicates. Please acknowledge this and feel free
 to ask any followup questions.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO REPLY NEEDED]
 
 
 
@@ -155,7 +154,7 @@ Init-Review: 2024-03-29
 
 Init-Consultation: 2024-04-02
 
-Init-Rejected: YYYY-MM-DD
+Init-Rejected: 2024-05-09
 
 Init-Accepted: YYYY-MM-DD
 
