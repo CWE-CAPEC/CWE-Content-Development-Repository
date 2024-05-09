@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2308-6b80112d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Rejected
 
 AFFECTED CWES: 
 
@@ -55,6 +55,29 @@ URL: https://arxiv.org/abs/2302.12173
 
 ACTIVE ISSUES:
 
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This submission overlaps ES2303-fad91ac9 "Prompt
+Injection". Both are being declined in favor of a new, more
+weakness-focused submission ES2405-84711fc4 (CDR #109), titled
+"Insufficient Input Validation in Generative AI Applications". The CWE
+Team will work with the AI/ML community and CDR participants to move
+that new submission through the process of publication. This
+submission, ES2308-6b80112d, would be closed as a duplicate/overlap
+with pointers tothe new submission. Both submitters of the original
+submissions will receive appropriate credit in any new entry/entries.
+
+Response: [NO REPLY NEEDED]
+
+----------
 
 SUB.UNCLEAR - "Unclear weakness"
 
@@ -84,7 +107,7 @@ separate design-related issue. Please let us know if you agree with
 this assessment and, if possible, suggest modifications to the
 description that are more weakness-focused.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO REPLY NEEDED]
 
 
 ----------
@@ -110,37 +133,12 @@ the root cause weakness is identified.  Please let us know if you
 agree with this assessment and, if possible, suggest modifications to
 the description that are more weakness-focused.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO REPLY NEEDED]
 
 
 
 ----------
 
-SUB.OVERLAP - "Duplicate/Overlap"
-
-Description: The submission identifies a weakness, but it is a duplicate of
-(or partially overlaps) existing weaknesses, indicating problems with the
-submission or associated CWE entries.
-
-Resolution: The submission cannot progress to later phases until (1) the
-duplicate/overlap is understood and (2) it is clear how to resolve this
-duplicate/overlap.
-
-Comments: This submission overlaps ES2303-fad91ac9 "Prompt
-Injection". Both involve prompt injection. The CWE Team proposes
-keeping this submission, ES2308-6b80112d, as there is already some
-discussion history on CDR.  Discussion in CDR would be focused on
-developing this submission.  The other submission, ES2303-fad91ac9,
-would be rejected as a duplicate/overlap. Both submitters would
-receive appropriate credit in any new entry/entries.  Relevant
-information from ES2303-fad91ac9 would be integrated into
-ES2308-6b80112d, such as references, description, etc.  Please let us
-know if you agree with this action.
-
-Response: <SUBMITTER SHOULD REPLY HERE>
-
-
-----------
 
 SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
@@ -176,7 +174,7 @@ through external sources" - can be used as part of the external
 description, demonstrative examples, and possibly other elements of
 the new CWE entry/entries.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO REPLY NEEDED]
 
 
 ----------
@@ -198,7 +196,7 @@ is needed to determine if "prompt injection" needs to be split into
 multiple weaknesses.  If you can think of multiple weaknesses that
 enable prompt injection, please provide them here.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO REPLY NEEDED]
 
 ----------
 
@@ -220,7 +218,7 @@ general community, its resolution will require close
 coordination. Please acknowledge this and feel free to ask any
 followup questions.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO REPLY NEEDED]
 
 ----------
 
@@ -237,7 +235,7 @@ so there might be some challenges as the CWE Team figures out the best
 way to process these duplicates. Please acknowledge this and feel free
 to ask any followup questions.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO REPLY NEEDED]
 
 
 
@@ -255,7 +253,7 @@ Init-Review: 2024-03-29
 
 Init-Consultation: 2024-04-02
 
-Init-Rejected: YYYY-MM-DD
+Init-Rejected: 2024-05-09
 
 Init-Accepted: YYYY-MM-DD
 
