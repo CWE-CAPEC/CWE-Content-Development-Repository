@@ -1,0 +1,110 @@
+SUBMISSION COMMUNICATION ID: ES2405-84711fc4
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-05-09 18:50:11
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #109
+
+MTRACKER: #1052
+
+GITHUBUSER: stevechristeycoley
+
+SUBMISSION TYPE: Software
+
+NAME: Insufficient Input Validation in Generative AI Applications
+
+DESCRIPTION:
+
+The product accepts user inputs for a generative artificial intelligence
+application, which can modify or bypass the original instructions resulting
+in an unintended response.
+
+Extended Description: Without sufficient validation to application user
+inputs, the generative artificial intelligence model can change its
+original behavior or provide unintended responses. This can be used to
+reveal model secrets, output biased responses, and possibly execute system
+commands, depending on application capabilities.  This flaw depends on the
+fact that generative artificial intelligence models make no real
+distinction between the control and data planes.
+
+Alternate term: prompt injection. Note to user: prompt injection is an
+attack and applies to multiple weaknesses, not just this one.
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-20
+
+REFERENCES:
+
+Title: Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?
+URL: https://arxiv.org/abs/2403.06833
+
+Title: How to implement LLM guardrails - Example of types of LLM input validations: use cases include preventing topic derailing, detecting jailbreaks, detecting prompt injections
+URL: https://cookbook.openai.com/examples/how_to_use_guardrails#1-input-guardrails
+
+Title: Examples of types of LLM output validations u2013 note that there are a variety of use cases:
+URL: https://hub.guardrailsai.com/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-05-09
+
+Ack-Receipt: 2024-05-09
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Rejected: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
