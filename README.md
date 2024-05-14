@@ -28,12 +28,13 @@ The CWE Program has created the CWE Content Development Repository, a public Git
 
 All CWE content submissions must adhere to the [CWE Terms of Use](https://cwe.mitre.org/about/termsofuse.html).
 
-# Pilot Program - September 12th, 2023 - March 2024
+# CDR Soft Launch
 
-- This pilot will remain open for all community members with a current CWE content suggestion (as of September 12) until we are ready for a full release.  The purpose of this is to work through the process in a closed environment to figure out issues and gather feedback before turning the repository public.
-- Each submission has been given its own GitHub issue where discussion around that submission should take place.  Feel free to look through all issues with the label “External-Submission” and provide comments as you see fit.
-  - Each issue will also have a link to the submission file within the repository.  These files have more detailed process information and information about potential problems with the submission.
-- We are very interested in feedback, both good and bad.  Please provide feedback by creating a new issue and choosing the template called “Feedback Template”.  You may also reach out to cwe-submissions@mitre.org with any feedback as well.
+The CWE Content Development Repository is currently in a "soft launch" phase, where anyone is available to join by request.  This can be done by emailing a GitHub username to cwe-submissions@mitre.org.  A member of the CWE team will then invite that user to the CDR.  The repository was previously only available to active submitters in a "pilot" phase, where valuable feedback was gathered and the CDR process was refined.  
+
+The CWE team is close to fully releasing the CDR to the public, but we want to be sure we are ready for a potential influx of submissions and interaction that may come with a full public release.  More details around a potential timeline for a public release as well as reasons behind keeping the CDR currently invite only can be found in our discussion post [here](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/discussions/106).
+
+We are still very interested in feedback, both good and bad. Please provide feedback by creating a new issue and choosing the template called “Feedback Template”. You may also reach out to cwe-submissions@mitre.org with any feedback as well.
 
 # Repository Layout
 
