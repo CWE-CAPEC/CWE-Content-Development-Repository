@@ -77,7 +77,12 @@ in the overlapped submission and could be added as an additional example.
 Please review the linked submission and let us know if you agree with the
 overlap.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree. Note - Please consider to use threats' examples
+provided by me like impersonation (real user will can not register in,
+malicious actor can make banned victim's account - email used in
+registration process, or make flooding by unwanted messages).  From
+business point of view - incorrect email addresses are useless and
+from security point of view - possible threats.
 
 
 ----------
@@ -99,9 +104,10 @@ towards a proof of identity, which would fall under authentication, something
 like CWE-287. Because this falls under access control, an area of CWE that
 requires significant research and reorganization, there could be a subtree
 issue/gap where this weakness would fit in better.  This will likely be resolved
-once ES2206-33c5627d is resolved.
+once ES2206-33c5627d is resolved. Please let us know if you agree with the
+analysis.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree
 
 ----------
 
@@ -122,10 +128,10 @@ exist and cannot be quickly resolved.
 
 Comments: Relationships remain unclear because SUB.ABS.SUBTREE is still active
 and the relationships have not been identified for the overlapping submission
-ES2206-33c5627d. This problem can be resolved in the Production stage for
-ES2206-33c5627d.
+ES2206-33c5627d. This problem can be resolved in upcoming phases for
+ES2206-33c5627d. Please acknowledge this problem.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree
 
 ----------
 
@@ -144,7 +150,50 @@ Comments: While this weakness is easily understood, the submitter did not
 provide any references to support the weakness or examples.  If you have any
 references to provide they would be gladly accepted.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:
+
+Title: Registration-based Email Verification
+URL: https://fusionauth.io/docs/lifecycle/manage-users/verification/registration-email-verification
+
+Title: New Research Paper: Pre-hijacking Attacks on Web User Accounts
+URL: https://msrc-blog.microsoft.com/2022/05/23/pre-hijacking-attacks/
+
+Title: What are the common methods of email verification for user registration and accounts?
+URL: https://www.quora.com/unanswered/What-are-the-common-methods-of-email-verification-for-user-registration-and-accounts
+
+Title: Verify Emails using Auth0
+URL: https://auth0.com/docs/manage-users/user-accounts/verify-emails
+
+Title: Why should I use Email Validations?
+URL: https://help.mailgun.com/hc/en-us/articles/360010523834-Why-should-I-use-Email-Validations
+
+Title: How to Verify Email Addresses (the Right Way)
+URL: https://sendgrid.com/en-us/blog/the-best-and-worst-ways-to-verify-email-addresses
+
+Title: 3 unknown benefits of using email validation
+URL: https://spotzee.com/articles/3-unknown-benefits-of-using-email-validation/
+
+Title: The ultimate guide on email scrubbing in 2023
+URL: https://spotzee.com/articles/ultimate-guide-on-email-scrubbing/
+
+Title: 5 Best Practices for Helping Prevent Email Address Typos
+URL: https://bird.com/blog/prevent-email-address-typos
+
+Title: About Fake Signups
+URL: https://mailchimp.com/help/about-fake-signups/
+
+Title: How to Protect Your Email List from Bots
+URL: https://mailchimp.com/resources/how-to-protect-your-email-list-from-bots/
+
+Title: EMAIL VERIFICATION AND WHY IT’S IMPORTANT
+URL: https://www.theseventhsense.com/blog/email-verification-and-why-its-important
+
+Title: Why email verification is essential to your marketing strategy
+URL: https://www.emailhippo.com/resources/blog/email-verification
+
+Title: A Survey of Email Service; Attacks, Security Methods and Protocols
+URL: https://www.researchgate.net/publication/315302873_A_Survey_of_Email_Service_Attacks_Security_Methods_and_Protocols
+
 
 
 RESOLVED ISSUES:
