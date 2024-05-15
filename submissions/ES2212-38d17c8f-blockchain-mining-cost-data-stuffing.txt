@@ -208,3 +208,9 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2022-12-06 sent email
+2023-02-07 sent email
+2023-09-12 publish server
+2024-01-25 sent email
+2024-02-24 received CDR Comment
+2024-03-29 sent email

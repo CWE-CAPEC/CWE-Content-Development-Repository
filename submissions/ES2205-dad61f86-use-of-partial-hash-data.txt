@@ -242,3 +242,13 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2022-06-03 sent email
+2022-07-13 sent email
+2022-07-26 received email
+2022-08-16 received email
+2022-10-13 received email
+2022-10-13 sent email
+2023-03-10 sent email
+2023-04-04 received email
+2023-09-12 publish server
+2024-01-14 action update-responses

@@ -240,3 +240,13 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2024-01-09 received email
+2024-01-09 sent email
+2024-01-10 sent email
+2024-01-10 received email
+2024-01-11 sent email
+2024-01-11 sent email
+2024-02-06 received email
+2024-02-06 sent email
+2024-03-01 received email
+2024-04-12 received email

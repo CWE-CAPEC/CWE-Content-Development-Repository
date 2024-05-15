@@ -279,3 +279,7 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2023-02-07 sent email
+2023-09-12 publish server
+2024-04-29 sent email
+2024-05-14 sent email

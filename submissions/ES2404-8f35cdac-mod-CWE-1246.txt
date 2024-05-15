@@ -88,3 +88,6 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2024-04-24 sent email
+2024-04-26 received email
+2024-04-27 sent email

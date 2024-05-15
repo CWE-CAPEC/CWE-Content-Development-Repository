@@ -220,3 +220,7 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2023-02-22 sent email
+2023-02-27 sent email
+2023-09-12 publish server
+2024-01-23 sent email

@@ -169,3 +169,8 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2022-01-07 received email
+2022-06-07 received email
+2022-06-07 sent email
+2022-06-16 received email
+2023-09-12 publish server

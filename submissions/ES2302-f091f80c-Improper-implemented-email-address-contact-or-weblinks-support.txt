@@ -100,3 +100,4 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2023-02-23 sent email

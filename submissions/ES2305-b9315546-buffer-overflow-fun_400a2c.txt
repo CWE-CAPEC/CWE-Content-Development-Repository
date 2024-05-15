@@ -182,3 +182,8 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2023-12-21 sent email
+2023-12-21 received email
+2024-01-15 sent email
+2024-01-15 received email
+2024-02-19 sent email

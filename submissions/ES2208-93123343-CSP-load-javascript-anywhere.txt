@@ -177,3 +177,10 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2022-08-29 sent email
+2022-12-02 received email
+2023-02-23 sent email
+2023-04-03 received email
+2023-09-12 publish server
+2024-02-21 received comment
+2024-03-13 sent email
