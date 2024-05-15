@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2302-4359adeb
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-02-08 10:05:46
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.RELREFS
 
 PUBTRACKER: #4
 
@@ -58,6 +58,49 @@ URL: https://cwe.mitre.org/data/definitions/287.html
 
 ACTIVE ISSUES:
 
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: The weakness described in this submission seems to be identical to
+IDOR - CWE-639: Authorization Bypass Through User-Controlled Key.  In both this
+submission and CWE-639, access is given to a user's data simply by providing a
+key to bypass authorization.  This submission describes a specific case related
+to anonymous surveys, but that is not unique from CWE-639.  Please let us know
+if you agree with this assessment or if you believe there is still an additional
+weakness not covered through CWE-639.
+
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: The submission does not provide any references to back up
+the described weakness.  If the submission is identified to indeed be
+a duplicate of CWE-639 as described by SUB.OVERLAP, then this
+submission will likely be closed and the references would not be
+needed.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
 
 RESOLVED ISSUES:
 
@@ -72,7 +115,7 @@ Ack-Receipt: 2023-02-22
 
 Init-Review: 2024-04-24
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-05-15
 
 Init-Rejected: YYYY-MM-DD
 
@@ -104,3 +147,7 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2023-02-22 sent email
+2023-09-12 publish server
+2024-04-24 sent email
+2024-05-15 sent email
