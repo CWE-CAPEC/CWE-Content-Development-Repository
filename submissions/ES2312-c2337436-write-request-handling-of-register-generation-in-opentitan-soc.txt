@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-12-20 03:53:09
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELS
+ISSUE DETAILS: 
 
 PUBTRACKER: #61
 
@@ -22,29 +22,52 @@ GITHUBUSER: srivastava-amisha
 
 SUBMISSION TYPE: Hardware
 
-NAME: Improper Neutralization in Write Request Handling of Register Generation in OpenTitan SoC
+NAME: Lack of Feedback for Unexecuted Operations Across System Interfaces
 
 DESCRIPTION:
 
-The weakness lies in the handling of write requests to reserved addresses
-in the module for register generation (scmi_reg_top) of the OpenTitan SoC.
-When a write request is made to a reserved address, the system correctly
-identifies this as an error and discards the write operation. However, it
-fails to provide feedback about this discarded operation. This lack of
-feedback mechanism is a concern because it could lead to lost data or
-unpredictable system behavior, as the system might silently ignore a write
-during an error without notification. This could potentially be exploited
-by an attacker to insert malicious writes into the code. The primary
-technical impact of this vulnerability is the potential for data loss and
-can be used to gain unauthorized access by attackers. Moreover, if the
-system discards a write operation but fails to notify the user or the rest
-of the system, it could lead to decisions or actions based on incorrect
-data.
+This weakness focuses on the silent omission of feedback when
+operations are not just errored, but unexecuted or ignored due to
+system constraints or design decisions. This weakness is not limited
+to any specific technology or context, but can occur in any system
+where operations can be discarded without feedback or notification. A
+primary example of this weakness is found in the OpenTitan
+System-on-Chip’s scmi_reg_top module, where write requests to reserved
+addresses are correctly identified as errors and discarded, but
+without any feedback provided.
+
+Therefore, this weakness category captures issues across various
+hardware interfaces where operations are discarded without any
+feedback, error handling, or logging. Such omissions can lead to data
+loss, security vulnerabilities, and system instability, with potential
+impacts ranging from minor to catastrophic.
+
+1) SoC systems, like OpenTitan: The example of write operations to
+reserved addresses being discarded without feedback directly
+exemplifies the weakness. It showcases a specific case where the
+system's failure to inform about discarded operations could lead to
+misinterpretations about the system's state or the success of
+operations, fitting the weakness perfectly.
+
+2) Microcontroller interrupt systems: Ignored interrupts due to
+priority conflicts or system errors without signaling highlight a
+failure in the system's communication about operational
+decisions. This directly contributes to the weakness by showing how
+critical feedback mechanisms are absent in scenarios where system
+limitations affect operation execution.
+
+3) Network interface controllers: The failure to report buffer
+overflows and the subsequent dropping of packets without notification
+is a clear instance of the system not providing feedback on crucial
+operational failures, leading to data loss and potential communication
+breakdowns.
+
 
 RELATED WEAKNESSES:
 
-   ChildOf CWE-1191
-   ChildOf CWE-1256
+   Other CWE-1191
+   Other CWE-1256
+   ChildOf CWE-392
 
 REFERENCES:
 
@@ -53,6 +76,9 @@ URL: https://docs.google.com/presentation/d/1mw7d3muWdAJa6RSuKzJVbeBHTE38kzSL/ed
 
 
 ACTIVE ISSUES:
+
+
+RESOLVED ISSUES:
 
 SUB.UNCLEAR - "Unclear weakness"
 
@@ -121,7 +147,6 @@ SoC, a CVE report can be submitted, where: the CVE identification
 process will address the particular vulnerability, while this CWE
 submission will serve to inform the broader software and hardware
 development communities about the general weakness.
-
 
 ----------
 
@@ -192,9 +217,6 @@ hardware components like SoC modules to communication protocols, thus
 leading to vulnerabilities. The responses for the aforementioned
 problems aim to resolve the issue about the generalizability of this
 weakness.
-
-
-RESOLVED ISSUES:
 
 
 
