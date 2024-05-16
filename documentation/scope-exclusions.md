@@ -1,6 +1,6 @@
 # CWE Scope Exclusions
 
-Last generated: 2024-04-01 08:11:08
+Last generated: 2024-05-15 21:37:38
 
 WARNING: this file was automatically generated. Do not edit.
 

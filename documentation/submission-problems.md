@@ -1,6 +1,6 @@
 # CWE - Submission Problems
 
-Last generated: 2024-04-01 08:11:43
+Last generated: 2024-05-15 21:38:03
 
 WARNING: this file was automatically generated. Do not edit.
 
@@ -25,6 +25,7 @@ WARNING: this file was automatically generated. Do not edit.
 |[SUB.ACTCHANGE](#SUB.ACTCHANGE)|Change in action for submission|
 |[SUB.MISC](#SUB.MISC)|Miscellaneous/other problem|
 |[SUB.COORD](#SUB.COORD)|Requires extensive coordination|
+|[SUB.NEWTECH](#SUB.NEWTECH)|New/Emerging Technology|
 
 
 # Submission Problem Details
@@ -412,6 +413,51 @@ of this coordination.
 The submission cannot progress past the Init-Consultation or
 Full-Consultation phases until sufficient consensus has been reached,
 or if the CWE Team decides to move the submission to the next phase.
+
+
+
+<a name="SUB.NEWTECH"></a>
+## SUB.NEWTECH - New/Emerging Technology
+**Block Phase** - Init-Consultation, Full-Consultation
+
+
+### Description
+
+The submission is related to a new or emerging technology that is not
+well-understood from a weakness perspective, which can cause real or
+perceived gaps in CWE that require extra effort and time to analyze.
+Typically, for new/emerging technologies, early vulnerability
+discovery and research does not focus on root cause analysis (i.e.,
+weakness identification). Instead, the focus is on other areas such as
+attacks and exploitation methods, technical impacts, threats,
+mitigations, or other concerns.  As a result, industry understanding
+can be limited, effectively requiring research or focused efforts by
+SMEs to understand the underlying weaknesses.  Rapidly-changing,
+diverse terminology and technology can further complicate
+understanding. Finally, there might not be enough real-world examples
+with sufficient details from which weakness patterns may be
+discovered.  For this reason, it can be difficult to determine whether
+CWE entries already cover the topics of concern, and which gaps (if
+any) exist.  As of May 2024, some new or emerging technologies include
+AI/ML, cryptocurrency/blockchain, post-quantum cryptography, and
+large-scale architectures with many components that have different
+trust boundaries.  In previous years, new/emerging domains for CWE
+included hardware, cloud, and ICS/OT.
+
+
+
+
+### Resolution
+
+The submission cannot progress past the Init-Consultation or
+Full-Consultation phases until sufficient attempts have been made to
+understand the weaknesses commonly seen in new or emerging
+technologies, or if the CWE Team decides to move the submission to the
+next phase.  Analysis could include analyzing well-known attacks to
+understand the weaknesses that enable the attacks to succeed; analysis
+of mitigations to understand how the underlying weaknesses are
+perceived; and/or other methods.  Such analysis might require
+consultation with a variety of Subject Matter Experts (SMEs).
 
 
 
