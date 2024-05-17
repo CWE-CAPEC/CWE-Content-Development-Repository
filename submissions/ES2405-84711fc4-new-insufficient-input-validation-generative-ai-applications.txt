@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2405-84711fc4
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-05-09 18:50:11
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.MITIGATION, SUB.OVERLAP, SUB.COORD, SUB.NEWTECH
 
 PUBTRACKER: #109
 
@@ -60,6 +60,144 @@ URL: https://hub.guardrailsai.com/
 
 ACTIVE ISSUES:
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: There are 2 separate issues.  (1) Unlike most software
+related weaknesses, there does not seem to be a clear understanding of
+what is actually happening "under the hood," i.e., generative AI is
+like a "black box" in which the specific insecure behaviors are not
+clearly understood - and weaknesses in CWE are characterized by their
+behaviors. The emphasis on mitigations such as "input validation" and
+"adversarial" techniques, or on attack methods, further suggests this
+lack of a clear understanding. This could make it difficult to create
+CWE entries that provide a clear weakness.  (2) What is meant by "
+generative artificial intelligence application"? Is it the model
+itself or an application that makes use of a model? Or is it both?
+This ambiguity could cause people to interpret this weakness in
+different ways depending on if they are an app developer or a model
+developer.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.MITIGATION - "Too mitigation-focused"
+
+Description: The submission's name and/or description emphasizes missing or
+incorrect mitigation without clarifying the weakness.
+
+Resolution: The submission cannot progress to later phases unless it also
+includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: CWE entries typically try to stay away from emphasizing the
+protection mechanism (in this case, input validation) because a
+weakness can typically be addressed by multiple protection
+mechanisms. Also, input validation is notoriously subject to many
+variations as adversaries develop new techniques to bypass validation
+steps (see CWE-184: Incomplete List of Disallowed Inputs). However, in
+this case, there is such a significant emphasis on input validation by
+the wider community, that the best option might be to create a new CWE
+entry that is focused on improper input validation for generative AI
+applications.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This new submission replaces two earlier ones,
+ES2308-6b80112d (CDR #58) and ES2303-fad91ac9 (CDR #29). The two
+earlier submissions have been declined and will be closed once their
+information (e.g., references) has been merged into this submission.
+The original submitters will receive appropriate credit in any new
+entry/entries.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.COORD - "Requires extensive coordination"
+
+Description: The submission will require or is currently undergoing close
+coordination, discussion, and debate between multiple parties with
+different perspectives and opinions.  The communication could be taking
+place in CDR itself, or outside of CDR.  As a result, it might take longer
+to move the submission to later phases, although the submission is expected
+to be more robust and well-defined as a result of this coordination.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Full-Consultation phases until sufficient consensus has been reached, or if
+the CWE Team decides to move the submission to the next phase.
+
+Comments: It is anticipated that this submission will be actively
+discussed by the CWE AI WG and the CDR community, and there are
+probably many opinions on how to handle it.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.NEWTECH - "New/Emerging Technology"
+
+Description: The submission is related to a new or emerging technology that
+is not well-understood from a weakness perspective, which can cause real or
+perceived gaps in CWE that require extra effort and time to analyze.
+Typically, for new/emerging technologies, early vulnerability discovery and
+research does not focus on root cause analysis (i.e., weakness
+identification). Instead, the focus is on other areas such as attacks and
+exploitation methods, technical impacts, threats, mitigations, or other
+concerns.  As a result, industry understanding can be limited, effectively
+requiring research or focused efforts by SMEs to understand the underlying
+weaknesses.  Rapidly-changing, diverse terminology and technology can
+further complicate understanding. Finally, there might not be enough
+real-world examples with sufficient details from which weakness patterns
+may be discovered.  For this reason, it can be difficult to determine
+whether CWE entries already cover the topics of concern, and which gaps (if
+any) exist.  As of May 2024, some new or emerging technologies include
+AI/ML, cryptocurrency/blockchain, post-quantum cryptography, and
+large-scale architectures with many components that have different trust
+boundaries.  In previous years, new/emerging domains for CWE included
+hardware, cloud, and ICS/OT.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Full-Consultation phases until sufficient attempts have been made to
+understand the weaknesses commonly seen in new or emerging technologies, or
+if the CWE Team decides to move the submission to the next phase.  Analysis
+could include analyzing well-known attacks to understand the weaknesses
+that enable the attacks to succeed; analysis of mitigations to understand
+how the underlying weaknesses are perceived; and/or other methods.  Such
+analysis might require consultation with a variety of Subject Matter
+Experts (SMEs).
+
+Comments: This submission is related to AI/ML, which is not well
+understood from a weakness perspective.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+
 
 
 RESOLVED ISSUES:
@@ -74,7 +212,7 @@ Ack-Receipt: 2024-05-09
 
 Init-Review: 2024-05-09
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-05-16
 
 Init-Rejected: YYYY-MM-DD
 
@@ -108,3 +246,6 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2024-05-09 sent email
+2024-05-09 sent email
+2024-05-16 sent email
