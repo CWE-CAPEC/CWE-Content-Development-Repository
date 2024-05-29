@@ -249,7 +249,7 @@ Init-Review: 2024-04-29
 
 Init-Consultation: 2024-05-02
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Init-Accepted: 2024-05-14
 

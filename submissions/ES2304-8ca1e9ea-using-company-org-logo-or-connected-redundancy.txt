@@ -72,7 +72,7 @@ Init-Review: YYYY-MM-DD
 
 Init-Consultation: YYYY-MM-DD
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Init-Accepted: YYYY-MM-DD
 

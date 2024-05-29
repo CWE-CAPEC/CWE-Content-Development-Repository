@@ -152,7 +152,7 @@ Init-Consultation: 2024-01-16
 
 Init-Accepted: 2024-04-01
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Full-Sub-Requested: YYYY-MM-DD
 

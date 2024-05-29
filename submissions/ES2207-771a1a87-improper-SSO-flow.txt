@@ -198,7 +198,7 @@ Init-Consultation: 2023-03-10
 
 Init-Accepted: YYYY-MM-DD
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Full-Sub-Requested: YYYY-MM-DD
 

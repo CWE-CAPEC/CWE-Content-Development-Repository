@@ -666,7 +666,7 @@ Init-Consultation: 2022-08-02
 
 Init-Accepted: 2022-11-22
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Full-Sub-Requested: 2024-01-24
 

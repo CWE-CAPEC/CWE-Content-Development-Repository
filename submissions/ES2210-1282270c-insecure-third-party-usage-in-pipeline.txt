@@ -193,7 +193,7 @@ Init-Review: 2022-11-16
 
 Init-Consultation: 2022-11-16
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Init-Accepted: YYYY-MM-DD
 

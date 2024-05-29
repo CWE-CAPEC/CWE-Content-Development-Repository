@@ -214,7 +214,7 @@ Init-Review: 2024-05-09
 
 Init-Consultation: 2024-05-16
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Init-Accepted: YYYY-MM-DD
 

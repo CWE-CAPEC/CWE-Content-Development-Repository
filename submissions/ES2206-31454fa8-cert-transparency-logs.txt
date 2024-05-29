@@ -262,7 +262,7 @@ Init-Consultation: 2022-11-01
 
 Init-Accepted: YYYY-MM-DD
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Full-Sub-Requested: YYYY-MM-DD
 
