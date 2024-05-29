@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2308-6b80112d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Rejected
+SUBMISSION STATUS: Init-Declined
 
 AFFECTED CWES: 
 
@@ -253,7 +253,7 @@ Init-Review: 2024-03-29
 
 Init-Consultation: 2024-04-02
 
-Init-Rejected: 2024-05-09
+Init-Declined: 2024-05-09
 
 Init-Accepted: YYYY-MM-DD
 
