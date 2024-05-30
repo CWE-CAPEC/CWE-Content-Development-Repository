@@ -57,6 +57,21 @@ URL: https://cookbook.openai.com/examples/how_to_use_guardrails#1-input-guardrai
 Title: Examples of types of LLM output validations u2013 note that there are a variety of use cases:
 URL: https://hub.guardrailsai.com/
 
+Title: Exploring Prompt Injection Attacks
+URL: https://research.nccgroup.com/2022/12/05/exploring-prompt-injection-attacks/
+
+Title:  Prompt injection attacks against GPT-3
+URL: https://simonwillison.net/2022/Sep/12/prompt-injection/
+
+Title: Mitigating Stored Prompt Injection Attacks Against LLM Applications
+URL: https://developer.nvidia.com/blog/mitigating-stored-prompt-injection-attacks-against-llm-applications/
+
+Title: Proof of Concept
+URL: https://github.com/JosephTLucas/stored_prompt_injection
+
+Title: Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection
+URL: https://arxiv.org/abs/2302.12173
+
 
 ACTIVE ISSUES:
 
