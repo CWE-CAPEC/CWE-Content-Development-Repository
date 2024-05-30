@@ -1,0 +1,104 @@
+SUBMISSION COMMUNICATION ID: ES2404-8ed7a9c0
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-04-29 14:56:41
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #110
+
+MTRACKER: #1064
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: Incorrect use of String methods that use regular expressions
+
+DESCRIPTION:
+
+The methods are replaceAll, replaceFirst, matches, and split, of the
+java.util.String object, they have a regular expression as their first
+input parameter. If this parameter is part of an expression that comes from
+input data, ReDoS attacks could be carried out. Likewise, if the parameter
+is not escaped properly, IllegalArgumentException exceptions could be
+forced which, if not considered, could alter the business logic and force
+states not contemplated by the application.
+The case of the replaceAll method is more dangerous, because its second
+parameter, if not escaped properly, even without being a regular
+expression, would also cause an IllegarArgumentException.
+To avoid all these unsafe code solutions, it is recommended to use
+Matcher.quoteReplacement(java.lang.String) in all input parameters to the
+java.lang.String methods indicated above.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-1333
+   ChildOf CWE-20
+   ChildOf CWE-95
+
+REFERENCES:
+
+Title: Correct use of replaceAll method (javadoc)
+URL: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-04-29
+
+Ack-Receipt: 2024-05-29
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Full-Sub-Requested: YYYY-MM-DD
+
+Full-Sub-Received: YYYY-MM-DD
+
+Full-Review: YYYY-MM-DD
+
+Full-Consultation: YYYY-MM-DD
+
+Full-Accepted: YYYY-MM-DD
+
+Production: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
