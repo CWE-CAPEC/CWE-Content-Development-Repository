@@ -6,7 +6,7 @@ ACTION TYPE: New Entry
 
 AFFECTED CWES: 
 
-SUBMISSION STATUS: Full-Consultation
+SUBMISSION STATUS: Det-Consultation
 
 ORIGIN: cwe-email
 
@@ -359,7 +359,7 @@ Full-Sub-Received: 2021-11-16
 
 Full-Review: 2022-07-25
 
-Full-Consultation: 2022-11-02
+Det-Consultation: 2022-11-02
 
 Production: YYYY-MM-DD
 

@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2201-3666f29c
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Full-Sub-Received
+SUBMISSION STATUS: Det-Received
 
 AFFECTED CWES: 
 
@@ -147,7 +147,7 @@ Init-Declined: YYYY-MM-DD
 
 Full-Sub-Requested: YYYY-MM-DD
 
-Full-Sub-Received: 2022-01-07
+Det-Received: 2022-01-07
 
 Full-Review: YYYY-MM-DD
 
