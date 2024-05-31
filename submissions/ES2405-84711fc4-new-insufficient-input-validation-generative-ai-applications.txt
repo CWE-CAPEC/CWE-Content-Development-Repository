@@ -163,7 +163,7 @@ to move the submission to later phases, although the submission is expected
 to be more robust and well-defined as a result of this coordination.
 
 Resolution: The submission cannot progress past the Init-Consultation or
-Full-Consultation phases until sufficient consensus has been reached, or if
+Det-Consultation phases until sufficient consensus has been reached, or if
 the CWE Team decides to move the submission to the next phase.
 
 Comments: It is anticipated that this submission will be actively
@@ -198,7 +198,7 @@ boundaries.  In previous years, new/emerging domains for CWE included
 hardware, cloud, and ICS/OT.
 
 Resolution: The submission cannot progress past the Init-Consultation or
-Full-Consultation phases until sufficient attempts have been made to
+Det-Consultation phases until sufficient attempts have been made to
 understand the weaknesses commonly seen in new or emerging technologies, or
 if the CWE Team decides to move the submission to the next phase.  Analysis
 could include analyzing well-known attacks to understand the weaknesses
@@ -236,15 +236,15 @@ Init-Declined: YYYY-MM-DD
 
 Init-Accepted: YYYY-MM-DD
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Det-Received: YYYY-MM-DD
 
-Full-Review: YYYY-MM-DD
+Det-Review: YYYY-MM-DD
 
-Full-Consultation: YYYY-MM-DD
+Det-Consultation: YYYY-MM-DD
 
-Full-Accepted: YYYY-MM-DD
+Det-Accepted: YYYY-MM-DD
 
 Production: YYYY-MM-DD
 
