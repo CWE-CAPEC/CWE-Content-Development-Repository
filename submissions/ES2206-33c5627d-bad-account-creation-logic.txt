@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2206-33c5627d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Full-Sub-Requested
+SUBMISSION STATUS: Det-Requested
 
 AFFECTED CWES: 
 
@@ -668,7 +668,7 @@ Init-Accepted: 2022-11-22
 
 Init-Declined: YYYY-MM-DD
 
-Full-Sub-Requested: 2024-01-24
+Det-Requested: 2024-01-24
 
 Full-Sub-Received: YYYY-MM-DD
 
