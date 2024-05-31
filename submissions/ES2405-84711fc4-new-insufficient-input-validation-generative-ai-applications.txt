@@ -72,6 +72,9 @@ URL: https://github.com/JosephTLucas/stored_prompt_injection
 Title: Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection
 URL: https://arxiv.org/abs/2302.12173
 
+Title: Prompt injection and jailbreaking are not the same thing
+URL: https://simonwillison.net/2024/Mar/5/prompt-injection-jailbreaking/
+
 
 ACTIVE ISSUES:
 
