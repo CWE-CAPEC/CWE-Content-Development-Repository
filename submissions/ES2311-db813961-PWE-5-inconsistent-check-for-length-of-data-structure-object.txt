@@ -76,7 +76,7 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Production: YYYY-MM-DD
+Internal-Update: YYYY-MM-DD
 
 Final-Coord: YYYY-MM-DD
 
