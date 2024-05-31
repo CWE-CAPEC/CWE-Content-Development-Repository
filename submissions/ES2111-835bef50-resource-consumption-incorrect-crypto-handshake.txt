@@ -353,7 +353,7 @@ Init-Accepted: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
 Full-Sub-Received: 2021-11-16
 

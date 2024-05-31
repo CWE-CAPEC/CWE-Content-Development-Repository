@@ -253,7 +253,7 @@ Init-Declined: YYYY-MM-DD
 
 Init-Accepted: 2024-05-14
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
 Full-Sub-Received: YYYY-MM-DD
 

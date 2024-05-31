@@ -145,7 +145,7 @@ Init-Accepted: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
 Det-Received: 2022-01-07
 
