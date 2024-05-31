@@ -355,9 +355,9 @@ Init-Declined: YYYY-MM-DD
 
 Det-Requested: YYYY-MM-DD
 
-Full-Sub-Received: 2021-11-16
+Det-Received: 2021-11-16
 
-Full-Review: 2022-07-25
+Det-Review: 2022-07-25
 
 Det-Consultation: 2022-11-02
 

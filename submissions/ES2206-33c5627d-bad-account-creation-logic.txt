@@ -670,11 +670,11 @@ Init-Declined: YYYY-MM-DD
 
 Det-Requested: 2024-01-24
 
-Full-Sub-Received: YYYY-MM-DD
+Det-Received: YYYY-MM-DD
 
-Full-Review: YYYY-MM-DD
+Det-Review: YYYY-MM-DD
 
-Full-Consultation: YYYY-MM-DD
+Det-Consultation: YYYY-MM-DD
 
 Production: YYYY-MM-DD
 
