@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2308-6b80112d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Declined
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: 
 
@@ -279,7 +279,7 @@ CWE-Published: YYYY-MM-DD
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2024-05-30
 
 
 
@@ -292,3 +292,4 @@ COMMUNICATIONS LOG:
 2024-04-30 post comment
 2024-05-06 sent email
 2024-05-09 sent email
+2024-05-30 sent email
