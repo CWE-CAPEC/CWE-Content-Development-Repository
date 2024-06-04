@@ -20,7 +20,7 @@ MTRACKER: #1039
 
 GITHUBUSER: JimDLang
 
-SUBMISSION TYPE: Unknown
+SUBMISSION TYPE: Modification
 
 NAME: Broken link in CWE-1246 demox
 
@@ -91,3 +91,4 @@ COMMUNICATIONS LOG:
 2024-04-24 sent email
 2024-04-26 received email
 2024-04-27 sent email
+2024-06-04 sent email
