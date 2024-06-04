@@ -7,14 +7,14 @@
     - [Phase 4: Init-Consultation](#phase-4-init-consultation)
     - [Phase 5: Init-Rejected](#phase-5-init-rejected)
     - [Phase 6: Init-Accepted](#phase-6-init-accepted)
-  - [Stage 2: Full Submission](#stage-2-full-submission)
-    - [Phase 7: Full-Sub-Requested](#phase-7-full-sub-requested)
-    - [Phase 8: Full-Sub-Received](#phase-8-full-sub-received)
-    - [Phase 9: Full-Review](#phase-9-full-review)
-    - [Phase 10: Full-Consultation](#phase-10-full-consultation)
-    - [Phase 11: Full-Accepted](#phase-11-full-accepted)
+  - [Stage 2: Detailed Submission](#stage-2-detailed-submission)
+    - [Phase 7: Det-Requested](#phase-7-det-requested)
+    - [Phase 8: Det-Received](#phase-8-det-received)
+    - [Phase 9: Det-Review](#phase-9-det-review)
+    - [Phase 10: Det-Consultation](#phase-10-det-consultation)
+    - [Phase 11: Det-Accepted](#phase-11-det-accepted)
   - [Stage 3: Content Generation](#stage-3-content-generation)
-    - [Phase 12: Production](#phase-12-production)
+    - [Phase 12: Internal-Update](#phase-12-internal-update)
     - [Phase 13: CWE-Assigned](#phase-13-cwe-assigned)
     - [Phase 14: CWE-Modified](#phase-14-cwe-modified)
     - [Phase 15: Final-Coordination](#phase-15-final-coordination)
@@ -29,7 +29,7 @@
 ![Submission Phases Diagram](resources/submission-phases.png)
 
 Each submission needs to be reviewed by the CWE team to determine if it is suitable for being included as new CWE
-content. The External Submission review process can be thought of in 4 different stages: **Initial Submission**, **Full
+content. The External Submission review process can be thought of in 4 different stages: **Initial Submission**, **Detailed
 Submission**, **Content Generation**, and **Publication**.  These stages, as well as the more granular phases within
 each stage are described in detail below.
 
@@ -71,32 +71,32 @@ The CWE Team rejects the initial submission and notifies the submitter.
 
 The CWE Team accepts the initial submission and notifies the submitter.
 
-## Stage 2: Full Submission
+## Stage 2: Detailed Submission
 If the initial submission is accepted, then the CWE Team asks the submitter to provide full details for the submission,
 including over 10 different fields that will make the basis of a new CWE entry, such as potential mitigations, common
-consequences, demonstrative code examples, and others. The CWE Team works with the submitter to ensure that the full
+consequences, demonstrative code examples, and others. The CWE Team works with the submitter to ensure that the detailed
 submission has appropriate, correct details.  
 
-### Phase 7: Full-Sub-Requested
+### Phase 7: Det-Requested
 
 The CWE Team asks the submitter to provide full details for their submission.  Currently, this is done by posting a
 comment to the CDR issue tracker.  The submitter can then move that comment to a text editor of their choice, add the
 details inline, and reply with the updated information as a new comment to the CDR issue tracker.
 
-### Phase 8: Full-Sub-Received
+### Phase 8: Det-Received
 
 The submitter has provided the full submission details, but they have not yet been reviewed by the CWE team.
 
-### Phase 9: Full-Review
+### Phase 9: Det-Review
 
 The CWE Team reviews the full submission details, ensures that all requested details are provided, and performs a
 quality check on each field within the submission.
 
-### Phase 10: Full-Consultation
+### Phase 10: Det-Consultation
 
 If necessary, the CWE Team works directly with the submitter to resolve any gaps or identified quality concerns.
 
-### Phase 11: Full-Accepted
+### Phase 11: Det-Accepted
 
 The CWE Team accepts the full, detailed submission.
 
@@ -106,7 +106,7 @@ next CWE version, whether as a new CWE entry, a modification to an existing entr
 with the submitter and/or the community to address any small errors or omissions that might not have been addressed
 during earlier stages.
 
-### Phase 12: Production
+### Phase 12: Internal-Update
 
 The CWE Team begins to integrate appropriate details into its internal repository of CWE content, which is used to
 generate new CWE versions.
