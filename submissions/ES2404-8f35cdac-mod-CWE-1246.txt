@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2404-8f35cdac
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,7 +10,7 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-04-23 10:54:44
 
-ISSUES: not-analyzed
+ISSUES: no
 
 ISSUE DETAILS: 
 
@@ -58,7 +58,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-06-04
 
 Det-Requested: YYYY-MM-DD
 
@@ -91,4 +91,5 @@ COMMUNICATIONS LOG:
 2024-04-24 sent email
 2024-04-26 received email
 2024-04-27 sent email
+2024-06-04 sent email
 2024-06-04 sent email
