@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2312-c2337436
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-12-20 03:53:09
 
-ISSUES: yes/resolved
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #61
 
@@ -76,6 +76,27 @@ URL: https://docs.google.com/presentation/d/1mw7d3muWdAJa6RSuKzJVbeBHTE38kzSL/ed
 
 
 ACTIVE ISSUES:
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: During stage 2 as the description is refined, some more text
+is needed to clarify what is meant for "...operations are...unexecuted
+or ignored due to system constraints or design decisions". Are there
+any exceptions to this blanket statement when it wouldn't be
+considered a weakness? For example, for transient execution,
+operations are discarded without notifying the user. Perhaps in the
+submission it is assumed to be referring to operations that a user
+submits, but it should be specified? What about scenarios where a user
+is issuing operations against privileged memory and feedback about
+those operations leak information? That may be covered by a different
+weakness, but there should be some clarification around this point.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 RESOLVED ISSUES:
@@ -232,7 +253,7 @@ Init-Consultation: 2024-02-06
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-06-06
 
 Det-Requested: YYYY-MM-DD
 
@@ -273,3 +294,4 @@ COMMUNICATIONS LOG:
 2024-03-01 received email
 2024-04-12 received email
 2025-05-16 sent email
+2024-06-06 sent email
