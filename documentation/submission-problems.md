@@ -1,6 +1,6 @@
 # CWE - Submission Problems
 
-Last generated: 2024-05-15 21:38:03
+Last generated: 2024-06-14 17:28:17
 
 WARNING: this file was automatically generated. Do not edit.
 
@@ -20,7 +20,7 @@ WARNING: this file was automatically generated. Do not edit.
 |[SUB.IPR](#SUB.IPR)|IP Rights Concerns|
 |[SUB.RELREFS](#SUB.RELREFS)|No relevant references|
 |[SUB.GRAMMAR](#SUB.GRAMMAR)|Grammar/Spelling issues|
-|[SUB.NOINIT](#SUB.NOINIT)|Full Submission with No Initial Review|
+|[SUB.NOINIT](#SUB.NOINIT)|Detailed Submission with No Initial Review|
 |[SUB.ACTION](#SUB.ACTION)|Unable to determine action|
 |[SUB.ACTCHANGE](#SUB.ACTCHANGE)|Change in action for submission|
 |[SUB.MISC](#SUB.MISC)|Miscellaneous/other problem|
@@ -46,8 +46,8 @@ submission to be incorrectly mapped to.
 
 ### Resolution
 
-An initial submission (or full submission) cannot progress past the
-consultation phase until SUB.UNCLEAR is addressed.
+A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
 
 
 
@@ -101,8 +101,8 @@ a clear weakness (i.e., is not subject to SUB.UNCLEAR).
 ### Description
 
 The submission identifies a weakness, but it is a duplicate of (or
-partially overlaps) existing weaknesses, indicating problems with the
-submission or associated CWE entries.
+partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
 
 
 
@@ -117,7 +117,7 @@ this duplicate/overlap.
 
 <a name="SUB.ABS.SUBTREE"></a>
 ## SUB.ABS.SUBTREE - Potential subtree issue/gap
-**Block Phase** - Production
+**Block Phase** - Internal-Update
 
 
 ### Description
@@ -133,7 +133,7 @@ beyond creation of a parent at the next-highest level of abstraction.
 ### Resolution
 
 The submission cannot progress past the consultation phase (whether
-initial or full) unless it is at an acceptable level of abstraction,
+initial or detailed) unless it is at an acceptable level of abstraction,
 and the subtree issue(s) can be resolved or addressed independently.
 
 
@@ -190,7 +190,7 @@ weaknesses, separate names and descriptions are needed.
 
 <a name="SUB.RELS"></a>
 ## SUB.RELS - Unclear relationships
-**Block Phase** - Production
+**Block Phase** - Internal-Update
 
 
 ### Description
@@ -208,7 +208,7 @@ parent/child relationship(s) would be.
 The submission cannot progress to the next phase if SUB.UNCLEAR is
 present. It can progress to other phases if the CWE Team agrees that
 the potential relationships may require closer investigation.  The
-submission cannot progress to the publication stage until clear
+submission cannot progress to the Publication stage until clear
 relationships and direct parents are identified. The CWE Team may
 decide to use high-level relationships (e.g., to Pillars) if deeper
 problems such as SUB.ABS.SUBTREE exist and cannot be quickly resolved.
@@ -223,7 +223,7 @@ problems such as SUB.ABS.SUBTREE exist and cannot be quickly resolved.
 ### Description
 
 The submission is missing some requested or required details for
-fields other than name and description.
+elements other than name and description.
 
 
 
@@ -231,7 +231,7 @@ fields other than name and description.
 ### Resolution
 
 The submission cannot progress to later phases if it does not have all
-required fields.
+required elements.
 
 
 
@@ -253,13 +253,15 @@ verbatim from a source without attribution (i.e., plagiarism).
 ### Resolution
 
 The submission cannot progress to later phases until it is clear that
-there are no IP concerns.
+there are no IP concerns. Note: as of June 2024, the CWE Team has not
+decided how to handle information derived from AI/ML systems that use
+sources that did not explicitly authorize usage.
 
 
 
 <a name="SUB.RELREFS"></a>
 ## SUB.RELREFS - No relevant references
-**Block Phase** - Production
+**Block Phase** - Internal-Update
 
 
 ### Description
@@ -275,21 +277,20 @@ weakness, or the relevance is not easily found.
 The submission is not likely to progress to later phases if there are
 no applicable, easily-accessible references. The submitter could
 resolve by providing additional details such as a section name and
-quote from the reference.  If references still are not available, the
-CWE Team may decide to make an exception if no suitable reference is
-available.
+quote from the reference.  If no suitable references can be found, the
+CWE Team may decide to make an exception.
 
 
 
 <a name="SUB.GRAMMAR"></a>
 ## SUB.GRAMMAR - Grammar/Spelling issues
-**Block Phase** - Production
+**Block Phase** - Internal-Update
 
 
 ### Description
 
 The submission has multiple occurrences of errors with grammar,
-spelling, etc. that should be fixed before publication.
+spelling, etc. that must be fixed before the Publication stage.
 
 
 
@@ -300,34 +301,34 @@ The submission will not be allowed to progress to later phases if the
 grammar or spelling problems are so significant that they are likely
 to cause difficulty for readers to understand the weakness. If the
 issues are minor, then the submission could progress.  However, no
-submission can be published without grammar and spelling
-checks. American English is used for spelling.
+submission can move to the Publication stage without grammar and
+spelling checks. American English is used for spelling.
 
 
 
 <a name="SUB.NOINIT"></a>
-## SUB.NOINIT - Full Submission with No Initial Review
-**Block Phase** - Init-Consultation, Production
+## SUB.NOINIT - Detailed Submission with No Initial Review
+**Block Phase** - Init-Consultation, Internal-Update
 
 
 ### Description
 
-A full submission was provided, but it did not go through the Initial
-Review / Initial Consultation phases (Proposal stage) and has
+A detailed submission was provided, but it did not go through the
+Initial Review / Initial Consultation phases (stage 1) and has
 significant problems that should have been resolved in that phase
 (e.g., SUB.UNCLEAR).  This primarily applies to situations when
-external requesters provided a Full Submission form (Production stage)
-in 2021 and 2022, before the CWE Team launched the external submission
-web server and process.
+external requesters provided a "Full Submission" form (Internal-Update
+phase) in 2021 and 2022, before the CWE Team launched the external
+submission web server and formalized the CDR process.
 
 
 
 
 ### Resolution
 
-The submission must be treated as if in the
-Initial-Review/Initial-Consultation phase, and the Full submission
-will not be evaluated until the Proposal stage is complete.
+The submission must be treated as part of the
+Initial-Review/Initial-Consultation phase, and the detailed submission
+will not be evaluated until Stage 1 is complete.
 
 
 
@@ -346,7 +347,7 @@ create new entry, update existing entry, etc.
 
 ### Resolution
 
-The submission cannot progress to the Production stage until the
+The submission cannot progress to the Internal-Update stage until the
 relevant actions(s) are identified.
 
 
@@ -367,8 +368,8 @@ the kinds of information that will need to be provided.
 
 ### Resolution
 
-The submission cannot progress to the Production stage until the
-informational needs are addressed.
+The submission cannot progress to Stage 3 (Content-Generation) until
+the informational needs are addressed.
 
 
 
@@ -392,7 +393,7 @@ This will depend on the nature of the problem.
 
 <a name="SUB.COORD"></a>
 ## SUB.COORD - Requires extensive coordination
-**Block Phase** - Init-Consultation, Full-Consultation
+**Block Phase** - Init-Consultation, Det-Consultation
 
 
 ### Description
@@ -411,14 +412,14 @@ of this coordination.
 ### Resolution
 
 The submission cannot progress past the Init-Consultation or
-Full-Consultation phases until sufficient consensus has been reached,
+Det-Consultation phases until sufficient consensus has been reached,
 or if the CWE Team decides to move the submission to the next phase.
 
 
 
 <a name="SUB.NEWTECH"></a>
 ## SUB.NEWTECH - New/Emerging Technology
-**Block Phase** - Init-Consultation, Full-Consultation
+**Block Phase** - Init-Consultation, Det-Consultation
 
 
 ### Description
@@ -450,7 +451,7 @@ included hardware, cloud, and ICS/OT.
 ### Resolution
 
 The submission cannot progress past the Init-Consultation or
-Full-Consultation phases until sufficient attempts have been made to
+Det-Consultation phases until sufficient attempts have been made to
 understand the weaknesses commonly seen in new or emerging
 technologies, or if the CWE Team decides to move the submission to the
 next phase.  Analysis could include analyzing well-known attacks to
