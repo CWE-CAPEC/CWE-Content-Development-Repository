@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-8c4670ec
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -70,7 +70,7 @@ Init-Consultation: 2024-06-14
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-06-24
 
 Det-Requested: YYYY-MM-DD
 
@@ -106,3 +106,4 @@ COMMUNICATIONS LOG:
 2024-06-17 received email
 2024-06-17 sent email
 2024-06-17 received email
+2024-06-24 sent email
