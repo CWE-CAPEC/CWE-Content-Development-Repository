@@ -4,7 +4,9 @@ ALTERNATE ID: HCWE111
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+AFFECTED CWES:
+
+SUBMISSION STATUS: Init-Consultation
 
 ORIGIN: sub-server
 
@@ -12,7 +14,7 @@ SUBMISSION DATE: 2022-08-25 15:18:55
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.OVERLAP
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELS
 
 PUBTRACKER: #13
 
@@ -59,19 +61,104 @@ URL: https://ieeexplore.ieee.org/abstract/document/9114758
 
 ACTIVE ISSUES:
 ----------
-SUB.OVERLAP - "Duplicate/Overlap"
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: There are several questions in this comment that need to be
+addressed.
+
+(1) The name refers to a mistake, "Doing something before validating".
+The name could be rewritten to match the CWE style of naming.
+
+(2) What is a "manager module"? This is not mentioned in the
+provided references.
+
+(3) How is the term "speculatively" being used
+here?  Is it the same as with SPECTRE / MELTDOWN?
+
+(4) Please verify whether our understanding of the issue is correct:
+
+- There is a shared bus that is accessible by multiple devices.
+
+- These devices all can issue requests that utilize that bus.
+
+- There is a protocol that manages the devices requests to said bus.
+
+- When a device makes a request to the bus, the bus is unable to 
+  receive other requests until the initiating device finishes 
+  its transaction.
+
+- If the initiating device decides not to finish the transaction, 
+  this will cause a denial of service to the bus for the other
+  devices.
+
+One of the papers observes that AXI (as an example) "does not provide
+a standard mechanism to supervise the behaviors (or misbehavior) of
+the managers." Is this the core weakness being covered by this
+submission?
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The relationships for this weakness are not clear. If our
+understanding of the submission is correct (see SUB.UNCLEAR), a close
+match may be CWE-772: Missing Release of Resource after Effective
+Lifetime.  We also considered possible association with CWE-179:
+Incorrect Behavior Order: Early Validation, but CWE-772 seems more
+appropriate.  Please let us know if you agree with this assessment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
 Description: The submission identifies a weakness, but it is a duplicate of
 (or partially overlaps) existing weaknesses, indicating problems with the
 submission or associated CWE entries.
 
-Resolution: The submission cannot progress to later phases until (1) the
-duplicate/overlap is understood and (2) it is clear how to resolve this
-duplicate/overlap.
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
 
-Comments: The weakness described in this submission appears to be very similar to
-CWE-179: Incorrect Behavior Order: Early Validation. Can you describe how
-your submission differs?
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: This submission appears to be focused on a very specific
+kind of technology. While the underlying weakness is not yet clearly
+understood, it seems like it could apply across a range of
+technologies. This submission might need to be generalized, unless it
+is specific to bus architectures.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -85,23 +172,23 @@ Ack-Receipt: 2022-08-29
 
 Init-Review: 2022-09-12
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-06-25
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Init-Accepted: YYYY-MM-DD
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Det-Received: YYYY-MM-DD
 
-Full-Review: YYYY-MM-DD
+Det-Review: YYYY-MM-DD
 
-Full-Consultation: YYYY-MM-DD
+Det-Consultation: YYYY-MM-DD
 
-Full-Accepted: YYYY-MM-DD
+Det-Accepted: YYYY-MM-DD
 
-Production: YYYY-MM-DD
+Internal-Update: YYYY-MM-DD
 
 Final-Coord: YYYY-MM-DD
 
@@ -117,3 +204,6 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2022-08-29 sent email
+2023-09-12 publish server
+2024-06-25 sent email
