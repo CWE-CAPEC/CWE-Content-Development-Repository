@@ -1,0 +1,106 @@
+SUBMISSION COMMUNICATION ID: ES2406-ca98e75f
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-06-15 16:03:17
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #112
+
+MTRACKER: #1097
+
+GITHUBUSER: None
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Neutralization of ANSI Codes ('ANSI Injection')
+
+DESCRIPTION:
+
+With interactive command line interfaces becoming more commonplace with
+growing system administration needs and human-friendly TUIs, logging
+user-generated values into the terminal into one of these sessions is no
+longer safe. ANSI codes that can not only change the color of console
+output but can also arbitrarily move the cursor, clear the screen, and make
+fake prompts present a danger to the integrity of prompts delivered by the
+code inside the interactive CLI and by malicious user input. With a max
+score of 8.8/10 on the CVSS ranking, its main application comes from
+interactive permission prompts. For example, (CVE-2024-27936) if malicious
+user input is added inline inside a permission prompt (i.e the interactive
+prompt asks "Can this program run command <user input>," the user input,
+with the usage of ANSI codes, can clear the prompt behind it and make a
+misleading prompt that asks for an inconspicuous permission. This is a
+subcategory of CWE-150, but there are enough CVEs present in this
+subcategory (CVE-2003-0020, CVE-2003-0083, CVE-2003-0021, CVE-2003-0022,
+CVE-2003-0023, CVE-2003-0063, CVE-2000-0476) to justify this category.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-150
+   ChildOf CWE-74
+
+REFERENCES:
+
+Title: "u001b[31m"?! ANSI Terminal security in 2023 and finding 10 CVEs
+URL: https://dgl.cx/2023/09/ansi-terminal-security
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-06-15
+
+Ack-Receipt: 2024-06-26
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
