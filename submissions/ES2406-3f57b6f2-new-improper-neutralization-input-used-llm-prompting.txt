@@ -1,0 +1,128 @@
+SUBMISSION COMMUNICATION ID: ES2406-3f57b6f2
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-06-21 17:57:12
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #113
+
+MTRACKER: #1098
+
+GITHUBUSER: None
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Neutralization of Input Used for LLM Prompting
+
+DESCRIPTION:
+
+Submission Statement:
+1. Intended behavior: Large Language Models (LLMs) should distinguish
+between system instructions and user-provided chat inputs
+2. Weakness: LLMs often confuse user inputs with system instructions,
+allowing an attacker to override developer-provided directives in the
+system instructions. This can lead to unpredictable behavior in the LLM
+outputs. Depending on how the LLM outputs are used by the application, this
+could allow the attacker to perform various undesirable operations
+involving LLM agents or other system components.
+3. Affected resource: Prompt construction process and LLM inference.
+4. Affected technology: Large Language Models
+
+I have included a proposed draft of the CWE entry below:
+Description:
+The product uses externally-provided data to build prompts provided to
+large language models (LLMs), but the way these prompts are constructed
+causes the LLM to fail to distinguish between user-supplied inputs and
+developer provided system directives, impacting the confidentiality,
+integrity, and/or availability of the product. 
+
+Extended Description:
+When prompts are constructed using externally controllable data, it is
+often possible to cause an LLM to ignore the original guidance provided by
+its creators (known as the "system prompt") by inserting malicious
+instructions in plain human language or using bypasses such as special
+characters or tags. Because LLMs are designed to treat all instructions as
+legitimate, there is often no way for the model to differentiate between
+what prompt language is malicious when it performs inference and returns
+data. Many LLM systems incorporate data from other adjacent products or
+external data sources like Wikipedia using API calls and retrieval
+augmented generation (RAG). Any external sources in use that may contain
+untrusted data should also be considered potentially malicious. 
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-94
+   Other CWE-1039
+
+REFERENCES:
+
+Title: OWASP Top 10 for Large Language Model Applications - LLM01
+URL: https://owasp.org/www-project-top-10-for-large-language-model-applications/Archive/0_1_vulns/Prompt_Injection.html
+
+Title: IBM - What is a prompt injection attack?
+URL: https://www.ibm.com/topics/prompt-injection
+
+Title: Greshake et al - Indirect Prompt Injection
+URL: https://arxiv.org/abs/2302.12173
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-06-21
+
+Ack-Receipt: 2024-06-26
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
