@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2302-4359adeb
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Declined
 
 AFFECTED CWES: 
 
@@ -77,7 +77,7 @@ if you agree with this assessment or if you believe there is still an additional
 weakness not covered through CWE-639.
 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree - thank you for your observation. Indeed, looks so similar. Sorry for this.
 
 ----------
 
@@ -98,7 +98,7 @@ a duplicate of CWE-639 as described by SUB.OVERLAP, then this
 submission will likely be closed and the references would not be
 needed.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree - can be closed as Duplicate.
 
 
 
@@ -117,7 +117,7 @@ Init-Review: 2024-04-24
 
 Init-Consultation: 2024-05-15
 
-Init-Declined: YYYY-MM-DD
+Init-Declined: 2024-06-27
 
 Init-Accepted: YYYY-MM-DD
 
@@ -151,3 +151,4 @@ COMMUNICATIONS LOG:
 2023-09-12 publish server
 2024-04-24 sent email
 2024-05-15 sent email
+2024-06-27 sent email
