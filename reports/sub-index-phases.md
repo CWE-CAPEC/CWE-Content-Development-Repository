@@ -1,7 +1,7 @@
 # Report: CWE Submissions By Phase
 
 
-*Report Generated: 20240625-120112*
+*Report Generated: 20240626-224826*
 
 ## Phase 1: Received
 
@@ -10,7 +10,7 @@
 
 ## Phase 2: Ack-Receipt
 
-**Total Submissions: 28 (0 not in CDR)**
+**Total Submissions: 30 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -42,6 +42,8 @@
 |[88](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/88)|Abhi-M|2024-02-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-323ad815-diagram-CWE-276.txt" target="_blank">ES2402-323ad815</a>|Diagram for CWE-276|
 |[105](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/105)|RedYetiDev|2024-04-03|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2404-6745d8f8-new-unauthorized-iframe-injection.txt" target="_blank">ES2404-6745d8f8</a>|Unauthorized iFrame Injection|
 |[110](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/110)||2024-04-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2404-8ed7a9c0-new-incorrect-use-string-methods-that-use-regular-expressions.txt" target="_blank">ES2404-8ed7a9c0</a>|Incorrect use of String methods that use regular expressions|
+|[112](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/112)||2024-06-15|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2406-ca98e75f-new-improper-neutralization-ansi-codes-ansi-injection.txt" target="_blank">ES2406-ca98e75f</a>|Improper Neutralization of ANSI Codes ('ANSI Injection')|
+|[113](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/113)|None|2024-06-21|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2406-3f57b6f2-new-improper-neutralization-input-used-llm-prompting.txt" target="_blank">ES2406-3f57b6f2</a>|Improper Neutralization of Input Used for LLM Prompting|
 
 
 
