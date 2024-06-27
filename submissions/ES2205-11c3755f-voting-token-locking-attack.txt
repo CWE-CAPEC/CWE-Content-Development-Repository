@@ -51,10 +51,14 @@ URL: https://medium.com/daostack/voting-options-in-daos-b86e5c69a3e3
 ACTIVE ISSUES:
 
 
-SUB.UNCLEAR - "Unclear weakness".  Submission's name and/or
-description does not clearly identify a weakness, or it is written in
-a way that is vague and could cause the submission to be incorrectly
-mapped to.
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
 
 Comment: after 2022-08-30 modifications, it is still unclear what the
 specific mistake is. Is it that multiple elections are allowed to
@@ -62,19 +66,21 @@ occur simultaneously? Or is there some (unstated) weakness that allows
 concurrent elections to occur in the first place?  Neither option is
 spelled out as a specific mistake. See SUB.ATTACK commentary.
 
-Response: <submitter should reply here>
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 ----------
 
-SUB.ATTACK - "Too attack-focused". Submission's name and/or
-description emphasizes the attack, not the weakness. Either the
-submission's weakness is not well-understood, or it is better
-described as an attack pattern, which may be suitable for inclusion in
-CAPEC. Resolution: an initial submission cannot progress to later
-stages unless it already includes a clear weakness (i.e., is not
-subject to SUB.UNCLEAR).
+SUB.ATTACK - "Too attack-focused"
 
-Comment: the new name and description (submitted 2022-08-30) are still
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: the new name and description (submitted 2022-08-30) are still
 attack focused, as indicated by the use of the word "attack." Both
 name and description say "attack". Desc says "if an attacker can
 create a second election... the attacker can create an initial
@@ -83,17 +89,23 @@ is still no indication of the mistake that makes the technology
 subject to "token locking attacks". If the weakness cannot be
 identified, consider submitting this issue to CAPEC.
 
-Response: <submitter should reply here>
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 ----------
 
-SUB.ABS.SUBTREE - "Potential subtree issue/gap". Submission might
-identify an issue for which there could be a broader gap or
-organizational challenge that requires analysis of CWE subtree
-relationships under Research View 1000, in ways that extend beyond
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
 creation of a parent at the next-highest level of abstraction.
 
-Comment: Suspected issue, awaiting resolution of SUB.UNCLEAR. See
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or detailed) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: Suspected issue, awaiting resolution of SUB.UNCLEAR. See
 SUB.ABS.LOWLEVEL.
 
 Response: <not necessary until SUB.UNCLEAR is resolved>
@@ -101,17 +113,23 @@ Response: <not necessary until SUB.UNCLEAR is resolved>
 
 ----------
 
-SUB.ABS.LOWLEVEL - "Low level of abstraction". Submission identifies a
-weakness, but its abstraction might be too low-level to merit its own
-CWE entry. If it is focused on a particular technology, framework,
-protocol, or function, then it might not be unique enough to get its
-own CWE ID.  This might lead to modification of an existing entry to
-include the additional details, or creation of a higher-level entry
-for which the submission is one example. (Note: some older CWE entries
-have this problem and would not be published today, generally because
-they were too specific to a particular language.)
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
-Comment: Due to SUB.UNCLEAR, this issue is uncertain. The desc is
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: Due to SUB.UNCLEAR, this issue is uncertain. The desc is
 focused on "blockchains and smart contracts" although the name
 references "voting". Maybe there is a broader range of technologies or
 frameworks to which this attack or weakness applies.
@@ -121,11 +139,22 @@ Response: <not necessary until SUB.UNCLEAR is resolved>
 
 ----------
 
-SUB.RELS - "Unclear relationships". Submission suggests some
-relationships, but the name/description is not explained in a way in
-which the relationship is relevant.
+SUB.RELS - "Unclear relationships"
 
-Comment: Relationships still remain unclear until name/desc are
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: Relationships still remain unclear until name/desc are
 updated.
 
 Response: <not necessary until SUB.UNCLEAR is resolved>
@@ -133,39 +162,56 @@ Response: <not necessary until SUB.UNCLEAR is resolved>
 
 ----------
 
-SUB.MISC - "Miscellaneous/other problem". Submission has some other
-problem that is not covered elsewhere.
+SUB.MISC - "Miscellaneous/other problem"
 
-Comment: 2022-08-30 modification to name/desc does not address the
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: 2022-08-30 modification to name/desc does not address the
 following concern as originally included in the request for
 consultation on 2022-07-12: provided reference mentions DAOs and
 "quorum voting" but neither phrase is included in desc/name. This
 might provide the clarity needed for SUB.UNCLEAR. Also might provide
 suggestions for SUB.ABS.LOWLEVEL.
 
-Response: <submitter should reply here>
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 
 ----------
 
-SUB.GRAMMAR - "Grammar/Spelling issues". Submission has multiple
-occurrences of errors with grammar, spelling, etc. that should be
-fixed before publication.
+SUB.GRAMMAR - "Grammar/Spelling issues"
 
-Comment: grammar issues resolved in 2022-08-30 update. This problem
+Description: The submission has multiple occurrences of errors with
+grammar, spelling, etc. that must be fixed before the Publication stage.
+
+Resolution: The submission will not be allowed to progress to later phases
+if the grammar or spelling problems are so significant that they are likely
+to cause difficulty for readers to understand the weakness. If the issues
+are minor, then the submission could progress.	However, no submission can
+move to the Publication stage without grammar and spelling checks. American
+English is used for spelling.
+
+Comments: grammar issues resolved in 2022-08-30 update. This problem
 will remain active until a clear weakness is identified.
 
 Response: <not necessary until SUB.UNCLEAR is resolved>
 
 ----------
 
-SCOPE.SITUATIONS - "Focus on situations in which weaknesses may appear". The
-submission focuses on the conditions or situations in which weaknesses
-are more likely to appear. Rationale: these are modes of introduction,
-which is a separate field in a CWE entry.
+SCOPE.SITUATIONS - "Focus on situations in which weaknesses may appear"
 
-Comment: possibly a result of attack-focused nature of current
+Description: The submission focuses on conditions or situations in which
+weaknesses are more likely to appear but are outside of the direct control
+of the product.
+
+Resolution: Submissions are likely to be rejected unless they can be recast
+as categories or can influence modes of introduction of existing CWEs,
+i.e., modify entries.
+
+Comments: possibly a result of attack-focused nature of current
 name/desc.
 
 Response: <not necessary until SUB.UNCLEAR is resolved>
@@ -173,11 +219,13 @@ Response: <not necessary until SUB.UNCLEAR is resolved>
 
 RESOLVED ISSUES:
 
-SCOPE.NOTREAL - "not a real-world issue". The issue has not happened
+SCOPE.NOTREAL - "not a real-world issue"
+
+Description: The issue has not happened
 and cannot happen within real-world software or other electronic
 logic, and/or has no actual security implications.
 
-Comment: despite the controversy of some implementations of
+Comments: despite the controversy of some implementations of
 blockchain-based technologies, "blockchain" and "smart contracts"
 constitute software/electronic logic, and the real-world financial
 implications are frequently cited as part of the controversy.
@@ -185,11 +233,13 @@ Therefore, this submission is not subject to SCOPE.NOTREAL.
 
 ----------
 
-SCOPE.CUSTREL - "not customer-relevant". The issue is not relevant to the
+SCOPE.CUSTREL - "not customer-relevant"
+
+Description: The issue is not relevant to the
 threat model or security concerns of the product's owner/operator
 (i.e., the customer).
 
-Comment: financial impact to users of this technology are well-known,
+Comments: financial impact to users of this technology are well-known,
 so related weaknesses or attack patterns are
 customer-relevant. Therefore, this submission is not subject to
 SCOPE.CUSTREL.

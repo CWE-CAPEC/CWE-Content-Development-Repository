@@ -231,19 +231,21 @@ ACTIVE ISSUES:
 
 --------------
 
-SUB.ABS.LOWLEVEL - "Low level of abstraction". Submission identifies
-an issue, but its abstraction might be too low-level to merit its own
-CWE entry. If it is focused on a particular technology, framework,
-protocol, or function, then it might not be unique enough to get its
-own CWE ID.  This might lead to modification of an existing entry to
-include the additional details, or creation of a higher-level entry
-for which the submission is one example. (Note: some older CWE entries
-have this problem and would not be published today, generally because
-they were too specific to a particular language.) Resolution: the
-submission will be allowed to progress to later stages once the
-more-general concept is appropriately identified and described. The
-original, lower-level submission will serve as a primary example of
-the more general concept.
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
 
 Comment: this submission will be folded into a new, higher-level entry
 related to selection of inefficient algorithms in negotiation. For CWE
@@ -306,7 +308,9 @@ Response: <SUBMITTER SHOULD REPLY HERE>
 
 RESOLVED ISSUES:
 
-SUB.ATTACK - "Too attack-focused". Submission's name and/or
+SUB.ATTACK - "Too attack-focused"
+
+Description: Submission's name and/or
 description emphasizes the attack, not the weakness. Either the
 submission's weakness is not well-understood, or it is better
 described as an attack pattern, which may be suitable for inclusion in
@@ -321,7 +325,9 @@ Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
 --------
 
-SUB.UNCLEAR - "Unclear weakness".  Submission's name and/or
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: Submission's name and/or
 description does not clearly identify a weakness, or it is written in
 a way that is vague and could cause the submission to be incorrectly
 mapped to. Resolution: an initial submission cannot progress to later

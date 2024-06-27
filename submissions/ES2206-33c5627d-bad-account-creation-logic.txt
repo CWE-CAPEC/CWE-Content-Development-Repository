@@ -519,14 +519,17 @@ Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", 
 ACTIVE ISSUES:
 
 
-SUB.ABS.SUBTREE - "Potential subtree issue/gap". Submission might
-identify an issue for which there could be a broader gap or
-organizational challenge that requires analysis of CWE subtree
-relationships under Research View 1000, in ways that extend beyond
-creation of a parent at the next-highest level of
-abstraction. Resolution: the submission might be allowed to progress
-to later stages if it is at an acceptable level of abstraction, and
-the subtree issue(s) can be resolved or addressed separately.
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or detailed) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
 
 Comments: Per 2022-08-16 change from submitter, the relationships to
 other submissions are noted. The relationships to existing CWE entries
@@ -542,14 +545,20 @@ strategies (e.g. cloud, OpenID, OAuth, etc.).
 
 ------
 
-SUB.RELS - "Unclear relationships". Submission suggests some
-relationships, but the name/description is not explained in a way in
-which the relationship is relevant, or the weakness is apparent, but
-it is not clear what the best parent/child relationship(s) would be.
-Resolution: the submission cannot progress to publication stage until
-more clear relationships and direct parents are identified, but it can
-progress to other earlier stages if the CWE Team agrees that the
-potential relationships may require closer investigation.
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
 
 Comments: Relationships remain unclear because SUB.ABS.SUBTREE is still
 active. This problem can be resolved in the Production stage.
@@ -569,7 +578,9 @@ operation” or “Persistant links to initiate Critical Function”
 
 RESOLVED ISSUES:
 
-SUB.ABS.LOWLEVEL - "Low level of abstraction". Submission identifies
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: Submission identifies
 an issue, but its abstraction might be too low-level to merit its own
 CWE entry. If it is focused on a particular technology, framework,
 protocol, or function, then it might not be unique enough to get its

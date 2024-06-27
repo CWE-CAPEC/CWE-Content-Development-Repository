@@ -183,7 +183,9 @@ other new related entries.
 
 RESOLVED ISSUES:
 
-SUB.ABS.MULTWEAK - "Multiple weaknesses". Submission describes or
+SUB.ABS.MULTWEAK - "Multiple weaknesses"
+
+Description: Submission describes or
 suggests multiple independent weaknesses that each might deserve a
 separate ID.  Resolution: the submission cannot progress to later
 stages until the number of relevant weaknesses is identified. If there

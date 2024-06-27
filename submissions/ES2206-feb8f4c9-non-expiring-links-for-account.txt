@@ -56,11 +56,14 @@ URL: https://msrc-blog.microsoft.com/2022/05/23/pre-hijacking-attacks/
 ACTIVE ISSUES:
 
 
-SUB.UNCLEAR - "Unclear weakness".  Submission's name and/or
-description does not clearly identify a weakness, or it is written in
-a way that is vague and could cause the submission to be incorrectly
-mapped to. Resolution: an initial submission cannot progress to later
-stages until SUB.UNCLEAR is addressed.
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
 
 Comments: The CDR responses on 2024-02-24 provided an acceptable
 description, but they did not address the name issue.  The CWE Team
@@ -73,14 +76,20 @@ Response: <SUBMITTER SHOULD REPLY HERE>
 
 ------
 
-SUB.RELS - "Unclear relationships". Submission suggests some
-relationships, but the name/description is not explained in a way in
-which the relationship is relevant, or the weakness is apparent, but
-it is not clear what the best parent/child relationship(s) would be.
-Resolution: the submission cannot progress to publication stage until
-more clear relationships and direct parents are identified, but it can
-progress to other earlier stages if the CWE Team agrees that the
-potential relationships may require closer investigation.
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
 
 Comments: CWE Team agrees that the issue is similar to CWE-613, but
 closer investigation is needed. This does not prevent movement to the
