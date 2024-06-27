@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2311-db445df7
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-11-14 23:42:48
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.RELS
 
 PUBTRACKER: #41
 
@@ -46,6 +46,61 @@ URL: https://ieeexplore.ieee.org/document/10305625
 
 ACTIVE ISSUES:
 
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or full) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: Due to this submission potentially fitting in as a child in multiple
+places within the CWE subtree, this could indicate an issue in the subtree with
+respect to how weaknesses related to data parsing are laid out.  It's unclear
+if a branch in the subtree should be entirely dedicated to parsing weaknesses or
+if they should be spread out across the current subtree where they currently fit
+best.  This issue does not need to be resolved for the submission to progress
+to later phases and will require further research and effort from the CWE team.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The currently suggested relationships are CWE-1025 and CWE-240.
+CWE-1025 does not seem to apply because it is focused on the comparison between
+two entities, whereas the submission is focused on parsing input.  CWE-240 seems
+somewhat relevant, but at the subtree of CWE-237: Improper Handling of
+Structural Elements, it seems like a more appropriate relationship would be
+CWE-241: Improper Handling of Unexpected Data Type.  This is because the parser
+sees an identifier which it expects to be one data type, but the actual content
+is another data type, leading to the "unexpected" aspect.  CWE-1286: Improper
+Validation of Syntactic Correctness of Input seems like it could also apply, but
+may not be suitable because the submission doesn't necessarily specify that the
+input is syntactically incorrect, just that it is not the format expected based
+on the identifier.  Please let us know your thoughts on the proposed
+relationships, specifically if you think CWE-241 is a good fit.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 RESOLVED ISSUES:
@@ -60,23 +115,23 @@ Ack-Receipt: 2023-12-28
 
 Init-Review: 2024-05-01
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-06-27
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Init-Accepted: YYYY-MM-DD
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Det-Received: YYYY-MM-DD
 
-Full-Review: YYYY-MM-DD
+Det-Review: YYYY-MM-DD
 
-Full-Consultation: YYYY-MM-DD
+Det-Consultation: YYYY-MM-DD
 
-Full-Accepted: YYYY-MM-DD
+Det-Accepted: YYYY-MM-DD
 
-Production: YYYY-MM-DD
+Internal-Update: YYYY-MM-DD
 
 Final-Coord: YYYY-MM-DD
 
@@ -94,3 +149,6 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2023-12-28 sent email
+2024-05-01 sent email
+2024-06-27 sent email
