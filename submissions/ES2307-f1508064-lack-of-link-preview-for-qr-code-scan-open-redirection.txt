@@ -2,15 +2,17 @@ SUBMISSION COMMUNICATION ID: ES2307-f1508064
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
+
+AFFECTED CWES:
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-07-07 21:35:21
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS
 
 PUBTRACKER: #51
 
@@ -46,6 +48,134 @@ URL: https://en.wikipedia.org/wiki/QR_code
 ACTIVE ISSUES:
 
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: When reading the submission, it is unclear whether this is
+an issue of a lack of link preview on the application hosting the QR
+code or if the issue is with applications that have QR code scanning
+capabilities not previewing the link before navigating to it.  Please
+confirm which situation your submission is intended for.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or full) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: While there is definitely some weakness present, it is
+unclear where exactly it would fit into a current CWE subtree
+relationship.  This is not an open redirect because the weakness being
+described is not the inclusion of user input into a redirect, but an
+application with QR code scanning capabilities not previewing the URL
+to the user before visiting an untrusted site.  Instead, a better
+subtree would be something like "Missing user confirmation before
+potentially insecure action", which aligns with CWE-356: Product UI
+does not Warn User of Unsafe Actions. However, CWE-356 does not
+mention prompts or confirmation dialogs, so CWE-356 would need to be
+updated accordingly.  Please let us know your thoughts on this
+analysis.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: The scenario where this weakness is present is rather
+specific and is likely too low-level to merit its own CWE entry.
+Related to the problem described under SUB.ABS.SUBTREE, this may be
+best suited as a new entry (or modification of CWE-356) along the
+lines of "Missing user confirmation before potentially insecure
+action", where the QR link preview could be added as an example.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: Related to SUB.ABS.SUBTREE, it is not clear what existing
+CWEs this weakness would be related to.  A potential relationship is
+as a child to CWE-223: Omission of Security-relevant Information,
+although if a new entry is created related to "Missing user
+confirmation before potentially insecure action", it is also unclear
+what relationships that new entry would have and would require closer
+investigation.  The provide relationship of CWE-601: URL Redirection
+to Untrusted Site ('Open Redirect') is incorrect.  Please let us know
+if you agree or disagree with our assessment of the potential
+relationships.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: While the submitter provided two references, neither
+describe the actual weakness.  Please respond by providing references
+which describe the actual weakness.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
 
 RESOLVED ISSUES:
 
@@ -59,23 +189,23 @@ Ack-Receipt: 2024-01-05
 
 Init-Review: 2024-02-20
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-06-27
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Init-Accepted: YYYY-MM-DD
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Det-Received: YYYY-MM-DD
 
-Full-Review: YYYY-MM-DD
+Det-Review: YYYY-MM-DD
 
-Full-Consultation: YYYY-MM-DD
+Det-Consultation: YYYY-MM-DD
 
-Full-Accepted: YYYY-MM-DD
+Det-Accepted: YYYY-MM-DD
 
-Production: YYYY-MM-DD
+Internal-Update: YYYY-MM-DD
 
 Final-Coord: YYYY-MM-DD
 
@@ -93,3 +223,6 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2024-01-05 sent email
+2024-02-20 sent email
+2024-06-27 sent email
