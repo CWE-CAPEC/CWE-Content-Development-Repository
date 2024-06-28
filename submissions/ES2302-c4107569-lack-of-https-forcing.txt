@@ -79,6 +79,8 @@ URL: https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Che
 Title: Why use HTTPS?
 URL: https://www.cloudflare.com/learning/ssl/why-use-https/
 
+Title: Encrypting the Web
+URL: https://www.eff.org/encrypt-the-web
 
 ACTIVE ISSUES:
 
