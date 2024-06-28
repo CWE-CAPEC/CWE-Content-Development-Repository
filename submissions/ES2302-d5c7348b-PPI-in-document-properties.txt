@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2302-d5c7348b
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -192,7 +192,7 @@ Init-Consultation: 2024-01-23
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-06-27
 
 Det-Requested: YYYY-MM-DD
 
@@ -224,3 +224,4 @@ COMMUNICATIONS LOG:
 2023-02-27 sent email
 2023-09-12 publish server
 2024-01-23 sent email
+2024-06-27 sent email
