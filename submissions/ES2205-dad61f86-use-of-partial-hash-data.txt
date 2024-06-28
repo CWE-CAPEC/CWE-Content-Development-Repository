@@ -12,7 +12,7 @@ SUBMISSION DATE: 2022-05-03 15:39:37
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ABS.MULTWEAK, SUB.RELS
+ISSUE DETAILS: SUB.RELS
 
 PUBTRACKER: #24
 
@@ -75,33 +75,6 @@ URL: https://evil32.com/
 
 
 ACTIVE ISSUES:
-
-
-SUB.ABS.MULTWEAK - "Multiple weaknesses"
-
-Description: The submission describes or suggests multiple independent
-weaknesses that each might deserve a separate CWE ID.
-
-Resolution: The submission cannot progress past the consultation phase
-until the number of relevant weaknesses is identified. If there are
-multiple weaknesses, separate names and descriptions are needed.
-
-Comments: While the 2022-08-16 reply from the requester suggested
-different phrasings for "partial hash is displayed" and "partial hash
-is verified" (as originally suggested by the CWE Team), one of the
-suggested names - "Reliance on a substring of the full hash value" -
-seems appropriate for both scenarios: relying on the partial hash for
-verification, *or* for display. So it doesn't seem that this issue
-needs to be split into multiple weaknesses anymore. If the submitter
-agrees, then SUB.ABS.MULTWEAK no longer applies. See SUB.UNCLEAR for
-more specific details. If you agree with this decision, please
-acknowledge in your response.
-
-Response: title updated, this maybe needs children weaknesses long
-term to clearly enumerate each avenue of attack?
-
-
-------------
 
 SUB.RELS - "Unclear relationships"
 
@@ -184,6 +157,30 @@ submission reaches the full-submission stage.
 
 Response: [RESOLVED ISSUE; DO NOT CHANGE] see above description
 rewritten
+
+SUB.ABS.MULTWEAK - "Multiple weaknesses"
+
+Description: The submission describes or suggests multiple independent
+weaknesses that each might deserve a separate CWE ID.
+
+Resolution: The submission cannot progress past the consultation phase
+until the number of relevant weaknesses is identified. If there are
+multiple weaknesses, separate names and descriptions are needed.
+
+Comments: While the 2022-08-16 reply from the requester suggested
+different phrasings for "partial hash is displayed" and "partial hash
+is verified" (as originally suggested by the CWE Team), one of the
+suggested names - "Reliance on a substring of the full hash value" -
+seems appropriate for both scenarios: relying on the partial hash for
+verification, *or* for display. So it doesn't seem that this issue
+needs to be split into multiple weaknesses anymore. If the submitter
+agrees, then SUB.ABS.MULTWEAK no longer applies. See SUB.UNCLEAR for
+more specific details. If you agree with this decision, please
+acknowledge in your response.
+
+Response: title updated, this maybe needs children weaknesses long
+term to clearly enumerate each avenue of attack?
+
 
 
 
