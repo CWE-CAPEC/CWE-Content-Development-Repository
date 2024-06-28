@@ -67,10 +67,17 @@ URL: https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content
 Title: Fixing mixed content
 URL: https://web.dev/fixing-mixed-content/
 
-Title: CWE-319: Cleartext Transmission of Sensitive Information
-URL: https://cwe.mitre.org/data/definitions/319.html
+Title: HTTPS and your online security
+URL: https://blog.mozilla.org/en/products/firefox/https-protect/
 
+Title: HTTPS as a ranking signal
+URL: https://developers.google.com/search/blog/2014/08/https-as-ranking-signal?
 
+Title: Transport Layer Security Cheat Sheet
+URL: https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html
+
+Title: Why use HTTPS?
+URL: https://www.cloudflare.com/learning/ssl/why-use-https/
 
 
 ACTIVE ISSUES:
@@ -97,7 +104,7 @@ still must be noted.  Please indicate agreement or explain why the
 differences are big enough that separate CWE identifiers might be
 needed.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree
 
 
 ----------
@@ -125,7 +132,7 @@ forcing".  Regardless of the decision for new entries, it's reasonable
 to somehow cover the lack of HTTPS forcing.  More research and
 discussion is needed. Please provide your thoughts on this proposal.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree
 
 
 ----------
@@ -151,7 +158,7 @@ forcing" might be too low-level to include in CWE, but it is an
 extremely common issue. This decision does not need to be made for
 initial review.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree
 
 
 ----------
@@ -171,7 +178,9 @@ Comments: The mixed-content references are related to this weakness,
 but are there other references that are more narrowly focused on the
 lack of HTTPS forcing?
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [provided 4 references updated in the submission: HTTPS and
+your online security, HTTPS as a ranking signal, Transport Layer
+Security Cheat Sheet, and Why use HTTPS?]
 
 
 ----------
@@ -191,7 +200,7 @@ be created, and the results of this submission will be integrated into
 the new entry.  Please acknowledge this and provide any additional
 comments.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree
 
 
 ----------
