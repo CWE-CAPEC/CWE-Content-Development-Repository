@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-79594537
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,7 +10,7 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-02-29 12:23:42
 
-ISSUES: not-analyzed
+ISSUES: no
 
 ISSUE DETAILS: 
 
@@ -56,7 +56,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-06-30
 
 Det-Requested: YYYY-MM-DD
 
@@ -87,3 +87,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-04-03 sent email
+2024-06-30 sent email
