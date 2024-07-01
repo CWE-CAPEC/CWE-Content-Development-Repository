@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2207-771a1a87
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2022-07-04 05:42:11
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.RELS
+ISSUE DETAILS: SUB.RELS
 
 PUBTRACKER: #70
 
@@ -22,7 +22,7 @@ GITHUBUSER:
 
 SUBMISSION TYPE: Software
 
-NAME: Improper Single Sign On (SSO) Provider Authorization
+NAME: Authorization of Single Sign On (SSO) Provider without User Consent
 
 DESCRIPTION: 
 
@@ -46,7 +46,12 @@ connect to the account either by signing up with this SSO provider or
 having a way to link the sso provider to the account after being
 signed in.
 
-
+The weakness is related to the improper authorization of
+Single Sign-On (SSO) providers without explicit user consent, which
+can result in security vulnerabilities. The current configuration of
+the SSO flow appears to be inherently flawed, and may require
+additional verifications to ensure that SSO providers are properly
+authorized to connect to the service.
 
 RELATED WEAKNESSES:
 
@@ -61,41 +66,6 @@ URL: https://bugcrowd.com/disclosures/ff0e1b7e-c7db-42a9-b6c5-cb1d65086090/slack
 
 
 ACTIVE ISSUES:
-
-SUB.UNCLEAR - "Unclear weakness"
-
-Description: The submission's name and/or description does not clearly
-identify a weakness, or it is written in a way that is vague and could
-cause the submission to be incorrectly mapped to.
-
-Resolution: An initial submission (or full submission) cannot progress past
-the consultation phase until SUB.UNCLEAR is addressed.
-
-Comments: SUB.UNCLEAR is applied because the way the information is
-provided requires additional details to better understand the
-underlying weakness. It sounds like the core issue is: "Giving the
-right to all their SSO provider without ensuring the user signup/link
-their SSO account" and "The website with that weakness will rarely let
-their user know that they will blindly trust any SSO to be a valid way
-to connect to their system.  So user may not be aware the SSO provider
-is having direct access to their account." The name "Improper Single
-Sign On Flow" is vague, because "Single Sign On Flow" is a common,
-valid behavior. It's not clear if the weakness is giving the rights to
-the SSO provider, not ensuring user signup/link their SSO, the website
-isn't notifying the user, or something else. Please change the name
-and description to better explain the weakness.
-
-Response: the weakness is related to the improper authorization of
-Single Sign-On (SSO) providers without explicit user consent, which
-can result in security vulnerabilities. The current configuration of
-the SSO flow appears to be inherently flawed, and may require
-additional verifications to ensure that SSO providers are properly
-authorized to connect to the service.
-
-To accurately identify and address the weakness, I agree that it would
-be more appropriate to revise the submission name and description to
-"Improper SSO Provider Authorization."
-
 
 ----------
 
@@ -184,6 +154,41 @@ Response: [Redacted Organization] and [Redacted Organization] seem to
 have the same issue.
 
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: SUB.UNCLEAR is applied because the way the information is
+provided requires additional details to better understand the
+underlying weakness. It sounds like the core issue is: "Giving the
+right to all their SSO provider without ensuring the user signup/link
+their SSO account" and "The website with that weakness will rarely let
+their user know that they will blindly trust any SSO to be a valid way
+to connect to their system.  So user may not be aware the SSO provider
+is having direct access to their account." The name "Improper Single
+Sign On Flow" is vague, because "Single Sign On Flow" is a common,
+valid behavior. It's not clear if the weakness is giving the rights to
+the SSO provider, not ensuring user signup/link their SSO, the website
+isn't notifying the user, or something else. Please change the name
+and description to better explain the weakness.
+
+Response: the weakness is related to the improper authorization of
+Single Sign-On (SSO) providers without explicit user consent, which
+can result in security vulnerabilities. The current configuration of
+the SSO flow appears to be inherently flawed, and may require
+additional verifications to ensure that SSO providers are properly
+authorized to connect to the service.
+
+To accurately identify and address the weakness, I agree that it would
+be more appropriate to revise the submission name and description to
+"Improper SSO Provider Authorization."
+
+
 
 
 TIMELINE:
@@ -196,7 +201,7 @@ Init-Review: 2023-01-10
 
 Init-Consultation: 2023-03-10
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-07-01
 
 Init-Declined: YYYY-MM-DD
 
@@ -222,3 +227,4 @@ COMMUNICATIONS LOG:
 2023-01-10 sent email
 2023-03-10 sent email
 2023-04-19 received email
+2024-07-01 sent email
