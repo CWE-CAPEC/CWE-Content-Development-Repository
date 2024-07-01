@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-3ad3fb4a
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -54,21 +54,21 @@ Init-Review: 2024-05-14
 
 Init-Consultation: YYYY-MM-DD
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-06-30
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Det-Received: YYYY-MM-DD
 
-Full-Review: YYYY-MM-DD
+Det-Review: YYYY-MM-DD
 
-Full-Consultation: YYYY-MM-DD
+Det-Consultation: YYYY-MM-DD
 
-Full-Accepted: YYYY-MM-DD
+Det-Accepted: YYYY-MM-DD
 
-Production: YYYY-MM-DD
+Internal-Update: YYYY-MM-DD
 
 CWE-Assigned: YYYY-MM-DD
 
@@ -86,3 +86,6 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2024-03-26 sent email
+2024-05-15 sent email
+2024-06-30 sent email
