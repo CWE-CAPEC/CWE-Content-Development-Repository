@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2303-bd6aefb6
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -177,7 +177,7 @@ Init-Consultation: 2024-01-22
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-07-01
 
 Det-Requested: YYYY-MM-DD
 
@@ -209,3 +209,4 @@ COMMUNICATIONS LOG:
 2024-01-22 sent email
 2024-01-22 sent email
 2024-01-23 received comment
+2024-07-01 sent email
