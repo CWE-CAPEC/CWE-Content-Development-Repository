@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-231ee973
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-02-29 12:12:44
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #86
 
@@ -38,6 +38,17 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The CWE Team believes that the image can be improved to
+better emphasize the role of file types and extensions. 
+
+Response: [NO RESPONSE NEEDED; COMMUNICATION TO BE HELD IN EMAIL]
 
 
 RESOLVED ISSUES:
@@ -52,23 +63,23 @@ Ack-Receipt: 2024-04-03
 
 Init-Review: 2024-05-14
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-07-01
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Init-Accepted: YYYY-MM-DD
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Det-Received: YYYY-MM-DD
 
-Full-Review: YYYY-MM-DD
+Det-Review: YYYY-MM-DD
 
-Full-Consultation: YYYY-MM-DD
+Det-Consultation: YYYY-MM-DD
 
-Full-Accepted: YYYY-MM-DD
+Det-Accepted: YYYY-MM-DD
 
-Production: YYYY-MM-DD
+Internal-Update: YYYY-MM-DD
 
 CWE-Assigned: YYYY-MM-DD
 
@@ -86,3 +97,6 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2024-04-03 sent email
+2024-05-14 sent email
+2024-07-01 sent email
