@@ -1,0 +1,93 @@
+SUBMISSION COMMUNICATION ID: ES2407-ad149eff
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-07-02 19:02:41
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #115
+
+MTRACKER: #1104
+
+GITHUBUSER: stevechristeycoley
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Output Neutralization in Generative AI Component
+
+DESCRIPTION:
+
+The product has a generative AI/ML component whose behaviors and outputs
+cannot be directly controlled, but the product does not sufficiently
+neutralize the outputs to ensure that they align with the intended
+security, content, or privacy policy.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-707
+
+REFERENCES:
+
+Title: LLM02: Insecure Output Handling
+URL: https://genai.owasp.org/llmrisk/llm02-insecure-output-handling/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-07-02
+
+Ack-Receipt: 2024-07-02
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
