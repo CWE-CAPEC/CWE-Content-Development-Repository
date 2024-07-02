@@ -1,0 +1,101 @@
+SUBMISSION COMMUNICATION ID: ES2406-9e5fcf10
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-06-28 18:17:29
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #114
+
+MTRACKER: #1103
+
+GITHUBUSER: None
+
+SUBMISSION TYPE: Software
+
+NAME: LLM Bad Practices: Improper tuning of model control parameters
+
+DESCRIPTION:
+
+Users of applications that use Transformers text generation capabilities
+may encounter unusually high occurrences of repetition/hallucination due to
+combinations of parameter settings that control model probabilities and
+behavior. For example, high temperatures increase randomness in generated
+text and various repetition penalties can reduce the amount of output
+repetition.
+
+
+---
+
+Note: this submission is inspired by "CWE-382: J2EE Bad Practices: Use of
+System.exit()", the idea of approaching LLM-related weaknesses via their
+software practices
+
+RELATED WEAKNESSES:
+
+
+REFERENCES:
+
+Title: Documentation for Transformers text generation parameters
+URL: https://huggingface.co/docs/transformers/main_classes/text_generation#transformers.GenerationConfig
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-06-28
+
+Ack-Receipt: 2024-07-02
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
