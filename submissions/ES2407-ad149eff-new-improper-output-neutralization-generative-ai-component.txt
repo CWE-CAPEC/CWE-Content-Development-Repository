@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2407-ad149eff
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2024-07-02 19:02:41
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.COORD, SUB.NEWTECH, SUB.MISC
+ISSUE DETAILS: SUB.COORD, SUB.NEWTECH, SUB.MISC
 
 PUBTRACKER: #115
 
@@ -22,13 +22,13 @@ GITHUBUSER: stevechristeycoley
 
 SUBMISSION TYPE: Software
 
-NAME: Improper Output Neutralization in Generative AI Component
+NAME: Improper Validation of Generative AI Output
 
 DESCRIPTION:
 
-The product has a generative AI/ML component whose behaviors and outputs
+The product invokes a generative AI/ML component whose behaviors and outputs
 cannot be directly controlled, but the product does not sufficiently
-neutralize the outputs to ensure that they align with the intended
+validate the outputs to ensure that they align with the intended
 security, content, or privacy policy.
 
 RELATED WEAKNESSES:
@@ -42,28 +42,6 @@ URL: https://genai.owasp.org/llmrisk/llm02-insecure-output-handling/
 
 
 ACTIVE ISSUES:
-
-SUB.ABS.SUBTREE - "Potential subtree issue/gap"
-
-Description: The submission might identify an issue for which there could
-be a broader gap or organizational challenge that requires analysis of CWE
-subtree relationships under Research View 1000, in ways that extend beyond
-creation of a parent at the next-highest level of abstraction.
-
-Resolution: The submission cannot progress past the consultation phase
-(whether initial or detailed) unless it is at an acceptable level of
-abstraction, and the subtree issue(s) can be resolved or addressed
-independently.
-
-Comments: The focus on neutralization causes some overlap with CWE-74
-(involving neutralization and downstream components) and CWE-20 (with
-its focus on validation of input alone). This submission will be
-changed to focus only on validation.
-
-Response: <SUBMITTER SHOULD REPLY HERE>
-
-
----------
 
 SUB.COORD - "Requires extensive coordination"
 
@@ -148,6 +126,26 @@ Response: <SUBMITTER SHOULD REPLY HERE>
 
 RESOLVED ISSUES:
 
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or detailed) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: The focus on neutralization causes some overlap with CWE-74
+(involving neutralization and downstream components) and CWE-20 (with
+its focus on validation of input alone). This submission will be
+changed to focus only on validation.
+
+Response: Changed name and desc for focus solely on "validation".
+
+
 
 
 TIMELINE:
@@ -162,7 +160,7 @@ Init-Consultation: 2024-07-03
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-07-03
 
 Det-Requested: YYYY-MM-DD
 
@@ -193,3 +191,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-07-02 sent email
+2024-07-03 sent email
