@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2402-a0e2310f
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-119
 
 ORIGIN: sub-server
 
@@ -54,25 +54,25 @@ Init-Review: 2024-05-16
 
 Init-Consultation: YYYY-MM-DD
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-07-09
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Det-Received: YYYY-MM-DD
 
-Full-Review: YYYY-MM-DD
+Det-Review: YYYY-MM-DD
 
-Full-Consultation: YYYY-MM-DD
+Det-Consultation: YYYY-MM-DD
 
-Full-Accepted: YYYY-MM-DD
+Det-Accepted: YYYY-MM-DD
 
-Production: YYYY-MM-DD
+Internal-Update: 2024-07-09
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2024-07-09
 
 Final-Coord: YYYY-MM-DD
 
@@ -87,3 +87,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-04-04 sent email
+2024-05-16 sent email
