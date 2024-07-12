@@ -31,14 +31,161 @@ cannot be directly controlled, but the product does not sufficiently
 validate the outputs to ensure that they align with the intended
 security, content, or privacy policy.
 
+
+
+MODES OF INTRODUCTION:
+
+Phase: Architecture and Design; Implementation
+
+Note: Developers may rely heavily on protection mechanisms such as
+input filtering and model alignment, assuming they are more effective
+than they actually are.
+
+
+
+APPLICABLE PLATFORMS:
+
+
+Language Class: Not Language-Specific
+
+Operating System Class: Not OS-Specific
+
+Architecture Class: Not Architecture-Specific
+
+Technology Name: AI/ML
+
+Technology Class: Not Technology-Specific
+
+
+
+COMMON CONSEQUENCES:
+
+Scope: Integrity
+
+Impact: Execute Unauthorized Code or Commands; Varies by Context
+
+Note: In an agent-oriented setting, output could be used to cause
+unpredictable agent invocation, i.e., to control or influence agents
+that might be invoked from the output.  The impact varies depending on
+the access that is granted to the tools, such as creating a database
+or writing files.
+
+
+
+POTENTIAL MITIGATIONS:
+
+Phase: Architecture and Design
+
+Description: Place the generative AI component (such as an LLM) in an
+untrusted or non-privileged space.
+
+
+
+Phase: Operation
+
+Description: Use "semantic comparators," which are mechanisms that
+provide semantic comparison to identify objects that might appear
+different but are semantically similar.
+
+
+Phase: Operations
+
+Description: Use components that operate externally to the system to
+monitor the output and act as a moderator. These components are called
+different terms, such as supervisors or guardrails.
+
+
+Phase: Build and Compilation
+
+Description: During model training, use an appropriate variety of good
+and bad examples to guide preferred outputs.
+
+
+
+DETECTION METHODS:
+
+Method: Dynamic Analysis with Manual Results Interpretation; Dynamic Analysis with Automated Results Interpretation
+
+Notes: Use known techniques for prompt injection and other attacks,
+and adjust the attacks to be more specific to the model or system.
+
+
+Method: Architecture or Design Review
+
+Notes: This can be effective, but works best in conjunction with
+dynamic analysis.
+
+
+
 RELATED WEAKNESSES:
 
-   ChildOf CWE-707
+RelType: ChildOf
+ID: CWE-707
+View-ID: 1000
+
+
+RelType: MemberOf
+ID: CWE-1409
+View-ID: 1400
+
 
 REFERENCES:
 
 Title: LLM02: Insecure Output Handling
+
 URL: https://genai.owasp.org/llmrisk/llm02-insecure-output-handling/
+
+Author: OWASP
+
+Date: 2024-03-21
+
+
+Title: Validating Outputs
+
+URL: https://cohere.com/blog/validating-llm-outputs
+
+Author: Cohere, Guardrails AI
+
+Date: 2023-09-13
+
+
+Title: NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails
+
+URL: https://aclanthology.org/2023.emnlp-demo.40/
+
+Author: Traian Rebedea, Razvan Dinu, Makesh Sreedhar, Christopher Parisien, Jonathan Cohen (NVIDIA)
+
+Date: December 2023
+
+
+Title: Insecure output handling in LLMs
+
+URL: https://learn.snyk.io/lesson/insecure-input-handling/
+
+Author: Snyk
+
+Date: NO DATE
+
+
+Title: Building Guardrails for Large Language Models
+
+URL: https://arxiv.org/pdf/2402.01822
+
+Author: Yi Dong, Ronghui Mu, Gaojie Jin, Yi Qi, Jinwei Hu, Xingyu Zhao, Jie Meng,  Wenjie Ruan, Xiaowei Huang
+
+Date: 2024-05-29
+
+
+OBSERVED EXAMPLES:
+
+ID: CVE-2024-3402
+
+Link: 
+
+ObexSummary: Chain - GUI for ChatGPT API performs input validation but
+does not properly "sanitize" or validate model output data, leading to
+XSS (CWE-79)
+
 
 
 ACTIVE ISSUES:
@@ -189,3 +336,5 @@ COMMUNICATIONS LOG:
 2024-07-03 sent email
 2024-07-03 action update
 2024-07-10 sent email
+2024-07-09 sent email
+2024-07-10 received email
