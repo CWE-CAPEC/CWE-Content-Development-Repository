@@ -4,7 +4,7 @@ ACTION TYPE: Modification
 
 SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-787
 
 ORIGIN: sub-server
 

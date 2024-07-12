@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2402-8c4670ec
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-306
 
 ORIGIN: sub-server
 
@@ -82,11 +82,11 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2024-07-09
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2024-07-09
 
 Final-Coord: YYYY-MM-DD
 
