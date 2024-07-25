@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-3875089c
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Modified
+SUBMISSION STATUS: CWE-Published
 
 AFFECTED CWES: CWE-787
 
@@ -90,7 +90,7 @@ CWE-Modified: 2024-06-24
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2024-07-16
 
 Post-Publication: YYYY-MM-DD
 
