@@ -52,11 +52,11 @@ Ack-Receipt: 2024-04-04
 
 Init-Review: 2024-05-16
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-07-09
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-07-13
 
 Det-Requested: YYYY-MM-DD
 
@@ -88,4 +88,6 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-04-04 sent email
 2024-05-16 sent email
+2024-07-09 sent email
+2024-07-10 received email
 2024-07-16 action published
