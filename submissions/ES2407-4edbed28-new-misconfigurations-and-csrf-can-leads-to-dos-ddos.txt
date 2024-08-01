@@ -1,0 +1,188 @@
+SUBMISSION COMMUNICATION ID: ES2407-4edbed28
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-07-04 23:10:12
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #116
+
+MTRACKER: #1114
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Software
+
+NAME: Misconfigurations and CSRF can leads to DoS/DDoS
+
+DESCRIPTION:
+
+Many requests because of error ERR_TOO_MANY_REDIRECTS (about x50 requests
+per single payload/visit) linked in with CSRF (ie.: automated GET using img
+- that means no user interaction) can leads to DoS/DDoS.
+Example: User visit the vulnerable site and spot the ERR_TOO_MANY_REDIRECTS
+(single visit/request triggered automated 50 requests without user's
+knowledge). In combination with CSRF the threat is bigger.
+If bad actor will use payload similar like mentioned (ie.: at vulnerable or
+malicious sites) with many visitors - victims (visitors) will make requests
+without their knowledge. If site has x10/100,000 visitors (in the
+approximate time) - the final requests nr will strongly increasing
+(multiplication).
+In my opinion, it would be good to investigate this security issue.
+
+Encountering the 'ERR_TOO_MANY_REDIRECTS' error on a site indicates that
+the browser is stuck in an infinite redirection loop. This problem can
+arise from various misconfigurations and potential security issues. Let's
+break down the possible causes, security threats, and implications.
+
+Causes of 'ERR_TOO_MANY_REDIRECTS' Error:
+Misconfigured Redirects: Incorrect configuration in server settings, such
+as .htaccess files, web server settings (Apache, Nginx), or application
+code, leading to a redirection loop.
+Improper SSL/TLS Configuration: Redirect loops can occur when HTTP is
+incorrectly redirected to HTTPS, or vice versa, in an endless loop.
+Third-party Services: Issues with CDN (Content Delivery Network), load
+balancers, or proxy servers can also cause redirect loops.
+Cookies: Some sites use cookies to manage redirects, and incorrect handling
+or corruption of these cookies can result in a loop.
+
+Security Issues and Threats:
+1. Denial of Service (DoS) and Distributed Denial of Service (DDoS) Threats
+Resource Exhaustion: Attackers could exploit redirect loops to cause
+excessive resource usage on the server, leading to a DoS or DDoS situation.
+Each redirection request consumes server resources, potentially
+overwhelming the server.
+Amplification Attack: If multiple clients are redirected continuously, it
+can amplify the server load significantly, leading to a DDoS attack.
+2. Cross-Site Request Forgery (CSRF)
+CSRF with GET Requests: If a site is vulnerable to CSRF and uses GET
+requests to perform state-changing operations (which is bad practice), an
+attacker could cause a client to follow a redirection loop by sending a
+maliciously crafted URL. However, modern CSRF protections often require the
+use of tokens, which mitigate this risk.
+Combined Threats: A CSRF vulnerability could be used in conjunction with
+the redirect loop to force a user into an unintended loop, potentially
+leading to resource exhaustion on the client side and deteriorating the
+user experience.
+3. Client-Side Impact
+Denial of Access: Clients will be unable to access the site, leading to
+frustration and potentially driving users away.
+Browser Crashes: Continuous redirects can cause browser instability or
+crashes, further impacting the user's experience.
+
+Implications:
+1. Loss of Reputation
+User Frustration: Users who encounter redirect loops are likely to view the
+site as unreliable or poorly maintained.
+Search Engine Rankings: Search engines might penalize the site in their
+rankings due to poor user experience and frequent errors, leading to
+reduced visibility.
+2. Security Perception
+Trust Issues: Persistent errors can erode trust in the site's security,
+making users hesitant to interact with it or enter sensitive information.
+Possible Exploits: Users and security analysts might suspect underlying
+security issues, such as potential vulnerabilities being exploited.
+
+Mitigation Strategies:
+Proper Configuration: Ensure redirects are correctly configured and tested
+to prevent loops. Regular audits and automated tests can help identify and
+fix issues early.
+SSL/TLS Handling: Ensure HTTPS redirection is properly configured and
+tested. Tools and services that validate SSL/TLS setups can help identify
+misconfigurations.
+Robust CSRF Protection: Implement CSRF tokens and ensure state-changing
+operations use POST requests with proper validation.
+Monitoring and Logging: Use monitoring tools to detect unusual patterns in
+redirect behavior and server load, which can indicate potential DoS/DDoS
+attempts.
+User Communication: Provide clear error messages and potential solutions to
+users encountering redirect issues, such as clearing cookies or contacting
+support.
+
+In summary, 'ERR_TOO_MANY_REDIRECTS' can be a symptom of various
+configuration and security issues. Proper diagnosis and mitigation are
+essential to maintaining site availability, performance, and security.
+
+Best regards,
+
+RELATED WEAKNESSES:
+
+   Other CWE-352
+
+REFERENCES:
+
+Title: CWE-352: Cross-Site Request Forgery (CSRF)
+URL: https://cwe.mitre.org/data/definitions/352.html
+
+Title: CAPEC-62: Cross Site Request Forgery
+URL: https://capec.mitre.org/data/definitions/62.html
+
+Title: Cross Site Request Forgery (CSRF)
+URL: https://owasp.org/www-community/attacks/csrf
+
+Title: 302 Found
+URL: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
+
+Title: Network Denial of Service
+URL: https://attack.mitre.org/techniques/T1498/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-07-04
+
+Ack-Receipt: 2024-07-31
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
