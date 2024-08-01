@@ -1,0 +1,152 @@
+SUBMISSION COMMUNICATION ID: ES2407-9f4d629c
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-07-05 14:04:55
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #117
+
+MTRACKER: #1115
+
+GITHUBUSER: None
+
+SUBMISSION TYPE: Software
+
+NAME: Authentication Method Redaction
+
+DESCRIPTION:
+
+## General Explanation
+Authentication Method Redaction (AMR) refers to a security vulnerability
+where an attacker can manipulate the user interface to hide or remove
+secure authentication options, leading users to fall back on less secure
+methods. This manipulation can be achieved through altering HTML, CSS,
+images, or JavaScript on a login page, effectively controlling the
+authentication flow presented to the user. The ability to manipulate the
+presentation layer is built-in to AitM phishing kits such as EvilGinx.
+
+## Why This Should Be a Concern to Developers/Designers
+AMR is a critical concern because it undermines the security of advanced
+authentication mechanisms by forcing users to rely on weaker alternatives.
+This weakness is particularly problematic in environments where robust
+authentication methods, such as passkeys, are available but not enforced
+due to potential manipulation by attackers. When these secure options are
+hidden, users might unknowingly provide their credentials through less
+secure methods, which can be intercepted and exploited by adversaries.
+
+## Technical Impact
+The primary technical impact of AMR is the circumvention of strong
+authentication mechanisms, leading to successful phishing attacks and
+unauthorized access. Attackers can capture credentials, session tokens, and
+other sensitive information, allowing them to maintain persistent access to
+the victim's account. This vulnerability also facilitates secondary
+attacks, such as credential stuffing and account takeover across different
+platforms.
+
+## Subtleties and Variations
+ - Fallback Authentication Methods: Many implementations offer fallback
+options like passwords, security questions, or SMS codes when the primary
+method (e.g., passkeys) is not available. These fallback methods are often
+less secure and can be easily intercepted in an AMR scenario.
+ - User Awareness: Users are generally not familiar with advanced
+authentication methods like passkeys and may not notice their absence
+during the login process, increasing the likelihood of falling for AMR
+attacks.
+ - Account Recovery Challenges: Secure account recovery often relies on
+less secure methods, making it difficult to design a completely
+AitM-resistant authentication flow.
+ - Enterprise vs. Consumer Implementations: Enterprise solutions may offer
+more robust policies and configurations to mitigate AMR risks, while
+consumer implementations might lack such controls, making them more
+vulnerable.
+
+## Example: Passkey Bypass in GitHub
+An example of AMR is the bypass of passkey authentication on GitHub using
+the Evilginx AitM software. Attackers proxy the login page and modify it to
+remove the "Sign in with a passkey" option. Users, unaware of the
+manipulation, enter their username and password, which the attacker
+captures along with session tokens. This bypass not only compromises the
+account but also allows the attacker to maintain persistent access. At the
+time of this writing, other platforms like Microsoft Live, Amazon Shopping,
+NVIDIA, CVS, Coinbase and many others also exhibit similar vulnerabilities
+in their passkeys implementation, highlighting the widespread nature of AMR
+issues.
+
+## Conclusion
+AMR is a significant security weakness that compromises the integrity of
+secure authentication methods. Developers and designers must be aware of
+this vulnerability and implement robust measures to ensure that secure
+authentication options are difficult to redact from the authentication
+flow, fallback authentication methods break out of AitM-controlled
+sessions, and account recovery mechanisms are adequately protected.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-693
+
+REFERENCES:
+
+Title: Securing Passkeys: Thwarting Authentication Method Redaction Attacks
+URL: https://www.esentire.com/blog/securing-passkeys-thwarting-authentication-method-redaction-attacks
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-07-05
+
+Ack-Receipt: 2024-07-31
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
