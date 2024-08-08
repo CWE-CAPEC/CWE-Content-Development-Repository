@@ -1,0 +1,109 @@
+SUBMISSION COMMUNICATION ID: ES2402-8c4670ec
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Closed
+
+AFFECTED CWES: CWE-306
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-02-29 12:29:10
+
+ISSUES: yes/resolved
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #93
+
+MTRACKER: #1006
+
+GITHUBUSER: Abhi-M
+
+SUBMISSION TYPE: Software
+
+NAME: Diagram for CWE-306
+
+DESCRIPTION:
+
+Diagram -
+https://pentest-report-pro-max.web.app/assets/cwe-306-missing-authentication-for-critical-function.png
+
+RELATED WEAKNESSES:
+
+   Other CWE-306
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+RESOLVED ISSUES:
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: After we went through a review, we think that if the image
+illustrates someone walking through an open door (say a safe door) and
+the safe door has a sign on it that reads, “critical function” that it
+would complement the description of the weakness much better. Would it
+be possible for you to create such an image?
+
+Response: [NO RESPONSE NEEDED; SUBMITTER ADDRESSED THE ISSUE IN EMAIL]
+
+
+
+TIMELINE:
+
+Received: 2024-02-29
+
+Ack-Receipt: 2024-04-03
+
+Init-Review: 2024-05-02
+
+Init-Consultation: 2024-06-14
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: 2024-06-24
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: 2024-07-09
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: 2024-07-09
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: 2024-07-16
+
+Post-Publication: YYYY-MM-DD
+
+Closed: 2024-08-08
+
+
+
+
+COMMUNICATIONS LOG:
+2024-04-03 sent email
+2024-05-02 sent email
+2024-06-14 sent email
+2024-06-17 received email
+2024-06-17 sent email
+2024-06-17 received email
+2024-06-24 sent email
