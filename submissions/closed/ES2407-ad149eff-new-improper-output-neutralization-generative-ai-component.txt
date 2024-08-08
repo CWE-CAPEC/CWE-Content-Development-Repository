@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2407-ad149eff
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: Closed
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-1426
 
 ORIGIN: sub-server
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2024-07-02 19:02:41
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.MISC
+ISSUE DETAILS: 
 
 PUBTRACKER: #115
 
@@ -190,23 +190,6 @@ XSS (CWE-79)
 
 ACTIVE ISSUES:
 
-SUB.MISC - "Miscellaneous/other problem"
-
-Description: The submission has some other problem that is not covered
-elsewhere.
-
-Resolution: This will depend on the nature of the problem.
-
-Comments: On Friday, June 28, 2024, the WG decided that even if a
-new-entry submission did not meet CWE's full quality/comprehensiveness
-requirements, that it would be beneficial to the community to ensure
-its inclusion in CWE 4.15 (July 16) and improve it in subsequent
-releases. This potential problem is mentioned in this submission for
-transparency.
-
-Response: <SUBMITTER SHOULD REPLY HERE>
-
-
 
 RESOLVED ISSUES:
 
@@ -288,6 +271,23 @@ understood from a weakness perspective.
 Response: <SUBMITTER SHOULD REPLY HERE>
 
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: On Friday, June 28, 2024, the WG decided that even if a
+new-entry submission did not meet CWE's full quality/comprehensiveness
+requirements, that it would be beneficial to the community to ensure
+its inclusion in CWE 4.15 (July 16) and improve it in subsequent
+releases. This potential problem is mentioned in this submission for
+transparency.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
 
 
 TIMELINE:
@@ -316,17 +316,17 @@ Det-Accepted: 2024-07-10
 
 Internal-Update: 2024-07-10
 
-CWE-Assigned: YYYY-MM-DD
+CWE-Assigned: 2024-07-11
 
 CWE-Modified: YYYY-MM-DD
 
-Final-Coord: YYYY-MM-DD
+Final-Coord: 2024-07-12
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2024-07-16
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2024-08-08
 
 
 
@@ -338,3 +338,4 @@ COMMUNICATIONS LOG:
 2024-07-10 sent email
 2024-07-09 sent email
 2024-07-10 received email
+2024-07-12 action review
