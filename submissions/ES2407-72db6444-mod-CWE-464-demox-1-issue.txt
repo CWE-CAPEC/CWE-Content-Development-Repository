@@ -1,0 +1,92 @@
+SUBMISSION COMMUNICATION ID: ES2407-72db6444
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-07-20 03:25:40
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #119
+
+MTRACKER: #1117
+
+GITHUBUSER: None
+
+SUBMISSION TYPE: Unknown
+
+NAME: CWE-464 demox doesn't compile
+
+DESCRIPTION:
+
+I discussed Example 1 with a friend and as given it won't even compile. A
+semicolon is missing after foo[4]='\0', but more importantly atoi expects a
+char* while getc provides a char. If you use foo[2]=0; directly, the second
+statement demonstrates the early null termination as intended. 
+
+https://godbolt.org/z/e4P99En6d
+
+RELATED WEAKNESSES:
+
+   Other CWE-464
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-07-20
+
+Ack-Receipt: 2024-08-09
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
