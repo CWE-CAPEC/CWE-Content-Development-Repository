@@ -1,0 +1,135 @@
+SUBMISSION COMMUNICATION ID: ES2407-df1fd8d8
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-07-12 20:19:40
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #118
+
+MTRACKER: #1116
+
+GITHUBUSER: Apple502j
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Conservation of Total Amount of Resources
+
+DESCRIPTION:
+
+The product does not ensure that the total amount of resources, such as the
+total balances of all bank accounts, remain constant over time.
+
+Extended: Several real-world operations require that the total amount of
+resources remain constant. For example, when transferring a certain amount
+of money from bank account A to bank account B, the total amount of money
+in both accounts must remain the same. Failure to observe this principle
+may result in an unexpected increase or decrease in the amount of
+resources.
+
+Note: this weakness is related to, but distinct from, double free or
+failure to update reference count (CWE-911). First, this weakness concerns
+2 resources, not 1 - in the double-free case, the increments for resource
+A's refcount must be equal to the decrements for resource A's refcount; in
+the bank transfer case, the increase of account A's balance must be equal
+to the decrease of account B's balance. Second, the increase and decrease
+usually happens (in fact, must happen in a well-designed system) at the
+same time in this weakness, compared to double-free where several
+operations might intervene between the two.
+
+This can result from design failure, omission during coding, or other
+weaknesses, such as lack of atomicity/improper exception handling, CWE-755
+(e.g. when an exception occurs between increasing balance of A and
+decreasing balance of B).
+
+Although there is no CWE that would describe this neatly, I have identified
+2 possible parents: CWE-669, as this involves incorrect transfer of
+resources (such as money); and CWE-841, as this can result from failure to
+perform a required step. However, if there was a Missing analogue to
+CWE-696, it might be more preferable as CWE-841 focuses on actor's conduct,
+not product's behavior. If this does not get classified under 841, I
+recommend placing this in Business Logic Errors (CWE-840).
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-669
+   ChildOf CWE-841
+   Other CWE-248
+
+REFERENCES:
+
+Title: CVE-2020-12119
+URL: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12119
+
+Title: Attacking an Ethereum L2 with Unbridled Optimism
+URL: https://www.saurik.com/optimism.html
+
+Title: CVE-2022-24916
+URL: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24916
+
+Title: CVE-2024-37153
+URL: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-37153
+
+Title: This Australian Bartender Found an ATM Glitch and Blew $1.6 Million
+URL: https://www.vice.com/en/article/pa5kgg/this-australian-bartender-dan-saunders-found-an-atm-bank-glitch-hack-and-blew-16-million-dollars
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-07-12
+
+Ack-Receipt: 2024-08-09
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
