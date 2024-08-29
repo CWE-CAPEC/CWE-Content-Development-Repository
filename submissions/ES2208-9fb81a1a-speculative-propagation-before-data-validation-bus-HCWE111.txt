@@ -104,7 +104,46 @@ a standard mechanism to supervise the behaviors (or misbehavior) of
 the managers." Is this the core weakness being covered by this
 submission?
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: (1) Might something like "Improper request propagation
+before data reception in write transactions" be more compliant? Feel
+free to suggest any other title more compliant with the CWE naming
+style.
+
+(2) A manager module is defined as a hardware module capable of
+initiating transactions on the bus through its manager
+interface. Examples of manager modules are processors, DMAs, hardware
+accelerators, etc. In the same way, we also use the terminology
+"controller module".
+
+(3) The meaning of speculative here is different from the meaning in
+SPECTRE/MELTDOWN. The interconnect receives a write request from a
+controller initiator (sending the header to the interconnect for
+writing N words of data, with N ranging from 1 to the maximum burst
+length allowed). The request is speculatively propagated by the
+interconnect to the target peripheral through the shared bus before
+the corresponding data are received at the interconnect. The
+propagation of the header reserves to the initiator controller the
+whole bus path between itself and the target peripheral until all of
+the words associated with the request are provided by the
+controller. Here the word "speculatively" refers to the fact that the
+interconnect propagates the request assuming that the controller will
+at some point provide the data, thus releasing the use of the
+bus. Another way to see it is that the interconnect assumes a
+cooperative behavior from the controller, thus implicitly trusting
+that the controller will complete the transaction and release the bus
+for the use from the other controllers.
+
+(4) Your assumptions are correct. I wish to add that the core issue
+relies on a combination of two factors: (i) lack of specification in
+the on-chip communication standard (AXI in the case under analysis),
+and (ii) the cut-through switching policy, a switching methodology for
+high performance commonly implemented at the interconnect level. In
+cut-through, a request is propagated independently on the receipt at
+the interconnect level of the corresponding data. As mentioned in the
+previous comment, if the controller issuing a write request delays the
+provisioning of the corresponding data, the other controllers
+experience delays in accessing the bus. Such delays are capable of
+generating denial of service.
 
 ----------
 
@@ -130,7 +169,14 @@ Lifetime.  We also considered possible association with CWE-179:
 Incorrect Behavior Order: Early Validation, but CWE-772 seems more
 appropriate.  Please let us know if you agree with this assessment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree that CWE-772 can be seen as correlated. However,
+CWE-772 has a different peculiarity as in that case there is an
+explicit release required by the initiator. Instead, in this specific
+case, no explicit release is required from the initiator, rather, the
+release is implicit after the propagation of the data corresponding to
+the request.  I also agree that CWE-179 seems less correlated -- in
+the submitted weakness there are no protection mechanisms against
+dangerous inputs involved.
 
 ----------
 
@@ -160,7 +206,13 @@ understood, it seems like it could apply across a range of
 technologies. This submission might need to be generalized, unless it
 is specific to bus architectures.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: In the references, the weakness is described in detail and
+tested on the AXI standard. However, the weakness is associated with
+general concepts such as cut-through switching and multi-channel bus
+protocols rather than only with the specific standard under analysis
+in the references. Please let me know if you agree with that and we
+could work together on some modifications to make it more general and
+compliant (if required).
 
 
 ----------
@@ -207,3 +259,4 @@ COMMUNICATIONS LOG:
 2022-08-29 sent email
 2023-09-12 publish server
 2024-06-25 sent email
+2024-06-26 received reply
