@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2306-c0b52346
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -44,7 +44,7 @@ harvest-now-decrypt-later, and it creates significant risk for long-term
 data confidentiality.  Additionally, an adversary with a CRQC could forge
 signatures for quantum-vulnerable algorithms, creating a risk for
 signatures with a long data protection period, especially those used to
-sign software imaages in devices where the root of trust cannot be upgraded.
+sign software images in devices where the root of trust cannot be upgraded.
 
 RELATED WEAKNESSES:
 
@@ -76,7 +76,7 @@ Received: 2023-06-23
 
 Ack-Receipt: 2024-01-05
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2024-09-09
 
 Init-Consultation: YYYY-MM-DD
 
@@ -116,3 +116,4 @@ COMMUNICATIONS LOG:
 2024-04-12 received email
 2024-09-04 received email
 2024-09-05 sent email
+2024-09-09 sent email
