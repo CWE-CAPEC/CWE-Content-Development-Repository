@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2406-3f57b6f2
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -26,7 +26,8 @@ NAME: Improper Neutralization of Input Used for LLM Prompting
 
 DESCRIPTION:
 
-Submission Statement:
+Submission Statement.
+
 1. Intended behavior: Large Language Models (LLMs) should distinguish
 between system instructions and user-provided chat inputs
 2. Weakness: LLMs often confuse user inputs with system instructions,
@@ -38,15 +39,18 @@ involving LLM agents or other system components.
 3. Affected resource: Prompt construction process and LLM inference.
 4. Affected technology: Large Language Models
 
-I have included a proposed draft of the CWE entry below:
-Description:
+I have included a proposed draft of the CWE entry below.
+
+Description.
+
 The product uses externally-provided data to build prompts provided to
 large language models (LLMs), but the way these prompts are constructed
 causes the LLM to fail to distinguish between user-supplied inputs and
 developer provided system directives, impacting the confidentiality,
 integrity, and/or availability of the product. 
 
-Extended Description:
+Extended Description.
+
 When prompts are constructed using externally controllable data, it is
 often possible to cause an LLM to ignore the original guidance provided by
 its creators (known as the "system prompt") by inserting malicious
@@ -90,7 +94,7 @@ Received: 2024-06-21
 
 Ack-Receipt: 2024-06-26
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2024-09-09
 
 Init-Consultation: YYYY-MM-DD
 
@@ -127,3 +131,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-06-26 sent email
+2024-09-09 sent email
