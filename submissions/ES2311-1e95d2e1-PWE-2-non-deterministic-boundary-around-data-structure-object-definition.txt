@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2311-1e95d2e1
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-11-14 23:34:30
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.RELS
 
 PUBTRACKER: #43
 
@@ -51,7 +51,33 @@ URL: https://ieeexplore.ieee.org/document/10305625
 
 ACTIVE ISSUES:
 
+SUB.RELS - "Unclear relationships"
 
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The submission highlights CWE-231 and CWE-912 as related
+weaknesses.  CWE-912 doesn't appear to fit because the reference
+discusses hiding malware in data cavities, which is different than
+CWE-912. CWE-231 is not a good fit either because there is nothing
+about extra values not being handled correctly. In a future phase,
+further investigation is needed to determine appropriate
+relationships. Please let us know if you agree with the suggestion.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -63,9 +89,9 @@ Received: 2023-11-14
 
 Ack-Receipt: 2023-12-28
 
-Init-Review: 2024-06-11
+Init-Review: 2024-07-17
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-09-10
 
 Init-Declined: YYYY-MM-DD
 
@@ -100,3 +126,5 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2023-12-28 sent email
+2024-06-10 sent email
+2024-09-10 sent email
