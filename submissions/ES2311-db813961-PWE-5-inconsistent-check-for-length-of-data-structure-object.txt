@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2311-db813961
 
-ACTION TYPE: New Entry
+ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-11-14 23:41:15
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.ACTCHANGE
 
 PUBTRACKER: #44
 
@@ -46,7 +46,45 @@ URL: https://ieeexplore.ieee.org/document/10305625
 
 ACTIVE ISSUES:
 
+SUB.OVERLAP - "Duplicate/Overlap"
 
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: The proposed entry is very similar to CWE-130. The main difference
+lies in the fact that the proposed entry narrows the scope by focusing only
+on the parsers. This will lead to a modification in CWE-130. We will likely
+highlight your proposed submission as one of the observed examples or 
+under mitigations. Please let us know if you agree with the suggestion.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to Stage 3 (Content-Generation)
+until the informational needs are addressed.
+
+Comments: This submission doesn't warrant a new CWE, as we already have
+CWE-130 that covers the topic being proposed. We will certainly incorporate
+what is proposed in this submission within CWE-130 to enhance it's coverage.
+Please let us know if you are okay with that.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -58,9 +96,9 @@ Received: 2023-11-14
 
 Ack-Receipt: 2023-12-28
 
-Init-Review: 2024-07-10
+Init-Review: 2024-07-17
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-09-10
 
 Init-Declined: YYYY-MM-DD
 
@@ -96,3 +134,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2023-12-28 sent email
 2024-07-10 sent email
+2024-09-10 sent email
