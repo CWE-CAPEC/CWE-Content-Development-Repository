@@ -24,7 +24,18 @@ SUBMISSION TYPE: Software
 
 NAME: Improper use of inheritance when overriding methods of an uncontrolled superclass
 
-DESCRIPTION: 
+# The summary consists of only one or two sentences that describe the
+# weakness itself, i.e. the mistake that is made.
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#summary
+
+SUMMARY:
+
+<<put the information here>>
+
+
+EXTENDED DESCRIPTION: 
 
 Improper use of inheritance can not only introduce fragility but break
 a program's security properties. For example, in the case of a
@@ -38,9 +49,458 @@ bypassing the security in the security enforcing subclass. This is not
 a theoretical weakness and has previously impacted classes when
 hashtable and vector were brought into the Java Collections.The
 correct approach in such scenarios is to use composition, not
-inheritance.[CWE Team - its too much to type into this little box, but
-a good example of a forwarding class is in "effective java" book].In
+inheritance. [CWE Team - its too much to type into this little box, but
+a good example of a forwarding class is in "effective java" book]. In
 simple terms, there is no access control with inheritance.
+
+************************************************************************************************
+
+
+MODES OF INTRODUCTION:
+
+# This provides information about how and when a given weakness may be
+# introduced. Information should list the Phase of the development life
+# cycle in which the weakness can introduced. A descriptive Note is
+# optional but preferred.
+# 
+# If the weakness can be introduced in multiple phases, include separate
+# items for each Phase. Copy and paste as needed.
+# 
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
+
+
+Phase: <<PHASE1>>
+
+Note: <<put the information here>>
+
+
+Phase: <<PHASE2>>
+
+Note: <<put the information here>>
+
+
+************************************************************************************************
+
+APPLICABLE PLATFORMS:
+
+# This element specifies the programming languages, operating systems,
+# architectures, and technologies in which this weakness is usually
+# found. If an element does not apply to this submission, you can use
+# the "Not X-Specific" where "X" is the type of element.
+
+# If there are multiple languages, OSes, architectures, and/or
+# technologies, then list each one separately.
+# 
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#platforms
+
+
+# Values for Prevalence: Often, Sometimes, Rarely, Undetermined
+
+# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
+#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
+#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
+#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
+#    Assembly, Other
+
+Language Name: <<LANGUAGE1>>
+Prevalence: <<PREVALENCE1>>
+
+
+Language Name: <<LANGUAGE2>>
+Prevalence: <<PREVALENCE2>>
+
+
+Language Name: <<LANGUAGE3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Language Class: Assembly, Compiled, Hardware Description
+#    Language, Interpreted, Not Language-Specific
+
+Language Class: <<LANGCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Language Class: <<LANGCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Operating System Name: AIX, Android, BlackBerry OS,
+#    Chrome OS, Darwin, FreeBSD, iOS, macOS, NetBSD, OpenBSD, Red Hat,
+#    Solaris, SUSE, tvOS, Ubuntu, watchOS, Windows 9x, Windows
+#    Embedded, Windows NT
+
+Operating System Name: <<OS1>>
+Prevalence: <<PREVALENCE1>>
+
+Operating System Name: <<OS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Operating System Class: Linux, macOS, Unix, Windows,
+#    Not OS-Specific
+
+
+Operating System Class: <<OSCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Operating System Class: <<OSCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Architecture Name: Alpha, ARM, Itanium, Power
+#     Architecture, SPARC, x86, Other
+
+
+Architecture Name: <<ARCH1>>
+Prevalence: <<PREVALENCE1>>
+
+Architecture Name: <<ARCH2>>
+Prevalence: <<PREVALENCE2>>
+
+Architecture Name: <<ARCH3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Architecture Class: Embedded, Microcomputer, Workstation,
+#     Not Architecture-Specific
+
+Architecture Class: <<ARCHCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Architecture Class: <<ARCHCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Technology Name: Web Server, Database Server, Accelerator
+#    Hardware, Analog and Mixed Signal Hardware, Audio/Video Hardware,
+#    Bus/Interface Hardware, Clock/Counter Hardware, Communication
+#    Hardware, Controller Hardware, Memory Hardware, Microcontroller
+#    Hardware, Network on Chip Hardware, Power Management Hardware,
+#    Processor Hardware, Security Hardware, Sensor Hardware, Storage
+#    Hardware, Test/Debug Hardware
+
+
+Technology Name: <<TECH1>>
+Prevalence: <<PREVALENCE1>>
+
+Technology Name: <<TECH2>>
+Prevalence: <<PREVALENCE2>>
+
+Technology Name: <<TECH3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Technology Class: Client Server, Cloud Computing, ICS/OT,
+#     Mainframe, Mobile, N-Tier, SOA, System on Chip, Web Based, Not
+#     Technology-Specific
+	
+Technology Class: <<TECHCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Technology Class: <<TECHCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+************************************************************************************************
+
+COMMON CONSEQUENCES:
+
+# This element will cover the typical negative security impact (or
+# impacts) that occurs if this weakness can be exploited by an
+# attacker. Each Consequence must include a Scope and Impact. Both the
+# Likelihood and Note elements are optional.
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#conseq
+
+
+
+# Values for Scope: Confidentiality, Integrity, Availability, Access
+#    Control, Accountability, Authentication, Authorization,
+#    Non-Repudiation, Other
+
+
+# Values for Impact: Modify Memory, Read Memory, Modify Files or
+#    Directories, Read Files or Directories, Modify Application Data,
+#    Read Application Data, DoS: Crash, Exit, or Restart, DoS:
+#    Amplification, DoS: Instability, DoS: Resource Consumption (CPU),
+#    DoS: Resource Consumption (Memory), DoS: Resource Consumption
+#    (Other), Execute Unauthorized Code or Commands, Gain Privileges
+#    or Assume Identity, Bypass Protection Mechanism, Hide Activities,
+#    Alter Execution Logic, Quality Degradation, Unexpected State,
+#    Varies by Context, Reduce Maintainability, Reduce Performance,
+#    Reduce Reliability, Other
+
+
+# Values for Likelihood: High, Medium, Low, Unknown
+
+
+Scope: <<SCOPE1>>
+
+Impact: <<IMPACT1a>>; <<IMPACT1b>>; <<IMPACT1c>>
+
+Likelihood: <LIKELIHOOD1>>
+
+Note: <<put the information here>>
+
+
+
+
+Scope: <<SCOPE2>>
+
+Impact: <<IMPACT2a>>; <<IMPACT2b>>; <<IMPACT2c>>
+
+Likelihood: <LIKELIHOOD2>>
+
+Note: <<put the information here>>
+
+
+
+
+Scope: <<SCOPE3>>
+
+Impact: <<IMPACT3a>>; <<IMPACT3b>>; <<IMPACT3c>>
+
+Likelihood: <LIKELIHOOD3>>
+
+Note: <<put the information here>>
+
+
+
+************************************************************************************************
+
+# 8. DEMONSTRATIVE EXAMPLES (required)
+
+DEMONSTRATIVE EXAMPLES:
+
+# The entry should have one or more demonstrative examples, but
+# submitters should not put significant effort into these until the CWE
+# team has reviewed and accepted the general concepts behind the
+# submission. Submissions can include example information for either
+# Software, Hardware, or both, as relevant.
+
+# "BAD CODE" and "GOOD CODE" can be code snippets, descriptions of a
+# design or architecture, or an algorithm or protocol.
+#
+# * If you would like to submit diagrams/images to support any
+# weakness descriptive examples, please attach it to the email
+# submission in a png format and reference it by filename where
+# desired. For an example, please see:
+# https://cwe.mitre.org/data/definitions/1256.html
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#demox
+
+# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
+#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
+#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
+#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
+#    Assembly, Other
+
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+---------------
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+
+************************************************************************************************
+
+OBSERVED EXAMPLES:
+
+# Where known, the submission should identify multiple
+# publicly-reported vulnerabilities in real-world products that
+# exhibit the weakness. If possible, include CVE Identifier, its
+# corresponding weblink, and a short summary. If a CVE ID is
+# unavailable, use the Link to point to the reference that explains
+# the vulnerability.
+
+# The ID should be the CVE Identifier, if available. If not available,
+# then supply a title or alternate ID used by the reference.
+
+# The Link should be the URL to the reference that explains the
+# weakness that leads to the vulnerability.
+
+# The ObexSummary should be a brief sentence or two that focuses solely on
+# the weakness in the affected product.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#obex
+
+ID: <<CVE1>>
+
+Link: <<LINK1>>
+
+ObexSummary: <<SUM1>>
+
+
+ID: <<CVE2>>
+
+Link: <<LINK2>>
+
+ObexSummary: <<SUM2>>
+
+
+ID: <<CVE3>>
+
+Link: <<LINK3>>
+
+ObexSummary: <<SUM3>>
+
+
+ID: <<CVE4>>
+
+Link: <<LINK4>>
+
+ObexSummary: <<SUM4>>
+
+
+************************************************************************************************
+
+DETECTION METHODS:
+
+# Detection Methods should identify commonly-used methods of finding
+# the weakness within the product's code, design, etc. This is NOT
+# intended for detecting how the weakness is exploited in a
+# vulnerability. There can be one or more methods provided.
+
+# Values for Method: Automated Analysis, Automated Dynamic Analysis,
+#    Automated Static Analysis, Automated Static Analysis - Source
+#    Code, Automated Static Analysis - Binary or Bytecode, Fuzzing,
+#    Manual Analysis, Manual Dynamic Analysis, Manual Static Analysis,
+#    Manual Static Analysis - Source Code, Manual Static Analysis -
+#    Binary or Bytecode, White Box, Black Box, Architecture or Design
+#    Review, Dynamic Analysis with Manual Results Interpretation,
+#    Dynamic Analysis with Automated Results Interpretation, Formal
+#    Verification, Simulation / Emulation, Other
+
+# Values for Effectiveness: High, Moderate, Opportunistic, Limited, None
+
+Method: <<METHOD1>>
+
+Desc: <<put the information here>>
+
+Effectiveness: <<EFFECTIVENESS1>>
+
+Notes: <<put the information here>>
+
+
+Method: <<METHOD2>>
+
+Desc: <<put the information here>>
+
+Effectiveness: <<EFFECTIVENESS2>>
+
+Notes: <<put the information here>>
+
+
+Method: <<METHOD3>>
+
+Desc: <<put the information here>>
+
+Effectiveness: <<EFFECTIVENESS3>>
+
+Notes: <<put the information here>>
+
+
+
+
+************************************************************************************************
+
+POTENTIAL MITIGATIONS:
+
+# This element should cover one or more techniques that will eliminate
+# and/or reduce the frequency or impact of the weakness. Each mitigation
+# must include a Phase and Description, while the Effectiveness element
+# is optional. A descriptive Effectiveness Note is also optional.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#mitigations
+
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+# Values for Effectiveness: High, Moderate, Limited, Incidental,
+#    Discouraged Common Practice, Defense in Depth, None
+
+
+Phase: <<PHASE1>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT1>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: <<PHASE2>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT2>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: <<PHASE3>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT3>>
+
+Effectiveness Notes: <<put the information here>>
+
 
 
 RELATED WEAKNESSES:
@@ -54,15 +514,27 @@ Title: Effective Java Book - "favour composition over inheritance"
 
 URL: https://books.google.co.uk/books?id=ka2VUBqHiWkC&lpg=PA83&ots=y-HmIhv_S-&dq=composition%20over%20inheritance%20security%20hashtable%20vector&pg=PA83#v=onepage&q=composition%20over%20inheritance%20security%20hashtable%20vector&f=false
 
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+
 
 Title: Composition vs inheritance, mentions security aspect
 
 URL: https://www.journaldev.com/12086/composition-vs-inheritance
 
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+
 
 Title: another Composition vs inheritance article, mentions security aspect
 
 URL: https://mymusing.co/composition-vs-inheritance/
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
 
 
 ACTIVE ISSUES:
