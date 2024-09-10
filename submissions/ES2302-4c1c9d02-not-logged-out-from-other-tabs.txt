@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2302-4c1c9d02
 
-ACTION TYPE: New Entry
+ACTION TYPE: Undetermined
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-02-20 23:23:35
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.GRAMMAR, SUB.ABS.SUBTREE 
 
 PUBTRACKER: #1
 
@@ -48,11 +48,94 @@ URL: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_She
 Title: How to Logout of Multiple Tabs | React Web App
 URL: https://dev.to/demawo/how-to-logout-of-multiple-tabs-react-web-app-2egf
 
-
-
 ACTIVE ISSUES:
 
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: The same submitter has identified another similar issue
+related to CWE-613 (See "ES2303-496ceefb - Failure to Invalidate
+Session when password was changed"). This requires the CWE team to
+determine the most effective course of action for dealing with the
+proposed content and its impact on CWE-613 and other CWEs such as
+CWE-384. This could involve creating new CWEs as children of CWE-613
+or modifying CWE-613, with examples highlighted in this and other
+similar entries. Please indicate if you agree or disagree with this
+comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.GRAMMAR - "Grammar/Spelling issues"
+
+Description: The submission has multiple occurrences of errors with
+grammar, spelling, etc. that should be fixed before publication.
+
+Resolution: The submission will not be allowed to progress to later phases
+if the grammar or spelling problems are so significant that they are likely
+to cause difficulty for readers to understand the weakness. If the issues
+are minor, then the submission could progress.	However, no submission can
+be published without grammar and spelling checks. American English is used
+for spelling.
+
+Comments: The existing description does not adhere to the standard
+rules of American English grammar and style. Here's a proposed
+revision for enhanced clarity and correctness. "During the logout
+process, the user is not logged out from other tabs opened in the same
+browser window from the same app or web application. This can lead the
+user to believe that all their data is secure, eliminating the need or
+desire to check other tabs. However, a malicious actor (another user
+of the device - such as in a public library, organization/company,
+etc.) can still access sensitive data if they check other tabs after
+the logout action. This issue is particularly risky for services like
+invoices and payments, or any other situations that contain sensitive
+data. This weakness is dangerous overall, because even data that is
+not initially sensitive can be useful to a malicious actor, depending
+on the situation." Please let us know if you agree or disagree with
+the newly proposed description.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or full) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: CWE does not currently have a fleshed-out subtree related to
+session weaknesses, so more research might be needed to determine if
+the CWE hierarchy needs adjustments. Please indicate if you agree or
+disagree with this comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -64,9 +147,9 @@ Received: 2023-02-20
 
 Ack-Receipt: 2023-02-23
 
-Init-Review: 2024-06-04
+Init-Review: 2024-06-11
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-09-10
 
 Init-Declined: YYYY-MM-DD
 
@@ -100,3 +183,5 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2023-02-23 sent email
 2023-09-12 publish server
+2024-06-04 sent email
+2024-09-10 sent email
