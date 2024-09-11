@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2406-3f57b6f2
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -186,7 +186,7 @@ Ack-Receipt: 2024-06-26
 
 Init-Review: 2024-09-09
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-09-11
 
 Init-Declined: YYYY-MM-DD
 
@@ -222,3 +222,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-06-26 sent email
 2024-09-09 sent email
+2024-09-11 sent email
