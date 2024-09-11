@@ -20,8 +20,6 @@ MTRACKER: #943
 
 GITHUBUSER: 
 
-OTHER CONTACTS: murugiah.souppaya@nist.gov, mcgrew@cisco.com, JDOMBROWSKI@mitre.org, nmcnab@mitre.org, pgrayeli@mitre.org
-
 SUBMISSION TYPE: Hardware, Software
 
 NAME: Use of a Quantum-Vulnerable Cryptographic Algorithm
