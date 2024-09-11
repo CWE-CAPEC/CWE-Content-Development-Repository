@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2306-c0b52346
 
 ACTION TYPE: Undetermined
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -296,7 +296,7 @@ Ack-Receipt: 2024-01-05
 
 Init-Review: 2024-09-09
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-09-11
 
 Init-Declined: YYYY-MM-DD
 
@@ -335,3 +335,4 @@ COMMUNICATIONS LOG:
 2024-09-04 received email
 2024-09-05 sent email
 2024-09-09 sent email
+2024-09-11 sent email
