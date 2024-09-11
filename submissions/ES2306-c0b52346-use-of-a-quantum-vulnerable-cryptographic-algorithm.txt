@@ -1,6 +1,6 @@
 SUBMISSION COMMUNICATION ID: ES2306-c0b52346
 
-ACTION TYPE: New Entry
+ACTION TYPE: Undetermined
 
 SUBMISSION STATUS: Init-Review
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-06-23 21:01:10
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ATTACK, SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.NEWTECH, SUB.COORD, SUB.ACTION
 
 PUBTRACKER: #60
 
@@ -64,9 +64,229 @@ URL: https://www.nccoe.nist.gov/sites/default/files/2023-12/pqc-migration-nist-s
 
 ACTIVE ISSUES:
 
+SUB.COORD - "Requires extensive coordination"
+
+Description: The submission will require or is currently undergoing close
+coordination, discussion, and debate between multiple parties with
+different perspectives and opinions.  The communication could be taking
+place in CDR itself, or outside of CDR.  As a result, it might take longer
+to move the submission to later phases, although the submission is expected
+to be more robust and well-defined as a result of this coordination.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Det-Consultation phases until sufficient consensus has been reached, or if
+the CWE Team decides to move the submission to the next phase.
+
+Comments: Due to the number of concerns with this submission and
+active interest from multiple parties, progress for this submission is
+likely to require extensive coordination before rough consensus can be
+reached. Also, the CWE Team does not have any Subject Matter Experts
+(SME) in this topic but plans to engage with other MITRE staff to
+provide supplementary expertise. Please acknowledge this need for
+additional coordination.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.NEWTECH - "New/Emerging Technology"
+
+Description: The submission is related to a new or emerging technology that
+is not well-understood from a weakness perspective, which can cause real or
+perceived gaps in CWE that require extra effort and time to analyze.
+Typically, for new/emerging technologies, early vulnerability discovery and
+research does not focus on root cause analysis (i.e., weakness
+identification). Instead, the focus is on other areas such as attacks and
+exploitation methods, technical impacts, threats, mitigations, or other
+concerns.  As a result, industry understanding can be limited, effectively
+requiring research or focused efforts by SMEs to understand the underlying
+weaknesses.  Rapidly-changing, diverse terminology and technology can
+further complicate understanding. Finally, there might not be enough
+real-world examples with sufficient details from which weakness patterns
+may be discovered.  For this reason, it can be difficult to determine
+whether CWE entries already cover the topics of concern, and which gaps (if
+any) exist.  As of May 2024, some new or emerging technologies include
+AI/ML, cryptocurrency/blockchain, post-quantum cryptography, and
+large-scale architectures with many components that have different trust
+boundaries.  In previous years, new/emerging domains for CWE included
+hardware, cloud, and ICS/OT.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Det-Consultation phases until sufficient attempts have been made to
+understand the weaknesses commonly seen in new or emerging technologies, or
+if the CWE Team decides to move the submission to the next phase.  Analysis
+could include analyzing well-known attacks to understand the weaknesses
+that enable the attacks to succeed; analysis of mitigations to understand
+how the underlying weaknesses are perceived; and/or other methods.  Such
+analysis might require consultation with a variety of Subject Matter
+Experts (SMEs).
+
+Comments: Quantum computing and associated cryptographic exploits are
+relatively new and, by their nature, effectively theoretical. This may
+pose complications in analyzing the submission to determine the
+underlying weakness(es) and fit them into the existing CWE
+hierarchical structure. If there is published weakness-oriented
+analysis that highlights the features of algorithms that are now
+quantum-vulnerable, please provide them, as they would be helpful in
+guiding future work.  Please indicate your opinion on this assessment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ATTACK - "Too attack-focused"
+
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: While the name and description are weakness-oriented, this
+submission could be restated as "use of an algorithm that is
+vulnerable to any kind of attack enabled by quantum computing."
+Ideally, CWE would cover the variety of weaknesses in design or
+implementation that enable attacks to occur, but cryptography seems to
+be an attack-oriented field. This submission seems similar to how
+rainbow tables made password cracking more feasible (as mentioned in
+CWE-916: Use of Password Hash With Insufficient Computational
+Effort). There was an improvement in the attack space, but other
+attacks were also relevant to the hash-computation CWE. It is not
+clear whether post-quantum computing attacks are discrete enough from
+other attacks related to computing resources. Additional effort will
+be required.  Please let us know whether you agree or disagree with
+these comments.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: It will take some effort to determine the best way to update
+CWE to address PQC concerns.  This submission effectively includes
+multiple weaknesses that happen to be easily broken by post-quantum
+computing.  Creating a new CWE-327 child for "use of a
+quantum-vulnerable algorithm" is one approach, but it seems likely
+that many other existing CWEs would also be relevant to PQC.  Creating
+a new entry from this submission as-is could lead to cases in which
+the same problem could logically map to multiple CWE entries, which is
+not ideal, since CWE is intended to provide unambiguous, mutually
+exclusive entries in which a problem should only be mappable to one
+CWE (ignoring chains).  For example, the NCCoE paper identifies some
+digital signature algorithms that are considered vulnerable.
+Signatures are also mentioned within CWE-1240: Use of a Cryptographic
+Primitive with a Risky Implementation.  (Note that on the surface, use
+of a quantum-vulnerable digital signature algorithm would seem related
+to CWE-347: Improper Verification of Cryptographic Signature, but
+CWE-347 focuses on errors when performing signature verification - not
+issues in the verification itself.) Please let us know whether you
+agree or disagree with these comments.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or detailed) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: CWE's hierarchical structure is not well-organized with
+respect to cryptography and would benefit from weakness-focused input
+by a variety of Subject Matter Experts. Until cryptography-related CWE
+weaknesses can be improved more systematically, it is highly likely
+that any new entries will have some limitations in how they are used
+to map to existing vulnerabilities and/or how they can provide clarity
+to developers about cryptography weaknesses.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ACTION - "Unable to determine action"
+
+Description: It is not clear what action to perform based on the
+submission, e.g., create new entry, update existing entry, etc.
+
+Resolution: The submission cannot progress to the Internal-Update stage
+until the relevant actions(s) are identified.
+
+Comments: A major overhaul of CWE's hierarchical structure could
+ultimately simplify the task of handling PQC concerns within CWE, but
+that that would take significant time and effort, and there might be
+other ways to handle PQC sooner. Discussion will be necessary to
+determine whether it is best to create a single child under CWE-327,
+to modify existing CWE entries to ensure that post-quantum
+considerations are included, or possibly both. The following is a
+non-exhaustive set of CWEs that would require further investigation:
+CWE-327, CWE-326, CWE-1240, and their descendants.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
 
 
 RESOLVED ISSUES:
+
+SCOPE.NOTREAL - "Not a real-world issue"
+
+Description: The issue has not happened and cannot occur in real-world
+software or other electronic logic, and/or has no actual security
+implications.
+
+Resolution: As of January 2023, the submission will be rejected or delayed
+pending close review, possibly including community engagement.
+
+Comments: While it is unknown how feasible it is to construct a
+Cryptographically Relevant Quantum Computer (CRQC), this is a
+potential problem that is taken seriously by organizations with
+long-term risk concerns, and concrete real-world actions are being
+taken to replace quantum-vulnerable algorithms with other
+algorithms. As such, even though the issue is not currently exploited,
+this issue should not be prevented from being added to CWE.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
+----------
+
+SCOPE.NOMITS - "No actionable mitigations"
+
+Description: There are no actionable mitigations available to the
+developer/designer/manufacturer to prevent or reduce the weakness.
+
+Resolution: Submissions will be reviewed on a case-by-case basis, delayed,
+and possibly cited as examples until this exclusion is finalized after
+extensive community feedback.
+
+Comments: While there may be debate about the feasibility of exploits
+against quantum-vulnerable algorithms, actionable migitations have
+been proposed. Therefore this scope exclusion does not apply.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
+----------
 
 
 
