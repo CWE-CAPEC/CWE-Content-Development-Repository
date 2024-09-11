@@ -1,0 +1,108 @@
+SUBMISSION COMMUNICATION ID: ES2409-11b3559c
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-09-02 04:25:40
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #122
+
+MTRACKER: #1160
+
+GITHUBUSER: sauvainr
+
+SUBMISSION TYPE: Unknown
+
+NAME: CWE-300 mod - add DAST detection method
+
+DESCRIPTION:
+
+Suggest to add DAST detection method.
+
+The CWE-300 current Detection Methods with only "Automated Static Analysis"
+with detection "High" is likely inaccurate and its generic description not
+supporting actual detection implementation.
+
+From a server channel perspective:
+- Encryption is usually done by an upfront network appliance
+(load-balancer/firewall) to handle TLS termination and lake of which cannot
+be detected by SAST.
+- Lack of authentication/authorization is usually not detected by SAST
+tools due to the variety of frameworks.
+For example, related weaknesses (eg CWE-862/863) includes DAST to detect
+missing encryption/verification. Although fault positive might be found on
+intended public endpoints, many tools enable schema based (eg OpenAPI
+swagger) definition of which endpoints are intended secure.
+
+From a Client channel perspective, while many elements are in the control
+scope of the remote target which cannot be confirmed in the client
+application the channel verification is often in the scope of CWE-287 for
+TLS based communication. Therefore, it might be relevant to add reference
+to that weakness.
+
+RELATED WEAKNESSES:
+
+   Other CWE-300
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-09-02
+
+Ack-Receipt: 2024-09-11
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
