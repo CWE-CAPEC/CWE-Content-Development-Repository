@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-06-21 17:57:12
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.COORD, SUB.NEWTECH, SUB.RELS
 
 PUBTRACKER: #113
 
@@ -81,6 +81,96 @@ URL: https://arxiv.org/abs/2302.12173
 
 
 ACTIVE ISSUES:
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The submission suggests this should be a child of CWE-94,
+but CWE-77 (command injection) is probably more appropriate. Please
+note if you agree with this decision. This will not prevent movement
+to the next phase.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.COORD - "Requires extensive coordination"
+
+Description: The submission will require or is currently undergoing close
+coordination, discussion, and debate between multiple parties with
+different perspectives and opinions.  The communication could be taking
+place in CDR itself, or outside of CDR.  As a result, it might take longer
+to move the submission to later phases, although the submission is expected
+to be more robust and well-defined as a result of this coordination.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Det-Consultation phases until sufficient consensus has been reached, or if
+the CWE Team decides to move the submission to the next phase.
+
+Comments: This submission is planned to undergo active review and
+development within the CWE AI Working Group. Please acknowledge this
+note.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.NEWTECH - "New/Emerging Technology"
+
+Description: The submission is related to a new or emerging technology that
+is not well-understood from a weakness perspective, which can cause real or
+perceived gaps in CWE that require extra effort and time to analyze.
+Typically, for new/emerging technologies, early vulnerability discovery and
+research does not focus on root cause analysis (i.e., weakness
+identification). Instead, the focus is on other areas such as attacks and
+exploitation methods, technical impacts, threats, mitigations, or other
+concerns.  As a result, industry understanding can be limited, effectively
+requiring research or focused efforts by SMEs to understand the underlying
+weaknesses.  Rapidly-changing, diverse terminology and technology can
+further complicate understanding. Finally, there might not be enough
+real-world examples with sufficient details from which weakness patterns
+may be discovered.  For this reason, it can be difficult to determine
+whether CWE entries already cover the topics of concern, and which gaps (if
+any) exist.  As of May 2024, some new or emerging technologies include
+AI/ML, cryptocurrency/blockchain, post-quantum cryptography, and
+large-scale architectures with many components that have different trust
+boundaries.  In previous years, new/emerging domains for CWE included
+hardware, cloud, and ICS/OT.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Det-Consultation phases until sufficient attempts have been made to
+understand the weaknesses commonly seen in new or emerging technologies, or
+if the CWE Team decides to move the submission to the next phase.  Analysis
+could include analyzing well-known attacks to understand the weaknesses
+that enable the attacks to succeed; analysis of mitigations to understand
+how the underlying weaknesses are perceived; and/or other methods.  Such
+analysis might require consultation with a variety of Subject Matter
+Experts (SMEs).
+
+Comments: Since AI/ML weakness classification is new and the focus has
+been on attacks on mitigations, typically there can be complications
+during analysis. However, this submission is in close alignment with
+work by CWE Team members and AI WG members in the past few months, so
+problems are not anticipated. Please acknowledge that you have seen
+this comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 
 
