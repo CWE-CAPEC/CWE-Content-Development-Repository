@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2312-c2337436
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Det-Requested
 
 AFFECTED CWES: 
 
@@ -735,7 +735,7 @@ Init-Declined: YYYY-MM-DD
 
 Init-Accepted: 2024-06-06
 
-Det-Requested: YYYY-MM-DD
+Det-Requested: 2024-09-11
 
 Det-Received: YYYY-MM-DD
 
@@ -775,3 +775,4 @@ COMMUNICATIONS LOG:
 2024-04-12 received email
 2025-05-16 sent email
 2024-06-06 sent email
+2024-09-01 sent email
