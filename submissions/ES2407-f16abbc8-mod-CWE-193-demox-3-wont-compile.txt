@@ -1,0 +1,90 @@
+SUBMISSION COMMUNICATION ID: ES2407-f16abbc8
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-07-20 03:35:21
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #120
+
+MTRACKER: #1118
+
+GITHUBUSER: None
+
+SUBMISSION TYPE: Unknown
+
+NAME: CWE-193 demox 3 won't compile
+
+DESCRIPTION:
+
+Example 3 won't compile. getc presumably from stdio.h requires 1 argument.
+'EOF' is a multi-character constant and should be the macro EOF. 
+https://godbolt.org/z/sW5YxaajP
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-193
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-07-20
+
+Ack-Receipt: 2024-09-11
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
