@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2406-3f57b6f2
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-06-21 17:57:12
 
-ISSUES: yes/active
+ISSUES: no
 
-ISSUE DETAILS: SUB.COORD, SUB.NEWTECH, SUB.RELS
+ISSUE DETAILS: 
 
 PUBTRACKER: #113
 
@@ -65,7 +65,7 @@ untrusted data should also be considered potentially malicious.
 
 RELATED WEAKNESSES:
 
-   ChildOf CWE-94
+   ChildOf CWE-77
    Other CWE-1039
 
 REFERENCES:
@@ -81,6 +81,10 @@ URL: https://arxiv.org/abs/2302.12173
 
 
 ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
 
 SUB.RELS - "Unclear relationships"
 
@@ -102,7 +106,8 @@ but CWE-77 (command injection) is probably more appropriate. Please
 note if you agree with this decision. This will not prevent movement
 to the next phase.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: We agree that CWE-77 is a fitting parent CWE for our submission - 
+we were between CWE-77 and CWE-94 originally, so this is no surprise.
 
 ----------
 
@@ -123,7 +128,7 @@ Comments: This submission is planned to undergo active review and
 development within the CWE AI Working Group. Please acknowledge this
 note.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Acknowledged!
 
 
 ----------
@@ -167,16 +172,10 @@ work by CWE Team members and AI WG members in the past few months, so
 problems are not anticipated. Please acknowledge that you have seen
 this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Acknowledged!
 
 
 ----------
-
-
-
-RESOLVED ISSUES:
-
-
 
 TIMELINE:
 
@@ -190,7 +189,7 @@ Init-Consultation: 2024-09-11
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-09-17
 
 Det-Requested: YYYY-MM-DD
 
@@ -223,3 +222,5 @@ COMMUNICATIONS LOG:
 2024-06-26 sent email
 2024-09-09 sent email
 2024-09-11 sent email
+2024-09-12 received CDR Comment
+2024-09-17 sent email
