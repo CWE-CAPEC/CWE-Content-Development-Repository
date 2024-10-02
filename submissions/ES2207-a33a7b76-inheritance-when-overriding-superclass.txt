@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2207-a33a7b76
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Det-Requested
 
 AFFECTED CWES: 
 
@@ -626,7 +626,7 @@ Init-Accepted: 2024-04-01
 
 Init-Declined: YYYY-MM-DD
 
-Det-Requested: YYYY-MM-DD
+Det-Requested: 2024-10-02
 
 Det-Received: YYYY-MM-DD
 
@@ -654,3 +654,4 @@ COMMUNICATIONS LOG:
 2024-01-16 sent email
 2024-01-16 sent email
 2024-04-01 sent email
+2024-10-02 sent email
