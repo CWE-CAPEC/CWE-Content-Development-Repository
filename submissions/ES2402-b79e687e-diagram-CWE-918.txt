@@ -2,15 +2,15 @@ SUBMISSION COMMUNICATION ID: ES2402-b79e687e
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-918
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-02-29 12:28:33
 
-ISSUES: not-analyzed
+ISSUES: no
 
 ISSUE DETAILS: 
 
@@ -56,7 +56,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-09-09
 
 Det-Requested: YYYY-MM-DD
 
@@ -68,11 +68,11 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2024-10-14
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2024-10-18
 
 Final-Coord: YYYY-MM-DD
 
