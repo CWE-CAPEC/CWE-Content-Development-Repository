@@ -69,14 +69,58 @@ MODES OF INTRODUCTION:
 # https://cwe.mitre.org/community/submissions/guidelines.html#introduction
 
 
-Phase: <<PHASE1>>
+Phase: Architecture and Design
 
-Note: <<put the information here>>
+Note: LLM-connected applications that do not distinguish between
+trusted and untrusted input may introduce this weakness. If such
+systems are designed in a way where trusted and untrusted instructions
+are provided to the model for inference without differentiation, they
+may be susceptible to prompt injection and similar attacks.
 
 
-Phase: <<PHASE2>>
+Phase: Implementation
 
-Note: <<put the information here>>
+Note: When designing the application, input validation should be
+applied to user input used to construct LLM system prompts. Input
+validation should focus on mitigating well-known software security
+risks (in the event the LLM is given agency to use tools or perform
+API calls) as well as preventing LLM-specific syntax from being
+included (such as markup tags or similar).
+
+Phase: Design and Implementation
+
+Note: <<put the information here>> What is the perspective? – person
+creating AI, or using AI… this might be relevant for modes of
+introduction.
+
+
+Phase: Training?
+
+Note: AI dev lifecycle... this is part of development (do we need to
+clarify in CWE Schema); isomorphic to development.
+
+
+Phase: Training (system config?)
+
+Note: Limited because difficulty/costs, fine-tuning a model (again,
+sys config?) would also be in dev phase and easier to manage.
+
+
+Phase: System Configuration
+
+Note: model parameters that can be manipulated, potential for better
+configs than others based on context.
+
+
+Phase: Integration
+
+Note: This weakness can occur when integrating the model into the software.
+
+
+Phase: Bundling
+
+Note: This weakness can occur when bundling the model with the software.
+
 
 
 ************************************************************************************************
@@ -231,18 +275,20 @@ COMMON CONSEQUENCES:
 
 Scope: <<SCOPE1>>
 
-Impact: <<IMPACT1a>>; <<IMPACT1b>>; <<IMPACT1c>>
+Impact: Execute Unauthorized Code or Commands; Varies by Context
 
 Likelihood: <LIKELIHOOD1>>
 
-Note: <<put the information here>>
+Note: The consequences are entirely contextual, depending on the
+system that the model is integrated into. For example, the consequence
+could include output that would not have been desired by the model
+designer, such as using racial slurs.  On the other hand, if the
+output is attached to a code interpreter, remote code execution (RCE)
+could result.
 
+Scope: Confidentiality
 
-
-
-Scope: <<SCOPE2>>
-
-Impact: <<IMPACT2a>>; <<IMPACT2b>>; <<IMPACT2c>>
+Impact: Read Application Data
 
 Likelihood: <LIKELIHOOD2>>
 
@@ -251,14 +297,24 @@ Note: <<put the information here>>
 
 
 
-Scope: <<SCOPE3>>
+Scope: Integrity
 
-Impact: <<IMPACT3a>>; <<IMPACT3b>>; <<IMPACT3c>>
+Impact: Modify Application Data; Execute Unauthorized Code or Commands
 
 Likelihood: <LIKELIHOOD3>>
 
-Note: <<put the information here>>
+Note: The extent to which integrity can be impacted is dependent on
+the LLM application use case.
 
+
+Scope: Access Control
+
+Impact: Read Application Data; Modify Application Data; Gain Privileges or Assume Identity
+
+Likelihood: <LIKELIHOOD3>>
+
+Note: The extent to which access control can be impacted is dependent
+on the LLM application use case.
 
 
 ************************************************************************************************
@@ -294,7 +350,11 @@ DEMONSTRATIVE EXAMPLES:
 
 INTRO TEXT:
 
-<<put the information here>>
+[Use the same demonstrative example as the "CWE Differentiator"
+prompt-injection example from CWE-77: Command Injection:
+
+https://cwe.mitre.org/data/definitions/77.html#Demonstrative_Examples
+
 
 BAD CODE:
 LANGUAGE: <<LANGUAGE>>
@@ -358,32 +418,42 @@ OBSERVED EXAMPLES:
 # See details at:
 # https://cwe.mitre.org/community/submissions/guidelines.html#obex
 
-ID: <<CVE1>>
+ID: CVE-2023-32786
 
-Link: <<LINK1>>
+Link: https://www.cve.org/CVERecord?id=CVE-2023-32786
 
-ObexSummary: <<SUM1>>
-
-
-ID: <<CVE2>>
-
-Link: <<LINK2>>
-
-ObexSummary: <<SUM2>>
+ObexSummary: In Langchain through 0.0.155, prompt injection allows an
+attacker to force the service to retrieve data from an arbitrary URL,
+essentially providing SSRF and potentially injecting content into
+downstream tasks.
 
 
-ID: <<CVE3>>
+ID: CVE-2024-5184
 
-Link: <<LINK3>>
+Link: https://www.cve.org/CVERecord?id=CVE-2024-5184
 
-ObexSummary: <<SUM3>>
+ObexSummary: The EmailGPT service contains a prompt injection
+vulnerability. The service uses an API service that allows a malicious
+user to inject a direct prompt and take over the service
+logic. Attackers can exploit the issue by forcing the AI service to
+leak the standard hard-coded system prompts and/or execute unwanted
+prompts. When engaging with EmailGPT by submitting a malicious prompt
+that requests harmful information, the system will respond by
+providing the requested data. This vulnerability can be exploited by
+any individual with access to the service.
 
 
-ID: <<CVE4>>
 
-Link: <<LINK4>>
+ID: CVE-2024-5565
 
-ObexSummary: <<SUM4>>
+Link: https://www.cve.org/CVERecord?id=CVE-2024-5565
+
+ObexSummary: The Vanna library uses a prompt function to present the
+user with visualized results, it is possible to alter the prompt using
+prompt injection and run arbitrary Python code instead of the intended
+visualization code. Specifically - allowing external input to the
+library's "ask" method with "visualize" set to True (default behavior)
+leads to remote code execution.
 
 
 
@@ -408,27 +478,27 @@ DETECTION METHODS:
 
 # Values for Effectiveness: High, Moderate, Opportunistic, Limited, None
 
-Method: <<METHOD1>>
+Method: Dynamic Analysis with Manual Results Interpretation
 
-Desc: <<put the information here>>
+Desc: Use known techniques for prompt injection and other attacks, and adjust the attacks to be more specific to the model or system.
 
 Effectiveness: <<EFFECTIVENESS1>>
 
 Notes: <<put the information here>>
 
 
-Method: <<METHOD2>>
+Method: Dynamic Analysis with Automated Results Interpretation
 
-Desc: <<put the information here>>
+Desc: Use known techniques for prompt injection and other attacks, and adjust the attacks to be more specific to the model or system.
 
 Effectiveness: <<EFFECTIVENESS2>>
 
 Notes: <<put the information here>>
 
 
-Method: <<METHOD3>>
+Method: Architecture or Design Review
 
-Desc: <<put the information here>>
+Desc: Review of the product design can be effective, but it works best in conjunction with dynamic analysis.
 
 Effectiveness: <<EFFECTIVENESS3>>
 
@@ -459,29 +529,45 @@ POTENTIAL MITIGATIONS:
 #    Discouraged Common Practice, Defense in Depth, None
 
 
-Phase: <<PHASE1>>
+Phase: Architecture & Design
 
-Description: <<put the information here>>
+Description: LLM-enabled applications should be designed to ensure
+proper sanitization of user-controllable input, ensuring that no
+intentionally misleading or dangerous characters can be
+included. Additionally, they should be designed in a way that ensures
+that user-controllable input is identified as untrusted and
+potentially dangerous.
 
-Effectiveness: <<EFFECT1>>
-
-Effectiveness Notes: <<put the information here>>
-
-
-Phase: <<PHASE2>>
-
-Description: <<put the information here>>
-
-Effectiveness: <<EFFECT2>>
+Effectiveness: High
 
 Effectiveness Notes: <<put the information here>>
 
 
-Phase: <<PHASE3>>
+Phase: Implementation
 
-Description: <<put the information here>>
+Description: LLM prompts should be constructed in a way that effectively differentiates between user-supplied input and developer-constructed system prompting to reduce the chance of model confusion at inference-time.
 
-Effectiveness: <<EFFECT3>>
+Effectiveness: Moderate
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: Testing
+
+Description: Once an LLM system has been constructed, thorough testing should be conducted to ensure that this weakness is not present. Due to the non-deterministic nature of prompting LLMs, it is necessary to perform testing of the same test case several time in order to ensure that troublesome behavior is not possible. Additionally, testing should be performed each time a new model is used or a model’s weights are updated
+
+Effectiveness: High
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: Deployment/Operation
+
+Description: Use components that operate externally to the system to
+monitor the output and act as a moderator. These components are called
+different terms, such as supervisors or guardrails.
+
+Effectiveness: <<EFFECT4>>
 
 Effectiveness Notes: <<put the information here>>
 
@@ -544,38 +630,29 @@ REFERENCES:
 
 Title: OWASP Top 10 for Large Language Model Applications - LLM01
 
-URL: https://owasp.org/www-project-top-10-for-large-language-model-applications/Archive/0_1_vulns/Prompt_Injection.html
+URL: https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf
 
-Author: <<put the information here>>
+Author: OWASP
 
-Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+Date: October 16, 2023
 
 
 Title: IBM - What is a prompt injection attack?
 
 URL: https://www.ibm.com/topics/prompt-injection
 
-Author: <<put the information here>>
+Author: Matthew Kosinski, Amber Forrest
 
-Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+Date: 26 March 2024
 
 
-Title: Greshake et al - Indirect Prompt Injection
+Title: Indirect Prompt Injection
 
 URL: https://arxiv.org/abs/2302.12173
 
-Author: <<put the information here>>
+Author: Kai Greshake, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, Mario Fritz
 
-Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
-
-
-Title: <<put the information here>>
-
-URL: <<put the information here>>
-
-Author: <<put the information here>>
-
-Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
+Date: May 5, 2023
 
 
 ACTIVE ISSUES:
