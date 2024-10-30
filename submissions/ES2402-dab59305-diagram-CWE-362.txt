@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-dab59305
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Internal-Update
 
 AFFECTED CWES: 
 
@@ -10,7 +10,7 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-02-29 12:29:47
 
-ISSUES: not-analyzed
+ISSUES: yes/resolved
 
 ISSUE DETAILS: 
 
@@ -42,6 +42,18 @@ ACTIVE ISSUES:
 
 RESOLVED ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The CWE Team made various suggestions for changes to the
+original image.
+
+Response: [Submitter coordinated with the CWE Team to modify the
+original image.]
 
 
 TIMELINE:
@@ -50,13 +62,13 @@ Received: 2024-02-29
 
 Ack-Receipt: 2024-04-04
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2024-06-27
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-08-26
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-10-22
 
 Det-Requested: YYYY-MM-DD
 
@@ -68,7 +80,7 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2024-10-22
 
 CWE-Assigned: YYYY-MM-DD
 
@@ -87,3 +99,5 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-04-04 sent email
+2024-08-26 sent email
+2024-09-01 received email
