@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2312-c2337436
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Det-Requested
+SUBMISSION STATUS: Det-Received
 
 AFFECTED CWES: 
 
@@ -33,8 +33,13 @@ NAME: Lack of Feedback for Unexecuted Operations Across System Interfaces
 # See details at:
 # https://cwe.mitre.org/community/submissions/guidelines.html#summary
 
-SUMMARY: <<put the information here>>
+SUMMARY:
 
+The weakness occurs when systems discard or ignore operations without
+providing feedback, error handling, or logging, leading to potential
+data loss, security vulnerabilities, and system instability. It
+highlights the silent omission of feedback in cases where operations
+fail or are unexecuted due to system constraints or design choices.
 
 
 EXTENDED DESCRIPTION:
@@ -45,7 +50,7 @@ system constraints or design decisions. This weakness is not limited
 to any specific technology or context, but can occur in any system
 where operations can be discarded without feedback or notification. A
 primary example of this weakness is found in the OpenTitan
-System-on-Chip’s scmi_reg_top module, where write requests to reserved
+System-on-Chip's scmi_reg_top module, where write requests to reserved
 addresses are correctly identified as errors and discarded, but
 without any feedback provided.
 
@@ -81,34 +86,20 @@ breakdowns.
 
 MODES OF INTRODUCTION:
 
-# This provides information about how and when a given weakness may be
-# introduced. Information should list the Phase of the development life
-# cycle in which the weakness can introduced. A descriptive Note is
-# optional but preferred.
-# 
-# If the weakness can be introduced in multiple phases, include separate
-# items for each Phase. Copy and paste as needed.
-# 
+Phase: Architecture and Design
 
-# Values for Phase: Policy, Requirements, Architecture and Design,
-#    Implementation, Build and Compilation, Testing, Documentation,
-#    Bundling, Distribution, Installation, System Configuration,
-#    Operation, Patching and Maintenance, Porting, Integration,
-#    Manufacturing, Decommissioning and End-of-Life
+Note: This weakness can be introduced during the architecture and
+design phase when the system does not incorporate proper mechanisms
+for error reporting or feedback for discarded operations, such as when
+handling reserved addresses or unexecuted instructions.
 
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
+Phase: Implementation
 
+Note: It can also arise during implementation if developers fail to
+include appropriate feedback or logging for critical operations. This
+leads to silent failures in certain scenarios like interrupt handling
+or network buffer overflows.
 
-Phase: <<PHASE1>>
-
-Note: <<put the information here>>
-
-
-Phase: <<PHASE2>>
-
-Note: <<put the information here>>
 
 
 ************************************************************************************************
@@ -135,26 +126,25 @@ APPLICABLE PLATFORMS:
 #    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
 #    Assembly, Other
 
-Language Name: <<LANGUAGE1>>
-Prevalence: <<PREVALENCE1>>
+Language Name: C
+Prevalence: Often
 
 
-Language Name: <<LANGUAGE2>>
-Prevalence: <<PREVALENCE2>>
+Language Name: C++
+Prevalence: Often
 
 
-Language Name: <<LANGUAGE3>>
-Prevalence: <<PREVALENCE3>>
-
+Language Name: Verilog
+Prevalence: Often
 
 # Values for Language Class: Assembly, Compiled, Hardware Description
 #    Language, Interpreted, Not Language-Specific
 
-Language Class: <<LANGCLASS1>>
-Prevalence: <<PREVALENCE1>>
+Language Class: Hardware Description Language
+Prevalence: Often
 
-Language Class: <<LANGCLASS2>>
-Prevalence: <<PREVALENCE2>>
+Language Class: Not Language-Specific
+Prevalence: Often
 
 
 # Values for Operating System Name: AIX, Android, BlackBerry OS,
@@ -162,46 +152,36 @@ Prevalence: <<PREVALENCE2>>
 #    Solaris, SUSE, tvOS, Ubuntu, watchOS, Windows 9x, Windows
 #    Embedded, Windows NT
 
-Operating System Name: <<OS1>>
-Prevalence: <<PREVALENCE1>>
+Operating System Name: Embedded
+Prevalence: Sometimes
 
-Operating System Name: <<OS2>>
-Prevalence: <<PREVALENCE2>>
-
+Operating System Name: Ubuntu
+Prevalence: Sometimes
 
 # Values for Operating System Class: Linux, macOS, Unix, Windows,
 #    Not OS-Specific
 
 
-Operating System Class: <<OSCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Operating System Class: <<OSCLASS2>>
-Prevalence: <<PREVALENCE2>>
+Operating System Class: Not OS Specific
+Prevalence: Often
 
 
 # Values for Architecture Name: Alpha, ARM, Itanium, Power
 #     Architecture, SPARC, x86, Other
 
 
-Architecture Name: <<ARCH1>>
-Prevalence: <<PREVALENCE1>>
+Architecture Name: ARM
+Prevalence: Sometimes
 
-Architecture Name: <<ARCH2>>
-Prevalence: <<PREVALENCE2>>
-
-Architecture Name: <<ARCH3>>
-Prevalence: <<PREVALENCE3>>
+Architecture Name: x86
+Prevalence: Sometimes
 
 
 # Values for Architecture Class: Embedded, Microcomputer, Workstation,
 #     Not Architecture-Specific
 
-Architecture Class: <<ARCHCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Architecture Class: <<ARCHCLASS2>>
-Prevalence: <<PREVALENCE2>>
+Architecture Class: Embedded
+Prevalence: Often
 
 
 # Values for Technology Name: Web Server, Database Server, Accelerator
@@ -213,25 +193,21 @@ Prevalence: <<PREVALENCE2>>
 #    Hardware, Test/Debug Hardware
 
 
-Technology Name: <<TECH1>>
-Prevalence: <<PREVALENCE1>>
+Technology Name: Security Hardware
+Prevalence: Often
 
-Technology Name: <<TECH2>>
-Prevalence: <<PREVALENCE2>>
+Technology Name: Processor Hardware
+Prevalence: Often
 
-Technology Name: <<TECH3>>
-Prevalence: <<PREVALENCE3>>
-
+Technology Name: Microcontroller Hardware
+Prevalence: Often
 
 # Values for Technology Class: Client Server, Cloud Computing, ICS/OT,
 #     Mainframe, Mobile, N-Tier, SOA, System on Chip, Web Based, Not
 #     Technology-Specific
 	
-Technology Class: <<TECHCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Technology Class: <<TECHCLASS2>>
-Prevalence: <<PREVALENCE2>>
+Technology Class: System on Chip
+Prevalence: Often
 
 
 ************************************************************************************************
@@ -267,36 +243,33 @@ COMMON CONSEQUENCES:
 
 # Values for Likelihood: High, Medium, Low, Unknown
 
+Scope: Confidentiality
 
-Scope: <<SCOPE1>>
+Impact: Read Memory, Read Files or Directories
+Likelihood: Medium
 
-Impact: <<IMPACT1a>>; <<IMPACT1b>>; <<IMPACT1c>>
-
-Likelihood: <LIKELIHOOD1>>
-
-Note: <<put the information here>>
-
-
+Note: Critical data may be exposed if operations are unexecuted or
+discarded silently, allowing attackers to exploit the lack of
+feedback.
 
 
-Scope: <<SCOPE2>>
+Scope: Integrity
 
-Impact: <<IMPACT2a>>; <<IMPACT2b>>; <<IMPACT2c>>
+Impact: Modify Memory, Modify Files or Directories
 
-Likelihood: <LIKELIHOOD2>>
+Likelihood: Medium
 
-Note: <<put the information here>>
+Note: Operations may proceed based on incorrect assumptions,
+potentially causing data corruption or incorrect system behavior.
 
+Scope: Availability
 
+Impact: DoS: Resource Consumption (Memory), DoS: Crash, Exit, or Restart
 
+Likelihood: High
 
-Scope: <<SCOPE3>>
-
-Impact: <<IMPACT3a>>; <<IMPACT3b>>; <<IMPACT3c>>
-
-Likelihood: <LIKELIHOOD3>>
-
-Note: <<put the information here>>
+Note: Unhandled discarded operations can lead to resource exhaustion,
+triggering system crashes or denial of service.
 
 
 
@@ -332,48 +305,118 @@ DEMONSTRATIVE EXAMPLES:
 
 
 INTRO TEXT:
-
-<<put the information here>>
-
+ 
+This example demonstrates how ignoring interrupts without feedback can
+lead to missed critical operations. In an embedded system,
+high-priority interrupts can preempt lower-priority ones. However, if
+the lower-priority interrupts are silently dropped due to resource
+constraints, it may lead to system malfunctions.
+ 
 BAD CODE:
-LANGUAGE: <<LANGUAGE>>
-
-<<put the information here>>
-
-
+LANGUAGE: C
+ 
+// BAD CODE: Interrupt handling without feedback
+void interrupt_handler(int irq) {
+    if (irq_priority[irq] < current_priority) {
+        return;  // No feedback on discarded interrupt
+    }
+    process_interrupt(irq);  // Proceed with interrupt processing
+}
+ 
+ 
 EXPLANATORY TEXT:
+ 
+In this example, if the interrupt’s priority is lower than the
+currently active one, the interrupt is discarded without any
+feedback. This omission can cause developers to misinterpret the state
+of the system, leading to incorrect assumptions and potential system
+failures, such as missed sensor readings.
 
-<<put the information here>>
-
+In the good code version, the system uses structured logging to
+provide visibility into discarded interrupts. This allows developers
+to track missed interrupts and optimize the system.
+ 
 GOOD CODE:
-LANGUAGE: <<LANGUAGE>>
+LANGUAGE: C
 
-<<put the information here>>
+// Priority threshold for active interrupts
+int current_priority = 3;
 
+// Simulated priority levels for different IRQs
+int irq_priority[5] = {1, 2, 3, 4, 5};
 
+void process_interrupt(int irq) {
+    printf("Processing interrupt %d\n", irq);
+}
+
+void interrupt_handler(int irq) {
+    if (irq_priority[irq] < current_priority) {
+        // Log the dropped interrupt using structured feedback
+        fprintf(stderr, "Warning: Interrupt %d dropped (Priority: %d < Current: %d)\n", 
+                irq, irq_priority[irq], current_priority);
+        exit(EXIT_FAILURE);  // Exit with failure status to indicate a critical issue.
+    }
+    process_interrupt(irq);
+}
+
+ 
+ 
 ---------------
-
+ 
 INTRO TEXT:
-
-<<put the information here>>
-
+ 
+This example demonstrates how network packets can be lost without
+notification when a buffer overflows. Such silent failures can lead to
+data loss and communication breakdowns, especially in real-time
+systems.
+ 
 BAD CODE:
-LANGUAGE: <<LANGUAGE>>
+LANGUAGE: C
+ 
+// BAD CODE: Packet dropping without notification
+#define BUFFER_SIZE 1024
+int buffer[BUFFER_SIZE];
+int buffer_index = 0;
 
-<<put the information here>>
-
-
+void receive_packet(int packet) {
+    if (buffer_index >= BUFFER_SIZE) {
+        return;  // Packet silently discarded
+    }
+    buffer[buffer_index++] = packet;
+}
+ 
+ 
 EXPLANATORY TEXT:
+ 
+In the bad version, packets are discarded when the buffer is full, but
+no feedback is provided. This lack of visibility can lead to
+communication failures and debugging challenges, as developers won’t
+know why packets are missing.
 
-<<put the information here>>
+In the improved version, a log entry is generated for every dropped
+packet. This feedback helps network administrators or developers
+identify buffer overflow issues and optimize resource management
+accordingly.
 
 GOOD CODE:
-LANGUAGE: <<LANGUAGE>>
+LANGUAGE: C
 
-<<put the information here>>
+#define BUFFER_SIZE 1024
+int buffer[BUFFER_SIZE];
+int buffer_index = 0;
 
+// Logs error and returns false if the packet is dropped
+bool receive_packet(int packet) {
+    if (buffer_index >= BUFFER_SIZE) {
+        fprintf(stderr, "Error: Packet %d dropped (Buffer Full)\n", packet);
+        return false;  // Indicate that the packet was not received
+    }
+    buffer[buffer_index++] = packet;
+    return true;  // Indicate successful packet reception
+}
 
-
+ 
+ 
 ************************************************************************************************
 
 OBSERVED EXAMPLES:
@@ -447,32 +490,23 @@ DETECTION METHODS:
 
 # Values for Effectiveness: High, Moderate, Opportunistic, Limited, None
 
-Method: <<METHOD1>>
 
-Desc: <<put the information here>>
+Method: Automated Static Analysis - Source Code
 
-Effectiveness: <<EFFECTIVENESS1>>
+Desc: Scans code for missing error handling or feedback mechanisms.
 
-Notes: <<put the information here>>
+Effectiveness: High
 
-
-Method: <<METHOD2>>
-
-Desc: <<put the information here>>
-
-Effectiveness: <<EFFECTIVENESS2>>
-
-Notes: <<put the information here>>
+Notes: Can identify common issues early in the development phase.
 
 
-Method: <<METHOD3>>
+Method: Manual Code Review
 
-Desc: <<put the information here>>
+Desc: Experts manually inspect the code for unhandled operations.
 
-Effectiveness: <<EFFECTIVENESS3>>
+Effectiveness: Moderate
 
-Notes: <<put the information here>>
-
+Notes: Useful for identifying design-level omissions.
 
 
 ************************************************************************************************
@@ -498,32 +532,27 @@ POTENTIAL MITIGATIONS:
 #    Discouraged Common Practice, Defense in Depth, None
 
 
-Phase: <<PHASE1>>
 
-Description: <<put the information here>>
+Phase: Architecture and Design
 
-Effectiveness: <<EFFECT1>>
+Description: Incorporate logging and feedback mechanisms during the
+design phase to ensure proper handling of discarded operations.
 
-Effectiveness Notes: <<put the information here>>
+Effectiveness: High
 
-
-Phase: <<PHASE2>>
-
-Description: <<put the information here>>
-
-Effectiveness: <<EFFECT2>>
-
-Effectiveness Notes: <<put the information here>>
+Effectiveness Notes: Addressing the issue at the design stage prevents
+the weakness from manifesting later.
 
 
-Phase: <<PHASE3>>
+Phase: Implementation
 
-Description: <<put the information here>>
+Description: Developers should ensure that every critical operation
+includes proper logging or error feedback mechanisms.
 
-Effectiveness: <<EFFECT3>>
+Effectiveness: Moderate
 
-Effectiveness Notes: <<put the information here>>
-
+Effectiveness Notes: Implementation-level checks complement
+design-phase measures.
 
 
 ************************************************************************************************
@@ -540,19 +569,9 @@ Title: Improper Neutralization in Write Request Handling of Register Generation 
 
 URL: https://docs.google.com/presentation/d/1mw7d3muWdAJa6RSuKzJVbeBHTE38kzSL/edit?usp=sharing&ouid=107690590607250324314&rtpof=true&sd=true
 
-Author: <<put the information here>>
+Author: Amisha Srivastava
 
 Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
-
-
-Title: <<put the information here>>
-
-URL: <<put the information here>>
-
-Author: <<put the information here>>
-
-Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", or "YYYY">>
-
 
 
 ACTIVE ISSUES:
@@ -737,7 +756,7 @@ Init-Accepted: 2024-06-06
 
 Det-Requested: 2024-09-11
 
-Det-Received: YYYY-MM-DD
+Det-Received: 2024-10-13
 
 Det-Review: YYYY-MM-DD
 
