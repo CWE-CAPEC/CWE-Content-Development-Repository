@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2402-3e27f5e7
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-862
 
 ORIGIN: sub-server
 
@@ -85,7 +85,7 @@ Internal-Update: 2024-10-24
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2024-10-31
 
 Final-Coord: YYYY-MM-DD
 
