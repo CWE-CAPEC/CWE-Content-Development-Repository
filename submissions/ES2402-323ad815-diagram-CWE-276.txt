@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2402-323ad815
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Accepted
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-276
 
 ORIGIN: sub-server
 
@@ -50,13 +50,13 @@ Received: 2024-02-29
 
 Ack-Receipt: 2024-04-03
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2024-07-09
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2024-08-21
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2024-10-03
 
 Det-Requested: YYYY-MM-DD
 
