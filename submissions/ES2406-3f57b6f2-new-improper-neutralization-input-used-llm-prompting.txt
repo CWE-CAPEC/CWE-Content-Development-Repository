@@ -2,15 +2,15 @@ SUBMISSION COMMUNICATION ID: ES2406-3f57b6f2
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Assigned
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-1427
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-06-21 17:57:12
 
-ISSUES: no
+ISSUES: yes/resolved
 
 ISSUE DETAILS: 
 
@@ -47,26 +47,6 @@ untrusted data should also be considered potentially malicious.
 
 
 MODES OF INTRODUCTION:
-
-# This provides information about how and when a given weakness may be
-# introduced. Information should list the Phase of the development life
-# cycle in which the weakness can introduced. A descriptive Note is
-# optional but preferred.
-# 
-# If the weakness can be introduced in multiple phases, include separate
-# items for each Phase. Copy and paste as needed.
-# 
-
-# Values for Phase: Policy, Requirements, Architecture and Design,
-#    Implementation, Build and Compilation, Testing, Documentation,
-#    Bundling, Distribution, Installation, System Configuration,
-#    Operation, Patching and Maintenance, Porting, Integration,
-#    Manufacturing, Decommissioning and End-of-Life
-
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
-
 
 Phase: Architecture and Design
 
@@ -114,151 +94,18 @@ Note: This weakness can occur when bundling the model with the software.
 
 APPLICABLE PLATFORMS:
 
-# This element specifies the programming languages, operating systems,
-# architectures, and technologies in which this weakness is usually
-# found. If an element does not apply to this submission, you can use
-# the "Not X-Specific" where "X" is the type of element.
-
-# If there are multiple languages, OSes, architectures, and/or
-# technologies, then list each one separately.
-# 
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#platforms
-
-
-# Values for Prevalence: Often, Sometimes, Rarely, Undetermined
-
-# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
-#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
-#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
-#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
-#    Assembly, Other
-
-Language Name: <<LANGUAGE1>>
-Prevalence: <<PREVALENCE1>>
-
-
-Language Name: <<LANGUAGE2>>
-Prevalence: <<PREVALENCE2>>
-
-
-Language Name: <<LANGUAGE3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Language Class: Assembly, Compiled, Hardware Description
-#    Language, Interpreted, Not Language-Specific
-
 Language Class: Not Language-Specific
-
-Language Class: <<LANGCLASS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Operating System Name: AIX, Android, BlackBerry OS,
-#    Chrome OS, Darwin, FreeBSD, iOS, macOS, NetBSD, OpenBSD, Red Hat,
-#    Solaris, SUSE, tvOS, Ubuntu, watchOS, Windows 9x, Windows
-#    Embedded, Windows NT
-
-Operating System Name: <<OS1>>
-Prevalence: <<PREVALENCE1>>
-
-Operating System Name: <<OS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Operating System Class: Linux, macOS, Unix, Windows,
-#    Not OS-Specific
 
 Operating System Class: Not OS-Specific
 
-Operating System Class: <<OSCLASS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Architecture Name: Alpha, ARM, Itanium, Power
-#     Architecture, SPARC, x86, Other
-
-
-Architecture Name: <<ARCH1>>
-Prevalence: <<PREVALENCE1>>
-
-Architecture Name: <<ARCH2>>
-Prevalence: <<PREVALENCE2>>
-
-Architecture Name: <<ARCH3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Architecture Class: Embedded, Microcomputer, Workstation,
-#     Not Architecture-Specific
-
 Architecture Class: Not Architecture-Specific
 
-Architecture Class: <<ARCHCLASS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Technology Name: Web Server, Database Server, Accelerator
-#    Hardware, Analog and Mixed Signal Hardware, Audio/Video Hardware,
-#    Bus/Interface Hardware, Clock/Counter Hardware, Communication
-#    Hardware, Controller Hardware, Memory Hardware, Microcontroller
-#    Hardware, Network on Chip Hardware, Power Management Hardware,
-#    Processor Hardware, Security Hardware, Sensor Hardware, Storage
-#    Hardware, Test/Debug Hardware
-
 Technology Name: AI/ML
-
-Technology Name: <<TECH2>>
-Prevalence: <<PREVALENCE2>>
-
-Technology Name: <<TECH3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Technology Class: Client Server, Cloud Computing, ICS/OT,
-#     Mainframe, Mobile, N-Tier, SOA, System on Chip, Web Based, Not
-#     Technology-Specific
-
-Technology Class: Not Technology-Specific
-
-Technology Class: <<TECHCLASS2>>
-Prevalence: <<PREVALENCE2>>
 
 
 ************************************************************************************************
 
 COMMON CONSEQUENCES:
-
-# This element will cover the typical negative security impact (or
-# impacts) that occurs if this weakness can be exploited by an
-# attacker. Each Consequence must include a Scope and Impact. Both the
-# Likelihood and Note elements are optional.
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#conseq
-
-
-
-# Values for Scope: Confidentiality, Integrity, Availability, Access
-#    Control, Accountability, Authentication, Authorization,
-#    Non-Repudiation, Other
-
-
-# Values for Impact: Modify Memory, Read Memory, Modify Files or
-#    Directories, Read Files or Directories, Modify Application Data,
-#    Read Application Data, DoS: Crash, Exit, or Restart, DoS:
-#    Amplification, DoS: Instability, DoS: Resource Consumption (CPU),
-#    DoS: Resource Consumption (Memory), DoS: Resource Consumption
-#    (Other), Execute Unauthorized Code or Commands, Gain Privileges
-#    or Assume Identity, Bypass Protection Mechanism, Hide Activities,
-#    Alter Execution Logic, Quality Degradation, Unexpected State,
-#    Varies by Context, Reduce Maintainability, Reduce Performance,
-#    Reduce Reliability, Other
-
-
-# Values for Likelihood: High, Medium, Low, Unknown
-
 
 Scope: <<SCOPE1>>
 
@@ -306,33 +153,7 @@ on the LLM application use case.
 
 ************************************************************************************************
 
-# 8. DEMONSTRATIVE EXAMPLES (required)
-
 DEMONSTRATIVE EXAMPLES:
-
-# The entry should have one or more demonstrative examples, but
-# submitters should not put significant effort into these until the CWE
-# team has reviewed and accepted the general concepts behind the
-# submission. Submissions can include example information for either
-# Software, Hardware, or both, as relevant.
-
-# "BAD CODE" and "GOOD CODE" can be code snippets, descriptions of a
-# design or architecture, or an algorithm or protocol.
-#
-# * If you would like to submit diagrams/images to support any
-# weakness descriptive examples, please attach it to the email
-# submission in a png format and reference it by filename where
-# desired. For an example, please see:
-# https://cwe.mitre.org/data/definitions/1256.html
-
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#demox
-
-# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
-#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
-#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
-#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
-#    Assembly, Other
 
 
 INTRO TEXT:
@@ -383,8 +204,8 @@ model = ChatOpenAI(model="gpt-3.5-turbo", openai_api_key="KEY")
 agent = create_tool_calling_agent(model, tools, prompt)
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
-# Assume that GetUserInput() is defined to obtain input from the user,
-# e.g., through a web form.
+\# Assume that GetUserInput() is defined to obtain input from the user,
+\# e.g., through a web form.
 
 user_input = GetUserInput()
 response = agent_executor.invoke({"input": user_input})
@@ -452,48 +273,25 @@ the user.
 
 OBSERVED EXAMPLES:
 
-# Where known, the submission should identify multiple
-# publicly-reported vulnerabilities in real-world products that
-# exhibit the weakness. If possible, include CVE Identifier, its
-# corresponding weblink, and a short summary. If a CVE ID is
-# unavailable, use the Link to point to the reference that explains
-# the vulnerability.
-
-# The ID should be the CVE Identifier, if available. If not available,
-# then supply a title or alternate ID used by the reference.
-
-# The Link should be the URL to the reference that explains the
-# weakness that leads to the vulnerability.
-
-# The ObexSummary should be a brief sentence or two that focuses solely on
-# the weakness in the affected product.
-
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#obex
-
 ID: CVE-2023-32786
 
 Link: https://www.cve.org/CVERecord?id=CVE-2023-32786
 
-ObexSummary: In Langchain through 0.0.155, prompt injection allows an
-attacker to force the service to retrieve data from an arbitrary URL,
-essentially providing SSRF and potentially injecting content into
-downstream tasks.
+ObexSummary: Chain: LLM integration framework has prompt injection
+(CWE-1427) that allows an attacker to force the service to retrieve
+data from an arbitrary URL, essentially providing SSRF (CWE-918) and
+potentially injecting content into downstream tasks.
 
 
 ID: CVE-2024-5184
 
 Link: https://www.cve.org/CVERecord?id=CVE-2024-5184
 
-ObexSummary: The EmailGPT service contains a prompt injection
-vulnerability. The service uses an API service that allows a malicious
+ObexSummary: ML-based email analysis product uses an API service that allows a malicious
 user to inject a direct prompt and take over the service
 logic. Attackers can exploit the issue by forcing the AI service to
 leak the standard hard-coded system prompts and/or execute unwanted
-prompts. When engaging with EmailGPT by submitting a malicious prompt
-that requests harmful information, the system will respond by
-providing the requested data. This vulnerability can be exploited by
-any individual with access to the service.
+prompts to leak sensitive data.
 
 
 
@@ -501,35 +299,17 @@ ID: CVE-2024-5565
 
 Link: https://www.cve.org/CVERecord?id=CVE-2024-5565
 
-ObexSummary: The Vanna library uses a prompt function to present the
-user with visualized results, it is possible to alter the prompt using
-prompt injection and run arbitrary Python code instead of the intended
-visualization code. Specifically - allowing external input to the
-library's "ask" method with "visualize" set to True (default behavior)
-leads to remote code execution.
+ObexSummary: Chain: library for generating SQL via LLMs using RAG uses
+a prompt function to present the user with visualized results,
+allowing altering of the prompt using prompt injection (CWE-1427) to
+run arbitrary Python code (CWE-94) instead of the intended
+visualization code.
 
 
 
 ************************************************************************************************
 
 DETECTION METHODS:
-
-# Detection Methods should identify commonly-used methods of finding
-# the weakness within the product's code, design, etc. This is NOT
-# intended for detecting how the weakness is exploited in a
-# vulnerability. There can be one or more methods provided.
-
-# Values for Method: Automated Analysis, Automated Dynamic Analysis,
-#    Automated Static Analysis, Automated Static Analysis - Source
-#    Code, Automated Static Analysis - Binary or Bytecode, Fuzzing,
-#    Manual Analysis, Manual Dynamic Analysis, Manual Static Analysis,
-#    Manual Static Analysis - Source Code, Manual Static Analysis -
-#    Binary or Bytecode, White Box, Black Box, Architecture or Design
-#    Review, Dynamic Analysis with Manual Results Interpretation,
-#    Dynamic Analysis with Automated Results Interpretation, Formal
-#    Verification, Simulation / Emulation, Other
-
-# Values for Effectiveness: High, Moderate, Opportunistic, Limited, None
 
 Method: Dynamic Analysis with Manual Results Interpretation
 
@@ -564,25 +344,6 @@ Notes: <<put the information here>>
 ************************************************************************************************
 
 POTENTIAL MITIGATIONS:
-
-# This element should cover one or more techniques that will eliminate
-# and/or reduce the frequency or impact of the weakness. Each mitigation
-# must include a Phase and Description, while the Effectiveness element
-# is optional. A descriptive Effectiveness Note is also optional.
-
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#mitigations
-
-
-# Values for Phase: Policy, Requirements, Architecture and Design,
-#    Implementation, Build and Compilation, Testing, Documentation,
-#    Bundling, Distribution, Installation, System Configuration,
-#    Operation, Patching and Maintenance, Porting, Integration,
-#    Manufacturing, Decommissioning and End-of-Life
-
-# Values for Effectiveness: High, Moderate, Limited, Incidental,
-#    Discouraged Common Practice, Defense in Depth, None
-
 
 Phase: Architecture & Design
 
@@ -657,36 +418,9 @@ inputs.
 
 RELATED WEAKNESSES:
 
-
-# Identify the parent CWE(s) under which this weakness should be
-# classified. Ensure that these parents are Weakness types, not
-# categories. "MemberOf" relationships to categories are allowed, but
-# at least one parent must be a Weakness.  The CWE team will perform
-# additional analysis to ensure that the appropriate relationships
-# exist.
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#rels
-
-# Relationships are of the form:
-#
-#   RelationshipType ID View-ID
-#
-# For example, CWE-78 (OS command injection) is a ChildOf CWE-77
-# (command injection) under View-ID 1000 (the Research view).
-# 
-# Values for RelType: ChildOf, MemberOf, ParentOf, PeerOf, etc.
-#
-# The ID is the numeric CWE ID to which this submission has a relationship.
-#
-# The View-ID is the view under which the relationship is
-# defined, typically View-1000, or View-1194 (for hardware), etc.
-#
-# There should be at least one ChildOf relationship in view 1000.
-
 RelType: ChildOf
 ID: CWE-77
-View-ID: View-1000
+View-ID: CWE-1000
 
 
 ************************************************************************************************
@@ -694,23 +428,9 @@ View-ID: View-1000
 
 REFERENCES:
 
-# The submission should have one or more references that explain the
-# weakness, how to mitigate it, or some other relevant details.
-# 
-# References can include one or more academic papers, white papers, blog
-# posts, slide presentations, or videos that describe the weakness, with
-# URLs.
-# 
-# References should be easy to understand, freely available at their
-# URL, and clearly applicable to the weakness.
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#references
-
-
 Title: OWASP Top 10 for Large Language Model Applications - LLM01
 
-URL: https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf
+URL: https://genai.owasp.org/llmrisk/llm01-prompt-injection/
 
 Author: OWASP
 
@@ -858,7 +578,7 @@ Det-Accepted: YYYY-MM-DD
 
 Internal-Update: 2024-11-12
 
-CWE-Assigned: YYYY-MM-DD
+CWE-Assigned: 2024-11-12
 
 CWE-Modified: YYYY-MM-DD
 
@@ -887,4 +607,5 @@ COMMUNICATIONS LOG:
 2024-11-01 received email
 2024-11-01 action meeting
 2024-11-08 sent email
+2024-11-12 sent email
 2024-11-12 sent email
