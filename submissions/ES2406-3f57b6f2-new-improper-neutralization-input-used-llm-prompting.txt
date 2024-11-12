@@ -107,11 +107,9 @@ Technology Name: AI/ML
 
 COMMON CONSEQUENCES:
 
-Scope: <<SCOPE1>>
+Scope: Confidentiality; Integrity; Availability
 
 Impact: Execute Unauthorized Code or Commands; Varies by Context
-
-Likelihood: <LIKELIHOOD1>>
 
 Note: The consequences are entirely contextual, depending on the
 system that the model is integrated into. For example, the consequence
@@ -124,18 +122,12 @@ Scope: Confidentiality
 
 Impact: Read Application Data
 
-Likelihood: <LIKELIHOOD2>>
-
-Note: <<put the information here>>
-
 
 
 
 Scope: Integrity
 
 Impact: Modify Application Data; Execute Unauthorized Code or Commands
-
-Likelihood: <LIKELIHOOD3>>
 
 Note: The extent to which integrity can be impacted is dependent on
 the LLM application use case.
@@ -144,8 +136,6 @@ the LLM application use case.
 Scope: Access Control
 
 Impact: Read Application Data; Modify Application Data; Gain Privileges or Assume Identity
-
-Likelihood: <LIKELIHOOD3>>
 
 Note: The extent to which access control can be impacted is dependent
 on the LLM application use case.
@@ -316,9 +306,6 @@ Method: Dynamic Analysis with Manual Results Interpretation
 Desc: Use known techniques for prompt injection and other attacks, and
 adjust the attacks to be more specific to the model or system.
 
-Effectiveness: <<EFFECTIVENESS1>>
-
-Notes: <<put the information here>>
 
 
 Method: Dynamic Analysis with Automated Results Interpretation
@@ -326,18 +313,12 @@ Method: Dynamic Analysis with Automated Results Interpretation
 Desc: Use known techniques for prompt injection and other attacks, and
 adjust the attacks to be more specific to the model or system.
 
-Effectiveness: <<EFFECTIVENESS2>>
-
-Notes: <<put the information here>>
 
 
 Method: Architecture or Design Review
 
 Desc: Review of the product design can be effective, but it works best in conjunction with dynamic analysis.
 
-Effectiveness: <<EFFECTIVENESS3>>
-
-Notes: <<put the information here>>
 
 
 
@@ -356,8 +337,6 @@ potentially dangerous.
 
 Effectiveness: High
 
-Effectiveness Notes: <<put the information here>>
-
 
 Phase: Implementation
 
@@ -368,7 +347,6 @@ confusion at inference-time.
 
 Effectiveness: Moderate
 
-Effectiveness Notes: <<put the information here>>
 
 
 Phase: Architecture & Design
@@ -382,7 +360,6 @@ potentially dangerous.
 
 Effectiveness: High
 
-Effectiveness Notes: <<put the information here>>
 
 Phase: Implementation
 
@@ -402,9 +379,6 @@ Description: Use components that operate externally to the system to
 monitor the output and act as a moderator. These components are called
 different terms, such as supervisors or guardrails.
 
-Effectiveness: <<EFFECT4>>
-
-Effectiveness Notes: <<put the information here>>
 
 
 Phase: Configuration
