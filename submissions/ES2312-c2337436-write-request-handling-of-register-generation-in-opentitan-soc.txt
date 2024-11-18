@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2312-c2337436
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Det-Received
+SUBMISSION STATUS: Det-Consultation
 
 AFFECTED CWES: 
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-12-20 03:53:09
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.MISC
+ISSUE DETAILS: SUB.COORD, SUB.MISC
 
 PUBTRACKER: #61
 
@@ -576,6 +576,31 @@ Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", 
 
 ACTIVE ISSUES:
 
+SUB.COORD - "Requires extensive coordination"
+
+Description: The submission will require or is currently undergoing close
+coordination, discussion, and debate between multiple parties with
+different perspectives and opinions.  The communication could be taking
+place in CDR itself, or outside of CDR.  As a result, it might take longer
+to move the submission to later phases, although the submission is expected
+to be more robust and well-defined as a result of this coordination.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Det-Consultation phases until sufficient consensus has been reached, or if
+the CWE Team decides to move the submission to the next phase.
+
+Comments: In a meeting with the HW-SIG on November 8, members raised
+some important concerns were raised about this submission that will
+need to be addressed. The core concern is that hardware products, by
+design, might intentionally omit providing feedback - whether for
+efficiency, to avoid an information leak, or for some other
+reason. The CWE Team will work with the submitter to review the HW-SIG
+feedback and modify this submission to address the concerns.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
 SUB.MISC - "Miscellaneous/other problem"
 
 Description: The submission has some other problem that is not covered
@@ -758,9 +783,9 @@ Det-Requested: 2024-09-11
 
 Det-Received: 2024-10-13
 
-Det-Review: YYYY-MM-DD
+Det-Review: 2024-11-06
 
-Det-Consultation: YYYY-MM-DD
+Det-Consultation: 2024-11-08
 
 Det-Accepted: YYYY-MM-DD
 
@@ -795,3 +820,6 @@ COMMUNICATIONS LOG:
 2025-05-16 sent email
 2024-06-06 sent email
 2024-09-01 sent email
+2024-11-08 action meeting
+2024-11-17 received email
+2024-11-18 sent email
