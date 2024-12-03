@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-12-20 03:53:09
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.COORD, SUB.MISC
+ISSUE DETAILS: SUB.RELS, SUB.COORD, SUB.MISC
 
 PUBTRACKER: #61
 
@@ -561,7 +561,9 @@ RELATED WEAKNESSES:
 
    Other CWE-1191
    Other CWE-1256
-   ChildOf CWE-392
+   Other CWE-203
+   Other CWE-223
+   Other CWE-392
 
 REFERENCES:
 
@@ -575,6 +577,37 @@ Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", 
 
 
 ACTIVE ISSUES:
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: It is not yet clear where this submission would fit in
+CWE. It probably falls under CWE-223: Omission of Security-relevant
+Information, but it is also closely associated with CWE-392: Missing
+Report of Error Condition, which is in a different part of the
+View-1000 hierarchy. It cannot be a child of CWE-392 as proposed
+earlier, because CWE-392 is focused solely on errors, and there are
+other non-erroneous cases in which lack of feedback may apply. Other
+CWEs to note are CWE-203: Observable Discrepancy, which can be a
+weakness that enables some side channel attacks.  There might be
+different dimensions along which this submission may overlap each of
+those CWEs.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+-----
 
 SUB.COORD - "Requires extensive coordination"
 
@@ -823,3 +856,4 @@ COMMUNICATIONS LOG:
 2024-11-08 action meeting
 2024-11-17 received email
 2024-11-18 sent email
+2024-12-03 action meeting
