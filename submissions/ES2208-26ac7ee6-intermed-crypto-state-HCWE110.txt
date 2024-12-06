@@ -30,7 +30,7 @@ DESCRIPTION:
 
 General Description:
 
-A module implementing a cryptographic algorithm leaks information
+A hardware module implementing a cryptographic algorithm leaks information
 about the intermediate state or results of its cryptographic
 operations via one of its output ports (typically the output
 containing the final result).
@@ -40,15 +40,18 @@ Technical Impact:
 Mathematically sound cryptographic algorithms rely on their correct
 implementation for security. The algorithms assume that with a given
 set of inputs, they will produce a cryptographic result. These
-assumptions break when intermediate state or results of the encryption
-can be observed by an adversary. If intermediate state is observed, it
-can be used by an attacker to identify the secrets used in the
-cryptographic operation.
-
+assumptions break when a hardware crypto module leaks intermediate
+encryption states or results such that they can be observed by an
+adversary. If intermediate state is observed, it can be used by an
+attacker to identify the secrets used in the cryptographic operation.
 
 RELATED WEAKNESSES:
 
    ChildOf CWE-203
+   Other CWE-201
+   Other CWE-212
+   Other CWE-1295
+   Other CWE-1258
 
 
 REFERENCES:
@@ -81,12 +84,12 @@ extensive community feedback.
 
 Comments: What would be the mitigation for the issue?
 
-Response: A module implementing a cryptographic algorithm should
-contain logic/mechanisms that allow non-sensitive information (i.e.,
-final cryptographic result or default values) to be driven to the
-appropriate outputs while simultaneously preventing sensitive
-information (i.e., intermediate state/results, input values, keys)
-from being driven to any of its outputs.
+Response:
+
+A hardware module implementing a cryptographic algorithm should
+contain mitigations that write a default value, such as all 0s, while
+encryption is being conducted. This prevents intermediate
+cryptographic state from reaching the output.
 
 The following SystemVerilog code shows an example of a generic crypto
 module with and without a “sanitizing” mechanism to mitigate the
@@ -259,7 +262,6 @@ algorithm which is only possible if there is a bug in the underlying
 protections abstracted from the software. Meaning this weakness would
 not be a weakness of the software itself.
 
-
 ------
 
 SUB.RELS - "Unclear relationships"
@@ -305,6 +307,9 @@ include within Category ID: 1205 (CWE CATEGORY: Security Primitives
 and Cryptography Issues) since it describes a weakness that would
 jeopardize the security of a cryptographic process.
 
+In summary, we believe that the weakness we describe should be
+its own CWE under CWE 200.
+
 
 ------
 
@@ -331,14 +336,15 @@ Comments: Is the weakness or mistake specific to a particular
           very specific type of information, which is likely too
           low-level to receive its own entry.
 
+
+
 Response: The weakness is not specific to a particular technology and
 could reasonably arise in various types of designs (e.g. processor
 hardware, SoCs, crypto IP, Bus/Interfaces, etc.) which derive result
 data from sensitive information and continuously drive (or stream)
 those result data from a secure/trusted location to a potentially
 unsecure/untrusted location. However, this weakness is especially
-impactful for cryptographic designs.
-
+impactful for cryptographic accelerators such as AES, HMAC, ECC, and others.
 
 
 
@@ -397,3 +403,6 @@ COMMUNICATIONS LOG:
 2024-07-12 sent message
 2024-08-02 received message
 2024-08-29 sent email
+2024-09-12 received email
+2024-12-06 received email
+2024-12-06 sent email
