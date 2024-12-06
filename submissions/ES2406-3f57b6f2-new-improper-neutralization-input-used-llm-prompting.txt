@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2406-3f57b6f2
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: CWE-Assigned
+SUBMISSION STATUS: CWE-Published
 
 AFFECTED CWES: CWE-1427
 
@@ -558,7 +558,7 @@ CWE-Modified: YYYY-MM-DD
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2024-11-19
 
 Post-Publication: YYYY-MM-DD
 
@@ -583,3 +583,6 @@ COMMUNICATIONS LOG:
 2024-11-08 sent email
 2024-11-12 sent email
 2024-11-12 sent email
+2024-11-15 action meeting
+2024-11-19 action published
+2024-12-06 sent email
