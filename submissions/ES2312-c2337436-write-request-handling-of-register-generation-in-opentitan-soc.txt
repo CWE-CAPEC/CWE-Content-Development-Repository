@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-12-20 03:53:09
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.RELS, SUB.COORD, SUB.MISC
+ISSUE DETAILS: SUB.UNCLEAR, SUB.RELS, SUB.COORD, SUB.MISC
 
 PUBTRACKER: #61
 
@@ -578,6 +578,69 @@ Date: <<put the publication date here - either "YYYY-NN-DD", "Monthname, YYYY", 
 
 ACTIVE ISSUES:
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: Based on discussion with the HW-SIG on November 8, 2024, the
+following issues were identified. A separate meeting was held with the
+submitter on December 3, and some suggestions from that meeting are
+included here.
+
+(1) The submitter talked about "lack of feedback" but there was
+confusion regarding "feedback to whom?" the attacker? the
+admin/operator? the developer or product tester? Maybe "feedback"
+isn't the right term to use here. "Logging" is maybe too
+narrow. Another possibility is "Notification", but maybe that's too
+closely associated with smartphone apps. Another possibility:
+"feedback mechanism"(not necessarily just a message, but some other
+operation that acts as feedback).
+
+(2) Much of the HW-SIG pushback was against the notion that <ANY>
+situation with lack of feedback would be marked as a weakness, when
+sometimes that's an intentional design decision - and sometimes lack
+of feedback prevents an attacker-exploitable information leak. So with
+some rephrasing or recasting of the problem, this might be more
+acceptable to HW-SIG members. In CWE there's a notion of "intended
+security policy" and some HW-SIG discussion basically covered that
+notion. Examples: encryption algos where you expect ciphertext. "What
+are cases when feedback is not OK?" how to delineate when there isn't
+feedback, if that's an issue? "doesn't provide feedback when feedback
+is important in detecting operational failure or an attack."
+
+(3) Participants couldn't see the security implications of some of
+what the submitter was talking about. Anything that causes incorrect
+or unexpected behaviors could be a weakness if it appears in
+security-relevant functionality, but maybe there's been too much focus
+on more serious attacks with clearer consequences. Not every weakness
+has to lead to high-severity vulnerability all the time; however,
+better, more significant examples could help a lot. Consider: side
+channels might go undetected, e.g. related to access time. Not exactly
+lack of feedback, but consider power side channels.
+
+(4) There may be 2 different kinds of problems that you're touching
+on: (a) when the product design/specification doesn't clearly dictate
+the situations under which the feedback or lack-of-feedback should
+occur; or (b) when an implementation doesn't follow the specifications
+and doesn't provide feedback when it's supposed to. Note - this could
+apply to any kind of specification - not just public specifications
+for public products. Consider: both are related to specifications.
+
+(5) There are close parallels with software in this general area. For
+example, the example of silently dropping packets could apply to any
+software that does networking. Consider: find some software-related
+CVEs for this?
+
+Response: [NO RESPONSE NEEDED; DETAILED DISCUSSION IS ONGOING.]
+
+
+----------
+
 SUB.RELS - "Unclear relationships"
 
 Description: The submission suggests some relationships, but the
@@ -593,19 +656,24 @@ direct parents are identified. The CWE Team may decide to use high-level
 relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
 exist and cannot be quickly resolved.
 
-Comments: It is not yet clear where this submission would fit in
-CWE. It probably falls under CWE-223: Omission of Security-relevant
-Information, but it is also closely associated with CWE-392: Missing
-Report of Error Condition, which is in a different part of the
-View-1000 hierarchy. It cannot be a child of CWE-392 as proposed
-earlier, because CWE-392 is focused solely on errors, and there are
-other non-erroneous cases in which lack of feedback may apply. Other
-CWEs to note are CWE-203: Observable Discrepancy, which can be a
-weakness that enables some side channel attacks.  There might be
-different dimensions along which this submission may overlap each of
-those CWEs.
+Comments: (issue 6 from December 3 meeting).  There's some coverage of
+this idea in CWE, but nothing as specific as this submission. This
+submission lives in an imperfect area of CWE (logging /
+error-handling) that's not as bad as access control but still needs a
+chunk of work. There may be some overlap/classification challenges at
+hand, since we might have some CWEs aligned on one dimension, and a
+different set of CWEs aligned on a different dimension. Note - this
+complication would not delay adding the submission. Discussion:
+CWE-392: Missing Report of Error Condition, CWE-203, and CWE-223:
+Omission of Security-relevant Informationmay be relevant, although
+some may differ in terms of "dimensions" and live under different
+parts of the View-1000 hierarchy. It cannot be a child of CWE-392 as
+proposed earlier, because CWE-392 is focused solely on errors, and
+there are other non-erroneous cases in which lack of feedback may
+apply. Other CWEs to note are CWE-203: Observable Discrepancy, which
+can be a weakness that enables some side channel attacks.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE NEEDED; DETAILED DISCUSSION IS ONGOING.]
 
 -----
 
@@ -623,14 +691,15 @@ Det-Consultation phases until sufficient consensus has been reached, or if
 the CWE Team decides to move the submission to the next phase.
 
 Comments: In a meeting with the HW-SIG on November 8, members raised
-some important concerns were raised about this submission that will
-need to be addressed. The core concern is that hardware products, by
-design, might intentionally omit providing feedback - whether for
-efficiency, to avoid an information leak, or for some other
-reason. The CWE Team will work with the submitter to review the HW-SIG
-feedback and modify this submission to address the concerns.
+some important concerns about this submission that will need to be
+addressed. A separate meeting was held with the submitter on December
+3. The core concern is that hardware products, by design, might
+intentionally omit providing feedback - whether for efficiency, to
+avoid an information leak, or for some other reason. The CWE Team is
+working with the submitter to review the HW-SIG feedback and modify
+this submission to address the concerns.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE NEEDED; DETAILED DISCUSSION IS ONGOING.]
 
 ----------
 
