@@ -1,0 +1,99 @@
+SUBMISSION COMMUNICATION ID: ES2409-3a032263
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-09-12 07:32:42
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #129
+
+MTRACKER: #1183
+
+GITHUBUSER: hksdpc255
+
+SUBMISSION TYPE: Software
+
+NAME: Insufficient Neutralization of User-uploaded Files in Cloud-based Platforms
+
+DESCRIPTION:
+
+Cloud service providers are frequently required to employ external
+utilities for the handling of files uploaded by users. Unfortunately, these
+external utilities may exhibit a deficiency in protective measures against
+malicious content within user-uploaded files. This oversight can pave the
+way for server compromise through various security breaches such as data
+exposure, distributed denial-of-service (DDoS) incidents, or the execution
+of unauthorized code.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-707
+
+REFERENCES:
+
+Title: CVE-2021-40085/OSSA-2021-005: Arbitrary dnsmasq reconfiguration via extra_dhcp_opts
+URL: https://security.openstack.org/ossa/OSSA-2021-005.html
+
+Title: CVE-2015-5162/OSSA-2016-012: Malicious qemu-img input may exhaust resources in Cinder, Glance, Nova
+URL: https://security.openstack.org/ossa/OSSA-2016-012.html
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-09-12
+
+Ack-Receipt: 2024-12-09
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
