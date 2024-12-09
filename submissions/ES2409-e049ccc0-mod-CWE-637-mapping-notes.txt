@@ -1,0 +1,90 @@
+SUBMISSION COMMUNICATION ID: ES2409-e049ccc0
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-09-13 14:05:00
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #131
+
+MTRACKER: #1184
+
+GITHUBUSER: drothenberg
+
+SUBMISSION TYPE: Unknown
+
+NAME: CWE-637 Mapping Notes are inaccurate
+
+DESCRIPTION:
+
+The mapping notes shows allowed-with-review but cites the reason as being a
+class that might have children more applicable. CWE-637 does not have any
+current children, so there may be relevant relationships to edit or this
+might need a more appropriate rationale/comment.
+
+RELATED WEAKNESSES:
+
+   Other CWE-637
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-09-13
+
+Ack-Receipt: 2024-12-09
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
