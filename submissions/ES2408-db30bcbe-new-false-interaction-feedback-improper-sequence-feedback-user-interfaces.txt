@@ -1,0 +1,169 @@
+SUBMISSION COMMUNICATION ID: ES2408-db30bcbe
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-08-20 01:03:10
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #128
+
+MTRACKER: #1158
+
+GITHUBUSER: Ruegg
+
+SUBMISSION TYPE: Software
+
+NAME: False Interaction Feedback (FIF): Improper Sequence of Feedback in User Interfaces
+
+DESCRIPTION:
+
+The False Interaction Feedback (FIF) vulnerability occurs when an
+application improperly allows feedback or confirmation messages to be
+presented without verifying the sequence of user actions that should
+precede them. This weakness can be exploited by attackers to create a
+misleading narrative, deceiving users into believing that an action has
+been completed successfully when, in fact, it has not. This issue affects
+any feedback mechanism that relies on the proper sequencing of user
+interactions within web, mobile, or desktop applications.
+
+This vulnerability should be a significant concern to developers because
+poor implementation causing a FIF will allow attackers to take advantage of
+the trust a user has in the target platform and use it to support a
+malicious false narrative that is likely aimed at harvesting or damaging
+the user's information or reputation. In addition to this, the attacker is
+directly accomplishing their malicious intentions under the guise and
+reputation of the vulnerable platform, causing severe reputational damage
+to the business as it appears complicit in the attack. This not only
+compromises user trust but also tarnishes the platformu2019s credibility.
+
+The technical impact of an exploited FIF vulnerability can vary widely
+depending on the type of feedback provided by the vulnerable target and the
+narrative chosen by the attacker, but when exploited will likely result in
+unauthorized disclosure of sensitive information, compromise of user
+credentials, or installation of malicious software.
+
+Consider a scenario where a website has the following flow for a password
+reset:
+
+1. The user navigates to `good.com/password/reset/`.
+
+2. The front-end page displays fields for entering the old and new
+passwords. Upon submission, the form sends a POST request to
+`api.good.com/v2/change-password`.
+
+3. If the password change is successful, the server responds with a
+redirection header that directs the user to
+`good.com/password/change-success/`, where they see a confirmation message
+on the screen: "Your password has been changed!"
+
+If `good.com/password/change-success/` is accessible to any end-user by
+simply visiting the page without actually resetting their password, then
+this flow is vulnerable to FIF.
+
+In this scenario, an attacker could set up a malicious site that mimics the
+legitimate password reset process and then redirects users to
+`good.com/password/change-success/`. Because the feedback page appears to
+be part of the trusted platform, users will not see any warning signs or
+inconsistencies that would otherwise prompt them to verify their password
+change on the legitimate site.
+
+An arguably more malicious example of exploiting a FIF could be for the
+purpose of installing malware. Many websites that offer software will show
+feedback for the download, such as "Thank you for your download!" which
+resides on its own page and is independent of the logic that prompts the
+download itself. Because of this, an attacker can create a malicious
+website posing as a tool and may include text such as "Requires
+GoodSoftware - Download Here" with a hyperlink to the alleged tool. When
+the victim clicks this, the malicious site will actually download the
+malware it hosts on its own servers and then redirect to GoodSoftware's
+"Thank you for your download!" page. Because GoodSoftware did not implement
+a flow such that the feedback for the download is only shown with the logic
+that downloads their legitimate file, attackers can use their brand image
+and reputation to install malware on victims' machines.
+
+There are many variations of this issue that can be taken advantage of,
+such as:
+- Payment confirmations
+- File upload confirmations
+
+While the examples provided focus on using FIF at the end of an attack, FIF
+can be leveraged at any stage to reinforce the attacker's narrative. For
+instance, a malicious site could use an iFrame + FIF to display a
+legitimate-looking notice, possibly linked to a logged-in session, midway
+through the attack, further deceiving the end-user.
+
+Additionally, FIF is not limited to websites; its impact extends to
+programs and mobile applications that use custom URL protocols or deep
+links.
+
+RELATED WEAKNESSES:
+
+   Other CWE-451
+   ChildOf CWE-602
+   ChildOf CWE-441
+
+REFERENCES:
+
+Title: Discovering a New Vulnerability Type: False Interaction Feedback (FIF) and Its Implications
+URL: https://blog.andreruegg.com//posts/2024-08-18-identifying-a-new-vulnerability-type-fif/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-08-20
+
+Ack-Receipt: 2024-12-09
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
