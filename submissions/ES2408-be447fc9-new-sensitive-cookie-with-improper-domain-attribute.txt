@@ -1,0 +1,109 @@
+SUBMISSION COMMUNICATION ID: ES2408-be447fc9
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-08-26 11:07:10
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #127
+
+MTRACKER: #1159
+
+GITHUBUSER: None
+
+SUBMISSION TYPE: Software
+
+NAME: Sensitive Cookie with Improper Domain Attribute
+
+DESCRIPTION:
+
+The Domain attribute for a sensitive cookies is set with an overly
+permissive value causing it to be sent to unintended hosts.
+
+The Domain attribute controls to which FQDN a cookie is sent with requests
+to. When the Domain attribute is not set, it will only be sent with
+requests to the FQDN the cookie was set by, which is the most secure
+configuration. When the Domain attribute is set, it will be sent with
+requests to the FQDN and its immediate subdomains. 
+
+This is often done either by mistake, when without the Domain attribute
+would have sufficed, or on purpose for convenience so that the cookie will
+be sent with requests for some intended sibling subdomains, but
+intentionally also causes the cookie to be sent to FQDNs that do not use
+the cookie.
+
+In the case of a sensitive cookie, such as a cookie used for
+authentication, or otherwise storing sensitive data, this causes
+inadvertent improper transmission of sensitive data including making
+possible session hijacking/theft attacks.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-923
+   ChildOf CWE-522
+
+REFERENCES:
+
+Title: Cookie Broadcasting
+URL: https://security.synotna.eu/cookie-broadcasting.html
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-08-26
+
+Ack-Receipt: 2024-12-09
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
