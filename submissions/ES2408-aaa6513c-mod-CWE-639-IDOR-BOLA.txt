@@ -1,0 +1,115 @@
+SUBMISSION COMMUNICATION ID: ES2408-aaa6513c
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-08-09 17:28:48
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #126
+
+MTRACKER: #1154
+
+GITHUBUSER: 0tax00
+
+SUBMISSION TYPE: Unknown
+
+NAME: Modify CWE-639 alt terms for IDOR and BOLA
+
+DESCRIPTION:
+
+In CWE-639, in the "Alternate Terms" field, there is a reference to Broken
+Object Level Authorization (BOLA), stating that in the 2019 OWASP API
+Security Top 10 documents, BOLA and IDOR are considered the same thing.
+However, during my research, I analyzed both the 2019 OWASP API Security
+Top 10 documentation and other sources that indicate possibilities that
+IDOR and BOLA are the same thing, and I found no such claim. On the
+contrary, in my research, I explain the main differences between the two,
+with reference to OWASP itself.
+
+The link to my article can be accessed here
+https://medium.com/@0ta/unraveling-vulnerabilities-understanding-the-difference-between-idor-bac-and-bola-0bc52cbc6dde
+
+This information is covered in the article in the field "Insecure Direct
+Object Reference (IDOR) vs. Broken Object Level Authorization (BOLA)" and 
+"Differences in the Use of the Term u201cObjectu201d in Relation to IDOR
+and BOLA"
+
+
+Consider changing the phrase 'BOLA is used in the 2019 OWASP API Security
+Top 10 and is said to be the same as IDOR' to either:
+
+1 - 'BOLA is included in the 2019 OWASP API Security Top 10; however,
+according to OWASP documentation, it is not the same as IDOR.'
+
+or
+
+2 - 'BOLA is listed in the 2019 OWASP API Security Top 10.'"
+
+This provides clarity and precision in the information.
+
+RELATED WEAKNESSES:
+
+   Other CWE-639
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-08-09
+
+Ack-Receipt: 2024-12-09
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
