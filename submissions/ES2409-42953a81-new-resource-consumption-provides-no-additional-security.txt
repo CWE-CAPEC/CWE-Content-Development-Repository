@@ -1,0 +1,100 @@
+SUBMISSION COMMUNICATION ID: ES2409-42953a81
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-09-11 22:29:44
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #130
+
+MTRACKER: #1182
+
+GITHUBUSER: c0r0n3r
+
+SUBMISSION TYPE: Software
+
+NAME: Resource Consumption Provides No Additional Security 
+
+DESCRIPTION:
+
+The product implements an algorithm improperly, which causes the algorithm
+to remain effective but not efficient. The improper implementation makes
+the algorithm significantly more resource-intensive without providing
+additional security which enables the attacker to cause unnecessary
+resource consumption thereby performing a denial of service attack.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-400
+
+REFERENCES:
+
+Title: D(HE)at: A Practical Denial-of-Service Attack on the Finite Field Diffieu2013Hellman Key Exchange
+URL: https://ieeexplore.ieee.org/document/10374117
+
+Title:  How Diffie-Hellman Key Exchange can Cause Availability Issues
+URL: https://pfeifferszilard.hu/2024/09/09/how-diffie-hellman-key-exchange-can-cause-availability-issues.html
+
+Title:  D(HE)at Attack  - Technical Details
+URL: https://dheatattack.gitlab.io/details/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-09-11
+
+Ack-Receipt: 2024-12-09
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
