@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2305-b9315546
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Declined
 
 AFFECTED CWES: 
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-05-13 18:42:02
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.IPR, SUB.ABS.LOWLEVEL, SUB.RELREFS
+ISSUE DETAILS: SUB.MISC, SUB.UNCLEAR, SUB.IPR, SUB.ABS.LOWLEVEL, SUB.RELREFS
 
 PUBTRACKER: #71
 
@@ -48,6 +48,22 @@ URL: https://cwe.mitre.org/data/definitions/120.html
 
 
 ACTIVE ISSUES:
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: Attempts were made to contact the submitter multiple times
+without response. Without additional details, the CWE Team cannot take
+further action on this submission, so it is declined.
+
+Response: [NO RESPONSE NECESSARY.]
+
+
+----------
 
 SUB.UNCLEAR - "Unclear weakness"
 
@@ -150,7 +166,7 @@ Init-Review: 2024-01-15
 
 Init-Consultation: 2024-01-15
 
-Init-Declined: YYYY-MM-DD
+Init-Declined: 2024-12-09
 
 Init-Accepted: YYYY-MM-DD
 
