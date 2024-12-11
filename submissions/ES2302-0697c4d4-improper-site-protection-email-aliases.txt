@@ -35,6 +35,8 @@ bughunter+1@example.com When site has proper email notifications, the email
 will be send on incorrect address (about Email changed) and in many cases
 bad actor can make ATO (using Reset password feature).
 
+Can leads also to Information Disclosure. (saw today another example on prod.)
+
 RELATED WEAKNESSES:
 
    Other CWE-451
@@ -97,3 +99,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2023-02-23 sent email
+2024-11-10 received comment
