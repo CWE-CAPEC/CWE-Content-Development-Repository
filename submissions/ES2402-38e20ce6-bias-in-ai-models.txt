@@ -37,6 +37,63 @@ adequately identify, mitigate, and monitor biases throughout the AI
 system's lifecycle, from data collection and model training to deployment
 and operation.
 
+A real world impact of using a biased AI that has lead to people attacking
+Google and Google having to take down their latest AI:
+
+https://www.forbes.com/sites/antoniopequenoiv/2024/02/26/googles-gemini-controversy-explained-ai-model-criticized-by-musk-and-others-over-alleged-bias/?sh=4283379e4b99
+
+Google apologized for the shortcomings of Gemini's image generator and
+temporarily paused its ability to generate people, saying in a blog post
+the AI had been trained to ensure a range of people were included in its
+results — but the training failed to account for instances that shouldn't
+show a range.
+
+========= Or an attacker might submit resumes, knowing the AI is biased and
+then sue more easily: 
+
+Based models may result in illegal activity
+https://www.sanfordheisler.com/blog/2023/11/bias-in-ai-the-real-world-ramifications-and-legal-implications/
+
+Biases in AI can lead to discriminatory practices that are illegal. Those
+biases can disproportionately impact marginalized groups, resulting in
+inequities in areas such as:
+
+Hiring practices Employment decisions Lending decisions Housing decisions
+Medical care One study, for example, found that [skewed datasets feeding AI
+in health care](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9931338/) can
+result in disparities along the lines of race, gender, and income levels.
+
+In the employment context, employers are increasingly relying on AI to
+drive their hiring and recruitment practices. According to a [2022
+survey](https://fortune.com/2023/03/13/artificial-intelligence-make-workplace-decisions-human-intelligence-remains-vital-careers-tech-gary-friedman/),
+nearly 80 percent of employers use AI tools for that purpose. Many
+recruitment tools and applicant tracking systems like Workday, Eightfold,
+Jobvite, and SmartRecruiters also reportedly leverage AI. Yet AI-based
+tools can harbor biases that translate into real-world discrimination,
+denying applicants their legal right to fair treatment. Amazon, for
+example, had to [abandon an AI-driven recruiting
+engine](https://www.reuters.com/article/us-amazon-com-jobs-automation-insight-idUSKCN1MK08G)
+that discriminated against women because its dataset was skewed in favor of
+men. The problem of bias is widespread enough that the Equal Employment
+Opportunity Commission (EEOC) recently launched an initiative to gather
+data and educate employers on the risks of violating equal employment laws
+through reliance on biased AI tools.
+
+Many biases in AI aren’t apparent, especially in large language model
+tools like ChatGPT that draw on enormous datasets. This lack of
+transparency highlights the importance of human oversight. It also
+amplifies the need for more ethical, transparent AI across all sectors.
+
+=========
+
+TL;DR: Bias results in the AI not behaving as expected which can either be
+straight up illegal, or can result in behavior that is exploitable by an
+attacker (e.g. an AI trained to spot security related problems and is
+biased against certain country based IP's could be more easily evaded by
+using IP's from countries it is favorable to).
+
+
+
 RELATED WEAKNESSES:
 
 
@@ -45,6 +102,9 @@ REFERENCES:
 Title: AVID-2022-V001
 URL: https://raw.githubusercontent.com/avidml/avid-db/main/vulnerabilities/2022/AVID-2022-V001.json
 
+
+Title: Google’s Gemini Controversy Explained: AI Model Criticized By Musk And Others Over Alleged Bias
+URL: https://www.forbes.com/sites/antoniopequenoiv/2024/02/26/googles-gemini-controversy-explained-ai-model-criticized-by-musk-and-others-over-alleged-bias/?sh=4283379e4b99
 
 ACTIVE ISSUES:
 
@@ -97,3 +157,7 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-03-01 sent email
+2024-03-06 received comment
+2024-03-11 sent comment
+2024-03-11 received comment
+2024-12-11 action update
