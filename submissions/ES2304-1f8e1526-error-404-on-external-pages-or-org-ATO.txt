@@ -32,11 +32,93 @@ resources. Example: provided external site to social media account - result
 external site to social media account - result improper account (account
 taken over).
 
+This situation can be classified as a security issue, specifically a link
+hijacking vulnerability, sometimes referred to as external link hijacking
+or social media account hijacking.
+
+This can be described as external link hijacking or more specifically,
+social media handle hijacking. If an organization provides a link to a
+social media account that doesn't exist (due to a typo or outdated handle),
+a malicious actor can take over the invalid link by creating a fake account
+with the same handle. As a result, users who click the link may be directed
+to a fake profile controlled by the attacker, allowing them to potentially
+impersonate the organization. 
+
+This is a security risk because it could lead to several potential threats:
+
+1. Brand Reputation Damage: If an attacker creates a malicious account
+linked to the organization's name, they can post harmful or misleading
+content that damages the organization’s reputation. Customers or partners
+may think they are interacting with the official social media profile.
+
+2. Phishing and Scams: Attackers could use the fake account to carry out
+phishing attacks, pretending to be the organization and tricking users into
+divulging sensitive information, such as login credentials, credit card
+details, or personal data.
+
+3. Fraudulent Engagement: The attacker could also promote fake promotions,
+contests, or giveaways, leading users to fraudulent sites or persuading
+them to send money or sensitive details, all while believing they are
+interacting with the legitimate organization.
+
+4. Search Engine Optimization (SEO) Impact: Links from the organization’s
+website can help boost the fake account’s visibility in search results.
+This might make the fake account appear more credible, leading to higher
+traffic and more potential victims.
+
+5. Loss of Control: Once the typo link is hijacked, the organization loses
+control of its presence in that specific social media platform until they
+can reclaim the name (if possible). In some cases, it may be difficult to
+recover the handle or account without significant effort.
+
+For these reasons, it's important to correct any errors in social media
+links to ensure that users are directed to official, verified accounts.
+
+You can see these cases with paid bounty (references):
+https://hackerone.com/reports/1338457 https://hackerone.com/reports/1152588
+https://hackerone.com/reports/1466889
+
+This falls under the category of external link hijacking or more
+specifically social media link hijacking. When an organization incorrectly
+links to a social media profile that doesn’t exist (due to a typo or
+change in the handle), an attacker can create an account using the
+incorrect username. This means users who click on the link from the
+organization's official website will be directed to the fake account, which
+could be used for malicious purposes.
+
+By linking to a non-existent social media account, the organization risks
+having an attacker claim that account and use it maliciously. Since users
+trust the link from the organization's official page, they are more likely
+to believe the fake profile is legitimate, creating opportunities for
+phishing, scams, or brand impersonation. Thus, it is crucial to correct any
+such errors to avoid security threats and safeguard the organization’s
+digital presence.
+
+Other sources: https://www.invicti.com/learn/broken-link-hijacking-blh/
+https://dev.to/securitytxt/broken-link-hijacking---how-expired-links-can-be-exploited-ghe
+
+
+
 RELATED WEAKNESSES:
 
    Other CWE-451
 
 REFERENCES:
+
+Title: Broken Link Hijacking - How expired links can be exploited.
+URL: https://dev.to/securitytxt/broken-link-hijacking---how-expired-links-can-be-exploited-ghe
+
+Title: Broken link hijacking
+URL: https://www.invicti.com/learn/broken-link-hijacking-blh/
+
+Title: Broken Link on TikTokUS.Info
+URL: https://hackerone.com/reports/1338457
+
+Title: Social media link hijack of team member [Linkedin]
+URL: https://hackerone.com/reports/1152588
+
+Title: Broken link hijacking
+URL: https://hackerone.com/reports/1466889
 
 Title: CAPEC-103: Clickjacking
 URL: https://capec.mitre.org/data/definitions/103.html
@@ -92,3 +174,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-01-05 sent email
+2024-10-14 received comment
