@@ -76,7 +76,7 @@ or modifying CWE-613, with examples highlighted in this and other
 similar entries. Please indicate if you agree or disagree with this
 comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree
 
 
 ----------
@@ -109,7 +109,7 @@ not initially sensitive can be useful to a malicious actor, depending
 on the situation." Please let us know if you agree or disagree with
 the newly proposed description.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree (sorry for that and thank you for your help!)
 
 
 ----------
@@ -131,7 +131,7 @@ session weaknesses, so more research might be needed to determine if
 the CWE hierarchy needs adjustments. Please indicate if you agree or
 disagree with this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree
 
 
 
@@ -185,3 +185,4 @@ COMMUNICATIONS LOG:
 2023-09-12 publish server
 2024-06-04 sent email
 2024-09-10 sent email
+2024-09-12 received comment
