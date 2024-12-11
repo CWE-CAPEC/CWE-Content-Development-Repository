@@ -66,11 +66,11 @@ Resolution: A submission cannot progress past the consultation phase until
 SUB.UNCLEAR is addressed.
 
 Comments: The CDR responses on 2024-02-24 provided an acceptable
-description, but they did not address the name issue.  The CWE Team
-has changed the name of this submission to "Reliance on Non-expiring
-Links for Critical Operations" which borrows some phrasing from your
-original name. Please acknowledge this change or let us know if you
-disagree.
+description, which has been updated in this submission. However, they
+did not address the name issue.  The CWE Team has changed the name of
+this submission to "Reliance on Non-expiring Links for Critical
+Operations" which borrows some phrasing from your original
+name. Please acknowledge this change or let us know if you disagree.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -91,11 +91,14 @@ direct parents are identified. The CWE Team may decide to use high-level
 relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
 exist and cannot be quickly resolved.
 
-Comments: CWE Team agrees that the issue is similar to CWE-613, but
-closer investigation is needed. This does not prevent movement to the
-next phase.
+Comments: The CWE Team agrees that the issue is similar to CWE-613,
+but closer investigation is needed. We acknowledge the submitter's
+comment that "The form requires a related CWE so we picked the least
+worst option."  The lack of a clear relationship will not prevent
+movement to the next phase. Please acknowledge that you have read this
+comment and are aware of this potential difficulty.
 
-Response: The form requires a related CWE so we picked the least worst option.
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 RESOLVED ISSUES:
