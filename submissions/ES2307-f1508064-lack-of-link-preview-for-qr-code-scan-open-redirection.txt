@@ -38,6 +38,16 @@ RELATED WEAKNESSES:
 
 REFERENCES:
 
+
+Title: Beware of Fake QR Code Scams
+URL: https://www.aarp.org/money/scams-fraud/info-2021/qr-codes.html
+
+Title: Using QR Codes In Your Business: Best Practices And Pitfalls
+URL: https://www.smashingmagazine.com/2022/02/qr-codes-business-best-practices-pitfalls/
+
+Title: How to safely scan a QR code using your smartphone
+URL: https://cyberguy.com/security/how-to-safely-scan-a-qr-code-using-your-smartphone/
+
 Title: CAPEC-98: Phishing
 URL: https://capec.mitre.org/data/definitions/98.html
 
@@ -63,7 +73,14 @@ code or if the issue is with applications that have QR code scanning
 capabilities not previewing the link before navigating to it.  Please
 confirm which situation your submission is intended for.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: The issue is with applications that have QR code scanning
+capabilities not previewing the link before navigating to it.
+
+(Referring to 'an issue of a lack of link preview on the application
+hosting the QR code' - in my opinion it would be impossible, because
+we can consider a QR code in the bus or a train.  The responsibility
+is from the scanning app in my opinion - as product gives this
+feature)
 
 ----------
 
@@ -93,7 +110,11 @@ mention prompts or confirmation dialogs, so CWE-356 would need to be
 updated accordingly.  Please let us know your thoughts on this
 analysis.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree. You're right.  "Missing user confirmation before
+potentially insecure action", which aligns with CWE-356: Product UI
+does not Warn User of Unsafe Actions" - sounds good for me.  QR codes
+are becoming more and more popular, so it could be a good idea to
+mention case like this.
 
 
 ----------
@@ -121,7 +142,7 @@ best suited as a new entry (or modification of CWE-356) along the
 lines of "Missing user confirmation before potentially insecure
 action", where the QR link preview could be added as an example.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree with you, could be added as an example.
 
 
 ----------
@@ -152,7 +173,7 @@ to Untrusted Site ('Open Redirect') is incorrect.  Please let us know
 if you agree or disagree with our assessment of the potential
 relationships.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree. Thank you so much for your time and your point of view!
 
 
 ----------
@@ -173,7 +194,16 @@ Comments: While the submitter provided two references, neither
 describe the actual weakness.  Please respond by providing references
 which describe the actual weakness.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:
+
+"Beware of Fake QR Code Scams"
+https://www.aarp.org/money/scams-fraud/info-2021/qr-codes.html
+
+"Using QR Codes In Your Business: Best Practices And Pitfalls"
+https://www.smashingmagazine.com/2022/02/qr-codes-business-best-practices-pitfalls/
+
+"How to safely scan a QR code using your smartphone"
+https://cyberguy.com/security/how-to-safely-scan-a-qr-code-using-your-smartphone/
 
 
 
@@ -226,3 +256,4 @@ COMMUNICATIONS LOG:
 2024-01-05 sent email
 2024-02-20 sent email
 2024-06-27 sent email
+2024-09-20 received comment
