@@ -40,6 +40,8 @@ how to unblock device will get to know 2FA SMS code, but bad actor will can
 not exploit this. This scenario assumes that bad actor is close to victim's
 device - physicial part, but message form with 2FA Code is software part.
 
+Image: https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/assets/18367606/20b2e86a-dcc6-4ffd-8db5-91344fbe0864
+
 RELATED WEAKNESSES:
 
    Other CWE-308
@@ -101,4 +103,5 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2023-12-22 received comment
 2024-01-05 sent email
