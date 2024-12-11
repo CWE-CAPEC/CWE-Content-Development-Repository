@@ -100,7 +100,17 @@ Comments: This seems more like some sort of stored XSS, but the
 payload is a QR code that will load a malicious site.  Further details
 are needed to better understand the underlying weakness.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Title: Allowing to modifications of displaying assets
+by unauthorized actor leads to content spoofing
+
+ Description: When product allow to modify content like ie. assets by
+unauthorized actor and it is not intended feature, content spoofing can be
+exploited. Bad actor using images with QR codes can exploit the weakness
+and make more successful phishing. Moreover, link start with trusted name
+like organization or company name - organization or company can lost trust
+and reputation, if bad actor want to show illegal and bad things, the same
+with possible legal issues, because from victim point of view (ie.: scanned
+QR code from vulnerable site) the org allowed to attack victim.
 
 
 ----------
@@ -238,3 +248,4 @@ COMMUNICATIONS LOG:
 2023-09-20 received comment
 2024-01-16 action update
 2024-02-20 sent comment
+2024-05-09 received comment
