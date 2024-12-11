@@ -87,7 +87,10 @@ or to create a more general parent.  More details are needed to
 determine if this submission is suitable for its own entry adjacent to
 CWE-942.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: This is not an an overlap of CWE-942 as Content Security Policy
+is more prevalent as it applies to every Modern browser & Websites on the
+internet, CWE-942 only pertains a very small subset of applications (Flash
+and Silver light).
 
 
 ----------
@@ -110,7 +113,10 @@ instance, a reference describing specifically how a content security
 policy could be misconfigured would be benificial in supporting a new
 entry.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+https://datatracker.ietf.org/doc/html/rfc7762,
+https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html
+
 
 
 ----------
@@ -128,7 +134,9 @@ CWE-942 and a lack of specific weakness details, it is uncertain if
 this would require a new entry or a modification to CWE-942 until we
 have more details.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: This should be new entry or at least a modification to CWE-942
+as the scope of CSP potentially includes almost all modern browsers and
+websites on the internet.
 
 
 
@@ -184,3 +192,4 @@ COMMUNICATIONS LOG:
 2023-09-12 publish server
 2024-02-21 received comment
 2024-03-13 sent email
+2024-10-29 received comment
