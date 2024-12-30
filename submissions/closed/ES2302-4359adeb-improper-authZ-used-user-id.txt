@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2302-4359adeb
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Declined
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: 
 
@@ -143,7 +143,7 @@ CWE-Published: YYYY-MM-DD
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2024-12-30
 
 
 COMMUNICATIONS LOG:
@@ -152,3 +152,4 @@ COMMUNICATIONS LOG:
 2024-04-24 sent email
 2024-05-15 sent email
 2024-06-27 sent email
+2024-12-30 sent email
