@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-02-08 09:42:54
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.MISC
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.MISC
 
 PUBTRACKER: #5
 
@@ -165,28 +165,6 @@ Response: Agree
 
 ----------
 
-SUB.RELREFS - "No relevant references"
-
-Description: The submission does not provide relevant references that
-explain the weakness, or the relevance is not easily found.
-
-Resolution: The submission is not likely to progress to later phases if
-there are no applicable, easily-accessible references. The submitter could
-resolve by providing additional details such as a section name and quote
-from the reference.  If references still are not available, the CWE Team
-may decide to make an exception if no suitable reference is available.
-
-Comments: The mixed-content references are related to this weakness,
-but are there other references that are more narrowly focused on the
-lack of HTTPS forcing?
-
-Response: [provided 4 references updated in the submission: HTTPS and
-your online security, HTTPS as a ranking signal, Transport Layer
-Security Cheat Sheet, and Why use HTTPS?]
-
-
-----------
-
 SUB.MISC - "Miscellaneous/other problem"
 
 Description: The submission has some other problem that is not covered
@@ -211,6 +189,28 @@ Response: Agree
 
 
 RESOLVED ISSUES:
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: The mixed-content references are related to this weakness,
+but are there other references that are more narrowly focused on the
+lack of HTTPS forcing?
+
+Response: [provided 4 references updated in the submission: HTTPS and
+your online security, HTTPS as a ranking signal, Transport Layer
+Security Cheat Sheet, and Why use HTTPS?]
+
 
 
 TIMELINE:
