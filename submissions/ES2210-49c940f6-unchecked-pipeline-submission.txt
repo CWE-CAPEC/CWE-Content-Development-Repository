@@ -42,6 +42,9 @@ RELATED WEAKNESSES:
 
 REFERENCES:
 
+Title: Update on git.php.net incident
+URL: https://news-web.php.net/php.internals/113981
+
 Title: malicious code submitted to PHP repository
 URL: https://www.zdnet.com/article/official-php-git-server-targeted-in-attempt-to-bury-malware-in-code-base/
 
