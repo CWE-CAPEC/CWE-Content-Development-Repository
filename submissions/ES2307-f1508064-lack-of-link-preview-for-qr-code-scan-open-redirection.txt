@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-07-07 21:35:21
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS
 
 PUBTRACKER: #51
 
@@ -176,8 +176,10 @@ relationships.
 Response: Agree. Thank you so much for your time and your point of view!
 
 
-----------
 
+RESOLVED ISSUES:
+
+----------
 
 SUB.RELREFS - "No relevant references"
 
@@ -205,9 +207,6 @@ https://www.smashingmagazine.com/2022/02/qr-codes-business-best-practices-pitfal
 "How to safely scan a QR code using your smartphone"
 https://cyberguy.com/security/how-to-safely-scan-a-qr-code-using-your-smartphone/
 
-
-
-RESOLVED ISSUES:
 
 
 
