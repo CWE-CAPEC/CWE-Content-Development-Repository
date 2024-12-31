@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2305-b9315546
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Declined
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: 
 
@@ -192,7 +192,7 @@ CWE-Published: YYYY-MM-DD
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2024-12-31
 
 
 
