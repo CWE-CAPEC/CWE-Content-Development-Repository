@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2307-7a0d993a
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-07-07 22:01:50
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SCOPE.SITUATIONS, SUB.GRAMMAR, SUB.ABS.LOWLEVEL, SUB.OVERLAP
 
 PUBTRACKER: #49
 
@@ -33,11 +33,23 @@ compromised, where user's reaction/action should be quick and user should
 have opportunity to change own email address, as part of protection of own
 account. It is similar like possibility to change own password.
 
+Useful resource:
+https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Authentication_Cheat_Sheet.md#Implement-Proper-Password-Strength-Controls
+
+"Ensure credential rotation when a password leak occurs, or at the
+time of compromise identification." - here, it can be a part of
+credentials.
+
 RELATED WEAKNESSES:
 
    Other CWE-522
+   Other ES2307-69404299
 
 REFERENCES:
+
+Title: Authentication Cheat Sheet
+URL: https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Authentication_Cheat_Sheet.md#Implement-Proper-Password-Strength-Controls
+
 
 Title: CAPEC-560: Use of Known Domain Credentials
 URL: https://capec.mitre.org/data/definitions/560.html
@@ -45,7 +57,102 @@ URL: https://capec.mitre.org/data/definitions/560.html
 
 ACTIVE ISSUES:
 
+SCOPE.SITUATIONS - "Focus on situations in which weaknesses may appear"
 
+Description: The submission focuses on conditions or situations in which
+weaknesses are more likely to appear but are outside of the direct control
+of the product.
+
+Resolution: Submissions are likely to be rejected unless they can be recast
+as categories or can influence modes of introduction of existing CWEs,
+i.e., modify entries.
+
+Comments: The proposed submission isn't clear in what the actual weakness is. 
+It highlights that e-mails should be allowed to change when a compromise 
+occurs. This is a situation and not an actual weakness. Vendors offer this
+as a feature and not a bug. Please let us know if you agree with the suggestion.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This submission emphasizes the inability to change an e-mail
+address, and a separate submission (ES2307-69404299) focuses on
+passwords. These submissions should probably be addressed at the same
+time. The CWE Team will work with you to ensure that both submissions
+address SUB.OVERLAP/SUB.ABS.LOWLEVEL issues.  Please acknowledge this
+comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: This submission emphasizes the inability to change an e-mail
+address, and a separate submission (ES2307-69404299) focuses on
+passwords. If there are other kinds of data that should be able to be
+changed, then it might be necessary to create a more-general entry
+than what is covered by the current submissions. Please suggest if
+other kinds of data (such as phone number) might be important to
+cover.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.GRAMMAR - "Grammar/Spelling issues"
+
+Description: The submission has multiple occurrences of errors with
+grammar, spelling, etc. that must be fixed before the Publication stage.
+
+Resolution: The submission will not be allowed to progress to later phases
+if the grammar or spelling problems are so significant that they are likely
+to cause difficulty for readers to understand the weakness. If the issues
+are minor, then the submission could progress.	However, no submission can
+move to the Publication stage without grammar and spelling checks. American
+English is used for spelling.
+
+Comments: The proposed submission doesn't follow proper American English style.
+We suggest the following: "Applications should allow users 
+(account owners) to change their own email addresses 
+(e.g., in account settings), especially when the email 
+address is part of the credentials or account recovery mechanism. 
+This is important in cases where data may be compromised, 
+since the user's response should be swift, and they should have the 
+opportunity to change their email address as part of protecting their 
+account. This functionality is similar to the ability to change 
+one's own password." Please let us know if you agree with the suggestion.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -57,9 +164,9 @@ Received: 2023-07-07
 
 Ack-Receipt: 2024-01-05
 
-Init-Review: 2024-07-17
+Init-Review: 2024-07-19
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-01-16
 
 Init-Declined: YYYY-MM-DD
 
@@ -93,5 +200,8 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2023-12-21 received comment
 2024-01-05 sent email
 2024-07-17 sent email
+2024-12-10 action update
+2025-01-16 sent email
