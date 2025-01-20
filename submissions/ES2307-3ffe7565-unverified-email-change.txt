@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2307-3ffe7565
 
-ACTION TYPE: New Entry
+ACTION TYPE: Undetermined
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-07-31 11:06:38
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.RELREFS, SUB.GRAMMAR, SUB.ACTION
 
 PUBTRACKER: #62
 
@@ -36,6 +36,7 @@ account takeover.
 RELATED WEAKNESSES:
 
    Other CWE-620
+   Other ES2206-33c5627d
 
 REFERENCES:
 
@@ -45,7 +46,99 @@ URL: https://cwe.mitre.org/data/definitions/620.html
 
 ACTIVE ISSUES:
 
+SUB.OVERLAP - "Duplicate/Overlap"
 
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: Considering the connection with CWE-620 and the unique alterations
+possible with the proposed entry, it is incumbent upon the CWE team to determine
+the best approach to handle this proposal. This situation presents an
+opportunity for CWE-620 to evolve into a higher-level CWE, encompassing both
+email and password. Alternatively, a new CWE could be established specifically
+for Unverified Email Change. Further discussion is necessary to establish the
+most effective course of action. There is also a potential overlap with another
+proposed entry (See "ES2206-33c5627d - Account management with insufficient
+verification of owner's external identifier(s)"). Relationships between these
+entries would need to be carefully considered. Please indicate if you agree or
+disagree with this comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: The submission lacks any references that demonstrate the real-world
+applicability of this issue. The author should incorporate actual examples,
+complete with references, to illustrate how this issue has been exploited in
+real-world scenarios. Please indicate if you agree or disagree with this
+comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.GRAMMAR - "Grammar/Spelling issues"
+
+Description: The submission has multiple occurrences of errors with
+grammar, spelling, etc. that should be fixed before publication.
+
+Resolution: The submission will not be allowed to progress to later phases
+if the grammar or spelling problems are so significant that they are likely
+to cause difficulty for readers to understand the weakness. If the issues
+are minor, then the submission could progress.	However, no submission can
+be published without grammar and spelling checks. American English is used
+for spelling.
+
+Comments:  The existing description does not adhere to the standard rules of
+American English grammar and style. Here's a proposed revision for enhanced
+clarity and correctness. "In a similar vein to CWE-620: Unverified Password
+Change, an email address serves as a crucial part of the credentials. It is used
+either in the login process (alongside the password in the Login form) or as the
+primary component for the Reset/Forgot password feature. The action of changing
+the email should be secured by requiring the input of the current password or a
+comparable method, thereby verifying the identity of the actual user or account
+owner. Failure to implement such security measures could potentially result in
+an Account Takeover." Please indicate if you agree or disagree with the proposed
+suggestion.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ACTION - "Unable to determine action"
+
+Description: It is not clear what action to perform based on the
+submission, e.g., create new entry, update existing entry, etc.
+
+Resolution: The submission cannot progress to the Internal-Update stage
+until the relevant actions(s) are identified.
+
+Comments: Due to other submission problems we are unsure which action to take at
+this time. Please indicate if you agree or disagree with this comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -57,9 +150,9 @@ Received: 2023-07-31
 
 Ack-Receipt: 2024-01-11
 
-Init-Review: 2024-06-04
+Init-Review: 2024-06-11
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-01-20
 
 Init-Declined: YYYY-MM-DD
 
@@ -94,3 +187,5 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-01-11 sent email
+2024-06-04 sent email
+2025-01-20 sent email
