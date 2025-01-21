@@ -38,6 +38,109 @@ Python's NoneType
 have happened. detail :
 https://github.com/windshock/uninitialized-variable-vulnerability
 
+DEMONSTRATIVE EXAMPLES:
+
+INTRO TEXT:
+
+Consider the following merchant server application as implemented in
+[REF-XXX]. It receives card payment information (orderPgData instance
+in OrderPgData.java) from the payment gateway (such as PayPal). The
+next step is to complete the payment (finalizeOrder() in
+Main.java). The merchant server validates the amount (validateAmount()
+in OrderPgData.java), and if the validation is successful, then the
+payment is completed.
+
+BAD CODE:
+LANGUAGE: Java
+
+https://github.com/windshock/uninitialized-variable-vulnerability/blob/main/OrderPgData.java
+
+public class OrderPgData {
+    String PgType;
+    int productPrice;
+    int paymentAmount;
+    private boolean isPaymentAmountTampered;
+
+     public boolean getIsPaymentAmountTampered() {
+        return this.isPaymentAmountTampered;
+    }
+
+ ...
+public void validateAmount() {
+   ... [sets this.setIsPaymentAmountTampered to true or false depending on whether the product price matches the payment amount]
+ }
+
+===============
+
+BAD CODE:
+LANGUAGE: Java
+
+public class PgServiceResolver {
+    public OrderPgData getOrderPgDataByPgType(String pgType, int productPrice, int paymentAmount) {
+...
+        switch(pgType) {
+            case "card":
+                System.out.println("In "+pgType+" payment logic, orderPgData does not verify whether the product amount and payment amount have been tampered with.");
+                break;
+            case "paypal":
+                System.out.println("In "+pgType+" payment logic, orderPgData verifies whether the product amount and payment amount have been tampered with.");
+                orderPgData.validateAmount();
+                break;
+        }
+...
+
+===============
+
+BAD CODE:
+LANGUAGE: Java
+
+public class Main {
+    public static void main(String[] args) {
+        String pgType = "card"; // or paypal
+        int productPrice = 100;
+        int paymentAmount = 10;
+       PgServiceResolver pgServiceResolver = new PgServiceResolver();
+        OrderPgData orderPgData = pgServiceResolver.getOrderPgDataByPgType(pgType, productPrice, paymentAmount);
+        finalizeOrder(orderPgData);
+}
+   private static void finalizeOrder(OrderPgData orderPgData) {
+        if (orderPgData.getIsPaymentAmountTampered()) {
+            System.out.println("The attacker tampered with the payment amount, but product payment is canceled.");
+        } else {
+       ... /* the product payment is completed */
+}
+}
+}
+
+In PgServiceResolver.java, when pgType is "card" indicating a card
+payment, orderPgData.validateAmount() is not called - that is, the
+amount is not validated to be the same as the expected price.
+
+Since isPaymentAmountTampered is declared as a private boolean, but it
+is not initialized, it is initialized to false by the Java compiler.
+
+If the adversary modifies the price, e.g. changing paymentAmount from
+100 to 10, then no validation is performed. Since
+isPaymentAmountTampered is "false" because of the default
+initialization, the code finishes processing the payment because it
+does not believe that the amount has been changed.
+
+
+GOOD CODE:
+LANGUAGE: Java
+
+EXPLANATORY TEXT:
+
+This weakness could be addressed by setting the value of
+isPaymentAmountTampered to true. This is a "secure-by-default" value
+that reflects a "default deny" policy - i.e., it's assumed that the
+payment amount is tampered, and only a special validation step can
+change this assumption.
+
+...
+    private boolean isPaymentAmountTampered = true;
+
+
 RELATED WEAKNESSES:
 
    ChildOf CWE-456
@@ -46,8 +149,15 @@ RELATED WEAKNESSES:
 
 REFERENCES:
 
-Title: uninitialized variable vulnerability - Problem with boolean variables that are forcibly initialized to false by the Java compiler
+Title: [REF-XXX] uninitialized variable vulnerability - Problem with boolean variables that are forcibly initialized to false by the Java compiler
 URL: https://github.com/windshock/uninitialized-variable-vulnerability/blob/main/README.md
+Author: windshock
+Date: 2022-09-13
+
+Title: The Java Language Specification, Java SE 7 Edition
+URL: https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5
+Date: 2013-02-28
+Author: James Gosling, Bill Joy, Guy Steele, Gilad Bracha, Alex Buckley
 
 
 ACTIVE ISSUES:
