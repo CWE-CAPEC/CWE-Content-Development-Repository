@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2210-163ab1df
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2022-10-24 14:44:22
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ACTCHANGE, SUB.MISSDET, SUB.ABS.SUBTREE
+ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.MISC
 
 PUBTRACKER: #68
 
@@ -34,66 +34,59 @@ variable delimiters from given pipeline variables.
 
 DEMONSTRATIVE EXAMPLES:
 
-# The entry should have one or more demonstrative examples, but
-# submitters should not put significant effort into these until the CWE
-# team has reviewed and accepted the general concepts behind the
-# submission. Submissions can include example information for either
-# Software, Hardware, or both, as relevant.
-
-# "BAD CODE" and "GOOD CODE" can be code snippets, descriptions of a
-# design or architecture, or an algorithm or protocol.
-#
-# * If you would like to submit diagrams/images to support any
-# weakness descriptive examples, please attach it to the email
-# submission in a png format and reference it by filename where
-# desired. For an example, please see:
-# https://cwe.mitre.org/data/definitions/1256.html
-
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#demox
-
-# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
-#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
-#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
-#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
-#    Assembly, Other
-
-
 INTRO TEXT:
 
-<<put the information here>>
+The following code attempts to create a github workflow environment
+variable. The environment variable value is retrieved from an external
+resource.
 
 BAD CODE:
-LANGUAGE: <<LANGUAGE>>
+LANGUAGE: github workflow
 
-<<put the information here>>
-
+name: Deploy Preview
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Download artifact'
+        uses: actions/github-script
+        with:
+          script: |
+            var artifacts = await github.actions.listWorkflowRunArtifacts({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               run_id: ${{ github.event.workflow_run.id }},
+            });
+            var matchPrArtifact = artifacts.data.artifacts.filter((artifact) => {
+              return artifact.name == "pr"
+            })[0];
+            var downloadPr = await github.actions.downloadArtifact({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               artifact_id: matchPrArtifact.id,
+               archive_format: 'zip',
+            });
+            var fs = require('fs');
+            fs.writeFileSync('${{github.workspace}}/pr.zip', Buffer.from(downloadPr.data));
+      - run: |
+          unzip pr.zip
+          echo "pr_number=$(cat NR)" >> $GITHUB_ENV
 
 EXPLANATORY TEXT:
 
-<<put the information here>>
+The workflow job attempts to download pull request artifacts, unzip
+from the artifact called pr.zip and extract the value of the file NR
+into a variable – pr_number that will be used later in another job.
 
-GOOD CODE:
-LANGUAGE: <<LANGUAGE>>
+The code does not sanitize the value of the file NR which is attacker controlled.
 
-<<put the information here>>
+The attacker could escape the existing pr_number and create a new
+variable using a ‘\n’ followed by any environment variable to be added
+such as:
 
+\nNODE_OPTIONS="--experimental-modules --experiments-loader=data:text/javascript,console.log('injected code');//"
 
----------------
-
-INTRO TEXT:
-
-<<put the information here>>
-
-BAD CODE:
-LANGUAGE: <<LANGUAGE>>
-
-<<put the information here>>
-
-
-EXPLANATORY TEXT:
-
-<<put the information here>>
+which would result in running javascript code on the workflow runner with elevated privileges.
 
 GOOD CODE:
 LANGUAGE: <<LANGUAGE>>
@@ -220,46 +213,6 @@ URL: https://www.legitsecurity.com/blog/github-privilege-escalation-vulnerabilit
 
 ACTIVE ISSUES:
 
-SUB.ACTCHANGE - "Change in action for submission"
-
-Description: The submission's action needs to change, e.g., from "New
-Entry" to "Modification," or vice versa. This potentially requires changes
-to the kinds of information that will need to be provided.
-
-Resolution: The submission cannot progress to the Production stage until
-the informational needs are addressed.
-
-Comments: Per 2023-01-12/2023-01-29 email threads, it is agreed to
-treat this submission as a modification to the higher-level CWE-74
-(Injection). Environment variables will be mentioned as a type of
-input; the extended description might be modified or updated;
-mitigations specific to CI/CD will be considered; and potential
-examples will be explored, such as observed examples or demonstrative
-examples.
-
-Response: <SUBMITTER SHOULD REPLY HERE>
-
------------
-
-SUB.MISSDET - "Missing details"
-
-Description: The submission is missing some requested or required details
-for fields other than name and description.
-
-Resolution: The submission cannot progress to later phases if it does not
-have all required fields.
-
-Comments: Because of the change to a Modification action, this
-submission now requests information on Potential Mitigations that
-might be specific to pipelines; observed examples, if any could be
-found; and demonstrative examples. Please fill out those sections,
-which are provided above. The CWE Team will examine whether to modify
-existing descriptions, e.g., by mentioning environment variables as a
-type of input.
-
-Response: <SUBMITTER SHOULD REPLY HERE>
-
-
 -----------
 
 SUB.ABS.SUBTREE - "Potential subtree issue/gap"
@@ -294,12 +247,75 @@ the CWE team to research and resolve. That research will be conducted
 independently, so this submission will be treated as a modification to
 CWE-74.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: We accept your suggestion and the code examples try and
+emphasize how this escaping can be done using OS delimiters.
 
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: In a 2023-03-12 email, for OBSERVED EXAMPLES, the submitter
+said "There are no currently available reported CVEs matching the cwe
+extended but we believe that once we will publish this CWE the
+community will be more aware of the importance of reporting new-coming
+vulnerabilities." The CWE Team will work with the submitter to
+determine if any CVEs have been published since early 2023. The lack
+of observed examples (CVEs) will not prevent this submission from
+moving forward, since a demonstrative example was provided.
+
+Response: [NO RESPONSE NECESSARY] This issue remains active but does
+not need submitter input during Init-Consultation phase.
 
 
 RESOLVED ISSUES:
 
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to the Production stage until
+the informational needs are addressed.
+
+Comments: Per 2023-01-12/2023-01-29 email threads, it is agreed to
+treat this submission as a modification to the higher-level CWE-74
+(Injection). Environment variables will be mentioned as a type of
+input; the extended description might be modified or updated;
+mitigations specific to CI/CD will be considered; and potential
+examples will be explored, such as observed examples or demonstrative
+examples.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] I’ve added the required
+changes and in the email’s body.
+
+-----------
+
+SUB.MISSDET - "Missing details"
+
+Description: The submission is missing some requested or required details
+for fields other than name and description.
+
+Resolution: The submission cannot progress to later phases if it does not
+have all required fields.
+
+Comments: Because of the change to a Modification action, this
+submission now requests information on Potential Mitigations that
+might be specific to pipelines; observed examples, if any could be
+found; and demonstrative examples. Please fill out those sections,
+which are provided above. The CWE Team will examine whether to modify
+existing descriptions, e.g., by mentioning environment variables as a
+type of input.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] I’ve added the required
+changes and in the email’s body.
+
+----------
 
 SUB.RELS - "Unclear relationships"
 
@@ -435,7 +451,7 @@ Init-Consultation: 2022-10-31
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-01-22
 
 Det-Requested: YYYY-MM-DD
 
@@ -481,5 +497,7 @@ COMMUNICATIONS LOG:
 2023-03-06 received email
 2023-03-09 sent email
 2023-03-10 sent email
+2023-03-12 received email
 2024-01-03 sent email
 2024-01-03 received email
+2025-01-22 sent email
