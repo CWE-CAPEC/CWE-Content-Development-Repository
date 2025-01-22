@@ -1,0 +1,97 @@
+SUBMISSION COMMUNICATION ID: ES2501-ca11dc77
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-01-08 05:52:06
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #136
+
+MTRACKER: #1210
+
+GITHUBUSER: piyushroshan
+
+SUBMISSION TYPE: Software
+
+NAME: Stale or Unused Endpoint
+
+DESCRIPTION:
+
+The software contains an endpoint (API route, network service path, or
+similar interface) that is no longer active, has no valid business or
+functional use, or was never fully removed after development or testing.
+Such endpoints can be discovered and abused by attackers, leading to
+unauthorized access, data leakage, or other unintended behaviors.
+
+RELATED WEAKNESSES:
+
+   Other CWE-561
+
+REFERENCES:
+
+Title: OWASP API Top 10: API9:  Improper Inventory Management
+URL: https://owasp.org/API-Security/editions/2023/en/0xa9-improper-inventory-management/
+
+Title: OWASP Top 10: A6: 
+URL: https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-01-08
+
+Ack-Receipt: 2025-01-22
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
