@@ -1,0 +1,105 @@
+SUBMISSION COMMUNICATION ID: ES2412-ba1b5f1e
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-12-16 09:31:59
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #135
+
+MTRACKER: #1209
+
+GITHUBUSER: kexinoh
+
+SUBMISSION TYPE: Software
+
+NAME: IV is derived from key  with CBC Mode
+
+DESCRIPTION:
+
+IV is derived from Key, which causes IV to remain unchanged in the same
+session, resulting in CWE-329.
+However, in the special case of IV=key, CCA attacks will be caused. The
+attacker only needs to send the specified ciphertext after construction to
+obtain the key through the decrypted content.
+The specific attack process is as follows:
+
+Intercept ciphertext: The attacker intercepts a ciphertext that is
+encrypted using IV = Key. C = (C1, C2, C3,... , Cn).
+Construct a special ciphertext: The attacker constructs a new ciphertext C'
+= (C1, 0, C1, C2, C3,... , Cn), where 0 represents a block of all zeros.
+Decryption process: When decrypting C1, P1 = AES_decrypt(C1, Key) XOR Key.
+When decrypting the second block, P2 = AES_decrypt(0, Key) XOR C1. When
+decrypting the third block, P3 = AES_decrypt(C1, Key) XOR 0. Recovery Key:
+Since P1 = AES_decrypt(C1, Key) XOR Key and P3 = AES_decrypt(C1, Key), P1
+XOR P3 = Key.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-329
+
+REFERENCES:
+
+Title: how to breck iv=key with CBC?
+URL: https://cedricvanrompay.gitlab.io/cryptopals/challenges/27.html
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-12-16
+
+Ack-Receipt: 2025-01-22
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
