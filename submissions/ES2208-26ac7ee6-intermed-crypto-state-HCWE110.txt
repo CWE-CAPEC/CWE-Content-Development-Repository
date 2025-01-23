@@ -4,7 +4,7 @@ ALTERNATE ID: HCWE110
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -14,7 +14,7 @@ SUBMISSION DATE: 2022-08-15 21:12:21
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELS, SCOPE.NOMITS
+ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.RELS, SUB.MISC
 
 PUBTRACKER: #17
 
@@ -24,18 +24,18 @@ GITHUBUSER: anmeza
 
 SUBMISSION TYPE: Hardware
 
-NAME: Improper Protection of Intermediate Cryptographic State/Results
+NAME: Driving Intermediate Cryptographic State/Results to Hardware Module Outputs
 
 DESCRIPTION:
 
-General Description:
+General Description
 
-A hardware module implementing a cryptographic algorithm leaks information
-about the intermediate state or results of its cryptographic
-operations via one of its output ports (typically the output
-containing the final result).
+A hardware module implementing a cryptographic algorithm writes
+sensitive information about the intermediate state or results of its
+cryptographic operations via one of its output wires (typically the
+output port containing the final result).
 
-Technical Impact:
+Technical Impact
 
 Mathematically sound cryptographic algorithms rely on their correct
 implementation for security. The algorithms assume that with a given
@@ -47,11 +47,11 @@ attacker to identify the secrets used in the cryptographic operation.
 
 RELATED WEAKNESSES:
 
-   ChildOf CWE-203
    Other CWE-201
    Other CWE-212
    Other CWE-1295
    Other CWE-1258
+   MemberOf CWE-1205
 
 
 REFERENCES:
@@ -72,6 +72,120 @@ URL: https://doi.org/10.1109/ISCAS45731.2020.9180848
 
 ACTIVE ISSUES:
 
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The RELATED WEAKNESSES section has been updated based on the
+2025-01-22 meeting. This will be further analyzed and refined during
+stage 2.
+
+CWE-201 is close but does not apply, since its focus is on the
+intentional sending of data when "a portion of the data [that]
+includes sensitive information". In this case, the data is sensitive
+in and of itself - not just a portion. CWE-212 does not apply, since
+the key weakness in this submission is in providing/sending the data
+in the first place. CWE-921 does not apply because it is about storage
+of data - not transmission.  CWE-1295 and CWE-1258 appear similar,
+although they might be most appropriate as chaining relationships.
+
+CWE-497 may be appropriate as a parent, although its current extended
+description is software-focused, and the "system" term is intended to
+refer to the operating system. However, CWE-497 may still apply here;
+consider a SoC with various modules, but the control sphere allows
+modules to read information from some modules but not others.
+
+CWE-200 is very general, but because there are no clear children under
+which this submission could fit, it may be appropriate as a parent
+here. There is a possibility of creating a more-specific
+"intermediate" CWE entry between CWE-200 and this submission, roughly
+for "sending sensitive data to a destination accessible by untrusted
+parties," but the CWE team will investigate this possibility
+separately; creation of an intermediate entry may happen independently
+and is not expected to slow down conversion of this submission into a
+new entry.
+
+Response: [NO RESPONSE NEEDED; DETAILED DISCUSSION IS ONGOING.]
+
+
+------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: Submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might
+not be unique enough to get its own CWE ID.  This might lead to
+modification of an existing entry to include the additional details,
+or creation of a higher-level entry for which the submission is one
+example. (Note: some older CWE entries have this problem and would not
+be published today, generally because they were too specific to a
+particular language.)
+
+Resolution: the submission will be allowed to progress to later phases
+once the more-general concept is appropriately identified and
+described. The original, lower-level submission will serve as a
+primary example of the more general concept.
+
+Comments:
+
+(1) In the last round, we asked "Is the weakness or mistake specific
+to a particular technology?"  The submitter's reply stated that "The
+weakness is not specific to a particular technology and could
+reasonably arise in various types of designs (e.g. processor hardware,
+SoCs, crypto IP, Bus/Interfaces, etc.) which derive result data from
+sensitive information and continuously drive (or stream) those result
+data from a secure/trusted location to a potentially
+unsecure/untrusted location." Since this applies to a variety of
+hardware technologies, we agree that this submission is not too
+specific.
+
+(2) We also stated that "'cryptographic state' is a very specific type
+of information, which is likely too low-level to receive its own
+entry." The submitter replied that "this weakness is especially
+impactful for cryptographic accelerators such as AES, HMAC, ECC, and
+others." However, the 2025-01-22 meeting led to the conclusion that
+retaining this submission at a variant level of abstraction is
+appropriate, and that this particular issue is important and common
+enough to warrant a new entry, instead of modifying existing
+entries. As covered in SUB.RELS, the CWE team will consider creating a
+new parent of this submission that would be a child of CWE-200.
+
+Response: [NO RESPONSE NEEDED; DETAILED DISCUSSION IS ONGOING.]
+
+
+------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: In answering a question about how the weakness could be
+mitigated, the submitter effectively provided a demonstrative example
+(see RESOLVED ISSUES). We will revisit this as an example once the
+submittion reaches Stage 2 (Detailed Submission).
+
+Response: [NO RESPONSE NEEDED; THIS WILL BE RESOLVED IN STAGE 2 WHEN
+CONVERTING THE SUBMITTER'S ANSWER TO A DEMONSTRATIVE EXAMPLE AS PART
+OF THE DETAILED SUBMISSION.]
+
+
+
+RESOLVED ISSUES:
 
 SCOPE.NOMITS - "No actionable mitigations"
 
@@ -224,7 +338,6 @@ pull request we submitted to the OpenTitan Github repository
 //////////////////////////////////////////////////////////////
 
 
-
 ------
 
 SUB.UNCLEAR - "Unclear weakness"
@@ -236,119 +349,50 @@ cause the submission to be incorrectly mapped to.
 Resolution: An initial submission (or full submission) cannot progress past
 the consultation phase until SUB.UNCLEAR is addressed.
 
-Comments: Please provide more detail about the mistake that causes the
-          leakage of intermediate crypto data.  Is this mistake unique
-          to hardware or is does it apply to software as well?
+Comments:
 
-Response: The mistake which leads to the exposure of sensitive
-information (i.e., intermediate state/results, input values, keys) via
-a cryptographic hardware module’s output ports is a mistake of
-omission. If designers do not insert logic/mechanisms to allow
-non-sensitive information (i.e., final cryptographic result or a
-default value) to be driven to the appropriate outputs while
-simultaneously preventing sensitive information (i.e., intermediate
-state/results, input values, keys) from being driven to any outputs,
-they enable such exposure to occur since hardware designs must
-continuously drive values to their outputs (wires) (which can be
-sampled/accessed at any point in time). By contrast, software is not
-exposed to this weakness because software sequentially updates and
-accesses the values of program variables based on access protections
-put in place by the operating system or other forms of embedded memory
-management abstracted from the software. In order for the same
-exposure to occur in software, sensitive values would need to be
-written to variables which are accessible outside of the entity (e.g.,
-function, program, process, etc.) implementing the cryptographic
-algorithm which is only possible if there is a bug in the underlying
-protections abstracted from the software. Meaning this weakness would
-not be a weakness of the software itself.
+(1) In the submitter's most recent response to this issue, it appears
+that the key weakness is that "designers do not insert
+logic/mechanisms [that prevent] sensitive information (i.e.,
+intermediate state/results, input values, keys) from being driven to
+any outputs." The exposure of this information can occur "since
+hardware designs must continuously drive values to their outputs
+(wires) (which can be sampled/accessed at any point in time)." Meeting
+discussion on 2025-01-22 settled on this description: "A hardware
+module implementing a cryptographic algorithm writes sensitive
+information about the intermediate state or results of its
+cryptographic operations via one of its output wires (typically the
+output port) containing the final result."
 
-------
+The name was also discussed on 2025-01-22 and will be changed to:
+"Driving Intermediate Cryptographic State/Results to Hardware Module
+Outputs".
 
-SUB.RELS - "Unclear relationships"
+(2) Based on the previous round of responses by the submitter, we
+believe that there are software parallels (to be discussed in the
+SUB.RELS issue), but we agree that this submission is appropriate as a
+hardware-specific consideration of the problem.
 
-Description: The submission suggests some relationships, but the
-name/description is not explained in a way in which the relationship is
-relevant; or, the weakness is apparent, but it is not clear what the best
-parent/child relationship(s) would be.
-
-Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
-is present. It can progress to other phases if the CWE Team agrees that the
-potential relationships may require closer investigation.  The submission
-cannot progress to the publication stage until clear relationships and
-direct parents are identified. The CWE Team may decide to use high-level
-relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
-exist and cannot be quickly resolved.
-
-Comments: Please provide more detail of why this is believed to be a 
-          child of CWE-203. More detail is needed about what is 
-	  being observed and how it is being observed?  Is it a direct
-	  observation, behavorial difference, timing diference or
-	  some other side channel? If a direct observation, then
-          CWE-203 probably does not apply.
-
-Response:
-
-The weakness we describe produces an exposure of sensitive information
-which is consistent across various execution conditions so, in
-retrospect, CWE-203 was not the most appropriate choice. A more
-appropriate relationship would be that this weakness is a child of
-CWE-200. Beyond this, there are other CWEs which are relevant and
-potentially merit a relationship (other than parent/child). In order
-of most to least relevant, these CWEs include: CWE-201, CWE-212,
-CWE-1295, and CWE-1258.
-
-Although the aforementioned CWEs do cover exposure of sensitive
-information, we believe that the way in which the weakness under
-review unnecessarily exposes sensitive information (i.e., via
-continuous driving/streaming) warrants its own entry.
-
-Additionally, we believe that this weakness would be appropriate to
-include within Category ID: 1205 (CWE CATEGORY: Security Primitives
-and Cryptography Issues) since it describes a weakness that would
-jeopardize the security of a cryptographic process.
-
-In summary, we believe that the weakness we describe should be
-its own CWE under CWE 200.
-
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
 ------
 
-SUB.ABS.LOWLEVEL - "Low level of abstraction"
+SUB.ACTION - "Unable to determine action"
 
-Description: Submission identifies an issue, but its abstraction might
-be too low-level to merit its own CWE entry. If it is focused on a
-particular technology, framework, protocol, or function, then it might
-not be unique enough to get its own CWE ID.  This might lead to
-modification of an existing entry to include the additional details,
-or creation of a higher-level entry for which the submission is one
-example. (Note: some older CWE entries have this problem and would not
-be published today, generally because they were too specific to a
-particular language.)
+Description: It is not clear what action to perform based on the
+submission, e.g., create new entry, update existing entry, etc.
 
-Resolution: the submission will be allowed to progress to later phases
-once the more-general concept is appropriately identified and
-described. The original, lower-level submission will serve as a
-primary example of the more general concept.
+Resolution: The submission cannot progress to the Internal-Update stage
+until the relevant actions(s) are identified.
 
-Comments: Is the weakness or mistake specific to a particular
-          technology? If so, then it might be too low-level to receive
-          its own CWE identifier. Also, "cryptographic state" is a
-          very specific type of information, which is likely too
-          low-level to receive its own entry.
+Comments: In earlier rounds during initial consultation, it was
+unclear whether a new entry could be created from this submission, or
+if modifications to existing entries were needed. However, the
+2025-01-22 meeting resolved the question - this submission should be
+treated as a new entry, at the variant level of abstraction.
 
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
-
-Response: The weakness is not specific to a particular technology and
-could reasonably arise in various types of designs (e.g. processor
-hardware, SoCs, crypto IP, Bus/Interfaces, etc.) which derive result
-data from sensitive information and continuously drive (or stream)
-those result data from a secure/trusted location to a potentially
-unsecure/untrusted location. However, this weakness is especially
-impactful for cryptographic accelerators such as AES, HMAC, ECC, and others.
-
-
-
-RESOLVED ISSUES:
 
 
 
@@ -365,7 +409,7 @@ Init-Consultation: 2022-12-21
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-01-23
 
 Det-Requested: YYYY-MM-DD
 
@@ -406,3 +450,6 @@ COMMUNICATIONS LOG:
 2024-09-12 received email
 2024-12-06 received email
 2024-12-06 sent email
+2024-12-17 action update
+2025-01-22 action meeting
+2025-01-23 sent email
