@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2410-5c86ccd3
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -50,7 +50,7 @@ Received: 2024-10-28
 
 Ack-Receipt: 2024-12-09
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2025-01-24
 
 Init-Consultation: YYYY-MM-DD
 
@@ -87,3 +87,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-12-09 sent email
+2025-01-24 sent email
