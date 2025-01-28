@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-e1534783
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Internal-Update
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-02-29 12:07:55
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #85
 
@@ -38,6 +38,20 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The CWE team adapted the submitter's proposed image in
+a way that emphasizes both missing and incorrect input
+validation. The submitter will still be credited with the
+original proposal in CWE-20's content history.
+
+Response: [NO RESPONSE NEEDED; ISSUE TO BE ADDRESSED DURING INTERNAL-UPDATE]
+
 
 
 RESOLVED ISSUES:
@@ -54,21 +68,21 @@ Init-Review: 2024-05-14
 
 Init-Consultation: YYYY-MM-DD
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-01-28
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Det-Received: YYYY-MM-DD
 
-Full-Review: YYYY-MM-DD
+Det-Review: YYYY-MM-DD
 
-Full-Consultation: YYYY-MM-DD
+Det-Consultation: YYYY-MM-DD
 
-Full-Accepted: YYYY-MM-DD
+Det-Accepted: YYYY-MM-DD
 
-Production: YYYY-MM-DD
+Internal-Update: 2025-01-28
 
 CWE-Assigned: YYYY-MM-DD
 
@@ -86,3 +100,7 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2024-04-02 sent email
+2024-05-14 sent email
+2025-01-28 sent comment
+2025-01-28 sent comment
