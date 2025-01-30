@@ -63,7 +63,7 @@ by adding that "This simplifies phishing attacks". This is not a place for
 description, and it is already covered in the Extended Description of CWE-601. 
 Please let us know if you agree with the suggestion.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree.
 
 
 ----------
@@ -88,7 +88,15 @@ fits. For example, it may belong in Common Consequences, or it might
 be useful as a demonstrative example.  Please let us know if you agree
 with the suggestion.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree. Could be as an addition to the current CWE-601's
+description. Could be as Common Consequences or Demonstrative Example
+(the decision is yours).
+
+I believe it’s worth mentioning (or adding), as based on my observations,
+many people are not aware of this, and it highlights an additional threat
+— not just 'mere redirection,' but the ability to download a file with
+arbitrary content.
+
 
 
 ----------
@@ -112,7 +120,7 @@ redirection to an external site may lead to endpoints on those sites that
 automatically trigger a download action." Please let us know if you agree with
 the suggestion.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Response: Agree. Sorry for that and thank you so much.
 
 ----------
 
@@ -129,7 +137,7 @@ Comments: The suggestion provided offers edits to the existing CWE-601's
 description, therefore, it doesn't need a new CWE. Please let us know if 
 you agree with the suggestion.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree.
 
 
 
@@ -186,3 +194,4 @@ COMMUNICATIONS LOG:
 2024-01-05 sent email
 2024-06-10 sent email
 2025-01-20 sent email
+2025-01-22 received comment
