@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-07-31 11:06:38
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.OVERLAP, SUB.RELREFS, SUB.GRAMMAR, SUB.ACTION
+ISSUE DETAILS: SUB.OVERLAP, SUB.ACTION
 
 PUBTRACKER: #62
 
@@ -26,12 +26,35 @@ NAME: Unverified Email Change
 
 DESCRIPTION:
 
-Similar like for CWE-620: Unverified Password Change - email address is a
-part of credentials, as login part (email address and password - Login
-form) or main part for Reset/Forgot password feature. Email Change action
-should be protected by typing current password or similar method - proofing
-that person is a real user, account owner. Otherwise it can lead to ATO
-account takeover.
+In a similar vein to CWE-620: Unverified Password Change, an email
+address serves as a crucial part of the credentials. It is used either
+in the login process (alongside the password in the Login form) or as
+the primary component for the Reset/Forgot password feature. The
+action of changing the email should be secured by requiring the input
+of the current password or a comparable method, thereby verifying the
+identity of the actual user or account owner. Failure to implement
+such security measures could potentially result in an Account
+Takeover.
+
+A quick comment as part of the discussion — Please note that the email
+change function is usually tied to security, as it either pertains to
+login (email and password) or is used for password recovery (sending
+reset links to the email address).
+
+Otherwise, why introduce an email change function at all? Consider a
+hypothetical scenario where the email address does not serve these
+purposes and can be changed without verifying "I am who I claim to
+be." In such a situation, an attacker might not take over the account
+but could gain access to sensitive information if the product sends
+notifications to the changed email address.
+
+In other scenarios not covered here, the email change function itself
+would be pointless — after all, why add an email change function if
+the product does not send notifications to that address or if it is
+not used for login or account recovery?
+
+This underscores how important and critical this topic is — ensuring
+proper safeguards for performing this action.
 
 RELATED WEAKNESSES:
 
@@ -39,6 +62,24 @@ RELATED WEAKNESSES:
    Other ES2206-33c5627d
 
 REFERENCES:
+
+Title: Server Security Misconfiguration - Lack of Password Confirmation - Change Email Address
+URL: https://bugcrowd.com/vulnerability-rating-taxonomy
+
+Title: Exploring Email Change Vulnerabilities and Security Best Practices
+URL: https://www.vaadata.com/blog/exploring-email-change-vulnerabilities-and-security-best-practices/
+
+Title: No Password Verification on Changing Email Address Cause Account takeover
+URL: https://hackerone.com/reports/292673
+
+Title: Lack of Password Confirmation
+URL: https://www.cobalt.io/vulnerability-wiki/v2-authentication/lack-of-password-confirmation
+
+Title: Changing A User's Registered Email Address
+URL: https://owasp.org/www-community/pages/controls/Changing_Registered_Email_Address_For_An_Account
+
+Title: What is the suggested best practice for changing a user's email address?
+URL: https://security.stackexchange.com/questions/234060/what-is-the-suggested-best-practice-for-changing-a-users-email-address
 
 Title: CWE-620: Unverified Password Change
 URL: https://cwe.mitre.org/data/definitions/620.html
@@ -68,32 +109,41 @@ verification of owner's external identifier(s)"). Relationships between these
 entries would need to be carefully considered. Please indicate if you agree or
 disagree with this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree - please take your time, don't be in hurry.
+
+For me entry 'ES2206-33c5627d' looks interesting, but it's separate
+topic in my opinion. Not connected, not overlapped.
+
+Based on my observations, email is currently the most common method
+for Reset/Password Recovery functions (as there isn’t another way that
+is equally convenient and secure). While we require a password change
+to be preceded by entering the current password (to confirm "I am who
+I claim to be"), the same should apply to the email address. An
+attacker could use an unsecured email change process to take over an
+account (reset the password and before this action, assign a new
+malicious email address) if proper safeguards are not in place (to
+confirm "I am who I claim to be").
+
+----------
+
+SUB.ACTION - "Unable to determine action"
+
+Description: It is not clear what action to perform based on the
+submission, e.g., create new entry, update existing entry, etc.
+
+Resolution: The submission cannot progress to the Internal-Update stage
+until the relevant actions(s) are identified.
+
+Comments: Due to other submission problems we are unsure which action to take at
+this time. Please indicate if you agree or disagree with this comment.
+
+Response: I have just sent the answers to the bullet points, I hope it
+will be useful.
 
 
 ----------
 
-SUB.RELREFS - "No relevant references"
-
-Description: The submission does not provide relevant references that
-explain the weakness, or the relevance is not easily found.
-
-Resolution: The submission is not likely to progress to later phases if
-there are no applicable, easily-accessible references. The submitter could
-resolve by providing additional details such as a section name and quote
-from the reference.  If references still are not available, the CWE Team
-may decide to make an exception if no suitable reference is available.
-
-Comments: The submission lacks any references that demonstrate the real-world
-applicability of this issue. The author should incorporate actual examples,
-complete with references, to illustrate how this issue has been exploited in
-real-world scenarios. Please indicate if you agree or disagree with this
-comment.
-
-Response: <SUBMITTER SHOULD REPLY HERE>
-
-
-----------
+RESOLVED ISSUES:
 
 SUB.GRAMMAR - "Grammar/Spelling issues"
 
@@ -119,28 +169,31 @@ owner. Failure to implement such security measures could potentially result in
 an Account Takeover." Please indicate if you agree or disagree with the proposed
 suggestion.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
-
-
-----------
-
-SUB.ACTION - "Unable to determine action"
-
-Description: It is not clear what action to perform based on the
-submission, e.g., create new entry, update existing entry, etc.
-
-Resolution: The submission cannot progress to the Internal-Update stage
-until the relevant actions(s) are identified.
-
-Comments: Due to other submission problems we are unsure which action to take at
-this time. Please indicate if you agree or disagree with this comment.
-
-Response: <SUBMITTER SHOULD REPLY HERE>
-
+Response: [RESOLVED ISSUE; DO NOT CHANGE] Agree. Sorry for that and
+thank you very much. Looks correct and professional.
 
 ----------
 
-RESOLVED ISSUES:
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
+
+Comments: The submission lacks any references that demonstrate the real-world
+applicability of this issue. The author should incorporate actual examples,
+complete with references, to illustrate how this issue has been exploited in
+real-world scenarios. Please indicate if you agree or disagree with this
+comment.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] Submitter provided multiple
+references that have been added to REFERENCES.
+
 
 
 
@@ -189,3 +242,4 @@ COMMUNICATIONS LOG:
 2024-01-11 sent email
 2024-06-04 sent email
 2025-01-20 sent email
+2025-01-22 received comment
