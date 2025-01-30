@@ -26,12 +26,66 @@ NAME: Lack of possibility to change own email address
 
 DESCRIPTION:
 
-Applications should allow to user (account owner) to changing own email
-address (ie. in account settings), especialy when it is part of credentials
-or recover account mechanism. This is important in cases like data
-compromised, where user's reaction/action should be quick and user should
-have opportunity to change own email address, as part of protection of own
-account. It is similar like possibility to change own password.
+Applications should allow users (account owners) to change their own
+email addresses (e.g., in account settings), especially when the email
+address is part of the credentials or account recovery mechanism.
+This is important in cases where data may be compromised, since the
+user's response should be swift, and they should have the opportunity
+to change their email address as part of protecting their
+account. This functionality is similar to the ability to change one's
+own password.
+
+The inability to change email or password (credentials) in a web
+application can be considered a vulnerability from both a security and
+usability perspective. The main risks associated with this issue
+include:
+
+- Lack of Access Control: Users cannot update their credentials,
+meaning they have no way to protect their accounts if they suspect
+their credentials are compromised.
+
+- Account Takeover Risk: If an attacker gains access to an account,
+the legitimate user has no way to regain control or reset their
+credentials, leading to permanent account loss.
+
+- Account Management Challenges: Users cannot update their email
+addresses, which may cause issues with password recovery or
+receiving security-related notifications.
+
+Providing functionality for users to change their passwords and email
+addresses is crucial for ensuring account security and effective
+account management in web applications.
+
+Relevant CWE Classifications:
+
+- CWE-640: Weak Password Recovery Mechanism for Forgotten Password
+
+Although CWE-640 primarily deals with weak password recovery
+mechanisms, the inability to change passwords or email addresses fits
+into this context, as it prevents users from securing their accounts
+properly.
+
+- CWE-285: Improper Authorization
+
+If the application prevents users from modifying their own
+authentication credentials, it may reflect a lack of proper
+authorization mechanisms for user data modification.
+
+- CWE-359: Exposure of Sensitive Information to an Unauthorized Actor
+
+If the inability to change a password leaves a potentially compromised
+password active, it increases the risk of unauthorized account access.
+
+- CWE-16: Configuration
+
+This issue may also be classified as a configuration flaw, where a
+critical function for user security is missing.
+
+Without an email change function, recovery and notifications may fail,
+exacerbating security risks.  While availability impact is limited to
+individual accounts, confidentiality and integrity impacts are severe.
+
+
 
 Useful resource:
 https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Authentication_Cheat_Sheet.md#Implement-Proper-Password-Strength-Controls
@@ -47,9 +101,17 @@ RELATED WEAKNESSES:
 
 REFERENCES:
 
+Title: OWASP Top 10 (2021): A01:2021 – Broken Access Control and A07:2021 – Identification and Authentication Failures
+URL: https://owasp.org/Top10/
+
 Title: Authentication Cheat Sheet
 URL: https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Authentication_Cheat_Sheet.md#Implement-Proper-Password-Strength-Controls
 
+Title: Forgot Password Cheat Sheet
+URL: https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html
+
+Title: NIST Special Publication 800-63B Guidelines on digital authentication, including password management principles
+URL: https://pages.nist.gov/800-63-3/sp800-63b.html
 
 Title: CAPEC-560: Use of Known Domain Credentials
 URL: https://capec.mitre.org/data/definitions/560.html
@@ -72,7 +134,56 @@ It highlights that e-mails should be allowed to change when a compromise
 occurs. This is a situation and not an actual weakness. Vendors offer this
 as a feature and not a bug. Please let us know if you agree with the suggestion.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:
+
+The suggestion aligns with the context provided; however, it is
+important to clarify that the inability to change an email address is
+indeed a security-related weakness. When an email address is part of
+authentication credentials or recovery mechanisms, restricting its
+modification can create vulnerabilities, especially in cases of
+compromise. While vendors may offer this as a feature, the lack of
+such functionality introduces risks and should be considered a
+weakness.
+
+Please consider the following scenarios (attacker gains access to a
+compromised email address):
+
+1. Even if the email is not used for the Reset/Account Recovery
+function (e.g., password/PIN recovery via SMS) but is provided during
+the registration process, if the user cannot change it, there remains
+a risk of confidential information leakage when notifications are sent
+to the unchanged email address.
+
+2. The most common cases observed by the author: the Reset/Account
+Recovery function relies on the provided email address. If the victim
+cannot update or change the email address, they lose access to their
+account.
+
+3. The most common cases observed by the author: the email address is
+used as part of the credentials during login. Similar to point 2, the
+victim loses access to their account (the attacker can exploit this
+vulnerability by accessing the unchanged email address, resetting and
+setting a new password, or at the very least, obtaining information
+sent via the product's notifications).
+
+Many of us likely have different experiences, but based on my
+observations, many products allow for password changes (which is good)
+while simultaneously not allowing users to change the email address
+that is used for logging in or account recovery functions. Cases where
+the email address does not play a significant role in account
+management are far less common in my experience.
+
+In my opinion, the password change function becomes somewhat pointless
+in scenarios where the email address cannot be changed. An attacker
+can simply reset the password and gain persistence by using the
+unchanged email address and setting a new password of their choice.
+
+I agree that this could be rephrased and generalized to account for
+various alternative approaches. However, in my observations, the
+mentioned cases are more common than their alternatives. I think it
+would be valuable to highlight these examples in a section like
+"Examples" to illustrate potential issues arising from weaknesses in
+product design or implementation.
 
 ----------
 
@@ -93,7 +204,7 @@ time. The CWE Team will work with you to ensure that both submissions
 address SUB.OVERLAP/SUB.ABS.LOWLEVEL issues.  Please acknowledge this
 comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree with you
 
 
 ----------
@@ -122,7 +233,32 @@ than what is covered by the current submissions. Please suggest if
 other kinds of data (such as phone number) might be important to
 cover.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree, good point. I suppose it might be necessary to create
+a more-general entry.
+
+I think it would be beneficial to present this in a more general way,
+supported by the provided examples to illustrate the concept (so the
+reader understands why the inability to update authentication data is
+a weakness that an attacker could exploit).
+
+Based on the author's experience, the following elements are commonly
+associated with account management (registration, login, account
+recovery):
+
+Email and password.
+
+Nickname/username and password (with recovery through email).
+
+Magic links sent via email, without a password.
+
+More frequently encountered in the context of 2FA, but it is also
+worth considering login methods involving: Phone numbers (e.g., SMS
+with a code sent to the registered phone number).  Authorization codes
+from applications like Google Authenticator and similar OTP-based
+solutions.
+
+This could be framed in a more general manner to account for potential
+elements that may have been overlooked in the current description.
 
 ----------
 
@@ -149,7 +285,7 @@ opportunity to change their email address as part of protecting their
 account. This functionality is similar to the ability to change 
 one's own password." Please let us know if you agree with the suggestion.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree. Sorry for that and thank you so much.
 
 
 ----------
@@ -205,3 +341,4 @@ COMMUNICATIONS LOG:
 2024-07-17 sent email
 2024-12-10 action update
 2025-01-16 sent email
+2025-01-18 received comment
