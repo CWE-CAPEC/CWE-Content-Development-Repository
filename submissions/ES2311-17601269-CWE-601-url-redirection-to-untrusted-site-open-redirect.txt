@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-11-25 16:40:16
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ATTACK, SUB.OVERLAP, SUB.GRAMMAR, SUB.ACTCHANGE 
+ISSUE DETAILS: SUB.OVERLAP
 
 PUBTRACKER: #39
 
@@ -26,12 +26,13 @@ NAME: CWE-601: URL Redirection to Untrusted Site ('Open Redirect')
 
 DESCRIPTION:
 
-A web application accepts a user-controlled input that specifies a link to
-an external site, and uses that link in a Redirect. This simplifies
-phishing attacks. Open Redirect allow also to immediately download a file
-without user permission in some cases (because it is about redirection to
-external site, some endpoints on external sites can trigger download
-action).
+A web application accepts a user-controlled input that specifies a
+link to an external site, and uses that link in a Redirect. This
+simplifies phishing attacks. An open redirect can also enable the
+immediate download of a file without the user's permission in certain
+cases. This occurs because the redirection to an external site may
+lead to endpoints on those sites that automatically trigger a download
+action.
 
 RELATED WEAKNESSES:
 
@@ -47,26 +48,6 @@ URL: https://www.kaspersky.com/resource-center/definitions/drive-by-download
 
 
 ACTIVE ISSUES:
-
-SUB.ATTACK - "Too attack-focused"
-
-Description: The submission's name and/or description emphasizes the
-attack, not the weakness. Either the submission's weakness is not
-well-understood, or it is better described as an attack pattern, which may
-be suitable for inclusion in CAPEC.
-
-Resolution: An initial submission cannot progress to later phases unless it
-also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
-
-Comments: The description provided builds on the current CWE-601's description
-by adding that "This simplifies phishing attacks". This is not a place for
-description, and it is already covered in the Extended Description of CWE-601. 
-Please let us know if you agree with the suggestion.
-
-Response: Agree.
-
-
-----------
 
 SUB.OVERLAP - "Duplicate/Overlap"
 
@@ -99,6 +80,28 @@ arbitrary content.
 
 
 
+
+----------
+
+RESOLVED ISSUES:
+
+SUB.ATTACK - "Too attack-focused"
+
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: The description provided builds on the current CWE-601's description
+by adding that "This simplifies phishing attacks". This is not a place for
+description, and it is already covered in the Extended Description of CWE-601. 
+Please let us know if you agree with the suggestion.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] Agree.
+
 ----------
 
 SUB.GRAMMAR - "Grammar/Spelling issues"
@@ -120,7 +123,7 @@ redirection to an external site may lead to endpoints on those sites that
 automatically trigger a download action." Please let us know if you agree with
 the suggestion.
 
-Response: Response: Agree. Sorry for that and thank you so much.
+Response: [RESOLVED ISSUE; DO NOT CHANGE] Agree. Sorry for that and thank you so much.
 
 ----------
 
@@ -137,13 +140,7 @@ Comments: The suggestion provided offers edits to the existing CWE-601's
 description, therefore, it doesn't need a new CWE. Please let us know if 
 you agree with the suggestion.
 
-Response: Agree.
-
-
-
-----------
-
-RESOLVED ISSUES:
+Response: [RESOLVED ISSUE; DO NOT CHANGE] Agree.
 
 
 
