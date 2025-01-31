@@ -14,7 +14,7 @@ SUBMISSION DATE: 2021-11-11 13:05:00
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.NOINIT
+ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL
 
 PUBTRACKER: #28
 
@@ -254,7 +254,42 @@ examples to CWE-405: Asymmetric Resource Consumption
 (Amplification). A demonstrative example will be created by adapting
 the primary description text and integrating portions of subsequent emails.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I would prefer splitting the submission into two submissions
+which may solve the SUB.ABS.LOWLEVEL issue. Here are the two possible
+CWEs with their suggested (extended) descriptions, and examples.
+
+1. Insufficient Resource Partitioning for Algorithm
+
+Description: The product chooses improper parameters for an algorithm
+that remains effective, but not efficient
+
+Extended Description: Improperly chosen parameters make an algorithm
+more resource-intensive but do not provide additional or sufficient
+functionality that an attacker can exploit to cause a denial of
+service.
+
+Example: Long exponent usage in Diffie-Hellman key exchange increases
+computational complexity, causing significantly more resource
+consumption, without providing additional security strength.
+
+2. Insufficient Prevention of Asymmetric Resource Consumption
+
+Description: The product does not require proof-of-work from the actor
+before performing resource-consuming operation if authentication is
+not possible
+
+Extended Description: The product cannot authorize the requests in the
+absence of a (proper) authentication and the repeated requests made by
+the adversary can cause asymmetric resource consumption if
+proof-of-work is not required, especially when the number or frequency
+of interactions cannot be limited effectively, which is the situation
+in the case of a distributed denial-of-service attack against a public
+service.
+
+Example: Key exchange in cryptographic protocols may require
+significant resource consumption, but authentication is possible just
+after the key exchange phase of the cryptographic handshake
+
 
 --------
 
@@ -279,30 +314,8 @@ CWE-405, but it would then overlap other CWEs such as CWE-406 and
 CWE-409. So, the subtree under CWE-405 needs to be analyzed more
 carefully before a new entry can be created.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE NEEDED; DETAILED DISCUSSION IS ONGOING.]
 
-
---------
-
-SUB.NOINIT - "No Initial Review"
-
-Description: The submission did not go through the Initial Review /
-Initial Consultation phases (Proposal stage) and has significant
-problems that should have been resolved in that phase.  This primarily
-applies to situations when external requesters provided a Full
-Submission form (Production stage) in 2021 and 2022, before the CWE
-Team launched the external submission web server and process.
-
-Resolution: The submission must be treated as if in the
-Initial-Review/Initial-Consultation phase, and the Full submission will not
-be evaluated until the Proposal stage is complete.
-
-Comments: Submission was provided with full details. Review is
-progressing. Some parts of the full submission will be used to update
-CWE-405 for CWE 4.10.  After release of CWE 4.10, further
-consideration will be given to creating a new entry.
-
-Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 
@@ -343,6 +356,29 @@ the handshake is going to happen on the server side."
 
 Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
+--------
+
+
+SUB.NOINIT - "No Initial Review"
+
+Description: The submission did not go through the Initial Review /
+Initial Consultation phases (Proposal stage) and has significant
+problems that should have been resolved in that phase.  This primarily
+applies to situations when external requesters provided a Full
+Submission form (Production stage) in 2021 and 2022, before the CWE
+Team launched the external submission web server and process.
+
+Resolution: The submission must be treated as if in the
+Initial-Review/Initial-Consultation phase, and the Full submission will not
+be evaluated until the Proposal stage is complete.
+
+Comments: Submission was provided with full details. Review is
+progressing. Some parts of the full submission will be used to update
+CWE-405 for CWE 4.10.  After release of CWE 4.10, further
+consideration will be given to creating a new entry.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
 
 
 TIMELINE:
@@ -355,7 +391,7 @@ Init-Review: YYYY-MM-DD
 
 Init-Consultation: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2021-11-16
 
 Init-Declined: YYYY-MM-DD
 
@@ -394,3 +430,5 @@ COMMUNICATIONS LOG:
 2023-02-16 received email
 2023-02-27 sent email
 2023-09-12 publish server
+2023-09-25 received comment
+2025-01-31 action update
