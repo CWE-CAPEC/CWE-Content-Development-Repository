@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2311-17601269
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -156,7 +156,7 @@ Init-Consultation: 2025-01-20
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-01-30
 
 Det-Requested: YYYY-MM-DD
 
@@ -192,3 +192,4 @@ COMMUNICATIONS LOG:
 2024-06-10 sent email
 2025-01-20 sent email
 2025-01-22 received comment
+2025-01-30 sent email
