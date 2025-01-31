@@ -12,7 +12,7 @@ SUBMISSION DATE: 2022-07-06 07:33:23
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ABS.LOWLEVEL
+ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.MISC
 
 PUBTRACKER: #18
 
@@ -22,7 +22,7 @@ GITHUBUSER: jharv1
 
 SUBMISSION TYPE: Software
 
-NAME: Inadvertent reliance on JVM cached DNS resolution
+NAME: Reliance on a dynamic, critical cached reference
 
 DESCRIPTION: 
 
@@ -83,16 +83,39 @@ the more-general concept is appropriately identified and described. The
 original, lower-level submission will serve as a primary example of the
 more general concept.
 
-Comments: JVMs are too specific to have a separate CWE entry for
-them. However, it might be reasonable to create a weakness about
+Comments: In a previous round, the CWE Team stated that "JVMs are too
+specific [but] it might be reasonable to create a weakness about
 caches (or other types of resources) that are stored too long (i.e.,
 do not expire fast enough), and this JVM/DNS issue could be cited as
-an example. Such a new entry would fall underneath CWE-664: Improper
-Control of a Resource Through its Lifetime, and some additional
-subtree reorganization might be needed. Please let us know if you
-agree with this.
+an example." CWE-664 and potential subtree reorganization were
+recommended. The submitter agreed and suggested a different name,
+"Reliance on a cached reference that is dynamic and critical". The CWE
+Team agrees that this name is sufficient for this phase, although it
+might need additional changes to reflect concepts such as
+expiration. CWE will work with the submitter in later stages to
+further improve the resulting new entry. Please state if you agree
+with this approach.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The CWE Team plans to accept this submission, completing
+Stage 1.  However, since the abstraction of the resulting new CWE
+entry will become more general than the original submission, the CWE
+Team will coordinate with the submitter to determine how much they are
+willing to collaborate on this new entry in Stage 2 (detailed
+submission). Please let us know if you agree with this approach.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
 
 
 
@@ -113,13 +136,13 @@ Init-Consultation: 2024-01-16
 
 Init-Accepted: YYYY-MM-DD
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Det-Received: YYYY-MM-DD
 
-Production: YYYY-MM-DD
+Internal-Update: YYYY-MM-DD
 
 Final-Coord: YYYY-MM-DD
 
@@ -133,3 +156,15 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2022-07-08 sent email
+2022-11-18 received email
+2022-12-07 sent email
+2023-01-17 received email
+2023-02-23 sent email
+2023-09-12 publish server
+2023-12-14 received email
+2023-12-22 sent email
+2024-01-16 sent email
+2024-01-16 sent email
+2024-01-31 received CDR comment
+2025-01-31 sent email
