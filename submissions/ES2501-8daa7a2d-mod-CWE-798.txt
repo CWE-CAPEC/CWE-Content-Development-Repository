@@ -1,0 +1,110 @@
+SUBMISSION COMMUNICATION ID: ES2501-8daa7a2d
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-01-28 14:40:26
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #137
+
+MTRACKER: #1221
+
+GITHUBUSER: https://github.com/ctflearner
+
+SUBMISSION TYPE: Unknown
+
+NAME: CWE-798 new PHP demonstrative example
+
+DESCRIPTION:
+
+I want to suggest the below code for  php language  for the given
+description:
+Demonstrative Examples
+
+PHP code that stores sensitive information like a username and password in
+cleartext:
+
+<?php
+// Storing credentials in plain text in a PHP file
+$db_username = "secretUsername";
+$db_password = "secretPassword";
+$db_host = "localhost";
+$db_name = "exampleDatabase";
+
+// Database connection
+$conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
+
+if (!$conn) 
+{
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+?>
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-798
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-01-28
+
+Ack-Receipt: 2025-02-03
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
