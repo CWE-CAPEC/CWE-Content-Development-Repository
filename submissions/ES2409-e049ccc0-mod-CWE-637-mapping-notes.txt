@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2409-e049ccc0
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-09-13 14:05:00
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #131
 
@@ -40,6 +40,20 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: We agree with your suggestion. When we change the mapping
+notes for CWE-637, we will change other CWEs that have the same
+inaccurate comment.
+
+Response: [NO RESPONSE NEEDED; ISSUE TO BE ADDRESSED DURING INTERNAL-UPDATE]
+
+
 
 
 RESOLVED ISSUES:
@@ -58,7 +72,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-02-04
 
 Det-Requested: YYYY-MM-DD
 
@@ -90,3 +104,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-12-09 sent email
 2025-01-24 sent email
+2025-02-04 sent email
