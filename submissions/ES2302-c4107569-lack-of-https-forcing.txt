@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-02-08 09:42:54
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.MISC
+ISSUE DETAILS: SUB.ABS.LOWLEVEL
 
 PUBTRACKER: #5
 
@@ -44,7 +44,7 @@ Assets are often omitted with using HTTPS.
 
 (mentioned examples sites from my side are accidental and
 unintentional) Example: https://banksitezxc.example and used there
-HTTP://cdn.banksitezxc.example/logo.png - bad actor can get to know
+ HTTP://cdn.banksitezxc.example/logo.png - bad actor can get to know
 about user - bank relation (or interaction) in this case (sniffing).
 
 
@@ -57,7 +57,7 @@ View-ID: 1000
 RelType: Other
 ID: ES2302-1f7d9e54 Using HTTP instead of HTTPS with email and other content
 
-   
+
 
 REFERENCES:
 
@@ -85,29 +85,82 @@ URL: https://www.eff.org/encrypt-the-web
 ACTIVE ISSUES:
 
 
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: In a previous consultation round, the submitter agreed that
+a variant-level "lack of HTTPS forcing" might be too low-level to
+include in CWE, but it is a common issue.
+
+The CWE Team believes that ES2302-c4107569 "Lack of HTTPS
+forcing" and ES2302-1f7d9e54 "Using HTTP instead of HTTPS with email
+and other content" are both too low-level to receive their own new CWE
+IDs. However, we plan to create a new CWE entry, at the Variant level
+of abstraction, which covers "Use of HTTP instead of HTTPS". We will
+then integrate both submissions into that new entry, and we will
+ensure that your submission is appropriately credited. This submission
+might be integrated as part of an extended description, technical
+details, and/or a demonstrative example. Please let us know if you
+agree with this approach.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+
+RESOLVED ISSUES:
+
 ----------
 
-SUB.OVERLAP - "Duplicate/Overlap"
+SUB.RELREFS - "No relevant references"
 
-Description: The submission identifies a weakness, but it is a duplicate of
-(or partially overlaps) existing weaknesses, indicating problems with the
-submission or associated CWE entries.
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
 
-Resolution: The submission cannot progress to later phases until (1) the
-duplicate/overlap is understood and (2) it is clear how to resolve this
-duplicate/overlap.
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If references still are not available, the CWE Team
+may decide to make an exception if no suitable reference is available.
 
-Comments: While there is no overlap with existing CWEs, there is a
-separate submission in this general area - ES2302-1f7d9e54 "Using HTTP
-instead of HTTPS with email and other content" - as well as some
-discussion on the CWE-Research mailing list in January 2024. While
-this overlap can probably be resolved without too much effort, it
-still must be noted.  Please indicate agreement or explain why the
-differences are big enough that separate CWE identifiers might be
-needed.
+Comments: The mixed-content references are related to this weakness,
+but are there other references that are more narrowly focused on the
+lack of HTTPS forcing?
+
+Response: [provided 4 references updated in the submission: HTTPS and
+your online security, HTTPS as a ranking signal, Transport Layer
+Security Cheat Sheet, and Why use HTTPS?]
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: Since other submissions touch on "use of http instead of
+https" and there is discussion on the CWE-Research list on this topic,
+it is not yet clear how to handle these changes within CDR. It's
+possible that a separate submission (or an independent new entry) will
+be created, and the results of this submission will be integrated into
+the new entry.  Please acknowledge this and provide any additional
+comments.
 
 Response: Agree
-
 
 ----------
 
@@ -136,80 +189,28 @@ discussion is needed. Please provide your thoughts on this proposal.
 
 Response: Agree
 
-
 ----------
 
-SUB.ABS.LOWLEVEL - "Low level of abstraction"
+SUB.OVERLAP - "Duplicate/Overlap"
 
-Description: The submission identifies an issue, but its abstraction might
-be too low-level to merit its own CWE entry. If it is focused on a
-particular technology, framework, protocol, or function, then it might not
-be unique enough to get its own CWE ID.  This might lead to modification of
-an existing entry to include the additional details, or creation of a
-higher-level entry for which the submission is one example. (Note: some
-older CWE entries have this problem and would not be published today,
-generally because they were too specific to a particular language.)
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
 
-Resolution: The submission will be allowed to progress to later phases once
-the more-general concept is appropriately identified and described. The
-original, lower-level submission will serve as a primary example of the
-more general concept.
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
 
-Comments: See SUB.ABS.SUBTREE comments. A variant-level "lack of HTTPS
-forcing" might be too low-level to include in CWE, but it is an
-extremely common issue. This decision does not need to be made for
-initial review.
+Comments: While there is no overlap with existing CWEs, there is a
+separate submission in this general area - ES2302-1f7d9e54 "Using HTTP
+instead of HTTPS with email and other content" - as well as some
+discussion on the CWE-Research mailing list in January 2024. While
+this overlap can probably be resolved without too much effort, it
+still must be noted.  Please indicate agreement or explain why the
+differences are big enough that separate CWE identifiers might be
+needed.
 
 Response: Agree
-
-
-----------
-
-SUB.MISC - "Miscellaneous/other problem"
-
-Description: The submission has some other problem that is not covered
-elsewhere.
-
-Resolution: This will depend on the nature of the problem.
-
-Comments: Since other submissions touch on "use of http instead of
-https" and there is discussion on the CWE-Research list on this topic,
-it is not yet clear how to handle these changes within CDR. It's
-possible that a separate submission (or an independent new entry) will
-be created, and the results of this submission will be integrated into
-the new entry.  Please acknowledge this and provide any additional
-comments.
-
-Response: Agree
-
-
-----------
-
-
-
-
-RESOLVED ISSUES:
-
-----------
-
-SUB.RELREFS - "No relevant references"
-
-Description: The submission does not provide relevant references that
-explain the weakness, or the relevance is not easily found.
-
-Resolution: The submission is not likely to progress to later phases if
-there are no applicable, easily-accessible references. The submitter could
-resolve by providing additional details such as a section name and quote
-from the reference.  If references still are not available, the CWE Team
-may decide to make an exception if no suitable reference is available.
-
-Comments: The mixed-content references are related to this weakness,
-but are there other references that are more narrowly focused on the
-lack of HTTPS forcing?
-
-Response: [provided 4 references updated in the submission: HTTPS and
-your online security, HTTPS as a ranking signal, Transport Layer
-Security Cheat Sheet, and Why use HTTPS?]
 
 
 
@@ -256,4 +257,6 @@ COMMUNICATIONS LOG:
 2023-02-22 sent email
 2023-09-12 publish server
 2024-01-19 sent email
+2024-02-20 sent email
 2024-05-09 received comment
+2025-02-04 sent email
