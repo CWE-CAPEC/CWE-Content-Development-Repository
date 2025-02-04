@@ -2,15 +2,17 @@ SUBMISSION COMMUNICATION ID: ES2302-1f7d9e54
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
+
+AFFECTED CWES:
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-02-12 19:35:12
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.GRAMMAR
 
 PUBTRACKER: #2
 
@@ -40,7 +42,7 @@ RelType: Other
 ID: CWE-319
 
 RelType: Other
-ID: ES2302-1f7d9e54 Using HTTP instead of HTTPS with email and other content
+ID: ES2302-c4107569 Lack of HTTPS Forcing
 
 
 REFERENCES:
@@ -58,6 +60,58 @@ URL: https://web.dev/articles/fixing-mixed-content
 
 ACTIVE ISSUES:
 
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: The CWE Team believes that ES2302-c4107569 "Lack of HTTPS
+forcing" and ES2302-1f7d9e54 "Using HTTP instead of HTTPS with email
+and other content" are both too low-level to receive their own new CWE
+IDs. However, we plan to create a new CWE entry, at the Variant level
+of abstraction, which covers "Use of HTTP instead of HTTPS". We will
+then integrate both submissions into that new entry, and we will
+ensure that your submission is appropriately credited. This submission
+might be integrated as part of an extended description, technical
+details, and/or a demonstrative example. Please let us know if you
+agree with this approach.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.GRAMMAR - "Grammar/Spelling issues"
+
+Description: The submission has multiple occurrences of errors with
+grammar, spelling, etc. that must be fixed before the Publication stage.
+
+Resolution: The submission will not be allowed to progress to later phases
+if the grammar or spelling problems are so significant that they are likely
+to cause difficulty for readers to understand the weakness. If the issues
+are minor, then the submission could progress.	However, no submission can
+move to the Publication stage without grammar and spelling checks. American
+English is used for spelling.
+
+Comments: The grammar issues are not significant enough to prevent
+movement to the next phase. Once this submission is integrated into
+the new entry, the CWE Team will suggest alternate phrasing for this
+description. The phrasing may need to be changed depending on which
+element this submission is integrated into (extended description,
+demonstrative example, or other).  Please let us know if you agree.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
 
 RESOLVED ISSUES:
 
@@ -71,23 +125,23 @@ Ack-Receipt: 2023-02-23
 
 Init-Review: 2024-01-19
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-02-04
 
-Init-Rejected: YYYY-MM-DD
+Init-Declined: YYYY-MM-DD
 
 Init-Accepted: YYYY-MM-DD
 
-Full-Sub-Requested: YYYY-MM-DD
+Det-Requested: YYYY-MM-DD
 
-Full-Sub-Received: YYYY-MM-DD
+Det-Received: YYYY-MM-DD
 
-Full-Review: YYYY-MM-DD
+Det-Review: YYYY-MM-DD
 
-Full-Consultation: YYYY-MM-DD
+Det-Consultation: YYYY-MM-DD
 
-Full-Accepted: YYYY-MM-DD
+Det-Accepted: YYYY-MM-DD
 
-Production: YYYY-MM-DD
+Internal-Update: YYYY-MM-DD
 
 Final-Coord: YYYY-MM-DD
 
@@ -103,3 +157,7 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2023-02-23 sent email
+2023-09-12 publish server
+2024-01-19 sent email
+2024-02-04 sent email
