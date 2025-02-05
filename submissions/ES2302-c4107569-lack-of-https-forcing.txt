@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2302-c4107569
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -226,7 +226,7 @@ Init-Consultation: 2024-02-20
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-02-05
 
 Det-Requested: YYYY-MM-DD
 
@@ -261,3 +261,4 @@ COMMUNICATIONS LOG:
 2024-05-09 received comment
 2025-02-04 sent email
 2025-02-05 received email
+2025-02-05 sent email
