@@ -87,7 +87,7 @@ might be integrated as part of an extended description, technical
 details, and/or a demonstrative example. Please let us know if you
 agree with this approach.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Sounds great, thank you. Agree.
 
 ----------
 
@@ -110,7 +110,7 @@ description. The phrasing may need to be changed depending on which
 element this submission is integrated into (extended description,
 demonstrative example, or other).  Please let us know if you agree.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Agree. Thank you again.
 
 
 RESOLVED ISSUES:
@@ -161,3 +161,4 @@ COMMUNICATIONS LOG:
 2023-09-12 publish server
 2024-01-19 sent email
 2024-02-04 sent email
+2025-02-05 received comment
