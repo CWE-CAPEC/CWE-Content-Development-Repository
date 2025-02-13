@@ -1,0 +1,110 @@
+SUBMISSION COMMUNICATION ID: ES2502-c889f75d
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-02-08 04:46:23
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #138
+
+MTRACKER: #1222
+
+GITHUBUSER: ctflearner
+
+SUBMISSION TYPE: Unknown
+
+NAME: CWE-918 new demonstrative example
+
+DESCRIPTION:
+
+I want to suggest the below code for  php language  for the given
+
+description:
+
+
+The given PHP code is vulnerable to Server-Side Request Forgery (SSRF)
+because it directly accepts a user-supplied URL from the $_GET['url']
+parameter and fetches its content using file_get_contents(), without any
+validation or restrictions. This allows an attacker to request internal or
+restricted resources within the serveru2019s network, such as internal
+admin panels, cloud metadata endpoints, or local services running on
+localhost.
+
+Demonstrative Examples
+
+<?php
+$url = $_GET['url']; // User-controlled input
+
+// Fetch the content of the provided URL
+$response = file_get_contents($url);
+
+echo $response;
+?>
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-918
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-02-08
+
+Ack-Receipt: 2025-02-13
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
