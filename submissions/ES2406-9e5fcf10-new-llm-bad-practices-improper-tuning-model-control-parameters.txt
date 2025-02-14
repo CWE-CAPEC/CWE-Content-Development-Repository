@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2406-9e5fcf10
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-06-28 18:17:29
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.RELS, SUB.ABS.LOWLEVEL, SUB.MISC, SUB.COORD
 
 PUBTRACKER: #114
 
@@ -42,6 +42,23 @@ software practices
 
 RELATED WEAKNESSES:
 
+RelType: Other
+ID: CWE-440
+View-ID: 1000
+
+RelType: Other
+ID: CWE-684
+View-ID: 1000
+
+RelType: Other
+ID: CWE-696
+View-ID: 1000
+
+RelType: Other
+ID: CWE-691
+View-ID: 1000
+
+
 
 REFERENCES:
 
@@ -51,9 +68,146 @@ URL: https://huggingface.co/docs/transformers/main_classes/text_generation#trans
 
 ACTIVE ISSUES:
 
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: It is not clear what CWEs would be related to this weakness,
+although this problem does not need to be fully resolved in this
+stage. Relationships might depend on the kinds of behaviors that are
+affected by the chosen parameters. Within CWE, "poor configuration" is
+not itself a weakness - it is more like a phase or activity in the
+development lifecycle that controls or affects the behavior of a
+product. Since CWE weaknesses are focused on behavior, it will be
+important to understand the behavior-related implications of model
+parameters in order to determine the relationships.  Somewhat related
+weaknesses include CWE-440: Expected Behavior Violation (which is
+defined relative to a specification) or its parent CWE-684: Incorrect
+Provision of Specified Functionality. Alternately there is CWE-696:
+Incorrect Behavior Order as a child of CWE-691: Insufficient Control
+Flow Management.  Please acknowledge that you have seen this comment;
+no additional discussion is necessary at this time.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: In a 2025-02-14 AI WG meeting, the question was raised that
+the focus on Transformers and/or text generation was likely too
+low-level. However, there appeared to be general agreement that this
+submission could be generalized more. Ongoing discussion will help
+resolve this issue.
+
+Response: [NO RESPONSE NEEDED; DETAILED DISCUSSION IS ONGOING.]
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: While the general idea makes sense, the description (and
+perhaps the name) could be improved before moving to Stage 2 (Detailed
+Submission). Discussion by the AI WG has already begun as of a
+2025-02-14 meeting; once some consensus is reached within AI WG
+members, this submission's description and/or name will be changed.
+
+Response: [NO RESPONSE NEEDED; DETAILED DISCUSSION IS ONGOING.]
+
+----------
+
+SUB.COORD - "Requires extensive coordination"
+
+Description: The submission will require or is currently undergoing close
+coordination, discussion, and debate between multiple parties with
+different perspectives and opinions.  The communication could be taking
+place in CDR itself, or outside of CDR.  As a result, it might take longer
+to move the submission to later phases, although the submission is expected
+to be more robust and well-defined as a result of this coordination.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Det-Consultation phases until sufficient consensus has been reached, or if
+the CWE Team decides to move the submission to the next phase.
+
+Comments: This submission is undergoing active review and development
+within the CWE AI Working Group.
+
+Response: [NO RESPONSE NEEDED; DETAILED DISCUSSION IS ONGOING.]
+
 
 
 RESOLVED ISSUES:
+
+SUB.NEWTECH - "New/Emerging Technology"
+
+Description: The submission is related to a new or emerging technology that
+is not well-understood from a weakness perspective, which can cause real or
+perceived gaps in CWE that require extra effort and time to analyze.
+Typically, for new/emerging technologies, early vulnerability discovery and
+research does not focus on root cause analysis (i.e., weakness
+identification). Instead, the focus is on other areas such as attacks and
+exploitation methods, technical impacts, threats, mitigations, or other
+concerns.  As a result, industry understanding can be limited, effectively
+requiring research or focused efforts by SMEs to understand the underlying
+weaknesses.  Rapidly-changing, diverse terminology and technology can
+further complicate understanding. Finally, there might not be enough
+real-world examples with sufficient details from which weakness patterns
+may be discovered.  For this reason, it can be difficult to determine
+whether CWE entries already cover the topics of concern, and which gaps (if
+any) exist.  As of May 2024, some new or emerging technologies include
+AI/ML, cryptocurrency/blockchain, post-quantum cryptography, and
+large-scale architectures with many components that have different trust
+boundaries.  In previous years, new/emerging domains for CWE included
+hardware, cloud, and ICS/OT.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Det-Consultation phases until sufficient attempts have been made to
+understand the weaknesses commonly seen in new or emerging technologies, or
+if the CWE Team decides to move the submission to the next phase.  Analysis
+could include analyzing well-known attacks to understand the weaknesses
+that enable the attacks to succeed; analysis of mitigations to understand
+how the underlying weaknesses are perceived; and/or other methods.  Such
+analysis might require consultation with a variety of Subject Matter
+Experts (SMEs).
+
+Comments: Since AI/ML weakness classification is new, it might require
+some effort to determine the best way to clarify this
+weakness. However, as of February 14, 2025, discussion by CWE AI WG
+members does not suggest that there are substantive problems with
+characterizing a weakness in terms of parameters to AI/ML
+products.
+
+Response: [NO RESPONSE NEEDED; ISSUE RESOLVED.]
 
 
 
@@ -65,7 +219,7 @@ Ack-Receipt: 2024-07-02
 
 Init-Review: 2025-02-04
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-02-14
 
 Init-Declined: YYYY-MM-DD
 
@@ -100,4 +254,7 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-07-02 sent email
+2025-01-31 action meeting
 2025-02-04 sent email
+2025-02-14 action meeting
+2025-02-14 sent email
