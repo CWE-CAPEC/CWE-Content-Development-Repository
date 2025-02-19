@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2303-4597beed
 
-ACTION TYPE: New Entry
+ACTION TYPE: Undetermined
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-03-30 00:14:34
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.ACTCHANGE 
 
 PUBTRACKER: #56
 
@@ -47,11 +47,45 @@ REFERENCES:
 Title: CWE-1395: Dependency on Vulnerable Third-Party Component
 URL: https://cwe.mitre.org/data/definitions/1395.html
 
-
-
 ACTIVE ISSUES:
 
+SUB.OVERLAP - "Duplicate/Overlap"
 
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: The submitter identifies a specific example of an already exisiting
+CWE-1395. The example provided is too specific to warrant its own CWE. However, the
+extended description could be modified to mention the use of third-party services. If the
+submitter can provide detailed references, the CWE team may be able to include
+them as demonstrative examples or list them in references.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to Stage 3 (Content-Generation)
+until the informational needs are addressed.
+
+Comments: Based on the comment in SUB.OVERLAP, it is better for this submission
+to be a modification of CWE-1395 instead of warrating a new CWE.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -64,7 +98,7 @@ Ack-Receipt: 2024-01-05
 
 Init-Review: 2024-07-05
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-02-19
 
 Init-Declined: YYYY-MM-DD
 
@@ -97,3 +131,5 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-01-05 sent email
+2024-07-05 sent email
+2025-02-19 sent email
