@@ -283,6 +283,7 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2022-06-03 sent email
+2022-07-11 action review
 2022-07-12 sent email
 2022-07-19 received email
 2022-07-19 sent email
