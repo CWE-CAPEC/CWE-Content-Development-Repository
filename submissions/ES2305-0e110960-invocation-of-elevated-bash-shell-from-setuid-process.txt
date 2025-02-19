@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2305-0e110960
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-05-08 18:52:35
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.RELS, SUB.ABS.SUBTREE
 
 PUBTRACKER: #59
 
@@ -53,7 +53,13 @@ to gain the higher privileges of the setuid process.
 
 RELATED WEAKNESSES:
 
-   ChildOf CWE-454
+   Other CWE-454
+
+   Other CWE-456
+
+   Other CWE-668
+
+   Other CWE-669
 
 REFERENCES:
 
@@ -62,6 +68,106 @@ URL: https://www.zerodayinitiative.com/blog/2023/4/5/bash-privileged-mode-vulner
 
 
 ACTIVE ISSUES:
+
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: While the weakness identified is definitely a real issue, it
+is too specific to warrant its own CWE entry because of its focus on a
+single option flag to be used when executing a bash shell. A more
+generalized weakness could be added to CWE. For this submission, it
+appears that the key issue is that the original process does not
+"clear" important environment variables or otherwise set them to safe
+values before invocation of the privileged process. The CWE Team
+proposes creating a new Base-level weakness for "not clearing
+security-critical environment variables before invoking a
+program". This bash invocation submission could then be included in
+elements such as a demonstrative code example, observed examples
+(CVEs), etc. The CWE Team would develop the more-general entry and
+collaborate with you to ensure the appropriate integration of the
+details related to this specific submission.  Please indicate whether
+or not you agree with this interpretation of the weakness and our
+proposal for handling this submission.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The submitter suggests this is a child of CWE-454: "External
+Initialization of Trusted Variables or Data Stores". This is
+inappropriate because CWE-454 is focused on variables that are
+initialized from inputs by an external, untrusted actor; the weakness
+is in the code that trusts the variables.  In this situation, the
+environment variables are not properly set or removed; the problem is
+in the invoking program, not the program being called.  This is not
+"initialization" as the concept is used throughout much of CWE, since
+initialization is performed early before the resource is used at all;
+the notion of "resetting dangerous environment variables" or clearing
+them before invocation of another process is not initialization.
+Accordingly, this weakness cannot be classified under CWEs related to
+initialization.  The new, more general entry proposed earlier
+(SUB.ABS.LOWLEVEL) could be related to CWE-668: Exposure of Resource
+to Wrong Sphere, or possibly CWE-669: Incorrect Resource Transfer
+Between Spheres. The CWE Team will determine the correct relationships
+at a later time once there is shared agreement on the nature of the
+weakness being proposed. Please provide your current thoughts on these
+proposed relationships.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or detailed) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: As discussed previously in the SUB.RELS comment, weaknesses
+involving "not clearing or re-setting data before invoking another
+component" do not have a clearly identifiable placement within CWE
+(possibly CWE-668 or CWE-669), and they are not "initialization" per
+se. Some subtree reorganization might be necessary. The CWE Team will
+try to separate any subtree work from processing of this submission as
+much as possible. Please acknowledge that you have read this comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 
@@ -77,7 +183,7 @@ Ack-Receipt: 2024-01-05
 
 Init-Review: 2024-02-20
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-02-18
 
 Init-Declined: YYYY-MM-DD
 
@@ -116,3 +222,6 @@ COMMUNICATIONS LOG:
 2024-03-14 received email
 2024-05-03 received email
 2024-05-06 sent email
+2025-02-14 received email
+2025-02-18 sent email
+2025-02-18 sent email
