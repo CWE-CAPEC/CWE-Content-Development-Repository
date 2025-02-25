@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-c889f75d
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,7 +10,7 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-02-08 04:46:23
 
-ISSUES: not-analyzed
+ISSUES: no
 
 ISSUE DETAILS: 
 
@@ -78,7 +78,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-02-25
 
 Det-Requested: YYYY-MM-DD
 
@@ -110,3 +110,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-02-13 sent email
 2025-02-18 sent email
+2025-02-25 sent email
