@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2407-72db6444
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Internal-Update
 
 AFFECTED CWES: 
 
@@ -88,7 +88,7 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2025-02-25
 
 CWE-Assigned: YYYY-MM-DD
 
@@ -109,3 +109,4 @@ COMMUNICATIONS LOG:
 2024-08-09 sent email
 2025-01-24 sent email
 2025-01-30 sent email
+2025-02-25 sent email
