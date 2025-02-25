@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2409-11b3559c
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,7 +10,7 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-09-02 04:25:40
 
-ISSUES: not-analyzed
+ISSUES: no
 
 ISSUE DETAILS: 
 
@@ -76,7 +76,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-02-25
 
 Det-Requested: YYYY-MM-DD
 
@@ -108,3 +108,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-09-11 sent email
 2025-01-28 sent email
+2025-02-25 sent email
