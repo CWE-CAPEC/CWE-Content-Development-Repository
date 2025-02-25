@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-df916af6
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,7 +10,7 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-02-08 05:20:48
 
-ISSUES: not-analyzed
+ISSUES: no
 
 ISSUE DETAILS: 
 
@@ -28,7 +28,7 @@ DESCRIPTION:
 
 CWE-22 new PHP demonstrative example
 
-I want to suggest the below code foru00a0 php languageu00a0 for the given
+I want to suggest the below code for php language for the given
 
 description:
 
@@ -40,7 +40,7 @@ file_get_contents() without validation. This allows an attacker to
 manipulate the file path using relative (../) or absolute paths,
 potentially accessing sensitive system files. For example, if an attacker
 provides ../../../../etc/passwd as input, the script will fetch and display
-the contents of the systemu2019s password file. Ideally, the file path
+the contents of the system's password file. Ideally, the file path
 should be validated and restricted to a specific directory to prevent
 unauthorized file access.
 
@@ -80,7 +80,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-02-25
 
 Det-Requested: YYYY-MM-DD
 
@@ -112,3 +112,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-02-13 sent email
 2025-02-18 sent email
+2025-02-25 sent email
