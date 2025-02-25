@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2402-c157e546
 
-ACTION TYPE: New Entry
+ACTION TYPE: Undetermined
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-02-24 13:15:28
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ACTION, SUB.MISC
 
 PUBTRACKER: #74
 
@@ -48,6 +48,46 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+----------
+
+SUB.ACTION - "Unable to determine action"
+
+Description: It is not clear what action to perform based on the
+submission, e.g., create new entry, update existing entry, etc.
+
+Resolution: The submission cannot progress to the Internal-Update stage
+until the relevant actions(s) are identified.
+
+Comments: It is not clear what modifications are being proposed, as
+Server-Side Template Injection is covered in CWE-1336 already. The
+"Server-Side Template Injection" phrase is included in Alternate
+Terms. "Remote Code Execution" is a technical impact that is already
+covered in Common Consequences under "Execute Unauthorized Code or
+Commands", although this submission's description provides some more
+specific details. The use of "complex expressions" as stated in this
+submission's description is already alluded to by the phrase "invoke
+arbitrary expressions" in the second paragraph in the Extended
+Description. Please clarify what changes in CWE-1336 you would like to
+see.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: Since the submission does not appear to provide any new
+information, the CWE Team might need to decline it, unless the
+submitter can be more specific about what changes are being
+proposed. If you have more specific suggestions, please provide them
+in the "Response:" in the SUB.ACTION problem above.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 RESOLVED ISSUES:
@@ -62,7 +102,7 @@ Ack-Receipt: 2024-03-05
 
 Init-Review: 2025-02-12
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-02-25
 
 Init-Declined: YYYY-MM-DD
 
@@ -98,3 +138,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-03-05 sent email
 2025-02-12 sent email
+2025-02-25 sent email
