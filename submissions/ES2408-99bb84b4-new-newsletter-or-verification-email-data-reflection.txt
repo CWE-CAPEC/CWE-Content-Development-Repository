@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2408-99bb84b4
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-08-16 03:59:21
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.RELREFS
 
 PUBTRACKER: #121
 
@@ -55,7 +55,45 @@ URL: https://github.com/mohamadpishdar/NewsLetter-or-Verification-Email-Data-ref
 
 ACTIVE ISSUES:
 
+SUB.UNCLEAR - "Unclear weakness"
 
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: The submitter provides some information on the weakness via 
+"receive information from the user ... and repeat it (or part of it) 
+in the email sent to the users... reflective parts are filled with 
+malicious text and URL addresses." This sounds like a content injection, 
+however, a bit more information is needed to truly discern that.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The provided reference links to the submitter's own GitHub page,
+which lists the exact description provided. Please submit a different 
+reference to highlight the need for this issue.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -69,7 +107,7 @@ Ack-Receipt: 2024-09-11
 
 Init-Review: 2025-01-28
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-02-25
 
 Init-Declined: YYYY-MM-DD
 
@@ -105,3 +143,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-09-11 sent email
 2025-01-28 sent email
+2025-02-25 sent email
