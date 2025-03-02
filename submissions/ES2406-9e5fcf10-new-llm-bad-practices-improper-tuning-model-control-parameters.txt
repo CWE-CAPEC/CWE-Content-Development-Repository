@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2406-9e5fcf10
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -229,7 +229,7 @@ Init-Consultation: 2025-02-14
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-03-02
 
 Det-Requested: YYYY-MM-DD
 
@@ -265,3 +265,4 @@ COMMUNICATIONS LOG:
 2025-02-14 action meeting
 2025-02-14 sent email
 2025-02-28 action meeting
+2025-03-02 sent email
