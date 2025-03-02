@@ -12,7 +12,7 @@ SUBMISSION DATE: 2024-06-28 18:17:29
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.RELS, SUB.ABS.LOWLEVEL, SUB.MISC, SUB.COORD
+ISSUE DETAILS: SUB.MISC, SUB.COORD
 
 PUBTRACKER: #114
 
@@ -22,32 +22,35 @@ GITHUBUSER: lilyjw
 
 SUBMISSION TYPE: Software
 
-NAME: LLM Bad Practices: Improper tuning of model control parameters
+NAME: Insecure Setting of Generative AI/ML Model Inference Parameters
 
 DESCRIPTION:
 
-Users of applications that use Transformers text generation capabilities
-may encounter unusually high occurrences of repetition/hallucination due to
-combinations of parameter settings that control model probabilities and
-behavior. For example, high temperatures increase randomness in generated
-text and various repetition penalties can reduce the amount of output
-repetition.
+Single-sentence summary - The product has a component that relies on a
+generative AI/ML model, but the model is configured with incorrect
+inference parameters that produce excessive erroneous or unexpected
+outputs that violate the intended security policy.
 
-
----
-
-Note: this submission is inspired by "CWE-382: J2EE Bad Practices: Use of
-System.exit()", the idea of approaching LLM-related weaknesses via their
-software practices
+Extended description - Generative AI/ML models, such as those used for
+text generation, image synthesis, and other creative tasks, rely on
+inference parameters that control model behavior, such as temperature,
+Top P, and Top K. These parameters affect the model's internal
+decision-making processes, learning rate, and probability
+distributions. Incorrect settings can lead to unusual behavior such as
+"hallucinations" in text generation, unrealistic images, or failure to
+converge during training. The impact of such misconfigurations can
+compromise the integrity of the application. If the results are used
+in security-critical operations or decisions, then this could violate
+the intended security policy, i.e., introduce a vulnerability.
 
 RELATED WEAKNESSES:
 
-RelType: Other
+RelType: ChildOf
 ID: CWE-440
 View-ID: 1000
 
-RelType: Other
-ID: CWE-684
+RelType: ChildOf
+ID: CWE-665
 View-ID: 1000
 
 RelType: Other
@@ -68,67 +71,6 @@ URL: https://huggingface.co/docs/transformers/main_classes/text_generation#trans
 
 ACTIVE ISSUES:
 
-SUB.RELS - "Unclear relationships"
-
-Description: The submission suggests some relationships, but the
-name/description is not explained in a way in which the relationship is
-relevant; or, the weakness is apparent, but it is not clear what the best
-parent/child relationship(s) would be.
-
-Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
-is present. It can progress to other phases if the CWE Team agrees that the
-potential relationships may require closer investigation.  The submission
-cannot progress to the Publication stage until clear relationships and
-direct parents are identified. The CWE Team may decide to use high-level
-relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
-exist and cannot be quickly resolved.
-
-Comments: It is not clear what CWEs would be related to this weakness,
-although this problem does not need to be fully resolved in this
-stage. Relationships might depend on the kinds of behaviors that are
-affected by the chosen parameters. Within CWE, "poor configuration" is
-not itself a weakness - it is more like a phase or activity in the
-development lifecycle that controls or affects the behavior of a
-product. Since CWE weaknesses are focused on behavior, it will be
-important to understand the behavior-related implications of model
-parameters in order to determine the relationships.  Somewhat related
-weaknesses include CWE-440: Expected Behavior Violation (which is
-defined relative to a specification) or its parent CWE-684: Incorrect
-Provision of Specified Functionality. Alternately there is CWE-696:
-Incorrect Behavior Order as a child of CWE-691: Insufficient Control
-Flow Management.  Please acknowledge that you have seen this comment;
-no additional discussion is necessary at this time.
-
-Response: <SUBMITTER SHOULD REPLY HERE>
-
-----------
-
-SUB.ABS.LOWLEVEL - "Low level of abstraction"
-
-Description: The submission identifies an issue, but its abstraction might
-be too low-level to merit its own CWE entry. If it is focused on a
-particular technology, framework, protocol, or function, then it might not
-be unique enough to get its own CWE ID.  This might lead to modification of
-an existing entry to include the additional details, or creation of a
-higher-level entry for which the submission is one example. (Note: some
-older CWE entries have this problem and would not be published today,
-generally because they were too specific to a particular language.)
-
-Resolution: The submission will be allowed to progress to later phases once
-the more-general concept is appropriately identified and described. The
-original, lower-level submission will serve as a primary example of the
-more general concept.
-
-Comments: In a 2025-02-14 AI WG meeting, the question was raised that
-the focus on Transformers and/or text generation was likely too
-low-level. However, there appeared to be general agreement that this
-submission could be generalized more. Ongoing discussion will help
-resolve this issue.
-
-Response: [NO RESPONSE NEEDED; DETAILED DISCUSSION IS ONGOING.]
-
-----------
-
 SUB.MISC - "Miscellaneous/other problem"
 
 Description: The submission has some other problem that is not covered
@@ -136,11 +78,11 @@ elsewhere.
 
 Resolution: This will depend on the nature of the problem.
 
-Comments: While the general idea makes sense, the description (and
-perhaps the name) could be improved before moving to Stage 2 (Detailed
-Submission). Discussion by the AI WG has already begun as of a
-2025-02-14 meeting; once some consensus is reached within AI WG
-members, this submission's description and/or name will be changed.
+Comments: The name and description were discussed and refined in
+multiple meetings. They are nearly complete, pending further
+discussion. The name/description were updated based on WG discussion
+in CDR and the 2025-02-28 AI WG meeting. They are now sufficiently
+clear to allow moving the submission to Stage 2.
 
 Response: [NO RESPONSE NEEDED; DETAILED DISCUSSION IS ONGOING.]
 
@@ -209,6 +151,70 @@ products.
 
 Response: [NO RESPONSE NEEDED; ISSUE RESOLVED.]
 
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: In the 2025-02-28 AI WG meeting, the submission was
+generalized to include multiple kinds of generative AI, not just
+Transformers and text generation. Lower-level children could be
+created in the future if necessary.
+
+Response: [NO RESPONSE NEEDED; ISSUE RESOLVED.]
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: It is not clear what CWEs would be related to this weakness,
+although this problem does not need to be fully resolved in this
+stage. Relationships might depend on the kinds of behaviors that are
+affected by the chosen parameters. Within CWE, "poor configuration" is
+not itself a weakness - it is more like a phase or activity in the
+development lifecycle that controls or affects the behavior of a
+product. Since CWE weaknesses are focused on behavior, it will be
+important to understand the behavior-related implications of model
+parameters in order to determine the relationships.  Somewhat related
+weaknesses include CWE-440: Expected Behavior Violation (which is
+defined relative to a specification) or its parent CWE-684: Incorrect
+Provision of Specified Functionality. Alternately there is CWE-696:
+Incorrect Behavior Order as a child of CWE-691: Insufficient Control
+Flow Management.  Please acknowledge that you have seen this comment;
+no additional discussion is necessary at this time.
+
+Response: [NO RESPONSE NEEDED; ISSUE RESOLVED.] During the February 28
+WG meeting, these relationships were discussed, and there was general
+agreement that it made sense to capture relationships with CWE-440 and
+CWE-665 (Improper Initialization).
+
+
 
 
 TIMELINE:
@@ -258,3 +264,4 @@ COMMUNICATIONS LOG:
 2025-02-04 sent email
 2025-02-14 action meeting
 2025-02-14 sent email
+2025-02-28 action meeting
