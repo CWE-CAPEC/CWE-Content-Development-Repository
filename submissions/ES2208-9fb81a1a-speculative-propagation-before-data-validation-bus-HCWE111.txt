@@ -24,37 +24,74 @@ GITHUBUSER: frestucc
 
 SUBMISSION TYPE: Hardware
 
-NAME: Speculative propagation of requests for transaction before data validation in multi-manager bus architectures
+NAME: Improper Request Propagation before Data Reception in Write Transactions in a Bus Architecture
 
 DESCRIPTION:
 
-In a multi-manager shared bus architecture, the on-chip interconnect based
-on a protocol enforcing the ordering of requests and data indefinitely
-locks the write access to a shared output link when a request for a write
-transaction is not efficiently fulfilled by a manager module.
+The product uses a multi-manager shared bus architecture with an
+on-chip interconnect that speculatively propagates a request for a
+write transaction, but it does not ensure that the remainder of the
+request is fulfilled quickly.
 
-The interconnect propagates an address request before data validation. This
-speculatively reserves the bus to the manager transaction issuer, which is
-left free to delay its data provisioning phase. This can be exploited by a
-malicious/faulty/misbehaving manager module to generate a condition of
-denial-of-service in accessing the write data link from all of the other
-managers in the system, and unboundedly inhibit the write access to one or
-multiple peripherals in the system (i.e., memories, I/Os, etc.). 
+
+(ADDITIONAL DESCRIPTION FOLLOWS; this needs to be corrected and
+refined in later phases after completion of the Initial-Consultation
+phase.)
+
+Some products may use an architecture with a shared bus that is
+accessible by multiple devices, in which these devices can issue
+requests that utilize the shared bus. There may be an on-chip
+interconnect based on a protocol that manages the devices' requests to
+the bus and enforces the ordering of requests and data. When a device
+makes a request, the bus might indefinitely lock the write access to a
+shared output link until the initiating device finishes its
+transaction. If the initiating device does not finish the transaction
+quickly enough, this can prevent other devices from using the bus,
+causing a denial of service.
+
+The scenario may play out as follows. The interconnect receives a
+write request from a controller initiator (e.g., sending the header to
+the interconnect for writing N words of data, with N ranging from 1 to
+the maximum burst length allowed). The interconnect then speculatively
+propagates the request to the target peripheral through the shared bus
+before the corresponding data are received at the interconnect.  This
+speculatively reserves the bus to the manager transaction issuer,
+which is left free to delay its data provisioning phase.    This reserves
+the whole bus path between the initiator and the target peripheral
+until all of the words associated with the request are provided by the
+controller.
+
+Here, the word "speculatively" refers to the fact that the
+interconnect propagates the request assuming that the controller will
+at some point provide the data, thus releasing the use of the bus. The
+interconnect assumes a cooperative behavior from the controller, thus
+implicitly trusting that the controller will complete the transaction
+and release the bus for the use from the other controllers.
+
+A malicious, faulty, or misbehaving manager module can generate a
+denial-of-service condition in preventing access to the write data
+link from all of the other managers in the system, and unboundedly
+inhibit the write access to one or multiple peripherals in the system
+(i.e., memories, I/Os, etc.).
 
 A full description and investigation of the issue for one of the most
 popular standards for on-chip communication deployed in modern systems on a
-chip is reported in [1] and [2]. 
+chip is reported in [REF-XXX] and [REF-YYY].
 
 
 RELATED WEAKNESSES:
 
+ChildOf CWE-841
+
+Other CWE-691
+
 
 REFERENCES:
 
-Title: Cut and Forward: Safe and Secure Communication for FPGA System on Chips
+Title: [REF-XXX] Cut and Forward: Safe and Secure Communication for FPGA System on Chips
 URL: https://ieeexplore.ieee.org/document/9852740
 
-Title: Safely Preventing Unbounded Delays During Bus Transactions in FPGA-based SoC
+Title: [REF-YYY] Safely Preventing Unbounded Delays During Bus Transactions in FPGA-based SoC
 URL: https://ieeexplore.ieee.org/abstract/document/9114758
 
 
@@ -71,79 +108,60 @@ cause the submission to be incorrectly mapped to.
 Resolution: An initial submission (or full submission) cannot progress past
 the consultation phase until SUB.UNCLEAR is addressed.
 
-Comments: There are several questions in this comment that need to be
-addressed.
+Comments: We plan to address the submitter's 2024-06-26 CDR reply as follows:
 
-(1) The name refers to a mistake, "Doing something before validating".
-The name could be rewritten to match the CWE style of naming.
+(1) For the time being, we have adapted the submitter's name
+suggestion and changed this submission's name to: "Improper Request
+Propagation before Data Reception in Write Transactions in a Bus
+Architecture". This could be improved later in Stage 2 (Detailed
+Submission), which is expected to begin shortly after this round of
+consultation.  We also propose the following short description, also
+subject to change: "The product uses a multi-manager shared bus
+architecture with an on-chip interconnect that speculatively
+propagates a request for a write transaction, but it does not ensure
+that the remainder of the request is fulfilled quickly." Finally, we
+have integrated many of your responses into the description, labeled
+as "ADDITIONAL DESCRIPTION".
 
-(2) What is a "manager module"? This is not mentioned in the
-provided references.
-
-(3) How is the term "speculatively" being used
-here?  Is it the same as with SPECTRE / MELTDOWN?
-
-(4) Please verify whether our understanding of the issue is correct:
-
-- There is a shared bus that is accessible by multiple devices.
-
-- These devices all can issue requests that utilize that bus.
-
-- There is a protocol that manages the devices requests to said bus.
-
-- When a device makes a request to the bus, the bus is unable to 
-  receive other requests until the initiating device finishes 
-  its transaction.
-
-- If the initiating device decides not to finish the transaction, 
-  this will cause a denial of service to the bus for the other
-  devices.
-
-One of the papers observes that AXI (as an example) "does not provide
-a standard mechanism to supervise the behaviors (or misbehavior) of
-the managers." Is this the core weakness being covered by this
-submission?
-
-Response: (1) Might something like "Improper request propagation
-before data reception in write transactions" be more compliant? Feel
-free to suggest any other title more compliant with the CWE naming
-style.
-
-(2) A manager module is defined as a hardware module capable of
+(2) Thank you for clarifying what is meant by "manager module" and the
+"controller module" term, namely: "a hardware module capable of
 initiating transactions on the bus through its manager
 interface. Examples of manager modules are processors, DMAs, hardware
-accelerators, etc. In the same way, we also use the terminology
-"controller module".
+accelerators, etc." In the more-detailed Stage 2, we will work with
+you to determine the most appropriate term to use and provide a clear
+definition for the term within the new entry where appropriate.
 
-(3) The meaning of speculative here is different from the meaning in
-SPECTRE/MELTDOWN. The interconnect receives a write request from a
-controller initiator (sending the header to the interconnect for
-writing N words of data, with N ranging from 1 to the maximum burst
-length allowed). The request is speculatively propagated by the
-interconnect to the target peripheral through the shared bus before
-the corresponding data are received at the interconnect. The
-propagation of the header reserves to the initiator controller the
-whole bus path between itself and the target peripheral until all of
-the words associated with the request are provided by the
-controller. Here the word "speculatively" refers to the fact that the
-interconnect propagates the request assuming that the controller will
-at some point provide the data, thus releasing the use of the
-bus. Another way to see it is that the interconnect assumes a
-cooperative behavior from the controller, thus implicitly trusting
-that the controller will complete the transaction and release the bus
-for the use from the other controllers.
+(3) Thank you for clarifying how you are using the term
+"speculative". This does not appear to be commonly used with respect
+to bus architectures, although it seems to be applicable in network
+switching. We will work with you in Stage 2 to determine whether to
+use the "speculative" term.  If so, we will need to account for
+potential confusion with "speculative execution" as used with issues
+like SPECTRE/MELTDOWN.
 
-(4) Your assumptions are correct. I wish to add that the core issue
-relies on a combination of two factors: (i) lack of specification in
-the on-chip communication standard (AXI in the case under analysis),
-and (ii) the cut-through switching policy, a switching methodology for
-high performance commonly implemented at the interconnect level. In
-cut-through, a request is propagated independently on the receipt at
-the interconnect level of the corresponding data. As mentioned in the
-previous comment, if the controller issuing a write request delays the
-provisioning of the corresponding data, the other controllers
-experience delays in accessing the bus. Such delays are capable of
-generating denial of service.
+(4) Thank you for your feedback on our understanding of the issue. We
+took our bulleted points and turned them into an explanatory
+paragraph, and we used other information in your response to extend
+the description; see "ADDITIONAL DESCRIPTION" in the submission.
+
+The 2024-06-26 CDR comment also said: "I wish to add that the core
+issue relies on a combination of two factors: (i) lack of
+specification in the on-chip communication standard (AXI in the case
+under analysis), and (ii) the cut-through switching policy, a
+switching methodology for high performance commonly implemented at the
+interconnect level. In cut-through, a request is propagated
+independently on the receipt at the interconnect level of the
+corresponding data. As mentioned in the previous comment, if the
+controller issuing a write request delays the provisioning of the
+corresponding data, the other controllers experience delays in
+accessing the bus. Such delays are capable of generating denial of
+service." For this submission, we will focus primarily on the
+mishandling of speculative behavior as covered in item (ii). For item
+(i), the "lack of specification" is a common weakness that is likely
+covered by CWE-1059: Insufficient Technical Documentation. Please let
+us know if you agree with this approach.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 ----------
 
@@ -162,21 +180,21 @@ direct parents are identified. The CWE Team may decide to use high-level
 relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
 exist and cannot be quickly resolved.
 
-Comments: The relationships for this weakness are not clear. If our
-understanding of the submission is correct (see SUB.UNCLEAR), a close
-match may be CWE-772: Missing Release of Resource after Effective
-Lifetime.  We also considered possible association with CWE-179:
-Incorrect Behavior Order: Early Validation, but CWE-772 seems more
-appropriate.  Please let us know if you agree with this assessment.
+Comments: Based on 2024-06-26 CDR comment, we now agree that CWE-772
+is inappropriate because it "has a different peculiarity as in that
+case there is an explicit release required by the initiator. Instead,
+in this specific case, no explicit release is required from the
+initiator, rather, the release is implicit after the propagation of
+the data corresponding to the request."  Since the core weakness is
+about not handling delays in expected behavior, this is currently
+being treated as an example CWE-841: Improper Enforcement of
+Behavioral Workflow, whose extended description covers a case in which
+"Steps are [expected to be] performed in a timely fashion." We will
+update CWE-841's description so that it is more clearly consistent
+with this submission, and we will make this submission a child of
+CWE-841.  Let us know if you agree with this approach.
 
-Response: I agree that CWE-772 can be seen as correlated. However,
-CWE-772 has a different peculiarity as in that case there is an
-explicit release required by the initiator. Instead, in this specific
-case, no explicit release is required from the initiator, rather, the
-release is implicit after the propagation of the data corresponding to
-the request.  I also agree that CWE-179 seems less correlated -- in
-the submitted weakness there are no protection mechanisms against
-dangerous inputs involved.
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 ----------
 
@@ -200,19 +218,17 @@ the more-general concept is appropriately identified and described. The
 original, lower-level submission will serve as a primary example of the
 more general concept.
 
-Comments: This submission appears to be focused on a very specific
-kind of technology. While the underlying weakness is not yet clearly
-understood, it seems like it could apply across a range of
-technologies. This submission might need to be generalized, unless it
-is specific to bus architectures.
+Comments: The submitter said "the weakness is associated with general
+concepts such as cut-through switching and multi-channel bus protocols
+rather than only with the specific standard under analysis in the
+references." We agree with the general concept and will separately
+work to create a more general CWE (and/or update CWE-841: Improper
+Enforcement of Behavioral Workflow as needed). This submission's level
+of abstraction does not need to be changed, and it can remain
+applicable to bus architectures. Please let us know if you agree with
+this comment.
 
-Response: In the references, the weakness is described in detail and
-tested on the AXI standard. However, the weakness is associated with
-general concepts such as cut-through switching and multi-channel bus
-protocols rather than only with the specific standard under analysis
-in the references. Please let me know if you agree with that and we
-could work together on some modifications to make it more general and
-compliant (if required).
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 ----------
@@ -261,3 +277,4 @@ COMMUNICATIONS LOG:
 2023-09-12 publish server
 2024-06-25 sent email
 2024-06-26 received reply
+2025-03-06 sent email
