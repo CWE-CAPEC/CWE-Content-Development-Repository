@@ -161,7 +161,30 @@ mishandling of speculative behavior as covered in item (ii). For item
 covered by CWE-1059: Insufficient Technical Documentation. Please let
 us know if you agree with this approach.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: (1) Regarding the proposed short description, I would
+suggest modifying the phrase: "that the remainder of the request is
+fulfilled quickly" into "that the remaining steps required by the
+manager to complete the request are fulfilled in a timely manner".
+This just to better conveys that additional steps are necessary from
+the manager to complete its part of the write transaction and that if
+these steps are not completed in a timely manner a denial of service
+(DoS) condition for other managers arise. Please let me know if you
+agree with this formulation.
+
+(2) I agree.
+
+(3) I agree.
+
+(4) I agree.
+
+Regarding the additional comment on CWE-1059: Insufficient Technical
+Documentation, I largely agree with your approach. However, I would
+like to highlight a subtle distinction: as I understand it, CWE-1059
+primarily addresses cases where documentation is incomplete or
+missing. In contrast, the issue in (i) pertains to a specification
+that is, either intentionally or unintentionally, underspecified. If
+you believe this falls under the category covered by CWE-1059, then I
+agree with your determination.
 
 ----------
 
@@ -194,7 +217,7 @@ update CWE-841's description so that it is more clearly consistent
 with this submission, and we will make this submission a child of
 CWE-841.  Let us know if you agree with this approach.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree.
 
 ----------
 
@@ -228,7 +251,7 @@ of abstraction does not need to be changed, and it can remain
 applicable to bus architectures. Please let us know if you agree with
 this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree.
 
 
 ----------
@@ -278,3 +301,4 @@ COMMUNICATIONS LOG:
 2024-06-25 sent email
 2024-06-26 received reply
 2025-03-06 sent email
+2025-03-07 received comment
