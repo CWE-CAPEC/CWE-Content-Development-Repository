@@ -1,0 +1,117 @@
+SUBMISSION COMMUNICATION ID: ES2502-89467c6b
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-02-23 05:46:47
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: 
+
+MTRACKER: #1228
+
+GITHUBUSER: ctflearner
+
+SUBMISSION TYPE: Unknown
+
+NAME: Add demox to CWE-77
+
+DESCRIPTION:
+
+I want to suggest the below code foru00a0 php languageu00a0 for the given
+description:
+
+Demonstrative Examples:
+````
+<?php
+$filename = $_GET['filename']; // User-controlled input
+$cmd = "cat " . $filename;
+
+system($cmd);
+?>
+````
+This PHP code executes the cat command to display the contents of a file.
+However, since user input ($filename) is directly appended to the command
+without validation, an attacker can inject arbitrary commands.
+
+For example, an attacker can send a request like:
+`````
+http://example.com/readfile.php?filename=/etc/passwd; ls
+
+````
+
+Which results in the executed command:
+`````
+cat /etc/passwd; ls
+`````
+
+This discloses the contents of /etc/passwd, which contains system user
+information, and lists the files in the directory, potentially exposing
+sensitive data.
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-77
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-02-23
+
+Ack-Receipt: 2025-03-11
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
