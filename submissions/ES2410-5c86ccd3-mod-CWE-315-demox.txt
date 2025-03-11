@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2410-5c86ccd3
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,7 +10,7 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-10-28 10:30:02
 
-ISSUES: not-analyzed
+ISSUES: no
 
 ISSUE DETAILS: 
 
@@ -56,7 +56,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-03-11
 
 Det-Requested: YYYY-MM-DD
 
@@ -88,3 +88,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-12-09 sent email
 2025-01-24 sent email
+2025-03-11 sent email
