@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2208-93123343
 
-ACTION TYPE: Undetermined
+ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES:
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2022-08-23 20:19:05
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.OVERLAP, SUB.ACTION
+ISSUE DETAILS: SUB.OVERLAP
 
 PUBTRACKER: #15
 
@@ -63,41 +63,19 @@ Resolution: The submission cannot progress to later phases until (1) the
 duplicate/overlap is understood and (2) it is clear how to resolve this
 duplicate/overlap.
 
-Comments: With the present information we have about this submission,
-it seems to overlap with CWE-942: Permissive Cross-domain Policy with
-Untrusted Domains.  While a content security policy is slightly
-different than a Cross-domain Policy, it is possible that if the
-"misconfigured" policy discussed in the submission is related being
-overly permissive, then it might be best as a modification to CWE-942,
-or to create a more general parent.  More details are needed to
-determine if this submission is suitable for its own entry adjacent to
-CWE-942.
+Comments: This submission is intended to be covered by CWE-942:
+Permissive Cross-domain Policy with Untrusted Domains. However, as
+Submitter noted in a 2024-10-29 response, CWE-942's extended
+description currently focuses on "a very small subset of applications
+(Flash and Silver light)". We will modify CWE-942's extended
+description and examples to ensure that "Content Security
+Policy... applies to every Modern browser & Websites on the internet."
 
-Response: This is not an an overlap of CWE-942 as Content Security Policy
-is more prevalent as it applies to every Modern browser & Websites on the
-internet, CWE-942 only pertains a very small subset of applications (Flash
-and Silver light).
-
-
-----------
-
-SUB.ACTION - "Unable to determine action"
-
-Description: It is not clear what action to perform based on the
-submission, e.g., create new entry, update existing entry, etc.
-
-Resolution: The submission cannot progress to the Production stage until
-the relevant actions(s) are identified.
-
-Comments: As discussed earlier, because of potential overlaps with
-CWE-942 and a lack of specific weakness details, it is uncertain if
-this would require a new entry or a modification to CWE-942 until we
-have more details.
-
-Response: This should be new entry or at least a modification to CWE-942
-as the scope of CSP potentially includes almost all modern browsers and
-websites on the internet.
-
+Response: [NO RESPONSE NEEDED; ISSUE TO BE RESOLVED IN A LATER PHASE]
+This is not an an overlap of CWE-942 as Content Security Policy is
+more prevalent as it applies to every Modern browser & Websites on the
+internet, CWE-942 only pertains a very small subset of applications
+(Flash and Silver light).
 
 
 
@@ -146,6 +124,23 @@ Response: [RESOLVED ISSUE; DO NOT CHANGE] https://developer.mozilla.org/en-US/do
 https://datatracker.ietf.org/doc/html/rfc7762,
 https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html
 
+----------
+
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to Stage 3 (Content-Generation)
+until the informational needs are addressed.
+
+Comments: The action for this submission has been changed to
+"Modification" because CWE-942 will be updated to include details from
+this submission.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
 
 
 TIMELINE:
@@ -160,7 +155,7 @@ Init-Consultation: 2024-03-13
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-03-11
 
 Det-Requested: YYYY-MM-DD
 
@@ -196,3 +191,4 @@ COMMUNICATIONS LOG:
 2024-02-21 received comment
 2024-03-13 sent email
 2024-10-29 received comment
+2025-03-11 sent email
