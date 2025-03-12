@@ -18,7 +18,7 @@ PUBTRACKER: #147
 
 MTRACKER: #1237
 
-GITHUBUSER: https://github.com/ctflearner
+GITHUBUSER: ctflearner
 
 SUBMISSION TYPE: Unknown
 
