@@ -1,0 +1,104 @@
+SUBMISSION COMMUNICATION ID: ES2502-23de6290
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-02-28 15:37:18
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #144
+
+MTRACKER: #1236
+
+GITHUBUSER: https://github.com/ctflearner
+
+SUBMISSION TYPE: Unknown
+
+NAME: CWE-1284 modification new demonstrative example
+
+DESCRIPTION:
+
+I want to suggest the below code foru00a0PHP languageu00a0 for the given
+description:
+
+Demonstrative Examples:
+
+````
+<?php
+$discount = $_POST['discount'];
+$originalPrice = 100.00;
+$finalPrice = $originalPrice - ($originalPrice * $discount / 100);
+processPayment($finalPrice);
+?>
+````
+This PHP code allows users to apply a discount to an item but does not
+validate or restrict the discount percentage. An attacker could submit a
+100% or even a negative discount value, making the finalPrice zero or
+negative. This could result in unauthorized free purchases or even getting
+money credited instead of paying.
+
+RELATED WEAKNESSES:
+
+   Other CWE-1284
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-02-28
+
+Ack-Receipt: 2025-03-12
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
