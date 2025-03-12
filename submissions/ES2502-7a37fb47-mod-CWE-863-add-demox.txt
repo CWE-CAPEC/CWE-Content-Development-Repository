@@ -1,0 +1,111 @@
+SUBMISSION COMMUNICATION ID: ES2502-7a37fb47
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-02-23 06:24:49
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #145
+
+MTRACKER: #1231
+
+GITHUBUSER: ctflearner
+
+SUBMISSION TYPE: Unknown
+
+NAME: Add demonstrative example to CWE-863
+
+DESCRIPTION:
+
+I want to suggest the below code for Java language for the given
+description:
+
+Demonstrative Examples:
+
+````
+String role = request.getCookies("role");  
+
+if (role == null) {
+    role = getUserRole("guest"); 
+    response.addCookie(new Cookie("role", role));
+}
+
+if (role.equals("Admin")) {
+    deleteUser(request.getParameter("userID"));
+} else {
+    response.getWriter().println("Unauthorized access!");
+}
+
+
+````
+
+In this Java code, an attacker can manually set the "role" cookie to
+"Admin" and gain unauthorized access to the deleteUser() function, allowing
+them to delete any user without proper authentication
+
+RELATED WEAKNESSES:
+
+   Other CWE-863
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-02-23
+
+Ack-Receipt: 2025-03-12
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
