@@ -4,7 +4,7 @@ ALTERNATE ID: HCWE110
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Det-Requested
+SUBMISSION STATUS: Det-Received
 
 AFFECTED CWES: 
 
@@ -56,12 +56,12 @@ MODES OF INTRODUCTION:
 # https://cwe.mitre.org/community/submissions/guidelines.html#introduction
 
 
-Phase: <<PHASE1>>
+Phase: Architecture and Design
 
 Note: <<put the information here>>
 
 
-Phase: <<PHASE2>>
+Phase: Implementation
 
 Note: <<put the information here>>
 
@@ -105,11 +105,8 @@ Prevalence: <<PREVALENCE3>>
 # Values for Language Class: Assembly, Compiled, Hardware Description
 #    Language, Interpreted, Not Language-Specific
 
-Language Class: <<LANGCLASS1>>
+Language Class: Not Language-Specific
 Prevalence: <<PREVALENCE1>>
-
-Language Class: <<LANGCLASS2>>
-Prevalence: <<PREVALENCE2>>
 
 
 # Values for Operating System Name: AIX, Android, BlackBerry OS,
@@ -127,12 +124,8 @@ Prevalence: <<PREVALENCE2>>
 # Values for Operating System Class: Linux, macOS, Unix, Windows,
 #    Not OS-Specific
 
-
-Operating System Class: <<OSCLASS1>>
+Operating System Class: Not OS-Specific
 Prevalence: <<PREVALENCE1>>
-
-Operating System Class: <<OSCLASS2>>
-Prevalence: <<PREVALENCE2>>
 
 
 # Values for Architecture Name: Alpha, ARM, Itanium, Power
@@ -152,11 +145,8 @@ Prevalence: <<PREVALENCE3>>
 # Values for Architecture Class: Embedded, Microcomputer, Workstation,
 #     Not Architecture-Specific
 
-Architecture Class: <<ARCHCLASS1>>
+Architecture Class: Not Architecture-Specific
 Prevalence: <<PREVALENCE1>>
-
-Architecture Class: <<ARCHCLASS2>>
-Prevalence: <<PREVALENCE2>>
 
 
 # Values for Technology Name: Web Server, Database Server, Accelerator
@@ -182,11 +172,8 @@ Prevalence: <<PREVALENCE3>>
 #     Mainframe, Mobile, N-Tier, SOA, System on Chip, Web Based, Not
 #     Technology-Specific
 	
-Technology Class: <<TECHCLASS1>>
+Technology Class: System on Chip
 Prevalence: <<PREVALENCE1>>
-
-Technology Class: <<TECHCLASS2>>
-Prevalence: <<PREVALENCE2>>
 
 
 ************************************************************************************************
@@ -227,7 +214,7 @@ Scope: Confidentiality
 
 Impact: Read Memory; Read Application Data
 
-Likelihood: <<LIKELIHOOD1>>
+Likelihood: Unknown
 
 Note: Mathematically sound cryptographic algorithms rely on their correct
 implementation for security. The algorithms assume that with a given
@@ -490,31 +477,98 @@ DETECTION METHODS:
 
 # Values for Effectiveness: High, Moderate, Opportunistic, Limited, None
 
-Method: <<METHOD1>>
 
-Desc: <<put the information here>>
+Method: Automated Static Analysis - Source Code
 
-Effectiveness: <<EFFECTIVENESS1>>
+Desc: Automated static analysis can find some instances of this
+weakness by analyzing source register-transfer level (RTL) code
+without having to simulate it or analyze it with a formal verification
+engine. Typically, this is done by building a model of data flow and
+control flow, then searching for potentially-vulnerable patterns that
+connect "sources" (signals with intermediate cryptographic
+state/results) with "sinks" (hardware module outputs and other signals
+outside of trusted cryptographic zone) without any control flow (see
+BAD CODE example).
 
-Notes: <<put the information here>>
+Effectiveness: High
+
+Notes: Static code analysis can sometimes lead to false positives.
 
 
-Method: <<METHOD2>>
 
-Desc: <<put the information here>>
+Method: Simulation / Emulation
 
-Effectiveness: <<EFFECTIVENESS2>>
+Desc: Simulation/emulation based analysis can find some instances of
+this weakness by simulating source register-transfer level (RTL) code
+along with a set of assertions that incorporate the simulated values
+of relevant design signals. Typically, these assertions will capture
+desired or undesired behavior. For this weakness, an assertion should
+check for the undesired behavior of `valid || (data_state_q !=
+data_o)` where `valid` is signal that captures when a cryptographic
+algorithm has completely finished, `data_state_q` is a signal with
+intermediate cryptographic state/results, and `data_o` is a hardware
+module output or other signal outside of trusted cryptographic
+zone. In plain language, this assertion will fail if `data_state_q`
+and `data_o` are equal while a cryptographic operation is still
+underway (indicated by `valid`). This assertion will generally work
+for detecting this weakness but it can be improved by using
+simulation-based information flow tracking (IFT) to more precisely
+detect if `data_state_q` leaks to `data_o` when `valid` is deasserted.
 
-Notes: <<put the information here>>
+Effectiveness: High
+
+Notes: Simulation/emulation based analysis can sometimes lead to false
+negatives if the testbench does not drive the design to a design state
+in which the assertion would fail.
 
 
-Method: <<METHOD3>>
 
-Desc: <<put the information here>>
 
-Effectiveness: <<EFFECTIVENESS3>>
+Method: Formal Verification
 
-Notes: <<put the information here>>
+Desc: Formal verification can find some instances of this weakness by
+exhaustively analyzing whether a given assertion holds true for a
+given hardware design specified in register-transfer level (RTL)
+code. Typically, these assertions will capture desired or undesired
+behavior. For this weakness, an assertion should check for the
+undesired behavior of `valid || (data_state_q != data_o)` where
+`valid` is signal that captures when a cryptographic algorithm has
+completely finished, `data_state_q` is a signal with intermediate
+cryptographic state/results, and `data_o` is a hardware module output
+or other signal outside of trusted cryptographic zone. In plain
+language, this assertion will fail if `data_state_q` and `data_o` can
+ever be equal while a cryptographic operation is still underway
+(indicated by `valid`). Alternatively, when using a formal IFT
+verification, the same undesired behavior can be detected by checking
+if `data_state_q` can ever leak to `data_o` when `valid` is
+deasserted.
+
+Effectiveness: High
+
+Notes: Formal verification may not scale for RTL designs with a large state space.
+
+
+
+
+Method: Manual Analysis
+
+Desc: Manual analysis can find some instances of this weakness by
+manually reviewing relevant lines of source register-transfer level
+(RTL) code to detect potentially-vulnerable patterns. Typically, the
+reviewer will trace the sequence of assignments that connect "sources"
+(signals with intermediate cryptographic state/results) with "sinks"
+(hardware module outputs and other signals outside of trusted
+cryptographic zone). If this sequence of assignments is missing
+adequate control flow (see BAD CODE and GOOD CODE examples), then the
+weakness is likely to exist.
+
+
+Effectiveness: Opportunistic
+
+
+Notes: Manual analysis of source code is prone to errors (false
+positives and false negatives) and highly opportunistic.
+
 
 
 
@@ -541,29 +595,30 @@ POTENTIAL MITIGATIONS:
 #    Discouraged Common Practice, Defense in Depth, None
 
 
-Phase: <<PHASE1>>
+Phase: Architecture and Design
 
-Description: <<put the information here>>
+Description: Data flow paths that connect "sources" (signals with
+intermediate cryptographic state/results) with "sinks" (hardware
+module outputs and other signals outside of trusted cryptographic
+zone) must be (automatically) reviewed to ensure adequate control flow
+logic is in place to prevent leakage of intermediate state/results.
 
-Effectiveness: <<EFFECT1>>
-
-Effectiveness Notes: <<put the information here>>
-
-
-Phase: <<PHASE2>>
-
-Description: <<put the information here>>
-
-Effectiveness: <<EFFECT2>>
+Effectiveness: High
 
 Effectiveness Notes: <<put the information here>>
 
 
-Phase: <<PHASE3>>
 
-Description: <<put the information here>>
 
-Effectiveness: <<EFFECT3>>
+Phase: Implementation
+
+Description: Data flow paths that connect "sources" (signals with
+intermediate cryptographic state/results) with "sinks" (hardware
+module outputs and other signals outside of trusted cryptographic
+zone) must be (automatically) reviewed to ensure adequate control flow
+logic is in place to prevent leakage of intermediate state/results.
+
+Effectiveness: High
 
 Effectiveness Notes: <<put the information here>>
 
@@ -595,6 +650,17 @@ View-ID: 1194
 
 
 REFERENCES:
+
+Title: Security Verification of the OpenTitan Hardware Root of Trust
+
+
+URL: https://ieeexplore.ieee.org/document/10106105
+
+
+Author: Andres Meza, Francesco Restuccia, Jason Oberg, Dominic Rizzo, and Ryan Kastner
+
+
+Date: 2023-04-20
 
 
 Title: Security Verification of an Open Source Hardware Root of Trust
@@ -848,7 +914,7 @@ Init-Accepted: 2025-01-23
 
 Det-Requested: 2025-02-03
 
-Det-Received: YYYY-MM-DD
+Det-Received: 2025-03-13
 
 Det-Review: YYYY-MM-DD
 
@@ -892,3 +958,8 @@ COMMUNICATIONS LOG:
 2025-02-03 sent email
 2025-02-20 sent email
 2025-02-20 received email
+2025-03-06 received email
+2025-03-06 sent email
+2025-03-06 sent email
+2025-03-13 received email
+2025-03-14 action meeting
