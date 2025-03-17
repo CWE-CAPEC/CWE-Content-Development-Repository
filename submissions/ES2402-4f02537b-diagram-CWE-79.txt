@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2402-4f02537b
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-79
 
 ORIGIN: sub-server
 
@@ -50,7 +50,7 @@ elsewhere.
 Resolution: This will depend on the nature of the problem.
 
 Comments: The CWE team used the concepts provided by the submitter to
-develop an alternate diagram.
+develop an alternate diagram. Submitter created the alternate diagram.
 
 Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
@@ -80,11 +80,11 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2025-02-26
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-03-16
 
 Final-Coord: YYYY-MM-DD
 
@@ -100,3 +100,7 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-03-19 sent email
 2024-05-02 sent email
+2025-02-26 sent email
+2025-03-10 received email
+2025-03-11 sent email
+2025-03-14 received email
