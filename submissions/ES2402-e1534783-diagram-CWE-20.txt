@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2402-e1534783
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-20
 
 ORIGIN: sub-server
 
@@ -86,7 +86,7 @@ Internal-Update: 2025-01-28
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-03-11
 
 Final-Coord: YYYY-MM-DD
 
@@ -104,3 +104,4 @@ COMMUNICATIONS LOG:
 2024-05-14 sent email
 2025-01-28 sent comment
 2025-01-28 sent comment
+2025-03-11 action update
