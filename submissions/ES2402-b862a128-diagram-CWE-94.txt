@@ -2,15 +2,15 @@ SUBMISSION COMMUNICATION ID: ES2402-b862a128
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-94
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-02-29 12:36:12
 
-ISSUES: not-analyzed
+ISSUES: yes/resolved
 
 ISSUE DETAILS: 
 
@@ -42,6 +42,17 @@ ACTIVE ISSUES:
 
 RESOLVED ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The CWE team will create a different image but plans to
+credit the submitter for the original suggestion.
+
+Response: [NO RESPONSE NEEDED; ISSUE RESOLVED.]
 
 
 TIMELINE:
@@ -56,7 +67,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-01-30
 
 Det-Requested: YYYY-MM-DD
 
@@ -87,3 +98,6 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-04-04 sent email
+2024-07-09 action review
+2025-01-30 action update
+2025-03-17 action update
