@@ -29,8 +29,7 @@ DESCRIPTION:
 CWE-22 new PHP demonstrative example
 
 I want to suggest the below code for php language for the given
-
-description:
+description.
 
 Demonstrative Examples
 

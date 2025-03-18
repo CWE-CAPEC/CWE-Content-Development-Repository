@@ -28,6 +28,7 @@ DESCRIPTION:
 
 I want to suggest the below code for  php language  for the given
 description:
+
 Demonstrative Examples
 
 PHP code that stores sensitive information like a username and password in

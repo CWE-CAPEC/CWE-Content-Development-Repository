@@ -26,8 +26,8 @@ NAME: CWE-117 modification new demonstrative example
 
 DESCRIPTION:
 
-I want to suggest the below code foru00a0PHP languageu00a0 for the given
-description:
+I want to suggest the below code for PHP language for the given
+description.
 
 Demonstrative Examples:
 

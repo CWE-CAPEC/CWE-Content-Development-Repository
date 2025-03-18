@@ -26,8 +26,8 @@ NAME: Add demonstrative example to CWE-94
 
 DESCRIPTION:
 
-I want to suggest the below code foru00a0 Java languageu00a0 for the given 
-description:
+I want to suggest the below code for Java language for the given 
+description.
 
 Demonstrative Examples:
 
