@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2412-ba1b5f1e
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -67,7 +67,7 @@ Received: 2024-12-16
 
 Ack-Receipt: 2025-01-22
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2025-03-18
 
 Init-Consultation: YYYY-MM-DD
 
@@ -104,3 +104,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2025-01-22 sent email
+2025-03-18 sent email
