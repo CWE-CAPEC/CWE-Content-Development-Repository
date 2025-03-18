@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2303-af57ba9e
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -69,7 +69,7 @@ Received: 2023-03-31
 
 Ack-Receipt: 2024-01-05
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2025-03-18
 
 Init-Consultation: YYYY-MM-DD
 
@@ -105,3 +105,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2023-12-22 received comment
 2024-01-05 sent email
+2025-03-18 sent email
