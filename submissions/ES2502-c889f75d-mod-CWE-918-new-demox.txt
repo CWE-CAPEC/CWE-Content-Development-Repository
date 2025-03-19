@@ -2,17 +2,19 @@ SUBMISSION COMMUNICATION ID: ES2502-c889f75d
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Det-Requested
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-918
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-02-08 04:46:23
 
-ISSUES: no
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
+
+FIELDCHANGE: DEMOX
 
 PUBTRACKER: #138
 
@@ -26,16 +28,15 @@ NAME: CWE-918 new demonstrative example
 
 DESCRIPTION:
 
-I want to suggest the below code for  php language  for the given
-
-description:
+I want to suggest the below code for php language for the given
+description.
 
 
 The given PHP code is vulnerable to Server-Side Request Forgery (SSRF)
 because it directly accepts a user-supplied URL from the $_GET['url']
 parameter and fetches its content using file_get_contents(), without any
 validation or restrictions. This allows an attacker to request internal or
-restricted resources within the serveru2019s network, such as internal
+restricted resources within the server's network, such as internal
 admin panels, cloud metadata endpoints, or local services running on
 localhost.
 
@@ -58,7 +59,69 @@ RELATED WEAKNESSES:
 REFERENCES:
 
 
+DEMONSTRATIVE EXAMPLES:
+
+INTRO TEXT:
+
+[SUBMITTER: PLEASE REVIEW] This code intends to receive a URL from a
+user, access the URL, and return the results to the user.
+
+BAD CODE:
+LANGUAGE: PHP
+
+<?php
+$url = $_GET['url']; // User-controlled input
+
+// Fetch the content of the provided URL
+$response = file_get_contents($url);
+
+echo $response;
+?>
+
+
+EXPLANATORY TEXT:
+
+The given PHP code is vulnerable to Server-Side Request Forgery (SSRF)
+because it directly accepts a user-supplied URL from the $_GET['url']
+parameter and fetches its content using file_get_contents(), without any
+validation or restrictions. This allows an attacker to request internal or
+restricted resources within the server's network, such as internal
+admin panels, cloud metadata endpoints, or local services running on
+localhost.
+
+
+GOOD CODE:
+LANGUAGE: PHP
+
+<<put the information here>>
+
+
+
 ACTIVE ISSUES:
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: We have added your suggestion to the "DEMONSTRATIVE
+EXAMPLES" section in this form.
+
+ - We wrote some "INTRO TEXT" to describe the behavior that the code
+   is attempting to do.  Please let us know if you agree with the
+   introduction.
+
+ - The "GOOD CODE" section needs to be filled in order to suggest to
+   developers how they could address the weakness. Please provide us
+   with example code that modifies the "bad code" in order to fix the
+   weakness.
+
+ - Finally, fill the "Response" below to indicate that you have made
+   this change, or otherwise ask us for any clarification.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 
@@ -80,7 +143,7 @@ Init-Declined: YYYY-MM-DD
 
 Init-Accepted: 2025-02-25
 
-Det-Requested: YYYY-MM-DD
+Det-Requested: 2025-03-18
 
 Det-Received: YYYY-MM-DD
 
@@ -111,3 +174,4 @@ COMMUNICATIONS LOG:
 2025-02-13 sent email
 2025-02-18 sent email
 2025-02-25 sent email
+2025-03-19 sent email
