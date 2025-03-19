@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2501-8daa7a2d
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Det-Requested
 
 AFFECTED CWES: 
 
@@ -10,9 +10,11 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-01-28 14:40:26
 
-ISSUES: no
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
+
+FIELDCHANGE: DEMOX
 
 PUBTRACKER: #137
 
@@ -59,7 +61,75 @@ RELATED WEAKNESSES:
 REFERENCES:
 
 
+DEMONSTRATIVE EXAMPLES:
+
+INTRO TEXT:
+
+[SUBMITTER: PLEASE REVIEW] This code stores a database password in a
+PHP file.
+
+BAD CODE:
+LANGUAGE: PHP
+
+<?php
+$db_username = "secretUsername";
+$db_password = "secretPassword";
+$db_host = "localhost";
+$db_name = "exampleDatabase";
+
+// Database connection
+$conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
+
+if (!$conn) 
+{
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+?>
+
+
+EXPLANATORY TEXT:
+
+[SUBMITTER: PLEASE REVIEW] This code is storing the password in
+plaintext in the PHP file. An adversary who can read the source code
+can obtain the password.
+
+GOOD CODE:
+LANGUAGE: PHP
+
+<<put the information here>>
+
+
+
+
 ACTIVE ISSUES:
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: We have added your suggestion to the "DEMONSTRATIVE
+EXAMPLES" section in this form.
+
+ - We wrote some "INTRO TEXT" to describe the behavior that the code
+   is attempting to do.  Please let us know if you agree with the
+   introduction, or suggest how to change it.
+
+  - We also added "EXPLANATORY TEXT" to the example. Please let us
+    know if you agree with the text, or suggest how to change it.
+
+ - The "GOOD CODE" section needs to be filled in order to suggest to
+   developers how they could address the weakness. Please provide us
+   with example code that modifies the "bad code" in order to fix the
+   weakness.
+
+ - Finally, fill the "Response" below to indicate that you have made
+   this change, or otherwise ask us for any clarification.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 
@@ -81,7 +151,7 @@ Init-Declined: YYYY-MM-DD
 
 Init-Accepted: 2025-02-25
 
-Det-Requested: YYYY-MM-DD
+Det-Requested: 2025-03-19
 
 Det-Received: YYYY-MM-DD
 
@@ -112,3 +182,4 @@ COMMUNICATIONS LOG:
 2025-02-03 sent email
 2025-02-11 sent email
 2025-02-25 sent email
+2025-03-19 sent email
