@@ -2,17 +2,17 @@ SUBMISSION COMMUNICATION ID: ES2409-e049ccc0
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-637
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-09-13 14:05:00
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.MISC
+ISSUE DETAILS: 
 
 PUBTRACKER: #131
 
@@ -40,6 +40,10 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+
+
+RESOLVED ISSUES:
+
 SUB.MISC - "Miscellaneous/other problem"
 
 Description: The submission has some other problem that is not covered
@@ -53,10 +57,6 @@ inaccurate comment.
 
 Response: [NO RESPONSE NEEDED; ISSUE TO BE ADDRESSED DURING INTERNAL-UPDATE]
 
-
-
-
-RESOLVED ISSUES:
 
 
 
@@ -88,7 +88,7 @@ Internal-Update: 2025-02-13
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-03-20
 
 Final-Coord: YYYY-MM-DD
 
@@ -106,3 +106,4 @@ COMMUNICATIONS LOG:
 2025-01-24 sent email
 2025-02-04 sent email
 2025-02-13 sent email
+2025-03-20 sent email
