@@ -14,7 +14,7 @@ SUBMISSION DATE: 2022-08-25 15:18:55
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELS
+ISSUE DETAILS: SUB.UNCLEAR, SUB.RELS
 
 PUBTRACKER: #13
 
@@ -30,8 +30,9 @@ DESCRIPTION:
 
 The product uses a multi-manager shared bus architecture with an
 on-chip interconnect that speculatively propagates a request for a
-write transaction, but it does not ensure that the remainder of the
-request is fulfilled quickly.
+write transaction, but it does not ensure that the remaining steps
+required by the manager to complete the request are fulfilled in a
+timely manner.
 
 
 (ADDITIONAL DESCRIPTION FOLLOWS; this needs to be corrected and
@@ -83,8 +84,6 @@ RELATED WEAKNESSES:
 
 ChildOf CWE-841
 
-Other CWE-691
-
 
 REFERENCES:
 
@@ -108,83 +107,44 @@ cause the submission to be incorrectly mapped to.
 Resolution: An initial submission (or full submission) cannot progress past
 the consultation phase until SUB.UNCLEAR is addressed.
 
-Comments: We plan to address the submitter's 2024-06-26 CDR reply as follows:
-
-(1) For the time being, we have adapted the submitter's name
-suggestion and changed this submission's name to: "Improper Request
-Propagation before Data Reception in Write Transactions in a Bus
-Architecture". This could be improved later in Stage 2 (Detailed
-Submission), which is expected to begin shortly after this round of
-consultation.  We also propose the following short description, also
-subject to change: "The product uses a multi-manager shared bus
-architecture with an on-chip interconnect that speculatively
-propagates a request for a write transaction, but it does not ensure
-that the remainder of the request is fulfilled quickly." Finally, we
-have integrated many of your responses into the description, labeled
-as "ADDITIONAL DESCRIPTION".
-
-(2) Thank you for clarifying what is meant by "manager module" and the
-"controller module" term, namely: "a hardware module capable of
-initiating transactions on the bus through its manager
-interface. Examples of manager modules are processors, DMAs, hardware
-accelerators, etc." In the more-detailed Stage 2, we will work with
-you to determine the most appropriate term to use and provide a clear
-definition for the term within the new entry where appropriate.
-
-(3) Thank you for clarifying how you are using the term
-"speculative". This does not appear to be commonly used with respect
-to bus architectures, although it seems to be applicable in network
-switching. We will work with you in Stage 2 to determine whether to
-use the "speculative" term.  If so, we will need to account for
-potential confusion with "speculative execution" as used with issues
-like SPECTRE/MELTDOWN.
-
-(4) Thank you for your feedback on our understanding of the issue. We
-took our bulleted points and turned them into an explanatory
-paragraph, and we used other information in your response to extend
-the description; see "ADDITIONAL DESCRIPTION" in the submission.
-
-The 2024-06-26 CDR comment also said: "I wish to add that the core
-issue relies on a combination of two factors: (i) lack of
-specification in the on-chip communication standard (AXI in the case
-under analysis), and (ii) the cut-through switching policy, a
-switching methodology for high performance commonly implemented at the
-interconnect level. In cut-through, a request is propagated
-independently on the receipt at the interconnect level of the
-corresponding data. As mentioned in the previous comment, if the
-controller issuing a write request delays the provisioning of the
-corresponding data, the other controllers experience delays in
-accessing the bus. Such delays are capable of generating denial of
-service." For this submission, we will focus primarily on the
-mishandling of speculative behavior as covered in item (ii). For item
-(i), the "lack of specification" is a common weakness that is likely
-covered by CWE-1059: Insufficient Technical Documentation. Please let
-us know if you agree with this approach.
-
-Response: (1) Regarding the proposed short description, I would
-suggest modifying the phrase: "that the remainder of the request is
-fulfilled quickly" into "that the remaining steps required by the
+Comments: Based on the submitter's 2025-03-07 response, we have
+further updated this submission.  We changed the description to
+include the suggested phrase "that the remaining steps required by the
 manager to complete the request are fulfilled in a timely manner".
-This just to better conveys that additional steps are necessary from
-the manager to complete its part of the write transaction and that if
-these steps are not completed in a timely manner a denial of service
-(DoS) condition for other managers arise. Please let me know if you
-agree with this formulation.
 
-(2) I agree.
+The following tasks will remain in Stage 2:
 
-(3) I agree.
+(1) For Stage 2 discussion, we need to decide whether to use "manager
+module" or "controller module" term, and how to best clarify that we
+mean "a hardware module capable of initiating transactions on the bus
+through its manager interface. Examples of manager modules are
+processors, DMAs, hardware accelerators, etc."
 
-(4) I agree.
+(2) For Stage 2 discussion, we will need to account for potential
+confusion with "speculative execution" as used with issues like
+SPECTRE/MELTDOWN.
 
-Regarding the additional comment on CWE-1059: Insufficient Technical
-Documentation, I largely agree with your approach. However, I would
-like to highlight a subtle distinction: as I understand it, CWE-1059
-primarily addresses cases where documentation is incomplete or
-missing. In contrast, the issue in (i) pertains to a specification
+(3) For Stage 2 discussion, we will need to ensure that the following
+details are appropriately merged into the submission: "the cut-through
+switching policy, a switching methodology for high performance
+commonly implemented at the interconnect level. In cut-through, a
+request is propagated independently on the receipt at the interconnect
+level of the corresponding data. As mentioned in the previous comment,
+if the controller issuing a write request delays the provisioning of
+the corresponding data, the other controllers experience delays in
+accessing the bus. Such delays are capable of generating denial of
+service."
+
+(4) The CWE Team will separately record your comment on CWE-1059: "I
+would like to highlight a subtle distinction: as I understand it,
+CWE-1059 primarily addresses cases where documentation is incomplete
+or missing. In contrast, the issue in (i) pertains to a specification
 that is, either intentionally or unintentionally, underspecified. If
 you believe this falls under the category covered by CWE-1059, then I
-agree with your determination.
+agree with your determination."
+
+
+Response: [NO RESPONSE NECESSARY; ISSUE TO BE RESOLVED IN STAGE 2]
 
 ----------
 
@@ -203,23 +163,18 @@ direct parents are identified. The CWE Team may decide to use high-level
 relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
 exist and cannot be quickly resolved.
 
-Comments: Based on 2024-06-26 CDR comment, we now agree that CWE-772
-is inappropriate because it "has a different peculiarity as in that
-case there is an explicit release required by the initiator. Instead,
-in this specific case, no explicit release is required from the
-initiator, rather, the release is implicit after the propagation of
-the data corresponding to the request."  Since the core weakness is
-about not handling delays in expected behavior, this is currently
-being treated as an example CWE-841: Improper Enforcement of
-Behavioral Workflow, whose extended description covers a case in which
-"Steps are [expected to be] performed in a timely fashion." We will
-update CWE-841's description so that it is more clearly consistent
-with this submission, and we will make this submission a child of
-CWE-841.  Let us know if you agree with this approach.
+Comments: The 2025-03-07 response agreed with our decision to make
+this a child of CWE-841: Improper Enforcement of Behavioral
+Workflow. Separately, we will modify CWE-841's description so that it
+is more clearly consistent with this submission.  No response is
+needed.
 
-Response: I agree.
+Response: [NO RESPONSE NECESSARY; ISSUE TO BE RESOLVED INDEPENDENT OF THIS SUBMISSION]
 
 ----------
+
+RESOLVED ISSUES:
+
 
 SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
