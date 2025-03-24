@@ -1,0 +1,98 @@
+SUBMISSION COMMUNICATION ID: ES2503-35f2d961
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-03-17 14:19:26
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #149
+
+MTRACKER: #1242
+
+GITHUBUSER: cgocast
+
+SUBMISSION TYPE: Unknown
+
+NAME: CWE-521 update password expiration in mitigations
+
+DESCRIPTION:
+
+In the Potential Mitigations element we should remove the section about
+Password Expiration. It was a recommended practice in the past, which is
+now outdated.
+
+Nowadays, both the NIST and the CESG recommend not updating the same
+password periodically:
+  - "Verifiers SHOULD NOT require memorized secrets to be changed
+arbitrarily (e.g., periodically)" (page 14 of
+https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf)
+ - "Regular password changing harms rather than improves security" (page 6
+of
+https://assets.publishing.service.gov.uk/media/5a806bb9e5274a2e87db9b6a/Password_guidance_-_simplifying_your_approach.pdf)
+
+RELATED WEAKNESSES:
+
+   Other CWE-521
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-03-17
+
+Ack-Receipt: 2025-03-24
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
