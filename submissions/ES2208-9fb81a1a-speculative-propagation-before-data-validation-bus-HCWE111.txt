@@ -6,7 +6,7 @@ ACTION TYPE: New Entry
 
 AFFECTED CWES:
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 ORIGIN: sub-server
 
@@ -222,7 +222,7 @@ Init-Consultation: 2024-06-25
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-03-24
 
 Det-Requested: YYYY-MM-DD
 
@@ -257,3 +257,4 @@ COMMUNICATIONS LOG:
 2024-06-26 received reply
 2025-03-06 sent email
 2025-03-07 received comment
+2025-03-24 sent email
