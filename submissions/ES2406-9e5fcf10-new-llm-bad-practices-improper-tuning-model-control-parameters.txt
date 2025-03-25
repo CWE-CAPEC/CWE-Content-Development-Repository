@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2406-9e5fcf10
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Det-Requested
 
 AFFECTED CWES: 
 
@@ -24,24 +24,421 @@ SUBMISSION TYPE: Software
 
 NAME: Insecure Setting of Generative AI/ML Model Inference Parameters
 
-DESCRIPTION:
+SUMMARY:
 
-Single-sentence summary - The product has a component that relies on a
-generative AI/ML model, but the model is configured with incorrect
-inference parameters that produce excessive erroneous or unexpected
-outputs that violate the intended security policy.
+The product has a component that relies on a generative AI/ML model,
+but the model is configured with incorrect inference parameters that
+produce excessive erroneous or unexpected outputs that violate the
+intended security policy.
 
-Extended description - Generative AI/ML models, such as those used for
-text generation, image synthesis, and other creative tasks, rely on
-inference parameters that control model behavior, such as temperature,
-Top P, and Top K. These parameters affect the model's internal
-decision-making processes, learning rate, and probability
-distributions. Incorrect settings can lead to unusual behavior such as
-"hallucinations" in text generation, unrealistic images, or failure to
-converge during training. The impact of such misconfigurations can
-compromise the integrity of the application. If the results are used
-in security-critical operations or decisions, then this could violate
-the intended security policy, i.e., introduce a vulnerability.
+EXTENDED DESCRIPTION:
+
+Generative AI/ML models, such as those used for text generation, image
+synthesis, and other creative tasks, rely on inference parameters that
+control model behavior, such as temperature, Top P, and Top K. These
+parameters affect the model's internal decision-making processes,
+learning rate, and probability distributions. Incorrect settings can
+lead to unusual behavior such as "hallucinations" in text generation,
+unrealistic images, or failure to converge during training. The impact
+of such misconfigurations can compromise the integrity of the
+application. If the results are used in security-critical operations
+or decisions, then this could violate the intended security policy,
+i.e., introduce a vulnerability.
+
+
+MODES OF INTRODUCTION:
+
+# This provides information about how and when a given weakness may be
+# introduced. Information should list the Phase of the development life
+# cycle in which the weakness can introduced. A descriptive Note is
+# optional but preferred.
+# 
+# If the weakness can be introduced in multiple phases, include separate
+# items for each Phase. Copy and paste as needed.
+# 
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
+
+
+Phase: <<PHASE1>>
+
+Note: During model training, hyperparameters may be set without
+adequate validation or understanding of their impact.
+
+
+Phase: <<PHASE2>>
+
+Note: During deployment, model parameters may be adjusted to optimize
+performance without comprehensive testing.
+
+
+Phase: <<PHASE3>>
+
+Note: Updates or modifications may be made to the model that alter its
+behavior without thorough re-evaluation.
+
+
+
+
+===============================================================
+
+APPLICABLE PLATFORMS:
+
+# This element specifies the programming languages, operating systems,
+# architectures, and technologies in which this weakness is usually
+# found. If an element does not apply to this submission, you can use
+# the "Not X-Specific" where "X" is the type of element.
+
+# If there are multiple languages, OSes, architectures, and/or
+# technologies, then list each one separately.
+# 
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#platforms
+
+# Values for Prevalence: Often, Sometimes, Rarely, Undetermined
+
+
+
+Language Class: Not Language-Specific
+Prevalence: <<PREVALENCE1>>
+
+
+
+Operating System Class: Not OS-Specific
+Prevalence: <<PREVALENCE1>>
+
+
+
+
+Architecture Class: Not Architecture-Specific
+Prevalence: <<PREVALENCE1>>
+
+
+Technology Name: AI/ML
+Prevalence: <<PREVALENCE1>>
+
+	
+Technology Class: Not Technology-Specific
+Prevalence: <<PREVALENCE1>>
+
+
+===============================================================
+
+COMMON CONSEQUENCES:
+
+# This element will cover the typical negative security impact (or
+# impacts) that occurs if this weakness can be exploited by an
+# attacker. Each Consequence must include a Scope and Impact. Both the
+# Likelihood and Note elements are optional.
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#conseq
+
+
+
+# Values for Scope: Confidentiality, Integrity, Availability, Access
+#    Control, Accountability, Authentication, Authorization,
+#    Non-Repudiation, Other
+
+
+# Values for Impact: Modify Memory, Read Memory, Modify Files or
+#    Directories, Read Files or Directories, Modify Application Data,
+#    Read Application Data, DoS: Crash, Exit, or Restart, DoS:
+#    Amplification, DoS: Instability, DoS: Resource Consumption (CPU),
+#    DoS: Resource Consumption (Memory), DoS: Resource Consumption
+#    (Other), Execute Unauthorized Code or Commands, Gain Privileges
+#    or Assume Identity, Bypass Protection Mechanism, Hide Activities,
+#    Alter Execution Logic, Quality Degradation, Unexpected State,
+#    Varies by Context, Reduce Maintainability, Reduce Performance,
+#    Reduce Reliability, Other
+
+
+# Values for Likelihood: High, Medium, Low, Unknown
+
+
+Scope: <<SCOPE1>>
+
+Impact: <<IMPACT1a>>; <<IMPACT1b>>; <<IMPACT1c>>
+
+Likelihood: <<LIKELIHOOD1>>
+
+Note: Generation of inaccurate, misleading, or nonsensical information.
+
+
+
+
+Scope: <<SCOPE2>>
+
+Impact: <<IMPACT2a>>; <<IMPACT2b>>; <<IMPACT2c>>
+
+Likelihood: <<LIKELIHOOD2>>
+
+Note: Propagation of errors if outputs are used in critical decision-making processes.
+
+
+
+
+Scope: <<SCOPE3>>
+
+Impact: <<IMPACT3a>>; <<IMPACT3b>>; <<IMPACT3c>>
+
+Likelihood: <<LIKELIHOOD3>>
+
+Note: <<put the information here>>
+
+
+
+Scope: <<SCOPE4>>
+
+Impact: <<IMPACT4a>>; <<IMPACT4b>>; <<IMPACT4c>>
+
+Likelihood: <<LIKELIHOOD4>>
+
+Note: <<put the information here>>
+
+
+
+===============================================================
+
+
+# 8. DEMONSTRATIVE EXAMPLES (required)
+
+DEMONSTRATIVE EXAMPLES:
+
+# The entry should have one or more demonstrative examples, but
+# submitters should not put significant effort into these until the CWE
+# team has reviewed and accepted the general concepts behind the
+# submission. Submissions can include example information for either
+# Software, Hardware, or both, as relevant.
+
+# "BAD CODE" and "GOOD CODE" can be code snippets, descriptions of a
+# design or architecture, or an algorithm or protocol.
+#
+# * If you would like to submit diagrams/images to support any
+# weakness descriptive examples, please attach it to the email
+# submission in a png format and reference it by filename where
+# desired. For an example, please see:
+# https://cwe.mitre.org/data/definitions/1256.html
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#demox
+
+# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
+#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
+#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
+#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
+#    Assembly, Other
+
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+---------------
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+
+===============================================================
+
+
+OBSERVED EXAMPLES:
+
+# Where known, the submission should identify multiple
+# publicly-reported vulnerabilities in real-world products that
+# exhibit the weakness. If possible, include CVE Identifier, its
+# corresponding weblink, and a short summary. If a CVE ID is
+# unavailable, use the Link to point to the reference that explains
+# the vulnerability.
+
+# The ID should be the CVE Identifier, if available. If not available,
+# then supply a title or alternate ID used by the reference.
+
+# The Link should be the URL to the reference that explains the
+# weakness that leads to the vulnerability.
+
+# The ObexSummary should be a brief sentence or two that focuses solely on
+# the weakness in the affected product.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#obex
+
+ID: <<CVE1>>
+
+Link: <<LINK1>>
+
+ObexSummary: <<SUM1>>
+
+
+ID: <<CVE2>>
+
+Link: <<LINK2>>
+
+ObexSummary: <<SUM2>>
+
+
+ID: <<CVE3>>
+
+Link: <<LINK3>>
+
+ObexSummary: <<SUM3>>
+
+
+ID: <<CVE4>>
+
+Link: <<LINK4>>
+
+ObexSummary: <<SUM4>>
+
+
+
+===============================================================
+
+
+DETECTION METHODS:
+
+# Detection Methods should identify commonly-used methods of finding
+# the weakness within the product's code, design, etc. This is NOT
+# intended for detecting how the weakness is exploited in a
+# vulnerability. There can be one or more methods provided.
+
+# Values for Method: Automated Analysis, Automated Dynamic Analysis,
+#    Automated Static Analysis, Automated Static Analysis - Source
+#    Code, Automated Static Analysis - Binary or Bytecode, Fuzzing,
+#    Manual Analysis, Manual Dynamic Analysis, Manual Static Analysis,
+#    Manual Static Analysis - Source Code, Manual Static Analysis -
+#    Binary or Bytecode, White Box, Black Box, Architecture or Design
+#    Review, Dynamic Analysis with Manual Results Interpretation,
+#    Dynamic Analysis with Automated Results Interpretation, Formal
+#    Verification, Simulation / Emulation, Other
+
+# Values for Effectiveness: High, Moderate, Opportunistic, Limited, None
+
+Method: <<METHOD1>>
+
+Desc: <<put the information here>>
+
+Effectiveness: <<EFFECTIVENESS1>>
+
+Notes: <<put the information here>>
+
+
+Method: <<METHOD2>>
+
+Desc: <<put the information here>>
+
+Effectiveness: <<EFFECTIVENESS2>>
+
+Notes: <<put the information here>>
+
+
+Method: <<METHOD3>>
+
+Desc: <<put the information here>>
+
+Effectiveness: <<EFFECTIVENESS3>>
+
+Notes: <<put the information here>>
+
+
+
+===============================================================
+
+
+POTENTIAL MITIGATIONS:
+
+# This element should cover one or more techniques that will eliminate
+# and/or reduce the frequency or impact of the weakness. Each mitigation
+# must include a Phase and Description, while the Effectiveness element
+# is optional. A descriptive Effectiveness Note is also optional.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#mitigations
+
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+# Values for Effectiveness: High, Moderate, Limited, Incidental,
+#    Discouraged Common Practice, Defense in Depth, None
+
+
+Phase: <<PHASE1>>
+
+Description: Develop and adhere to robust parameter tuning processes
+that include extensive testing and validation.
+
+Effectiveness: <<EFFECT1>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: <<PHASE2>>
+
+Description: Implement feedback mechanisms to continuously assess and
+adjust model performance.
+
+Effectiveness: <<EFFECT2>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: <<PHASE3>>
+
+Description: Provide comprehensive documentation and guidelines for
+parameter settings to ensure consistent and accurate model behavior.
+
+Effectiveness: <<EFFECT3>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+
 
 RELATED WEAKNESSES:
 
@@ -66,7 +463,32 @@ View-ID: 1000
 REFERENCES:
 
 Title: Documentation for Transformers text generation parameters
+
 URL: https://huggingface.co/docs/transformers/main_classes/text_generation#transformers.GenerationConfig
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+
+
+
+Title: <<put the information here>>
+
+URL: <<put the information here>>
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+
+
+Title: <<put the information here>>
+
+URL: <<put the information here>>
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+
 
 
 ACTIVE ISSUES:
@@ -231,7 +653,7 @@ Init-Declined: YYYY-MM-DD
 
 Init-Accepted: 2025-03-02
 
-Det-Requested: YYYY-MM-DD
+Det-Requested: 2025-03-24
 
 Det-Received: YYYY-MM-DD
 
@@ -266,3 +688,4 @@ COMMUNICATIONS LOG:
 2025-02-14 sent email
 2025-02-28 action meeting
 2025-03-02 sent email
+2025-03-24 sent email
