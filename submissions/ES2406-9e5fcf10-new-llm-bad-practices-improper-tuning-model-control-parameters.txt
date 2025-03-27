@@ -68,19 +68,19 @@ MODES OF INTRODUCTION:
 # https://cwe.mitre.org/community/submissions/guidelines.html#introduction
 
 
-Phase: <<PHASE1>>
+Phase: Implementation; Build and Compilation
 
 Note: During model training, hyperparameters may be set without
 adequate validation or understanding of their impact.
 
 
-Phase: <<PHASE2>>
+Phase: Installation
 
 Note: During deployment, model parameters may be adjusted to optimize
 performance without comprehensive testing.
 
 
-Phase: <<PHASE3>>
+Phase: Operation; Patching and Maintenance
 
 Note: Updates or modifications may be made to the model that alter its
 behavior without thorough re-evaluation.
