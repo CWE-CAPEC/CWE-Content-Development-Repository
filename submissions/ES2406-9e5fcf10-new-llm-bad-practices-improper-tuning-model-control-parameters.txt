@@ -164,9 +164,9 @@ COMMON CONSEQUENCES:
 # Values for Likelihood: High, Medium, Low, Unknown
 
 
-Scope: <<SCOPE1>>
+Scope: Integrity, Other
 
-Impact: <<IMPACT1a>>; <<IMPACT1b>>; <<IMPACT1c>>
+Impact: Varies by Context; Unexpected State
 
 Likelihood: <<LIKELIHOOD1>>
 
@@ -175,9 +175,9 @@ Note: Generation of inaccurate, misleading, or nonsensical information.
 
 
 
-Scope: <<SCOPE2>>
+Scope: Other
 
-Impact: <<IMPACT2a>>; <<IMPACT2b>>; <<IMPACT2c>>
+Impact: Alter Execution Logic; Unexpected State; Varies by Context
 
 Likelihood: <<LIKELIHOOD2>>
 
@@ -408,7 +408,7 @@ POTENTIAL MITIGATIONS:
 #    Discouraged Common Practice, Defense in Depth, None
 
 
-Phase: <<PHASE1>>
+Phase: Implementation; System Configuration; Operation
 
 Description: Develop and adhere to robust parameter tuning processes
 that include extensive testing and validation.
@@ -418,7 +418,7 @@ Effectiveness: <<EFFECT1>>
 Effectiveness Notes: <<put the information here>>
 
 
-Phase: <<PHASE2>>
+Phase: Implementation; System Configuration; Operation
 
 Description: Implement feedback mechanisms to continuously assess and
 adjust model performance.
@@ -428,7 +428,7 @@ Effectiveness: <<EFFECT2>>
 Effectiveness Notes: <<put the information here>>
 
 
-Phase: <<PHASE3>>
+Phase: Documentation
 
 Description: Provide comprehensive documentation and guidelines for
 parameter settings to ensure consistent and accurate model behavior.
