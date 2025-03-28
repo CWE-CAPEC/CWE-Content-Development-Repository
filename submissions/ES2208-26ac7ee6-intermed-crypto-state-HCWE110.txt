@@ -4,7 +4,7 @@ ALTERNATE ID: HCWE110
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Det-Received
+SUBMISSION STATUS: Det-Consultation
 
 AFFECTED CWES: 
 
@@ -14,7 +14,9 @@ SUBMISSION DATE: 2022-08-15 21:12:21
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.RELS
+ISSUE DETAILS: SUB.MISC
+
+FIELDCHANGE: MITIGATION, DEMOX, INTROMODES, DETECTION
 
 PUBTRACKER: #17
 
@@ -36,26 +38,6 @@ output port containing the final result).
 
 MODES OF INTRODUCTION:
 
-# This provides information about how and when a given weakness may be
-# introduced. Information should list the Phase of the development life
-# cycle in which the weakness can introduced. A descriptive Note is
-# optional but preferred.
-# 
-# If the weakness can be introduced in multiple phases, include separate
-# items for each Phase. Copy and paste as needed.
-# 
-
-# Values for Phase: Policy, Requirements, Architecture and Design,
-#    Implementation, Build and Compilation, Testing, Documentation,
-#    Bundling, Distribution, Installation, System Configuration,
-#    Operation, Patching and Maintenance, Porting, Integration,
-#    Manufacturing, Decommissioning and End-of-Life
-
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
-
-
 Phase: Architecture and Design
 
 Note: <<put the information here>>
@@ -63,152 +45,31 @@ Note: <<put the information here>>
 
 Phase: Implementation
 
-Note: <<put the information here>>
+Note: This can occur when intermediate cryptographic states are
+directly assigned to output wires or ports.
 
 
-************************************************************************************************
+==============================================================================================
 
 APPLICABLE PLATFORMS:
-
-# This element specifies the programming languages, operating systems,
-# architectures, and technologies in which this weakness is usually
-# found. If an element does not apply to this submission, you can use
-# the "Not X-Specific" where "X" is the type of element.
-
-# If there are multiple languages, OSes, architectures, and/or
-# technologies, then list each one separately.
-# 
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#platforms
-
-
-# Values for Prevalence: Often, Sometimes, Rarely, Undetermined
-
-# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
-#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
-#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
-#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
-#    Assembly, Other
-
-Language Name: <<LANGUAGE1>>
-Prevalence: <<PREVALENCE1>>
-
-
-Language Name: <<LANGUAGE2>>
-Prevalence: <<PREVALENCE2>>
-
-
-Language Name: <<LANGUAGE3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Language Class: Assembly, Compiled, Hardware Description
-#    Language, Interpreted, Not Language-Specific
 
 Language Class: Not Language-Specific
 Prevalence: <<PREVALENCE1>>
 
-
-# Values for Operating System Name: AIX, Android, BlackBerry OS,
-#    Chrome OS, Darwin, FreeBSD, iOS, macOS, NetBSD, OpenBSD, Red Hat,
-#    Solaris, SUSE, tvOS, Ubuntu, watchOS, Windows 9x, Windows
-#    Embedded, Windows NT
-
-Operating System Name: <<OS1>>
-Prevalence: <<PREVALENCE1>>
-
-Operating System Name: <<OS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Operating System Class: Linux, macOS, Unix, Windows,
-#    Not OS-Specific
-
 Operating System Class: Not OS-Specific
 Prevalence: <<PREVALENCE1>>
-
-
-# Values for Architecture Name: Alpha, ARM, Itanium, Power
-#     Architecture, SPARC, x86, Other
-
-
-Architecture Name: <<ARCH1>>
-Prevalence: <<PREVALENCE1>>
-
-Architecture Name: <<ARCH2>>
-Prevalence: <<PREVALENCE2>>
-
-Architecture Name: <<ARCH3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Architecture Class: Embedded, Microcomputer, Workstation,
-#     Not Architecture-Specific
 
 Architecture Class: Not Architecture-Specific
 Prevalence: <<PREVALENCE1>>
 
 
-# Values for Technology Name: Web Server, Database Server, Accelerator
-#    Hardware, Analog and Mixed Signal Hardware, Audio/Video Hardware,
-#    Bus/Interface Hardware, Clock/Counter Hardware, Communication
-#    Hardware, Controller Hardware, Memory Hardware, Microcontroller
-#    Hardware, Network on Chip Hardware, Power Management Hardware,
-#    Processor Hardware, Security Hardware, Sensor Hardware, Storage
-#    Hardware, Test/Debug Hardware
-
-
-Technology Name: <<TECH1>>
-Prevalence: <<PREVALENCE1>>
-
-Technology Name: <<TECH2>>
-Prevalence: <<PREVALENCE2>>
-
-Technology Name: <<TECH3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Technology Class: Client Server, Cloud Computing, ICS/OT,
-#     Mainframe, Mobile, N-Tier, SOA, System on Chip, Web Based, Not
-#     Technology-Specific
-	
 Technology Class: System on Chip
 Prevalence: <<PREVALENCE1>>
 
 
-************************************************************************************************
+==============================================================================================
 
 COMMON CONSEQUENCES:
-
-# This element will cover the typical negative security impact (or
-# impacts) that occurs if this weakness can be exploited by an
-# attacker. Each Consequence must include a Scope and Impact. Both the
-# Likelihood and Note elements are optional.
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#conseq
-
-
-
-# Values for Scope: Confidentiality, Integrity, Availability, Access
-#    Control, Accountability, Authentication, Authorization,
-#    Non-Repudiation, Other
-
-
-# Values for Impact: Modify Memory, Read Memory, Modify Files or
-#    Directories, Read Files or Directories, Modify Application Data,
-#    Read Application Data, DoS: Crash, Exit, or Restart, DoS:
-#    Amplification, DoS: Instability, DoS: Resource Consumption (CPU),
-#    DoS: Resource Consumption (Memory), DoS: Resource Consumption
-#    (Other), Execute Unauthorized Code or Commands, Gain Privileges
-#    or Assume Identity, Bypass Protection Mechanism, Hide Activities,
-#    Alter Execution Logic, Quality Degradation, Unexpected State,
-#    Varies by Context, Reduce Maintainability, Reduce Performance,
-#    Reduce Reliability, Other
-
-
-# Values for Likelihood: High, Medium, Low, Unknown
-
 
 Scope: Confidentiality
 
@@ -216,46 +77,24 @@ Impact: Read Memory; Read Application Data
 
 Likelihood: Unknown
 
-Note: Mathematically sound cryptographic algorithms rely on their correct
-implementation for security. The algorithms assume that with a given
-set of inputs, they will produce a cryptographic result. These
-assumptions break when a hardware crypto module leaks intermediate
-encryption states or results such that they can be observed by an
-adversary. If intermediate state is observed, it can be used by an
-attacker to identify the secrets used in the cryptographic operation.
+Note: Mathematically sound cryptographic algorithms rely on their
+correct implementation for security. These assumptions break when a
+hardware crypto module leaks intermediate encryption states or results
+such that they can be observed by an adversary. If intermediate state
+is observed, it might be possible for an attacker to identify the
+secrets used in the cryptographic operation.
 
 
-Scope: <<SCOPE2>>
-
-Impact: <<IMPACT2a>>; <<IMPACT2b>>; <<IMPACT2c>>
-
-Likelihood: <<LIKELIHOOD2>>
-
-Note: <<put the information here>>
-
-
-
-
-Scope: <<SCOPE3>>
-
-Impact: <<IMPACT3a>>; <<IMPACT3b>>; <<IMPACT3c>>
-
-Likelihood: <<LIKELIHOOD3>>
-
-Note: <<put the information here>>
-
-
-
-************************************************************************************************
+==============================================================================================
 
 DEMONSTRATIVE EXAMPLES:
 
 
 INTRO TEXT:
 
-The following SystemVerilog code shows an example of a generic crypto
-module with and without a “sanitizing” mechanism to mitigate the
-exposure of sensitive information (see line 50 in each example).
+The following SystemVerilog code is a crypto module that takes input
+data and encrypts it by processing the data through multiple
+encryption rounds. Note: this example is derived from [REF-XXX].
 
 
 
@@ -404,7 +243,7 @@ LANGUAGE: SystemVerilog
 
 
 
-************************************************************************************************
+==============================================================================================
 
 OBSERVED EXAMPLES:
 
@@ -456,7 +295,7 @@ ObexSummary: <<SUM4>>
 
 
 
-************************************************************************************************
+==============================================================================================
 
 DETECTION METHODS:
 
@@ -487,8 +326,7 @@ engine. Typically, this is done by building a model of data flow and
 control flow, then searching for potentially-vulnerable patterns that
 connect "sources" (signals with intermediate cryptographic
 state/results) with "sinks" (hardware module outputs and other signals
-outside of trusted cryptographic zone) without any control flow (see
-BAD CODE example).
+outside of trusted cryptographic zone) without any control flow.
 
 Effectiveness: High
 
@@ -502,18 +340,9 @@ Desc: Simulation/emulation based analysis can find some instances of
 this weakness by simulating source register-transfer level (RTL) code
 along with a set of assertions that incorporate the simulated values
 of relevant design signals. Typically, these assertions will capture
-desired or undesired behavior. For this weakness, an assertion should
-check for the undesired behavior of `valid || (data_state_q !=
-data_o)` where `valid` is signal that captures when a cryptographic
-algorithm has completely finished, `data_state_q` is a signal with
-intermediate cryptographic state/results, and `data_o` is a hardware
-module output or other signal outside of trusted cryptographic
-zone. In plain language, this assertion will fail if `data_state_q`
-and `data_o` are equal while a cryptographic operation is still
-underway (indicated by `valid`). This assertion will generally work
-for detecting this weakness but it can be improved by using
+desired or undesired behavior. Analysis can be improved by using
 simulation-based information flow tracking (IFT) to more precisely
-detect if `data_state_q` leaks to `data_o` when `valid` is deasserted.
+detect unexpected results.
 
 Effectiveness: High
 
@@ -530,24 +359,21 @@ Desc: Formal verification can find some instances of this weakness by
 exhaustively analyzing whether a given assertion holds true for a
 given hardware design specified in register-transfer level (RTL)
 code. Typically, these assertions will capture desired or undesired
-behavior. For this weakness, an assertion should check for the
-undesired behavior of `valid || (data_state_q != data_o)` where
-`valid` is signal that captures when a cryptographic algorithm has
-completely finished, `data_state_q` is a signal with intermediate
-cryptographic state/results, and `data_o` is a hardware module output
-or other signal outside of trusted cryptographic zone. In plain
-language, this assertion will fail if `data_state_q` and `data_o` can
-ever be equal while a cryptographic operation is still underway
-(indicated by `valid`). Alternatively, when using a formal IFT
-verification, the same undesired behavior can be detected by checking
-if `data_state_q` can ever leak to `data_o` when `valid` is
-deasserted.
+behavior. For this weakness, an assertion should check for undesired
+behavior in which one output is a signal that captures when a
+cryptographic algorithm has completely finished; another output is a
+signal with intermediate cryptographic state/results; and there is an
+assignment to a hardware module output or other signal outside of a
+trusted cryptographic zone.
+
+Alternatively, when using a formal IFT verification, the same
+undesired behavior can be detected by checking if computation results
+can ever leak to an output when the cryptographic result is not
+copmlete.
 
 Effectiveness: High
 
 Notes: Formal verification may not scale for RTL designs with a large state space.
-
-
 
 
 Method: Manual Analysis
@@ -559,8 +385,7 @@ reviewer will trace the sequence of assignments that connect "sources"
 (signals with intermediate cryptographic state/results) with "sinks"
 (hardware module outputs and other signals outside of trusted
 cryptographic zone). If this sequence of assignments is missing
-adequate control flow (see BAD CODE and GOOD CODE examples), then the
-weakness is likely to exist.
+adequate control flow, then the weakness is likely to exist.
 
 
 Effectiveness: Opportunistic
@@ -572,59 +397,32 @@ positives and false negatives) and highly opportunistic.
 
 
 
-************************************************************************************************
+==============================================================================================
 
 POTENTIAL MITIGATIONS:
 
-# This element should cover one or more techniques that will eliminate
-# and/or reduce the frequency or impact of the weakness. Each mitigation
-# must include a Phase and Description, while the Effectiveness element
-# is optional. A descriptive Effectiveness Note is also optional.
 
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#mitigations
+Phase: <<put the information here>>
 
+Description: <<put the information here>>
 
-# Values for Phase: Policy, Requirements, Architecture and Design,
-#    Implementation, Build and Compilation, Testing, Documentation,
-#    Bundling, Distribution, Installation, System Configuration,
-#    Operation, Patching and Maintenance, Porting, Integration,
-#    Manufacturing, Decommissioning and End-of-Life
-
-# Values for Effectiveness: High, Moderate, Limited, Incidental,
-#    Discouraged Common Practice, Defense in Depth, None
-
-
-Phase: Architecture and Design
-
-Description: Data flow paths that connect "sources" (signals with
-intermediate cryptographic state/results) with "sinks" (hardware
-module outputs and other signals outside of trusted cryptographic
-zone) must be (automatically) reviewed to ensure adequate control flow
-logic is in place to prevent leakage of intermediate state/results.
-
-Effectiveness: High
+Effectiveness: <<put the information here>>
 
 Effectiveness Notes: <<put the information here>>
 
 
 
+Phase: <<put the information here>>
 
-Phase: Implementation
+Description: <<put the information here>>
 
-Description: Data flow paths that connect "sources" (signals with
-intermediate cryptographic state/results) with "sinks" (hardware
-module outputs and other signals outside of trusted cryptographic
-zone) must be (automatically) reviewed to ensure adequate control flow
-logic is in place to prevent leakage of intermediate state/results.
-
-Effectiveness: High
+Effectiveness: <<put the information here>>
 
 Effectiveness Notes: <<put the information here>>
 
 
 
-************************************************************************************************
+==============================================================================================
 
 RELATED WEAKNESSES:
 
@@ -632,7 +430,7 @@ RelType: ChildOf
 ID: CWE-200
 View-ID: 1000
 
-RelType: ChildOf
+RelType: PeerOf
 ID: CWE-497
 View-ID: 1000
 
@@ -640,55 +438,49 @@ RelType: MemberOf
 ID: CWE-1205
 View-ID: 1194
 
-RelType: Other
-ID: CWE-1295
-View-ID: 1194
-
-RelType: Other
-ID: CWE-1258
-View-ID: 1194
-
 
 REFERENCES:
 
 Title: Security Verification of the OpenTitan Hardware Root of Trust
 
-
 URL: https://ieeexplore.ieee.org/document/10106105
-
 
 Author: Andres Meza, Francesco Restuccia, Jason Oberg, Dominic Rizzo, and Ryan Kastner
 
-
 Date: 2023-04-20
 
+----
 
 Title: Security Verification of an Open Source Hardware Root of Trust
 
 URL: https://cycuity.com/type/blog/security-verification-of-an-open-source-hardware-root-of-trust/
 
-Author: <<put the information here>>
+Author: Jason Oberg
 
-Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+Date: 2022-08-03
 
+
+----
 
 Title: Complete reverse-engineering of AES-like block ciphers by SCARE and FIRE attacks
 
 URL: https://doi.org/10.1007/s12095-014-0112-7
 
-Author: <<put the information here>>
+Author: Christophe Clavier, Quentin Isorez, Damien Marion, Antoine Wurcker
 
-Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+Date: 2014-10-23
 
+----
 
 Title: Practical Reverse Engineering of Secret Sboxes by Side-Channel Analysis
 
 URL: https://doi.org/10.1109/ISCAS45731.2020.9180848
 
-Author: <<put the information here>>
+Author: Dirmanto Jap, Shivam Bhasin
 
-Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+Date: October, 2020
 
+----
 
 Title: [REF-XXX] [otp_ctrl] Prevent broadcast of scrambler's input/intermediate values #13043
 
@@ -703,51 +495,54 @@ Date: 2022-06-03
 
 ACTIVE ISSUES:
 
-SUB.RELS - "Unclear relationships"
+SUB.MISC - "Miscellaneous/other problem"
 
-Description: The submission suggests some relationships, but the
-name/description is not explained in a way in which the relationship is
-relevant; or, the weakness is apparent, but it is not clear what the best
-parent/child relationship(s) would be.
+Description: The submission has some other problem that is not covered
+elsewhere.
 
-Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
-is present. It can progress to other phases if the CWE Team agrees that the
-potential relationships may require closer investigation.  The submission
-cannot progress to the publication stage until clear relationships and
-direct parents are identified. The CWE Team may decide to use high-level
-relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
-exist and cannot be quickly resolved.
+Resolution: This will depend on the nature of the problem.
 
-Comments: The RELATED WEAKNESSES section has been updated based on the
-2025-01-22 meeting. This will be further analyzed and refined during
-stage 2.
+Comments: The submission has been changed based on the last response
+of 2025-03-13, but some elements (fields) from the detailed submission
+need to be completed before CWE can be updated. Please address the
+following issues:
 
-CWE-201 is close but does not apply, since its focus is on the
-intentional sending of data when "a portion of the data [that]
-includes sensitive information". In this case, the data is sensitive
-in and of itself - not just a portion. CWE-212 does not apply, since
-the key weakness in this submission is in providing/sending the data
-in the first place. CWE-921 does not apply because it is about storage
-of data - not transmission.  CWE-1295 and CWE-1258 appear similar,
-although they might be most appropriate as chaining relationships.
+MUST ADDRESS FOR PUBLICATION - these issues must be answered and
+addressed before the detailed submission can be accepted and
+integrated into CWE.
 
-CWE-497 may be appropriate as a parent, although its current extended
-description is software-focused, and the "system" term is intended to
-refer to the operating system. However, CWE-497 may still apply here;
-consider a SoC with various modules, but the control sphere allows
-modules to read information from some modules but not others.
+1) POTENTIAL MITIGATIONS - the submitted mitigations were already
+   covered in detection methods. Currently, CWE distinguishes between
+   how weaknesses can be found ("detection methods") versus how they
+   can be fixed ("potential mitigations"). Please provide suggestions
+   for how developers/designers can eliminate or mitigate the
+   weakness, regardless of the methods by which the weakness was
+   discovered.
 
-CWE-200 is very general, but because there are no clear children under
-which this submission could fit, it may be appropriate as a parent
-here. There is a possibility of creating a more-specific
-"intermediate" CWE entry between CWE-200 and this submission, roughly
-for "sending sensitive data to a destination accessible by untrusted
-parties," but the CWE team will investigate this possibility
-separately; creation of an intermediate entry may happen independently
-and is not expected to slow down conversion of this submission into a
-new entry.
+QUALITY IMPROVEMENTS - these issues reflect quality expectations for
+CWE updates circa 2022 and later, and they should be addressed;
+however, in the interest of balancing timeliness with quality, the
+submission can still be published without such changes.
 
-Response: [NO RESPONSE NEEDED; DETAILED DISCUSSION IS ONGOING.]
+2) MODES OF INTRODUCTION - we created a Note for Implementation. Please
+   review it and see if you agree, or suggest changes.
+
+3) MODES OF INTRODUCTION - we could not immediately think of a Note to
+   use for Architecture and Design. Is it possible that some insecure
+   designs could require or indirectly force the use of output
+   channels for intermediate results? Please suggest a Note to use, or
+   we could remove this phase.
+
+4) DEMOX - we changed the "INTRO TEXT" to follow CWE style. Please let
+   us know if you agree, or suggest changes.
+
+5) DETECTION METHODS - some submitted text was specific to the
+   demonstrative example, but we want to cover general detection
+   methods, so we removed some demox-specific text. Please let us know
+   if you agree, or suggest changes.
+
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 
@@ -895,6 +690,47 @@ Response: [NO RESPONSE NEEDED; THIS WAS RESOLVED IN STAGE 2 PHASE 7
 (DET-REQUESTED) BY CONVERTING THE SUBMITTER'S ANSWER TO A
 DEMONSTRATIVE EXAMPLE AS PART OF THE DETAILED SUBMISSION.]
 
+----
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The RELATED WEAKNESSES section has been updated based on
+previous discussions and further analysis during Stage 2.
+
+In summary, CWE-497 may have been appropriate as a parent, but its
+current extended description is software-focused, and the "system"
+term is intended to refer to the operating system. It might be too
+significant to change CWE-497 to be more generally applicable to
+hardware. There is a possibility of creating a more-specific
+"intermediate" CWE entry between CWE-200 and this submission, roughly
+for "sending sensitive data to a destination accessible by untrusted
+parties," which could include a a SoC with various modules in which a
+control sphere is defined that allows modules to read information from
+some modules but not others. The CWE team will investigate this
+possibility separately; creation of an intermediate entry, even if it
+is determined to be appropriate, will not happen before this
+submission can be included in CWE. Therefore, for now, CWE-200 will be
+used as the partny. While it is very general, as of CWE 4.16, there
+are no clear children under which this submission could fit.
+
+Response: [NO RESPONSE NEEDED; ISSUE RESOLVED FOR THIS
+SUBMISSION. CWE-497 IS TOO SOFTWARE-FOCUSED TO CHANGE, SO CWE-497 WILL
+BE LISTED AS A PEER.]
+
+
 
 
 
@@ -916,9 +752,9 @@ Det-Requested: 2025-02-03
 
 Det-Received: 2025-03-13
 
-Det-Review: YYYY-MM-DD
+Det-Review: 2025-03-27
 
-Det-Consultation: YYYY-MM-DD
+Det-Consultation: 2025-03-27
 
 Det-Accepted: YYYY-MM-DD
 
@@ -963,3 +799,4 @@ COMMUNICATIONS LOG:
 2025-03-06 sent email
 2025-03-13 received email
 2025-03-14 action meeting
+2025-03-28 sent email
