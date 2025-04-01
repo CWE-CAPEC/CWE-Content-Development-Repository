@@ -17,7 +17,7 @@ The Common Weakness Enumeration (CWE) Program has launched the CWE Content Devel
 
 ## Content Submission and Participation
 
-Anyone  interested in contributing content to CWE, exploring various content suggestions or contributing ideas for improvements, please consult the [Guidelines for Content Submissions](https://github.com/CWE-CAPEC/CWE-Submissions-Test/blob/main/documentation/submission-guidelines.md) to understand the process in detail. In addition to submitting new content or proposing updates to the current content, the Content Submitter plays a crucial role in promptly and correctly addressing feedback from the CWE Team and the community regarding their entries. Their responsiveness is essential for advancing content through various phases efficiently.
+Anyone  interested in contributing content to CWE, exploring various content suggestions or contributing ideas for improvements, please consult the [Guidelines for Content Submissions](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/documentation/submission-guidelines.md) to understand the process in detail. In addition to submitting new content or proposing updates to the current content, the Content Submitter plays a crucial role in promptly and correctly addressing feedback from the CWE Team and the community regarding their entries. Their responsiveness is essential for advancing content through various phases efficiently.
 
 Content suggestions are initially received through the [CWE Submission Form](https://cwesubmission.mitre.org/). Once processed by the CWE Team, these submissions are transferred to the CDR public repository here, allowing the entire CWE community to view and comment on them as they progress through various stages.
 
@@ -36,17 +36,17 @@ Once a submission is provided, it needs to be reviewed by the CWE Team to determ
 
 These stages, as well as the more granular phases within each stage are described in detail below.
 
-![Submission Phases Diagram](https://github.com/CWE-CAPEC/CWE-Submissions-Test/blob/main/documentation/resources/submission-phases.png)
+![Submission Phases Diagram](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/documentation/resources/submission-phases.png)
 
-Refer to [Submission-phases.md](https://github.com/CWE-CAPEC/CWE-Submissions-Test/blob/main/documentation/submission-phases.md) for more details, which explains the different phase labels that indicate the current stage of a submission in the review process. There are currently 18 possible phases, each representing a specific point in the review timeline.
+Refer to [Submission-phases.md](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/documentation/submission-phases.md) for more details, which explains the different phase labels that indicate the current stage of a submission in the review process. There are currently 18 possible phases, each representing a specific point in the review timeline.
 
 ### Scope Exclusions
 
-[Scope-exclusions.md](https://github.com/CWE-CAPEC/CWE-Submissions-Test/blob/main/documentation/scope-exclusions.md): This document details the labels that begin with "SCOPE." These labels identify various issues related to the scope of a submission, known as scope exclusions. They are assigned during the initial review and are removed once the scope exclusion has been addressed.
+[Scope-exclusions.md](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/documentation/scope-exclusions.md): This document details the labels that begin with "SCOPE." These labels identify various issues related to the scope of a submission, known as scope exclusions. They are assigned during the initial review and are removed once the scope exclusion has been addressed.
 
 ### Submission Problems
 
-[Submission-problems.md](https://github.com/CWE-CAPEC/CWE-Submissions-Test/blob/main/documentation/submission-problems.md): This file describes labels that start with "SUB." These labels denote various submission problems that a submission may have. Similar to scope exclusions, these labels are assigned during the initial review and are removed once the submission problem has been resolved.
+[Submission-problems.md](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/documentation/submission-problems.md): This file describes labels that start with "SUB." These labels denote various submission problems that a submission may have. Similar to scope exclusions, these labels are assigned during the initial review and are removed once the submission problem has been resolved.
 
 ### GitHub Issues
 
@@ -66,7 +66,7 @@ When searching for submission issues, filters can be set for various of these is
 
 The main collaboration on the CDR should be through issue comments. The CWE Team will use issue comments to communicate with the content submitter, and the community can use issue comments to provide feedback and thoughts on the submission.
 
-**Code of Conduct:** It is important that anyone contributing to the CDR is respectful in their feedback and follows the [code of conduct](https://github.com/CWE-CAPEC/CWE-Submissions-Test/blob/main/CODE_OF_CONDUCT.md). The CWE Team reserves the right to restrict access to anyone who is in violation of the code of conduct.
+**Code of Conduct:** It is important that anyone contributing to the CDR is respectful in their feedback and follows the [code of conduct](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/CODE_OF_CONDUCT.md). The CWE Team reserves the right to restrict access to anyone who is in violation of the code of conduct.
 
 **Issue Management:** Issues are given various labels that are directly managed by MITRE. These should not be modified by CDR users.
 
