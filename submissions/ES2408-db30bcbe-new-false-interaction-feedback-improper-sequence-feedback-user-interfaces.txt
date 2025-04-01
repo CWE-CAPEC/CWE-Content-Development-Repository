@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2408-db30bcbe
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -131,7 +131,7 @@ Received: 2024-08-20
 
 Ack-Receipt: 2024-12-09
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2025-04-01
 
 Init-Consultation: YYYY-MM-DD
 
@@ -168,3 +168,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-12-09 sent email
+2025-04-01 sent email
