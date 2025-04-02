@@ -30,10 +30,10 @@ NAME: Driving Intermediate Cryptographic State/Results to Hardware Module Output
 
 DESCRIPTION:
 
-A hardware module implementing a cryptographic algorithm writes
-sensitive information about the intermediate state or results of its
-cryptographic operations via one of its output wires (typically the
-output port containing the final result).
+The product uses a hardware module implementing a cryptographic
+algorithm that writes sensitive information about the intermediate
+state or results of its cryptographic operations via one of its output
+wires (typically the output port containing the final result).
 
 
 MODES OF INTRODUCTION:
@@ -542,8 +542,56 @@ submission can still be published without such changes.
    if you agree, or suggest changes.
 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:
 
+
+1) I’ve updated the POTENTIAL MITIGATIONS to better emphasize how developers/designers
+   can eliminate or mitigate the weakness rather than simply detecting it.
+
+
+2) I agree with the note. No issues/comments.
+
+
+3) I’ve removed the architecture & design phase due to the following
+   reasons. I think this might warrant a larger discussion.
+
+   During my presentation of this weakness at the HW CWE SIG meeting
+   (3/14), this architecture/design choice was briefly mentioned by
+   one of the other attendees.  There are legitimate reasons to use
+   intermediate state/results for performing some type of integrity
+   check operation or other cryptographic/randomness operation.
+   However, I believe these use cases represent a “special case”
+   because the modules that utilize these intermediate state/results
+   typically have the same trust level or security privileges as the
+   crypto module generating the results. Being part of the same
+   trusted/secure class of modules (or logic blocks) makes the sharing
+   of these results a design choice rather than a weakness. The
+   weakness we were intending to address with this submission was the
+   common mistake of driving intermediate state/results to
+   signals/modules that (A) should not be receiving these data (no
+   functional necessity) and/or (B) have a lower level of
+   trust/security.
+
+   If a design needs to use intermediate state/results then designers
+   should ensure that these data are only driven to the intended
+   modules or logic blocks. Whether or not this will lead to the
+   weakness we are describing is highly dependent on the
+   implementation and organization of the logic. For instance, all of
+   the logic that operates on intermediate state/results for integrity
+   checks (or some other purpose) could be a submodule of the crypto
+   module. This would pose no issue. However, if this logic is placed
+   outside of the crypto module, then the control flow logic we
+   discuss in the potential mitigations needs to be placed outside of
+   the crypto module rather than inside (as shown in the demo
+   code). The way we have described the weakness (i.e., speaking in
+   terms of module outputs) is an extremely common design pattern but
+   it would not directly map onto the implementation in the previous
+   sentence. I’ve tried to account for this by also describing the
+   weakness in terms of sources and sinks rather than just outputs.
+
+4) I agree with the updates. No issues/comments.
+
+5) I agree with the updates. No issues/comments.
 
 
 
@@ -801,3 +849,4 @@ COMMUNICATIONS LOG:
 2025-03-14 action meeting
 2025-03-28 sent email
 2025-04-02 sent email
+2025-04-02 received email
