@@ -1,18 +1,18 @@
 SUBMISSION COMMUNICATION ID: ES2302-1f7d9e54
 
-ACTION TYPE: New Entry
+ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES:
+AFFECTED CWES: CWE-1428
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-02-12 19:35:12
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.GRAMMAR
+ISSUE DETAILS: 
 
 PUBTRACKER: #2
 
@@ -60,6 +60,9 @@ URL: https://web.dev/articles/fixing-mixed-content
 
 ACTIVE ISSUES:
 
+
+RESOLVED ISSUES:
+
 SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
 Description: The submission identifies an issue, but its abstraction might
@@ -76,20 +79,16 @@ the more-general concept is appropriately identified and described. The
 original, lower-level submission will serve as a primary example of the
 more general concept.
 
-Comments: The CWE Team believes that ES2302-c4107569 "Lack of HTTPS
-forcing" and ES2302-1f7d9e54 "Using HTTP instead of HTTPS with email
-and other content" are both too low-level to receive their own new CWE
-IDs. However, we plan to create a new CWE entry, at the Variant level
-of abstraction, which covers "Use of HTTP instead of HTTPS". We will
-then integrate both submissions into that new entry, and we will
-ensure that your submission is appropriately credited. This submission
-might be integrated as part of an extended description, technical
-details, and/or a demonstrative example. Please let us know if you
-agree with this approach.
+Comments: The CWE Team created a new CWE entry for "Reliance on HTTP
+instead of HTTPS" (CWE-1428) and integrated this submission's
+information by mentioning avoidance of "Using HTTP instead of HTTPS
+with email and other content" as part of a mitigation and including
+some provided references.
 
-Response: Sounds great, thank you. Agree.
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
-----------
+
+--------
 
 SUB.GRAMMAR - "Grammar/Spelling issues"
 
@@ -112,8 +111,7 @@ demonstrative example, or other).  Please let us know if you agree.
 
 Response: Agree. Thank you again.
 
-
-RESOLVED ISSUES:
+----------
 
 
 
@@ -141,13 +139,13 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2025-04-01
 
 Final-Coord: YYYY-MM-DD
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-04-01
 
 CWE-Published: YYYY-MM-DD
 
@@ -163,3 +161,5 @@ COMMUNICATIONS LOG:
 2024-02-04 sent email
 2025-02-05 received comment
 2025-02-05 sent email
+2025-04-01 sent email
+2025-04-01 received email
