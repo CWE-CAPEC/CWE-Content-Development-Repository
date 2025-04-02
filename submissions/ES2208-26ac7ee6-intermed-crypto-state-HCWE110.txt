@@ -4,7 +4,7 @@ ALTERNATE ID: HCWE110
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Det-Consultation
+SUBMISSION STATUS: Internal-Update
 
 AFFECTED CWES: 
 
@@ -756,9 +756,9 @@ Det-Review: 2025-03-27
 
 Det-Consultation: 2025-03-27
 
-Det-Accepted: YYYY-MM-DD
+Det-Accepted: 2025-04-02
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2025-04-02
 
 Final-Coord: YYYY-MM-DD
 
@@ -800,3 +800,4 @@ COMMUNICATIONS LOG:
 2025-03-13 received email
 2025-03-14 action meeting
 2025-03-28 sent email
+2025-04-02 sent email
