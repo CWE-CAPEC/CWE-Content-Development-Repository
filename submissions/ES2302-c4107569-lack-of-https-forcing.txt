@@ -1,18 +1,18 @@
 SUBMISSION COMMUNICATION ID: ES2302-c4107569
 
-ACTION TYPE: New Entry
+ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-1428
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-02-08 09:42:54
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.ABS.LOWLEVEL
+ISSUE DETAILS: 
 
 PUBTRACKER: #5
 
@@ -83,40 +83,6 @@ Title: Encrypting the Web
 URL: https://www.eff.org/encrypt-the-web
 
 ACTIVE ISSUES:
-
-
-SUB.ABS.LOWLEVEL - "Low level of abstraction"
-
-Description: The submission identifies an issue, but its abstraction might
-be too low-level to merit its own CWE entry. If it is focused on a
-particular technology, framework, protocol, or function, then it might not
-be unique enough to get its own CWE ID.  This might lead to modification of
-an existing entry to include the additional details, or creation of a
-higher-level entry for which the submission is one example. (Note: some
-older CWE entries have this problem and would not be published today,
-generally because they were too specific to a particular language.)
-
-Resolution: The submission will be allowed to progress to later phases once
-the more-general concept is appropriately identified and described. The
-original, lower-level submission will serve as a primary example of the
-more general concept.
-
-Comments: In a previous consultation round, the submitter agreed that
-a variant-level "lack of HTTPS forcing" might be too low-level to
-include in CWE, but it is a common issue.
-
-The CWE Team believes that ES2302-c4107569 "Lack of HTTPS
-forcing" and ES2302-1f7d9e54 "Using HTTP instead of HTTPS with email
-and other content" are both too low-level to receive their own new CWE
-IDs. However, we plan to create a new CWE entry, at the Variant level
-of abstraction, which covers "Use of HTTP instead of HTTPS". We will
-then integrate both submissions into that new entry, and we will
-ensure that your submission is appropriately credited. This submission
-might be integrated as part of an extended description, technical
-details, and/or a demonstrative example. Please let us know if you
-agree with this approach.
-
-Response: Sounds great, thank you.
 
 
 
@@ -212,6 +178,32 @@ needed.
 
 Response: Agree
 
+------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: The CWE Team created a new CWE entry for "Reliance on HTTP
+instead of HTTPS" (CWE-1428) and integrated this submission's
+information by including HTTPS forcing as a mitigation and including
+some provided references.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
+
 
 
 TIMELINE:
@@ -238,13 +230,13 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2025-04-01
 
 Final-Coord: YYYY-MM-DD
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-04-01
 
 CWE-Published: YYYY-MM-DD
 
