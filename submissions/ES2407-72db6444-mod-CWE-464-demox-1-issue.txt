@@ -2,17 +2,17 @@ SUBMISSION COMMUNICATION ID: ES2407-72db6444
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-464
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-07-20 03:25:40
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.MISC
+ISSUE DETAILS: 
 
 PUBTRACKER: #119
 
@@ -42,6 +42,9 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+
+RESOLVED ISSUES:
+
 SUB.MISC - "Miscellaneous/other problem"
 
 Description: The submission has some other problem that is not covered
@@ -58,9 +61,6 @@ a user. We will need to adjust the code.
 
 Response: [NO RESPONSE NEEDED; ISSUE TO BE RESOLVED IN A LATER PHASE]
 
-
-
-RESOLVED ISSUES:
 
 
 
@@ -92,7 +92,7 @@ Internal-Update: 2025-02-25
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-04-02
 
 Final-Coord: YYYY-MM-DD
 
