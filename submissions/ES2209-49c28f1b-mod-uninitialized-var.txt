@@ -117,9 +117,10 @@ payment, orderPgData.validateAmount() is not called - that is, the
 amount is not validated to be the same as the expected price.
 
 Since isPaymentAmountTampered is declared as a private boolean, but it
-is not initialized, it is initialized to false by the Java compiler.
+is not initialized, it is forcibly initialized to false by the Java
+compiler [REF-XXX2].
 
-If the adversary modifies the price, e.g. changing paymentAmount from
+If the adversary modifies the price, e.g., changing paymentAmount from
 100 to 10, then no validation is performed. Since
 isPaymentAmountTampered is "false" because of the default
 initialization, the code finishes processing the payment because it
@@ -144,17 +145,16 @@ change this assumption.
 RELATED WEAKNESSES:
 
    ChildOf CWE-456
-   ChildOf CWE-457
    Other CWE-840
 
 REFERENCES:
 
-Title: [REF-XXX] uninitialized variable vulnerability - Problem with boolean variables that are forcibly initialized to false by the Java compiler
+Title: [REF-1475] uninitialized variable vulnerability - Problem with boolean variables that are forcibly initialized to false by the Java compiler
 URL: https://github.com/windshock/uninitialized-variable-vulnerability/blob/main/README.md
 Author: windshock
 Date: 2022-09-13
 
-Title: The Java Language Specification, Java SE 7 Edition
+Title: [REF-1476] The Java Language Specification, Java SE 7 Edition
 URL: https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5
 Date: 2013-02-28
 Author: James Gosling, Bill Joy, Guy Steele, Gilad Bracha, Alex Buckley
