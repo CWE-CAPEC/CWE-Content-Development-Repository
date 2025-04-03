@@ -4,19 +4,19 @@ ALTERNATE ID: HCWE110
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Assigned
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-1431
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2022-08-15 21:12:21
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.MISC
+ISSUE DETAILS: 
 
-FIELDCHANGE: MITIGATION, DEMOX, INTROMODES, DETECTION
+FIELDCHANGE: 
 
 PUBTRACKER: #17
 
@@ -495,104 +495,6 @@ Date: 2022-06-03
 
 ACTIVE ISSUES:
 
-SUB.MISC - "Miscellaneous/other problem"
-
-Description: The submission has some other problem that is not covered
-elsewhere.
-
-Resolution: This will depend on the nature of the problem.
-
-Comments: The submission has been changed based on the last response
-of 2025-03-13, but some elements (fields) from the detailed submission
-need to be completed before CWE can be updated. Please address the
-following issues:
-
-MUST ADDRESS FOR PUBLICATION - these issues must be answered and
-addressed before the detailed submission can be accepted and
-integrated into CWE.
-
-1) POTENTIAL MITIGATIONS - the submitted mitigations were already
-   covered in detection methods. Currently, CWE distinguishes between
-   how weaknesses can be found ("detection methods") versus how they
-   can be fixed ("potential mitigations"). Please provide suggestions
-   for how developers/designers can eliminate or mitigate the
-   weakness, regardless of the methods by which the weakness was
-   discovered.
-
-QUALITY IMPROVEMENTS - these issues reflect quality expectations for
-CWE updates circa 2022 and later, and they should be addressed;
-however, in the interest of balancing timeliness with quality, the
-submission can still be published without such changes.
-
-2) MODES OF INTRODUCTION - we created a Note for Implementation. Please
-   review it and see if you agree, or suggest changes.
-
-3) MODES OF INTRODUCTION - we could not immediately think of a Note to
-   use for Architecture and Design. Is it possible that some insecure
-   designs could require or indirectly force the use of output
-   channels for intermediate results? Please suggest a Note to use, or
-   we could remove this phase.
-
-4) DEMOX - we changed the "INTRO TEXT" to follow CWE style. Please let
-   us know if you agree, or suggest changes.
-
-5) DETECTION METHODS - some submitted text was specific to the
-   demonstrative example, but we want to cover general detection
-   methods, so we removed some demox-specific text. Please let us know
-   if you agree, or suggest changes.
-
-
-Response:
-
-
-1) I’ve updated the POTENTIAL MITIGATIONS to better emphasize how developers/designers
-   can eliminate or mitigate the weakness rather than simply detecting it.
-
-
-2) I agree with the note. No issues/comments.
-
-
-3) I’ve removed the architecture & design phase due to the following
-   reasons. I think this might warrant a larger discussion.
-
-   During my presentation of this weakness at the HW CWE SIG meeting
-   (3/14), this architecture/design choice was briefly mentioned by
-   one of the other attendees.  There are legitimate reasons to use
-   intermediate state/results for performing some type of integrity
-   check operation or other cryptographic/randomness operation.
-   However, I believe these use cases represent a “special case”
-   because the modules that utilize these intermediate state/results
-   typically have the same trust level or security privileges as the
-   crypto module generating the results. Being part of the same
-   trusted/secure class of modules (or logic blocks) makes the sharing
-   of these results a design choice rather than a weakness. The
-   weakness we were intending to address with this submission was the
-   common mistake of driving intermediate state/results to
-   signals/modules that (A) should not be receiving these data (no
-   functional necessity) and/or (B) have a lower level of
-   trust/security.
-
-   If a design needs to use intermediate state/results then designers
-   should ensure that these data are only driven to the intended
-   modules or logic blocks. Whether or not this will lead to the
-   weakness we are describing is highly dependent on the
-   implementation and organization of the logic. For instance, all of
-   the logic that operates on intermediate state/results for integrity
-   checks (or some other purpose) could be a submodule of the crypto
-   module. This would pose no issue. However, if this logic is placed
-   outside of the crypto module, then the control flow logic we
-   discuss in the potential mitigations needs to be placed outside of
-   the crypto module rather than inside (as shown in the demo
-   code). The way we have described the weakness (i.e., speaking in
-   terms of module outputs) is an extremely common design pattern but
-   it would not directly map onto the implementation in the previous
-   sentence. I’ve tried to account for this by also describing the
-   weakness in terms of sources and sinks rather than just outputs.
-
-4) I agree with the updates. No issues/comments.
-
-5) I agree with the updates. No issues/comments.
-
 
 
 RESOLVED ISSUES:
@@ -779,6 +681,107 @@ SUBMISSION. CWE-497 IS TOO SOFTWARE-FOCUSED TO CHANGE, SO CWE-497 WILL
 BE LISTED AS A PEER.]
 
 
+----
+
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The submission has been changed based on the last response
+of 2025-03-13, but some elements (fields) from the detailed submission
+need to be completed before CWE can be updated. Please address the
+following issues:
+
+MUST ADDRESS FOR PUBLICATION - these issues must be answered and
+addressed before the detailed submission can be accepted and
+integrated into CWE.
+
+1) POTENTIAL MITIGATIONS - the submitted mitigations were already
+   covered in detection methods. Currently, CWE distinguishes between
+   how weaknesses can be found ("detection methods") versus how they
+   can be fixed ("potential mitigations"). Please provide suggestions
+   for how developers/designers can eliminate or mitigate the
+   weakness, regardless of the methods by which the weakness was
+   discovered.
+
+QUALITY IMPROVEMENTS - these issues reflect quality expectations for
+CWE updates circa 2022 and later, and they should be addressed;
+however, in the interest of balancing timeliness with quality, the
+submission can still be published without such changes.
+
+2) MODES OF INTRODUCTION - we created a Note for Implementation. Please
+   review it and see if you agree, or suggest changes.
+
+3) MODES OF INTRODUCTION - we could not immediately think of a Note to
+   use for Architecture and Design. Is it possible that some insecure
+   designs could require or indirectly force the use of output
+   channels for intermediate results? Please suggest a Note to use, or
+   we could remove this phase.
+
+4) DEMOX - we changed the "INTRO TEXT" to follow CWE style. Please let
+   us know if you agree, or suggest changes.
+
+5) DETECTION METHODS - some submitted text was specific to the
+   demonstrative example, but we want to cover general detection
+   methods, so we removed some demox-specific text. Please let us know
+   if you agree, or suggest changes.
+
+
+Response:
+
+
+1) I’ve updated the POTENTIAL MITIGATIONS to better emphasize how developers/designers
+   can eliminate or mitigate the weakness rather than simply detecting it.
+
+
+2) I agree with the note. No issues/comments.
+
+
+3) I’ve removed the architecture & design phase due to the following
+   reasons. I think this might warrant a larger discussion.
+
+   During my presentation of this weakness at the HW CWE SIG meeting
+   (3/14), this architecture/design choice was briefly mentioned by
+   one of the other attendees.  There are legitimate reasons to use
+   intermediate state/results for performing some type of integrity
+   check operation or other cryptographic/randomness operation.
+   However, I believe these use cases represent a “special case”
+   because the modules that utilize these intermediate state/results
+   typically have the same trust level or security privileges as the
+   crypto module generating the results. Being part of the same
+   trusted/secure class of modules (or logic blocks) makes the sharing
+   of these results a design choice rather than a weakness. The
+   weakness we were intending to address with this submission was the
+   common mistake of driving intermediate state/results to
+   signals/modules that (A) should not be receiving these data (no
+   functional necessity) and/or (B) have a lower level of
+   trust/security.
+
+   If a design needs to use intermediate state/results then designers
+   should ensure that these data are only driven to the intended
+   modules or logic blocks. Whether or not this will lead to the
+   weakness we are describing is highly dependent on the
+   implementation and organization of the logic. For instance, all of
+   the logic that operates on intermediate state/results for integrity
+   checks (or some other purpose) could be a submodule of the crypto
+   module. This would pose no issue. However, if this logic is placed
+   outside of the crypto module, then the control flow logic we
+   discuss in the potential mitigations needs to be placed outside of
+   the crypto module rather than inside (as shown in the demo
+   code). The way we have described the weakness (i.e., speaking in
+   terms of module outputs) is an extremely common design pattern but
+   it would not directly map onto the implementation in the previous
+   sentence. I’ve tried to account for this by also describing the
+   weakness in terms of sources and sinks rather than just outputs.
+
+4) I agree with the updates. No issues/comments.
+
+5) I agree with the updates. No issues/comments.
+
 
 
 
@@ -810,7 +813,7 @@ Internal-Update: 2025-04-02
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Assigned: YYYY-MM-DD
+CWE-Assigned: 2025-04-02
 
 CWE-Modified: YYYY-MM-DD
 
@@ -850,3 +853,4 @@ COMMUNICATIONS LOG:
 2025-03-28 sent email
 2025-04-02 sent email
 2025-04-02 received email
+2025-04-02 sent email
