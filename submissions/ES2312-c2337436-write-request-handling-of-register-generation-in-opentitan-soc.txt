@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2312-c2337436
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Published
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-1429
 
 ORIGIN: sub-server
 
@@ -948,11 +948,11 @@ Internal-Update: 2025-04-02
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Assigned: YYYY-MM-DD
+CWE-Assigned: 2025-04-02
 
 CWE-Modified: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2025-04-03
 
 Post-Publication: YYYY-MM-DD
 
@@ -995,3 +995,5 @@ COMMUNICATIONS LOG:
 2025-03-25 sent email
 2025-03-25 sent email
 2025-04-02 sent email
+2025-04-03 action published
+2025-04-07 sent email
