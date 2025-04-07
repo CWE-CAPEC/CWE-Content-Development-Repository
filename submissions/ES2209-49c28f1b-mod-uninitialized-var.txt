@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2209-49c28f1b
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Published
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-456
 
 ORIGIN: sub-server
 
@@ -216,9 +216,9 @@ Final-Coord: YYYY-MM-DD
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-04-07
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2025-04-03
 
 Post-Publication: YYYY-MM-DD
 
@@ -232,3 +232,5 @@ COMMUNICATIONS LOG:
 2023-01-06 sent email
 2023-02-27 sent email
 2023-09-12 publish server
+2025-04-03 action published
+2025-04-07 sent email
