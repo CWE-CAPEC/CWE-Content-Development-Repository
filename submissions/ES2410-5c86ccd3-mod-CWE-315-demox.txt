@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2410-5c86ccd3
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-315
 
 ORIGIN: sub-server
 
@@ -72,7 +72,7 @@ Internal-Update: 2025-03-11
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-04-03
 
 Final-Coord: YYYY-MM-DD
 
