@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2409-e049ccc0
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Modified
+SUBMISSION STATUS: CWE-Published
 
 AFFECTED CWES: CWE-637
 
@@ -92,7 +92,7 @@ CWE-Modified: 2025-03-20
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2025-04-03
 
 Post-Publication: YYYY-MM-DD
 
@@ -107,3 +107,5 @@ COMMUNICATIONS LOG:
 2025-02-04 sent email
 2025-02-13 sent email
 2025-03-20 sent email
+2025-04-03 action published
+2025-04-07 sent email
