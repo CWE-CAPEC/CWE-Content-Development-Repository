@@ -4,7 +4,7 @@ ALTERNATE ID: HCWE110
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: CWE-Published
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: CWE-1431
 
@@ -821,7 +821,7 @@ CWE-Published: 2025-04-03
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2025-04-11
 
 
 COMMUNICATIONS LOG:
@@ -856,3 +856,4 @@ COMMUNICATIONS LOG:
 2025-04-02 sent email
 2025-04-03 action published
 2025-04-07 sent email
+2025-04-11 sent email
