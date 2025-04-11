@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2407-f16abbc8
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Modified
+SUBMISSION STATUS: CWE-Published
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-193
 
 ORIGIN: sub-server
 
@@ -93,7 +93,7 @@ CWE-Modified: 2025-04-03
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2025-04-03
 
 Post-Publication: YYYY-MM-DD
 
@@ -107,3 +107,5 @@ COMMUNICATIONS LOG:
 2025-01-24 sent email
 2025-01-30 sent email
 2025-02-13 sent email
+2025-04-03 action published
+2025-04-11 sent email
