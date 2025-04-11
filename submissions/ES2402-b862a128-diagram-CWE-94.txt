@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-b862a128
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Published
 
 AFFECTED CWES: CWE-94
 
@@ -83,11 +83,11 @@ Internal-Update: 2025-04-01
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-04-02
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2025-04-03
 
 Post-Publication: YYYY-MM-DD
 
