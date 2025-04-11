@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2404-8f35cdac
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Published
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: CWE-1246
 
@@ -82,7 +82,7 @@ CWE-Published: 2025-04-03
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2025-04-11
 
 
 
@@ -96,3 +96,4 @@ COMMUNICATIONS LOG:
 2025-01-02 post comment
 2025-04-03 action published
 2025-04-07 sent email
+2025-04-11 sent email
