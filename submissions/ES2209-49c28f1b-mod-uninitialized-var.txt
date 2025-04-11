@@ -216,7 +216,7 @@ Final-Coord: YYYY-MM-DD
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: 2025-04-07
+CWE-Modified: 2025-04-02
 
 CWE-Published: 2025-04-03
 
