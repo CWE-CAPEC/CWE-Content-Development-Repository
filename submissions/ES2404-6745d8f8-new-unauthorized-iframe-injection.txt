@@ -83,7 +83,21 @@ language in CWE-1021 to include this possibility. Please provide your
 feedback on this discussion.
 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Thank you for the feedback. I understand the concern that
+"iFrame Injection" may be interpreted as an attack rather than a
+distinct weakness. While CWE-610 (Externally Controlled Reference to a
+Resource in Another Sphere) could cover URL-based injection, I believe
+this specific case of injecting unauthorized iframes is distinct
+because it focuses on a failure to restrict embedding untrusted
+content within a webpage.
+
+Regarding CWE-1021, I see how it could be expanded to include
+scenarios where an attacker injects an iframe into a victim
+page. However, CWE-1021 primarily deals with "Embedding Scripts into a
+Victim Site," whereas this issue focuses on embedding external iframes
+without script execution. Would modifying CWE-1021 be the best path
+forward, or should this be a new Variant-level CWE under CWE-610?
+
 
 ----------
 
@@ -102,7 +116,13 @@ instead of the weakness (mistake) that leads to unauthorized iFrame
 injection. Please revisit the submission to highlight the weakness
 causing the vulnerability.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree that the submission should focus on the underlying
+weakness rather than the attack. The core issue here is inadequate
+validation or control over iframe sources, allowing unauthorized
+embedding. To clarify this, I will revise the name and description to
+emphasize the failure to restrict iframe sources rather than the
+attack itself. Would a name like "Failure to Restrict Untrusted iFrame
+Embedding" better align with CWE conventions?
 
 ----------
 
@@ -126,7 +146,14 @@ relationships. Once the key weakness is better understood, we will be
 better able to resolve this issue. Please respond and let us know your
 opinion.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Thank you for pointing this out. Given the overlaps with
+CWE-610 and CWE-1021, a deeper review of the subtree relationships
+seems necessary. My initial thought is that CWE-610 (which relates to
+external resource control) might be a more fitting parent than
+CWE-1021. However, if CWE-1021 were modified to account for this
+scenario, it could also be a viable option. I’d appreciate guidance on
+whether to proceed with modifying an existing CWE or defining a new
+Variant-level entry.
 
 ----------
 
@@ -152,7 +179,10 @@ a Variant level of abstraction.  As a result, these details might be
 better treated as modifications to higher-level entries. Please let us
 know what you think of this proposal.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I acknowledge that this submission may be too specific as it
+focuses on an HTML element (iframes). If this concept is too narrow
+for a standalone CWE, I am open to incorporating it as an example
+under a broader existing CWE like CWE-610 or an updated CWE-1021.
 
 ----------
 
@@ -171,7 +201,9 @@ new entry. Further discussion and identification of the core weakness
 will help determine the appropriate action. Please acknowledge that
 you have read this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Understood. Given the discussions around abstraction and
+subtree relationships, it seems that the best course of action would
+be to update an existing CWE rather than creating a new entry.
 
 ----------
 
@@ -192,7 +224,13 @@ possibility is
 https://www.invicti.com/blog/web-security/frame-injection-attacks/,
 but we would welcome other references.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Thank you for pointing this out. I appreciate the suggested
+reference from Invicti
+(https://www.invicti.com/blog/web-security/frame-injection-attacks/). More
+include
+https://www.cequence.ai/blog/api-security/what-are-iframe-injection-attacks/
+and
+https://www.cobalt.io/vulnerability-wiki/v5-validation-sanitization/iframe-injection
 
 
 ----------
@@ -246,3 +284,4 @@ COMMUNICATIONS LOG:
 2024-04-17 sent email
 2024-07-17 sent email
 2025-02-25 sent email
+2025-03-11 received email
