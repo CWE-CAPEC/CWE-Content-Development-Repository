@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-e1534783
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Modified
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: CWE-20
 
@@ -90,11 +90,11 @@ CWE-Modified: 2025-03-11
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2025-04-03
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2025-04-14
 
 
 
@@ -105,3 +105,4 @@ COMMUNICATIONS LOG:
 2025-01-28 sent comment
 2025-01-28 sent comment
 2025-03-11 action update
+2025-04-03 action published
