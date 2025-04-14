@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-b862a128
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Published
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: CWE-94
 
@@ -91,7 +91,7 @@ CWE-Published: 2025-04-03
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2025-04-14
 
 
 
