@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2302-1f7d9e54
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Published
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: CWE-1428
 
@@ -151,7 +151,7 @@ CWE-Published: 2025-04-03
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2025-04-16
 
 
 COMMUNICATIONS LOG:
@@ -165,3 +165,4 @@ COMMUNICATIONS LOG:
 2025-04-01 received email
 2025-04-03 action published
 2025-04-11 sent email
+2025-04-16 sent email
