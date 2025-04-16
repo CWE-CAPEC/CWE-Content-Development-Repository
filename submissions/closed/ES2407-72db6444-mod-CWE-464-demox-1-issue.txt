@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2407-72db6444
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Published
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: CWE-464
 
@@ -100,7 +100,7 @@ CWE-Published: 2025-04-03
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2025-04-16
 
 
 
@@ -112,3 +112,4 @@ COMMUNICATIONS LOG:
 2025-02-25 sent email
 2025-04-03 action published
 2025-04-07 sent email
+2025-04-16 sent email
