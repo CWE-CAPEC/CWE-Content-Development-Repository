@@ -4,9 +4,11 @@ ALTERNATE ID: HCWE111
 
 ACTION TYPE: New Entry
 
+CDRAPPROVED: yes
+
 AFFECTED CWES:
 
-SUBMISSION STATUS: Det-Requested
+SUBMISSION STATUS: Det-Received
 
 ORIGIN: sub-server
 
@@ -20,7 +22,15 @@ PUBTRACKER: #13
 
 MTRACKER: #632
 
+JSON FILE: 20220825151855_9fb81a1a-7f22-47cb-80fa-20f5f7198759.json
+
 GITHUBUSER: frestucc
+
+CONTACT: Francesco Restuccia
+
+EMAIL: frestuccia@ucsd.edu
+
+ORGANIZATION: University of California San Diego
 
 SUBMISSION TYPE: Hardware
 
@@ -82,296 +92,145 @@ chip is reported in [REF-XXX] and [REF-YYY].
 
 MODES OF INTRODUCTION:
 
-# This provides information about how and when a given weakness may be
-# introduced. Information should list the Phase of the development life
-# cycle in which the weakness can introduced. A descriptive Note is
-# optional but preferred.
-# 
-# If the weakness can be introduced in multiple phases, include separate
-# items for each Phase. Copy and paste as needed.
-# 
+Phase: Architecture and Design
 
-# Values for Phase: Policy, Requirements, Architecture and Design,
-#    Implementation, Build and Compilation, Testing, Documentation,
-#    Bundling, Distribution, Installation, System Configuration,
-#    Operation, Patching and Maintenance, Porting, Integration,
-#    Manufacturing, Decommissioning and End-of-Life
-
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
-
-
-Phase: <<PHASE1>>
-
-Note: <<put the information here>>
-
-
-Phase: <<PHASE2>>
-
-Note: <<put the information here>>
+Note: This occurs if the on-chip communication interconnect is based
+on a multi-channel on-chip communication standard assuming cooperative
+behavior among the manager modules AND an unsafe switching methodology
+(e.g., cut-through) is in use.
 
 
 ************************************************************************************************
 
 APPLICABLE PLATFORMS:
 
-# This element specifies the programming languages, operating systems,
-# architectures, and technologies in which this weakness is usually
-# found. If an element does not apply to this submission, you can use
-# the "Not X-Specific" where "X" is the type of element.
+Language Class: Not Language-specific
+Prevalence: Undetermined
 
-# If there are multiple languages, OSes, architectures, and/or
-# technologies, then list each one separately.
-# 
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#platforms
+Operating System Class: Not OS-Specific
+Prevalence: Undetermined
 
+Architecture Name: ARM
+Prevalence: Undetermined
 
-# Values for Prevalence: Often, Sometimes, Rarely, Undetermined
+Architecture Class: Not Architecture-Specific
+Prevalence: Undetermined
 
-# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
-#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
-#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
-#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
-#    Assembly, Other
+Technology Name: Bus/Interface Hardware
+Prevalence: Undetermined
 
-Language Name: <<LANGUAGE1>>
-Prevalence: <<PREVALENCE1>>
+Technology Name: Communication Hardware
+Prevalence: Undetermined
 
-
-Language Name: <<LANGUAGE2>>
-Prevalence: <<PREVALENCE2>>
-
-
-Language Name: <<LANGUAGE3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Language Class: Assembly, Compiled, Hardware Description
-#    Language, Interpreted, Not Language-Specific
-
-Language Class: <<LANGCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Language Class: <<LANGCLASS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Operating System Name: AIX, Android, BlackBerry OS,
-#    Chrome OS, Darwin, FreeBSD, iOS, macOS, NetBSD, OpenBSD, Red Hat,
-#    Solaris, SUSE, tvOS, Ubuntu, watchOS, Windows 9x, Windows
-#    Embedded, Windows NT
-
-Operating System Name: <<OS1>>
-Prevalence: <<PREVALENCE1>>
-
-Operating System Name: <<OS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Operating System Class: Linux, macOS, Unix, Windows,
-#    Not OS-Specific
-
-
-Operating System Class: <<OSCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Operating System Class: <<OSCLASS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Architecture Name: Alpha, ARM, Itanium, Power
-#     Architecture, SPARC, x86, Other
-
-
-Architecture Name: <<ARCH1>>
-Prevalence: <<PREVALENCE1>>
-
-Architecture Name: <<ARCH2>>
-Prevalence: <<PREVALENCE2>>
-
-Architecture Name: <<ARCH3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Architecture Class: Embedded, Microcomputer, Workstation,
-#     Not Architecture-Specific
-
-Architecture Class: <<ARCHCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Architecture Class: <<ARCHCLASS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Technology Name: Web Server, Database Server, Accelerator
-#    Hardware, Analog and Mixed Signal Hardware, Audio/Video Hardware,
-#    Bus/Interface Hardware, Clock/Counter Hardware, Communication
-#    Hardware, Controller Hardware, Memory Hardware, Microcontroller
-#    Hardware, Network on Chip Hardware, Power Management Hardware,
-#    Processor Hardware, Security Hardware, Sensor Hardware, Storage
-#    Hardware, Test/Debug Hardware
-
-
-Technology Name: <<TECH1>>
-Prevalence: <<PREVALENCE1>>
-
-Technology Name: <<TECH2>>
-Prevalence: <<PREVALENCE2>>
-
-Technology Name: <<TECH3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Technology Class: Client Server, Cloud Computing, ICS/OT,
-#     Mainframe, Mobile, N-Tier, SOA, System on Chip, Web Based, Not
-#     Technology-Specific
-	
-Technology Class: <<TECHCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Technology Class: <<TECHCLASS2>>
-Prevalence: <<PREVALENCE2>>
+Technology Class: System on Chip
+Prevalence: Undetermined
 
 
 ************************************************************************************************
 
 COMMON CONSEQUENCES:
 
-# This element will cover the typical negative security impact (or
-# impacts) that occurs if this weakness can be exploited by an
-# attacker. Each Consequence must include a Scope and Impact. Both the
-# Likelihood and Note elements are optional.
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#conseq
+Scope: Availability
 
+Impact: Memory-access delays; Denial-of-Service; I/O access delays, Deadline miss
 
+Likelihood: High
 
-# Values for Scope: Confidentiality, Integrity, Availability, Access
-#    Control, Accountability, Authentication, Authorization,
-#    Non-Repudiation, Other
-
-
-# Values for Impact: Modify Memory, Read Memory, Modify Files or
-#    Directories, Read Files or Directories, Modify Application Data,
-#    Read Application Data, DoS: Crash, Exit, or Restart, DoS:
-#    Amplification, DoS: Instability, DoS: Resource Consumption (CPU),
-#    DoS: Resource Consumption (Memory), DoS: Resource Consumption
-#    (Other), Execute Unauthorized Code or Commands, Gain Privileges
-#    or Assume Identity, Bypass Protection Mechanism, Hide Activities,
-#    Alter Execution Logic, Quality Degradation, Unexpected State,
-#    Varies by Context, Reduce Maintainability, Reduce Performance,
-#    Reduce Reliability, Other
-
-
-# Values for Likelihood: High, Medium, Low, Unknown
-
-
-Scope: <<SCOPE1>>
-
-Impact: <<IMPACT1a>>; <<IMPACT1b>>; <<IMPACT1c>>
-
-Likelihood: <<LIKELIHOOD1>>
-
-Note: <<put the information here>>
-
-
-
-
-Scope: <<SCOPE2>>
-
-Impact: <<IMPACT2a>>; <<IMPACT2b>>; <<IMPACT2c>>
-
-Likelihood: <<LIKELIHOOD2>>
-
-Note: <<put the information here>>
-
-
-
-
-Scope: <<SCOPE3>>
-
-Impact: <<IMPACT3a>>; <<IMPACT3b>>; <<IMPACT3c>>
-
-Likelihood: <<LIKELIHOOD3>>
-
-Note: <<put the information here>>
-
+Note: The attacker can leverage this weakness to generate unbounded
+delays and Denial-of-Service in the access of shared resources. The
+system interconnect might be left in an inconsistent state, requiring
+a partial or full reset of the network, according to the
+implementation.
 
 
 ************************************************************************************************
 
-# 8. DEMONSTRATIVE EXAMPLES (required)
-
 DEMONSTRATIVE EXAMPLES:
 
-# The entry should have one or more demonstrative examples, but
-# submitters should not put significant effort into these until the CWE
-# team has reviewed and accepted the general concepts behind the
-# submission. Submissions can include example information for either
-# Software, Hardware, or both, as relevant.
-
-# "BAD CODE" and "GOOD CODE" can be code snippets, descriptions of a
-# design or architecture, or an algorithm or protocol.
-#
-# * If you would like to submit diagrams/images to support any
-# weakness descriptive examples, please attach it to the email
-# submission in a png format and reference it by filename where
-# desired. For an example, please see:
-# https://cwe.mitre.org/data/definitions/1256.html
-
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#demox
-
-# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
-#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
-#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
-#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
-#    Assembly, Other
-
 
 INTRO TEXT:
 
-<<put the information here>>
+Architectural description reported
 
 BAD CODE:
-LANGUAGE: <<LANGUAGE>>
 
-<<put the information here>>
+LANGUAGE: Not language-specific
+
+The interconnect designer might use an interconnect using cut-through
+switching or using a third-party interconnect not disclosing the type
+of implemented switching. Cut-through has been demonstrated to
+generate the provided issue in modern on-chip multi-channel
+communication standards.
+
+The following figure provides an example on the AMBA AXI full on-chip
+communication standard, deployed on an FPGA SoC platform for
+demonstration. The architecture is multi-manager. However, for
+simplicity, only one generic hardware manager module $HA_i$ is
+reported.
+
+[SEE IMAGE ES2208-9fb81a1a-demox-intro.png]
 
 
 EXPLANATORY TEXT:
 
-<<put the information here>>
+The figure reports a schematic representation of the behavior of an
+interconnect implementing cut-through switching ($S_i^{I,CT}$) on a
+sample AXI write transaction.
+
+(a) $HA_i$ starts the write transaction issuing the address request $A$. In this example, $A$ is a four-word burst request.
+(b) $A$ is sampled by $S_i^{I,CT}$ and immediately routed to $M^I$. $HA_i$ starts providing the data words corresponding to $A$. The data words $W = {W_1, ... , W_4^L}$ are consecutively sampled by $S_i^{I,CT}$. The last word of the burst is marked by $HA_i$ as last (L) word, hence named $W_4^L$.
+(c) $W$ are routed through the network following the address request $A$, until the last word $W_4^L$ is sampled by the FPGA-PS interface $S_{PS}$.
+(d) After a service delay, $S_{PS}$ replies with a write response $B$ to acknowledge $HA_i$ about the completion of the transaction. $B$ is routed to $HA_i$ by $I_{\text{AXI}}$. The write transaction is completed.
+
+In step (b), $S_i^{I,CT}$ propagates $A$ to $M^I$ regardless of the provisioning of the corresponding data words $W$ by $HA_i$.
+The propagation of $A$ to $M^I$ books the $M^I$'s write channel to $HA_i$, which should provide the write data $W$ corresponding to $A$.
+No timing constraints on $HA_i$ to provide $W$ after $A$ has been propagated to $M^I$ are defined in the AXI standard. Thus, $HA_i$ can arbitrarily delay the provisioning of $W$.
+$M^I$ is the shared port among all the hardware managers in the system to access the shared subordinate resource (the memory).
+Therefore, once $A$ is propagated to $M^I$ and $HA_i$ does not provide $W$, $M^I$ is stalled and no other hardware managers in the system can access it.
+Cut-through $S_i^{I,CT}$ implicitly trusts $HA_i$ that once $A$ is propagated to $M^I$, $HA_i$ will complete the transaction as soon as possible providing $W$ and then leaving the access of $M^I$ to the other hardware managers in the system.
+
+A single malicious/misbehaving manager delaying the provisioning of the data can delay the access to the shared resource from the other hardware managers in the system, endangering the availability of the shared resources, thus generating a DoS for all the other hardware managers in the system.
+Since AXI does not provide a methodology to abort a faulty transaction once initiated, if no other recovery mechanisms are provided, a reset of the interconnect network is required.
 
 GOOD CODE:
-LANGUAGE: <<LANGUAGE>>
 
-<<put the information here>>
+LANGUAGE: Not language-specific
 
+The designer should prefer to use a switching policy preventing bus stalls to be propagated in the interconnect (like Cut-and-Forward or Store-and-Forward, according to the design tradeoffs [REF-XXX][REF-ZZZ]). Alternatively, the designer can use a monitoring logic capable of detecting dangerous stalls introduced by misbehaving managers and a recovery logic capable of restoring a safe condition of the interconnect [REF-YYY]. Following is a short description of the safe methodologies.
 
----------------
+Solution 1: A monitor and recovery logic is placed between the system interconnect and the managers. This logic should be capable of detecting the stall condition and intervene whenever the manager introduces long stalls [REF-YYY].
+In such scenarios, the monitor logic can abort the execution of the stalling transaction and solve the stall condition by completing the transaction with dummy data beats to restore a safe condition of the interconnect, thus making the shared bus again available to the other hardware managers in the system.
+A monitor and recovery logic does not stop bus stalls to be propagated. Thus a careful analysis of acceptable stall length is required as these stalls will anyway generate delays n accessing shared resources for the other managers in the system  [REF-YYY].
 
-INTRO TEXT:
+Solution 2: store-and-forward switching is used instead of cut-through. Store-and-forward follow a more conservative approach with respect to cut-through preventing bus stalls to be propagated to the interconnect. When a write request $A$ is issued by $HA_i$, store-and-forward waits to internally buffer all the data words $W$ corresponding to $A$ before booking the shared manager port $M^I$. Thus, the request and the corresponding data are consequently propagated to $M^I$ without any stalls. The following figure describes the behavior of store-and-forward $S_i^{I,\text{S\&F}}$ on a sample write transaction.
 
-<<put the information here>>
+[SEE IMAGE ES2208-9fb81a1a-demox-sol2.png]
 
-BAD CODE:
-LANGUAGE: <<LANGUAGE>>
+The description follows:
+(a) $HA_i$ issues the address write request $A$. Again, $A$ is a request for a 4-word burst transaction.
+(b) $A$ is sampled by $S_i^{I,\text{S\&F}}$ and internally buffered. $S_i^{I,\text{S\&F}}$ waits to receive the corresponding data words $W={W_1, ... , W_4^L}$. $HA_i$ starts providing $W$, one word after the other. $A$ has not been propagated to $M^I$ yet.
+(c) $S_i^{I,\text{S\&F}}$ has buffered the 4 words $W$ associated with $A$. $S_i^{I,\text{S\&F}}$ propagates now $A$ to $M^I$, booking $M^I$ for 4 data words.
+(d) The data words $W$ are immediately propagated after $A$ by $S_i^{I,\text{S\&F}}$, one word after the other. The propagation of the last word $W_4^L$ completes the data phase related to $A$ and releases $M^I$ to the other HAs.
+At last, the FPGA-PS interface replies $HA_i$ with the write response $B$.
 
-<<put the information here>>
+In store-and-forward, the shared bus $M^I$ is booked by $S_i^{I,\text{S\&F}}$ only when all the data words corresponding to $A$ have been buffered and are ready to be transmitted.
+Any stall in data propagation introduced by $HA_i$, bounded or unbounded, is internally contained by $S_i^{I,\text{S\&F}}$.
 
+Store-and-forward requires higher cost in latency and area consumption that might not be acceptable in all the implementations. A full discussion is reported on [REF-XXX].
 
-EXPLANATORY TEXT:
+Solution 3: cut-and-forward provides a methodology to prevent DoS of shared resources while providing configurability on latency and area impact. The following figure shows the behavior of the cut-and-forward buffer $S_i^{I,\text{C\&F}}$ on an AXI write transaction. The following figure describes the behavior of cut-and-forward $S_i^{I,\text{C\&F}}$ on a sample write transaction. In this example, $S_i^{I,\text{C\&F}}$ is configured with $C=2$. Full details can be found in [REF XXX][REF ZZZ].
 
-<<put the information here>>
+[SEE IMAGE ES2208-9fb81a1a-demox-sol3.png]
 
-GOOD CODE:
-LANGUAGE: <<LANGUAGE>>
+(a) $HA_i$ issues a four-word burst address write request $A$.
+(b) $A$ is internally buffered by $S_i^{I,\text{C\&F}}$.
+Subsequently, $HA_i$ starts providing the data words $W = {W_1, \ldots, W_4^L}$ corresponding to $A$.
+(c) $S_i^{I,\text{C\&F}}$ has buffered $C=2$ data words associated with $A$ ($W_1$ and $W_2$). $S_i^{I,\text{C\&F}}$ generates a two-word burst subrequest $A_1$ and propagates it to $M^I$. $M^I$ is booked for two data words. $W_1$ and $W_2$ have already been buffered by $S_i^{I,\text{C\&F}}$ and can be propagated immediately after $A_1$. $W_2$ is converted by $S_i^{I,\text{C\&F}}$ into a last data word $W_2^L$. In parallel with the propagation of $W_1$ and $W_2$, $S_i^{I,\text{C\&F}}$ buffers $W_3$ and $W_4^L$.
+(d) $W_3$ and $W_4^L$ have been buffered into $S_i^{I,\text{C\&F}}$. $S_i^{I,\text{C\&F}}$ generates a second sub-request $A_2$ for $C=2$ data words. The address of $A_2$ is calculated according to $C$. $A_2$ is propagated to $M^I$. $M^I$ is booked for two data words. $W_3$ and $W_4^L$ are propagated to $M^I$ immediately after $A_2$.
+(e) After a service delay, the FPGA-PS interface replies with the two write responses $B_1$ and $B_2$ corresponding to $A_1$ and $A_2$, respectively. $B_1$ is the response for $A_1$ and it is first one to reach $I_{\text{AXI}}$. $S_i^{I,\text{C\&F}}$ buffers $B_1$ while waiting for $B_2$.
+(f) $B_2$ has reached $S_i^{I,\text{C\&F}}$. $S_i^{I,\text{C\&F}}$ merges $B_1$ and $B_2$ into a single response $B$ for the original request $A$. $B$ is propagated to $HA_i$. The write transaction is concluded.
 
-<<put the information here>>
+Cut-and-forward provides a methodology to address this issue with a configurable tradeoff in latency and resource consumption impact. The more complex switching methodology might require slightly higher resource consumption for implementation.
 
 
 
@@ -379,100 +238,58 @@ LANGUAGE: <<LANGUAGE>>
 
 OBSERVED EXAMPLES:
 
-# Where known, the submission should identify multiple
-# publicly-reported vulnerabilities in real-world products that
-# exhibit the weakness. If possible, include CVE Identifier, its
-# corresponding weblink, and a short summary. If a CVE ID is
-# unavailable, use the Link to point to the reference that explains
-# the vulnerability.
-
-# The ID should be the CVE Identifier, if available. If not available,
-# then supply a title or alternate ID used by the reference.
-
-# The Link should be the URL to the reference that explains the
-# weakness that leads to the vulnerability.
-
-# The ObexSummary should be a brief sentence or two that focuses solely on
-# the weakness in the affected product.
-
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#obex
 
 ID: <<CVE1>>
 
 Link: <<LINK1>>
 
-ObexSummary: <<SUM1>>
-
-
-ID: <<CVE2>>
-
-Link: <<LINK2>>
-
-ObexSummary: <<SUM2>>
-
-
-ID: <<CVE3>>
-
-Link: <<LINK3>>
-
-ObexSummary: <<SUM3>>
-
-
-ID: <<CVE4>>
-
-Link: <<LINK4>>
-
-ObexSummary: <<SUM4>>
-
+ObexSummary: We observed this issue in commercial AXI interconnect
+IPs. Several other interconnects using cut-through switching on a
+multi-channel on-chip communication standard might be affected.
 
 
 ************************************************************************************************
 
 DETECTION METHODS:
 
-# Detection Methods should identify commonly-used methods of finding
-# the weakness within the product's code, design, etc. This is NOT
-# intended for detecting how the weakness is exploited in a
-# vulnerability. There can be one or more methods provided.
+Method: Architecture or Design Review
 
-# Values for Method: Automated Analysis, Automated Dynamic Analysis,
-#    Automated Static Analysis, Automated Static Analysis - Source
-#    Code, Automated Static Analysis - Binary or Bytecode, Fuzzing,
-#    Manual Analysis, Manual Dynamic Analysis, Manual Static Analysis,
-#    Manual Static Analysis - Source Code, Manual Static Analysis -
-#    Binary or Bytecode, White Box, Black Box, Architecture or Design
-#    Review, Dynamic Analysis with Manual Results Interpretation,
-#    Dynamic Analysis with Automated Results Interpretation, Formal
-#    Verification, Simulation / Emulation, Other
+Desc: Instances of this issue can be detected by manual review of the
+switching policy implemented in the interconnect and the deployed
+on-chip communication standard.
 
-# Values for Effectiveness: High, Moderate, Opportunistic, Limited, None
+Effectiveness: Opportunistic
 
-Method: <<METHOD1>>
-
-Desc: <<put the information here>>
-
-Effectiveness: <<EFFECTIVENESS1>>
-
-Notes: <<put the information here>>
+Notes: Manual review requires to have a full description of the
+architecture of the interconnect. This information might not be
+available when a third-party interconnect is used.
 
 
-Method: <<METHOD2>>
 
-Desc: <<put the information here>>
+Method: Formal Verification
 
-Effectiveness: <<EFFECTIVENESS2>>
+Desc: Instances of this issue can be found in manager modules by using
+property-based verification specifically targeting the detection of
+stalls propagated to the shared resources [REF-KKK].
 
-Notes: <<put the information here>>
+Effectiveness: High
+
+Notes: 
 
 
-Method: <<METHOD3>>
 
-Desc: <<put the information here>>
+Method: Simulation / Emulation
 
-Effectiveness: <<EFFECTIVENESS3>>
+Desc: Instances of this issue can be found in simulation by
+synthetically generating stalls at the input of the interconnect and
+evaluating if the interconnect propagates the stalls at the output or
+not.
 
-Notes: <<put the information here>>
+Effectiveness: High
+
+Notes: Simulations should be capable of triggering the stalls. Not all
+of the Verification IP for on-chip communications might be capable of
+triggering this issue.
 
 
 
@@ -480,51 +297,21 @@ Notes: <<put the information here>>
 
 POTENTIAL MITIGATIONS:
 
-# This element should cover one or more techniques that will eliminate
-# and/or reduce the frequency or impact of the weakness. Each mitigation
-# must include a Phase and Description, while the Effectiveness element
-# is optional. A descriptive Effectiveness Note is also optional.
+Phase: Architecture and Design
 
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#mitigations
+Description: SoC architects can use a switching methodology stopping
+stalls from being propagated to the interconnect, such as
+Cut-and-Forward [REF XXX][REF ZZZ] or
+Store-and-Forward. Alternatively, a monitoring and recovery module can
+be added between the interconnect and each manager module to detect
+stalls introduced by the module and restore a safe state in the
+interconnect after a stall has been detected [REF YYY].
 
+Effectiveness: High
 
-# Values for Phase: Policy, Requirements, Architecture and Design,
-#    Implementation, Build and Compilation, Testing, Documentation,
-#    Bundling, Distribution, Installation, System Configuration,
-#    Operation, Patching and Maintenance, Porting, Integration,
-#    Manufacturing, Decommissioning and End-of-Life
-
-# Values for Effectiveness: High, Moderate, Limited, Incidental,
-#    Discouraged Common Practice, Defense in Depth, None
-
-
-Phase: <<PHASE1>>
-
-Description: <<put the information here>>
-
-Effectiveness: <<EFFECT1>>
-
-Effectiveness Notes: <<put the information here>>
-
-
-Phase: <<PHASE2>>
-
-Description: <<put the information here>>
-
-Effectiveness: <<EFFECT2>>
-
-Effectiveness Notes: <<put the information here>>
-
-
-Phase: <<PHASE3>>
-
-Description: <<put the information here>>
-
-Effectiveness: <<EFFECT3>>
-
-Effectiveness Notes: <<put the information here>>
-
+Effectiveness Notes: The architect should evaluate which methodology
+better suits the target platform, trading off performance and resource
+consumption impact [REF XXX][REF YYY][REF ZZZ].
 
 
 RELATED WEAKNESSES:
@@ -538,35 +325,37 @@ Title: [REF-XXX] Cut and Forward: Safe and Secure Communication for FPGA System 
 
 URL: https://ieeexplore.ieee.org/document/9852740
 
-Author: <<put the information here>>
+Author: Francesco Restuccia, Ryan Kastner
 
-Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+Date: 2022
 
 
 Title: [REF-YYY] Safely Preventing Unbounded Delays During Bus Transactions in FPGA-based SoC
 
 URL: https://ieeexplore.ieee.org/abstract/document/9114758
 
-Author: <<put the information here>>
+Author: Francesco Restuccia, Alessandro Biondi, Mauro Marinoni, Giorgio Buttazzo
 
-Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
-
-Title: <<put the information here>>
-
-URL: <<put the information here>>
-
-Author: <<put the information here>>
-
-Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+Date: 2020
 
 
-Title: <<put the information here>>
+Title: [REF-ZZZ] [AXI-REALM: A lightweight and modular interconnect extension for traffic regulation and monitoring of heterogeneous real-time SoCs
 
-URL: <<put the information here>>
+URL: https://ieeexplore.ieee.org/document/10546511
 
-Author: <<put the information here>>
+Author:  Thomas Benz, Alessandro Ottaviano, Robert Balas, Angelo Garofalo, Francesco Restuccia, Alessandro Biondi, Luca Benini
 
-Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+Date: 2024
+
+
+Title: [REF-KKK] Safety verification of third-party hardware modules via information flow tracking
+
+URL: Safety verification of third-party hardware modules via information flow tracking
+
+Author: Andres Meza, Francesco Restuccia, Ryan Kastner, Jason Oberg
+
+Date: 2022
+
 
 
 
@@ -701,7 +490,7 @@ Init-Accepted: 2025-03-24
 
 Det-Requested: 2025-03-24
 
-Det-Received: YYYY-MM-DD
+Det-Received: 2025-04-23
 
 Det-Review: YYYY-MM-DD
 
@@ -725,12 +514,40 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+
 2022-08-29 sent email
+
+ack-receipt
+
 2022-09-12 action review
+
+Started Init-Review
+
 2023-09-12 publish server
+
+pilot activity: added issue/username to pilot submission review server
+
 2024-06-25 sent email
+
+Sent Init-Consultation
+
 2024-06-26 received reply
+
+received comment on CDR
+
 2025-03-06 sent email
+
+Sent Consultation round 2
+
 2025-03-07 received comment
+
+Submitter responded to comments
+
 2025-03-24 sent email
+
+Sent Init-Accepted
+
 2025-03-24 sent email
+
+Sent Det-Requested
+
