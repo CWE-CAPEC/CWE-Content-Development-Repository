@@ -4,8 +4,6 @@ ALTERNATE ID: HCWE111
 
 ACTION TYPE: New Entry
 
-CDRAPPROVED: yes
-
 AFFECTED CWES:
 
 SUBMISSION STATUS: Det-Received
@@ -22,15 +20,7 @@ PUBTRACKER: #13
 
 MTRACKER: #632
 
-JSON FILE: 20220825151855_9fb81a1a-7f22-47cb-80fa-20f5f7198759.json
-
 GITHUBUSER: frestucc
-
-CONTACT: Francesco Restuccia
-
-EMAIL: frestuccia@ucsd.edu
-
-ORGANIZATION: University of California San Diego
 
 SUBMISSION TYPE: Hardware
 
@@ -514,40 +504,12 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
-
 2022-08-29 sent email
-
-ack-receipt
-
 2022-09-12 action review
-
-Started Init-Review
-
 2023-09-12 publish server
-
-pilot activity: added issue/username to pilot submission review server
-
 2024-06-25 sent email
-
-Sent Init-Consultation
-
 2024-06-26 received reply
-
-received comment on CDR
-
 2025-03-06 sent email
-
-Sent Consultation round 2
-
 2025-03-07 received comment
-
-Submitter responded to comments
-
 2025-03-24 sent email
-
-Sent Init-Accepted
-
 2025-03-24 sent email
-
-Sent Det-Requested
-
