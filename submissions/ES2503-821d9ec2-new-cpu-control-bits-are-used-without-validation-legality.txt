@@ -1,0 +1,171 @@
+SUBMISSION COMMUNICATION ID: ES2503-821d9ec2
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-03-19 18:24:54
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #151
+
+MTRACKER: #1243
+
+GITHUBUSER: None
+
+SUBMISSION TYPE: Hardware
+
+NAME: CPU Control bits are used without validation of legality.
+
+DESCRIPTION:
+
+Brief introduction:
+    In the CPU design process, many functions are enabled or disabled by
+specified control bits. Conflicts may exist between complex functions, so
+it is necessary to check the validity of the control bits before using
+them. 
+
+Developer Concerns:
+    Contemporary processor design is becoming increasingly complex. The
+growing demand for security and performance has led processors to
+incorporate more sophisticated logic, including functions like permission
+management, memory management, branch prediction, out-of-order execution,
+and so on. These additional features sometimes come with new attack
+opportunities. When designing these features, processor designers often use
+control and status registers (CSR) to record and control the states of
+these functions. Sometimes, they simply toggle features by checking the
+status of control bits, neglecting the possibility that these bits might be
+explicitly written without proper logical validation, which can result in
+invalid states that trigger functional conflicts and create opportunities
+for attacks.
+
+General Explanation of the Weakness: 
+    This issue affects Rocket-Chip, the Berkeley Open-Source RISC-V
+Processor. During fuzz testing of the processor, the SUM (Supervisor User
+Memory Access) control bit in the processor's permission management logic
+and satp.MODE (Address Translation Mode) violate the restrictions defined
+in the hardware specification (REF1: "The RISC-V Instruction Set Manual
+Volume II Privileged Architecture Version 20240411, Page 28, 91, 99").
+Specifically, the SUM bit allows supervisor-mode software to access
+user-mode memory pages when enabled (U=1), but its validity is affected by
+the control domain defined by satp.MODE. According to the RISC-V manual,
+when satp.MODE is set to 0 (bare mode, with address translation disabled),
+the SUM bit must be read-only 0. The manual additionally emphasizes that
+when MODE is set to 0, the supervisor virtual address directly equals the
+physical address (Section 10.1.11), and there is no additional memory
+protection beyond the physical memory protection scheme. Failing to enforce
+the SUM=0 constraint as specified in bare mode results in an unsafe
+permission state, allowing unintended memory access combinations, which
+leads to incorrect access control (CWE-284) and improper permission
+management (CWE-269).
+
+Demonstrative Examples:
+  The provided code is extracted from the TLB module of the open-source
+project rocket-chip [REF2] of RISCV (src/main/scala/rocket/TLB.Scala). The
+language used is Scala, as this project designs processors through Scala
+and then generates verilog code.
+  priv_s indicates whether the current privilege mode is Supervisor, and
+sum is the value of mstatus. Set SUM allows Supervisor mode to access user
+pages marked U=1; SUM=0 prevents such access. entries.map(_.u) represents
+the user page flags stored in TLB entries. priv_rw_ok indicating whether
+the current privileges have been granted read/write access. Mux is a
+multiplexer used to select different inputs based on a condition. The basic
+syntax of Mux is: Mux(condition, value_if_true, value_if_false). Per the
+RISC-V Privileged Specification (u00a73.1.6.3), when satp.mode = 0
+(Bare) , the SUM bit must be be read-only 0.  When designing the logic to
+determine whether the current permissions grant read/write access, Rocket
+neglected to check the validity of the SUM flag and instead used it
+directly.
+
+// Original code form TLB.scala 
+$ val priv_rw_ok = Mux(!priv_s || sum, entries.map(_.u).asUInt, 0.U) |
+Mux(priv_s, ~entries.map(_.u).asUInt, 0.U)  //Directly using the SUM bit
+without judging its validity $
+
+The above code will extract the user permission bits for each entry as long
+as the SUM control bit is set, regardless of the current permissions (due
+to the use of |). However, the SUM bit can be explicitly set to 1 without
+being subjected to subsequent logical validation. It is necessary to check
+the validity prior to its usage. 
+A fix to this issue is to check the validity of the SUM bit before
+utilizing it:
+
+// Suggested Code:
+$ val sum_masked = Mux(satp.mode === 0.U, 0.U, sum) $  // Force SUM=0 when
+translation is off
+$ val priv_rw_ok = Mux(!priv_s || sum_masked, entres.map(_.u).asUInt, 0.U)
+| Mux(priv_s, ~entries.map(_.u).asUInt, 0.U) $
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-440
+   ChildOf CWE-269
+   ChildOf CWE-284
+
+REFERENCES:
+
+Title: REF1: "The RISC-V Instruction Set Manual Volume II Privileged Architecture Version 20240411, Page 28, 91, 99"
+URL: https://lf-riscv.atlassian.net/wiki/spaces/HOME/pages/16154769/RISC-V+Technical+Specifications#ISA-Specifications
+
+Title: REF2: "rocket-chip"
+URL: https://github.com/chipsalliance/rocket-chip.git
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-03-19
+
+Ack-Receipt: 2025-05-09
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
