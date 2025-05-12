@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2406-ca98e75f
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-06-15 16:03:17
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.ACTCHANGE
 
 PUBTRACKER: #112
 
@@ -56,7 +56,57 @@ URL: https://dgl.cx/2023/09/ansi-terminal-security
 
 ACTIVE ISSUES:
 
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: The submission specifically focuses on ANSI codes. CWE-150,
+already covers Improper Neutralization of Escape, Meta, or Control Sequences. 
+ASNI codes would be classified as "Control Sequences" which is why 
+it is covered by CWE-150. Given that CWE-150 is already a variant 
+abstraction, the proposed submission is likely to be too low level 
+for a new entry. It may be better suited as a modification of CWE-150. 
+Please also note that your suggestions of CVE-2003-0020, 
+CVE-2003-0083, CVE-2003-0021, and some other observed examples are already 
+listed in CWE-150.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to Stage 3 (Content-Generation)
+until the informational needs are addressed.
+
+Comments: Because this submission occurs at such a low level
+(SUB.ABS.LOWLEVEL), it might be better to treat this submission as a
+modification to other entries (e.g. CWE-150) instead of a separate
+new entry. Further discussion and identification of the core weakness
+will help determine the appropriate action. Please indicate if you agree
+or disagree with this comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -70,7 +120,7 @@ Ack-Receipt: 2024-06-26
 
 Init-Review: 2025-01-24
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-05-12
 
 Init-Declined: YYYY-MM-DD
 
@@ -106,3 +156,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-06-26 sent email
 2025-01-24 sent email
+2025-05-12 sent email
