@@ -93,7 +93,35 @@ localhost.
 GOOD CODE:
 LANGUAGE: PHP
 
-<<put the information here>>
+<?php
+// Define allowed URLs (or domains)
+$allowed_urls = [
+    'https://example.com/data.json',
+    'https://api.example.com/info',
+];
+
+// Get the user-provided URL
+$url = $_GET['url'] ?? '';
+
+// Validate against allowed URLs
+if (!in_array($url, $allowed_urls)) 
+{
+    http_response_code(400);
+    echo "Invalid or unauthorized URL.";
+    exit;
+}
+
+// Fetch content safely
+$response = @file_get_contents($url);
+if ($response === false) 
+{
+    http_response_code(500);
+    echo "Failed to fetch content.";
+    exit;
+}
+
+echo htmlspecialchars($response); // Escape output for safety
+?>
 
 
 
@@ -121,7 +149,8 @@ EXAMPLES" section in this form.
  - Finally, fill the "Response" below to indicate that you have made
    this change, or otherwise ask us for any clarification.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [Submitter provided a "good code" example; the DEMONSTRATIVE
+EXAMPLE field was updated with the good code.]
 
 
 
@@ -176,3 +205,4 @@ COMMUNICATIONS LOG:
 2025-02-25 sent email
 2025-03-19 sent email
 2025-05-08 sent email
+2025-05-10 received comment
