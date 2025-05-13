@@ -129,9 +129,43 @@ EXAMPLES" section in this form.
  - Finally, fill the "Response" below to indicate that you have made
    this change, or otherwise ask us for any clarification.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:
 
+The description that you comment here seems to be good ! Regarding the
+Good Code below is the code that i think it is good as compared to bad
+Code. We can store the config.php outside the webroot directory.
 
+<?php
+// config.php
+return [
+    'db_username' => 'secretUsername',
+    'db_password' => 'secretPassword',
+    'db_host'     => 'localhost',
+    'db_name'     => 'exampleDatabase',
+];
+
+The main script that connect to its config.php file 
+
+<?php
+// Load config
+$config = require 'config.php';
+
+// Create connection
+$conn = new mysqli(
+    $config['db_host'],
+    $config['db_username'],
+    $config['db_password'],
+    $config['db_name']
+);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?>
+
+				    
 
 RESOLVED ISSUES:
 
@@ -184,3 +218,4 @@ COMMUNICATIONS LOG:
 2025-02-25 sent email
 2025-03-19 sent email
 2025-05-08 sent email
+2025-05-10 received comment
