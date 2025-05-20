@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2302-0697c4d4
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-02-17 23:12:48
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.OVERLAP, SUB.ACTION
 
 PUBTRACKER: #64
 
@@ -40,6 +40,7 @@ Can leads also to Information Disclosure. (saw today another example on prod.)
 RELATED WEAKNESSES:
 
    Other CWE-451
+   Other ES2503-a0f69c3b
 
 REFERENCES:
 
@@ -47,12 +48,113 @@ Title: Email alias
 URL: https://en.wikipedia.org/wiki/Email_alias
 
 
-
-
 ACTIVE ISSUES:
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: The provided description doesn't highlight an exact weakness.
+Is the weakness that some sites don't allow the use of email aliases? Or is 
+the removal of "+" sign an issue? What if this is a feature of the site vs. a bug?
+The submitter should provide more context about the weakness and 
+how that is a security concern that should be captured in the CWE?
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: The issue around the improper notification of e-mail aliases
+is very niche to warrant its own CWE. As that is largely dictated by
+the use of the website and their policies, it can't be generalized in
+a CWE.  This example could possibly be used in another CWE, such as
+CWE-182: Collapse of Data into Unsafe Value or CWE-222: Truncation of
+Security-relevant Information. The CWE Team will investigate this in
+later phases.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The submission only provides a Wikipedia reference, which by itself
+isn't a credible reference. Please provide other real-world references of this
+issue.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This submission is similar to the one proposed in
+ES2503-a0f69c3b (CDR #150).  Therefore, the CWE team will treat both
+submissions at the same time, possibly combining them if
+appropriate. Note that both submitters would receive credit.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ACTION - "Unable to determine action"
+
+Description: It is not clear what action to perform based on the
+submission, e.g., create new entry, update existing entry, etc.
+
+Resolution: The submission cannot progress to the Internal-Update stage
+until the relevant actions(s) are identified.
+
+Comments: Given that the submission's weakness isn't clear and the specificity
+of a niche products/technology, it is difficult to determine which action 
+(e.g., create a new entry or update an existing entry) is needed.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -66,7 +168,7 @@ Ack-Receipt: 2023-02-23
 
 Init-Review: 2025-02-18
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-05-20
 
 Init-Declined: YYYY-MM-DD
 
@@ -101,3 +203,4 @@ COMMUNICATIONS LOG:
 2023-02-23 sent email
 2024-11-10 received comment
 2025-02-18 sent email
+2025-05-20 sent email
