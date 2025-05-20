@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2311-4f94c251
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-11-14 23:31:41
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.LOWLEVEL
 
 PUBTRACKER: #45
 
@@ -51,10 +51,56 @@ URL: https://ieeexplore.ieee.org/document/10305625
 
 ACTIVE ISSUES:
 
+SUB.OVERLAP - "Duplicate/Overlap"
 
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: There is alignment with CWE-409 ("This is the same genre of bugs as
+compression bombs, commonly occurring in archive or zip bombs that
+decompress a large amount of data in memory") and CWE-835 
+("an infinite referencing loop" which is basically CWE-835: Loop with 
+Unreachable Exit Condition 'Infinite Loop'). This may mean that this
+submission can potentially be brought into one or both of these CWEs. Confirm
+if you'd be open to that.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: "Retrieving circular data structure object" appears to be too 
+low-level for a CWE. However, the CWE team thinks that 
+"Improper Handling of Circular References" or "Reference Loops" has merit
+to be its own CWE. Please confirm if you'd be open to making the CWE
+at a higher abstraction than currently provided. 
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
-
 
 
 TIMELINE:
@@ -65,7 +111,7 @@ Ack-Receipt: 2023-12-28
 
 Init-Review: 2025-01-28
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-05-20
 
 Init-Declined: YYYY-MM-DD
 
@@ -101,3 +147,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2023-12-28 sent email
 2025-01-28 sent email
+2025-05-20 sent email
