@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2409-3a032263
 
-ACTION TYPE: New Entry
+ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-09-12 07:32:42
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.RELREFS
 
 PUBTRACKER: #129
 
@@ -49,7 +49,46 @@ URL: https://security.openstack.org/ossa/OSSA-2016-012.html
 
 ACTIVE ISSUES:
 
+SUB.UNCLEAR - "Unclear weakness"
 
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: The description doesn't provide a clear weakness. 
+What is the mistake or insecure design choice that the developer has made 
+that allows malicious files to be uploaded? Let us know if you only want 
+to add the 2 CVE examples. We would need to determine which CWEs would be
+appropriate. 
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: There is no actual reference provided that highlights the need
+for covering this weakness. CVEs aren't considered as ideal references for the
+purposes of understanding the weakness. Please provide an actual reference
+that delves into the weakness more.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -63,7 +102,7 @@ Ack-Receipt: 2024-12-09
 
 Init-Review: 2025-01-28
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-05-20
 
 Init-Declined: YYYY-MM-DD
 
@@ -99,3 +138,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-12-09 sent email
 2025-01-28 sent email
+2025-05-20 sent email
