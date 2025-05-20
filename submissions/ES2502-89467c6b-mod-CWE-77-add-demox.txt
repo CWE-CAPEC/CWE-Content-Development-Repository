@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-89467c6b
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-02-23 05:46:47
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #143
 
@@ -26,8 +26,8 @@ NAME: Add demox to CWE-77
 
 DESCRIPTION:
 
-I want to suggest the below code foru00a0 php languageu00a0 for the given
-description:
+I want to suggest the below code for php language for the given
+description.
 
 Demonstrative Examples:
 ````
@@ -67,7 +67,28 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
 
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The proposed demonstrative example utilizes "system($cmd);", 
+which is inherently tied to the operating system. As a result, this 
+example aligns more closely with 
+CWE-78: Improper Neutralization of Special Elements Used in an OS Command 
+('OS Command Injection'). However, since CWE-78 already includes a similar 
+PHP-based example, we cannot accept this submission for inclusion under 
+that CWE. We encourage you to submit an alternative example for 
+CWE-77: Improper Neutralization of Special Elements Used in a Command 
+('Command Injection') that does not involve OS-specific commands. 
+If no suitable alternative is provided, we will have to decline this submission.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -81,7 +102,7 @@ Ack-Receipt: 2025-03-11
 
 Init-Review: 2025-03-18
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-05-20
 
 Init-Declined: YYYY-MM-DD
 
@@ -117,3 +138,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-03-11 sent email
 2025-03-18 sent email
+2025-05-20 sent email
