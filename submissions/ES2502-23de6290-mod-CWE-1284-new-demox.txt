@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-23de6290
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-02-28 15:37:18
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #144
 
@@ -54,6 +54,20 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: This example is reasonable, but we will need to add more
+details. In Stage 2, we will work with you to refine this example to
+fit with CWE's expected style, such as introductory text and a "good
+code" example to demonstrate the fix.
+
+Response: [NO RESPONSE NECESSARY]
+
 
 
 RESOLVED ISSUES:
@@ -72,7 +86,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-05-20
 
 Det-Requested: YYYY-MM-DD
 
@@ -104,3 +118,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-03-12 sent email
 2025-04-08 sent email
+2025-05-20 sent email
