@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-df5178f5
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-02-23 06:49:26
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #140
 
@@ -69,7 +69,29 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
 
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: CWE-94: Improper Control of Generation of Code ('Code Injection')
+is a weakness where an attacker can inject malicious code that is dynamically 
+executed by the application. This typically involves scenarios where user input 
+is used to generate or execute code at runtime. In the provided example, 
+the user input is written to a file and later used as part of an 
+operating system command (Runtime.getRuntime().exec()), which is 
+CWE-78: Improper Neutralization of Special Elements Used in an OS Command 
+('OS Command Injection'). However, that CWE already has a similar Java-based
+example, so we we cannot accept this submission for inclusion under that CWE. 
+If you'd like to get an example added to CWE-94, please provide an example 
+that is not OS command injection.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -83,7 +105,7 @@ Ack-Receipt: 2025-03-11
 
 Init-Review: 2025-04-08
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-05-20
 
 Init-Declined: YYYY-MM-DD
 
@@ -119,3 +141,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-03-11 sent email
 2025-04-08 sent email
+2025-05-20 sent email
