@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2303-af57ba9e
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-03-31 16:32:59
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.ACTION
 
 PUBTRACKER: #55
 
@@ -57,7 +57,79 @@ URL: https://cwe.mitre.org/data/definitions/522.html
 
 ACTIVE ISSUES:
 
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: While the submission title broadly addresses the lack of 
+protection for SMS codes, the description focuses narrowly on the issue 
+of SMS codes being visible through message previews. This specific 
+concern seems more relevant to end-users than developers, as users 
+can choose to disable message previews on their devices to mitigate the risk.
+
+From a developer's perspective, addressing this issue is challenging due 
+to the inherent limitations of SMS technology, which treats all messages 
+as plain text. In many cases, developers may not even have the option to 
+switch the second factor from SMS to a more secure method, as SMS-based 
+authentication might be the default or only available option provided 
+by the application.
+
+Given the narrow scope of the issue—limited to SMS—and the broader 
+complexities surrounding it, this concern appears too low-level to 
+warrant a new entry.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The submission doesn't include any actual references. Please
+provide valid reference(s) to justify the real-world example of the issue.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ACTION - "Unable to determine action"
+
+Description: It is not clear what action to perform based on the
+submission, e.g., create new entry, update existing entry, etc.
+
+Resolution: The submission cannot progress to the Internal-Update stage
+until the relevant actions(s) are identified.
+
+Comments: Based on the other submission issues identified above, the CWE
+team isn't clear on the next steps. We likely won't be able to accept
+this submission. 
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -71,7 +143,7 @@ Ack-Receipt: 2024-01-05
 
 Init-Review: 2025-03-18
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-05-20
 
 Init-Declined: YYYY-MM-DD
 
@@ -106,3 +178,4 @@ COMMUNICATIONS LOG:
 2023-12-22 received comment
 2024-01-05 sent email
 2025-03-18 sent email
+2025-05-20 sent email
