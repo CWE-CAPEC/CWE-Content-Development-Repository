@@ -1,0 +1,105 @@
+SUBMISSION COMMUNICATION ID: ES2505-40961dd8
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-05-20 23:13:35
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #152
+
+MTRACKER: #1259
+
+GITHUBUSER: rsar97
+
+SUBMISSION TYPE: Hardware
+
+NAME: Logic Transformation Discrepancy during RTL Synthesis
+
+DESCRIPTION:
+
+This weakness occurs when a hardware design exhibits unintended behavior at
+the gate-level netlist that is not present at the RTL level. Such
+divergence arises due to synthesis-related artifacts u2014 for example,
+missing signals in sensitivity lists, undefined or partially specified
+logic, a malicious user exploiting/injectung bugs through EDA Synthesis
+Tools or synthesis optimizations that alter control or data paths. These
+discrepancies lead to functional mismatches that are difficult to detect
+during RTL simulation but manifest post-synthesis, potentially causing 
+functional failures in the final chip.
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-1201
+
+REFERENCES:
+
+Title: arXiv paper link
+URL: https://www.arxiv.org/abs/2504.18812
+
+Title: A document will all the bug descriptions
+URL: https://docs.google.com/document/d/1Ncgm1C-flRX8biyLLOcgzGHd1-kxk-oTRf4Q6nF8nEo/edit?usp=sharing
+
+Title: Consolidated Excel Sheet with design locations, sample attack vectors etc
+URL: https://docs.google.com/spreadsheets/d/1FlUX9KU7GLk6c8m5ApkEKR2zhLWdCV47u0HNJ-jfF1U/edit?usp=sharing
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-05-20
+
+Ack-Receipt: 2025-05-27
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
