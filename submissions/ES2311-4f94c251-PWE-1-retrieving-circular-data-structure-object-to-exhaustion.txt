@@ -69,7 +69,14 @@ Unreachable Exit Condition 'Infinite Loop'). This may mean that this
 submission can potentially be brought into one or both of these CWEs. Confirm
 if you'd be open to that.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: The submission is to warn developers about parsing circular
+data structures, CWE-409 may not be the right fit as compression bombs
+are a specific example that developers may not naturally think about
+when writing other circular code. CWE-835 may make sense since it
+references infinite loops, but developers may think it can only happen
+in loop statements?, but it can occur if a list is circular too.
+
+
 
 ----------
 
@@ -95,7 +102,8 @@ low-level for a CWE. However, the CWE team thinks that
 to be its own CWE. Please confirm if you'd be open to making the CWE
 at a higher abstraction than currently provided. 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Yes, this may makes sense, to capture the concept while not
+constraining it too specific such that developers may miss it.
 
 
 ----------
@@ -148,3 +156,4 @@ COMMUNICATIONS LOG:
 2023-12-28 sent email
 2025-01-28 sent email
 2025-05-20 sent email
+2025-05-21 received email
