@@ -47,6 +47,8 @@ REFERENCES:
 Title: CWE-1395: Dependency on Vulnerable Third-Party Component
 URL: https://cwe.mitre.org/data/definitions/1395.html
 
+
+
 ACTIVE ISSUES:
 
 SUB.OVERLAP - "Duplicate/Overlap"
@@ -65,7 +67,89 @@ extended description could be modified to mention the use of third-party service
 submitter can provide detailed references, the CWE team may be able to include
 them as demonstrative examples or list them in references.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:
+
+Thank you for the feedback. I agree that the described behavior is
+closely related to CWE-1395: Dependency on Vulnerable Third-Party
+Component. However, I would like to clarify and propose the inclusion
+of explicit examples involving hosted third-party services, not just
+libraries or SDKs, to highlight how this dependency manifests in
+practice.
+
+The key point is that a product can appear secure in isolation but
+becomes vulnerable through integration with an external third-party
+web service (e.g., file processing, media rendering, link redirection)
+that introduces exploitable weaknesses such as open redirects or
+improper file handling. These cases are particularly impactful when
+the user implicitly trusts the product’s domain or brand, unaware of
+the delegation to a third-party backend.
+
+I propose that the extended description of CWE-1395 be updated to
+include a specific mention of: Dependencies not only on third-party
+components/libraries, but also third-party web services or APIs
+Exploitation scenarios where attacker leverages trust in the primary
+product while abusing the underlying vulnerable service
+
+I would be happy to provide real-world references and more detailed
+example writeups for inclusion in CWE-1395’s demonstrative cases.
+
+Quick example - Demonstration of how a third-party domain used by a
+major company for redirection (e.g., newsletters or file delivery) was
+vulnerable to open redirects / content spoofing. Attackers were able
+to craft links that appeared trustworthy because they started with the
+brand’s URL or were used in branded contexts.
+
+Suggested References for CWE-1395 modification (focused on vulnerable third-party services)
+
+HackerOne Disclosure – SSRF in Exchange leads to ROOT access in all instances
+https://hackerone.com/reports/341876
+
+Description - illustrates the severe consequences of SSRF
+vulnerabilities. This example underscores how SSRF can be exploited to
+gain unauthorized access, emphasizing the importance of addressing
+such vulnerabilities, especially when they stem from third-party
+services.
+
+2, CWE-829: Inclusion of Functionality from Untrusted Control Sphere
+https://cwe.mitre.org/data/definitions/829.html
+
+This entry pertains to the inclusion of functionality from untrusted
+sources, which can lead to security vulnerabilities.
+
+OWASP Top Ten 2021 – A06:2021 – Vulnerable and Outdated Components
+https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/
+This entry discusses the risks associated with using components with known vulnerabilities
+
+External service interaction (DNS)
+
+https://portswigger.net/kb/issues/00300200_external-service-interaction-dns
+
+https://portswigger.net/kb/issues/00300210_external-service-interaction-http
+https://portswigger.net/kb/issues/00300220_external-service-interaction-smtp
+
+Google OAuth Vulnerability Exposes Millions via Failed Startup Domains
+https://thehackernews.com/2025/01/google-oauth-vulnerability-exposes.html
+https://authress.io/knowledge-base/articles/2025/01/15/google-oauth-workspace-vulnerability
+
+Google Workspace Vulnerability Allowed Hackers to Access 3rd-Party Services
+https://hackread.com/google-workspace-vulnerability-hackers-access-services
+
+Crooks Bypassed Google’s Email Verification to Create Workspace Accounts, Access 3rd-Party Services
+https://krebsonsecurity.com/2024/07/crooks-bypassed-googles-email-verification-to-create-workspace-accounts-access-3rd-party-services/
+
+Millions Of Sign-In-With-Google Users Warned Of Data-Theft Vulnerability
+https://www.forbes.com/sites/daveywinder/2025/01/16/millions-of-sign-in-with-google-users-warned-of-data-theft-hack-attack/
+
+A Guide To Subdomain Takeovers 2.0
+https://www.hackerone.com/blog/guide-subdomain-takeovers-20
+
+DORA Compliance Is Here: What Financial Entities Should Know
+https://www.hackerone.com/blog/dora-compliance-here-what-financial-entities-should-know
+
+Underscores the critical importance of scrutinizing third-party service integrations within products.
+
+Please let me know if these references are sufficient for you, or if I
+should provide more specific ones.
 
 
 ----------
@@ -82,7 +166,17 @@ until the informational needs are addressed.
 Comments: Based on the comment in SUB.OVERLAP, it is better for this submission
 to be a modification of CWE-1395 instead of warrating a new CWE.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Acknowledged. Given the clear overlap with CWE-1395, I
+support changing the action from a request for a new CWE to a
+modification request for CWE-1395. The intent of this submission is to
+enrich that entry by illustrating another practical and increasingly
+relevant exploitation path — through the use of vulnerable third-party
+services tied to a product’s functionality, branding, or delivery
+chain.
+
+Please proceed with the action as "Modification", and I remain
+available to assist with detailed case documentation or supporting
+references as needed.
 
 
 ----------
