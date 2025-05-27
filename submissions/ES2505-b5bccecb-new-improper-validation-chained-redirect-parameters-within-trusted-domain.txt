@@ -1,0 +1,154 @@
+SUBMISSION COMMUNICATION ID: ES2505-b5bccecb
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-05-17 00:55:42
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #153
+
+MTRACKER: #1258
+
+GITHUBUSER: PharaohBM7
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Validation of Chained Redirect Parameters within Trusted Domain
+
+DESCRIPTION:
+
+This weakness occurs when a web application performs multiple internal
+redirections using user-controlled parameters, and fails to validate or
+sanitize each redirection step within a trusted domain context. Although
+each redirection appears to stay within the same domain, the final step may
+result in the user being redirected to an attacker-controlled external URL.
+
+This chained behavior often bypasses typical security controls like link
+scanners, security policies (e.g., Content Security Policy, email
+clientsu2019 link checkers), and even user awareness, because the attack
+route seems to remain in a safe context until the very end.
+
+General Explanation:
+This weakness occurs when a web application performs multiple internal
+redirections using user-controlled parameters, and fails to validate or
+sanitize each redirection step within a trusted domain context. Although
+each redirection appears to stay within the same domain, the final step may
+result in the user being redirected to an attacker-controlled external URL.
+
+This chained behavior often bypasses typical security controls like link
+scanners, security policies (e.g., Content Security Policy, email
+clientsu2019 link checkers), and even user awareness, because the attack
+route seems to remain in a safe context until the very end.
+
+ Why itu2019s a Concern:
+Developers often assume that a redirect is only dangerous if it directly
+leads to an external domain. However, a series of internal redirects u2014
+all within the same trusted domain u2014 can be crafted in such a way that
+the final destination is malicious.
+
+This opens the door to advanced phishing attacks, user impersonation,
+credential harvesting, and abuse of trusted domain reputation (e.g.,
+government or banking domains).
+
+ Technical Impact:
+Security Policy Bypass: May bypass domain-based security policies (e.g.,
+CSP).
+
+Phishing & Social Engineering: Used in highly convincing phishing
+campaigns.
+
+Abuse of Brand Trust: Misuses trusted domains to appear safe.
+
+Redirect Chains Evading Detection: Makes automated scanners fail to
+identify the final malicious target.
+
+ Variations/Subtleties:
+Redirection can happen through different endpoints (e.g., /login,
+/redirect, /tracking) chained together.
+
+Each step individually appears safe, and may even validate correctly, but
+when combined, result in malicious behavior.
+
+Some sites rely on internal redirects to handle language preferences, SSO
+flows, or campaign tracking u2014 which attackers can exploit as part of
+the chain.
+
+ Example Use Case:
+
+bash
+Copy
+Edit
+https://secure.gov/login?next=/track?id=435&url=/redirect?dest=https://evil.com
+Each endpoint believes it's handing off safely to another internal
+resource, but the chain eventually leaks to an external domain.
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-601
+
+REFERENCES:
+
+Title: Advanced Chained Redirects within Trusted Domainst
+URL: https://gist.github.com/PharaohBM7/fake123456example
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-05-17
+
+Ack-Receipt: 2025-05-27
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
