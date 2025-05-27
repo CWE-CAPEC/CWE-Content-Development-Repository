@@ -64,7 +64,21 @@ that allows malicious files to be uploaded? Let us know if you only want
 to add the 2 CVE examples. We would need to determine which CWEs would be
 appropriate. 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Cloud service providers often rely on external utilities to
+process user-uploaded files. Developers incorrectly assume these
+utilities inherently sanitize or validate file content, leading to
+insufficient neutralization of malicious elements. This trust in
+third-party tools without implementing additional safeguards allows
+attackers to upload files containing malware, scripts, or exploit
+payloads. When processed, these files enable attacks such as
+server-side code execution, data breaches, or DDoS via resource
+exhaustion (e.g., decompression bombs).
+
+The key point is, that the developer mistake is the failure to enforce
+strict validation, sanitization, or sandboxing of user-uploaded files
+before passing them to external utilities. This insecure design choice
+creates a mismatch between the security expectations of the external
+tool and the actual risks posed by unverified input.
 
 
 ----------
@@ -85,7 +99,48 @@ for covering this weakness. CVEs aren't considered as ideal references for the
 purposes of understanding the weakness. Please provide an actual reference
 that delves into the weakness more.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Let me make some explanation for these CVEs:
+
+CVE-2024-44082/OSSA-2024-003: Unvalidated image data passed to
+qemu-img Untrusted files were passed into qemu-img. It may trigger
+unexpected behaviors, such as unauthorized access to sensitive files.
+
+CVE-2024-40767/OSSA-2024-002: Incomplete file access fix and
+regression for QCOW2 backing files and VMDK flat descriptors
+Developers persist in utilizing the "qemu-img info" command to
+identify malicious inputs, despite explicit warnings from the QEMU
+team that "it is dangerous to call qemu-img info on untrusted files".
+
+CVE-2024-32498/OSSA-2024-001: Arbitrary file access through custom
+QCOW2 external data Uploading a qcow2 file containing "external data"
+will result in qemu-tools accessing the referenced external data. If
+such data includes sensitive file paths (e.g., /etc/passwd), this may
+lead to potential leakage of sensitive information through the exposed
+path references.
+
+CVE-2022-47951/OSSA-2023-002: Arbitrary file access through custom
+VMDK flat descriptor Uploading flat VMDK files may cause qemu-tools to
+access the "flat image". If this image references a sensitive path
+such as /etc/passwd, it could result in potential exposure of
+sensitive information.
+
+CVE-2022-47950/OSSA-2023-001: Arbitrary file access through custom S3
+XML entities XXE-like vulnerability: Uploading XML files containing
+entities may result in the lxml.etree.XMLParser invoked by OpenStack
+accessing sensitive files.
+
+CVE-2015-5162/OSSA-2016-012: Malicious qemu-img input may exhaust
+resources in Cinder, Glance, Nova Developers persist in utilizing the
+"qemu-img info" command to identify malicious inputs, despite explicit
+warnings from the QEMU team that "it is dangerous to call qemu-img
+info on untrusted files".
+
+CVE-2014-3641/OSSA-2014-033: Cinder-volume host data leak to vm
+instance A maliciously crafted qcow2 header can cause the qemu-img
+info utility to erroneously identify raw-format disk images as qcow2
+format, thereby triggering operational errors in the OpenStack Cinder
+component during subsequent processing.
+
 
 
 ----------
@@ -139,3 +194,4 @@ COMMUNICATIONS LOG:
 2024-12-09 sent email
 2025-01-28 sent email
 2025-05-20 sent email
+2025-05-26 received comment
