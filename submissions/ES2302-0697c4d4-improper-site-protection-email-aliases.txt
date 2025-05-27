@@ -22,20 +22,35 @@ GITHUBUSER: mbiesiad
 
 SUBMISSION TYPE: Software
 
-NAME: Improper site protection against using email aliases can provide to ATO and account issues
+NAME: Silent Email Alias Normalization Leading to Misdelivery and Account Takeover
 
 DESCRIPTION:
 
-Some site focused on bug hunting security don't allowed using email aliases
-- but that was quite dangerous case, because when user wanted to change an
-email to email with alias (example+alias@example.com) the result without
-any notification was: examplealias@example.com (removed + sign) Example:
-bughunter@example.com vs bughunter1@example.com instead of
-bughunter+1@example.com When site has proper email notifications, the email
-will be send on incorrect address (about Email changed) and in many cases
-bad actor can make ATO (using Reset password feature).
+This weakness involves products (e.g., web applications) silently
+modifying user-supplied email addresses by removing aliasing syntax
+(such as stripping the +tag from user+tag@example.com) without user
+notification or confirmation. Such behavior results in an altered
+email (usertag@example.com), which may belong to a different,
+unintended recipient.
 
-Can leads also to Information Disclosure. (saw today another example on prod.)
+When email address changes or password resets occur, notifications are
+then sent to this unintended address. This can lead to: Information
+Disclosure, when confidential data is sent to a third party; Account
+Takeover (ATO), if the derived address is registered or controlled by
+a malicious actor; Authentication Integrity Failures, where user
+identity is silently altered mid-process.
+
+The core issue is the lack of transparency and validation in how the
+product handles user identity data, especially in authentication and
+notification contexts. This is a security-impacting behavior, not a
+feature. While it may stem from alias-stripping logic intended for
+normalization or anti-abuse purposes, the absence of user visibility
+and control turns it into a critical flaw.
+
+This class of weaknesses can be generalized under input
+validation/sanitization, identifier integrity, or misconfigured
+notification systems, but may warrant explicit representation or
+dedicated examples in existing CWE entries.
 
 RELATED WEAKNESSES:
 
@@ -65,7 +80,19 @@ the removal of "+" sign an issue? What if this is a feature of the site vs. a bu
 The submitter should provide more context about the weakness and 
 how that is a security concern that should be captured in the CWE?
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Thank you for the feedback. To clarify: the weakness lies in
+a product silently altering user-submitted email addresses by
+stripping aliases (e.g., user+alias@example.com becomes
+useralias@example.com) without user notification or confirmation. This
+behavior, when paired with insufficient notification mechanisms, can
+lead to security issues including information disclosure and account
+takeover (ATO). The issue is not that email aliases are disallowed,
+but that the product deceptively changes the address post-submission,
+breaking user expectations and creating a dangerous mismatch between
+user intent and system behavior. This is a bug with clear security
+impact, as misdirected notifications or password reset emails may end
+up in unintended mailboxes, especially if the derived email address is
+valid and controlled by an attacker.
 
 
 ----------
@@ -94,7 +121,20 @@ CWE-182: Collapse of Data into Unsafe Value or CWE-222: Truncation of
 Security-relevant Information. The CWE Team will investigate this in
 later phases.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:While this issue may seem niche, its underlying weakness is
+generalizable: it represents a failure in input sanitization
+transparency, and poor validation of user identifiers. The product
+modifies a user-supplied email without proper validation or user
+feedback. This class of issues fits within broader CWE themes such as
+CWE-182 (Collapse of Data into Unsafe Value), but introduces a
+real-world exploit scenario not well covered by existing
+CWEs. Therefore, it could either be addressed via an extension of an
+existing CWE or through improved examples under entries like CWE-222
+(Truncation of Security-Relevant Information) or CWE-345 (Insufficient
+Verification of Data Authenticity). This behavior is not tied to a
+specific framework but represents a design-level weakness with
+security consequences. The logic is flawed, regardless of the
+technology stack.
 
 
 ----------
@@ -114,8 +154,22 @@ Comments: The submission only provides a Wikipedia reference, which by itself
 isn't a credible reference. Please provide other real-world references of this
 issue.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: At the time of submission, the issue had been observed
+firsthand in real-world products, including in responsible disclosure
+reports. While public references may be scarce due to the sensitive
+nature of such findings (often under private VDP or bug bounty
+programs), I can provide more anonymized examples or documented
+reports if needed. Additionally, this pattern of behavior is
+observable in several modern applications that attempt to normalize
+email addresses but fail to inform users. Given that this is a subtle
+but dangerous behavior, it is underreported in public documentation,
+but exploitation is feasible and impactful.
 
+CWE-319 / CWE-201 (Information Exposure)
+
+CWE-640 (Weak Password Recovery Mechanism for Forgotten Password)
+
+CWE-345 / CWE-346 (Insufficient Verification of Data Authenticity / Source)
 
 ----------
 
@@ -134,8 +188,16 @@ ES2503-a0f69c3b (CDR #150).  Therefore, the CWE team will treat both
 submissions at the same time, possibly combining them if
 appropriate. Note that both submitters would receive credit.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I understand the similarity with ES2503-a0f69c3b. If the
+weaknesses are closely related, I support combining them, provided
+that the scenario involving silent modification of aliases leading to
+notification redirection and ATO risks is preserved as an example or
+subclass. I'm fully open to collaborative refinement if that helps
+clarify and generalize the core weakness. As long as the security
+impact and exploit path are accurately conveyed, I'm satisfied with
+the merged representation.
 
+PS. This submission was sent on 2023.
 
 ----------
 
@@ -151,7 +213,16 @@ Comments: Given that the submission's weakness isn't clear and the specificity
 of a niche products/technology, it is difficult to determine which action 
 (e.g., create a new entry or update an existing entry) is needed.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Given the nature of the weakness and its potential security
+impact, I believe the most appropriate action would be to either (1)
+create a new CWE that addresses silent input transformation leading to
+authentication/notification mismatches or (2) extend an existing CWE
+such as CWE-345 or CWE-222 to include this scenario. I’m also open to
+this being used as a high-impact example under CWE-319 (Information
+Exposure via altered notification address). My primary goal is to
+ensure this class of bug — where a product silently transforms user
+identity data leading to ATO or disclosure — is captured, even if not
+as a standalone CWE.
 
 
 ----------
@@ -204,3 +275,4 @@ COMMUNICATIONS LOG:
 2024-11-10 received comment
 2025-02-18 sent email
 2025-05-20 sent email
+2025-05-27 received comment
