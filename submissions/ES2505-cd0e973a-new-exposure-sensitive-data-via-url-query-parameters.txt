@@ -1,0 +1,92 @@
+SUBMISSION COMMUNICATION ID: ES2505-cd0e973a
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-05-28 23:50:57
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #155
+
+MTRACKER: #1267
+
+GITHUBUSER: None
+
+SUBMISSION TYPE: Software
+
+NAME: Exposure of sensitive data (username and password) in cleartext via URL query parameters.
+
+DESCRIPTION:
+
+The user's username and password are exposed in cleartext via URL query
+parameters. 
+
+RELATED WEAKNESSES:
+
+   Other CWE-319
+   Other CWE-598
+
+REFERENCES:
+
+Title: Documentation
+URL: https://www.themikewylie.com/etendo-exposure-of-sensitive-data-in-cleartext-via-url/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-05-28
+
+Ack-Receipt: 2025-06-03
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
