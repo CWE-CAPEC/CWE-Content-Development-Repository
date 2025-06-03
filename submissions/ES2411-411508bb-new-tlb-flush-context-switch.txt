@@ -1,0 +1,125 @@
+SUBMISSION COMMUNICATION ID: ES2411-411508bb
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2024-11-25 20:02:52
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.MISSDET
+
+PUBTRACKER: #154
+
+MTRACKER: #1188
+
+GITHUBUSER: daksith
+
+SUBMISSION TYPE: Software
+
+NAME: TLB Flush on Context Switch
+
+DESCRIPTION:
+
+The linux kernel flushes the entire tlb on riscv for versions <=5.11. This
+can be exploited to perform side channel attacks figure out the page table
+location bits of a victim process thus compromising KASLR. Previous methods
+that implement this attack overflow the tlb in order to flush it. This
+introduces noise into the attack during the cache timing phase. Instead of
+this, attackers can use the tlb flush on context switch by utilizing
+functions like sleep() to obtain a lower noise communication channel
+through the cache. Specifically,
+
+1) The attacker primes the cache, calls sleep() to flush the tlb and allow
+the attacker to execute. The victim process with then leave traces of its
+tlb walk in the cache.
+2) The attacker can then probe the cache to identify which cache lines have
+been accessed thus leaking bits of the page table locations.
+
+Many current RISCV implementations run versions of the linux kernel <=5.11
+(Eg CVA6 on github) hence this may compromise the security of existing
+RISCV systems.
+
+RELATED WEAKNESSES:
+
+
+REFERENCES:
+
+Title: ASLR on the Line: Practical Cache Attacks on the MMU
+URL: https://download.vusec.net/papers/anc_ndss17.pdf
+
+
+ACTIVE ISSUES:
+
+
+SUB.MISSDET - "Missing details"
+
+Description: The submission is missing some requested or required details
+for elements other than name and description.
+
+Resolution: The submission cannot progress to later phases if it does not
+have all required elements.
+
+Comments: This issue appears to be a report for a specific vulnerability, 
+instead of a request for updating weaknessinformation in CWE. A followup 
+inquiry is being sent to confirm this assumption.
+
+Response: Submitter said: "It is not specific to a certain
+product. All riscv cores using those versions of the linux kernel will
+be affected by it."
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2024-11-25
+
+Ack-Receipt: 2025-06-03
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
+2025-02-11 sent email
+2025-05-19 sent email
+2025-05-19 received email
