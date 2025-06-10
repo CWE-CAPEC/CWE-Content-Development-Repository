@@ -1,0 +1,124 @@
+SUBMISSION COMMUNICATION ID: ES2506-bb6031fd
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-06-09 12:17:39
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #156
+
+MTRACKER: #1268
+
+GITHUBUSER: vibhum-dubey
+
+SUBMISSION TYPE: Software
+
+NAME: Insecure Exposure of Third-Party API Keys in Client-Side Context
+
+DESCRIPTION:
+
+The application exposes sensitive third-party API keys (e.g., Google Maps,
+Firebase, Stripe, etc.) in the client-side source code or through
+JavaScript-accessible runtime environments, allowing unauthorized users to
+misuse the key. These keys are often not intended for public distribution
+and may enable misuse, excessive billing, or data leakage.
+
+Alternate Terms:
+Publicly Accessible API Key
+
+Exposed Cloud Service Credentials
+
+Client-Exposed Integration Keys
+
+Common Consequences:
+Resource Consumption: Attackers may use the API key to exhaust quota or
+generate billing.
+
+Data Exposure: In cases like Firebase, misconfigured keys may grant access
+to backend databases.
+
+Reputation Damage: Abused APIs may be used in phishing or fake
+applications.
+
+Service Disruption: Abuse may trigger service provider throttling or bans.
+
+Modes of Introduction:
+Hardcoding keys into frontend JavaScript.
+
+Embedding secrets in mobile apps or HTML files.
+
+Exposing config files via misconfigured web servers.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-200
+   Other CWE-522
+
+REFERENCES:
+
+Title: Misconfigured Firebase keys discovered in client-side code led to full access to user data.
+URL: https://firebase.google.com/docs/database/security
+
+Title: Paper: "Harvesting Public Cloud Secrets from GitHub Repositories"
+URL: https://arxiv.org/abs/2005.08698
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-06-09
+
+Ack-Receipt: 2025-06-10
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
