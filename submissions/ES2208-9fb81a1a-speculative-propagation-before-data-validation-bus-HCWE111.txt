@@ -6,7 +6,7 @@ ACTION TYPE: New Entry
 
 AFFECTED CWES:
 
-SUBMISSION STATUS: Det-Received
+SUBMISSION STATUS: Det-Review
 
 ORIGIN: sub-server
 
@@ -482,7 +482,7 @@ Det-Requested: 2025-03-24
 
 Det-Received: 2025-04-23
 
-Det-Review: YYYY-MM-DD
+Det-Review: 2025-06-12
 
 Det-Consultation: YYYY-MM-DD
 
@@ -513,3 +513,6 @@ COMMUNICATIONS LOG:
 2025-03-07 received comment
 2025-03-24 sent email
 2025-03-24 sent email
+2025-04-23 received comment
+2025-05-07 action update
+2025-06-12 sent email
