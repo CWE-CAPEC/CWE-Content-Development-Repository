@@ -65,8 +65,7 @@ DEMONSTRATIVE EXAMPLES:
 
 INTRO TEXT:
 
-[SUBMITTER: PLEASE REVIEW] This code stores a database password in a
-PHP file.
+This code stores a database password in a PHP file.
 
 BAD CODE:
 LANGUAGE: PHP
@@ -90,15 +89,43 @@ echo "Connected successfully";
 
 EXPLANATORY TEXT:
 
-[SUBMITTER: PLEASE REVIEW] This code is storing the password in
-plaintext in the PHP file. An adversary who can read the source code
-can obtain the password.
+This code is storing the password in plaintext in the PHP file. An
+adversary who can read the source code can obtain the password.
 
 GOOD CODE:
 LANGUAGE: PHP
 
-<<put the information here>>
+We can store the config.php outside the webroot directory.
 
+<?php
+// config.php
+return [
+    'db_username' => 'secretUsername',
+    'db_password' => 'secretPassword',
+    'db_host'     => 'localhost',
+    'db_name'     => 'exampleDatabase',
+];
+
+The main script that connect to its config.php file:
+
+<?php
+// Load config
+$config = require 'config.php';
+
+// Create connection
+$conn = new mysqli(
+    $config['db_host'],
+    $config['db_username'],
+    $config['db_password'],
+    $config['db_name']
+);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?>
 
 
 
