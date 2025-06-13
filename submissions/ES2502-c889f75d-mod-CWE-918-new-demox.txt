@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-c889f75d
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Det-Requested
+SUBMISSION STATUS: Det-Received
 
 AFFECTED CWES: CWE-918
 
@@ -174,7 +174,7 @@ Init-Accepted: 2025-02-25
 
 Det-Requested: 2025-03-18
 
-Det-Received: YYYY-MM-DD
+Det-Received: 2025-05-10
 
 Det-Review: YYYY-MM-DD
 
@@ -206,3 +206,5 @@ COMMUNICATIONS LOG:
 2025-03-19 sent email
 2025-05-08 sent email
 2025-05-10 received comment
+2025-05-13 action update
+2025-06-13 sent email
