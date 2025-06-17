@@ -1,0 +1,89 @@
+SUBMISSION COMMUNICATION ID: ES2506-72a4ebd1
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-06-16 21:17:12
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #157
+
+MTRACKER: #1271
+
+GITHUBUSER: zhzh2001
+
+SUBMISSION TYPE: Unknown
+
+NAME: Remove CVE-2022-21668 from Obex CWE-190
+
+DESCRIPTION:
+
+CVE-2022-21668 in Selected Observed Examples seems not relevant to integer
+overflow at all in the CVE description and CWE reference. Suggest to remove
+it from CWE-190. We need these correct examples in some publication.
+
+RELATED WEAKNESSES:
+
+   Other CWE-190
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-06-16
+
+Ack-Receipt: 2025-06-17
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
