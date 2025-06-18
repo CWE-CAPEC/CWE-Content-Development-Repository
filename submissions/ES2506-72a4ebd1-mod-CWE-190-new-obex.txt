@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2506-72a4ebd1
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,7 +10,7 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-06-16 21:17:12
 
-ISSUES: not-analyzed
+ISSUES: no
 
 ISSUE DETAILS: 
 
@@ -57,7 +57,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-06-18
 
 Det-Requested: YYYY-MM-DD
 
@@ -88,4 +88,5 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2025-06-17 sent email
+2025-06-18 sent email
 2025-06-18 sent email
