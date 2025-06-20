@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2406-9e5fcf10
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Det-Requested
+SUBMISSION STATUS: Det-Received
 
 AFFECTED CWES: 
 
@@ -655,7 +655,7 @@ Init-Accepted: 2025-03-02
 
 Det-Requested: 2025-03-24
 
-Det-Received: YYYY-MM-DD
+Det-Received: 2025-06-20
 
 Det-Review: YYYY-MM-DD
 
