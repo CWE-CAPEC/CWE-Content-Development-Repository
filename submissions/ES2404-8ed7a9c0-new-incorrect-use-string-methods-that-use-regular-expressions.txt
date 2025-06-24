@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2404-8ed7a9c0
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-04-29 14:56:41
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.UNCLEAR, SUB.RELS
 
 PUBTRACKER: #110
 
@@ -54,7 +54,103 @@ URL: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-
 
 ACTIVE ISSUES:
 
+SUB.UNCLEAR - "Unclear weakness"
 
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: Please clarify if you are specifically talking about user
+input being used to construct the actual regular expression argument,
+the replace string, or the string that the replaceAll() function is
+being called on.  Our current interpretation of the main weakness is:
+"not neutralizing special regex-processing elements in strings during
+regular expression operations." Let us know if you agree with this
+interpretation.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: The proposed entry is similar to CWE-624. The main difference
+lies in the fact that the proposed entry uses a Java specific example.
+Please let us know if you agree with the suggestion.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The proposed entry highlights CWE-1333, CWE-20, and CWE-95
+as related CWEs. CWE-1333 may be resultant from this weakness. CWE-20
+is one type of "neutralization" that could ensure that no regex
+operators are present in the input. It appears that CWE-624 is more
+aligned to cover the regular expressions parameter being used as an
+input, so there might be some overlap. In general, CWE-116 (improper
+encoding) and CWE-138 (for neutralization of special elements) seem to
+apply more closely.  Additionally, CWE-755 and similar may also be
+associated, given the use of IllegalArgumentException, although this
+might be a chaining issue.  The CWE team needs to better understand
+the issue as it likely affects different subtrees within the
+CWE. Please let us know if you agree with the suggestion.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or detailed) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: Assuming that our interpretation of the weakness is correct
+(see SUB.UNCLEAR), this weakness could be classified under both
+CWE-116 (improper encoding) and CWE-138 (for neutralization of special
+elements). The relationship between these CWEs and their subtrees is
+not as clearly defined as it could be. The CWE Team will work
+separately to try and address these problems. This will not prevent
+moving your submission forward through this process. Please
+acknowledge that you have read this comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -68,7 +164,7 @@ Ack-Receipt: 2024-05-29
 
 Init-Review: 2024-07-10
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-06-24
 
 Init-Declined: YYYY-MM-DD
 
@@ -103,3 +199,5 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-05-29 sent email
+2024-07-10 sent email
+2025-06-24 sent email
