@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2503-35f2d961
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -77,11 +77,11 @@ Ack-Receipt: 2025-03-24
 
 Init-Review: 2025-05-07
 
-Init-Consultation: 2025-06-24
+Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-06-24
 
 Det-Requested: YYYY-MM-DD
 
@@ -113,4 +113,5 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-03-24 sent email
 2025-05-07 sent email
+2025-06-24 sent email
 2025-06-24 sent email
