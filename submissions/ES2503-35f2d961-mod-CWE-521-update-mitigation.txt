@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2503-35f2d961
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-03-17 14:19:26
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #149
 
@@ -48,6 +48,21 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: We agree with your concern and will remove "Password
+Expiration" from the current mitigation. However, since password
+expiration is a common practice, we will create a separate mitigation
+element that explicitly labels password expiration as a "Discouraged
+Common Practice" and emphasize its limitations. We will use your
+provided references to support the argument.
+
+Response: [NO RESPONSE NEEDED]
 
 
 RESOLVED ISSUES:
@@ -62,7 +77,7 @@ Ack-Receipt: 2025-03-24
 
 Init-Review: 2025-05-07
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-06-24
 
 Init-Declined: YYYY-MM-DD
 
@@ -98,3 +113,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-03-24 sent email
 2025-05-07 sent email
+2025-06-24 sent email
