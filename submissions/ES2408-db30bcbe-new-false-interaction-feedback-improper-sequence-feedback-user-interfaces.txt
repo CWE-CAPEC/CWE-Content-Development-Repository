@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2408-db30bcbe
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-08-20 01:03:10
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ATTACK, SUB.UNCLEAR, SUB.RELS
 
 PUBTRACKER: #128
 
@@ -43,7 +43,7 @@ the user's information or reputation. In addition to this, the attacker is
 directly accomplishing their malicious intentions under the guise and
 reputation of the vulnerable platform, causing severe reputational damage
 to the business as it appears complicit in the attack. This not only
-compromises user trust but also tarnishes the platformu2019s credibility.
+compromises user trust but also tarnishes the platform's credibility.
 
 The technical impact of an exploited FIF vulnerability can vary widely
 depending on the type of feedback provided by the vulnerable target and the
@@ -119,6 +119,91 @@ URL: https://blog.andreruegg.com//posts/2024-08-18-identifying-a-new-vulnerabili
 
 ACTIVE ISSUES:
 
+SUB.ATTACK - "Too attack-focused"
+
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: This submission largely focuses on the attack described as "False Interaction Feedback"
+but does not describe the inherent weakness that allows this attack vector to exist.
+The submission should be more clear about what weakness is occurring.  For instance,
+could this be an authorization issue where the success pages should not be displayed unless a logged
+in user who just accomplished that action accesses the page?  Please propose a rephrased description
+that focuses solely on the weakness.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: Related to the above submission problem for SUB.ATTACK, the submission
+does not make the weakness clear in the description due to being too attack focused.
+It is important to identify and be explicit about what the root weakness is that allows
+for FIF to occur.  In the SUB.ATTACK explanation, one possible proposal is that this
+could be an authorization issue for viewing the page, maybe related to 
+CWE-425: Direct Request ('Forced Browsing').  Mitigations can sometimes help identify
+the root cause weakness, although that is not always that case.  Please propose a 
+rephrased description that focuses solely on the weakness.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: Because the weakness is not entirely clear based on the
+current state of the submission, it is also not clear if the proposed
+relationships are correct.  CWE-451: "User Interface (UI)
+Misrepresentation of Critical Information" seems very related to what
+is being described, although it is still unclear if this is related in
+part due to the attack scenario described or the actual weakness.
+Perhaps a child weakness of CWE-451 could be applicable, or the
+extended description updated to discuss displaying confirmation pages
+at improper times. CWE-841: "Improper Enforcement of Behavioral
+Workflow" might be a good parent for this, if the key weakness is that
+the feedback is made available at the wrong time, e.g. as stated in
+the original description where "GoodSoftware did not implement a flow
+such that the feedback for the download is only shown with the logic
+that downloads their legitimate file."  CWE-602: "Client-Side
+Enforcement of Server-Side Security" was proposed, but it does not
+seem to relate because there do not seem to be any Client-Side
+security checks happening that enable FIF. The proposal for CWE-441:
+"Unintended Proxy or Intermediary ('Confused Deputy')" seems
+tangential to the concept of the attack, but does not appear to be a
+fitting parent.  It is still hard to make these distinctions without
+fully understanding the weakness.  Once we can better articulate the
+weakness we can arrive at suitable relationships.  Please indicate if
+you agree or disagree with any of these current assessments.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 RESOLVED ISSUES:
@@ -133,7 +218,7 @@ Ack-Receipt: 2024-12-09
 
 Init-Review: 2025-04-01
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-06-24
 
 Init-Declined: YYYY-MM-DD
 
@@ -169,3 +254,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-12-09 sent email
 2025-04-01 sent email
+2025-06-24 sent email
