@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2302-f091f80c
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-02-17 22:58:34
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SCOPE.ADMINERR, SUB.UNCLEAR, SUB.RELREFS
 
 PUBTRACKER: #65
 
@@ -47,13 +47,74 @@ REFERENCES:
 Title: Content Spoofing
 URL: https://owasp.org/www-community/attacks/Content_Spoofing
 
-
-
-
 ACTIVE ISSUES:
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: The way the submission is written makes it difficult to
+understand where the weakness lies. Is the issue with users typing
+incorrect email addresses? Is attackers creating fake emails and using
+those email addresses an issue? Is it in validation of the email
+addresses by the product?  What is the problem with incorrect email
+addresses from a security context?  Please provide clarity into what
+the mistake is that warrants this being a new CWE? For the rest of
+this review, we assume that you mean something like "user or admin has
+entered or recorded an incorrect email address into the product."
+Please let us know if we are understanding correctly.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SCOPE.ADMINERR - "Admin/user error"
+
+Description: The issue focuses on security errors that are made by an admin
+or user of the product/service, not the developer or maintainer of the
+product/service.
+
+Resolution: Submissions will be reviewed on a case-by-case basis, delayed,
+and possibly cited as examples until this exclusion is finalized after
+extensive community feedback.
+
+Comments: This appears to align with user/admin error, and not
+something that the developer or maintainer of the product can
+control. If this is the case, then this submission cannot be included
+in CWE, which focuses only on weaknesses in software itself. Please
+let us know if you agree or if there are other perspectives to
+consider.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The reference provided deals with content spoofing, which
+focuses more on the actual content injection. This doesn't appear to align
+with the proposed submission. Please provide specific reference(s) to highlight
+the issue being presented. 
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -68,7 +129,7 @@ Ack-Receipt: 2023-02-23
 
 Init-Review: 2025-02-11
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-06-24
 
 Init-Declined: YYYY-MM-DD
 
@@ -102,3 +163,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2023-02-23 sent email
 2025-02-11 sent email
+2025-06-24 sent email
