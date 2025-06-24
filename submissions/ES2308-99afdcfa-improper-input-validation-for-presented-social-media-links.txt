@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2308-99afdcfa
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-08-22 12:25:55
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.OVERLAP, SUB.RELREFS
 
 PUBTRACKER: #47
 
@@ -51,7 +51,73 @@ URL: https://cwe.mitre.org/data/definitions/20.html
 
 ACTIVE ISSUES:
 
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: This submission is focused on validation of very low-level
+concepts such as social media links and user profiles. It may be more
+appropriate as a demonstrative example and/or supporting text for
+CWE-1288: Improper Validation of Consistency within Input, instead of
+a new weakness. (CWE-1288 is a child of CWE-20).  Please let us know
+if you agree or disagree with this assessment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This submission might overlap ES2302-f091f80c (CDR #65),
+although that submission's weakness is unclear as of June 24, 2025.
+This submission emphasizes validation for other user-related
+fields. As a result, these two submissions might be combined into a
+single CWE, or used as examples in the same CWE.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: Please provide actual references the real-world examples of this
+issue and a reference highlighting the issue in more details.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -65,7 +131,7 @@ Ack-Receipt: 2024-01-05
 
 Init-Review: 2025-04-08
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-06-24
 
 Init-Declined: YYYY-MM-DD
 
@@ -101,3 +167,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-01-05 sent email
 2025-04-08 sent email
+2025-06-24 sent email
