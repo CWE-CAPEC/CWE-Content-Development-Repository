@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2505-cd0e973a
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -18,7 +18,7 @@ PUBTRACKER: #155
 
 MTRACKER: #1267
 
-GITHUBUSER: None
+GITHUBUSER: 
 
 SUBMISSION TYPE: Software
 
@@ -54,7 +54,7 @@ Received: 2025-05-28
 
 Ack-Receipt: 2025-06-03
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2025-06-25
 
 Init-Consultation: YYYY-MM-DD
 
@@ -91,3 +91,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2025-06-03 sent email
+2025-06-25 sent email
