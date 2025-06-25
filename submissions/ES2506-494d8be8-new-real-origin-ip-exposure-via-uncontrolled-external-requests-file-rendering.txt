@@ -1,0 +1,140 @@
+SUBMISSION COMMUNICATION ID: ES2506-494d8be8
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-06-20 22:11:30
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: 
+
+MTRACKER: #1273
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: Real Origin IP Exposure via Uncontrolled External Requests in File Rendering - Canary Token
+
+DESCRIPTION:
+
+This weakness arises when a web application allows users to upload
+documents (such as PDFs) that are later processed server-side by tools
+capable of executing or resolving external resources embedded in the file.
+If hese tools atre not properly isolated and are allowed to make outbound
+network requests, attackers can craft malicious documents that trigger
+connections to attacker-controlled endpoints. These connections can reveal
+the real IP address of the origin server, bypassing protections normally
+provided by CDNs or WAFs.
+
+This is a concern because developers and system designers often assume that
+a CDN or WAF fully shields the origin infrastructure from direct access.
+However, if server-side components themselves initiate outbound traffic
+without restriction, they can unintentionally disclose sensitive
+infrastructure details to attackers.
+
+Technical Impacts
+
+Information Disclosure: The real IP address of the backend server is
+exposed.
+
+Security Control Bypass: CDN/WAF protections such as rate limiting, IP
+reputation filtering, and geographic restrictions are circumvented.
+
+Expanded Attack Surface: Once the origin is known, attackers can scan for
+open ports, exploit unpatched services, or launch direct DDoS attacks.
+
+
+Subtleties and Variations
+
+This attack does not rely on complex parsing bugsu2014it exploits intended
+functionality (e.g., previewing documents).
+
+The vulnerability may not be obvious in static code analysis since it often
+involves third-party libraries or services used for document processing.
+
+Variants may involve other file types such as images (e.g., SVG with
+external references) or office documents (e.g., DOCX), for example.
+
+In cloud deployments, the attacker might also discover internal IPs,
+metadata services, or containers that should never be exposed externally.
+
+
+In summary, this issue demonstrates how outbound behavior in server-side
+components can unintentionally undermine perimeter defenses, especially
+when those components interact with untrusted user input. Proper isolation,
+network egress control, and careful processing of uploaded content are
+critical to mitigating this class of vulnerability.
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-94
+   Other CWE-200
+   Other CWE-668
+   Other CWE-829
+
+REFERENCES:
+
+Title: How a PDF File Can Expose Your Applicationu2019s Real IP (Even with CDN and WAF)
+URL: https://medium.com/@vedgeta2/how-a-pdf-file-can-expose-your-applications-real-ip-even-with-cdn-and-waf-754f4ccd6993
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-06-20
+
+Ack-Receipt: 2025-06-25
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
