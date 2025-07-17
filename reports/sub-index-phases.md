@@ -1,7 +1,7 @@
 # Report: CWE Submissions By Phase
 
 
-*Report Generated: 20250520-192210*
+*Report Generated: 20250717-124328*
 
 ## Phase 1: Received
 
@@ -10,57 +10,48 @@
 
 ## Phase 2: Ack-Receipt
 
-**Total Submissions: 9 (0 not in CDR)**
+**Total Submissions: 7 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
-|[54](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/54)|mbiesiad|2023-04-07|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2304-8ca1e9ea-using-company-org-logo-or-connected-redundancy.txt" target="_blank">ES2304-8ca1e9ea</a>|Using company/org logo or connected with them items in redundancy situations|
-|[52](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/52)|mbiesiad|2023-04-12|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2304-1f8e1526-error-404-on-external-pages-or-org-ATO.txt" target="_blank">ES2304-1f8e1526</a>|Error 404 on external pages - or just possibility to org/company ATO|
 |[73](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/73)|kurtseifried|2024-02-26|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2402-38e20ce6-bias-in-ai-models.txt" target="_blank">ES2402-38e20ce6</a>|Bias in AI Models|
-|[146](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/146)|ctflearner|2025-02-23|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-7dceb2f2-mod-CWE-306-add-demox.txt" target="_blank">ES2502-7dceb2f2</a>|Add demonstrative example to CWE-306|
-|[145](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/145)|ctflearner|2025-02-23|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-7a37fb47-mod-CWE-863-add-demox.txt" target="_blank">ES2502-7a37fb47</a>|Add demonstrative example to CWE-863|
-|[141](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/141)|ctflearner|2025-02-24|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-bab1a339-mod-CWE-862-add-demox.txt" target="_blank">ES2502-bab1a339</a>|Add demonstrative example to CWE-862|
-|[142](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/142)|ctflearner|2025-02-28|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-159200de-mod-CWE-112-new-demox.txt" target="_blank">ES2502-159200de</a>|CWE-112 modification new demonstrative example|
-|[147](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/147)|ctflearner|2025-02-28|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-5becff07-mod-CWE-117-new-demox.txt" target="_blank">ES2502-5becff07</a>|CWE-117 modification new demonstrative example|
+|[154](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/154)|daksith|2024-11-25|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2411-411508bb-new-tlb-flush-context-switch.txt" target="_blank">ES2411-411508bb</a>|TLB Flush on Context Switch|
 |[151](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/151)||2025-03-19|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2503-821d9ec2-new-cpu-control-bits-are-used-without-validation-legality.txt" target="_blank">ES2503-821d9ec2</a>|CPU Control bits are used without validation of legality.|
+|[153](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/153)|PharaohBM7|2025-05-17|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2505-b5bccecb-new-improper-validation-chained-redirect-parameters-within-trusted-domain.txt" target="_blank">ES2505-b5bccecb</a>|Improper Validation of Chained Redirect Parameters within Trusted Domain|
+|[152](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/152)|rsar97|2025-05-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2505-40961dd8-new-logic-transformation-discrepancy-during-rtl-synthesis.txt" target="_blank">ES2505-40961dd8</a>|Logic Transformation Discrepancy during RTL Synthesis|
+|[158](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/158)||2025-06-11|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2506-e3c78a2a-new-improper-neutralization-configurations-used-mcp-client.txt" target="_blank">ES2506-e3c78a2a</a>|Improper Neutralization of Configurations Used for MCP Client|
+|[159](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/159)||2025-06-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2506-494d8be8-new-real-origin-ip-exposure-via-uncontrolled-external-requests-file-rendering.txt" target="_blank">ES2506-494d8be8</a>|Real Origin IP Exposure via Uncontrolled External Requests in File Rendering - Canary Token|
 
 
 
 ## Phase 3: Init-Review
 
-**Total Submissions: 18 (0 not in CDR)**
+**Total Submissions: 22 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
-|[65](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/65)|mbiesiad|2023-02-17|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-f091f80c-Improper-implemented-email-address-contact-or-weblinks-support.txt" target="_blank">ES2302-f091f80c</a>|Improper implemented email address contact or weblinks support unintended results|
-||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
-|||||SUB.UNCLEAR, SUB.RELREFS|
 |[63](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/63)|royb-legit|2023-03-12|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-d5662b53-sensitive-info-in-continuous-integration-and-deployment-code.txt" target="_blank">ES2303-d5662b53</a>|Inclusion of Sensitive Information in Continuous Integration and Deployment Code|
+||||| activeIssues=0 missing-comments=0 missing-responses=0|
+|[54](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/54)|mbiesiad|2023-04-07|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2304-8ca1e9ea-using-company-org-logo-or-connected-redundancy.txt" target="_blank">ES2304-8ca1e9ea</a>|Using company/org logo or connected with them items in redundancy situations|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[53](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/53)|mbiesiad|2023-04-11|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2304-8f266ca4-unintended-operation-of-application-threat-to-user.txt" target="_blank">ES2304-8f266ca4</a>|Unintended operation of the application results in a threat to the user|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
-|[47](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/47)|mbiesiad|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-99afdcfa-improper-input-validation-for-presented-social-media-links.txt" target="_blank">ES2308-99afdcfa</a>|Improper input validation for presented social media links|
-||||| activeIssues=1 missing-comments=0 missing-responses=**1**|
-|||||SUB.RELREFS|
+|[52](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/52)|mbiesiad|2023-04-12|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2304-1f8e1526-error-404-on-external-pages-or-org-ATO.txt" target="_blank">ES2304-1f8e1526</a>|Error 404 on external pages - or just possibility to org/company ATO|
+||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[42](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/42)|dtlam01|2023-11-14|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2311-a3418361-PWE-3-multiple-ways-to-search-for-start-or-end-of-data-structure-object-leading-to-confusion.txt" target="_blank">ES2311-a3418361</a>|PWE-3: Multiple ways to search for start or end of data structure object leading to confusion|
 ||||| activeIssues=3 missing-comments=0 missing-responses=**3**|
 |||||SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELS|
 |[46](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/46)|dtlam01|2023-11-14|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2311-7fcf708c-PWE-4-mishandling-of-duplicate-data-structure-object.txt" target="_blank">ES2311-7fcf708c</a>|PWE-4: Mishandling of duplicate data structure object|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[40](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/40)|dtlam01|2023-11-14|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2311-b36b0f47-PWE-7-mismatch-of-objects-fetched-interpretation.txt" target="_blank">ES2311-b36b0f47</a>|PWE-7: Mismatch of object's fetched interpretation|
-||||| activeIssues=0 missing-comments=0 missing-responses=0|
-|[110](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/110)||2024-04-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2404-8ed7a9c0-new-incorrect-use-string-methods-that-use-regular-expressions.txt" target="_blank">ES2404-8ed7a9c0</a>|Incorrect use of String methods that use regular expressions|
-||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
-|||||SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ABS.MULTWEAK, SUB.UNCLEAR, SUB.RELS|
+||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
+|||||SUB.ABS.LOWLEVEL, SUB.ACTCHANGE|
 |[116](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/116)|mbiesiad|2024-07-04|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2407-4edbed28-new-misconfigurations-and-csrf-can-leads-to-dos-ddos.txt" target="_blank">ES2407-4edbed28</a>|Misconfigurations and CSRF can leads to DoS/DDoS|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[118](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/118)|Apple502j|2024-07-12|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2407-df1fd8d8-new-improper-conservation-total-amount-resources.txt" target="_blank">ES2407-df1fd8d8</a>|Improper Conservation of Total Amount of Resources|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[126](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/126)|0tax00|2024-08-09|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2408-aaa6513c-mod-CWE-639-IDOR-BOLA.txt" target="_blank">ES2408-aaa6513c</a>|Modify CWE-639 alt terms for IDOR and BOLA|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
-|[128](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/128)|Ruegg|2024-08-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2408-db30bcbe-new-false-interaction-feedback-improper-sequence-feedback-user-interfaces.txt" target="_blank">ES2408-db30bcbe</a>|False Interaction Feedback (FIF): Improper Sequence of Feedback in User Interfaces|
-||||| activeIssues=3 missing-comments=0 missing-responses=**3**|
-|||||SUB.ATTACK, SUB.UNCLEAR, SUB.RELS|
 |[127](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/127)||2024-08-26|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2408-be447fc9-new-sensitive-cookie-with-improper-domain-attribute.txt" target="_blank">ES2408-be447fc9</a>|Sensitive Cookie with Improper Domain Attribute|
 ||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
 |||||SUB.RELS, SUB.RELREFS|
@@ -72,17 +63,30 @@
 |[136](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/136)|piyushroshan|2025-01-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2501-ca11dc77-new-stale-or-unused-endpoint.txt" target="_blank">ES2501-ca11dc77</a>|Stale or Unused Endpoint|
 ||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
 |||||SUB.OVERLAP, SUB.ACTCHANGE|
+|[146](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/146)|ctflearner|2025-02-23|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-7dceb2f2-mod-CWE-306-add-demox.txt" target="_blank">ES2502-7dceb2f2</a>|Add demonstrative example to CWE-306|
+||||| activeIssues=0 missing-comments=0 missing-responses=0|
+|[145](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/145)|ctflearner|2025-02-23|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-7a37fb47-mod-CWE-863-add-demox.txt" target="_blank">ES2502-7a37fb47</a>|Add demonstrative example to CWE-863|
+||||| activeIssues=0 missing-comments=0 missing-responses=0|
+|[141](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/141)|ctflearner|2025-02-24|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-bab1a339-mod-CWE-862-add-demox.txt" target="_blank">ES2502-bab1a339</a>|Add demonstrative example to CWE-862|
+||||| activeIssues=0 missing-comments=0 missing-responses=0|
+|[142](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/142)|ctflearner|2025-02-28|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-159200de-mod-CWE-112-new-demox.txt" target="_blank">ES2502-159200de</a>|CWE-112 modification new demonstrative example|
+||||| activeIssues=0 missing-comments=0 missing-responses=0|
+|[147](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/147)|ctflearner|2025-02-28|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-5becff07-mod-CWE-117-new-demox.txt" target="_blank">ES2502-5becff07</a>|CWE-117 modification new demonstrative example|
+||||| activeIssues=0 missing-comments=0 missing-responses=0|
 |[150](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/150)|Bhodikorn|2025-03-05|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2503-a0f69c3b-new-inconsistent-email-normalization-leading-to-authentication-bypass.txt" target="_blank">ES2503-a0f69c3b</a>|Inconsistent Email Normalization Leading to Authentication Bypass|
 ||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
 |||||SUB.ATTACK, SUB.RELS, SUB.RELREFS, SUB.OVERLAP|
-|[149](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/149)|cgocast|2025-03-17|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2503-35f2d961-mod-CWE-521-update-mitigation.txt" target="_blank">ES2503-35f2d961</a>|CWE-521 update password expiration in mitigations|
+|[155](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/155)||2025-05-28|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2505-cd0e973a-new-exposure-sensitive-data-via-url-query-parameters.txt" target="_blank">ES2505-cd0e973a</a>|Exposure of sensitive data (username and password) in cleartext via URL query parameters.|
 ||||| activeIssues=0 missing-comments=0 missing-responses=0|
+|[156](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/156)|vibhum-dubey|2025-06-09|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2506-bb6031fd-new-insecure-exposure-third-party-api-keys-client-side-context.txt" target="_blank">ES2506-bb6031fd</a>|Insecure Exposure of Third-Party API Keys in Client-Side Context|
+||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
+|||||SUB.UNCLEAR, SUB.ABS.MULTWEAK, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS|
 
 
 
 ## Phase 4: Init-Consultation
 
-**Total Submissions: 42 (0 not in CDR)**
+**Total Submissions: 46 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -131,8 +135,11 @@
 |[6](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/6)|mbiesiad|2023-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-7bfc4f68-impersonate-org-or-company.txt" target="_blank">ES2302-7bfc4f68</a>|Impersonation of organisation or company|
 ||||| activeIssues=3 missing-comments=0 missing-responses=0|
 |||||SUB.UNCLEAR, SUB.RELS, SUB.GRAMMAR|
-|[64](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/64)|mbiesiad|2023-02-17|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-0697c4d4-improper-site-protection-email-aliases.txt" target="_blank">ES2302-0697c4d4</a>|Improper site protection against using email aliases can provide to ATO and account issues|
-||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
+|[65](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/65)|mbiesiad|2023-02-17|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-f091f80c-Improper-implemented-email-address-contact-or-weblinks-support.txt" target="_blank">ES2302-f091f80c</a>|Improper implemented email address contact or weblinks support unintended results|
+||||| activeIssues=3 missing-comments=0 missing-responses=**3**|
+|||||SUB.UNCLEAR, SCOPE.ADMINERR, SUB.RELREFS|
+|[64](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/64)|mbiesiad|2023-02-17|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-0697c4d4-improper-site-protection-email-aliases.txt" target="_blank">ES2302-0697c4d4</a>|Silent Email Alias Normalization Leading to Misdelivery and Account Takeover|
+||||| activeIssues=5 missing-comments=0 missing-responses=0|
 |||||SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.OVERLAP, SUB.ACTION|
 |[1](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/1)|mbiesiad|2023-02-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2302-4c1c9d02-not-logged-out-from-other-tabs.txt" target="_blank">ES2302-4c1c9d02</a>|Not logged out from other tabs during logging out in current tab|
 ||||| activeIssues=2 missing-comments=0 missing-responses=0|
@@ -144,7 +151,7 @@
 ||||| activeIssues=3 missing-comments=0 missing-responses=0|
 |||||SUB.OVERLAP, SUB.ACTCHANGE, SUB.ABS.SUBTREE|
 |[56](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/56)|mbiesiad|2023-03-30|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-4597beed-dependency-on-vulnerable-third-party-service.txt" target="_blank">ES2303-4597beed</a>|Dependency on Vulnerable Third-Party service|
-||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
+||||| activeIssues=2 missing-comments=0 missing-responses=0|
 |||||SUB.OVERLAP, SUB.ACTCHANGE|
 |[55](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/55)|mbiesiad|2023-03-31|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2303-af57ba9e-insufficient-protection-of-2fa-sms-code.txt" target="_blank">ES2303-af57ba9e</a>|Insufficient protection of 2FA SMS Code|
 ||||| activeIssues=3 missing-comments=0 missing-responses=**3**|
@@ -156,7 +163,7 @@
 ||||| activeIssues=6 missing-comments=0 missing-responses=**6**|
 |||||SUB.COORD, SUB.NEWTECH, SUB.ATTACK, SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.ACTION|
 |[50](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/50)|mbiesiad|2023-07-07|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2307-82d9ede2-improper-or-lack-of-checking-leaked-credentials.txt" target="_blank">ES2307-82d9ede2</a>|Improper or lack of checking leaked credentials|
-||||| activeIssues=3 missing-comments=0 missing-responses=**3**|
+||||| activeIssues=3 missing-comments=0 missing-responses=0|
 |||||SUB.MITIGATION, SUB.RELREFS, SUB.ACTCHANGE|
 |[51](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/51)|mbiesiad|2023-07-07|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2307-f1508064-lack-of-link-preview-for-qr-code-scan-open-redirection.txt" target="_blank">ES2307-f1508064</a>|Lack of link preview for QR code scan can leads to type of Open Redirection|
 ||||| activeIssues=4 missing-comments=0 missing-responses=0|
@@ -170,8 +177,11 @@
 |[62](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/62)|mbiesiad|2023-07-31|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2307-3ffe7565-unverified-email-change.txt" target="_blank">ES2307-3ffe7565</a>|Unverified Email Change|
 ||||| activeIssues=2 missing-comments=0 missing-responses=0|
 |||||SUB.OVERLAP, SUB.ACTION|
+|[47](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/47)|mbiesiad|2023-08-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2308-99afdcfa-improper-input-validation-for-presented-social-media-links.txt" target="_blank">ES2308-99afdcfa</a>|Improper input validation for presented social media links|
+||||| activeIssues=3 missing-comments=0 missing-responses=**3**|
+|||||SUB.ABS.LOWLEVEL, SUB.OVERLAP, SUB.RELREFS|
 |[45](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/45)|dtlam01|2023-11-14|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2311-4f94c251-PWE-1-retrieving-circular-data-structure-object-to-exhaustion.txt" target="_blank">ES2311-4f94c251</a>|PWE-1: Retrieving circular data structure object to exhaustion|
-||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
+||||| activeIssues=2 missing-comments=0 missing-responses=0|
 |||||SUB.OVERLAP, SUB.ABS.LOWLEVEL|
 |[43](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/43)|dtlam01|2023-11-14|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2311-1e95d2e1-PWE-2-non-deterministic-boundary-around-data-structure-object-definition.txt" target="_blank">ES2311-1e95d2e1</a>|PWE-2: Non-deterministic boundary around data structure object definition|
 ||||| activeIssues=1 missing-comments=0 missing-responses=**1**|
@@ -191,6 +201,9 @@
 |[107](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/107)|kushhh01|2024-04-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2404-44282f83-new-weak-authorization-mechanism.txt" target="_blank">ES2404-44282f83</a>|Weak Authorization Mechanism|
 ||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
 |||||SUB.UNCLEAR, SUB.OVERLAP, SUB.ABS.MULTWEAK, SUB.ATTACK, SUB.ACTCHANGE|
+|[110](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/110)||2024-04-29|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2404-8ed7a9c0-new-incorrect-use-string-methods-that-use-regular-expressions.txt" target="_blank">ES2404-8ed7a9c0</a>|Incorrect use of String methods that use regular expressions|
+||||| activeIssues=4 missing-comments=0 missing-responses=**4**|
+|||||SUB.UNCLEAR, SUB.OVERLAP, SUB.RELS, SUB.ABS.SUBTREE|
 |[109](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/109)|stevechristeycoley|2024-05-09|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2405-84711fc4-new-insufficient-input-validation-generative-ai-applications.txt" target="_blank">ES2405-84711fc4</a>|Insufficient Input Validation in Generative AI Applications|
 ||||| activeIssues=5 missing-comments=0 missing-responses=**5**|
 |||||SUB.UNCLEAR, SUB.MITIGATION, SUB.OVERLAP, SUB.COORD, SUB.NEWTECH|
@@ -203,8 +216,11 @@
 |[121](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/121)|mohamadpishdar|2024-08-16|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2408-99bb84b4-new-newsletter-or-verification-email-data-reflection.txt" target="_blank">ES2408-99bb84b4</a>|NewsLetter or Verification Email Data reflection|
 ||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
 |||||SUB.UNCLEAR, SUB.RELREFS|
+|[128](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/128)|Ruegg|2024-08-20|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2408-db30bcbe-new-false-interaction-feedback-improper-sequence-feedback-user-interfaces.txt" target="_blank">ES2408-db30bcbe</a>|False Interaction Feedback (FIF): Improper Sequence of Feedback in User Interfaces|
+||||| activeIssues=3 missing-comments=0 missing-responses=**3**|
+|||||SUB.ATTACK, SUB.UNCLEAR, SUB.RELS|
 |[129](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/129)|hksdpc255|2024-09-12|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2409-3a032263-new-insufficient-neutralization-user-uploaded-files-cloud-based-platforms.txt" target="_blank">ES2409-3a032263</a>|Insufficient Neutralization of User-uploaded Files in Cloud-based Platforms|
-||||| activeIssues=2 missing-comments=0 missing-responses=**2**|
+||||| activeIssues=2 missing-comments=0 missing-responses=0|
 |||||SUB.UNCLEAR, SUB.RELREFS|
 |[143](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/143)|ctflearner|2025-02-23|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-89467c6b-mod-CWE-77-add-demox.txt" target="_blank">ES2502-89467c6b</a>|Add demox to CWE-77|
 ||||| activeIssues=1 missing-comments=0 missing-responses=**1**|
@@ -222,7 +238,7 @@
 
 ## Phase 6: Init-Accepted
 
-**Total Submissions: 10 (0 not in CDR)**
+**Total Submissions: 11 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
@@ -236,37 +252,42 @@
 |[122](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/122)|sauvainr|2024-09-02|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2409-11b3559c-mod-CWE-300-add-DAST.txt" target="_blank">ES2409-11b3559c</a>|CWE-300 mod - add DAST detection method|
 |[139](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/139)|ctflearner|2025-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-df916af6-mod-CWE-22-new-demox.txt" target="_blank">ES2502-df916af6</a>|CWE-22 new demox|
 |[144](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/144)|ctflearner|2025-02-28|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-23de6290-mod-CWE-1284-new-demox.txt" target="_blank">ES2502-23de6290</a>|CWE-1284 modification new demonstrative example|
+|[149](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/149)|cgocast|2025-03-17|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2503-35f2d961-mod-CWE-521-update-mitigation.txt" target="_blank">ES2503-35f2d961</a>|CWE-521 update password expiration in mitigations|
 
 
 
 ## Phase 7: Det-Requested
 
-**Total Submissions: 5 (0 not in CDR)**
+**Total Submissions: 2 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
 |[23](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/23)|kurtseifried|2022-06-22|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2206-33c5627d-bad-account-creation-logic.txt" target="_blank">ES2206-33c5627d</a>|Account management with insufficient verification of owner's external identifier(s)|
 |[19](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/19)|jharv1|2022-07-05|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2207-a33a7b76-inheritance-when-overriding-superclass.txt" target="_blank">ES2207-a33a7b76</a>|Improper use of inheritance when overriding methods of an uncontrolled superclass|
+
+
+
+## Phase 8: Det-Received
+
+**Total Submissions: 4 (0 not in CDR)**
+
+| CDR | Submitter | Sub Date | Sub ID | Name 
+| --- | --- | --- | --- | --- |
+|[27](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/27)|bugxploitoff|2022-01-07|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2201-3666f29c-Misconfigured-DNS-Policies.txt" target="_blank">ES2201-3666f29c</a>|Misconfigured DNS Policies|
 |[114](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/114)|lilyjw|2024-06-28|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2406-9e5fcf10-new-llm-bad-practices-improper-tuning-model-control-parameters.txt" target="_blank">ES2406-9e5fcf10</a>|Insecure Setting of Generative AI/ML Model Inference Parameters|
 |[137](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/137)|ctflearner|2025-01-28|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2501-8daa7a2d-mod-CWE-798.txt" target="_blank">ES2501-8daa7a2d</a>|CWE-798 new PHP demonstrative example|
 |[138](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/138)|ctflearner|2025-02-08|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2502-c889f75d-mod-CWE-918-new-demox.txt" target="_blank">ES2502-c889f75d</a>|CWE-918 new demonstrative example|
 
 
 
-## Phase 8: Det-Received
+## Phase 9: Det-Review
 
-**Total Submissions: 2 (0 not in CDR)**
+**Total Submissions: 1 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
-|[27](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/27)|bugxploitoff|2022-01-07|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2201-3666f29c-Misconfigured-DNS-Policies.txt" target="_blank">ES2201-3666f29c</a>|Misconfigured DNS Policies|
 |[13](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/13)|frestucc|2022-08-25|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2208-9fb81a1a-speculative-propagation-before-data-validation-bus-HCWE111.txt" target="_blank">ES2208-9fb81a1a</a>|Improper Request Propagation before Data Reception in Write Transactions in a Bus Architecture|
 
-
-
-## Phase 9: Det-Review
-
-**Total Submissions: 0 (0 not in CDR)**
 
 
 ## Phase 10: Det-Consultation
@@ -286,11 +307,12 @@
 
 ## Phase 12: Internal-Update
 
-**Total Submissions: 1 (0 not in CDR)**
+**Total Submissions: 2 (0 not in CDR)**
 
 | CDR | Submitter | Sub Date | Sub ID | Name 
 | --- | --- | --- | --- | --- |
 |[39](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/39)|mbiesiad|2023-11-25|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2311-17601269-CWE-601-url-redirection-to-untrusted-site-open-redirect.txt" target="_blank">ES2311-17601269</a>|CWE-601: URL Redirection to Untrusted Site ('Open Redirect')|
+|[157](https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/issues/157)|zhzh2001|2025-06-16|<a href="https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2506-72a4ebd1-mod-CWE-190-new-obex.txt" target="_blank">ES2506-72a4ebd1</a>|Remove CVE-2022-21668 from Obex CWE-190|
 
 
 
