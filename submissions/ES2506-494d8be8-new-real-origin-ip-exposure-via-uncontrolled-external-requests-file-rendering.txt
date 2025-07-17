@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2506-494d8be8
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -102,7 +102,7 @@ Received: 2025-06-20
 
 Ack-Receipt: 2025-06-25
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2025-07-17
 
 Init-Consultation: YYYY-MM-DD
 
@@ -139,3 +139,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2025-06-25 sent email
+2025-07-17 sent email
