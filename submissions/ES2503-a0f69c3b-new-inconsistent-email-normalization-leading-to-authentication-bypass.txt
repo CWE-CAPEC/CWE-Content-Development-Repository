@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2503-a0f69c3b
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-03-05 13:08:37
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ATTACK, SUB.RELS, SUB.RELREFS, SUB.OVERLAP
 
 PUBTRACKER: #150
 
@@ -92,6 +92,7 @@ RELATED WEAKNESSES:
 
    ChildOf CWE-20
    ChildOf CWE-159
+   Other ES2302-0697c4d4
 
 REFERENCES:
 
@@ -101,7 +102,109 @@ URL: https://github.com/Bhodikorn/email-plus-addressing
 
 ACTIVE ISSUES:
 
+SUB.ATTACK - "Too attack-focused"
 
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: The current submission is too attack focused because it focuses on the technical
+impact which is "authentication bypass" and also explains a proof of concept attack.  In order
+to make the submission more general, it should focus on the weakness that is occurring, which is
+that the incoming email address is not being properly normalized. There are other technical impacts
+that could arise from improper normalization, so if the submission is changed to focus more on the 
+email address normalization it will encompass more scenarios.  Please indicate if you agree with 
+focusing solely on improper normalization and consider suggesting an alternate description that 
+aligns with this suggestion.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The currently suggested relationships do not seem to be the
+best fit for if the submission focuses solely on improper
+normalization.  The CWE team suggests the following relationships for
+consideration.  It seems like CWE-706: "Use of Incorrectly-Resolved
+Name or Reference" would be the best fit for a parent.  The act of
+improper normalization is very similar to CWE-41: "Improper Resolution
+of Path Equivalence", so it would make sense for them to both have the
+same parent.  CWE-289: "Authentication Bypass by Alternate Name" could
+be considered as a "CanFollow" relationship which would capture the
+attack scenario currently described by the submission.  CWE-180:
+"Incorrect Behavior Order: Validate Before Canonicalize" appears to be
+the only CWE entry that discusses canonlicalization (or normalization)
+although it doesn't fit exactly to the more general improper
+normalization.  Please indicate if you agree with creating a child CWE
+entry under CWE-706: "Use of Incorrectly-Resolved Name or Reference"
+for something like "Improper Normalization of Name or Reference"
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The current reference is the same text as the submission
+description, but also adds a specific proof of concept for a current
+product.  Because the reference shows a specific proof of concept, it
+would be more fitting for a CVE entry.  For this CWE entry, we should
+find references that describe how to properly normalize things such as
+URLs, email addresses, or path names.  Please indicate if you agree
+with this assessment and provide other references, if you know of any.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This submission is similar to the one proposed in
+ES2302-0697c4d4 (CDR #64).  Therefore, the CWE team will treat both
+submissions at the same time, possibly combining them if
+appropriate. Note that both submitters would receive credit.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -115,7 +218,7 @@ Ack-Receipt: 2025-04-01
 
 Init-Review: 2025-04-08
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-07-17
 
 Init-Declined: YYYY-MM-DD
 
@@ -151,3 +254,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-04-01 sent email
 2025-04-08 sent email
+2025-07-17 sent email
