@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2311-a3418361
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-11-14 23:38:10
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELS
 
 PUBTRACKER: #42
 
@@ -26,7 +26,7 @@ NAME: PWE-3: Multiple ways to search for start or end of data structure object l
 
 DESCRIPTION:
 
-File formats specification often have identifying u2018magicu2019 markers
+File formats specification often have identifying "magic" markers
 to identify the file format or the start and end of the format. Polygot
 files exist whenever different file formats can co-exist in the same file.
 Depending on the parser, each will parse the start location differently for
@@ -53,6 +53,87 @@ URL: https://ieeexplore.ieee.org/document/10305625
 ACTIVE ISSUES:
 
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: As written, the description doesn't clearly define what the weakness is
+for the given submission.  The description describes how for polygot files, it could
+be unclear where entrypoints are for particular data structures.  It is still unclear
+if the weakness is in the data format or in the parser, because the description does not
+specifically say what mistake the parsers are making.  There are indications that multiple
+weaknesses may be involved; for example, if the parser is "confusing error handling"
+then there are CWEs for that; if there's an "unclear specification" then there
+may be a CWE for that. It is not clear what mistakes contribute to
+a "badly defined search function". Finally, what mistakes might cause the parser to
+be "overly lenient" ? Please provide additional language that specifically describes the
+weakness.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: The submission appears to focus on polygot files, which could
+potentially be too low level to warrant an entire CWE entry.  Since the 
+actual weakness is unclear, it's still uncertain if the weakness applies to
+a broader set of technologies or file types.  Similarly to other PWE submissions,
+we would like to apply the weaknesses to a broader set of technologies than just
+parsers if possible.  When providing an updated description, please also keep in mind
+how the language could fit to broader applicable cases.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The current submitted relationships do not seem to apply.  Firstly,
+CWE-427: "Uncontrolled Search Path Element" is unrelated because it is discussing
+the access of resources within a file system, not searching through individual files.
+CWE-125: "Out-of-bounds Read" also does not seem to apply based on the current understanding
+of the submission, although further clarification of the weakness may identify that this relationship
+could be applicable as a "CanPrecede" relationship - that is, this parser weakness(es)
+could lead to an out-of-bounds read.  Once the weakness becomes more clear it will
+be easier to identify potential relationships within the CWE tree.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
 
 RESOLVED ISSUES:
 
@@ -66,7 +147,7 @@ Ack-Receipt: 2023-12-28
 
 Init-Review: 2025-04-08
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-07-17
 
 Init-Declined: YYYY-MM-DD
 
@@ -102,3 +183,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2023-12-28 sent email
 2025-04-08 sent email
+2025-07-17 sent email
