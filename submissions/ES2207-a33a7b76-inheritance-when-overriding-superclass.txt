@@ -630,11 +630,19 @@ Det-Requested: 2024-10-02
 
 Det-Received: YYYY-MM-DD
 
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
 Internal-Update: YYYY-MM-DD
 
 Final-Coord: YYYY-MM-DD
 
 CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
 
 CWE-Published: YYYY-MM-DD
 

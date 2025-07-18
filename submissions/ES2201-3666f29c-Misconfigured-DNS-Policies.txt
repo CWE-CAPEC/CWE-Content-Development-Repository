@@ -161,6 +161,8 @@ Final-Coord: YYYY-MM-DD
 
 CWE-Assigned: YYYY-MM-DD
 
+CWE-Modified: YYYY-MM-DD
+
 CWE-Published: YYYY-MM-DD
 
 Post-Publication: YYYY-MM-DD
