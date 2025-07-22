@@ -151,6 +151,54 @@ Underscores the critical importance of scrutinizing third-party service integrat
 Please let me know if these references are sufficient for you, or if I
 should provide more specific ones.
 
+== Response 2 (May 27, 2025) ==
+
+PS.
+
+Suggested References for CWE-1395 modification (focused on vulnerable third-party services)
+"1 bug, $50,000+ in bounties, how Zendesk intentionally left a backdoor in hundreds of Fortune 500 companies"
+URL: https://gist.github.com/hackermondev/68ec8ed145fcee49d2f5e2b9d2cf2e52
+
+== Response 3 (July 6, 2025) ==
+
+PPS.
+Author (me) saw many cases described above, quick example:
+
+[IMAGE: https://private-user-images.githubusercontent.com/18367606/462950921-fcbebbd5-e24d-4dd5-963a-03c81acaae3b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMyMDE5NTMsIm5iZiI6MTc1MzIwMTY1MywicGF0aCI6Ii8xODM2NzYwNi80NjI5NTA5MjEtZmNiZWJiZDUtZTI0ZC00ZGQ1LTk2M2EtMDNjODFhY2FhZTNiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIyVDE2MjczM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJjMGIwMjc2ZWI4NmZmOTYzMzhiNGNlY2JkNTI5ZjU0OGFkZmU2OThkOWFiZTk1ODQ2NWZlNTIxNDdhMzAzYjEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.fjow63IVPJSlnxvpc5nOwQzA-F7zShe4A8R1pZTgA9E ]
+
+Quick use of Google Translate (Polish - English), answer was similar
+like: "You can probably direct this finding to ORG2-EXTERNAL-SERVICE,
+in our case it is definitely out-of-scope, the link could as well look
+like this: [... other openRedirect example thanks to my POC - just
+changed]"
+
+As it may actually be OOS / unimportant for ORG, it does not release
+from responsibility - they were informed, here the reporter shows the
+importance for ORG which has VDP - it is / may be the target of
+attacks, and allows to inform (fixing the security issues), in
+response - ignored the indicated attack vector (which was finally
+fixed by 'used external service', btw)
+
+== Response 4 (July 6, 2025) ==
+
+PPPS.
+
+A security issue or weakness is to continue using 'Vulnerable
+Third-Party service' despite informing the ORG about security issue -
+no changes, fixes, remediation, etc.
+
+The client / user etc. is not interested in the name EXTERNAL-SERVICE,
+if user is a client / user (called: 'target') of the aforementioned
+ORG - which officially uses 'Vulnerable Third-Party service'.
+
+Moreover, employees (called: ORG) who are familiar with usage of
+EXTERNAL-SERVICE are more at risk...
+
+// Why the CWE? It is about the invalid PRODUCT (software) approach (of the ORG).
+// Can be fixed, can be changed, can be fine. But usually it is different.
+
+-- without guidelines, they won't know that they need to improve
+   something.
 
 ----------
 
@@ -227,3 +275,5 @@ COMMUNICATIONS LOG:
 2024-01-05 sent email
 2024-07-05 sent email
 2025-02-19 sent email
+2025-05-27 received comment
+2025-07-06 received comment
