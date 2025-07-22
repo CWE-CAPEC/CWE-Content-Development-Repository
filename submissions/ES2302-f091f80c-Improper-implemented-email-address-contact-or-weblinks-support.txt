@@ -34,18 +34,30 @@ this source is for visitor/user trust, authorized). Depends on focus part -
 incorrect email addresses are a threat, as well as incorrect given website
 links. Examples: example@example.com vs exampe@example.com, or
 example@example.co and so on. For sites also many cases, the same with
-added comapny's social links - when added incorrect, bad actor can easy
+added company's social links - when added incorrect, bad actor can easy
 attack (ie. if given nonexistent (typo for example) social media account -
 bad actor can create with this name).
 
 RELATED WEAKNESSES:
 
    Other CWE-451
+   Other ES2304-1f8e1526
 
 REFERENCES:
 
 Title: Content Spoofing
 URL: https://owasp.org/www-community/attacks/Content_Spoofing
+
+Title: Social media account hijacking — VDP
+URL: https://medium.com/@embossdotar/social-media-account-hijacking-vdp-fa674b25af44?sk=8ca4ce685a32ec0c1930aa6955a0f4fa
+
+Title: Facebook Username Takeover via Broken Link in Footer
+URL: https://hackerone.com/reports/3119034
+
+Title: Domain Takeover [3737signals.com]
+URL: https://hackerone.com/reports/1253926
+
+
 
 ACTIVE ISSUES:
 
@@ -69,7 +81,29 @@ this review, we assume that you mean something like "user or admin has
 entered or recorded an incorrect email address into the product."
 Please let us know if we are understanding correctly.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Thank you for pointing this out. To clarify: the core
+weakness is when software does not validate or verify user- or
+admin-supplied contact information (e.g., email addresses, social
+media handles, website URLs) that are presented in a trusted context
+(e.g., company profile page, team member bio, footer, or "Contact Us"
+section).
+
+This leads to multiple exploitable outcomes:
+
+- If an incorrect email address is shown due to a typo or unverified
+  field (e.g., contact@orgaization.com instead of
+  contact@organization.com), an attacker can register the incorrect
+  domain and hijack communication intended for the legitimate party.
+
+- If a nonexistent social media account is referenced (due to typo or
+  misentry), an attacker can register it and impersonate the entity.
+
+If a website link is entered incorrectly, it can redirect users to
+malicious content or lead to domain squatting/takeover.  These
+weaknesses exist because the product lacks validation/verification of
+displayed external-facing identity links, and users place trust in
+this content being accurate and vetted. This results in a security
+risk that is rooted in software design, not merely human error.
 
 ----------
 
@@ -90,8 +124,23 @@ in CWE, which focuses only on weaknesses in software itself. Please
 let us know if you agree or if there are other perspectives to
 consider.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I respectfully disagree with the classification of this as a
+pure admin/user error. While the incorrect data may be entered by a
+user or admin, the underlying weakness lies in the software's failure
+to verify or validate that information before displaying it as trusted
+output.
 
+Software that displays externally facing contact data (e.g., emails,
+URLs, social handles) without confirming that the values are:
+
+- properly formatted,
+- correctly associated with the entity,
+- not susceptible to takeover,
+
+is exposing users to security risks. This is similar in principle to
+CWE-1288 (Improper Validation of Consistency within Input), but more
+specific to trust-inducing identity fields. Therefore, I believe the
+issue qualifies as a design-level weakness, not just a user error.
 
 ----------
 
@@ -111,8 +160,36 @@ focuses more on the actual content injection. This doesn't appear to align
 with the proposed submission. Please provide specific reference(s) to highlight
 the issue being presented. 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Thank you for this feedback. Below are specific, relevant
+references where incorrect or unverified user-facing contact data led
+to security consequences:
 
+Social media account hijacking — VDP:
+https://medium.com/@embossdotar/social-media-account-hijacking-vdp-fa674b25af44?sk=8ca4ce685a32ec0c1930aa6955a0f4fa
+
+Facebook Username Takeover via Broken Link in Footer:
+https://hackerone.com/reports/3119034
+
+Domain Takeover [3737signals.com]
+https://hackerone.com/reports/1253926
+
+These references demonstrate that when trusted identity information
+(emails, social handles, websites) is not validated, attackers can
+exploit the inconsistency to redirect, impersonate, or hijack
+communications.
+
+In simple terms, the problem is this: the product provides incorrect
+data that can be harmful to the user.
+
+While human error is always a factor, the focus here is that the
+software or product itself is responsible for directing the user (or
+victim) to malicious or phishing websites—despite being a trusted and
+official source. The application is not compromised, yet it displays
+or links to incorrect external resources. This creates a false sense
+of security and enables attackers to carry out various forms of abuse,
+especially those targeting the takeover of external accounts (e.g.,
+hijacking unclaimed social media handles, spoofing domains, or
+impersonating contact emails).
 
 ----------
 
@@ -164,3 +241,4 @@ COMMUNICATIONS LOG:
 2023-02-23 sent email
 2025-02-11 sent email
 2025-06-24 sent email
+2025-06-25 received comment
