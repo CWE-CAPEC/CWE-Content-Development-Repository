@@ -45,8 +45,21 @@ RELATED WEAKNESSES:
 
 REFERENCES:
 
-Title: CWE-20: Improper Input Validation
-URL: https://cwe.mitre.org/data/definitions/20.html
+Title: Clickjacking with social links - users Profile
+URL: https://github.com/freeCodeCamp/freeCodeCamp/security/advisories/GHSA-6c37-r62q-7xf4
+
+
+Title: Seeing is (Not) Believing: Practical Phishing Attacks Targeting Social Media Sharing Cards
+URL: https://arxiv.org/abs/2405.10758
+
+Title: Improper input validation
+URL: https://en.wikipedia.org/wiki/Improper_input_validation
+
+Title: OWASP Input Validation Cheat Sheet emphasizing domain and format checks for URL inputs
+URL: https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Input_Validation_Cheat_Sheet.md
+
+Title: Clickjacking UI redressing with social media icons in hackclub/scrapbook
+URL: https://huntr.com/bounties/92812416-8a60-4e75-afd5-29da9dbbb9a3
 
 
 ACTIVE ISSUES:
@@ -74,7 +87,14 @@ CWE-1288: Improper Validation of Consistency within Input, instead of
 a new weakness. (CWE-1288 is a child of CWE-20).  Please let us know
 if you agree or disagree with this assessment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree with this assessment. The reported issue of improper
+input validation for social media links is indeed a concrete instance
+of a broader class of weaknesses, specifically CWE‑1288: Improper
+Validation of Consistency within Input (a child of CWE‑20). My
+submission currently serves as an illustrative example of CWE‑1288
+rather than necessitating a standalone CWE entry. I support modifying
+CWE‑1288 to include validation of user-provided profile links
+(e.g. Twitter, GitHub) as an explicit example.
 
 
 ----------
@@ -95,7 +115,15 @@ This submission emphasizes validation for other user-related
 fields. As a result, these two submissions might be combined into a
 single CWE, or used as examples in the same CWE.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I acknowledge the potential overlap with ES2302‑f091f80c
+(CDR #65), which also addresses validation of user-input‑derived URLs
+or similar fields. While both concern validation of user-supplied
+links, our focus is specifically on consistency validation tied to the
+UI metadata (e.g. social media icons, expected domains). I recommend
+either merging the submissions under CWE‑1288 with multiple
+illustrative examples, or linking both as enhancements of an existing
+entry. I am open to whichever path the CWE team prefers to resolve the
+redundancy.
 
 
 ----------
@@ -114,7 +142,42 @@ may decide to make an exception.
 Comments: Please provide actual references the real-world examples of this
 issue and a reference highlighting the issue in more details.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:
+
+I’ve identified several relevant real‑world references illustrating
+the risk of improper validation of social media profile links:
+
+A GitHub security advisory (GHSA-6c37-r62q-7xf4) regarding
+freeCodeCamp’s handling of user-provided URL fields without sufficient
+validation. In one case, a profile link expected to be
+github.com/username allowed arbitrary redirect or external URLs.
+
+GHSA-6c37-r62q-7xf4
+(many other - but private type reports; fixed - valid for org / product / users / customers)
+
+Research paper “Seeing is (Not) Believing: Practical Phishing Attacks
+Targeting Social Media Sharing Cards” (May 2024), which demonstrates
+how misleading link previews in social media can be used in phishing
+campaigns by altering metadata tied to social icons
+
+https://arxiv.org/abs/2405.10758
+https://en.wikipedia.org/wiki/Improper_input_validation
+https://cwe.mitre.org/data/definitions/20.html
+
+OWASP Input Validation Cheat Sheet emphasizing domain and format checks for URL inputs
+https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Input_Validation_Cheat_Sheet.md
+
+CWE-20 definition clarifying the breadth of input validation concerns,
+including URL validation as a canonical example
+
+Clickjacking UI redressing with social media icons in
+hackclub/scrapbook
+https://huntr.com/bounties/92812416-8a60-4e75-afd5-29da9dbbb9a3
+
+These references demonstrate both the prevalence and severity of
+allowing arbitrary URLs behind social media icons, reinforcing the
+need to enforce stricter validation to maintain UI trust and prevent
+phishing.
 
 
 ----------
