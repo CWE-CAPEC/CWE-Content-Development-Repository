@@ -179,6 +179,37 @@ allowing arbitrary URLs behind social media icons, reinforcing the
 need to enforce stricter validation to maintain UI trust and prevent
 phishing.
 
+Examples of Similar Issues
+
+Bug in node-forge library (CVE-2022-0122). The URL validation regex
+was vulnerable to open redirects – an attacker could manipulate the
+URL to redirect to an unexpected site, for example, when “validating”
+a GitHub or Facebook profile link, allowing for fake redirects.
+https://www.nodejs-security.com/blog/url-regex-validation
+
+Spring Framework – CVE-2024-22243. The framework used
+UriComponentsBuilder to check the host in the URL. The bug allowed for
+open redirect or SSRF – a properly formatted “social media” link could
+redirect the user to an untrusted domain.
+https://spring.io/security/cve-2024-22243
+
+Research: “Seeing is (Not) Believing: Practical Phishing Attacks
+Targeting Social Media Sharing Cards” (May 2024).  This research
+reveals attacks where attackers impersonate social media links/icons,
+manipulating the preview and redirecting to malicious sites, even
+though they appear as legitimate sharing
+links. https://arxiv.org/abs/2405.10758
+
+Summary
+
+This type of issue — social media icons pointing to malicious sites —
+is supported by real-world cases: bugs in popular libraries
+(node-forge, Spring), phishing techniques, and academic research.
+
+It demonstrates that without proper validation, profile links pose a
+real risk both technically (open redirect/SSRF) and through social
+engineering (phishing).
+
 
 ----------
 
@@ -231,3 +262,4 @@ COMMUNICATIONS LOG:
 2024-01-05 sent email
 2025-04-08 sent email
 2025-06-24 sent email
+2025-06-26 received comment
