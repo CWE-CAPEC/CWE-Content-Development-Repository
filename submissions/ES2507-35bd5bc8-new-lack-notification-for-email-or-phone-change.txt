@@ -1,0 +1,98 @@
+SUBMISSION COMMUNICATION ID: ES2507-35bd5bc8
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-07-18 08:18:16
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #160
+
+MTRACKER: #1274
+
+GITHUBUSER: meetinthemiddle-be
+
+SUBMISSION TYPE: Software
+
+NAME: Lack of notification upon malicious e-mail address / phone number change
+
+DESCRIPTION:
+
+An attacker who has compromised a user's authenticated session can
+permanently deny the victim access to the information in their account. Due
+to the e-mail and/or phone number change process not notifying the victim,
+they are then also not triggered to report the apparent breach to the
+system owner. To the end user, next time they attempt to log in, it seems
+as if their account does not exist anymore because their e-mail address
+and/or phone number (one of which will be the primary User ID and either or
+both are necessary for password resets) are no longer present in the
+system. Support staff would already need access to the audit trail to see
+if the victim's claim of account takeover is legitimate.
+
+RELATED WEAKNESSES:
+
+
+REFERENCES:
+
+Title: I came across this waekness during a threat modeling assignment and could not find an existing CWE
+URL: http://
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-07-18
+
+Ack-Receipt: 2025-07-23
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
