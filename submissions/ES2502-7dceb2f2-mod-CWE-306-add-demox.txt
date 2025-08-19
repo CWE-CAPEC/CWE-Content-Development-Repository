@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-7dceb2f2
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-02-23 06:03:28
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #146
 
@@ -70,7 +70,27 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
 
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: Can you clarify what you had intended with "without verifying 
+if the requester has permission to register a new user" in context of
+CWE-306? This example is reasonable, but we will need to add more details. 
+In Stage 2, we will work with you to refine this example to fit with CWE's 
+expected style, such as introductory text and a "good code" example for
+both authentication and authorization to demonstrate the fix. Additionally, 
+the current code would also have to change to highlight the intended use of it 
+as an admin-only functionality. Please provide a response to the question
+and confirm that you acknowledge the comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -84,7 +104,7 @@ Ack-Receipt: 2025-03-12
 
 Init-Review: 2025-05-29
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-08-19
 
 Init-Declined: YYYY-MM-DD
 
@@ -120,3 +140,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-03-12 sent email
 2025-05-29 sent email
+2025-08-19 sent email
