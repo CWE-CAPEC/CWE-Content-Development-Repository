@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2507-35bd5bc8
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-07-18 08:18:16
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE, SUB.RELREFS, SUB.RELS
 
 PUBTRACKER: #160
 
@@ -39,6 +39,9 @@ if the victim's claim of account takeover is legitimate.
 
 RELATED WEAKNESSES:
 
+   Other CWE-620
+   Other ES2307-3ffe7565
+   Other ES2206-33c5627d
 
 REFERENCES:
 
@@ -49,6 +52,108 @@ URL: http://
 ACTIVE ISSUES:
 
 
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This submission has partial overlap with two existing
+submissions.  These submissions are "ES2206-33c5627d - Account
+management with insufficient verification of owner's external
+identifier(s)" (CDR #23) and "ES2307-3ffe7565 - Unverified Email
+Change" (CDR #62).
+
+These submissions both involve weaknesses around personal identifiers (such as emails and phone numbers).
+ES2307-3ffe7565 discusses an application that does not use a form of authentication to verify
+a user before allowing an email change.  This is also related to CWE-620: Unverified Password Change.
+While there is overlap, the submission you provided is focused on there not being a notification
+when a change of a personal identifier happens.  These are not the same weakness but closely related.
+Please note if you agree that there is some overlap between these submissions.  We are noting the
+overlap to track as we move all of these submissions along, but it will not prevent this submission
+from moving forward in the process.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or detailed) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: Although the noted submissions above that have potential overlap
+might fall under CWE-620, if this submission is treated as its own weakness,
+there appears to be a gap in CWE related to lack of notifications.  This has
+also been noted by you in the submission.  As the submission moves further along
+in the process and the overlap between the existing submissions is better understood,
+the CWE team may need to make other changes to account for this potential gap.
+Please indicate if you agree that there is a potential gap in CWE.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The current submission does not indicate any relationships due to
+a perceived gap in CWE.  Because of this gap, it is possible there is no fitting
+relationship at the moment and changes will need to be made to account for this.
+We are also noting CWE-620 as a potential relationship due to it being alligned 
+with the other two related submissions. Please let us know what you
+think.  If you have indicated agreement with SUB.ABS.SUBTREE above,
+then feel free to reference that response.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: Please include references for this submission which describe the
+proposed weakness.  These will be included as supporting material and could also
+provide the CWE team more insight while evaluating this submission. If you agree
+with the references already mentioned in the ES2206-33c5627d and/or ES2307-3ffe7565
+submissions, please let us know which references you believe are applicable.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
 
 RESOLVED ISSUES:
 
@@ -62,7 +167,7 @@ Ack-Receipt: 2025-07-23
 
 Init-Review: 2025-08-11
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-08-19
 
 Init-Declined: YYYY-MM-DD
 
@@ -98,3 +203,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-07-23 sent email
 2025-08-11 sent email
+2025-08-19 sent email
