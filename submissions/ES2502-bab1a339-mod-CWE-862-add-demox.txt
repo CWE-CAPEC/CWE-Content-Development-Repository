@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-bab1a339
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-02-24 12:48:05
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #141
 
@@ -66,7 +66,26 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
 
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: This example is generally reasonable; however, it should be revised 
+to prevent SQL Injection. As written, it may cause confusion with CWE-89: 
+Improper Neutralization of Special Elements used in an SQL Command 
+('SQL Injection'). For guidance, please refer to the existing PHP example 
+provided in CWE-862. In Stage 2, we will work with you to refine this example 
+to fit with CWE's expected style, such as introductory text and a "good code" 
+example to demonstrate the fix. Please confirm that you acknowledge and are 
+willing to adjust the example.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -80,7 +99,7 @@ Ack-Receipt: 2025-03-11
 
 Init-Review: 2025-05-29
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-08-19
 
 Init-Declined: YYYY-MM-DD
 
@@ -116,3 +135,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-03-11 sent email
 2025-05-29 sent email
+2025-08-19 sent email
