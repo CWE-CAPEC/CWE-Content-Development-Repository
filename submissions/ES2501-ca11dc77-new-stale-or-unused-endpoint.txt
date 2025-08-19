@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2501-ca11dc77
 
-ACTION TYPE: New Entry
+ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-01-08 05:52:06
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.RELREFS
 
 PUBTRACKER: #136
 
@@ -47,7 +47,53 @@ URL: https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/
 
 ACTIVE ISSUES:
 
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
 
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or detailed) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: The proposed submission is related to CWE-489: Active Debug
+Code, CWE-1164: Irrelevant Code, CWE-749: Exposed Dangerous Method or
+Function, and other entries, which presents a challenge in determining
+the appropriate placement within the CWE hierarchy. The CWE team will
+need to assess how and under which subtree the submission should be
+placed. It might be appropriate to create a more general entry
+centered around "active but unnecessary code" and include this
+submission as a primary focus. We will work with you to determine the
+best path forward. Please let us know what you think of this proposal.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The OWASP references address issues similar to those raised in 
+this submission. However, they do not specifically cover scenarios where 
+functionality "was never fully removed after development or testing." 
+Please provide additional references that address this particular aspect.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -61,7 +107,7 @@ Ack-Receipt: 2025-01-22
 
 Init-Review: 2025-02-18
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-08-19
 
 Init-Declined: YYYY-MM-DD
 
@@ -97,3 +143,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-01-22 sent email
 2025-02-18 sent email
+2025-08-19 sent email
