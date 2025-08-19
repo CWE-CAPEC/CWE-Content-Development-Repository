@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2505-cd0e973a
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-05-28 23:50:57
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.RELREFS, SUB.ACTION, SUB.MISC
 
 PUBTRACKER: #155
 
@@ -44,6 +44,92 @@ ACTIVE ISSUES:
 
 
 
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This submission seems to heavily overlap with CWE-598.  CWE-598 focuses
+on GET requests using sensitive query strings, with the assumption that 
+POST requests should be using the request body for their info.  It is possible
+that CWE-598 could be adjusted to include all HTTP requests, for all
+methods, in which sensitive query strings are included, and that would encompass the submission.
+CWE-598 is very old and could benefit from more modern recommendations.  Please let us know your thoughts
+about the overlap with CWE-598.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: While the reference provided shows an example of this weakness happening
+in the wild, it does not discuss the actual weakness and provide additional context
+that explains why putting sensitive information in a URL query parameter is bad (even 
+if it is obvious to some readers).  Please include a different reference that supports
+the stated weakness and explains why putting sensitive information in query parameters 
+is bad, and potentially also describes things such as best practices and mitigations.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ACTION - "Unable to determine action"
+
+Description: It is not clear what action to perform based on the
+submission, e.g., create new entry, update existing entry, etc.
+
+Resolution: The submission cannot progress to the Internal-Update stage
+until the relevant actions(s) are identified.
+
+Comments: If we all agree that this submission does in fact work better as
+a modification to CWE-598 to include all HTTP requests, then this submission 
+will need to change to a modification.  However, there is a possibility that the CWE
+team might decide to create a more general entry. This will be addressed in a
+later phase. Please acknowledge that you have seen this comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: It appears from the stated reference that this submission could potentially
+be related to a vulnerability report for a specific vulnerability in a specific product.
+CWE does not focus on specific products, although the name and description of your 
+submission are in line with typical CWE content. If you wanted to obtain a CVE ID for 
+the vulnerability, please visit https://cveform.mitre.org/.  If your intention was to 
+submit content directly to CWE, then please indicate if you were intending a new
+CWE entry or proposing any changes to existing entries.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+
 RESOLVED ISSUES:
 
 
@@ -56,7 +142,7 @@ Ack-Receipt: 2025-06-03
 
 Init-Review: 2025-06-25
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-08-19
 
 Init-Declined: YYYY-MM-DD
 
@@ -92,3 +178,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-06-03 sent email
 2025-06-25 sent email
+2025-08-19 sent email
