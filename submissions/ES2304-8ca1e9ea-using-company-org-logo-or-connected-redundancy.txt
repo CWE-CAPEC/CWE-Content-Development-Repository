@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2304-8ca1e9ea
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-04-07 22:40:22
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.RELREFS
 
 PUBTRACKER: #54
 
@@ -58,6 +58,47 @@ URL: https://cwe.mitre.org/data/definitions/840.html
 
 ACTIVE ISSUES:
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: The provided submission does not appear to highlight a weakness that falls 
+within the scope of the CWE. It describes a general scenario where QR codes 
+can be misused, but this does not constitute a technical weakness that 
+application developers or maintainers can directly address or control. 
+As such, we are unable to proceed with this submission. If you disagree, 
+please provide additional details or justification explaining why this 
+issue should be considered a technical security focused weakness.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The references provided describe attack types that differ from 
+the issue outlined in your summary. If you believe this submission should 
+be included in the CWE, please provide references that directly support and 
+align with your proposed weakness.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -70,7 +111,7 @@ Ack-Receipt: 2024-01-05
 
 Init-Review: 2025-05-28
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-08-19
 
 Init-Declined: YYYY-MM-DD
 
@@ -104,3 +145,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-01-05 sent email
 2025-05-28 sent email
+2025-08-19 sent email
