@@ -74,7 +74,21 @@ a "badly defined search function". Finally, what mistakes might cause the parser
 be "overly lenient" ? Please provide additional language that specifically describes the
 weakness.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: The weakness is unclear or open-ended specification for how
+to validate the data format. The ambiguous description may indicate a
+marker or method as a way to find the start and end of the data
+format. However, due to ambiguity, parser developers has to infer how
+complete or strict they need to be in order to validate the data
+format. The weakness in the unclear specification has the effect of
+causing a weakness in the parser. For example, a PDF parser identifies
+the unique PDF marker in the header, but there is ambiguity in how to
+find the next table of content (TOC) marker. One parser developer may
+scan from the beginning, while another developer may start scanning
+from the end. If the specification allows for multiple TOC, a "badly
+defined search function" in this case could be the developer who
+scanned from the end. Polygot files are an example of "overly lenient"
+parser's assumption that when a magic marker is found the rest of the
+file is legit, without doing any further validation.
 
 
 ----------
@@ -103,7 +117,12 @@ we would like to apply the weaknesses to a broader set of technologies than just
 parsers if possible.  When providing an updated description, please also keep in mind
 how the language could fit to broader applicable cases.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: The more general concept is ambiguous or incomplete
+specification on how to correctly validate the specification for a
+data format, this may include an description on how to handle error
+recovery or partial correctness if allowed. A magic marker or
+identifier is usually provided but should never be enough for
+validation of the start or end of the data format.
 
 ----------
 
@@ -131,7 +150,12 @@ could be applicable as a "CanPrecede" relationship - that is, this parser weakne
 could lead to an out-of-bounds read.  Once the weakness becomes more clear it will
 be easier to identify potential relationships within the CWE tree.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: CWE-1287: Improper Validation of Specified Type of Input
+appears to be related, but it does not appear to capture that due to
+ambiguous or unclear data format specification, parser developers are
+left with multiple ways to validate the input. The format
+specification has to be clearer for developers to parse what is proper
+compliance for the expected type.
 
 
 
@@ -184,3 +208,4 @@ COMMUNICATIONS LOG:
 2023-12-28 sent email
 2025-04-08 sent email
 2025-07-17 sent email
+2025-07-27 received email
