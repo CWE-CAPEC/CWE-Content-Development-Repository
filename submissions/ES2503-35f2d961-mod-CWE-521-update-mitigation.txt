@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2503-35f2d961
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Internal-Update
 
 AFFECTED CWES: 
 
@@ -93,7 +93,7 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2025-08-21
 
 CWE-Assigned: YYYY-MM-DD
 
@@ -115,3 +115,4 @@ COMMUNICATIONS LOG:
 2025-05-07 sent email
 2025-06-24 sent email
 2025-06-24 sent email
+2025-08-21 sent email
