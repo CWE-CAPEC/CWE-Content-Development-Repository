@@ -2,17 +2,19 @@ SUBMISSION COMMUNICATION ID: ES2502-df916af6
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Det-Requested
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-22
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-02-08 05:20:48
 
-ISSUES: no
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISSDET
+
+FIELDCHANGE: DEMOX
 
 PUBTRACKER: #139
 
@@ -59,8 +61,72 @@ RELATED WEAKNESSES:
 REFERENCES:
 
 
+DEMONSTRATIVE EXAMPLES:
+
+INTRO TEXT:
+
+This PHP code takes user input in a file argument, obtains its
+contents, and presents the contents back to the caller.
+
+BAD CODE:
+
+LANGUAGE: PHP
+
+<?php
+
+$filename = $_GET['file']; // User-controlled input
+
+// Read and display the file contents
+echo file_get_contents($filename);
+?>
+
+EXPLANATORY TEXT:
+
+An attacker could manipulate the file path using relative (../) or
+absolute paths, potentially accessing sensitive system files. For
+example, if an attacker provides ../../../../etc/passwd as input, the
+script will fetch and display the contents of the system's password
+file.
+
+Ideally, the file path should be validated and restricted to a
+specific directory to prevent unauthorized file access.
+
+GOOD CODE:
+LANGUAGE: PHP
+
+<<put the information here>>
+
+
 ACTIVE ISSUES:
 
+SUB.MISSDET - "Missing details"
+
+Description: The submission is missing some requested or required details
+for elements other than name and description.
+
+Resolution: The submission cannot progress to later phases if it does not
+have all required elements.
+
+Comments: We have added your suggestion to the "DEMONSTRATIVE
+EXAMPLES" section in this form.
+
+ - We wrote some "INTRO TEXT" to describe the behavior that the code
+   is attempting to do.  Please let us know if you agree with the
+   introduction, or suggest how to change it.
+
+  - We also added "EXPLANATORY TEXT" to the example, making small
+    changes to your suggested explanation. Please let us know if you
+    agree with the text, or suggest how to change it.
+
+ - The "GOOD CODE" section needs to be filled in order to suggest to
+   developers how they could address the weakness. Please provide us
+   with example code that modifies the "bad code" in order to fix the
+   weakness.
+
+ - Finally, fill the "Response" below to indicate that you have made
+   this change, or otherwise ask us for any clarification.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 RESOLVED ISSUES:
@@ -81,7 +147,7 @@ Init-Declined: YYYY-MM-DD
 
 Init-Accepted: 2025-02-25
 
-Det-Requested: YYYY-MM-DD
+Det-Requested: 2025-08-21
 
 Det-Received: YYYY-MM-DD
 
@@ -113,3 +179,4 @@ COMMUNICATIONS LOG:
 2025-02-18 sent email
 2025-02-25 sent email
 2025-05-08 sent email
+2025-08-21 sent email
