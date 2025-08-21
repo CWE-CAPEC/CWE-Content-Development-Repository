@@ -78,7 +78,7 @@ the user page flags stored in TLB entries. priv_rw_ok indicating whether
 the current privileges have been granted read/write access. Mux is a
 multiplexer used to select different inputs based on a condition. The basic
 syntax of Mux is: Mux(condition, value_if_true, value_if_false). Per the
-RISC-V Privileged Specification (u00a73.1.6.3), when satp.mode = 0
+RISC-V Privileged Specification (Section 3.1.6.3), when satp.mode = 0
 (Bare) , the SUM bit must be read-only 0.  When designing the logic to
 determine whether the current permissions grant read/write access, Rocket
 neglected to check the validity of the SUM flag and instead used it
