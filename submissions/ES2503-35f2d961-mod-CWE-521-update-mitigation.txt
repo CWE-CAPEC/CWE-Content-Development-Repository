@@ -20,7 +20,7 @@ MTRACKER: #1242
 
 GITHUBUSER: cgocast
 
-SUBMISSION TYPE: Unknown
+SUBMISSION TYPE: Software
 
 NAME: CWE-521 update password expiration in mitigations
 

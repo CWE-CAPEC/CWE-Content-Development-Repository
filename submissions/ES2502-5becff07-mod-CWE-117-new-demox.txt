@@ -20,7 +20,7 @@ MTRACKER: #1237
 
 GITHUBUSER: ctflearner
 
-SUBMISSION TYPE: Unknown
+SUBMISSION TYPE: Software
 
 NAME: CWE-117 modification new demonstrative example
 

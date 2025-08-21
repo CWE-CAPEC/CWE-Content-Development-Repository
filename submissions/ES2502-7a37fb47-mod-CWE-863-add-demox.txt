@@ -20,7 +20,7 @@ MTRACKER: #1231
 
 GITHUBUSER: ctflearner
 
-SUBMISSION TYPE: Unknown
+SUBMISSION TYPE: Software
 
 NAME: Add demonstrative example to CWE-863
 

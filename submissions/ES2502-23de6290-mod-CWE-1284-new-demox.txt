@@ -22,7 +22,7 @@ MTRACKER: #1236
 
 GITHUBUSER: ctflearner
 
-SUBMISSION TYPE: Unknown
+SUBMISSION TYPE: Software
 
 NAME: CWE-1284 modification new demonstrative example
 

@@ -20,7 +20,7 @@ MTRACKER: #1020
 
 GITHUBUSER: Abhi-M
 
-SUBMISSION TYPE: Unknown
+SUBMISSION TYPE: Software
 
 NAME: Diagram for CWE-276
 

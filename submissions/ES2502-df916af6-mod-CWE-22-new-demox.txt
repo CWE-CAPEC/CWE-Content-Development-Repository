@@ -22,7 +22,7 @@ MTRACKER: #1223
 
 GITHUBUSER: ctflearner
 
-SUBMISSION TYPE: Unknown
+SUBMISSION TYPE: Software
 
 NAME: CWE-22 new demox
 

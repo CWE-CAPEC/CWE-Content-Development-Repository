@@ -22,7 +22,7 @@ MTRACKER: #1221
 
 GITHUBUSER: ctflearner
 
-SUBMISSION TYPE: Unknown
+SUBMISSION TYPE: Software
 
 NAME: CWE-798 new PHP demonstrative example
 

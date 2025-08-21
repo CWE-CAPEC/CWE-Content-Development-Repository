@@ -20,7 +20,7 @@ MTRACKER: #1160
 
 GITHUBUSER: sauvainr
 
-SUBMISSION TYPE: Unknown
+SUBMISSION TYPE: Software
 
 NAME: CWE-300 mod - add DAST detection method
 
