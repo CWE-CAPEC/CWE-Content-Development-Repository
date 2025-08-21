@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2311-7fcf708c
 
-ACTION TYPE: New Entry
+ACTION TYPE: Undetermined
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-11-14 23:39:47
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.ACTION
 
 PUBTRACKER: #46
 
@@ -49,6 +49,103 @@ ACTIVE ISSUES:
 
 
 
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: There seems to be heavy overlap with CWE-694: Use of Multiple Resources with Duplicate Identifier.  Since you are requesting a new entry, could you please expand on
+what makes this submission different from CWE-694?  The additional context for this 
+submission is that the duplicate identifiers are parsed rather than just being "used by
+a product", although it is unclear if this additional context warrants an additional entry.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: As stated above in SUB.OVERLAP, it is unclear if the distinction
+that a duplicate data object is being parsed incorrectly rather than just
+"used by an application" warrants a new entry.  We will have to discuss the 
+best path forward, but it is possible this submission is better suited as a 
+modification to add an example scenario to CWE-694 or potentially a different CWE.
+The discussion from SUB.OVERLAP will be helpful in making this determination.
+Please let us know your thoughts.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The indicated relationship of CWE-694 is very applicable either as a 
+parent of a new entry or a target for a modification.  CWE-825 might be a good
+target for a "CanFollow" relationship, meaning an expired pointer dereference
+could also occur as a result of a duplicate data structure.  We also wanted to 
+highlight the potential for CWE-1023: Incomplete Comparison with Missing Factors.
+While this CWE does not seem to as good of a fit, we believe it is worth considering
+if the true weakness here is some sort of "Incorrect Comparison" of the duplicate data
+structures.  Please let us know your thoughts on CWE-1023.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ACTION - "Unable to determine action"
+
+Description: It is not clear what action to perform based on the
+submission, e.g., create new entry, update existing entry, etc.
+
+Resolution: The submission cannot progress to the Internal-Update stage
+until the relevant actions(s) are identified.
+
+Comments: Because of the reasons discussed in SUB.OVERLAP and SUB.ABS.LOWLEVEL
+it is unclear if this submission would be better suited as a modification, or to
+stay as a new entry.  Further discussion can be had in the initial consultation phase
+as we figure out exactly how this submission compares to existing CWEs.  Please indicate
+that you have read this comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
 RESOLVED ISSUES:
 
 
@@ -61,7 +158,7 @@ Ack-Receipt: 2023-12-28
 
 Init-Review: 2025-02-11
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-08-21
 
 Init-Declined: YYYY-MM-DD
 
@@ -96,3 +193,5 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2023-12-28 sent email
+2025-02-11 sent email
+2025-08-21 sent email
