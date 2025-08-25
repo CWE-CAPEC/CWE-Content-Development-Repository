@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2408-be447fc9
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,15 +10,15 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-08-26 11:07:10
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.RELS, SUB.RELREFS
 
 PUBTRACKER: #127
 
 MTRACKER: #1159
 
-GITHUBUSER: None
+GITHUBUSER: 
 
 SUBMISSION TYPE: Software
 
@@ -60,6 +60,57 @@ URL: https://security.synotna.eu/cookie-broadcasting.html
 ACTIVE ISSUES:
 
 
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The suggested relationships of CWE-923 and CWE-522 as potential parents
+do not appear to be the best fit.  CWE-923 is about establishing a communication channel
+to unintended endpoints.  While an overly permissive domain attribute could lead to a 
+sensitive cookie being added to a request when it shouldn't have, the root of the issue is
+the assignment of the Domain attribute, not establishing a communication channel.  CWE-522
+is about not protecting credentials, and while by setting an overly permissive domain attribute
+may lead to insufficiently protected credentials inside an authentication cookie, not all sensitive
+cookies are for credentials.  This weakness is a permissions issue and the CWE team believes that 
+it would best fit as a child to CWE-732: Incorrect Permission Assignment for Critical Resource.  
+One of the other children to CWE-732 is CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag, which
+is very adjacent to the proposed weakness.  Please indicate if you agree with this newly suggested
+relationship.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The submission provides a reference that appears to describe "cookie broadcasting",
+although when the CWE team attempted to view the reference the page was not loading.  Please double
+check that the link to the intended reference is correct and if the intended reference is not 
+accessible please provide another reference.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
 
 RESOLVED ISSUES:
 
@@ -73,7 +124,7 @@ Ack-Receipt: 2024-12-09
 
 Init-Review: 2025-01-24
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-08-25
 
 Init-Declined: YYYY-MM-DD
 
@@ -108,4 +159,5 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2024-12-09 sent email
+2025-01-24 sent email
 2025-01-24 sent email
