@@ -1,0 +1,105 @@
+SUBMISSION COMMUNICATION ID: ES2508-95a780e3
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-08-15 16:47:46
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: 
+
+MTRACKER: #1277
+
+GITHUBUSER: erickgalinkin
+
+SUBMISSION TYPE: Software
+
+NAME: Inclusion of ANSI escape codes in LLM tokenizer
+
+DESCRIPTION:
+
+Desc: ANSI escape codes are included in a tokenizer. This can result in the
+execution of commands if LLM generated text is displayed in a terminal
+emulator.
+
+Extended Description: ANSI escape sequences are a standard for controlling
+options in text terminals and terminal emulators that embed an escape
+character into text, which are interpreted as commands instead of text to
+be displayed. This can result in unexpected command injection (CWE-77).
+
+This impacts tokenizers used with large language models. Since large
+language models are generally expected to output human-readable text,
+tokenizers should not contain these escape sequences.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-77
+   ChildOf CWE-1426
+
+REFERENCES:
+
+Title: Terminal DiLLMas
+URL: https://embracethered.com/blog/posts/2024/terminal-dillmas-prompt-injection-ansi-sequences/
+
+Title: Weaponizing Plain Text ANSI Escape Sequences as a Forensic Nightmare 
+URL: https://i.blackhat.com/BH-US-23/Presentations/US-23-stok-weponizing-plain-text-ansi-escape-sequences-as-a-forensic-nightmare-appendix.pdf
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-08-15
+
+Ack-Receipt: 2025-08-26
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
