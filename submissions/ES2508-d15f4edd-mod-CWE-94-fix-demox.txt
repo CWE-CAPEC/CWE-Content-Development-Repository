@@ -1,0 +1,184 @@
+SUBMISSION COMMUNICATION ID: ES2508-d15f4edd
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-08-22 19:40:26
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: 
+
+MTRACKER: #1278
+
+GITHUBUSER: mttpgn
+
+SUBMISSION TYPE: Unknown
+
+NAME: CWE-94 modification fix demonstrative example
+
+DESCRIPTION:
+
+Hello CWE Content Team,
+
+Your weakness definition page for CWE-94: Improper Control of Generation of
+Code ('Code Injection') contains an error in the Python documentation.
+
+Example 3 demonstrates a u201csimple scriptu201d in the Python language
+which u201casks a user to supply a list of numbers as input and adds them
+together.u201d The purpose is to showcase improper use of the `eval`
+built-in.
+
+The unsafe code example taken from that page reads:
+
+```
+def main():
+  sum = 0
+  numbers = eval(input("Enter a space-separated list of numbers: "))
+  for num in numbers:
+    sum = sum + num
+  print(f"Sum of {numbers} = {sum}")
+main()
+
+```
+
+Running this program will prompt the user for a space-separated list of
+numbers. If the user supplies the space-separated list of numbers as
+requested, Python will throw a syntax error. For the compliant user who
+follows the programu2019s instructions perfectly, the script will crash.
+
+A more realistic unsafe usage of `eval` would not crash on expected inputs.
+Such a working script would ask the user for a comma-separated list of
+numbers instead of spaces. Here is an example program in that vein:
+
+```
+def main():
+  sum = 0
+  numbers = eval(input("Enter a comma-separated list of numbers: "))
+  for num in numbers:
+    sum = sum + num
+  print(f"Sum of {numbers} = {sum}")
+main()
+
+```
+
+The new program gives the user a different message instructing them what to
+enter. A user who follows these instructions will cause an iterable to be
+assigned to the variable `numbers`, and the program will avoid the crash. 
+
+The sentence immediately following the code block on this page mentions
+u201clist comprehension methods,u201d indicating that the unsafe programmer
+was trying to produce a list. For this piece of the documentation to stay
+accurate, the unsafe code block should try to produce a list when eval is
+run on the input instead of a tuple, as above. For example:
+
+```
+def main():
+  sum = 0
+  numbers = eval(f"[{input('Enter a comma-separated list of numbers: ')}]")
+  for num in numbers:
+    sum = sum + num
+  print(f"Sum of {numbers} = {sum}")
+main()
+
+```
+The square brackets needed for the comma-separated values to be read as a
+list are supplied by the programmer.
+
+There can be no temptation to directly evaluate a space-separated list of
+numbers in Python, which will not evaluate. In either of the above working
+examples, the sanitized version of the code example should also ask for a
+comma-separated list then split the user-supplied string on the comma
+character (rather than on the space character, as it would for a
+space-separated list).
+
+A corresponding, improved version of the sanitized script could read as
+follows:
+
+```
+def main():
+  sum = 0
+  numbers = input("Enter a comma-separated list of numbers: ").split(",")
+  try:
+    for num in numbers:
+      sum = sum + int(num)
+    print(f"Sum of {numbers} = {sum}")
+  except ValueError:
+    print("Error: invalid input")
+main()
+
+```
+
+These changes to the unsafe Python example and to the sanitized Python
+example can better clarify the dangers of running `eval` on user-supplied
+input.
+
+
+
+All the best,
+Matthew A. Pagan
+
+RELATED WEAKNESSES:
+
+   Other CWE-94
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-08-22
+
+Ack-Receipt: 2025-08-26
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
