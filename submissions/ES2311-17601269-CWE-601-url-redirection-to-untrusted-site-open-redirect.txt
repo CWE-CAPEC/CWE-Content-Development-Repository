@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2311-17601269
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-601
 
 ORIGIN: sub-server
 
@@ -174,7 +174,7 @@ Final-Coord: YYYY-MM-DD
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-08-27
 
 CWE-Published: YYYY-MM-DD
 
@@ -194,3 +194,4 @@ COMMUNICATIONS LOG:
 2025-01-22 received comment
 2025-01-30 sent email
 2025-03-03 sent email
+2025-08-27 sent email
