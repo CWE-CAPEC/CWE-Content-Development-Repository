@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2409-11b3559c
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-300
 
 ORIGIN: sub-server
 
@@ -92,7 +92,7 @@ Internal-Update: 2025-08-21
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-08-27
 
 Final-Coord: YYYY-MM-DD
 
@@ -110,3 +110,4 @@ COMMUNICATIONS LOG:
 2025-01-28 sent email
 2025-02-25 sent email
 2025-08-21 sent email
+2025-08-27 sent email
