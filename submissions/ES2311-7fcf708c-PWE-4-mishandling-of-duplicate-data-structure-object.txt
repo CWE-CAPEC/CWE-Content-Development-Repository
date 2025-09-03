@@ -64,7 +64,11 @@ what makes this submission different from CWE-694?  The additional context for t
 submission is that the duplicate identifiers are parsed rather than just being "used by
 a product", although it is unclear if this additional context warrants an additional entry.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Yes, the submission is in the context of data being
+parsed. Additionally, there is also the ambiguity associated with the
+duplicate data, there may be no requirement that duplicate data is not
+allowed. Therefore, leaving the choice of how to handle duplicates up
+to individual parsers.
 
 
 ----------
@@ -93,7 +97,8 @@ modification to add an example scenario to CWE-694 or potentially a different CW
 The discussion from SUB.OVERLAP will be helpful in making this determination.
 Please let us know your thoughts.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: See above, it could warrant a new entry or if you think it
+is more suited to a modification to draw out the distinction.
 
 
 ----------
@@ -122,7 +127,10 @@ While this CWE does not seem to as good of a fit, we believe it is worth conside
 if the true weakness here is some sort of "Incorrect Comparison" of the duplicate data
 structures.  Please let us know your thoughts on CWE-1023.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Maybe in a broad sense or higher level than an incomplete
+comparison, the parser has no strict guideline on handling duplicate
+data and must resort to ambiguous handling because the specification
+is incomplete.
 
 
 ----------
@@ -141,7 +149,7 @@ stay as a new entry.  Further discussion can be had in the initial consultation 
 as we figure out exactly how this submission compares to existing CWEs.  Please indicate
 that you have read this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I have read this comment.
 
 
 ----------
@@ -195,3 +203,4 @@ COMMUNICATIONS LOG:
 2023-12-28 sent email
 2025-02-11 sent email
 2025-08-21 sent email
+2025-08-28 received email
