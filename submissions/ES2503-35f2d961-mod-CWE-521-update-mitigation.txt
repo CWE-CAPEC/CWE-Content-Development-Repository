@@ -2,17 +2,17 @@ SUBMISSION COMMUNICATION ID: ES2503-35f2d961
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-521
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-03-17 14:19:26
 
-ISSUES: yes/active
+ISSUES: no
 
-ISSUE DETAILS: SUB.MISC
+ISSUE DETAILS: 
 
 PUBTRACKER: #149
 
@@ -48,6 +48,9 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+
+RESOLVED ISSUES:
+
 SUB.MISC - "Miscellaneous/other problem"
 
 Description: The submission has some other problem that is not covered
@@ -63,10 +66,6 @@ Common Practice" and emphasize its limitations. We will use your
 provided references to support the argument.
 
 Response: [NO RESPONSE NEEDED]
-
-
-RESOLVED ISSUES:
-
 
 
 TIMELINE:
@@ -97,7 +96,7 @@ Internal-Update: 2025-08-21
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-09-08
 
 Final-Coord: YYYY-MM-DD
 
@@ -116,3 +115,4 @@ COMMUNICATIONS LOG:
 2025-06-24 sent email
 2025-06-24 sent email
 2025-08-21 sent email
+2025-09-08 sent email
