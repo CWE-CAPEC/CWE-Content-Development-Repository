@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2208-93123343
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Internal-Update
 
-AFFECTED CWES:
+AFFECTED CWES: CWE-942
 
 ORIGIN: sub-server
 
@@ -167,7 +167,7 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2025-09-08
 
 Final-Coord: YYYY-MM-DD
 
@@ -192,3 +192,5 @@ COMMUNICATIONS LOG:
 2024-03-13 sent email
 2024-10-29 received comment
 2025-03-11 sent email
+2025-09-04 received comment
+2025-09-08 sent email
