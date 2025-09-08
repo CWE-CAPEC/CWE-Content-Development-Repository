@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2406-9e5fcf10
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Assigned
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-1434
 
 ORIGIN: sub-server
 
@@ -716,7 +716,7 @@ Det-Accepted: 2025-08-15
 
 Internal-Update: 2025-09-08
 
-CWE-Assigned: YYYY-MM-DD
+CWE-Assigned: 2025-09-08
 
 CWE-Modified: YYYY-MM-DD
 
@@ -748,4 +748,5 @@ COMMUNICATIONS LOG:
 2025-07-18 action meeting
 2025-08-15 action meeting
 2025-08-15 action update
+2025-09-08 sent email
 2025-09-08 sent email
