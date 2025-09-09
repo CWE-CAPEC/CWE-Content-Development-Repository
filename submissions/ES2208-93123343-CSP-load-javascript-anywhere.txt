@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2208-93123343
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
 AFFECTED CWES: CWE-942
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2022-08-23 20:19:05
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.OVERLAP
+ISSUE DETAILS: 
 
 PUBTRACKER: #15
 
@@ -50,32 +50,6 @@ URL: https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Chea
 
 
 ACTIVE ISSUES:
-
-
-
-SUB.OVERLAP - "Duplicate/Overlap"
-
-Description: The submission identifies a weakness, but it is a duplicate of
-(or partially overlaps) existing weaknesses, indicating problems with the
-submission or associated CWE entries.
-
-Resolution: The submission cannot progress to later phases until (1) the
-duplicate/overlap is understood and (2) it is clear how to resolve this
-duplicate/overlap.
-
-Comments: This submission is intended to be covered by CWE-942:
-Permissive Cross-domain Policy with Untrusted Domains. However, as
-Submitter noted in a 2024-10-29 response, CWE-942's extended
-description currently focuses on "a very small subset of applications
-(Flash and Silver light)". We will modify CWE-942's extended
-description and examples to ensure that "Content Security
-Policy... applies to every Modern browser & Websites on the internet."
-
-Response: [NO RESPONSE NEEDED; ISSUE TO BE RESOLVED IN A LATER PHASE]
-This is not an an overlap of CWE-942 as Content Security Policy is
-more prevalent as it applies to every Modern browser & Websites on the
-internet, CWE-942 only pertains a very small subset of applications
-(Flash and Silver light).
 
 
 
@@ -142,6 +116,35 @@ this submission.
 Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
 
+-------
+
+
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This submission is intended to be covered by CWE-942:
+Permissive Cross-domain Policy with Untrusted Domains. However, as
+Submitter noted in a 2024-10-29 response, CWE-942's extended
+description currently focuses on "a very small subset of applications
+(Flash and Silver light)". We will modify CWE-942's extended
+description and examples to ensure that "Content Security
+Policy... applies to every Modern browser & Websites on the internet."
+
+Response: [NO RESPONSE NEEDED; ISSUE TO BE RESOLVED IN A LATER PHASE]
+This is not an an overlap of CWE-942 as Content Security Policy is
+more prevalent as it applies to every Modern browser & Websites on the
+internet, CWE-942 only pertains a very small subset of applications
+(Flash and Silver light).
+
+
 
 TIMELINE:
 
@@ -173,7 +176,7 @@ Final-Coord: YYYY-MM-DD
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-09-08
 
 CWE-Published: YYYY-MM-DD
 
@@ -193,4 +196,5 @@ COMMUNICATIONS LOG:
 2024-10-29 received comment
 2025-03-11 sent email
 2025-09-04 received comment
+2025-09-08 sent email
 2025-09-08 sent email
