@@ -22,23 +22,47 @@ GITHUBUSER: mbiesiad
 
 SUBMISSION TYPE: Software
 
-NAME: Insufficient protection of 2FA SMS Code
+NAME: Improper Placement of Authentication Code in SMS Leading to Unauthorized Disclosure via Message Previews
 
 DESCRIPTION:
 
-When 2FA SMS code is displayed at the beginning of the SMS message, quite
-often it is possible to get to know code value without unblock device
-action. That means, bad actor without knowing how to unblock victim device
-can get to know this sensitive information, because it is displayed often
-in 'bar' - shortcut/preview of message. Safer approach is to place this
-code after part displayed message's shortcut. Example: victim leave a
-mobile device in the room, because it is PIN or pattern protected and go
-out for few minutes, bad actor from the same room can try exploit. Example:
-'CODE Lorem ips--um' vs 'Lorem ipsum C--ODE' ; here "--" means ending of
-visible part without unblocked device. Thanks to this real user who know
-how to unblock device will get to know 2FA SMS code, but bad actor will can
-not exploit this. This scenario assumes that bad actor is close to victim's
-device - physicial part, but message form with 2FA Code is software part.
+Some applications deliver two-factor authentication (2FA) codes via
+SMS messages in a way that exposes the full code in the beginning of
+the message. This results in the code being fully visible in
+notification previews, even when the recipient’s device is locked.
+
+This design flaw allows an attacker with physical but not
+authenticated access (e.g., someone in the same room as the victim’s
+locked phone) to view the code without unlocking the device. Since the
+SMS content is usually rendered in message previews (e.g.,
+notification bar), placing the code at the start of the message
+directly leads to unintentional leakage of an authentication secret.
+
+A more secure approach is to format the SMS such that the code appears
+after the visible portion of the preview, thus requiring the device to
+be unlocked before the code is accessible — effectively preserving the
+requirement for user interaction.
+
+This issue is not theoretical. For example: One well-known
+organization exposes the 2FA code in the preview, leaking a valid
+one-time code to anyone with visual access to the phone screen.
+Another organization, from a different region, mitigates this by
+intentionally placing the code later in the message, making it
+unreadable until the device is unlocked — a security-aware
+implementation.
+
+Despite limitations in the SMS protocol, this is a software
+design-level weakness. The mitigation is straightforward: change the
+message structure. User-side mitigations like disabling message
+previews are not sufficient, just as we would not expect users to
+disable JavaScript to mitigate XSS.
+
+Security Impact
+* Unauthorized access to authentication secrets (2FA codes)
+* Bypass of “knowledge-based” second factor due to poor presentation-layer design
+* Increased susceptibility to physical access threats, such as opportunistic attackers near unattended devices
+
+Potential Mapping: CWE-359, CWE-497, CWE-200
 
 Image: https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/assets/18367606/20b2e86a-dcc6-4ffd-8db5-91344fbe0864
 
@@ -73,24 +97,51 @@ the more-general concept is appropriately identified and described. The
 original, lower-level submission will serve as a primary example of the
 more general concept.
 
-Comments: While the submission title broadly addresses the lack of 
-protection for SMS codes, the description focuses narrowly on the issue 
-of SMS codes being visible through message previews. This specific 
-concern seems more relevant to end-users than developers, as users 
-can choose to disable message previews on their devices to mitigate the risk.
+Comments: While the submission title broadly addresses the lack of
+protection for SMS codes, the description focuses narrowly on the
+issue of SMS codes being visible through message previews. This
+specific concern seems more relevant to end-users than developers, as
+users can choose to disable message previews on their devices to
+mitigate the risk.
 
-From a developer's perspective, addressing this issue is challenging due 
-to the inherent limitations of SMS technology, which treats all messages 
-as plain text. In many cases, developers may not even have the option to 
-switch the second factor from SMS to a more secure method, as SMS-based 
-authentication might be the default or only available option provided 
-by the application.
+From a developer's perspective, addressing this issue is challenging
+due to the inherent limitations of SMS technology, which treats all
+messages as plain text. In many cases, developers may not even have
+the option to switch the second factor from SMS to a more secure
+method, as SMS-based authentication might be the default or only
+available option provided by the application.
 
 Given the narrow scope of the issue—limited to SMS—and the broader 
 complexities surrounding it, this concern appears too low-level to 
 warrant a new entry.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: While the issue may appear narrowly focused on message
+preview behavior, it is actually part of a broader and
+security-relevant class of weaknesses involving insufficient
+protection of sensitive authentication factors. The core weakness is
+the failure to control visibility of 2FA secrets in contexts where
+physical access is a realistic threat, violating the principle of
+intentional user interaction.
+
+This is not just a UX issue — it's a security design flaw: the 2FA
+code (which should only be revealed upon user interaction) is exposed
+without user consent. The fact that other vendors in the same
+ecosystem (e.g., mobile OS or SMS platform) handle this properly
+demonstrates that mitigation is both feasible and within product
+control.
+
+The weakness can be framed under or as a variant of:
+
+CWE-359: Exposure of Private Information ("Preview Disclosure")
+
+CWE-497: Exposure of Sensitive System Information
+
+Or potentially merits inclusion as a named example in a broader class,
+such as improper use of authentication channels (SMS 2FA hardening).
+
+Thus, while the submission describes a specific manifestation, the
+security impact is generalizable and should be considered beyond its
+surface-level specificity.
 
 
 ----------
@@ -109,7 +160,30 @@ may decide to make an exception.
 Comments: The submission doesn't include any actual references. Please
 provide valid reference(s) to justify the real-world example of the issue.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Thank you for the feedback. To support this submission, here
+are examples and references:
+
+Real-world observation (2025): A major U.S.-based application exposes
+the 2FA code at the start of the SMS body, which allows full
+visibility via the message preview on a locked device. In contrast, a
+security-conscious vendor from another region places the code after
+the preview cutoff point, requiring the device to be unlocked.
+
+Relevant blog posts:
+
+Twilio: Best Practices for Sending 2FA Codes – which mentions that 2FA codes should be treated as secrets.
+
+Articles and mobile development guidelines that warn about
+notification privacy and preview exposure, particularly for health
+data, finance, or authentication.
+
+The discrepancy in real-world implementations proves this is a
+practical, exploitable weakness, not merely a theoretical concern.
+
+References:
+* CWE-359: Exposure of Private Information
+* CWE-497: Exposure of Sensitive System Information
+* CWE-200: Exposure of Sensitive Information to an Unauthorized Actor
 
 
 ----------
@@ -126,7 +200,18 @@ Comments: Based on the other submission issues identified above, the CWE
 team isn't clear on the next steps. We likely won't be able to accept
 this submission. 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: The appropriate action could be either:
+
+Creation of a new CWE entry or variant/example under a broader class
+that captures preview-based leaks of security tokens (e.g., 2FA codes,
+magic links).
+
+Addition of this case as a documented example within an existing CWE,
+such as CWE-359, CWE-497, or potentially CWE-200.
+
+I am open to aligning with CWE Team’s classification guidance, but
+emphasize that the issue represents a preventable design weakness with
+real-world security impact and viable mitigations.
 
 
 ----------
@@ -179,3 +264,4 @@ COMMUNICATIONS LOG:
 2024-01-05 sent email
 2025-03-18 sent email
 2025-05-20 sent email
+2025-05-27 received comment
