@@ -37,6 +37,33 @@ both are necessary for password resets) are no longer present in the
 system. Support staff would already need access to the audit trail to see
 if the victim's claim of account takeover is legitimate.
 
+Additional perspective and insights to the original weakness
+
+First and foremost I would also like to thank you for your
+response. Also, after having given it more thought over the past
+weeks, I'd like to add to this weakness an additional
+perspective. When adding or deleting (not merely changing) a second
+(third, fourth, ...) e-mail address or phone number for notification
+purposes, the original account owner also needs to be notified. As an
+example I'm allowed to share: I've recently come across a medical
+system where these notification address modifications led to legal
+obstacles in divorce cases where one parent removed the e-mail address
+of the other parent from the notification list of the medical records
+of their children, leading to them not being notified of medical
+appointments their children had.
+
+In such a case, whoever makes the change, the system must
+
+* only be changing the contents or presence of this e-mail address on
+  the "must receive notifications" list, but not influence other
+  memberships, occurrences and use-instances.
+
+* notify everyone who was on the list pre-change with the contents of
+  the list post-change (principle of transparency for all
+  recipients. It's like avoiding to facilitate a makeshift "BCC:"
+  feature, if you will.
+
+
 RELATED WEAKNESSES:
 
    Other CWE-620
