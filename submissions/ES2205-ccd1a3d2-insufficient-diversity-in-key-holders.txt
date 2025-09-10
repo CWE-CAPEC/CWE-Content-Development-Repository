@@ -1,4 +1,3 @@
-
 SUBMISSION COMMUNICATION ID: ES2205-ccd1a3d2
 
 ACTION TYPE: New Entry
@@ -13,7 +12,7 @@ SUBMISSION DATE: 2022-05-17 15:45:34
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SCOPE.HUMANPROC, SCOPE.ADMINERR, SUB.UNCLEAR, SUB.RELS, SUB.ATTACK
+ISSUE DETAILS: SCOPE.ADMINERR, SUB.UNCLEAR, SUB.RELS, SUB.ATTACK
 
 PUBTRACKER: #25
 
@@ -27,15 +26,33 @@ NAME: Insufficient diversity in key holders
 
 DESCRIPTION: 
 
-Insufficient diversity in key holders can render a system with
-multiple keyholders weak. For example if a system is configured to
-allow a majority of 9 keys to be used to make a decision there should
-be 9 distinct, unique key holders. Having a single key holder with 4
-keys for example means the attacker now only needs to compromise two
-unique keyholders (4+1) instead of 5 unique key holders. Additional
-weaknesses can be introduced if the systems used to secure keys are
-stored on a homogenous set of systems.
+Insufficient diversity in key holders refers to a security weakness
+where a cryptographic system, designed to be secured by multiple
+unique key holders, fails to enforce diversity among those key
+holders. This flaw arises when the system's security model is
+predicated on the assumption that each key is held by a separate,
+distinct individual or entity, thereby spreading the risk and reducing
+the likelihood of a single point of failure. However, if multiple keys
+are controlled by a single holder, or a small number of holders, it
+undermines the system's intended security model.
 
+For instance, consider a system configured to require authorization
+from a majority of 9 distinct key holders to execute critical
+decisions or access sensitive functionality. Ideally, this setup
+demands the consensus of 9 separate entities, enhancing security by
+distributing trust. However, if one individual or entity controls 4 of
+these keys, the system's security is effectively compromised. An
+attacker would need to coerce or compromise only two entities—the one
+holding 4 keys and any other keyholder—to gain unauthorized access,
+rather than needing to breach the security of 5 distinct key holders.
+
+This weakness is further exacerbated if the key management systems,
+the infrastructure responsible for storing, managing, and protecting
+the cryptographic keys, are homogeneous in nature. A homogenous
+setup—where key management systems are identical in configuration,
+operating on similar platforms, or using the same security
+controls—increases the risk of multiple systems being compromised via
+the same vulnerability or attack vector.
 
 RELATED WEAKNESSES:
 
@@ -55,33 +72,6 @@ URL: https://roninblockchain.substack.com/p/community-alert-ronin-validators?s=r
 
 
 ACTIVE ISSUES:
-
-SCOPE.HUMANPROC - "Human/organizational process"
-
-Description: The submission focuses on a problem in a human or
-organizational process or policy (e.g., insufficient developer training)
-that is not measurable and does not produce concrete artifacts that
-identify weaknesses.
-
-Resolution: As of July 2022, such submissions will be rejected (if framed
-as "weaknesses") but could help modify existing CWEs for elements such as
-modes of introduction.
-
-Comments: this seems to be related to human practices, as opposed to
-some weakness within the product itself. Further discussion is needed.
-
-Response: This is a technical issue that has a human aspect of
-implementation, for example, if you define a process where 3 out of 5
-keys are needed to sign a transaction, then it is implied, but should
-also be clearly stated that the keys are not controlled by a single
-entity or party as defined by the technical specification (e.g. they
-may fall under the control of different people within the same
-organization, or they may be required to fall under the control of
-different organizations). A related case would be CWE-521: Weak
-Password Requirements, which does not specify any technical
-limitations but instead leaves it up to humans to decide what is
-strong or weak. At some point, many of these security considerations
-rely upon human input to decide what is secure and not secure.
 
 ----
 
@@ -197,6 +187,37 @@ unique key holders."
 
 Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
+----
+
+SCOPE.HUMANPROC - "Human/organizational process"
+
+Description: The submission focuses on a problem in a human or
+organizational process or policy (e.g., insufficient developer training)
+that is not measurable and does not produce concrete artifacts that
+identify weaknesses.
+
+Resolution: As of July 2022, such submissions will be rejected (if framed
+as "weaknesses") but could help modify existing CWEs for elements such as
+modes of introduction.
+
+Comments: this seems to be related to human practices, as opposed to
+some weakness within the product itself. Further discussion is needed.
+
+Response:  [RESOLVED ISSUE; DO NOT CHANGE]
+This is a technical issue that has a human aspect of
+implementation, for example, if you define a process where 3 out of 5
+keys are needed to sign a transaction, then it is implied, but should
+also be clearly stated that the keys are not controlled by a single
+entity or party as defined by the technical specification (e.g. they
+may fall under the control of different people within the same
+organization, or they may be required to fall under the control of
+different organizations). A related case would be CWE-521: Weak
+Password Requirements, which does not specify any technical
+limitations but instead leaves it up to humans to decide what is
+strong or weak. At some point, many of these security considerations
+rely upon human input to decide what is secure and not secure.
+
+
 
 TIMELINE:
 
@@ -245,3 +266,5 @@ COMMUNICATIONS LOG:
 2022-11-25 sent email
 2022-11-26 received email
 2023-09-12 publish server
+2024-02-24 received comment
+2025-09-10 action update
