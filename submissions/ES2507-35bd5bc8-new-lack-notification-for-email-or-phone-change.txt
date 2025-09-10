@@ -77,7 +77,34 @@ Please note if you agree that there is some overlap between these submissions.  
 overlap to track as we move all of these submissions along, but it will not prevent this submission
 from moving forward in the process.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree​ that all these weaknesses fall under the umbrella of
+credential​ mismanagement​ and that some overlap exists.
+
+To ensure a common understanding of the non-overlaps, I'll outline the
+differences I see with both existing submissions:
+
+My proposal ES2507-35bd5bc8 is different from ES2206-33c5627d in the
+sense that abuse of that weakness happens when an attacker
+pre-registers an account with an identifier of a user who is expected
+to create an account later. In other words : this threat materializes
+before a victim creates their account.
+
+For ES2507-35bd5bc8 which is currently under review, the victim
+created the account themselves, but post account-takeover (e.g.,
+hijacking a user session, obtained the password, ...) falling prey to
+this design weakness.
+
+My proposal ​ES2507-35bd5bc8 is different from ES2307-3ffe7565​ as the
+latter is a failure to comply with forcing re-authentication when
+adding or adjusting sensitive data (SSH keys, bank account numbers,
+etc), whereas CWE-620 is merely focused on reauthenticating upon a
+password change.
+
+For ES2507-35bd5bc8 which is currently under review, ​if the
+prerequisite attack was of the form where attacker hijack​ed a user
+session,​ the re-authN would stop them. If the prerequisite "attack"​
+was a guessed or otherwise obtained password​, re-authentication does
+not help.
 
 
 ----------
@@ -102,7 +129,12 @@ in the process and the overlap between the existing submissions is better unders
 the CWE team may need to make other changes to account for this potential gap.
 Please indicate if you agree that there is a potential gap in CWE.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: ​I understand and agree with the fact that a gap exists in
+regards to notifying a victim of actions that are normally only
+executed by themselves. The lack of this mechanism is precisely what
+disenfranchises a user in acting upon an unexpected notification and
+what I'm hoping to be able to convey with this submission as a
+weakness to be safeguarded against.
 
 ----------
 
@@ -129,7 +161,9 @@ with the other two related submissions. Please let us know what you
 think.  If you have indicated agreement with SUB.ABS.SUBTREE above,
 then feel free to reference that response.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I would say that "CWE-255 Credentials Management Errors"
+would be a suitable parent for ES2507-35bd5bc8​, but unsure if you
+agree that that would close the gap discussed above.
 
 
 ----------
@@ -151,7 +185,78 @@ provide the CWE team more insight while evaluating this submission. If you agree
 with the references already mentioned in the ES2206-33c5627d and/or ES2307-3ffe7565
 submissions, please let us know which references you believe are applicable.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: The references mentioned in ES2206-33c5627d are not really
+applicable, because both describe how that attack happens before the
+victim creates the account.
+
+The references mentioned in ES2307-3ffe7565 have a few that touch upon
+the subject:
+
+Exploring Email Change Vulnerabilities and Security Best Practices -
+https://www.vaadata.com/blog/exploring-email-change-vulnerabilities-and-security-best-practices/
+
+This article mentions the issue in passing in the paragraph titled
+"Validation on the old email address but not the new one (or on
+both)", where it mentions that "This method is the most secure, as it
+proves that the user has access to the old address and informs them of
+the new one." It then goes on to discourage this because " .... users
+generally want to change their email address because they no longer
+have access to the old one.". I agree that this would be a reason not
+to rely on access to the old mailbox for a legitimate address
+change. In case of a clandestine address change, the user is likely to
+still have access to the old inbox. The notification I'm proposing
+also could be a mere "FYI" without blocking the legitimate use case of
+"User no longer has access to the old mailbox and hence cannot
+authorise abandoning it". In any event it should also mention that the
+user should contact the support desk immediately if they did not
+trigger this change.
+
+The StackExchange article
+https://security.stackexchange.com/questions/234060/what-is-the-suggested-best-practice-for-changing-a-users-email-address
+
+It indeed touches upon the topic in "3. Confirmation through old
+address". In response, the top-rated answer mentions the following :
+
+Send a notice to the old email, for example: "Your email address for
+accessing Website Example has been changed, if you didn't expect this
+your account might have been compromised, etc." You might also provide
+a link to recover the possibly compromised account, with a token that
+expires after some time. The problem with this option is that if the
+old account has been reassigned to someone else, you would not want to
+let them know too much information (and definitely not give them a
+direct recovery option)
+
+This is precisely what OWASP also recommends in the next bullet point.
+
+The OWASP article "Changing A User's Registered Email Address"
+(https://owasp.org/www-community/pages/controls/Changing_Registered_Email_Address_For_An_Account)
+
+This article mentions exactly the weakness described in the weakness
+under review. The flowchart even suggests it in a node inside the
+"Send emails" phase:
+
+Email Currently-Registered email address
+
+Notification-Only message
+
+Include one link:
+* Report the Change Request was Unexpected
+
+The node to its right ("Email Currently-Registered email address /
+Confirmation-Required message") triggers the issue that was pointed
+out in the first reference I cited above. My proposal is basically to
+indicate that a system design bypassing both these two nodes is
+regarded a design weakness.
+
+In client engagements where I have executed creation of threat models,
+I have come across this specific weakness in real-world systems, yet I
+am bound to professional non-disclosure of these clients and their
+products.
+
+If it helps, Josh Grossman at OWASP (https://github.com/tghosth) is
+assessing including this proposed new CWE into the next release of the
+recently published v5 OWASP ASVS (of which he is one of the core
+project maintainers).
 
 ----------
 
@@ -204,3 +309,4 @@ COMMUNICATIONS LOG:
 2025-07-23 sent email
 2025-08-11 sent email
 2025-08-19 sent email
+2025-08-20 received comment
