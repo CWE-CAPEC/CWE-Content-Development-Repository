@@ -12,7 +12,7 @@ SUBMISSION DATE: 2022-06-22 02:31:54
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.MITIGATION, SUB.RELS, SUB.RELREFS, SUB.ATTACK
+ISSUE DETAILS: SUB.RELS
 
 PUBTRACKER: #21
 
@@ -37,10 +37,24 @@ or verification message can allow attackers to silently create new
 accounts or modify existing ones without users being aware that their
 identity is being used or linked to attacker controlled accounts.
 
+This weakness pertains to the absence of abuse reporting mechanisms in
+emails that contain links for account creation or modification (e.g.,
+password resets). Emails facilitating these actions are a standard
+practice in managing user accounts. However, without a direct method
+for recipients to report unauthorized or suspicious requests,
+attackers can exploit this lack of oversight to initiate unauthorized
+account creations or modifications. The presence of an "I did not
+request this" link or similar reporting mechanism within such emails
+can significantly mitigate the risks by alerting the service provider
+to potential abuse, thereby initiating preventive or corrective
+actions against unauthorized attempts.
+
 
 RELATED WEAKNESSES:
 
    Other CWE-613
+   Other ES2206-33c5627d
+   Other ES2211-684d4e45
 
 REFERENCES:
 
@@ -56,26 +70,33 @@ URL: https://krebsonsecurity.com/2022/07/experian-you-have-some-explaining-to-do
 
 ACTIVE ISSUES:
 
-SUB.ATTACK - "Too attack-focused"
+SUB.RELS - "Unclear relationships"
 
-Description: The submission's name and/or description emphasizes the
-attack, not the weakness. Either the submission's weakness is not
-well-understood, or it is better described as an attack pattern, which may
-be suitable for inclusion in CAPEC.
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
 
-Resolution: An initial submission cannot progress to later phases unless it
-also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
 
-Comments: The name suggested on 2022-08-16 "Lack of reporting attacker
-initiated creation or modification of account" explicitly mentions an
-attacker, which should not be part of a name. The original name
-over-emphasized links.  Consider this name: "Missing Notification of
-Change Involving External Identities or Accounts"
+Comments: it is not immediately clear what parent relationships might
+be appropriate, possibly forcing subtree modification. The CWE Team
+will need to coordinate about this issue.  However, this is not
+serious enough to prevent movement to the next phase.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE NECESSARY AT THIS TIME] This issue will be
+addressed in Stage 2.
 
-------
 
+
+
+RESOLVED ISSUES:
 
 SUB.MITIGATION - "Too mitigation-focused"
 
@@ -98,31 +119,7 @@ allow attackers to silently create new accounts or modify existing
 ones without users being aware that their identity is being used or
 linked to attacker controlled accounts."
 
-Response: <SUBMITTER SHOULD REPLY HERE>
-
-------
-
-SUB.RELS - "Unclear relationships"
-
-Description: The submission suggests some relationships, but the
-name/description is not explained in a way in which the relationship is
-relevant; or, the weakness is apparent, but it is not clear what the best
-parent/child relationship(s) would be.
-
-Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
-is present. It can progress to other phases if the CWE Team agrees that the
-potential relationships may require closer investigation.  The submission
-cannot progress to the Publication stage until clear relationships and
-direct parents are identified. The CWE Team may decide to use high-level
-relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
-exist and cannot be quickly resolved.
-
-Comments: it is not immediately clear what parent relationships might
-be appropriate, possibly forcing subtree modification. The CWE Team
-will need to coordinate about this issue.  However, this is not
-serious enough to prevent movement to the next phase.
-
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
 ------
 
@@ -145,14 +142,31 @@ reference, please include a sub-section name and/or page number that
 highlights this issue, and for each reference, provide a brief quote
 of the related material so that CWE analysts can ensure the relevance.
 
+Response: [RESOLVED ISSUE; DO NOT CHANGE] The original concern was
+inaccurate, as the Experian article is clearly relevant: "signing up
+for new accounts at Experian using the victim’s personal information
+and a different email address."
+
+-----
+
+SUB.ATTACK - "Too attack-focused"
+
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: The name suggested on 2022-08-16 "Lack of reporting attacker
+initiated creation or modification of account" explicitly mentions an
+attacker, which should not be part of a name. The original name
+over-emphasized links.  Consider this name: "Missing Notification of
+Change Involving External Identities or Accounts"
+
 Response: <SUBMITTER SHOULD REPLY HERE>
 
-
-
-
-RESOLVED ISSUES:
-
-None.
 
 
 TIMELINE:
