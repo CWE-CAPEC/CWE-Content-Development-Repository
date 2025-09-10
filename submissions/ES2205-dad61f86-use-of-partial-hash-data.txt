@@ -26,34 +26,27 @@ NAME: Reliance on a Substring of a Full Hash Value
 
 DESCRIPTION: 
 
-The product relies on verification or display of a hash value of data,
-but it only uses a substring or partial value of the hash, which
-lowers the attack complexity. For example, using the first 16 bytes of
-a 32-byte hash reduces attack complexity by 2^128. This allows an
-attacker to create a second input with the same substring or partial
-hash value as the original item, even though the full hash value is
-different. Or, if the user cannot view the full hash value and
-validate it, then they cannot safely validate the hash of the data.
+This weakness occurs when software utilizes only a portion of a hash
+value (e.g., the first 8 bytes of the hash) to represent or verify the
+integrity of data, instead of using the full hash value. Using partial
+hash values significantly reduces the computational effort required
+for an attacker to generate a collision, where an arbitrary input
+produces the same partial hash value as the intended original
+data. This vulnerability can manifest in multiple scenarios,
+including:
 
-Firstly, when a full hash value is generated, but only a partial hash
-value is displayed to the user. This can potentially mislead the user
-into thinking that the hash value represents the full data, when in
-fact it represents only a partial value.
+* A complete hash is calculated but only a partial hash is displayed
+  to the user for verification purposes.
 
-Secondly when a partial hash value is displayed and the user must
-compare it to another value they may validate it against the wrong
-hash value (e.g. PGP key short identities suffered this problem).
+* A complete hash is generated but the software verifies data
+  integrity by matching only a segment of this hash.  Reducing the
+  hash length in this manner compromises the security provided by the
+  hashing process, making it feasible for attackers to forge data with
+  matching partial hashes, leading to potential security breaches.
 
-Thirdly, when a full hash value is generated, but only a partial hash
-value is verified by the software. In this case, an attacker could
-create an arbitrary input that produces the same partial hash value as
-the verified value, thereby bypassing the verification process and
-gaining access to sensitive data or systems.
-
-In all scenarios, the use of partial hash values can lead to serious
-security vulnerabilities and should be avoided. The full hash value
-must be used to represent the data to ensure the security and
-integrity of the system.
+Please note that this issue is different from CWE-328 Use of Weak
+Hash. A strong hashing algorithm can be used, but if the hash value is
+truncated sufficiently the output, not the algorithm, becomes weak.
 
 
 RELATED WEAKNESSES:
@@ -91,19 +84,20 @@ direct parents are identified. The CWE Team may decide to use high-level
 relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
 exist and cannot be quickly resolved.
 
-Comments: The submitter acknowledged in 2022-08-16 that "The web form
-forces you to put at least one relationship or other value for CWE."
-This issue is related to hashing but is not necessarily "weak
-hashing." The submission is not prevented from moving to the next
-phase, and it will fall to the CWE Team to determine appropriate
-relationships.  The team might consider classification under CWE-223:
-Omission of Security-relevant Information, which was added as another
-potential relationship under "RELATED WEAKNESSES".  If you agree with
-this decision, please acknowledge in your response.
+Comments: in a 2024-02-24 CDR comment, the submitter stated "this
+issue is different from CWE-328 Use of Weak Hash. A strong hashing
+algorithm can be used, but if the hash value is truncated sufficiently
+the output, not the algorithm, becomes weak."  The submission is not
+prevented from moving to the next phase, and it will fall to the CWE
+Team to determine appropriate relationships.  The team might consider
+classification under CWE-223: Omission of Security-relevant
+Information, which was added as another potential relationship under
+"RELATED WEAKNESSES".
 
-Response: Using “CWE-223: Omission of Security-relevant Information”
+Response: [NO RESPONSE NECESSARY; ISSUE TO BE RESOLVED IN A LATER
+STAGE]. Using “CWE-223: Omission of Security-relevant Information”
 probably would map to the display of a partial hash, but does not
-mentioned he processing of a partial hash value. One suggestion would
+mention The processing of a partial hash value. One suggestion would
 be to update CWE-223 to mention processing of data.
 
 
@@ -253,3 +247,5 @@ COMMUNICATIONS LOG:
 2023-04-04 received email
 2023-09-12 publish server
 2024-01-14 action update-responses
+2024-02-24 received comment
+2025-09-10 action update
