@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2406-9e5fcf10
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: CWE-Assigned
+SUBMISSION STATUS: CWE-Published
 
 AFFECTED CWES: CWE-1434
 
@@ -722,7 +722,7 @@ CWE-Modified: YYYY-MM-DD
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2025-09-09
 
 Post-Publication: YYYY-MM-DD
 
@@ -750,3 +750,5 @@ COMMUNICATIONS LOG:
 2025-08-15 action update
 2025-09-08 sent email
 2025-09-08 sent email
+2025-09-09 action published
+2025-09-11 sent email
