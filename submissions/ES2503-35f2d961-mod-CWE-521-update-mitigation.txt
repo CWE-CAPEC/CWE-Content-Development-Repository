@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2503-35f2d961
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Modified
+SUBMISSION STATUS: CWE-Published
 
 AFFECTED CWES: CWE-521
 
@@ -100,7 +100,7 @@ CWE-Modified: 2025-09-08
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2025-09-09
 
 Post-Publication: YYYY-MM-DD
 
@@ -116,3 +116,5 @@ COMMUNICATIONS LOG:
 2025-06-24 sent email
 2025-08-21 sent email
 2025-09-08 sent email
+2025-09-09 action published
+2025-09-11 sent email
