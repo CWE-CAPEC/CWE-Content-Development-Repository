@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2302-4c1c9d02
 
-ACTION TYPE: Undetermined
+ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -156,7 +156,7 @@ Init-Consultation: 2024-09-10
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-09-14
 
 Det-Requested: YYYY-MM-DD
 
@@ -189,3 +189,4 @@ COMMUNICATIONS LOG:
 2024-06-04 sent email
 2024-09-10 sent email
 2024-09-12 received comment
+2025-09-14 sent email
