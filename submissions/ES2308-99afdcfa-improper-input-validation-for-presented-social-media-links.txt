@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2308-99afdcfa
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -229,7 +229,7 @@ Init-Consultation: 2025-06-24
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-09-13
 
 Det-Requested: YYYY-MM-DD
 
@@ -263,3 +263,4 @@ COMMUNICATIONS LOG:
 2025-04-08 sent email
 2025-06-24 sent email
 2025-06-26 received comment
+2025-09-13 sent email
