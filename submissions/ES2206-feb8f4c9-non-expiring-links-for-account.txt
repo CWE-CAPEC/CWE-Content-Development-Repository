@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2206-feb8f4c9
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -118,7 +118,7 @@ Init-Review: 2022-08-02
 
 Init-Consultation: 2022-08-02
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-09-14
 
 Init-Declined: YYYY-MM-DD
 
@@ -154,3 +154,4 @@ COMMUNICATIONS LOG:
 2023-09-12 publish server
 2024-02-24 received CDR comment
 2024-03-29 sent email
+2025-09-14 sent email
