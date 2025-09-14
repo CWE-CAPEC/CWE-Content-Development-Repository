@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2311-4f94c251
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -123,7 +123,7 @@ Init-Consultation: 2025-05-20
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-09-13
 
 Det-Requested: YYYY-MM-DD
 
