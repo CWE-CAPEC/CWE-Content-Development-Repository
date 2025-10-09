@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2208-93123343
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Published
+SUBMISSION STATUS: Post-Publication
 
 AFFECTED CWES: CWE-942
 
@@ -180,7 +180,7 @@ CWE-Modified: 2025-09-08
 
 CWE-Published: 2025-09-09
 
-Post-Publication: YYYY-MM-DD
+Post-Publication: 2025-10-09
 
 Closed: YYYY-MM-DD
 
@@ -199,4 +199,6 @@ COMMUNICATIONS LOG:
 2025-09-08 sent email
 2025-09-08 sent email
 2025-09-09 action published
+2025-09-09 received comment
 2025-09-11 sent email
+2025-10-09 action update
