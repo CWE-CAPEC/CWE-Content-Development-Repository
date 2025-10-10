@@ -14,7 +14,7 @@ ISSUES: not-analyzed
 
 ISSUE DETAILS: 
 
-PUBTRACKER: 
+PUBTRACKER: #168
 
 MTRACKER: #1280
 
@@ -22,7 +22,7 @@ GITHUBUSER: 69121898
 
 SUBMISSION TYPE: Hardware, Software
 
-NAME: Improper Entitlement Authorization for Protected Artifact Access (Manufacturer Entitlement Pivot u2013 MEP)
+NAME: Improper Entitlement Authorization for Protected Artifact Access (Manufacturer Entitlement Pivot MEP)
 
 DESCRIPTION:
 
@@ -201,3 +201,4 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2025-10-10 sent email
