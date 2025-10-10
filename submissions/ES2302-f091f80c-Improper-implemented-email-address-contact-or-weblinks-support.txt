@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-02-17 22:58:34
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SCOPE.ADMINERR, SUB.UNCLEAR, SUB.RELREFS
+ISSUE DETAILS: SCOPE.ADMINERR, SUB.UNCLEAR, SUB.RELREFS, SUB.OVERLAP
 
 PUBTRACKER: #65
 
@@ -190,6 +190,24 @@ of security and enables attackers to carry out various forms of abuse,
 especially those targeting the takeover of external accounts (e.g.,
 hijacking unclaimed social media handles, spoofing domains, or
 impersonating contact emails).
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This issue is very similar to the one proposed via "ES2304-1f8e1526".
+As such, both of these issues should be handled together to ensure consistency.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
 
 ----------
 
