@@ -1,0 +1,203 @@
+SUBMISSION COMMUNICATION ID: ES2510-692960d9
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-10-06 04:03:14
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: 
+
+MTRACKER: #1280
+
+GITHUBUSER: 69121898
+
+SUBMISSION TYPE: Hardware, Software
+
+NAME: Improper Entitlement Authorization for Protected Artifact Access (Manufacturer Entitlement Pivot u2013 MEP)
+
+DESCRIPTION:
+
+- -Description:
+
+This weakness occurs when an entitlement or authorization mechanism
+improperly grants access to protected development artifacts (e.g.,
+programmers, firmware, SDKs, test images, debug utilities) to a requester
+who claims ownership of a product rather than proving formal authorization
+or vendor of record status.
+
+The defect arises when authorization logic equates possession or serial
+based identification with entitlement. This flaw, known as a Manufacturer
+Entitlement Pivot (MEP) or informally as a 'Flea Market Supply Chain
+Attack', allows an attacker to exploit low assurance identity checks
+(serial numbers, photos, or self-declared ownership) to obtain internal
+OEM, SoC, SoM or similar development materials.
+
+These artifacts typically enable downstream compromise, such as:
+
+- Flashing unsigned firmware or engineering images
+- Unlocking secure boot or debug interfaces
+- Extracting firmware and embedded credentials
+- Persistent reprogramming of deployed or resold devices
+
+The weakness originates in deficient access control logic in entitlement
+systems, web portals, or API-based license validators. not from policy or
+human error. It manifests when the system fails to enforce cryptographic or
+vendor of record binding between artifacts and authorized organizations. 
+
+A critical enabler is the absence of cryptographic enforcement on device
+programming interfaces and tooling (e.g., programmers or u201cfirehoseu201d
+loaders that accept unsigned images). When entitlement systems grant access
+to unsigned programmers or firmware, possession of these artifacts grants
+an attacker immediate ability to subvert device integrity. This dual
+failure, in authorization logic and cryptographic enforcement, constitutes
+a software/hardware security weakness where artifact provenance is not
+cryptographically tied to runtime acceptance.
+
+-- Why It Should Be a Concern:
+
+Improper entitlement authorization violates the principle of least
+privilege at the supply chain boundary and collapses trust between
+manufacturing and fielded systems.
+
+Developers and designers should care because:
+
+- Software level vulnerability: A logic flaw in access control
+implementation (entitlement databases, REST APIs, or SaaS portals).
+- Reproducible impact: Exploitation yields firmware loaders or credentials
+that bypass device security.
+- Persistent effect: Because entitlement portals are long lived, this
+weakness undermines lifecycle security across manufacturing, resale, and
+decommissioning.
+
+In short, it transforms an entitlement check into an initial foothold or
+privilege escalation channel, enabling technical compromise through
+otherwise legitimate software interfaces.
+
+This weakness is distinct from legitimate right to repair. Right to repair
+concerns consumer access to documentation and maintenance tools. By
+contrast, MEP involves privileged development artifacts and programming
+utilities that, if not cryptographically constrained, undermine the entire
+device trust model. The defining technical boundary is whether artifacts
+and programming interfaces enforce cryptographic provenance and acceptance
+policies, controls that prevent misuse regardless of ownership disputes.
+
+-- Technical Impact:
+
+- Loss of Confidentiality - Unauthorized disclosure of OEM artifacts
+(firmware, loaders, debug binaries).
+- Loss of Integrity - Attackers can modify firmware or deploy unsigned
+code.
+- Loss of Availability - Compromised devices may be disabled or bricked.
+- Supply Chain Compromise - Tampered devices can be reintroduced into
+production or resale channels.
+
+-- Subtleties and Variations: 
+
+- Serial based authorization - REST endpoint grants access if a serial
+number exists in the database, without verifying vendor-of-record.
+- Photo/KYC based approval - Support portals approve access based solely on
+uploaded device images.
+- Entitlement inheritance - SoM vendor automatically extends artifact
+access to all module holders without verifying integrator status.
+- Resale vector - Secondary market devices reused to gain upstream access
+to OEM resources.
+- Cloud entitlement bypass - SaaS entitlement systems bind privileges to
+product IDs, not authenticated enterprise accounts.
+- Unsigned or non-attested programming interfaces - Even if entitlement
+checks are strict, devices that accept unsigned loaders or firmware remain
+fully compromiseable. This amplifies impact and distinguishes the issue
+from legitimate maintenance or right to repair.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-863
+   ChildOf CWE-639
+   ChildOf CWE-285
+   ChildOf CWE-668
+
+REFERENCES:
+
+Title: Roadside to Everyone
+URL: https://phrack.org/issues/72/16_md#article
+
+Title: Button Presses to Wireless RCE u2014 Flock Safety LPR Cameras
+URL: https://gainsec.com/2025/09/27/button-presses-to-shell-on-flock-safety-license-plate-cameras-over-wi-fi/
+
+Title: Fly-By u2013 Device 2: The Falcon/Sparrow u2013 Gated Wireless RCE, Camera Feed, DoS, Information Disclosure and More
+URL: https://gainsec.com/2025/09/27/fly-by-device-2-the-falcon-sparrow-gated-wireless-rce-camera-feed-dos-information-disclosure-and-more/
+
+Title: Roadside to Everyone u2013 Intelligent Traffic Systems (ITS) Research
+URL: https://gainsec.com/2025/09/03/roadside-to-everyone-intelligent-traffic-systems-its-research-kapsch-trafficcom-ag-cv2x-roadside-units-rsu/
+
+Title: Grounded Flight u2013 Device 2: Root Shell on Flock Safetyu2019s Falcon/Sparrow Automated License Plate Reader
+URL: https://gainsec.com/2025/06/19/grounded-flight-device-2-root-shell-on-flock-safetys-falcon-sparrow-automated-license-plate-reader/
+
+Title: Root from the Coop u2014 Bravo Compute Box
+URL: https://gainsec.com/2025/09/19/root-from-the-coop-device-3-root-shell-on-flock-safetys-bravo-compute-box/
+
+Title: Lantronix / Thundercomm technical support emails
+URL: https://gainsec.com/wp-content/uploads/2025/10/GainesJ-GainSecLabs-MEP-ExcerptedEvidence.pdf
+
+Title: Vulnerable Firmware in the Supply Chain
+URL: https://eclypsium.com/wp-content/uploads/Vulnerable-Firmware-in-the-Supply-Chain.pdf
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-10-06
+
+Ack-Receipt: 2025-10-10
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
