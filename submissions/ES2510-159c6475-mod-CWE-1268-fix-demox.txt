@@ -1,0 +1,107 @@
+SUBMISSION COMMUNICATION ID: ES2510-159c6475
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-10-09 17:38:53
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: 
+
+MTRACKER: #1281
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Unknown
+
+NAME: Modify CWE-1268 to fix demox
+
+DESCRIPTION:
+
+ Typo in the Example 1 section of  CWE-1268   as described on page 
+https://cwe.mitre.org/data/definitions/1268.html
+
+The paragraph currently is:
+ ---
+Now, recall Agent 3 is untrusted. As explained above, the value of the
+AES_KEY_CONTROL_POLICY register gives agent 3 access to write to the
+AES_KEY_WRITE_POLICY register. Agent 3 can use this write access to add
+themselves to the AES_KEY_WRITE_POLICY register. 
+
+This is accomplished by Agent 3 writing the value 0x00000006. In binary,
+the lower 8 bits are 0000 0110, meaning that bit 3 will be set.
+ 
+Thus, giving Agent 3, having the ability to write to the AES Key registers.
+---
+
+It should be:
+---
+This is accomplished by Agent 3 writing the value 0x0000000A. In binary,
+the lower 8 bits are 0000 1010, meaning that bit 3 will be set. 
+---
+
+RELATED WEAKNESSES:
+
+   Other CWE-1268
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-10-09
+
+Ack-Receipt: 2025-10-10
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
