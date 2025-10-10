@@ -1,0 +1,116 @@
+SUBMISSION COMMUNICATION ID: ES2510-f172717e
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-10-05 11:48:09
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: 
+
+MTRACKER: #1279
+
+GITHUBUSER: mbiesiad
+
+SUBMISSION TYPE: Unknown
+
+NAME: Modify CWE-598 to add OWASP Reference
+
+DESCRIPTION:
+
+Subject: 
+Suggestion: Add OWASP reference to CWE-598 (Use of GET Request Method With
+Sensitive Query Strings) and explanation about sensitive information
+
+Dear CWE team,
+
+I would like to suggest adding an OWASP community reference to CWE-598:
+
+OWASP: Information Exposure Through Query Strings in URL -
+https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url
+
+This OWASP page is well-structured, widely cited, and illustrates the risks
+of sensitive information exposure in URL query strings (history, logs,
+referer headers, third-party trackers). Linking it in CWE-598 References
+would provide additional practical guidance for developers and security
+reviewers.
+
+Additionally, it may be useful to clarify the scope of "sensitive
+information" in CWE-598. For example:
+
+Proposed wording:
+u201cSensitive information includes secrets such as session identifiers,
+passwords, access tokens, API keys, and also Personally Identifiable
+Information (PII) such as email addresses or phone numbers. In many
+systems, email addresses are both confidential PII and serve as login
+identifiers, making their disclosure in query strings a combined privacy
+and authentication risk.u201d
+
+Best regards,
+Michal Biesiada
+
+RELATED WEAKNESSES:
+
+   Other CWE-598
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-10-05
+
+Ack-Receipt: 2025-10-10
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
