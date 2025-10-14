@@ -88,7 +88,7 @@ One of the other children to CWE-732 is CWE-1004: Sensitive Cookie Without 'Http
 is very adjacent to the proposed weakness.  Please indicate if you agree with this newly suggested
 relationship.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree
 
 
 ----------
@@ -109,7 +109,9 @@ although when the CWE team attempted to view the reference the page was not load
 check that the link to the intended reference is correct and if the intended reference is not 
 accessible please provide another reference.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I have repaired the reference at
+https://security.synotna.eu/cookie-broadcasting.html - which is simply my
+own write up explaining the vulnerability 
 
 
 RESOLVED ISSUES:
@@ -160,4 +162,5 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-12-09 sent email
 2025-01-24 sent email
-2025-01-24 sent email
+2025-08-25 sent email
+2025-10-11 received comment
