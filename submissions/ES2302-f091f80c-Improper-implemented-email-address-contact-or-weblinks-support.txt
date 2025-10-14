@@ -206,7 +206,7 @@ duplicate/overlap.
 Comments: This issue is very similar to the one proposed via "ES2304-1f8e1526".
 As such, both of these issues should be handled together to ensure consistency.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE NECESSARY; ISSUE COVERED IN OTHER SUBMISSION]
 
 
 ----------
