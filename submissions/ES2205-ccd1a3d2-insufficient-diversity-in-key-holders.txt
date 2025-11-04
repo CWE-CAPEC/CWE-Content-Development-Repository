@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2205-ccd1a3d2
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -229,7 +229,7 @@ Init-Review: 2022-07-18
 
 Init-Consultation: 2022-07-18
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-11-04
 
 Init-Declined: YYYY-MM-DD
 
@@ -268,3 +268,4 @@ COMMUNICATIONS LOG:
 2023-09-12 publish server
 2024-02-24 received comment
 2025-09-10 action update
+2025-11-04 sent email
