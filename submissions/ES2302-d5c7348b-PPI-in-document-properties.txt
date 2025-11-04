@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2302-d5c7348b
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Internal-Update
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-212, CWE-359
 
 ORIGIN: sub-server
 
@@ -35,7 +35,8 @@ is using up-to-date software and so on.
 
 RELATED WEAKNESSES:
 
-   Other CWE-200
+   Other CWE-212
+   Other CWE-359
 
 REFERENCES:
 
@@ -204,7 +205,7 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2025-11-04
 
 Final-Coord: YYYY-MM-DD
 
@@ -225,3 +226,4 @@ COMMUNICATIONS LOG:
 2023-09-12 publish server
 2024-01-23 sent email
 2024-06-27 sent email
+2025-11-04 sent email
