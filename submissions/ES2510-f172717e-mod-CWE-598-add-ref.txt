@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2510-f172717e
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-10-05 11:48:09
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #167
 
@@ -66,7 +66,23 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
 
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The OWASP reference is a valuable resource, and the CWE team will 
+incorporate it into CWE-598. We also recognize a broader need to clarify and 
+standardize the treatment of “sensitive information” across the corpus. We 
+plan to address that in a later phase or as a separate effort. Please let us 
+know if this approach works for you.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -80,7 +96,7 @@ Ack-Receipt: 2025-10-10
 
 Init-Review: 2025-10-14
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-11-04
 
 Init-Declined: YYYY-MM-DD
 
@@ -116,3 +132,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-10-10 sent email
 2025-10-14 sent email
+2025-11-04 sent email
