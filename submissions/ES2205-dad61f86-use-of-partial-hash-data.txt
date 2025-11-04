@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2205-dad61f86
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -207,7 +207,7 @@ Init-Review: 2022-07-13
 
 Init-Consultation: 2022-07-13
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-11-04
 
 Init-Declined: YYYY-MM-DD
 
@@ -249,3 +249,4 @@ COMMUNICATIONS LOG:
 2024-01-14 action update-responses
 2024-02-24 received comment
 2025-09-10 action update
+2025-11-04 sent email
