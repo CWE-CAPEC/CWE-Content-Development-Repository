@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-159200de
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Det-Requested
 
 AFFECTED CWES: 
 
@@ -12,7 +12,9 @@ SUBMISSION DATE: 2025-02-28 15:16:10
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.MISC
+ISSUE DETAILS: SUB.MISSDET
+
+FIELDCHANGE: DEMOX
 
 PUBTRACKER: #142
 
@@ -45,6 +47,47 @@ files or executing arbitrary requests on the server. Additionally, improper
 handling of the file parameter can lead to file inclusion vulnerabilities,
 allowing an attacker to load unexpected or malicious files from the server.
 
+
+DEMONSTRATIVE EXAMPLES:
+
+
+INTRO TEXT:
+
+The following PHP code receives a file argument for an XML file, loads
+the XML file, and prints the results back to the user.
+
+BAD CODE:
+LANGUAGE: PHP
+
+$xmlFile = $_GET['file'];
+$xml = simplexml_load_file($xmlFile);
+echo $xml->asXML();
+
+EXPLANATORY TEXT:
+
+The above PHP code is vulnerable because it directly loads an XML file
+from user input without validating its structure against a schema
+(XSD) or a Document Type Definition (DTD). This lack of validation
+allows an attacker to exploit XML External Entity (XXE) Injection
+(CWE-611), potentially accessing local files or executing arbitrary
+requests on the server. Additionally, improper handling of the file
+parameter can lead to file inclusion vulnerabilities (CWE-22),
+allowing an attacker to load unexpected or malicious files from the
+server.
+
+GOOD CODE:
+LANGUAGE: PHP
+
+(SEE COMMENTS IN SUB.MISSDET)
+
+possible "good" code:
+
+     
+
+<<put the information here>>
+
+
+
 RELATED WEAKNESSES:
 
    Other CWE-112
@@ -54,30 +97,41 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
-SUB.MISC - "Miscellaneous/other problem"
+SUB.MISSDET - "Missing details"
 
-Description: The submission has some other problem that is not covered
-elsewhere.
+Description: The submission is missing some requested or required details
+for elements other than name and description.
 
-Resolution: This will depend on the nature of the problem.
+Resolution: The submission cannot progress to later phases if it does not
+have all required elements.
 
-Comments: This example is reasonable, but we will need to add more
-details. In Stage 2, we will work with you to refine this example to
-fit with CWE's expected style, such as introductory text and a "good
-code" example to demonstrate the fix. We are also considering if it is
-applicable to add to CWE-611. It looks like the commonly used PHP XML
-validation library, libxml2, prevents XXE by
-default. https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html#:~:text=the%20NSXMLDocument.-,PHP,-%C2%B6 .
+Comments: We have inserted your suggestion into the "DEMONSTRATIVE
+EXAMPLES:" section; please review the raw submission file for details.
 
-We also note that this example code is also subject to path traversal
-(CWE-22), which could be confusing to the reader of CWE-112. In Stage
-2, we will work with you to modify the example to avoid the path
-traversal, such as by reading in XML content directly from the GET
-rather than getting a file path and loading the XML from the path, or
-validating that the filename is alphanumeric with a .xml extension, or
-something similar.
+Please respond to the following comments and provide the appropriate
+details. We can work with you to finalize this.
 
-Please respond to indicate that you have seen this comment.
+1) We have written an "INTRO TEXT" summary of what the code is
+   attempting to do. Please let us know if you agree with this
+   summary.
+
+2) The demonstrative example needs to include a "GOOD CODE" example
+   that avoids the multiple weaknesses that the "BAD CODE" has, such
+   as path traversal (CWE-22). We suggest validating the $xmlFile
+   result against a regular expression such as "/^\w+\.xml$/" such as:
+
+      preg_match("/^\w+\.xml$/", $xmlFile)
+
+   Let us know if you agree with this approach.
+
+3) Once this demonstrative example is finished for CWE-112, the CWE
+   plans to reuse it for CWE-22, and also adapt it for CWE-611 to use
+   the PHP XML validation library, libxml2, which appears to prevent
+   XXE by
+   default. https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html#:~:text=the%20NSXMLDocument.-,PHP,-%C2%B6
+
+   We welcome your insights and suggestions on this approach.
+
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -102,7 +156,7 @@ Init-Declined: YYYY-MM-DD
 
 Init-Accepted: 2025-11-04
 
-Det-Requested: YYYY-MM-DD
+Det-Requested: 2025-11-04
 
 Det-Received: YYYY-MM-DD
 
@@ -133,3 +187,4 @@ COMMUNICATIONS LOG:
 2025-03-11 sent email
 2025-05-28 sent email
 2025-11-04 sent email
+2025-11-05 sent email
