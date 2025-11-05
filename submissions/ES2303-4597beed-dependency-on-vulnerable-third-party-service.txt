@@ -1,10 +1,10 @@
 SUBMISSION COMMUNICATION ID: ES2303-4597beed
 
-ACTION TYPE: Undetermined
+ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-1395
 
 ORIGIN: sub-server
 
@@ -244,7 +244,7 @@ Init-Consultation: 2025-02-19
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-11-05
 
 Det-Requested: YYYY-MM-DD
 
@@ -277,3 +277,4 @@ COMMUNICATIONS LOG:
 2025-02-19 sent email
 2025-05-27 received comment
 2025-07-06 received comment
+2025-11-05 sent email
