@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2505-b5bccecb
 
-ACTION TYPE: New Entry
+ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-05-17 00:55:42
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.ACTCHANGE
 
 PUBTRACKER: #153
 
@@ -34,7 +34,7 @@ result in the user being redirected to an attacker-controlled external URL.
 
 This chained behavior often bypasses typical security controls like link
 scanners, security policies (e.g., Content Security Policy, email
-clientsu2019 link checkers), and even user awareness, because the attack
+clients' link checkers), and even user awareness, because the attack
 route seems to remain in a safe context until the very end.
 
 General Explanation:
@@ -46,13 +46,13 @@ result in the user being redirected to an attacker-controlled external URL.
 
 This chained behavior often bypasses typical security controls like link
 scanners, security policies (e.g., Content Security Policy, email
-clientsu2019 link checkers), and even user awareness, because the attack
+clients' link checkers), and even user awareness, because the attack
 route seems to remain in a safe context until the very end.
 
- Why itu2019s a Concern:
+ Why it's a Concern:
 Developers often assume that a redirect is only dangerous if it directly
-leads to an external domain. However, a series of internal redirects u2014
-all within the same trusted domain u2014 can be crafted in such a way that
+leads to an external domain. However, a series of internal redirects -
+all within the same trusted domain - can be crafted in such a way that
 the final destination is malicious.
 
 This opens the door to advanced phishing attacks, user impersonation,
@@ -104,7 +104,91 @@ URL: https://gist.github.com/PharaohBM7/fake123456example
 
 ACTIVE ISSUES:
 
+SUB.OVERLAP - "Duplicate/Overlap"
 
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: The provided submission is a different way of exploiting an 
+Open Redirect, and not a different weakness. Although there is a chain of 
+redirects, the ultimate weakness is that the application is doing a redirect 
+based on user input. We can include your suggestion as an example which shows 
+a redirect chain as part of CWE-601. Let us know if you are okay with this 
+approach.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: Although there is a chain of redirects, the ultimate weakness is 
+that the application is doing a redirect based on user input. This distinction 
+of using chained redirects is too low level to warrant a child entry to 
+CWE-601. Please confirm if you agree with this.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The GitHub reference currently leads to a 404 error. Could you 
+please provide alternative references or real-world examples that demonstrate 
+the significance of this weakness?
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to Stage 3 (Content-Generation)
+until the informational needs are addressed.
+
+Comments: As mentioned in SUB.OVERLAP, your submission highlights another 
+way of doing an Open Redirect. As such, we would be happy to modify CWE-601
+to include redirect chains. Please let us know if you agree with the change.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -118,7 +202,7 @@ Ack-Receipt: 2025-05-27
 
 Init-Review: 2025-07-17
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-11-06
 
 Init-Declined: YYYY-MM-DD
 
@@ -154,3 +238,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-05-27 sent email
 2025-07-17 sent email
+2025-11-06 sent email
