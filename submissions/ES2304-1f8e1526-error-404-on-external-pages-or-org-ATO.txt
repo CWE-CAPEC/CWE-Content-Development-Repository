@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2304-1f8e1526
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-04-12 19:47:23
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SCOPE.ADMINERR, SUB.ABS.SUBTREE, SUB.OVERLAP
 
 PUBTRACKER: #52
 
@@ -102,6 +102,7 @@ https://dev.to/securitytxt/broken-link-hijacking---how-expired-links-can-be-expl
 RELATED WEAKNESSES:
 
    Other CWE-451
+   Other ES2302-f091f80c
 
 REFERENCES:
 
@@ -127,7 +128,91 @@ URL: https://capec.mitre.org/data/definitions/103.html
 
 ACTIVE ISSUES:
 
+SUB.UNCLEAR - "Unclear weakness"
 
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: The way the submission is written makes it difficult to
+understand where the weakness lies. Please clarify which of 
+the following scenario you are referring to: 1. A user submits data 
+(such as a blog post) that has a typo in the link.  Or 2. 
+The developers of the application hardcode a link that has a typo to another 
+resource.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SCOPE.ADMINERR - "Admin/user error"
+
+Description: The issue focuses on security errors that are made by an admin
+or user of the product/service, not the developer or maintainer of the
+product/service.
+
+Resolution: Submissions will be reviewed on a case-by-case basis, delayed,
+and possibly cited as examples until this exclusion is finalized after
+extensive community feedback.
+
+Comments: Please clarify which of the following scenarios you are referring to.:
+1. A user submits data (such as a blog post) that has a typo in the link. In that
+case, this would fall under user error and not be within scope of CWE. Or 
+2. The developers of the application hardcode a link to another resource that 
+has a typo. In that case, SCOPE.ADMINERR may not apply.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or detailed) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: "generation of incorrect data" or "reliance on incorrect data" 
+is likely a CWE gap in general. This is something the CWE team needs to
+figure out how to handle in the future. Once we have a better understanding 
+of the weakness being submitted, the CWE team can discuss if this potential 
+subtree issue/gap will prevent this submission from proceeding.  Please 
+acknowledge that you have read this comment and feel free to ask any
+questions.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This issue is very similar to the one proposed via "ES2302-f091f80c"
+(CDR #65).  As such, both of these issues should be handled together
+to ensure consistency.  There is no action needed from the submitter,
+but please indicate that you have read this comment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -141,7 +226,7 @@ Ack-Receipt: 2024-01-05
 
 Init-Review: 2025-05-28
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-11-06
 
 Init-Declined: YYYY-MM-DD
 
@@ -176,3 +261,4 @@ COMMUNICATIONS LOG:
 2024-01-05 sent email
 2024-10-14 received comment
 2025-05-28 sent email
+2025-11-06 sent email
