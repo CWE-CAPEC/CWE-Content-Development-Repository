@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2510-f172717e
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -101,7 +101,7 @@ Init-Consultation: 2025-11-04
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-11-06
 
 Det-Requested: YYYY-MM-DD
 
@@ -135,3 +135,4 @@ COMMUNICATIONS LOG:
 2025-10-14 sent email
 2025-11-04 sent email
 2025-11-05 received comment
+2025-11-06 sent email
