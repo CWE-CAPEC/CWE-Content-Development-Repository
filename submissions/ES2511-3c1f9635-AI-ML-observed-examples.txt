@@ -1,0 +1,111 @@
+SUBMISSION COMMUNICATION ID: ES2511-3c1f9635
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-11-21 15:38:12
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #171
+
+MTRACKER: #1293
+
+GITHUBUSER: stevechristeycoley
+
+SUBMISSION TYPE: Unknown
+
+NAME: Add observed examples for AI products
+
+DESCRIPTION:
+
+This submission will be used to focus the identification, review, and
+addition of observed examples based on a report of recent CVEs in
+AI/ML-related products. Contributors may make suggestions using comments in
+the CDR issue itself.
+
+The task is roughly:
+
+- for each CWE, review the list and identify one to three observed examples
+that could be most suitable to include in the CWE entry
+
+The best examples satisfy the following criteria:
+
+  - the vulnerability is not unnecessarily complex
+
+  - the CVE has useful technical details that explain the weakness, whether
+in the CVE description itself or in its references (many CVEs do not have
+such details)
+
+  - the relevant CWE mapping needs to be verified (in case of errors); a
+better CWE can be used if found.
+
+  - ideally, the collected set of CVEs for a particular CWE should reflect
+a variety of products, technologies, and/or errors.
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-1000
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-11-21
+
+Ack-Receipt: 2025-11-21
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
+2025-11-21 sent email
