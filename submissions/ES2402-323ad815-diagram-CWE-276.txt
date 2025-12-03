@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-323ad815
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: CWE-Modified
 
 AFFECTED CWES: CWE-276
 
@@ -10,7 +10,7 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-02-29 12:37:24
 
-ISSUES: not-analyzed
+ISSUES: no
 
 ISSUE DETAILS: 
 
@@ -42,6 +42,21 @@ ACTIVE ISSUES:
 
 RESOLVED ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The CWE team coordinated with the submitter to create a new
+image. Unrelated usability work caused a delay in making other
+significant changes to CWE-276. The CWE Team later created their own
+adapted version of the image and decided that the diagram could be
+added without resolving other issues in CWE-276.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
 
 
 TIMELINE:
@@ -56,7 +71,7 @@ Init-Consultation: 2024-08-21
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: 2024-10-03
+Init-Accepted: 2024-11-08
 
 Det-Requested: YYYY-MM-DD
 
@@ -68,11 +83,11 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2025-12-02
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-12-02
 
 Final-Coord: YYYY-MM-DD
 
@@ -88,3 +103,5 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-04-03 sent email
 2024-07-09 action review
+2024-11-08 action update
+2025-12-02 sent email
