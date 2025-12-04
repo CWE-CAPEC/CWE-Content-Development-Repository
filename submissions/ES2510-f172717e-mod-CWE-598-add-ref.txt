@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2510-f172717e
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Internal-Update
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-598
 
 ORIGIN: sub-server
 
@@ -79,8 +79,8 @@ standardize the treatment of “sensitive information” across the corpus. We
 plan to address that in a later phase or as a separate effort. Please let us 
 know if this approach works for you.
 
-Response: SUB.MISC - "Miscellaneous/other problem" Response: Thank you
-for the update. That approach works perfectly for me.
+Response: Thank you for the update. That approach works perfectly for
+me.
 
 
 ----------
@@ -113,7 +113,7 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2025-12-04
 
 CWE-Assigned: YYYY-MM-DD
 
@@ -136,3 +136,4 @@ COMMUNICATIONS LOG:
 2025-11-04 sent email
 2025-11-05 received comment
 2025-11-06 sent email
+2025-12-04 sent email
