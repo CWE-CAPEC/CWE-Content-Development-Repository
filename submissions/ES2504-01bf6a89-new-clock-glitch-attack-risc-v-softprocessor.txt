@@ -14,7 +14,7 @@ ISSUES: yes/active
 
 ISSUE DETAILS: SUB.MISSDET
 
-PUBTRACKER: 
+PUBTRACKER: #172
 
 MTRACKER: #1247
 
@@ -22,9 +22,15 @@ GITHUBUSER: aamalik3
 
 SUBMISSION TYPE: Hardware
 
-NAME: Clock glitch attack on RISC-V softprocessor core (cv32e40x)  results in the execution of exception handler. In the absence of the exception handler the glitched instruction is skipped and/or program counter redirection occurs.
+NAME: Clock glitch attack on RISC-V softprocessor core
 
 DESCRIPTION:
+
+(Original name for this submission: "Clock glitch attack on RISC-V
+softprocessor core (cv32e40x) results in the execution of exception
+handler. In the absence of the exception handler the glitched
+instruction is skipped and/or program counter redirection occurs.")
+
 
 Our study conducted on a RISC-V soft-core processor (cv32e40x) revealed two
 novel vulnerabilities.
@@ -101,8 +107,12 @@ B. Extend the “Common Consequences” section
 
 Consider explicitly calling out:
 
-* Instruction skip and control-flow redirection: security-relevant instructions (e.g., signature verification, access checks) may be skipped.
-* Silent corruption of architectural state: general-purpose registers or control registers may be zeroed or partially corrupted without an exception, undermining control-flow integrity and data integrity.
+* Instruction skip and control-flow redirection: security-relevant
+  instructions (e.g., signature verification, access checks) may be
+  skipped.
+* Silent corruption of architectural state: general-purpose registers
+  or control registers may be zeroed or partially corrupted without an
+  exception, undermining control-flow integrity and data integrity.
 
 This aligns CWE-1247 with the observed behaviors where glitch effects
 propagate into control flow and register state, not just simple bypass
@@ -259,3 +269,4 @@ COMMUNICATIONS LOG:
 2025-05-13 sent email
 2025-11-12 sent email
 2025-11-13 received email
+2025-12-04 sent email
