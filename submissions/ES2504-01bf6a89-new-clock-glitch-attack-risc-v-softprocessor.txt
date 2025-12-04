@@ -1,0 +1,261 @@
+SUBMISSION COMMUNICATION ID: ES2504-01bf6a89
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-04-21 15:28:34
+
+ISSUES: yes/active
+
+ISSUE DETAILS: SUB.MISSDET
+
+PUBTRACKER: 
+
+MTRACKER: #1247
+
+GITHUBUSER: aamalik3
+
+SUBMISSION TYPE: Hardware
+
+NAME: Clock glitch attack on RISC-V softprocessor core (cv32e40x)  results in the execution of exception handler. In the absence of the exception handler the glitched instruction is skipped and/or program counter redirection occurs.
+
+DESCRIPTION:
+
+Our study conducted on a RISC-V soft-core processor (cv32e40x) revealed two
+novel vulnerabilities.
+
+(1) We found a novel method to induce instruction skips by glitching the
+clock, which prevents critical values from being loaded from memory, thus
+disrupting program execution.
+
+(2) Using a precise clock glitch, converts a fetched legal instruction into
+an illegal one mid-execution, diverting control flow in a manner
+exploitable by attackers. We have identified four timing windows (cases) in
+which the processor fails to detect these illegal control-flow diversions,
+allowing silent, undetected corruption of the program state. 
+
+* Case #1: The instruction is skipped, triggering the 'illegalu2019
+flag and the exception handler.
+* Case #2: The destination register is zeroed while triggering the
+'illegalu2019 flag and the exception handler.
+* Case #3: The destination register is zeroed without triggering the
+'illegalu2019 flag or the exception handler.
+* Case #4: The destination register is partially corrupted without
+triggering the 'illegalu2019 flag or the exception handler
+
+To clarify, I am not requesting a CVE ID for a product-specific
+vulnerability. My intent is to help refine the CWE hardware entries,
+in particular CWE-1247 and closely related weaknesses, based on fault
+behaviors we observed that appear more general than a single
+implementation.
+
+My findings show a recurring pattern in synchronous pipelined processors where clock glitches cause:
+
+1. Instruction skips that bypass critical operations.
+
+2. Conversion of a legal instruction into an illegal one mid-pipeline.
+
+3. Silent corruption of destination registers and control flow without an exception or fault being raised.
+
+These behaviors are architectural patterns and not unique to a specific core.
+
+PROPOSED UPDATES FOR CWE-1247
+
+A. Add a new example scenario
+
+I suggest adding an example to CWE-1247 that explicitly covers
+pipelined CPU behavior under clock glitch attacks. Suggested text
+(non-product specific):
+
+Example: Clock glitch on pipelined CPU causing instruction skips and silent state corruption
+
+In a synchronous pipelined CPU, a precisely timed clock glitch during
+the decode or execute stages can corrupt internal control signals. As
+a result:
+
+*	A fetched legal instruction may be treated as illegal or partially executed.
+*	The pipeline may skip the intended instruction or redirect the program counter to an unintended location.
+*	The destination register may be zeroed or partially corrupted.
+
+In some timing windows, the illegal instruction or control-flow error is correctly detected, raising an exception and invoking the exception handler. However, in other windows, the same fault pattern leads to:
+
+*	Instruction execution being skipped without any exception, or
+*	Register file corruption without any architectural fault being reported.
+
+This leads to silent, attacker-controlled modification of the program
+state that can bypass security checks such as authentication, bounds
+checks, or integrity verification.
+
+This example makes it clear that the weakness is not only the absence
+of glitch detectors, but also inadequate microarchitectural robustness
+and fault handling in the presence of clock glitches.
+
+----
+
+B. Extend the “Common Consequences” section
+
+Consider explicitly calling out:
+
+* Instruction skip and control-flow redirection: security-relevant instructions (e.g., signature verification, access checks) may be skipped.
+* Silent corruption of architectural state: general-purpose registers or control registers may be zeroed or partially corrupted without an exception, undermining control-flow integrity and data integrity.
+
+This aligns CWE-1247 with the observed behaviors where glitch effects
+propagate into control flow and register state, not just simple bypass
+of a single check.
+
+----
+
+C. Extend “Potential Mitigations”
+
+In addition to existing circuit-level and sensor-based mitigations, I
+suggest mentioning microarchitectural and architectural
+countermeasures such as:
+
+* Redundant or delayed commit of security-critical instructions (e.g.,
+  duplicate execution or compare-before-commit in critical regions).
+
+* Invariant checks on control flow at commit time (e.g., ensuring that
+  program counter progression and branch targets follow a valid
+  control-flow policy).
+
+* Consistency checks between exception flags and writeback behavior
+  (e.g., preventing register file updates in cycles where
+  illegal-instruction or fault signals are asserted or unstable).
+
+* Hardened exception handling paths that cannot be easily skipped or
+  redirected by a single-cycle glitch.
+
+These mitigations directly address the kind of “partial detection” we
+observed: some timing windows raise exceptions, others silently
+corrupt state.
+
+--------------
+
+
+3. Suggested cross-link or note under CWE-1332
+
+The behavior we observed also fits the spirit of CWE-1332: Improper
+Handling of Faults that Lead to Instruction Skips.
+eSecurity Planet https://www.esecurityplanet.com/threats/mitre-cisa-hardware-software-vulnerabilities/
+
+I suggest either:
+
+* Adding a short note to CWE-1332 referencing CWE-1247 for the
+  physical mechanism (clock glitches), or
+
+* Adding a cross-reference from CWE-1247 to CWE-1332 indicating that
+  improper handling of glitch-induced faults can manifest as
+  instruction skip or partial execution.
+
+Example wording for CWE-1332 or a relationship note:
+
+In pipelined processors, physical fault attacks such as clock glitches
+(see CWE-1247) can introduce transient faults in decode or execute
+stages, causing instruction skips, PC misdirection, or partial
+register-file updates without raising an exception. If the design does
+not robustly detect and handle these fault-induced behaviors, critical
+security checks can be bypassed.
+
+----------------------
+
+4. High-level abstraction of our experimental results
+
+To keep this fully product-agnostic, the core pattern from our experiments can be summarized as:
+
+* Fault mechanism: A clock glitch is injected into a synchronous, pipelined processor.
+* Observed architectural effects (four timing windows):
+  * Case 1: Instruction is skipped, illegal flag raised, exception handler executes.
+  * Case 2: Destination register is zeroed, illegal flag raised, exception handler executes.
+  * Case 3: Destination register is zeroed, but no illegal flag or exception is raised.
+  * Case 4: Destination register is partially corrupted, but no illegal flag or exception is raised.
+* Security impact:
+  * Silent corruption of critical variables.
+  * Bypass of control-flow or integrity checks by skipping or modifying instructions.
+  * Potential redirection of program counter without any architectural indication of a fault.
+
+I believe these behaviors are representative of a broader class of
+designs where fault detection logic is not fully aligned with pipeline
+control, and that they fit naturally as a richer example set under
+CWE-1247, with cross-links to CWE-1332.
+
+RELATED WEAKNESSES:
+
+   Other CWE-1247
+   Other CWE-1332
+
+REFERENCES:
+
+Title: CRAFT: Characterizing and Root-Causing Fault Injection Threats at Pre-Silicon
+URL: https://arxiv.org/pdf/2503.03877
+
+
+ACTIVE ISSUES:
+
+RESOLVED ISSUES:
+
+SUB.MISSDET - "Missing details"
+
+Description: The submission is missing some requested or required details
+for elements other than name and description.
+
+Resolution: The submission cannot progress to later phases if it does not
+have all required elements.
+
+Comments: This issue appears to be a report for a specific
+vulnerability, instead of a request for updating weakness information
+in CWE. A followup inquiry is being sent.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE. ADDRESSED BY SUBMITTER BEFORE PUBLICATION.]
+
+
+
+TIMELINE:
+
+Received: 2025-04-21
+
+Ack-Receipt: 2025-12-04
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
+2025-05-13 sent email
+2025-11-12 sent email
+2025-11-13 received email
