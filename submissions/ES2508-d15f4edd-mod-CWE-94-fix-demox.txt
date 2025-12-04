@@ -2,17 +2,17 @@ SUBMISSION COMMUNICATION ID: ES2508-d15f4edd
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-94
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-08-22 19:40:26
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #164
 
@@ -134,6 +134,23 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: Thank you.  We agree that the bad code snippet produces a
+SyntaxError.  The issue is that python3's "eval" does not evaluate a
+space separated string of numbers as a list like the snippet expects
+it to.  Instead, python3 is set to translate a comma separated list of
+numbers expressed as a string into a list. We will modify the good
+code as you suggested, and make small changes to the original bad code
+to try/catch any potential SyntaxError, which will still allow the
+malicious eval().
+
+Response: [NO RESPONSE NECESSARY; MODIFICATION TO BE MADE PER SUGGESTION]
 
 
 RESOLVED ISSUES:
@@ -152,7 +169,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-12-04
 
 Det-Requested: YYYY-MM-DD
 
@@ -184,3 +201,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-08-26 sent email
 2025-10-14 sent email
+2025-12-04 sent email
