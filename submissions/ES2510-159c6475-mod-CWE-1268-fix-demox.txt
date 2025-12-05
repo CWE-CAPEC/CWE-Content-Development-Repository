@@ -2,17 +2,17 @@ SUBMISSION COMMUNICATION ID: ES2510-159c6475
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-1268
 
 ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-10-09 17:38:53
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #169
 
@@ -57,6 +57,40 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: We agree that 0x00000006 is an incorrect value for Agent 3
+to write to the AES_KEY_WRITE_POLICY register.  Somehow this was
+changed from the value that was used in the original version of the
+demonstrative example, 0x0000000C. We believe that 0x0000000C is more
+appropriate than the suggested 0x0000000A.
+
+- 0x0A = 0000 1010b sets bits 1 and 3, enabling Agents 1 and 3, and
+  clearing bit 2 (so Agent 2 would lose write access). The "configured
+  access control policy" table indicates that Agent 2 is the default
+  agent for write access. The policy does not mention anything about
+  Agent 1 and write access.
+
+- To keep the default Agent 2 (bit 2) and add Agent 3 (bit 3), use
+  0x0000000C = 0000 1100b (bits 2 and 3 set).
+
+This change would keep existing functionality without removing Agent
+2's write access. Removing Agent 2's write access would likely cause
+operational problems that could expose the attack. We will adjust the
+example's commentary to mention that the attacker could provide other
+values that could cause a denial of service to existing authorized
+Agents.
+
+Please let us know if you agree with this proposal.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
 
 
 RESOLVED ISSUES:
@@ -71,7 +105,7 @@ Ack-Receipt: 2025-10-10
 
 Init-Review: 2025-11-06
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2025-12-04
 
 Init-Declined: YYYY-MM-DD
 
@@ -107,3 +141,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-10-10 sent email
 2025-11-06 sent email
+2025-12-04 sent email
