@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2508-95a780e3
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -68,7 +68,7 @@ Received: 2025-08-15
 
 Ack-Receipt: 2025-08-26
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2025-12-04
 
 Init-Consultation: YYYY-MM-DD
 
@@ -105,3 +105,6 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2025-08-26 sent email
+2025-09-12 action meeting
+2025-10-10 action meeting
+2025-12-05 sent email
