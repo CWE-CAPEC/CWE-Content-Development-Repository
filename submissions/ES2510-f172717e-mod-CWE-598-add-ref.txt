@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2510-f172717e
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
 AFFECTED CWES: CWE-598
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-10-05 11:48:09
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.MISC
+ISSUE DETAILS: 
 
 PUBTRACKER: #167
 
@@ -66,6 +66,11 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
+
+----------
+
+RESOLVED ISSUES:
+
 SUB.MISC - "Miscellaneous/other problem"
 
 Description: The submission has some other problem that is not covered
@@ -81,11 +86,6 @@ know if this approach works for you.
 
 Response: Thank you for the update. That approach works perfectly for
 me.
-
-
-----------
-
-RESOLVED ISSUES:
 
 
 
@@ -117,7 +117,7 @@ Internal-Update: 2025-12-04
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-12-05
 
 Final-Coord: YYYY-MM-DD
 
@@ -137,3 +137,4 @@ COMMUNICATIONS LOG:
 2025-11-05 received comment
 2025-11-06 sent email
 2025-12-04 sent email
+2025-12-05 sent email
