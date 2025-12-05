@@ -47,6 +47,7 @@ RELATED WEAKNESSES:
 
    ChildOf CWE-150
    ChildOf CWE-74
+   Other ES2508-95a780e3
 
 REFERENCES:
 
@@ -72,7 +73,7 @@ the more-general concept is appropriately identified and described. The
 original, lower-level submission will serve as a primary example of the
 more general concept.
 
-Comments: The submission specifically focuses on ANSI codes. CWE-150,
+Comments: The submission specifically focuses on ANSI codes. CWE-150
 already covers Improper Neutralization of Escape, Meta, or Control Sequences. 
 ASNI codes would be classified as "Control Sequences" which is why 
 it is covered by CWE-150. Given that CWE-150 is already a variant 

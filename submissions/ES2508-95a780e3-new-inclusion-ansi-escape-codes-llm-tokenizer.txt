@@ -43,6 +43,7 @@ RELATED WEAKNESSES:
 
    ChildOf CWE-77
    ChildOf CWE-1426
+   Other ES2406-ca98e75f
 
 REFERENCES:
 
