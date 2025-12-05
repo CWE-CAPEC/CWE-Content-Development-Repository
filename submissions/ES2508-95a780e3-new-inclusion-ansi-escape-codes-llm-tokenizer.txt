@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2508-95a780e3
 
-ACTION TYPE: New Entry
+ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-08-15 16:47:46
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.COORD, SUB.MISSDET, SUB.NEWTECH, SUB.OVERLAP
 
 PUBTRACKER: #163
 
@@ -56,10 +56,146 @@ URL: https://i.blackhat.com/BH-US-23/Presentations/US-23-stok-weponizing-plain-t
 
 ACTIVE ISSUES:
 
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This submission overlaps another submission, ES2406-ca98e75f
+(CDR #112), which is generally about ANSI injection, but is in the
+initial consultation.  The CWE Team will move forward with this
+submission independently of the other submission.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.MISSDET - "Missing details"
+
+Description: The submission is missing some requested or required details
+for elements other than name and description.
+
+Resolution: The submission cannot progress to later phases if it does not
+have all required elements.
+
+Comments: Since this submission is being integrated into CWE-150, work
+is needed to provide additional details. This will be addressed in
+Stage 2, Detailed Submission.
+
+Response: [NO RESPONSE NEEDED; ISSUE TO BE RESOLVED IN A LATER PHASE]
+
+
+----------
+
+SUB.COORD - "Requires extensive coordination"
+
+Description: The submission will require or is currently undergoing close
+coordination, discussion, and debate between multiple parties with
+different perspectives and opinions.  The communication could be taking
+place in CDR itself, or outside of CDR.  As a result, it might take longer
+to move the submission to later phases, although the submission is expected
+to be more robust and well-defined as a result of this coordination.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Det-Consultation phases until sufficient consensus has been reached, or if
+the CWE Team decides to move the submission to the next phase.
+
+Comments: This submission is being actively reviewed and discussed in
+the AI WG, along with the submitter.
+
+Response: [NO RESPONSE NEEDED]
+
+----------
+
+SUB.NEWTECH - "New/Emerging Technology"
+
+Description: The submission is related to a new or emerging technology that
+is not well-understood from a weakness perspective, which can cause real or
+perceived gaps in CWE that require extra effort and time to analyze.
+Typically, for new/emerging technologies, early vulnerability discovery and
+research does not focus on root cause analysis (i.e., weakness
+identification). Instead, the focus is on other areas such as attacks and
+exploitation methods, technical impacts, threats, mitigations, or other
+concerns.  As a result, industry understanding can be limited, effectively
+requiring research or focused efforts by SMEs to understand the underlying
+weaknesses.  Rapidly-changing, diverse terminology and technology can
+further complicate understanding. Finally, there might not be enough
+real-world examples with sufficient details from which weakness patterns
+may be discovered.  For this reason, it can be difficult to determine
+whether CWE entries already cover the topics of concern, and which gaps (if
+any) exist.  As of May 2024, some new or emerging technologies include
+AI/ML, cryptocurrency/blockchain, post-quantum cryptography, and
+large-scale architectures with many components that have different trust
+boundaries.  In previous years, new/emerging domains for CWE included
+hardware, cloud, and ICS/OT.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Det-Consultation phases until sufficient attempts have been made to
+understand the weaknesses commonly seen in new or emerging technologies, or
+if the CWE Team decides to move the submission to the next phase.  Analysis
+could include analyzing well-known attacks to understand the weaknesses
+that enable the attacks to succeed; analysis of mitigations to understand
+how the underlying weaknesses are perceived; and/or other methods.  Such
+analysis might require consultation with a variety of Subject Matter
+Experts (SMEs).
+
+Comments: Pre-review consultation with the original submitter and
+others in the AI WG has suggested that while this submission is
+related to a new/emerging technology, it is a reflection of general
+software concerns and seems unlikely to present any significant
+complications or delays in its integration into CWE.
+
+Response: [NO RESPONSE NEEDED]
+
+
 
 
 RESOLVED ISSUES:
 
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: As discussed with the original submitter and the AI WG, this
+issue is too low-level to create a new CWE identifier. It will be
+integrated into CWE-150. This issue has already been resolved due to
+agreement by the submitter and the AI WG.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE.] Agreed by submitter and AI
+WG before initial consultation.
+
+----------
+
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to Stage 3 (Content-Generation)
+until the informational needs are addressed.
+
+Comments: Per discussion with submitter and AI WG, this submission
+will be treated as a Modification instead of a New Entry.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE.]
 
 
 TIMELINE:
@@ -74,7 +210,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2025-12-05
 
 Det-Requested: YYYY-MM-DD
 
@@ -107,4 +243,5 @@ COMMUNICATIONS LOG:
 2025-08-26 sent email
 2025-09-12 action meeting
 2025-10-10 action meeting
+2025-12-05 sent email
 2025-12-05 sent email
