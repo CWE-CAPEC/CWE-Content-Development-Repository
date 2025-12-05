@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2501-8daa7a2d
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Det-Received
+SUBMISSION STATUS: Det-Review
 
 AFFECTED CWES: 
 
@@ -216,7 +216,7 @@ Det-Requested: 2025-03-19
 
 Det-Received: 2025-05-10
 
-Det-Review: YYYY-MM-DD
+Det-Review: 2025-12-05
 
 Det-Consultation: YYYY-MM-DD
 
@@ -247,3 +247,4 @@ COMMUNICATIONS LOG:
 2025-05-08 sent email
 2025-05-10 received comment
 2025-06-13 sent email
+2025-12-05 sent email
