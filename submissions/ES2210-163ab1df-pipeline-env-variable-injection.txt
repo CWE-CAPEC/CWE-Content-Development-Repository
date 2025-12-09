@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2210-163ab1df
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Internal-Update
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-74
 
 ORIGIN: sub-server
 
@@ -91,9 +91,8 @@ which would result in running javascript code on the workflow runner with elevat
 GOOD CODE:
 LANGUAGE: <<LANGUAGE>>
 
-<<put the information here>>
-
-
+The code could be modified to validate that the NR file only contains
+a numeric value.
 
 ************************************************************************************************
 
@@ -463,7 +462,7 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2025-12-08
 
 Final-Coord: YYYY-MM-DD
 
@@ -501,3 +500,4 @@ COMMUNICATIONS LOG:
 2024-01-03 sent email
 2024-01-03 received email
 2025-01-22 sent email
+2025-12-08 sent email
