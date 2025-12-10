@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2303-bd6aefb6
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
 AFFECTED CWES: CWE-212, CWE-359
 
@@ -196,7 +196,7 @@ Final-Coord: YYYY-MM-DD
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-12-09
 
 CWE-Published: YYYY-MM-DD
 
@@ -212,3 +212,4 @@ COMMUNICATIONS LOG:
 2024-01-23 received comment
 2024-07-01 sent email
 2025-11-04 sent email
+2025-12-09 sent email
