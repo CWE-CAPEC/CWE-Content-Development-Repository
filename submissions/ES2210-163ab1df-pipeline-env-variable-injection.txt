@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2210-163ab1df
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
 AFFECTED CWES: CWE-74
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2022-10-24 14:44:22
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.MISC
+ISSUE DETAILS: 
 
 PUBTRACKER: #68
 
@@ -212,64 +212,6 @@ URL: https://www.legitsecurity.com/blog/github-privilege-escalation-vulnerabilit
 
 ACTIVE ISSUES:
 
------------
-
-SUB.ABS.SUBTREE - "Potential subtree issue/gap"
-
-Description: The submission might identify an issue for which there could
-be a broader gap or organizational challenge that requires analysis of CWE
-subtree relationships under Research View 1000, in ways that extend beyond
-creation of a parent at the next-highest level of abstraction.
-
-Resolution: The submission cannot progress past the consultation phase
-(whether initial or full) unless it is at an acceptable level of
-abstraction, and the subtree issue(s) can be resolved or addressed
-independently.
-
-Comments: There remains a deeper issue with how neutralization is
-handled within CWE, since organization varies around different
-"dimensions" (or facets) within multiple parts of CWE. The 2022-11-02
-response clarifies that "Environment variables [are] one of the ways
-that build services vendors choose to implement pipeline
-variable. Hence, I think that we shouldn’t change it to environment
-variables."  Under CWE-138, entries are hierarchically organized
-around "type of special element" that is not neutralized, including
-CWE-140: Improper Neutralization of Delimiters. CWE-138 can apply to
-multiple kinds of behaviors, not "just" injection (CWE-74). However,
-CWE-74 is in a different part of CWE's tree, where organization is
-around "type of data/command" that is affected when delimiters are not
-neutralized. The initial submission overlaps both areas, and variables
-- pipeline or otherwise - are more of a "type of input."  The
-requester notes that CWE-1236 (CSV injection) may be a similar use
-case.  This larger subtree problem will require extensive effort for
-the CWE team to research and resolve. That research will be conducted
-independently, so this submission will be treated as a modification to
-CWE-74.
-
-Response: We accept your suggestion and the code examples try and
-emphasize how this escaping can be done using OS delimiters.
-
-----------
-
-SUB.MISC - "Miscellaneous/other problem"
-
-Description: The submission has some other problem that is not covered
-elsewhere.
-
-Resolution: This will depend on the nature of the problem.
-
-Comments: In a 2023-03-12 email, for OBSERVED EXAMPLES, the submitter
-said "There are no currently available reported CVEs matching the cwe
-extended but we believe that once we will publish this CWE the
-community will be more aware of the importance of reporting new-coming
-vulnerabilities." The CWE Team will work with the submitter to
-determine if any CVEs have been published since early 2023. The lack
-of observed examples (CVEs) will not prevent this submission from
-moving forward, since a demonstrative example was provided.
-
-Response: [NO RESPONSE NECESSARY] This issue remains active but does
-not need submitter input during Init-Consultation phase.
-
 
 RESOLVED ISSUES:
 
@@ -433,7 +375,66 @@ are addressed, which might require some focused research and
 subtree research will be deferred as a separate task outside of this
 submission, which will be changed to a "Modification."
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+
+-----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or full) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: There remains a deeper issue with how neutralization is
+handled within CWE, since organization varies around different
+"dimensions" (or facets) within multiple parts of CWE. The 2022-11-02
+response clarifies that "Environment variables [are] one of the ways
+that build services vendors choose to implement pipeline
+variable. Hence, I think that we shouldn’t change it to environment
+variables."  Under CWE-138, entries are hierarchically organized
+around "type of special element" that is not neutralized, including
+CWE-140: Improper Neutralization of Delimiters. CWE-138 can apply to
+multiple kinds of behaviors, not "just" injection (CWE-74). However,
+CWE-74 is in a different part of CWE's tree, where organization is
+around "type of data/command" that is affected when delimiters are not
+neutralized. The initial submission overlaps both areas, and variables
+- pipeline or otherwise - are more of a "type of input."  The
+requester notes that CWE-1236 (CSV injection) may be a similar use
+case.  This larger subtree problem will require extensive effort for
+the CWE team to research and resolve. That research will be conducted
+independently, so this submission will be treated as a modification to
+CWE-74.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
+We accept your suggestion and the code examples try and
+emphasize how this escaping can be done using OS delimiters.
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: In a 2023-03-12 email, for OBSERVED EXAMPLES, the submitter
+said "There are no currently available reported CVEs matching the cwe
+extended but we believe that once we will publish this CWE the
+community will be more aware of the importance of reporting new-coming
+vulnerabilities." The CWE Team will work with the submitter to
+determine if any CVEs have been published since early 2023. The lack
+of observed examples (CVEs) will not prevent this submission from
+moving forward, since a demonstrative example was provided.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] This issue remains active but does
+not need submitter input during Init-Consultation phase.
 
 -------
 
@@ -468,7 +469,7 @@ Final-Coord: YYYY-MM-DD
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2025-12-09
 
 CWE-Published: YYYY-MM-DD
 
@@ -501,3 +502,4 @@ COMMUNICATIONS LOG:
 2024-01-03 received email
 2025-01-22 sent email
 2025-12-08 sent email
+2025-12-09 sent email
