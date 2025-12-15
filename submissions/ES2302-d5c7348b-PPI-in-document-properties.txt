@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-02-08 12:22:29
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.OVERLAP, SUB.ABS.SUBTREE
+ISSUE DETAILS: 
 
 PUBTRACKER: #3
 
@@ -69,48 +69,6 @@ URL: https://www.splunk.com/en_us/blog/learn/cyber-kill-chains.html
 
 
 ACTIVE ISSUES:
-
-
-SUB.OVERLAP - "Duplicate/Overlap"
-
-Description: The submission identifies a weakness, but it is a duplicate of
-(or partially overlaps) existing weaknesses, indicating problems with the
-submission or associated CWE entries.
-
-Resolution: The submission cannot progress to later phases until (1) the
-duplicate/overlap is understood and (2) it is clear how to resolve this
-duplicate/overlap.
-
-Comments: This seems appropriate as an example for CWE-212: Improper
-Removal of Sensitive Information Before Storage or Transfer. However,
-CWE-359 also applies, but the overlap between CWE-212 and CWE-359
-requires larger research efforts to resolve.  We plan to update
-CWE-212 and CWE-359 to include PPI as a consideration. Please let us
-know if you agree.
-
-Response: I agree with you.
-
-----------
-
-SUB.ABS.SUBTREE - "Potential subtree issue/gap"
-
-Description: The submission might identify an issue for which there could
-be a broader gap or organizational challenge that requires analysis of CWE
-subtree relationships under Research View 1000, in ways that extend beyond
-creation of a parent at the next-highest level of abstraction.
-
-Resolution: The submission cannot progress past the consultation phase
-(whether initial or full) unless it is at an acceptable level of
-abstraction, and the subtree issue(s) can be resolved or addressed
-independently.
-
-Comments: The relationship between CWE-212 and CWE-359 requires larger
-research efforts to resolve, but it can be resolved
-independently. This is simply to notify you of the additional work
-that is needed by the CWE Team. Please acknowledge that you've seen
-this item.
-
-Response: I agree with you.
 
 
 
@@ -175,6 +133,50 @@ the informational needs are addressed.
 Comments: This is being treated as a Modification - not a New Entry.
 
 Response: [RESOLVED ISSUE; DO NOT CHANGE]. I agree with you.
+
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This seems appropriate as an example for CWE-212: Improper
+Removal of Sensitive Information Before Storage or Transfer. However,
+CWE-359 also applies, but the overlap between CWE-212 and CWE-359
+requires larger research efforts to resolve.  We plan to update
+CWE-212 and CWE-359 to include PPI as a consideration. Please let us
+know if you agree.
+
+Response: I agree with you.
+
+----------
+
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or full) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: The relationship between CWE-212 and CWE-359 requires larger
+research efforts to resolve, but it can be resolved
+independently. This is simply to notify you of the additional work
+that is needed by the CWE Team. Please acknowledge that you've seen
+this item.
+
+Response: I agree with you.
+
 
 
 
