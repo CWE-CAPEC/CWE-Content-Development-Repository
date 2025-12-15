@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-323ad815
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Modified
+SUBMISSION STATUS: CWE-Published
 
 AFFECTED CWES: CWE-276
 
@@ -91,7 +91,7 @@ CWE-Modified: 2025-12-02
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2025-12-11
 
 Post-Publication: YYYY-MM-DD
 
@@ -105,3 +105,5 @@ COMMUNICATIONS LOG:
 2024-07-09 action review
 2024-11-08 action update
 2025-12-02 sent email
+2025-12-11 action published
+2025-12-14 sent email
