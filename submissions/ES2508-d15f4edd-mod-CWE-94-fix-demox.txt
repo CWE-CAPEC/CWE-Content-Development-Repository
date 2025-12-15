@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2508-d15f4edd
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Modified
+SUBMISSION STATUS: CWE-Published
 
 AFFECTED CWES: CWE-94
 
@@ -189,7 +189,7 @@ CWE-Modified: 2025-12-08
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2025-12-11
 
 Post-Publication: YYYY-MM-DD
 
@@ -205,3 +205,5 @@ COMMUNICATIONS LOG:
 2025-12-05 sent email
 2025-12-05 received email
 2025-12-08 sent email
+2025-12-11 action published
+2025-12-14 sent email
