@@ -237,5 +237,6 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2025-05-27 sent email
+2025-06-28 received comment
 2025-07-17 sent email
 2025-11-06 sent email
