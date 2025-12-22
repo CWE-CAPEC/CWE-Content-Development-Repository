@@ -231,6 +231,8 @@ constitute software/electronic logic, and the real-world financial
 implications are frequently cited as part of the controversy.
 Therefore, this submission is not subject to SCOPE.NOTREAL.
 
+Response: [NO RESPONSE NEEDED; ISSUE RESOLVED.]
+
 ----------
 
 SCOPE.CUSTREL - "not customer-relevant"
@@ -244,6 +246,7 @@ so related weaknesses or attack patterns are
 customer-relevant. Therefore, this submission is not subject to
 SCOPE.CUSTREL.
 
+Response: [NO RESPONSE NEEDED; ISSUE RESOLVED.]
 
 
 TIMELINE:
@@ -295,3 +298,4 @@ COMMUNICATIONS LOG:
 2022-08-30 received email
 2022-10-18 sent email
 2023-09-12 publish server
+2025-12-22 sent email
