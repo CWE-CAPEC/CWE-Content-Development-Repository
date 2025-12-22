@@ -138,9 +138,10 @@ mining is low, but why is the cost of mining low, what is the actual weakness
 that attacker takes advantage of isn't called out. Additional information is
 needed to better understand the actual weakness.
 
-Response: Submitter proposed a new description which attempts to clarify the
-weakness.  Specifically "A critical weakness arises when this cost [of mining or
-validating a block] is insufficiently high", although this still does not get at
+Response: [RESOLVED ISSUE; DO NOT CHANGE] Submitter proposed a new
+description which attempts to clarify the weakness.  Specifically "A
+critical weakness arises when this cost [of mining or validating a
+block] is insufficiently high", although this still does not get at
 why the cost of mining is low.
 
 
@@ -162,8 +163,8 @@ attack that occurred without details on what was the actual weakness
 that led to that attack. Additional information is needed to better
 understand the actual weakness.
 
-Response: Submitter proposed a new description, although it is still
-too attack-focused.
+Response: [RESOLVED ISSUE; DO NOT CHANGE] Submitter proposed a new
+description, although it is still too attack-focused.
 
 
 
@@ -214,3 +215,4 @@ COMMUNICATIONS LOG:
 2024-01-25 sent email
 2024-02-24 received CDR Comment
 2024-03-29 sent email
+2025-12-22 sent email
