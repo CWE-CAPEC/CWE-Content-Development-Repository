@@ -110,9 +110,10 @@ Resolution: This will depend on the nature of the problem.
 Comments: The CWE Team plans to accept this submission, completing
 Stage 1.  However, since the abstraction of the resulting new CWE
 entry will become more general than the original submission, the CWE
-Team will coordinate with the submitter to determine how much they are
-willing to collaborate on this new entry in Stage 2 (detailed
-submission). Please let us know if you agree with this approach.
+Team will coordinate with the submitter to determine how much the
+submitter is willing to collaborate on this new entry in Stage 2
+(detailed submission). Please let us know if you agree with this
+approach.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -176,3 +177,4 @@ COMMUNICATIONS LOG:
 2024-01-16 sent email
 2024-01-31 received CDR comment
 2025-01-31 sent email
+2025-12-22 sent email
