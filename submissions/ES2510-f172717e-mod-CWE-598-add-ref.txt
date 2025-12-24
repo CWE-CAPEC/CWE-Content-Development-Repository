@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2510-f172717e
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Published
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: CWE-598
 
@@ -125,7 +125,7 @@ CWE-Published: 2025-12-11
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2025-12-23
 
 
 
@@ -140,3 +140,4 @@ COMMUNICATIONS LOG:
 2025-12-05 sent email
 2025-12-11 action published
 2025-12-14 sent email
+2025-12-23 sent email
