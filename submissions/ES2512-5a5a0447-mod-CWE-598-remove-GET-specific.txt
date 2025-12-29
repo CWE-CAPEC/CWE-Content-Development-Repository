@@ -1,0 +1,98 @@
+SUBMISSION COMMUNICATION ID: ES2512-5a5a0447
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-12-27 03:58:02
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: 
+
+MTRACKER: #1305
+
+GITHUBUSER: jstangroome
+
+SUBMISSION TYPE: Unknown
+
+NAME: Mod CWE-598 remove specific to GET request
+
+DESCRIPTION:
+
+Remove the overly specific "GET Request Method" from the CWE Name. The
+currently documented Background Details and Common Consequences state the
+risks of sensitive query strings being stored and shared in various places,
+but this is not limited to GET requests since POST, DELETE, PUT, and other
+request methods can still include sensitive data in query strings. Consider
+naming "Use of HTTP Request With Sensitive Query Strings" instead. And in
+the Potential Mitigations section consider replacing "use the POST method"
+with "place sensitive data in the request body or appropriate request
+headers" instead.
+
+This weakness should not imply that using non-GET methods with sensitive
+query strings is safe.
+
+RELATED WEAKNESSES:
+
+   Other CWE-598
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-12-27
+
+Ack-Receipt: 2025-12-29
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
