@@ -1,0 +1,127 @@
+SUBMISSION COMMUNICATION ID: ES2512-73d63d33
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-12-24 09:16:24
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: 
+
+MTRACKER: #1304
+
+GITHUBUSER: eran667
+
+SUBMISSION TYPE: Software
+
+NAME: Bypass of Human Authorization Controls
+
+DESCRIPTION:
+
+## What is human in the loop 
+Most of the AI agents can't trust the entire context, because they contain
+results from untrusted sources such as the internet or the user's input.
+One of the known mechanisms used is 'human-in-the-loop'. This concept
+requires a user to approve dangerous activities. 
+References:
+https://docs.langchain.com/oss/python/langchain/human-in-the-loop
+https://en.wikipedia.org/wiki/Human-in-the-loop
+It is possible to see this concept in multiple leading products in the
+industry 
+
+## Human outside the loop 
+The new CWE I want to suggest is the concept of bypass techniques that
+allow an attacker to do malicious/dangerous activity without this approval.
+
+There are multiple ways to bypass the human approval, because companies
+does a lot to minimize the requirement of human approval.
+It can be because of a configuration issue, a code issue such as not
+restricting the regex enough, an LLM as a judge that decides if a human is
+required to approve that, or even an unrelated message to the human to
+approve.
+
+This type of vulnerability was found in multiple leading products 
+* Claude (Anthropic)
+* Gemini CLI (Google)
+* Cursor 
+* Copilot (Microsoft)
+* Warp 
+* CodeX (OpenAI)
+
+With over 20+ vulnerabilities and it will be presented in RSA (2026 March)
+so currently I do not have anything published, most of them lead to major
+vulnerabilities classified as high RCEs. 
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-693
+   Other CWE-1426
+
+REFERENCES:
+
+Title: Not exact but the most similar concept I found
+URL: https://maccarita.com/posts/idesaster/
+
+Title: A similar concept found by other vulnerability researchers 
+URL: https://fahrplan.events.ccc.de/congress/2025/fahrplan/event/agentic-probllms-exploiting-ai-computer-use-and-coding-agents
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-12-24
+
+Ack-Receipt: 2025-12-29
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
