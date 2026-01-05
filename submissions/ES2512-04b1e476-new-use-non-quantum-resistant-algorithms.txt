@@ -1,0 +1,116 @@
+SUBMISSION COMMUNICATION ID: ES2512-04b1e476
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2025-12-29 21:47:56
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: 
+
+MTRACKER: #1306
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: Use of Non-Quantum-Resistant Algorithms
+
+DESCRIPTION:
+
+This weakness is based on the progression of quantum computation and the
+NIST standardization of post quantum cryptographic (PQC) schemes such as
+ML-KEM. Currently, communications are intercepted by a number of threat
+actors for future decryption when quantum computation is able to
+practically support decryption of classical schemes such as RSA. While this
+is presently a theoretical possibility, government regulations such as the
+Quantum Computing Cybersecurity Preparedness Act are forcing migration to
+post quantum cryptographic schemes in advance. A developer or designer
+should be concerned with the use of classical algorithms as the use of
+classical algorithms can lead to future impact such as the capture and
+misuse of customer data, organization secrets, or sensitive information in
+the future. The choice to refuse migration to PQC schemes in advance also
+leads to the potential of dependencies on classical algorithms in the
+future of new designs. This will lead to developers having to take on
+complex migrations to support future security requirements which can be
+avoided through proactive use of PQC schemes in new designs or proceeding
+with migration to PQC schemes before regulatory deadlines. 
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-326
+   Other CWE-327
+
+REFERENCES:
+
+Title: NIST PQC
+URL: https://csrc.nist.gov/projects/post-quantum-cryptography
+
+Title: Mappings of Migration to PQC Project Capabilities to NIST Cybersecurity Framework 2.0 and to Security and Privacy Controls for Information Systems and Organizations
+URL: https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.48.ipd.pdf
+
+Title: u201cHarvest Now Decrypt Lateru201d: Examining Post-Quantum Cryptography and the Data Privacy Risks for Distributed Ledger Networks
+URL: https://www.federalreserve.gov/econres/feds/files/2025093pap.pdf
+
+Title: Transition to Post-Quantum Cryptography Standards
+URL: https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2025-12-29
+
+Ack-Receipt: 2026-01-05
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
