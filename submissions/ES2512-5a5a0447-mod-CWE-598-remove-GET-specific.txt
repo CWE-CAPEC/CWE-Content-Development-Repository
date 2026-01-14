@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2512-5a5a0447
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -60,7 +60,7 @@ Received: 2025-12-27
 
 Ack-Receipt: 2025-12-29
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2026-01-13
 
 Init-Consultation: YYYY-MM-DD
 
@@ -97,3 +97,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2025-12-29 sent email
+2026-01-13 sent email
