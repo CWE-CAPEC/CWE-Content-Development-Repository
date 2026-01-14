@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2201-3666f29c
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Det-Received
+SUBMISSION STATUS: Init-Declined
 
 AFFECTED CWES: 
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2022-01-07 10:09:00
 
 ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.NOINIT, SUB.UNCLEAR, SUB.MISC
 
 PUBTRACKER: #27
 
@@ -27,13 +27,9 @@ NAME: Misconfigured DNS Policies
 
 DESCRIPTION:
 
+Misconfiguration leads to DNS mapping for the server without checking the strict policy
 
-2. SUMMARY (required)
-
-	Misconfiguration leads to DNS mapping for the server without checking the strict policy
-
-
-3. EXTENDED DESCRIPTION (required)
+EXTENDED DESCRIPTION:
 
 	because of lack strict poicies in the DNS and misconfigured SSL certificate we can access the  content of the server by pointing ouw domain/sub-domain to the server IP hence getting
 	full access control of the server which includes
@@ -41,9 +37,7 @@ DESCRIPTION:
 
 
 
-INTROMODES:
-
-4. MODES OF INTRODUCTION (required)
+MODES OF INTRODUCTION:
 
 +---------+-----------------------------------------+
 | Element |               Description               |
@@ -60,9 +54,7 @@ INTROMODES:
 +---------+-----------------------------------------+
 
 
-MITIGATIONS:
-
-5. POTENTIAL MITIGATIONS (required)
+POTENTIAL MITIGATIONS:
 
 Phase: 
 
@@ -77,8 +69,9 @@ Effectiveness: << put the information here>>
 
 Effectiveness Notes: <<put the information here>>  |
 
+************************************************************************************************
 
-CONSEQUENCES:
+COMMON CONSEQUENCES:
 
 Scope: Domain
 
@@ -96,6 +89,9 @@ Technology Class: Not Technology-Specific
 Technology Name: DOMAIN NAME SERVER
 
 
+************************************************************************************************
+
+# 8. DEMONSTRATIVE EXAMPLES (required)
 
 DEMONSTRATIVE EXAMPLES:
 
@@ -118,8 +114,9 @@ GOOD CODE:
 
 
 
-OBEX:
+************************************************************************************************
 
+OBSERVED EXAMPLES:
 
 
 RELATED WEAKNESSES:
@@ -129,6 +126,76 @@ RELATED WEAKNESSES:
 REFERENCES:
 	
 
+ACTIVE ISSUES:
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: Because the submission originated from before CDR was created and
+before the web submission form existed, the CWE team considered declining
+this submission and requested that the submitter re-submit their proposal
+following the new submission process and guidelines. As of January 13, 2025,
+no response was received for our inquiry.
+
+Because we have insufficient details to continue submission analysis
+ourselves (see SUB.UNCLEAR), we will now move this submission to the
+Init-Declined phase, then close it.
+
+Response: [NO RESPONSE NEEDED]
+
+
+----------
+
+SUB.NOINIT - "Detailed Submission with No Initial Review"
+
+Description: A detailed submission was provided, but it did not go through
+the Initial Review / Initial Consultation phases (Stage 1) and has
+significant problems that should have been resolved in that phase (e.g.,
+SUB.UNCLEAR).  This primarily applies to situations when external
+requesters provided a "Full Submission" form (Internal-Update phase) in
+2021 and 2022, before the CWE Team launched the external submission web
+server and formalized the CDR process.
+
+Resolution: The submission must be treated as part of the
+Initial-Review/Initial-Consultation phase, and the detailed submission will
+not be evaluated until Stage 1 is complete.
+
+Comments: This information was provided in January 2022 using the
+"Full Submission" form that was available at the time, but the CDR
+process was not well-defined at the time, and the phase was
+ill-advisedly set to Det-Received without having conducted any
+Init-Review and Acceptance. As of September 2025, the phase will be
+changed back to Init-Review, and the Det-Received date will be
+removed.
+
+Response: [NO RESPONSE NEEDED]
+
+----------
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: The exact weakness of how the DNS policies are misconfigured 
+in the submission is unclear.  More clarity is needed on exactly what weakness
+is being described before this submission can proceed.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+
+RESOLVED ISSUES:
+
 
 
 TIMELINE:
@@ -137,17 +204,17 @@ Received: 2022-01-07
 
 Ack-Receipt: 2022-06-07
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2025-09-10
 
 Init-Consultation: YYYY-MM-DD
 
 Init-Accepted: YYYY-MM-DD
 
-Init-Declined: YYYY-MM-DD
+Init-Declined: 2026-01-13
 
 Det-Requested: YYYY-MM-DD
 
-Det-Received: 2022-01-07
+Det-Received: YYYY-MM-DD
 
 Det-Review: YYYY-MM-DD
 
@@ -176,3 +243,5 @@ COMMUNICATIONS LOG:
 2022-06-07 sent email
 2022-06-16 received email
 2023-09-12 publish server
+2025-10-06 sent email
+2026-01-13 sent email
