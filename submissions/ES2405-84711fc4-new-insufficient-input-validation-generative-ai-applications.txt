@@ -54,7 +54,7 @@ URL: https://arxiv.org/abs/2403.06833
 Title: How to implement LLM guardrails - Example of types of LLM input validations: use cases include preventing topic derailing, detecting jailbreaks, detecting prompt injections
 URL: https://cookbook.openai.com/examples/how_to_use_guardrails#1-input-guardrails
 
-Title: Examples of types of LLM output validations u2013 note that there are a variety of use cases:
+Title: Examples of types of LLM output validations - note that there are a variety of use cases:
 URL: https://hub.guardrailsai.com/
 
 Title: Exploring Prompt Injection Attacks

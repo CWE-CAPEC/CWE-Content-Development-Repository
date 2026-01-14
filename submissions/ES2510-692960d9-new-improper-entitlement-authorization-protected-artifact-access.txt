@@ -54,7 +54,7 @@ human error. It manifests when the system fails to enforce cryptographic or
 vendor of record binding between artifacts and authorized organizations. 
 
 A critical enabler is the absence of cryptographic enforcement on device
-programming interfaces and tooling (e.g., programmers or u201cfirehoseu201d
+programming interfaces and tooling (e.g., programmers or "firehose"
 loaders that accept unsigned images). When entitlement systems grant access
 to unsigned programmers or firmware, possession of these artifacts grants
 an attacker immediate ability to subvert device integrity. This dual
@@ -129,19 +129,19 @@ REFERENCES:
 Title: Roadside to Everyone
 URL: https://phrack.org/issues/72/16_md#article
 
-Title: Button Presses to Wireless RCE u2014 Flock Safety LPR Cameras
+Title: Button Presses to Wireless RCE - Flock Safety LPR Cameras
 URL: https://gainsec.com/2025/09/27/button-presses-to-shell-on-flock-safety-license-plate-cameras-over-wi-fi/
 
-Title: Fly-By u2013 Device 2: The Falcon/Sparrow u2013 Gated Wireless RCE, Camera Feed, DoS, Information Disclosure and More
+Title: Fly-By - Device 2: The Falcon/Sparrow - Gated Wireless RCE, Camera Feed, DoS, Information Disclosure and More
 URL: https://gainsec.com/2025/09/27/fly-by-device-2-the-falcon-sparrow-gated-wireless-rce-camera-feed-dos-information-disclosure-and-more/
 
-Title: Roadside to Everyone u2013 Intelligent Traffic Systems (ITS) Research
+Title: Roadside to Everyone - Intelligent Traffic Systems (ITS) Research
 URL: https://gainsec.com/2025/09/03/roadside-to-everyone-intelligent-traffic-systems-its-research-kapsch-trafficcom-ag-cv2x-roadside-units-rsu/
 
-Title: Grounded Flight u2013 Device 2: Root Shell on Flock Safetyu2019s Falcon/Sparrow Automated License Plate Reader
+Title: Grounded Flight - Device 2: Root Shell on Flock Safety's Falcon/Sparrow Automated License Plate Reader
 URL: https://gainsec.com/2025/06/19/grounded-flight-device-2-root-shell-on-flock-safetys-falcon-sparrow-automated-license-plate-reader/
 
-Title: Root from the Coop u2014 Bravo Compute Box
+Title: Root from the Coop - Bravo Compute Box
 URL: https://gainsec.com/2025/09/19/root-from-the-coop-device-3-root-shell-on-flock-safetys-bravo-compute-box/
 
 Title: Lantronix / Thundercomm technical support emails

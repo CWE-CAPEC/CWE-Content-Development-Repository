@@ -124,7 +124,7 @@ High
 content
 - Prompt escaping or encoding retrieved text (e.g., as references, not raw)
 - Trust tagging and retrieval from known-safe sources only
-- Use of prompt u201ccontainersu201d or delimiters to isolate user input
+- Use of prompt "containers" or delimiters to isolate user input
 - Output filtering and response validation
 
 ## Related CWEs
@@ -137,7 +137,7 @@ Downstream Component
 
 ## Taxonomy Mapping
 
-- MITRE ATLAS: TA0036 u2013 Prompt Injection  
+- MITRE ATLAS: TA0036 - Prompt Injection  
 - OWASP Top 10 for LLMs: LLM01: Prompt Injection, LLM03: Training Data
 Poisoning
 

@@ -45,7 +45,7 @@ CWE-77: Improper Neutralization of Special Elements used in a Command
 ('Command Injection'): This attack is not a direct command execution
 propagated from an upstream component. Instead, it results from the AI
 agent inserting executable commands into the configuration file, which
-affects the useru2019s system when the configuration is executed.
+affects the user's system when the configuration is executed.
 CWE-1427: Improper Neutralization of Input Used for LLM Prompting: This
 attack is not merely a case where the agent does something unexpected due
 to prompt injection. Instead, it is a vulnerability occurring in more
@@ -65,16 +65,16 @@ user's PC while maintaining a normal connection to the MCP Server.
 When an AI agent has the ability to manipulate local files (e.g., in
 AI-powered code editors like Cline, GitHub Copilot, or Windsurf, or when an
 MCP Client integrates with MCP Servers supporting command execution or file
-editing), a lack of proper filtering in the MCP Clientu2019s configuration
+editing), a lack of proper filtering in the MCP Client's configuration
 execution mechanism allows a compromised AI agent to insert malicious code
-into the MCP Serveru2019s configuration file. This enables attackers to
+into the MCP Server's configuration file. This enables attackers to
 execute arbitrary commands without user awareness, as long as the MCP
 Server maintains a normal connection.
 
 ### Attack Stages
 The attack proceeds as follows:
 1. Prompt Injection to Modify Configuration: An attacker uses prompt
-injection to instruct the AI agent to modify the MCP Clientu2019s
+injection to instruct the AI agent to modify the MCP Client's
 configuration file (mcp.json), specifically targeting the command and args
 fields of an STDIO-configured MCP Server. An example of a malicious
 configuration is shown below:
@@ -95,7 +95,7 @@ commands could involve downloading and executing remote scripts, stealing
 data, or establishing persistent backdoors.
 2. Silent Execution During Server Startup: Each time the MCP Server is
 started (e.g., after a system reboot), the malicious command executes
-silently without affecting the MCP Clientu2019s or Server
+silently without affecting the MCP Client's or Server
 
 ## Common Consequences
 Stealthy execution of arbitrary commands: Once the Agent inserts the

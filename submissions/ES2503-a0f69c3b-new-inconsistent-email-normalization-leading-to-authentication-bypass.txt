@@ -66,7 +66,7 @@ free, leading to revenue loss as legitimate customers may opt to abuse the
 trial instead of purchasing a valid license.
 - Unauthorised Redistribution: Since the trial keys can be obtained
 multiple times, an attacker may distribute or resell the keys on
-third-party platforms, further impacting the organisationu2019s sales.
+third-party platforms, further impacting the organisation's sales.
 - Reputation Damage: If trial keys are widely shared or sold on the black
 market, it could undermine the perceived value of the premium offering,
 eroding customer trust.

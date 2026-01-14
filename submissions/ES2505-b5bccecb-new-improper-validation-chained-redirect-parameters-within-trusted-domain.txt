@@ -79,7 +79,7 @@ Each step individually appears safe, and may even validate correctly, but
 when combined, result in malicious behavior.
 
 Some sites rely on internal redirects to handle language preferences, SSO
-flows, or campaign tracking u2014 which attackers can exploit as part of
+flows, or campaign tracking - which attackers can exploit as part of
 the chain.
 
  Example Use Case:

@@ -57,7 +57,7 @@ URL: https://csrc.nist.gov/projects/post-quantum-cryptography
 Title: Mappings of Migration to PQC Project Capabilities to NIST Cybersecurity Framework 2.0 and to Security and Privacy Controls for Information Systems and Organizations
 URL: https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.48.ipd.pdf
 
-Title: u201cHarvest Now Decrypt Lateru201d: Examining Post-Quantum Cryptography and the Data Privacy Risks for Distributed Ledger Networks
+Title: "Harvest Now Decrypt Later": Examining Post-Quantum Cryptography and the Data Privacy Risks for Distributed Ledger Networks
 URL: https://www.federalreserve.gov/econres/feds/files/2025093pap.pdf
 
 Title: Transition to Post-Quantum Cryptography Standards

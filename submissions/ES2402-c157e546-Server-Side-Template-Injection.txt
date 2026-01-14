@@ -27,8 +27,8 @@ NAME: Server-Side Template Injection Remote Code Execution
 DESCRIPTION:
 
 Mandiant found that the affected application was vulnerable to Server-Side
-Template Injection (u201cSSTIu201d), with the possibility of performing
-Remote Code Execution (u201cRCEu201d). Misconfigured or outdated templating
+Template Injection ("SSTI"), with the possibility of performing
+Remote Code Execution ("RCE"). Misconfigured or outdated templating
 libraries or unsafe concatenation of user input can lead to an attacker
 being able to inject templating control characters, thereby executing
 arbitrary code on the 
