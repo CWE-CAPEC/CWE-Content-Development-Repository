@@ -74,7 +74,11 @@ about extra values not being handled correctly. In a future phase,
 further investigation is needed to determine appropriate
 relationships. Please let us know if you agree with the suggestion.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I selected CWE-231 and CWE-912 because they appeared to be
+possible side effects of the submission, by having a non-deterministic
+boundary it can cause hidden malware or have extra values. The
+submission addresses the root cause of those weakness, I am not sure
+if there is something equivalent or at the higher level.
 
 
 ----------
@@ -129,3 +133,4 @@ COMMUNICATIONS LOG:
 2024-06-11 sent email
 2024-09-10 sent email
 2025-12-23 sent email
+2025-12-23 received email
