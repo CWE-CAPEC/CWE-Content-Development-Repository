@@ -1,0 +1,113 @@
+SUBMISSION COMMUNICATION ID: ES2601-eb7223b4
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-01-20 02:53:55
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #179
+
+MTRACKER: #1308
+
+GITHUBUSER: kurtseifried
+
+SUBMISSION TYPE: Software
+
+NAME: Unstable Internal Model Representations Triggered by Valid Token Sequences
+
+DESCRIPTION:
+
+This weakness occurs when an AI system fails to ensure the stability and
+coherence of its internal model representations when processing valid input
+token sequences. Certain token patterns, while syntactically valid and
+intentionally accepted by the system, can induce degenerate, weakly
+constrained, or unstable internal states that the system was not designed
+to handle safely.
+
+In many AI systems, input text is transformed by a tokenizer into discrete
+tokens that are then mapped into internal representations used by the model
+during inference. These representations are assumed to behave consistently
+across the valid input space. However, when this assumption does not hold,
+specific token sequences can trigger internal behaviors that violate
+downstream expectations about inference cost, output structure, or control
+flow.
+
+The weakness arises not from invalid input or rule violations, but from
+unmet assumptions about internal representation stability across all valid
+token sequences.
+
+RELATED WEAKNESSES:
+
+   Other CWE-20
+
+REFERENCES:
+
+Title: Glitch Tokens in Large Language Models
+URL: https://arxiv.org/abs/2404.09894
+
+Title: Fishing for Magikarp: Automatically Detecting Under-trained Tokens in Large Language Models
+URL: https://arxiv.org/abs/2405.05417
+
+Title: Wikipedia Glitch Token
+URL: https://en.wikipedia.org/wiki/Glitch_token
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-01-20
+
+Ack-Receipt: 2026-01-22
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
