@@ -66,7 +66,7 @@ if they should be spread out across the current subtree where they currently fit
 best.  This issue does not need to be resolved for the submission to progress
 to later phases and will require further research and effort from the CWE team.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: No comment needed.
 
 
 ----------
@@ -100,7 +100,13 @@ input is syntactically incorrect, just that it is not the format expected based
 on the identifier.  Please let us know your thoughts on the proposed
 relationships, specifically if you think CWE-241 is a good fit.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I think it aligns with CWE-228, the parent of CWE-241 and
+CWE-237. In the proposed submission, a parser see an identifier
+identifying the complex structural data type, the identifier is
+syntactically correct, assumes one surrounding structural data type,
+but the actual content of the structure is another data type. In the
+CWE-241 description it says an element, as long as that's not
+restrictive.
 
 
 RESOLVED ISSUES:
@@ -153,3 +159,4 @@ COMMUNICATIONS LOG:
 2024-05-01 sent email
 2024-06-27 sent email
 2025-12-23 sent email
+2025-12-23 received email
