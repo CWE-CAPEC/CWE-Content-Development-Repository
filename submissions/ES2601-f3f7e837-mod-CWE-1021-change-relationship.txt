@@ -1,0 +1,93 @@
+SUBMISSION COMMUNICATION ID: ES2601-f3f7e837
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-01-13 13:49:04
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #178
+
+MTRACKER: #1307
+
+GITHUBUSER: acepace
+
+SUBMISSION TYPE: Unknown
+
+NAME: Modify CWE-1021 to be a ChildOf CWE-693
+
+DESCRIPTION:
+
+This CWE should be ChildOf of CWE-693 as 693 existed long before and many
+Iframe clickjacking attacks are categorized as 693.
+
+When implementing automatic categorization of CWEs and relationships
+between them, some attacks get mis categorized because 1021 and 693 are
+unrelated.
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-1021
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-01-13
+
+Ack-Receipt: 2026-01-22
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
