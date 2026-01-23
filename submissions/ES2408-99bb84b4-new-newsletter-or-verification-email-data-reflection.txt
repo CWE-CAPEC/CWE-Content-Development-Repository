@@ -70,7 +70,33 @@ in the email sent to the users... reflective parts are filled with
 malicious text and URL addresses." This sounds like a content injection, 
 however, a bit more information is needed to truly discern that.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: The weakness is Improper Neutralization of User-Provided
+Data in Automated Outbound Email Templates, resulting in Trusted Email
+Content Injection.
+
+This occurs when an application reflects user-supplied fields (e.g.,
+name, custom metadata, or free-text inputs) directly into
+transactional emails such as newsletter subscriptions or account
+verification messages without contextual sanitization for the email
+body or embedded links.
+
+Unlike classic Content Injection or Server-Side Template Injection
+(SSTI), exploitation does not require template expression evaluation,
+script execution, or client-side rendering. Instead, the impact arises
+from the implicit trust of the sending domain, where emails are
+authenticated via SPF/DKIM/DMARC and originate from legitimate
+infrastructure.
+
+In this scenario, the application functions as an unintentional
+phishing proxy, enabling attackers to deliver malicious links or
+misleading content that bypasses Secure Email Gateways (SEGs) and user
+suspicion because the message is verifiably sent by a trusted
+organization.
+
+Therefore, this weakness is best characterized as a failure in
+notification security logic and contextual output encoding for email
+delivery systems, rather than a traditional injection flaw limited to
+web or template execution contexts.
 
 
 ----------
@@ -90,7 +116,52 @@ Comments: The provided reference links to the submitter's own GitHub page,
 which lists the exact description provided. Please submit a different 
 reference to highlight the need for this issue.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:
+
+This weakness aligns with, but is not fully addressed by, existing research and classifications:
+
+OWASP Top 10 – A03:2021 (Injection)
+
+OWASP explicitly states that injection vulnerabilities are not limited
+to browser-based contexts and can occur in messaging and email systems
+when untrusted input is reflected without proper contextual
+encoding. However, OWASP does not separately classify risks arising
+from trusted outbound email delivery mechanisms.
+
+PortSwigger Web Security – Server-Side Template Injection (SSTI)
+
+PortSwigger documents how user-controlled data embedded in server-side
+templates can lead to security compromise. While the weakness
+described here does not require template expression evaluation or code
+execution, it demonstrates a related but distinct risk where email
+templates reflect untrusted input, enabling phishing and credential
+theft through trusted delivery channels.
+
+Bug Bounty Reports Demonstrating Email Content Injection
+
+Real-world exploitation of this pattern has been documented in public
+bug bounty disclosures.  For example, “Bug Bounty: Email Content
+Injection” (InfoSec Writeups) describes a case where
+attacker-controlled input was reflected into transactional emails,
+enabling malicious link injection and phishing abuse.
+
+Additionally, HackerOne Report #1108504 documents HTML/content
+injection in newsletter subscription emails, confirming that this
+issue occurs in production systems and is practically exploitable.
+
+CWE-451: User Interface Misrepresentation of Critical Information
+
+CWE-451 partially overlaps in impact but focuses on misleading
+presentation rather than the server-side failure to neutralize user
+input in trusted outbound email workflows. It does not capture the
+abuse of authenticated email infrastructure (SPF/DKIM/DMARC) as a
+delivery vector.
+
+These references demonstrate that while related concepts exist, the
+specific risk of trusted outbound email reflection and its role in
+enabling phishing via legitimate email infrastructure remains
+under-represented as a distinct weakness within the current CWE
+hierarchy.
 
 
 ----------
@@ -145,3 +216,4 @@ COMMUNICATIONS LOG:
 2025-01-28 sent email
 2025-02-25 sent email
 2025-12-23 sent email
+2025-12-23 received email
