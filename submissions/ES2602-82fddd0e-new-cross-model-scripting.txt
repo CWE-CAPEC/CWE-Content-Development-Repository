@@ -1,0 +1,135 @@
+SUBMISSION COMMUNICATION ID: ES2602-82fddd0e
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-02-03 14:23:35
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #180
+
+MTRACKER: #1309
+
+GITHUBUSER: felipedaragon
+
+SUBMISSION TYPE: Software
+
+NAME: Cross-Model Scripting (XMS)
+
+DESCRIPTION:
+
+Cross-Model Scripting (XMS) is a model-mediated pathway to cross-site
+scripting (XSS) in AI-integrated web applications. XMS does not describe a
+new execution context. The resulting vulnerability remains a form of XSS
+(CWE-79), and script execution still occurs in the browser. What
+distinguishes XMS is the mechanism through which unsafe script content
+emerges.
+
+In traditional XSS scenarios, the risk arises when untrusted input is
+improperly validated or encoded before being rendered. The flow is
+relatively linear: input is received, optionally sanitized, and then
+inserted into an HTML or JavaScript context.
+
+In AI-integrated pipelines, however, a language model may introduce an
+intermediate transformation layer between validation and rendering. The
+model may rewrite, translate, normalize, or otherwise transform previously
+validated input. During this transformation, canonical representations of
+script constructs may be restored or generated. If the modelu2019s output
+is subsequently rendered without contextual encoding or post-transformation
+validation, injection risks may reappear.
+
+The distinguishing characteristic of XMS is therefore not the presence of
+script execution, but the crossing of a model boundary between validation
+and rendering. Input that was considered safe in one representation may
+become unsafe after model-driven transformation.
+
+The term Cross-Model Scripting (XMS) is intentionally parallel to
+Cross-Site Scripting (XSS). In XSS, script crosses a trust boundary between
+user input and browser execution. In XMS, unsafe script content emerges
+after crossing a model-mediated transformation boundary within the
+application pipeline. By naming this pattern, we isolate a class of AI-era
+injection pathways that stem from inconsistent trust assumptions across
+model layers. XMS should be understood as a refinement of how CWE-79
+manifests in systems that incorporate probabilistic text transformation
+engines into their request handling flow.
+
+Recognizing XMS helps practitioners:
+
+Identify where revalidation must occur after model transformations.
+Avoid implicitly trusting LLM-generated output.
+Account for canonicalization effects introduced by multilingual or
+Unicode-aware models.
+Design validation strategies that reflect the non-linear structure of
+AI-integrated pipelines.
+XMS does not replace XSS. It clarifies how XSS evolves when language models
+become part of the application architecture.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-79
+   Other CWE-180
+
+REFERENCES:
+
+Title: Introducing Cross-Model Scripting (XMS) vulnerabilities
+URL: https://www.syhunt.com/en/?n=Articles.2026-CrossModelScripting
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-02-03
+
+Ack-Receipt: 2026-02-04
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
