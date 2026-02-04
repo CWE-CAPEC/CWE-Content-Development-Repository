@@ -1,6 +1,8 @@
 ---
 name: Feedback Template
-about: This template is used to submit feedback on the CDR GitHub Repository
+about: This template is used to submit feedback on the CDR GitHub Repository.  Do
+  not submit content suggestions using issues, but instead go to the CWE submission
+  web form.
 title: FEEDBACK - [Please provide brief title here]
 labels: Feedback
 assignees: ''
