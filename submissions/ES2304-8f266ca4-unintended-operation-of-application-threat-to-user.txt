@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2304-8f266ca4
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2023-04-11 21:31:47
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.RELREFS, SUB.RELS
 
 PUBTRACKER: #53
 
@@ -22,7 +22,7 @@ GITHUBUSER: mbiesiad
 
 SUBMISSION TYPE: Software
 
-NAME: Unintended operation of the application results in a threat to the user
+NAME: Inappropriate automated language translation of critical data elements in text
 
 DESCRIPTION:
 
@@ -44,6 +44,7 @@ shoudn't be translated.
 RELATED WEAKNESSES:
 
    Other CWE-451
+   Other CWE-704
 
 REFERENCES:
 
@@ -61,6 +62,99 @@ URL: https://owasp.org/www-community/attacks/Content_Spoofing
 
 ACTIVE ISSUES:
 
+SUB.ABS.SUBTREE - "Potential subtree issue/gap"
+
+Description: The submission might identify an issue for which there could
+be a broader gap or organizational challenge that requires analysis of CWE
+subtree relationships under Research View 1000, in ways that extend beyond
+creation of a parent at the next-highest level of abstraction.
+
+Resolution: The submission cannot progress past the consultation phase
+(whether initial or detailed) unless it is at an acceptable level of
+abstraction, and the subtree issue(s) can be resolved or addressed
+independently.
+
+Comments: This submission highlights an important gap in CWE; CWE does
+not appear to cover this type of weakness very well. We are
+interpreting your submission as, roughly: "automatically applying
+human-language translation to critical data elements [such as website
+addresses]". We have changed the name for this submission, as well as
+the associated CDR issue, to better reflect the focus of this
+submission. This particular issue could be considered as a variant of
+a core weakness that might be roughly described as: "applying a
+transformation to data that should not be transformed" (such as email
+addresses).  In addition, it may be good to have a parent that is,
+roughly, "transformation to data that does not preserve intended
+equivalence," as there may be a number of cases in which inputs are
+transformed into other representations or internal data structures,
+but the results are not exactly the same as the original input.
+
+Language translation is an interesting example or context in which
+this "inappropriate transformation" can occur; however, we believe
+that it would be too low-level to make a CWE entry that is specific to
+translation. Thinking more broadly, this submission appears to be
+similar to "parsing inaccuracy" and/or "LLM hallucinations" in which
+the product is generating incorrect data; this concept does not
+currently have good coverage in CWE, so the CWE Team might need to
+perform additional research to frame the core issue in a more general
+way.
+
+This "auto-translation of email address names" submission would then
+be treated as a demonstrative example or otherwise be included in the
+more general weakness.  The CWE Team would create the more-general
+weaknesses independently, and work with you to ensure appropriate
+details from this submission are included.  Please let us know what
+you think of this proposal.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: As mentioned in SUB.ABS.SUBTREE, we are treating the core
+weakness as "applying a transformation to data that should not be
+transformed."  As such, this weakness might be best treated as a child
+or sibling of CWE-704: Incorrect Type Conversion or Cast. Let us know
+what you think of this proposal.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The provided references do not discuss the problem of
+translation as discussed in this submission. Please provide alternate
+references that describe the problem; real-world vulnerability reports
+may be included.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
 
 
 RESOLVED ISSUES:
@@ -75,7 +169,7 @@ Ack-Receipt: 2024-01-05
 
 Init-Review: 2025-05-07
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2026-02-05
 
 Init-Declined: YYYY-MM-DD
 
@@ -109,3 +203,6 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-01-05 sent email
 2025-05-07 sent email
+2025-07-17 action team-discuss
+2025-11-11 action team-discuss
+2026-02-05 sent email
