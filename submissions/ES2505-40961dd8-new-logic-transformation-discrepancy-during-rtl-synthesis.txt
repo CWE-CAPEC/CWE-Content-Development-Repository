@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2505-40961dd8
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-05-20 23:13:35
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.MULTWEAK, SUB.COORD
 
 PUBTRACKER: #152
 
@@ -28,7 +28,7 @@ DESCRIPTION:
 
 This weakness occurs when a hardware design exhibits unintended behavior at
 the gate-level netlist that is not present at the RTL level. Such
-divergence arises due to synthesis-related artifacts u2014 for example,
+divergence arises due to synthesis-related artifacts - for example,
 missing signals in sensitivity lists, undefined or partially specified
 logic, a malicious user exploiting/injectung bugs through EDA Synthesis
 Tools or synthesis optimizations that alter control or data paths. These
@@ -55,6 +55,86 @@ URL: https://docs.google.com/spreadsheets/d/1FlUX9KU7GLk6c8m5ApkEKR2zhLWdCV47u0H
 
 ACTIVE ISSUES:
 
+SUB.COORD - "Requires extensive coordination"
+
+Description: The submission will require or is currently undergoing close
+coordination, discussion, and debate between multiple parties with
+different perspectives and opinions.  The communication could be taking
+place in CDR itself, or outside of CDR.  As a result, it might take longer
+to move the submission to later phases, although the submission is expected
+to be more robust and well-defined as a result of this coordination.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Det-Consultation phases until sufficient consensus has been reached, or if
+the CWE Team decides to move the submission to the next phase.
+
+Comments: There has been strong interest from multiple parties
+involving security concerns related to RTL, but there are indications
+that there may be multiple weaknesses (see SUB.ABS.MULTWEAK), and the
+issues are not necessarily clearly described as weaknesses (see
+SUB.UNCLEAR).  In December 2025, the CWE Team formed an Ad-Hoc RTL
+Working Group to focus technical discussion around weaknesses related
+to RTL.  This group's work will include and influence the contents of
+this submission, but it might take time to reach the appropriate
+conclusions.
+
+Response: [NO RESPONSE NECESSARY; SUBMITTER IS AWARE OF THE WORKING
+GROUP.]
+
+----------
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: While the description highlights "unintended
+behavior... that is not present at the RTL level," it does not
+sufficiently explain what errors (weaknesses) caused this behavior, or
+what the security implications are.  There are indications of multiple
+errors, such as "missing signals in sensitivity lists" and
+"optimizations that alter control or data paths." However, there needs
+to be deeper analysis to more clearly indicate the specific weakness
+(or weaknesses) that are involved. It is important to note that there
+is other CWE coverage for "disrepancies" or "mismatches" such as
+CWE-1068: Inconsistency Between Implementation and Documented Design,
+and CWE-733: Compiler Optimization Removal or Modification of
+Security-critical Code. For issues related to state, there might be
+options such as CWE-1250: Improper Preservation of Consistency Between
+Independent Representations of Shared State. Finally, section 6 of the
+cited paper for CLiMA (Compromised Library Mapping Attack) may map to
+CWE-1357: Reliance on Insufficiently Trustworthy Component: "during
+the synthesis process, library binaries provided by fabrication
+vendors are fed to the EDA synthesis SynFuzz: Leveraging Fuzzing of
+Netlist to Detect Synthesis Bugs tool to map the design to library
+gate cells. However, an adversary or a malicious library vendor can
+exploit the optimizations of the EDA tool to manipulate the mapping
+process and create a malicious version of the hardware."
+
+Response: [NO RESPONSE NECESSARY; WORK TO CONTINUE WITHIN THE WORKING GROUP].
+
+----------
+
+SUB.ABS.MULTWEAK - "Multiple weaknesses"
+
+Description: The submission describes or suggests multiple independent
+weaknesses that each might deserve a separate CWE ID.
+
+Resolution: The submission cannot progress past the consultation phase
+until the number of relevant weaknesses is identified. If there are
+multiple weaknesses, separate names and descriptions are needed.
+
+Comments: As described in SUB.UNCLEAR, there are indications that
+there may be multiple weaknesses involved that can cause unintended
+behavior. These will be determined as a result of active discussion
+within the RTL Working Group.
+
+Response: [NO RESPONSE NECESSARY; WORK TO CONTINUE WITHIN THE WORKING GROUP].
+
 
 
 RESOLVED ISSUES:
@@ -69,7 +149,7 @@ Ack-Receipt: 2025-05-27
 
 Init-Review: 2025-08-18
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2026-02-05
 
 Init-Declined: YYYY-MM-DD
 
@@ -105,3 +185,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-05-27 sent email
 2025-08-18 sent email
+2026-02-05 sent email
