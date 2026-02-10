@@ -144,7 +144,15 @@ the following scenario you are referring to: 1. A user submits data
 The developers of the application hardcode a link that has a typo to another 
 resource.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: The weakness refers to developers or maintainers embedding,
+hardcoding, or publishing incorrect or outdated external links (e.g.,
+social media handles) within official organizational resources such as
+websites or applications. This is not a user-generated input issue but
+a configuration and maintenance weakness in how external resources are
+managed. The security risk arises when an incorrect or unverified link
+(404 or outdated handle) allows an attacker to claim that resource,
+leading to link or account hijacking and potential impersonation of
+the organization.
 
 
 ----------
@@ -165,7 +173,13 @@ case, this would fall under user error and not be within scope of CWE. Or
 2. The developers of the application hardcode a link to another resource that 
 has a typo. In that case, SCOPE.ADMINERR may not apply.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: This issue does not result from end-user error. It
+originates from the organization's developers or site administrators
+who configure or maintain links to external resources. The weakness
+lies in insufficient verification or maintenance of these links in the
+system's design or configuration.  Therefore, it should be considered
+a developer/maintainer weakness within CWE scope, not an
+administrative or user mistake.
 
 ----------
 
@@ -189,7 +203,11 @@ subtree issue/gap will prevent this submission from proceeding.  Please
 acknowledge that you have read this comment and feel free to ask any
 questions.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Acknowledged. I understand that this weakness may relate to
+a broader subtree issue such as "reliance on incorrect or outdated
+data." I am available to align or refine the submission as needed once
+the CWE team determines the appropriate abstraction level or
+relationship within the Research View.
 
 
 ----------
@@ -209,7 +227,12 @@ Comments: This issue is very similar to the one proposed via "ES2302-f091f80c"
 to ensure consistency.  There is no action needed from the submitter,
 but please indicate that you have read this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I acknowledge this overlap. The related submission
+(ES2302-f091f80c, CDR #65) describes the same underlying weakness -
+improper validation or verification of externally visible contact or
+link data. This current submission focuses specifically on external
+social media handles (link hijacking). Both can be consolidated or
+referenced together as variations of the same design-level weakness.
 
 
 ----------
@@ -262,3 +285,4 @@ COMMUNICATIONS LOG:
 2024-10-14 received comment
 2025-05-28 sent email
 2025-11-06 sent email
+2026-01-26 received comment
