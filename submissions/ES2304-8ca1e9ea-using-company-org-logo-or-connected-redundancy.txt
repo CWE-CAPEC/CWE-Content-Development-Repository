@@ -75,7 +75,55 @@ As such, we are unable to proceed with this submission. If you disagree,
 please provide additional details or justification explaining why this 
 issue should be considered a technical security focused weakness.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: In my opinion, the topic is an interesting one - there is
+clearly something that "doesn’t fit quite right" here.
+
+It represents an unnecessary attack vector or an avoidable opportunity for
+misuse. To clearly describe the issue, with your permission, I would like
+to focus on a single example (although similar cases may occur elsewhere,
+across different products - the common aspects being software security +
+possibility of misuse of the feature + perhaps not fully secure
+design/approach). My goal is to illustrate the idea and highlight how this
+could help promote a more secure approach to the discussed topic. I hope
+the example below will help clarify the concern I intended to share with
+the community.
+
+Illustrative example - potential risk: Depending on which browser is used,
+a user can often access a feature via RMB -> "Create QR code for this
+page."
+
+The purpose of this feature is to generate and display a correct QR code -
+that's its intended, legitimate use. However, some browsers automatically
+add their logo or branding element to the generated QR code, most likely
+for marketing or recognition purposes.
+
+While this is fine in benign use cases, the situation changes when a
+malicious actor takes advantage of it - e.g., generating a QR code that
+leads to malicious content. The difference is that the browser's logo,
+added by default, unintentionally lends trust and credibility to the QR
+code.
+
+Of course, a malicious actor could add such branding manually, but in this
+case, it's automatic and default behavior, which lowers the effort
+threshold for abuse. In my view, since the resulting QR code's destination
+or intent is not verified or controlled, it would be safer to avoid adding
+organizational branding by default, to prevent potential misuse and
+reputational risk.
+
+The QR code scenario is just an example meant to illustrate a broader
+point: similar concerns could appear in other, non-QR-related contexts -
+particularly where secure-by-design principles should apply. In that sense,
+I believe it's a topic worth consideration.
+
+In a slightly different context, this could resemble a kind of "server-side
+spoofing", where an external actor can influence a generated output,
+affecting security indirectly. However, in this case, the issue relates
+more to the software's design and behavior than to web mechanisms
+themselves.
+
+I'd be happy to clarify further if needed, and I'm genuinely interested in
+your thoughts on this topic.
+
 
 ----------
 
@@ -95,7 +143,22 @@ the issue outlined in your summary. If you believe this submission should
 be included in the CWE, please provide references that directly support and 
 align with your proposed weakness.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Thank you for your comments. I believe the issue could be
+unlocked if it passes the SUB.UNCLEAR - "Unclear weakness" phase. If
+the topic is deemed not relevant to CWE, the issue will naturally
+become obsolete.
+
+Since around 2023, I've been planning to write an article on this subject -
+regardless of whether it eventually fits as a CWE entry. It's possible that
+someone else may have already addressed this in the meantime; I plan to
+research that further.
+
+I'm familiar with both the vendor perspective and the security implications
+involved. If there's no objection, we could revisit this topic in the next
+round - or, alternatively, simply leave it closed if it doesn't progress to
+the next stage.
+
+Thank you once again for your understanding and your time.
 
 
 ----------
@@ -147,3 +210,4 @@ COMMUNICATIONS LOG:
 2025-05-28 sent email
 2025-08-19 sent email
 2025-12-22 sent email
+2026-01-26 received comment
