@@ -100,6 +100,43 @@ probably would map to the display of a partial hash, but does not
 mention The processing of a partial hash value. One suggestion would
 be to update CWE-223 to mention processing of data.
 
+Additional comments from 2026-01-19:
+
+Direct Parent:
+
+CWE-328: Use of Weak Hash
+
+Rationale:
+
+This weakness occurs when a cryptographically strong hash algorithm is
+used, but only a truncated portion of the resulting digest is relied
+upon for a security-relevant decision. Truncating the hash output
+reduces the effective security strength and makes collision or
+second-preimage attacks feasible relative to the intended threat
+model. This represents a specific form of weak hash usage arising from
+output truncation rather than algorithm choice.
+
+Response to Prior CDR Comments (2024-02-24):
+
+In response to earlier discussion noting that this issue differs from
+CWE-328 because a strong hashing algorithm may be used, the
+classification under CWE-328 is intentional and reflects that the
+effective weakness arises from reduced output strength rather than
+algorithm selection. While the underlying algorithm remains
+cryptographically strong, truncation of the digest renders the hash
+weak for the intended security purpose.
+
+Earlier drafts also referenced CWE-223 (Omission of Security-relevant
+Information), particularly for cases involving display of partial hash
+values. That relationship is intentionally omitted at this stage to
+avoid ambiguity. The core weakness addressed here applies to automated
+security enforcement and cryptographic strength reduction due to
+truncation, independent of presentation or user-interface
+concerns. CWE-223 may become applicable in the future if its scope is
+expanded to explicitly cover processing or enforcement decisions based
+on truncated cryptographic values, but such an update is not required
+to classify this weakness.
+
 
 ****************************************************************************
 
@@ -250,3 +287,4 @@ COMMUNICATIONS LOG:
 2024-02-24 received comment
 2025-09-10 action update
 2025-11-04 sent email
+2026-01-19 received CDR comment
