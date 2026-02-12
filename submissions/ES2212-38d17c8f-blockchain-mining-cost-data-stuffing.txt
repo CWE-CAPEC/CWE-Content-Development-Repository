@@ -93,7 +93,151 @@ decide whether a new blockchain-specific entry is needed, and how to
 address the more general problem.  Please acknowledge this point or
 let us know if you disagree.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: At first, I thought this submission needed some
+refinement. After reviewing the original text, related incidents, and
+existing CWE entries, it became clear that the initial framing focused
+too narrowly on specific mechanisms and examples, rather than on the
+underlying security properties involved, so I did a complete rewrite.
+
+As part of this rewrite, I re-examined the weakness at a higher level
+of abstraction to identify the fundamental assumptions that cause the
+security failure. In particular, I focused on systems whose security
+guarantees depend on emergent properties such as voluntary
+participation, competition among independent actors, and the continued
+absence of dominant participants, rather than on enforceable system
+invariants. The text below reflects that analysis and is intended to
+describe a general security design pattern rather than a specific
+implementation or attack scenario.
+
+Reliance on the Absence of Dominant Participants for Security
+
+Description
+
+This weakness occurs when a system relies on voluntary competition
+among independent participants, and specifically on the continued
+absence of any dominant participant, as a core security property, but
+does not enforce constraints to ensure that this condition holds.
+
+In such designs, participation is typically self-selected rather than
+assigned, and security-relevant actions (such as access to shared
+capacity or system state transitions) are permitted based on the
+expectation that multiple independent actors will compete on
+relatively similar terms. Under these conditions, competitive pressure
+is expected to constrain abuse by making monopolization or sustained
+dominance impractical.
+
+When participation is low, concentrated, or uneven, or when a single
+participant or small set of participants becomes significantly larger
+or more capable than others, this assumption can fail. In those cases,
+a dominant participant can legitimately monopolize shared capacity or
+system operations while remaining fully compliant with system
+rules. This can result in denial of service, transaction suppression,
+or long-term state growth without any violation of protocol or policy.
+
+The weakness lies in the design assumption that competitive
+non-dominance will persist, rather than in attacker manipulation of
+system parameters or costs.
+
+Security Impact
+
+Systems affected by this weakness may experience:
+
+- Suppression or delay of other participants’ actions
+- Monopolization of shared capacity or system operations
+- Long-term or permanent resource burdens imposed on participants
+- Degradation of availability or security guarantees during periods of low participation or increased concentration
+
+
+Why This Is a Security Weakness
+
+This condition constitutes a security weakness because system
+guarantees depend on assumptions about participant behavior,
+distribution, and relative capability rather than on enforceable
+system invariants. When the absence of dominant participants is not
+enforced, security properties can degrade silently as real-world
+participation patterns change.
+
+Systems that explicitly account for low-participation scenarios or
+that enforce bounds independent of participant dominance do not
+exhibit this weakness. The existence of such designs demonstrates that
+reliance on emergent competitive symmetry represents a correctable
+security design flaw, not an unavoidable tradeoff.
+
+Examples
+
+The following documented cases illustrate this weakness in practice:
+
+- Bitcoin transaction spam (“stress testing”, 2015):
+  - During periods of relatively low transaction volume, a deliberate
+  transaction spam campaign was able to saturate block capacity,
+  increasing fees and degrading availability despite all transactions
+  paying required fees.
+  - Reference:
+    - https://damonmccoy.com/papers/bitcoin16-final22.pdf
+- Ethereum denial-of-service attacks via underpriced operations (2016):
+  - Ethereum developers documented denial-of-service attacks that
+  exploited conditions where participation levels and pricing allowed
+  a small number of actors to dominate block usage, leading to
+  protocol-level repricing changes.
+  - References:
+    - https://eips.ethereum.org/EIPS/eip-150
+    - https://blog.ethereum.org/2016/09/22/ethereum-network-currently-undergoing-dos-attack
+- Fomo3D block stuffing attack (2018):
+  - An attacker successfully filled blocks with valid, high-cost
+  transactions to prevent other participants’ transactions from being
+  included, exploiting the absence of sufficient competing activity to
+  suppress others and claim the prize.
+  - References:
+    - https://diligence.consensys.io/blog/2018/12/silent-but-vulnerable-ethereum-gas-security-concerns/
+    - https://medium.com/@zhongqiangc/smart-contract-stuffing-fomo3d-42cb1d11ab03
+
+These examples demonstrate that systems whose security depends on the
+continued absence of dominant participants can fail when real-world
+participation patterns change, even when all actions comply with
+system rules.
+
+Relationship to Existing CWE Entries
+
+After reviewing the existing CWE taxonomy, this weakness does not map
+cleanly to a current CWE entry. It represents a system-level design
+assumption about participation, competition, and dominance, rather
+than a failure of a specific control.
+
+The following CWEs are conceptually related, although the relationship is not strong and is noted for context:
+
+- CWE-285: Improper Authorization
+  - Loosely related in that security-relevant actions are effectively
+    permitted based on insufficient criteria. In this case, the
+    absence of dominant participants implicitly acts as a gating
+    condition, but this is not a traditional authorization failure.
+- CWE-328: Use of Weak Hash
+  - Analogous in failure mode only. CWE-328 describes cryptographic
+    primitives whose effective brute-force resistance is too
+    low. The present weakness describes system designs whose
+    effective deterrence collapses when assumptions about
+    participant dominance are violated. Both involve security
+    assumptions failing when real-world conditions differ from
+    expectations, but at different abstraction levels.
+    
+This submission is therefore proposed as a standalone CWE, capturing a
+design weakness not currently represented elsewhere in the taxonomy.
+
+Notes on Scope
+
+This weakness is not limited to blockchain systems. Blockchain
+examples are included only because they provide well-documented,
+observable instances of the pattern. The weakness applies to any
+system where security depends on voluntary participation and the
+continued absence of dominant participants, rather than on enforceable
+limits or invariants.
+
+Closing note
+
+At this point, the submission reflects a clearer understanding of the
+underlying security properties involved and separates the weakness
+itself from any particular mechanism or implementation. If there are
+additional adjustments that would help align this further with CWE
+expectations, I’m happy to refine it further.
 
 
 ----------
@@ -115,7 +259,8 @@ issue. Please provide more relevant references that explain the
 weakness, preferably a white paper, blog post, or other document that
 goes beyond the Zcash example.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE NECESSARY; SUBMITTER PROVIDED REFERENCES IN
+SUB.ABS.LOWLEVEL RESPONSE]
 
 
 ----------
@@ -216,3 +361,4 @@ COMMUNICATIONS LOG:
 2024-02-24 received CDR Comment
 2024-03-29 sent email
 2025-12-22 sent email
+2026-01-19 received CDR Comment
