@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-08-26 11:07:10
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.RELS, SUB.RELREFS
+ISSUE DETAILS: 
 
 PUBTRACKER: #127
 
@@ -48,17 +48,38 @@ possible session hijacking/theft attacks.
 
 RELATED WEAKNESSES:
 
-   ChildOf CWE-923
-   ChildOf CWE-522
+   ChildOf CWE-732
 
 REFERENCES:
 
 Title: Cookie Broadcasting
 URL: https://security.synotna.eu/cookie-broadcasting.html
 
+Title: Testing for Cookies Attributes
+URL: https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes
+
+Title: Subdomain takeover
+URL: https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/Subdomain_takeover
+
+Title: Understanding Insecure Cookie Setting: Domain Too Loose
+URL: https://izoologic.com/web-app-security/understanding-insecure-cookie-setting-domain-too-loose/
+
+Title: Cookie security: overly broad domain
+URL: https://codeql.github.com/codeql-query-help/csharp/cs-web-broad-cookie-domain/
+
+Title: Security Cookies: Cookie Attributes and Vulnerability Guide
+URL: https://www.invicti.com/white-papers/security-cookies-whitepaper
+
+Title: Session cookies scoped to parent domain
+URL: https://www.acunetix.com/vulnerabilities/web/session-cookies-scoped-to-parent-domain/
+
+
 
 ACTIVE ISSUES:
 
+
+
+RESOLVED ISSUES:
 
 SUB.RELS - "Unclear relationships"
 
@@ -88,10 +109,12 @@ One of the other children to CWE-732 is CWE-1004: Sensitive Cookie Without 'Http
 is very adjacent to the proposed weakness.  Please indicate if you agree with this newly suggested
 relationship.
 
-Response: I agree
+Response: [RESOLVED ISSUE; DO NOT CHANGE.]
+
+I agree
 
 
-----------
+-------
 
 SUB.RELREFS - "No relevant references"
 
@@ -109,13 +132,11 @@ although when the CWE team attempted to view the reference the page was not load
 check that the link to the intended reference is correct and if the intended reference is not 
 accessible please provide another reference.
 
-Response: I have repaired the reference at
+Response: [RESOLVED ISSUE; DO NOT CHANGE. ADDITIONAL REFERENCES FOUND BY CWE TEAM].
+
+I have repaired the reference at
 https://security.synotna.eu/cookie-broadcasting.html - which is simply my
 own write up explaining the vulnerability 
-
-
-RESOLVED ISSUES:
-
 
 
 TIMELINE:
