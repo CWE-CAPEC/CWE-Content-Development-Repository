@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-07-07 21:35:21
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS
+ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.ABS.LOWLEVEL, SUB.RELS
 
 PUBTRACKER: #51
 
@@ -26,11 +26,12 @@ NAME: Lack of link preview for QR code scan can leads to type of Open Redirectio
 
 DESCRIPTION:
 
-Applications which allows to QR code scanning should show target link
-preview for users safety. If application will directly, at once redirect
-user to target site, it allows attackers for more successful phishing
-attacks and similar. Showing preview of target site is helpful and more
-secure for end-users.
+The application performs QR code scanning but does not previewing the
+target link before navigating to it.  The application should show the
+target link preview for users' safety. If application immediately
+redirect the user to the target site, it allows attackers for more
+successful phishing attacks and similar. Showing preview of target
+site is helpful and more secure for end-users.
 
 RELATED WEAKNESSES:
 
@@ -58,32 +59,6 @@ URL: https://en.wikipedia.org/wiki/QR_code
 ACTIVE ISSUES:
 
 
-SUB.UNCLEAR - "Unclear weakness"
-
-Description: The submission's name and/or description does not clearly
-identify a weakness, or it is written in a way that is vague and could
-cause the submission to be incorrectly mapped to.
-
-Resolution: An initial submission (or full submission) cannot progress past
-the consultation phase until SUB.UNCLEAR is addressed.
-
-Comments: When reading the submission, it is unclear whether this is
-an issue of a lack of link preview on the application hosting the QR
-code or if the issue is with applications that have QR code scanning
-capabilities not previewing the link before navigating to it.  Please
-confirm which situation your submission is intended for.
-
-Response: The issue is with applications that have QR code scanning
-capabilities not previewing the link before navigating to it.
-
-(Referring to 'an issue of a lack of link preview on the application
-hosting the QR code' - in my opinion it would be impossible, because
-we can consider a QR code in the bus or a train.  The responsibility
-is from the scanning app in my opinion - as product gives this
-feature)
-
-----------
-
 
 SUB.ABS.SUBTREE - "Potential subtree issue/gap"
 
@@ -110,7 +85,9 @@ mention prompts or confirmation dialogs, so CWE-356 would need to be
 updated accordingly.  Please let us know your thoughts on this
 analysis.
 
-Response: Agree. You're right.  "Missing user confirmation before
+Response: [NO RESPONSE NEEDED; ISSUE TO BE RESOLVED LATER]
+
+Agree. You're right.  "Missing user confirmation before
 potentially insecure action", which aligns with CWE-356: Product UI
 does not Warn User of Unsafe Actions" - sounds good for me.  QR codes
 are becoming more and more popular, so it could be a good idea to
@@ -142,7 +119,9 @@ best suited as a new entry (or modification of CWE-356) along the
 lines of "Missing user confirmation before potentially insecure
 action", where the QR link preview could be added as an example.
 
-Response: I agree with you, could be added as an example.
+Response: [NO RESPONSE NEEDED; ISSUE TO BE RESOLVED LATER]
+
+I agree with you, could be added as an example.
 
 
 ----------
@@ -173,7 +152,9 @@ to Untrusted Site ('Open Redirect') is incorrect.  Please let us know
 if you agree or disagree with our assessment of the potential
 relationships.
 
-Response: Agree. Thank you so much for your time and your point of view!
+Response: [NO RESPONSE NEEDED; ISSUE TO BE RESOLVED LATER]
+
+Agree. Thank you so much for your time and your point of view!
 
 
 
@@ -196,7 +177,7 @@ Comments: While the submitter provided two references, neither
 describe the actual weakness.  Please respond by providing references
 which describe the actual weakness.
 
-Response:
+Response: [RESOLVED ISSUE; DO NOT CHANGE.]
 
 "Beware of Fake QR Code Scams"
 https://www.aarp.org/money/scams-fraud/info-2021/qr-codes.html
@@ -207,6 +188,34 @@ https://www.smashingmagazine.com/2022/02/qr-codes-business-best-practices-pitfal
 "How to safely scan a QR code using your smartphone"
 https://cyberguy.com/security/how-to-safely-scan-a-qr-code-using-your-smartphone/
 
+
+----------
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: An initial submission (or full submission) cannot progress past
+the consultation phase until SUB.UNCLEAR is addressed.
+
+Comments: When reading the submission, it is unclear whether this is
+an issue of a lack of link preview on the application hosting the QR
+code or if the issue is with applications that have QR code scanning
+capabilities not previewing the link before navigating to it.  Please
+confirm which situation your submission is intended for.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE. DESCRIPTION MODIFIED.]
+
+The issue is with applications that have QR code scanning capabilities
+not previewing the link before navigating to it.
+
+(Referring to 'an issue of a lack of link preview on the application
+hosting the QR code' - in my opinion it would be impossible, because
+we can consider a QR code in the bus or a train.  The responsibility
+is from the scanning app in my opinion - as product gives this
+feature)
 
 
 
