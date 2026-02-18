@@ -62,7 +62,9 @@ on the parsers. This will lead to a modification in CWE-130. We will likely
 highlight your proposed submission as one of the observed examples or 
 under mitigations. Please let us know if you agree with the suggestion.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Yes, that makes sense. I have other submissions related to
+parsing weaknesses, not sure if there is a way to link them or
+categorize them as a root cause.
 
 
 ----------
@@ -81,7 +83,9 @@ CWE-130 that covers the topic being proposed. We will certainly incorporate
 what is proposed in this submission within CWE-130 to enhance it's coverage.
 Please let us know if you are okay with that.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Yes, that makes sense. I have other submissions related to
+parsing weaknesses, not sure if there is a way to link them or
+categorize them as a root cause.
 
 
 ----------
@@ -136,3 +140,5 @@ COMMUNICATIONS LOG:
 2024-07-10 sent email
 2024-09-10 sent email
 2025-12-22 sent email
+2025-12-22 received email
+2026-02-18 action meeting
