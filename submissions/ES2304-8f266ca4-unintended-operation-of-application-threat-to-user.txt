@@ -106,7 +106,7 @@ weaknesses independently, and work with you to ensure appropriate
 details from this submission are included.  Please let us know what
 you think of this proposal.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree with you.
 
 ----------
 
@@ -131,7 +131,7 @@ transformed."  As such, this weakness might be best treated as a child
 or sibling of CWE-704: Incorrect Type Conversion or Cast. Let us know
 what you think of this proposal.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree.
 
 
 ----------
@@ -152,7 +152,10 @@ translation as discussed in this submission. Please provide alternate
 references that describe the problem; real-world vulnerability reports
 may be included.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: At the time of initial submission, there were few formal
+references describing this specific issue. However, I would be glad to
+supply additional documentation or examples if helpful for the CWE
+team's research.
 
 
 
@@ -206,3 +209,4 @@ COMMUNICATIONS LOG:
 2025-07-17 action team-discuss
 2025-11-11 action team-discuss
 2026-02-05 sent email
+2026-02-16 received comment
