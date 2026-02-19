@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2311-a3418361
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -175,7 +175,7 @@ Init-Consultation: 2025-07-17
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-02-19
 
 Det-Requested: YYYY-MM-DD
 
@@ -210,3 +210,4 @@ COMMUNICATIONS LOG:
 2025-07-17 sent email
 2025-07-27 received email
 2026-02-18 action meeting
+2026-02-19 sent email
