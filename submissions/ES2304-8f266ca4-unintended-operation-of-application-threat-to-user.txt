@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2304-8f266ca4
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -176,7 +176,7 @@ Init-Consultation: 2026-02-05
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-02-19
 
 Det-Requested: YYYY-MM-DD
 
@@ -210,3 +210,4 @@ COMMUNICATIONS LOG:
 2025-11-11 action team-discuss
 2026-02-05 sent email
 2026-02-16 received comment
+2026-02-19 sent email
