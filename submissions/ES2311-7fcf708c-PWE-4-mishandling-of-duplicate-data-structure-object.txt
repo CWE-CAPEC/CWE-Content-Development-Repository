@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2311-7fcf708c
 
-ACTION TYPE: Undetermined
+ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -170,7 +170,7 @@ Init-Consultation: 2025-08-21
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-02-19
 
 Det-Requested: YYYY-MM-DD
 
@@ -205,3 +205,4 @@ COMMUNICATIONS LOG:
 2025-08-21 sent email
 2025-08-28 received email
 2026-02-18 action meeting
+2026-02-19 sent email
