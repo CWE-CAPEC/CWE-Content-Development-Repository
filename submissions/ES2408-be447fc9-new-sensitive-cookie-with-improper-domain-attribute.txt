@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2408-be447fc9
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -151,7 +151,7 @@ Init-Consultation: 2025-08-25
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-02-19
 
 Det-Requested: YYYY-MM-DD
 
@@ -185,3 +185,4 @@ COMMUNICATIONS LOG:
 2025-01-24 sent email
 2025-08-25 sent email
 2025-10-11 received comment
+2026-02-19 sent email
