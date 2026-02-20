@@ -1,0 +1,102 @@
+SUBMISSION COMMUNICATION ID: ES2602-3885d54d
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-02-16 14:18:20
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #181
+
+MTRACKER: #1311
+
+GITHUBUSER: bugmithlegend
+
+SUBMISSION TYPE: Software
+
+NAME: Application State Type Corruption (ASTC) - Persistent Data Type Assumptions in PHP Applications
+
+DESCRIPTION:
+
+This weakness occurs when an application assumes that persisted data
+structures will always conform to an expected type (e.g., objects) without
+validating the retrieved state. In some cases, the application itself may
+unintentionally mutate or convert the stored data into a different type
+(e.g., arrays instead of objects) during normal processing. Subsequent code
+that accesses properties or methods assumes the original type, leading to
+persistent fatal errors across multiple modules. This can result in
+authentication failures, system crashes, or other systemic failures.
+Variations include any situation where unsafe assumptions about type
+integrity are made across execution paths and persistent state mutation is
+possible.
+
+RELATED WEAKNESSES:
+
+   Other CWE-20
+   Other CWE-843
+   Other CWE-704
+
+REFERENCES:
+
+Title: ASTC Research Documentation - Persistent Data Type Corruption (includes everything)
+URL: https://mega.nz/folder/6AFgWQCJ#c7YTzUeyDOxSjZ4vo0ZLmg
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-02-16
+
+Ack-Receipt: 2026-02-20
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
