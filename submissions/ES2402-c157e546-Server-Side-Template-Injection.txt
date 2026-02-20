@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-c157e546
 
 ACTION TYPE: Undetermined
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Declined
 
 AFFECTED CWES: 
 
@@ -48,8 +48,6 @@ REFERENCES:
 
 ACTIVE ISSUES:
 
-----------
-
 SUB.ACTION - "Unable to determine action"
 
 Description: It is not clear what action to perform based on the
@@ -70,7 +68,7 @@ arbitrary expressions" in the second paragraph in the Extended
 Description. Please clarify what changes in CWE-1336 you would like to
 see.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [SUBMITTER DID NOT REPLY.]
 
 ----------
 
@@ -87,7 +85,7 @@ submitter can be more specific about what changes are being
 proposed. If you have more specific suggestions, please provide them
 in the "Response:" in the SUB.ACTION problem above.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [SUBMITTER DID NOT REPLY.]
 
 
 RESOLVED ISSUES:
@@ -104,7 +102,7 @@ Init-Review: 2025-02-12
 
 Init-Consultation: 2025-02-25
 
-Init-Declined: YYYY-MM-DD
+Init-Declined: 2026-02-19
 
 Init-Accepted: YYYY-MM-DD
 
@@ -140,3 +138,4 @@ COMMUNICATIONS LOG:
 2025-02-12 sent email
 2025-02-25 sent email
 2025-12-22 sent email
+2026-02-19 sent email
