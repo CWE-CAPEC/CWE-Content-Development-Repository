@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2307-f1508064
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES:
 
@@ -231,7 +231,7 @@ Init-Consultation: 2024-06-27
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-02-19
 
 Det-Requested: YYYY-MM-DD
 
@@ -265,3 +265,4 @@ COMMUNICATIONS LOG:
 2024-02-20 sent email
 2024-06-27 sent email
 2024-09-20 received comment
+2026-02-19 sent email
