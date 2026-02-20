@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2307-7a0d993a
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -356,7 +356,7 @@ Init-Consultation: 2025-01-16
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-02-19
 
 Det-Requested: YYYY-MM-DD
 
@@ -392,3 +392,4 @@ COMMUNICATIONS LOG:
 2024-12-10 action update
 2025-01-16 sent email
 2025-01-18 received comment
+2026-02-19 sent email
