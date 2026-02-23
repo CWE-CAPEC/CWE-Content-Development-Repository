@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2402-c157e546
 
 ACTION TYPE: Undetermined
 
-SUBMISSION STATUS: Init-Declined
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: 
 
@@ -128,7 +128,7 @@ CWE-Published: YYYY-MM-DD
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2026-02-22
 
 
 
