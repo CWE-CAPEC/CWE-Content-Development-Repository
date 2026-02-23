@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2201-3666f29c
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Declined
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: 
 
@@ -234,7 +234,7 @@ CWE-Published: YYYY-MM-DD
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2026-02-22
 
 
 COMMUNICATIONS LOG:
@@ -245,3 +245,4 @@ COMMUNICATIONS LOG:
 2023-09-12 publish server
 2025-10-06 sent email
 2026-01-13 sent email
+2026-02-22 sent email
