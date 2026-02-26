@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2510-159c6475
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: CWE-1268
 
@@ -88,8 +88,7 @@ Agents.
 
 Please let us know if you agree with this proposal.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
-
+Response: I agree with the final fix - it is complete and clear.
 
 
 
@@ -109,7 +108,7 @@ Init-Consultation: 2025-12-04
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-02-26
 
 Det-Requested: YYYY-MM-DD
 
@@ -143,3 +142,6 @@ COMMUNICATIONS LOG:
 2025-11-06 sent email
 2025-12-04 sent email
 2026-02-05 sent email
+2026-02-26 sent email
+2026-02-26 received reply
+2026-02-26 sent email
