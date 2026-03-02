@@ -1,0 +1,102 @@
+SUBMISSION COMMUNICATION ID: ES2602-bd8e9372
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-02-24 18:42:52
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #182
+
+MTRACKER: #1312
+
+GITHUBUSER: bugmithlegend
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Authentication State Lifecycle Handling
+
+DESCRIPTION:
+
+Systems issuing encrypted or signed authentication artifacts, such as
+tokens or verification state, may improperly process these artifacts beyond
+their intended session lifecycle. Valid authentication state can be reused
+across sessions, processed without proper account or session binding, and
+trigger deterministic corruption of account state. This results in
+persistent authentication failures, verification loops, and permanent
+denial of service for high-value accounts. The weakness originates from
+improper lifecycle enforcement, cross-session state processing, and flaws
+in the authentication state machine logic, creating availability and
+integrity impacts without granting unauthorized access or exposing
+credentials.
+
+RELATED WEAKNESSES:
+
+   Other CWE-287
+   Other CWE-294
+   Other CWE-613
+
+REFERENCES:
+
+Title: IASLH Research Documentation (includes everything)
+URL: https://mega.nz/folder/jIsVUDrD#Uvfb83vigk2me-QjyH7SbQ
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-02-24
+
+Ack-Receipt: 2026-03-02
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
