@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2508-95a780e3
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Det-Requested
 
 AFFECTED CWES: 
 
@@ -12,7 +12,9 @@ SUBMISSION DATE: 2025-08-15 16:47:46
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.COORD, SUB.MISSDET, SUB.NEWTECH, SUB.OVERLAP
+ISSUE DETAILS: SUB.MISSDET, SUB.NEWTECH, SUB.OVERLAP
+
+FIELDCHANGE: DESC, INTROMODES, PLATFORMS, DEMOX, MITIGATION, REFS
 
 PUBTRACKER: #163
 
@@ -49,12 +51,164 @@ REFERENCES:
 
 Title: Terminal DiLLMas
 URL: https://embracethered.com/blog/posts/2024/terminal-dillmas-prompt-injection-ansi-sequences/
+Author: <<put the information here>>
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
 
 Title: Weaponizing Plain Text ANSI Escape Sequences as a Forensic Nightmare 
 URL: https://i.blackhat.com/BH-US-23/Presentations/US-23-stok-weponizing-plain-text-ansi-escape-sequences-as-a-forensic-nightmare-appendix.pdf
+Author: <<put the information here>>
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+
+Title: Bad Characters: Imperceptible NLP Attacks
+URL: https://arxiv.org/pdf/2106.09898
+Author: <<put the information here>>
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+
+
+MODES OF INTRODUCTION:
+
+# This provides information about how and when a given weakness may be
+# introduced. Information should list the Phase of the development life
+# cycle in which the weakness can introduced. A descriptive Note is
+# optional but preferred.
+# 
+# If the weakness can be introduced in multiple phases, include separate
+# items for each Phase. Copy and paste as needed.
+# 
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
+
+
+Phase: <<PHASE1>>
+
+Note: <<put the information here>>
+
+
+Phase: <<PHASE2>>
+
+Note: <<put the information here>>
+
+
+************************************************************************************************
+
+APPLICABLE PLATFORMS:
+
+Technology Name: AI/ML
+Prevalence: <<PREVALENCE1>>
+
+
+DEMONSTRATIVE EXAMPLES:
+
+# "BAD CODE" and "GOOD CODE" can be code snippets, descriptions of a
+# design or architecture, or an algorithm or protocol.
+#
+# * If you would like to submit diagrams/images to support any
+# weakness descriptive examples, please attach it to the email
+# submission in a png format and reference it by filename where
+# desired. For an example, please see:
+# https://cwe.mitre.org/data/definitions/1256.html
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#demox
+
+# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
+#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
+#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
+#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
+#    Assembly, Other
+
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+************************************************************************************************
+
+POTENTIAL MITIGATIONS:
+
+# This element should cover one or more techniques that will eliminate
+# and/or reduce the frequency or impact of the weakness. Each mitigation
+# must include a Phase and Description, while the Effectiveness element
+# is optional. A descriptive Effectiveness Note is also optional.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#mitigations
+
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+# Values for Effectiveness: High, Moderate, Limited, Incidental,
+#    Discouraged Common Practice, Defense in Depth, None
+
+
+Phase: <<PHASE1>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT1>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: <<PHASE2>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT2>>
+
+Effectiveness Notes: <<put the information here>>
+
 
 
 ACTIVE ISSUES:
+
+----------
+
+SUB.MISSDET - "Missing details"
+
+Description: The submission is missing some requested or required details
+for elements other than name and description.
+
+Resolution: The submission cannot progress to later phases if it does not
+have all required elements.
+
+Comments: For integration into CWE-150, the following elements might
+need to be changed: description / extended description; add a
+demonstrative example; consider adding an AI-specific mode of
+introduction; consider an AI-specific potential mitigation; add AI/ML
+as an Affected Platform.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
 
 SUB.OVERLAP - "Duplicate/Overlap"
 
@@ -67,48 +221,11 @@ duplicate/overlap is understood and (2) it is clear how to resolve this
 duplicate/overlap.
 
 Comments: This submission overlaps another submission, ES2406-ca98e75f
-(CDR #112), which is generally about ANSI injection, but is in the
-initial consultation.  The CWE Team will move forward with this
-submission independently of the other submission.
+(CDR #112), which is generally about ANSI injection, and has also been
+accepted.  The CWE Team will move forward with this submission while
+integrating other changes from ES2406-ca98e75f.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
-
-----------
-
-SUB.MISSDET - "Missing details"
-
-Description: The submission is missing some requested or required details
-for elements other than name and description.
-
-Resolution: The submission cannot progress to later phases if it does not
-have all required elements.
-
-Comments: Since this submission is being integrated into CWE-150, work
-is needed to provide additional details. This will be addressed in
-Stage 2, Detailed Submission.
-
-Response: [NO RESPONSE NEEDED; ISSUE TO BE RESOLVED IN A LATER PHASE]
-
-
-----------
-
-SUB.COORD - "Requires extensive coordination"
-
-Description: The submission will require or is currently undergoing close
-coordination, discussion, and debate between multiple parties with
-different perspectives and opinions.  The communication could be taking
-place in CDR itself, or outside of CDR.  As a result, it might take longer
-to move the submission to later phases, although the submission is expected
-to be more robust and well-defined as a result of this coordination.
-
-Resolution: The submission cannot progress past the Init-Consultation or
-Det-Consultation phases until sufficient consensus has been reached, or if
-the CWE Team decides to move the submission to the next phase.
-
-Comments: This submission is being actively reviewed and discussed in
-the AI WG, along with the submitter.
-
-Response: [NO RESPONSE NEEDED]
+Response: [NO RESPONSE NEEDED; ISSUE TO BE RESOLVED LATER]
 
 ----------
 
@@ -197,6 +314,28 @@ will be treated as a Modification instead of a New Entry.
 
 Response: [RESOLVED ISSUE; DO NOT CHANGE.]
 
+-----------
+
+SUB.COORD - "Requires extensive coordination"
+
+Description: The submission will require or is currently undergoing close
+coordination, discussion, and debate between multiple parties with
+different perspectives and opinions.  The communication could be taking
+place in CDR itself, or outside of CDR.  As a result, it might take longer
+to move the submission to later phases, although the submission is expected
+to be more robust and well-defined as a result of this coordination.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Det-Consultation phases until sufficient consensus has been reached, or if
+the CWE Team decides to move the submission to the next phase.
+
+Comments: This submission was actively reviewed and discussed in the
+AI WG, including the original submitter. While the AI WG will continue
+to be informed, there was sufficient consensus about how to progress
+with this submission.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE.]
+
 
 TIMELINE:
 
@@ -212,7 +351,7 @@ Init-Declined: YYYY-MM-DD
 
 Init-Accepted: 2025-12-05
 
-Det-Requested: YYYY-MM-DD
+Det-Requested: 2026-03-05
 
 Det-Received: YYYY-MM-DD
 
@@ -245,3 +384,4 @@ COMMUNICATIONS LOG:
 2025-10-10 action meeting
 2025-12-05 sent email
 2025-12-05 sent email
+2026-03-05 sent email
