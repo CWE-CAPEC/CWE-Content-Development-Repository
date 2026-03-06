@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2406-ca98e75f
 
-ACTION TYPE: New Entry
+ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2024-06-15 16:03:17
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.ACTCHANGE
+ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.MISC
 
 PUBTRACKER: #112
 
@@ -57,6 +57,23 @@ URL: https://dgl.cx/2023/09/ansi-terminal-security
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The original submitter has withdrawn their involvement in
+the further development of this submission. The CWE Team will continue
+to integrate the original suggestions in later stages and will keep
+the original submitter informed.
+
+Response: [NO RESPONSE NECESSARY; SUBMITTER HAS WITHDRAWN FROM ACTIVE
+PARTICIPATION.]
+
+---------
+
 SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
 Description: The submission identifies an issue, but its abstraction might
@@ -73,7 +90,8 @@ the more-general concept is appropriately identified and described. The
 original, lower-level submission will serve as a primary example of the
 more general concept.
 
-Comments: The submission specifically focuses on ANSI codes. CWE-150
+Comments: Submitter has agreed with the following assessment:
+The submission specifically focuses on ANSI codes. CWE-150
 already covers Improper Neutralization of Escape, Meta, or Control Sequences. 
 ASNI codes would be classified as "Control Sequences" which is why 
 it is covered by CWE-150. Given that CWE-150 is already a variant 
@@ -83,10 +101,15 @@ Please also note that your suggestions of CVE-2003-0020,
 CVE-2003-0083, CVE-2003-0021, and some other observed examples are already 
 listed in CWE-150.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+The CWE Team will modify CWE-150 accordingly.
 
+Response: [NO RESPONSE NECESSARY; ISSUE TO BE RESOLVED BY THE CWE TEAM
+IN LATER PHASES.]
 
 ----------
+
+RESOLVED ISSUES:
+
 
 SUB.ACTCHANGE - "Change in action for submission"
 
@@ -104,12 +127,8 @@ new entry. Further discussion and identification of the core weakness
 will help determine the appropriate action. Please indicate if you agree
 or disagree with this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree with that judgement.
 
-
-----------
-
-RESOLVED ISSUES:
 
 
 
@@ -125,7 +144,7 @@ Init-Consultation: 2025-05-12
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-03-05
 
 Det-Requested: YYYY-MM-DD
 
@@ -161,3 +180,5 @@ COMMUNICATIONS LOG:
 2025-05-12 sent email
 2025-12-22 sent email
 2026-03-02 sent CDR comment
+2026-03-03 received comment
+2026-03-05 sent email
