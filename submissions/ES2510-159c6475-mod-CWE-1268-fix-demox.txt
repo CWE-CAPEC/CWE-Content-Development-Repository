@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2510-159c6475
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Internal-Update
 
 AFFECTED CWES: CWE-1268
 
@@ -120,7 +120,7 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2026-03-18
 
 CWE-Assigned: YYYY-MM-DD
 
@@ -145,3 +145,4 @@ COMMUNICATIONS LOG:
 2026-02-26 sent email
 2026-02-26 received reply
 2026-02-26 sent email
+2026-03-18 sent email
