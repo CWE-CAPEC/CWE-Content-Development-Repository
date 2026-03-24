@@ -70,6 +70,94 @@ RELATED WEAKNESSES:
 REFERENCES:
 
 
+DEMONSTRATIVE EXAMPLES:
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: PHP
+
+<?php
+$username = $_GET['username'];
+
+try 
+{
+    if (strlen($username) > 20) 
+    {
+	throw new Exception("Username too long");
+    }
+} 
+catch (Exception $e) 
+{
+    error_log("User registration failed: " . $username);
+}
+?>
+
+
+EXPLANATORY TEXT:
+
+
+The above PHP code logs the username directly without sanitization. An
+attacker can inject newline (%0A) characters in the username parameter,
+causing log injection. For example, submitting
+hacker%0AAdmin+Access+Granted would result in a manipulated log entry:
+
+````
+
+User registration failed: hacker
+Admin Access Granted
+
+````
+This could trick administrators into believing false events occurred or
+even bypass security monitoring systems.
+
+GOOD CODE:
+LANGUAGE: PHP
+
+<?php
+
+function sanitize_for_log(string $input): string {
+    // Remove all control characters including newlines, carriage returns, tabs, etc.
+    $sanitized = preg_replace('/[\x00-\x1F\x7F]/', '', $input);
+    // Trim leading/trailing whitespace
+    return trim($sanitized);
+}
+
+function validate_username(string $input): string {
+    // Sanitize first to strip any injected control characters
+    $clean = sanitize_for_log($input);
+
+    // Enforce max length
+    if (strlen($clean) > 20) {
+        throw new LengthException("Username too long");
+    }
+
+    // Allowlist: only alphanumeric characters and underscores
+    if (!preg_match('/^[a-zA-Z0-9_]+$/', $clean)) {
+        throw new InvalidArgumentException("Username contains invalid characters");
+    }
+
+    return $clean;
+}
+
+$raw_username = $_GET['username'] ?? '';
+
+try {
+    $username = validate_username($raw_username);
+
+} catch (LengthException $e) {
+    $safe_log = sanitize_for_log($raw_username);
+    error_log("User registration failed (too long): " . substr($safe_log, 0, 50));
+
+} catch (InvalidArgumentException $e) {
+    $safe_log = sanitize_for_log($raw_username);
+    error_log("User registration failed (invalid chars): " . substr($safe_log, 0, 50));
+}
+?>
+
+
 ACTIVE ISSUES:
 
 SUB.MISC - "Miscellaneous/other problem"
@@ -84,7 +172,7 @@ details. In Stage 2, we will work with you to refine this example to
 fit with CWE's expected style, such as introductory text and a "good
 code" example to demonstrate the fix.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [SUBMITTER PROVIDED GOOD CODE BEFORE DETAILS WERE FORMALLY REQUESTED]
 
 
 
@@ -138,3 +226,4 @@ COMMUNICATIONS LOG:
 2025-03-12 sent email
 2025-05-29 sent email
 2025-07-17 sent email
+2026-03-14 received comment
