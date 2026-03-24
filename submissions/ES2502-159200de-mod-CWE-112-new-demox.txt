@@ -78,14 +78,41 @@ server.
 GOOD CODE:
 LANGUAGE: PHP
 
-(SEE COMMENTS IN SUB.MISSDET)
+<?php
 
-possible "good" code:
+$allowed_files = [
+    'products' => __DIR__ . '/xml/products.xml',
+    'catalog'  => __DIR__ . '/xml/catalog.xml',
+];
 
-     
+$key = $_GET['file'] ?? '';
 
-<<put the information here>>
+if (!isset($allowed_files[$key])) {
+    http_response_code(404);
+    exit('File not found.');
+}
 
+$filepath = $allowed_files[$key];
+
+if (!file_exists($filepath)) {
+    http_response_code(404);
+    exit('File not found.');
+}
+
+// Disable external entity loading to prevent XXE
+libxml_disable_entity_loader(true);
+libxml_use_internal_errors(true);
+
+$xml = simplexml_load_file($filepath);
+
+if ($xml === false) {
+    http_response_code(400);
+    exit('Invalid XML file.');
+}
+
+header('Content-Type: application/xml; charset=UTF-8');
+echo $xml->asXML();
+?>
 
 
 RELATED WEAKNESSES:
@@ -133,8 +160,7 @@ details. We can work with you to finalize this.
    We welcome your insights and suggestions on this approach.
 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
-
+Response: [SUBMITTER PROVIDED GOOD CODE EXAMPLE]
 
 
 
@@ -188,3 +214,4 @@ COMMUNICATIONS LOG:
 2025-05-28 sent email
 2025-11-04 sent email
 2025-11-05 sent email
+2026-03-14 received comment
