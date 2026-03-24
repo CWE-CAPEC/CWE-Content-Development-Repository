@@ -75,16 +75,35 @@ LANGUAGE: PHP
 EXPLANATORY TEXT:
 
 However, this code does not validate or restrict the discount
-percentage. An attacker could submit a discount value of 100%, making
-the finalPrice zero, resulting in unauthorized free purchases.  A
-discount greater than 100% could result in a negative value, allowing
-the user to get money credited instead of paying.
+percentage. An attacker could submit a discount value of 100% or even
+a negative discount value, making the finalPrice zero or
+negative. This could result in unauthorized free purchases or even
+getting money credited instead of paying.
 
 GOOD CODE:
 LANGUAGE: PHP
 
-<<put the information here>>
+<?php
 
+$original_price = 100.00;
+$allowed_discounts = [0, 10, 20, 50]; // only these discounts are valid
+
+$discount = (int) ($_POST['discount'] ?? 0);
+
+if (!in_array($discount, $allowed_discounts, true)) {
+    http_response_code(400);
+    exit('Invalid discount.');
+}
+
+$final_price = $original_price - ($original_price * $discount / 100);
+
+if ($final_price <= 0) {
+    http_response_code(400);
+    exit('Invalid final price.');
+}
+
+processPayment($final_price);
+?>
 
 
 ACTIVE ISSUES:
@@ -116,7 +135,7 @@ EXAMPLES" section in this form.
  - Finally, fill the "Response" below to indicate that you have made
    this change, or otherwise ask us for any clarification.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [SUBMITTER PROVIDED GOOD CODE AND MODIFIED EXPLANATORY TEXT]
 
 
 
@@ -171,3 +190,4 @@ COMMUNICATIONS LOG:
 2025-04-08 sent email
 2025-05-20 sent email
 2025-08-21 sent email
+2026-03-14 received comment
