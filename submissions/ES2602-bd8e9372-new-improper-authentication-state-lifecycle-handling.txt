@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2602-bd8e9372
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -64,7 +64,7 @@ Received: 2026-02-24
 
 Ack-Receipt: 2026-03-02
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2026-03-26
 
 Init-Consultation: YYYY-MM-DD
 
@@ -101,3 +101,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2026-03-02 sent email
+2026-03-26 sent email
