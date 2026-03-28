@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-df916af6
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Det-Requested
+SUBMISSION STATUS: Det-Received
 
 AFFECTED CWES: CWE-22
 
@@ -172,7 +172,7 @@ Init-Accepted: 2025-02-25
 
 Det-Requested: 2025-08-21
 
-Det-Received: YYYY-MM-DD
+Det-Received: 2026-03-14
 
 Det-Review: YYYY-MM-DD
 
