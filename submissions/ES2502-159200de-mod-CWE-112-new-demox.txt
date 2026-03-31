@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-159200de
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Det-Received
+SUBMISSION STATUS: Det-Review
 
 AFFECTED CWES: 
 
@@ -186,7 +186,7 @@ Det-Requested: 2025-11-04
 
 Det-Received: 2026-03-14
 
-Det-Review: YYYY-MM-DD
+Det-Review: 2026-03-31
 
 Det-Consultation: YYYY-MM-DD
 
@@ -215,3 +215,4 @@ COMMUNICATIONS LOG:
 2025-11-04 sent email
 2025-11-05 sent email
 2026-03-14 received comment
+2026-03-31 sent email
