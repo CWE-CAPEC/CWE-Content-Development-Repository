@@ -101,3 +101,7 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2026-02-20 sent email
+2026-03-13 received CDR comment
+2026-03-17 sent CDR comment
+2026-03-20 received CDR comment
+2026-03-31 received CDR comment
