@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2602-3885d54d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -64,7 +64,7 @@ Received: 2026-02-16
 
 Ack-Receipt: 2026-02-20
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2026-04-01
 
 Init-Consultation: YYYY-MM-DD
 
@@ -105,3 +105,4 @@ COMMUNICATIONS LOG:
 2026-03-17 sent CDR comment
 2026-03-20 received CDR comment
 2026-03-31 received CDR comment
+2026-04-01 sent email
