@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2504-01bf6a89
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,9 +10,11 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-04-21 15:28:34
 
-ISSUES: yes/resolved
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISSDET
+
+FIELDCHANGE: CONSEQ, DEMOX, MITIGATION
 
 PUBTRACKER: #172
 
@@ -45,14 +47,14 @@ exploitable by attackers. We have identified four timing windows (cases) in
 which the processor fails to detect these illegal control-flow diversions,
 allowing silent, undetected corruption of the program state. 
 
-* Case #1: The instruction is skipped, triggering the 'illegalu2019
+* Case #1: The instruction is skipped, triggering the 'illegal'
 flag and the exception handler.
 * Case #2: The destination register is zeroed while triggering the
-'illegalu2019 flag and the exception handler.
+'illegal' flag and the exception handler.
 * Case #3: The destination register is zeroed without triggering the
-'illegalu2019 flag or the exception handler.
+'illegal' flag or the exception handler.
 * Case #4: The destination register is partially corrupted without
-triggering the 'illegalu2019 flag or the exception handler
+triggering the 'illegal' flag or the exception handler
 
 To clarify, I am not requesting a CVE ID for a product-specific
 vulnerability. My intent is to help refine the CWE hardware entries,
@@ -206,6 +208,62 @@ URL: https://arxiv.org/pdf/2503.03877
 
 ACTIVE ISSUES:
 
+SUB.MISSDET - "Missing details"
+
+Description: The submission is missing some requested or required details
+for elements other than name and description.
+
+Resolution: The submission cannot progress to later phases if it does not
+have all required elements.
+
+Comments: For your awareness, we have identified the following
+questions or issues. We will address these with you once we move the
+submission to Stage 2, Detailed Submission, which we will begin after
+accepting this initial submission.
+
+C1) We agree with the suggested "new example scenario" for CWE-1247
+("Clock glitch on pipelined CPU causing instruction skips and silent
+state corruption"), which we would treat as a new Demonstrative
+Example. This proposal does not closely follow our style for
+demonstrative examples, so we will work with you in a later stage to
+modify the example, such as: (1) making it more consequence related;
+(2) Developing both bad and good pipelining code snippets or designs;
+(3) The good coding snippet should include the "adequate
+microarchitectural robustness and fault handling" that the submitter
+mentions. We will also explore if there are such things that industry
+commonly uses. (4) A visual of the instruction pipeline, even if
+ASCII, would really increase the readability. Finally, (5) we believe
+that this example could be used for CWE-1332 if we just focus on the
+part related to the instruction skip.
+
+C2) We believe that the "Common Consequences" suggestions for CWE-1247
+will be a good improvement for common consequences. Also, we can
+update CWE-1332's common consequences with instruction skip specifics.
+
+C3) For "Potential Mitigations" for CWE-1247: These seem like good
+additions. In a later stage, we may want to clarify the following:
+What is the cost or complexity of these mitigations? Are these
+mitigations appropriate for all processors or just safety-critical
+applications?  Would you use these mitigations where cost is being
+optimized?
+
+C4) We believe that the "Example wording for CWE-1332 or a
+relationship note" can be used in the Common Consequences element for
+CWE-1332.
+
+C5) Regarding the "High-level abstraction of our experimental
+results": it appears that this seems duplicative of the previous
+information.
+
+C6) Currently, CWE-1247 and CWE-1332 have a "PeerOf" relationship, but
+do not share the same parent. Outside the scope of this submission,
+the CWE Team will separately determine if other relationships will be
+more appropriate.
+
+Response: [NO RESPONSE NECESSARY; ISSUES TO BE RESOLVED IN STAGE 2]
+
+
+
 RESOLVED ISSUES:
 
 SUB.MISSDET - "Missing details"
@@ -236,7 +294,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-04-08
 
 Det-Requested: YYYY-MM-DD
 
@@ -271,3 +329,4 @@ COMMUNICATIONS LOG:
 2025-11-13 received email
 2025-12-04 sent email
 2025-12-04 sent email
+2026-04-08 sent email
