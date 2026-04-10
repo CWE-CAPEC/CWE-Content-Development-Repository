@@ -1,0 +1,96 @@
+SUBMISSION COMMUNICATION ID: ES2604-20e90224
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-04-07 09:26:57
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #186
+
+MTRACKER: #1318
+
+GITHUBUSER: acepace
+
+SUBMISSION TYPE: Unknown
+
+NAME: CWE-391 Mapping Notes - Remove Prohibited Suggestion
+
+DESCRIPTION:
+
+CWE-391 (Unchecked Error Condition) lists CWE-1069 (Empty Exception Block)
+as a Mapping_Notes <Suggestion>, but CWE-1069 is itself marked
+<Usage>Prohibited</Usage>. 
+
+This creates a contradiction: analysts following CWE-391's mapping guidance
+are directed to a CWE that they are also prohibited from using.
+
+Remove CWE-1069 from CWE-391's <Suggestions> list and from the <Comments>
+text. The remaining suggestions (CWE-252 and CWE-248) are both Allowed and
+provide adequate coverage.
+
+RELATED WEAKNESSES:
+
+   Other CWE-391
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-04-07
+
+Ack-Receipt: 2026-04-10
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
