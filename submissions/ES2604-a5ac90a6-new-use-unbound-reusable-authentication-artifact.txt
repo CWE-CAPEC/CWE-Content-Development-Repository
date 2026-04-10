@@ -1,0 +1,119 @@
+SUBMISSION COMMUNICATION ID: ES2604-a5ac90a6
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-04-03 13:39:04
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #184
+
+MTRACKER: #1316
+
+GITHUBUSER: aphroph
+
+SUBMISSION TYPE: Software
+
+NAME: Use of Unbound, Reusable Authentication Artifact
+
+DESCRIPTION:
+
+The product authenticates users solely based on possession of a single
+reusable authentication artifact (e.g., cookie, token, or session
+identifier) issued after successful authentication, including username,
+password, and multi-factor verification. Because the artifact alone is
+sufficient to gain access, no additional verification or contextual binding
+is required, creating a single point of failure.
+
+If the artifact is compromised or stolen, an attacker can immediately
+impersonate the user across multiple devices and applications without
+requiring the user's credentials or additional authentication factors. This
+risk is particularly significant in environments such as single sign-on
+(SSO) or multi-application platforms, where the same artifact may grant
+access across several services.
+
+Subtle variations include:
+
+The artifact is valid across multiple sessions, devices, or applications
+without scope restriction
+Lack of binding to device, session, or contextual parameters
+No server-side invalidation across concurrent sessions upon logout
+Reuse of the artifact enables simultaneous access across contexts
+
+Technical impact: account takeover, unauthorized access, session hijacking,
+elevated blast radius, and immediate compromise of all systems that trust
+the artifact.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-287
+   Other CWE-384
+   Other CWE-613
+
+REFERENCES:
+
+Title: The Golden Cookie: When SSO Session Boundaries Fail
+URL: https://allaboutinfosec.blogspot.com/2026/03/the-golden-cookie-when-sso-session.html
+
+Title: OWASP WSTG - Session Management Testing Guide
+URL: https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/06-Session_Management_Testing/06-Testing_for_Logout_Functionality.md
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-04-03
+
+Ack-Receipt: 2026-04-10
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
