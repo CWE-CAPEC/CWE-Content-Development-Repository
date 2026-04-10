@@ -1,0 +1,156 @@
+SUBMISSION COMMUNICATION ID: ES2604-0263b4fe
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-04-04 20:36:00
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #185
+
+MTRACKER: #1317
+
+GITHUBUSER: Aviral2642
+
+SUBMISSION TYPE: Software
+
+NAME: Silent Integer Truncation of Tensor Metadata in ML Inference Engine Native Code
+
+DESCRIPTION:
+
+ML inference engines process model files containing attacker-controlled
+tensor metadata (dimensions, strides, element counts, byte offsets) stored
+as 64-bit integers. When this metadata crosses the boundary from high-level
+ML framework APIs (which use int64_t) to low-level GPU kernel code (which
+commonly uses 32-bit int for performance or CUDA API compatibility), silent
+narrowing conversion discards the upper bits without validation or runtime
+checks.
+
+This truncation produces incorrect values for buffer allocation sizes,
+kernel launch grid dimensions, loop bounds, and array indices. When the
+truncated value is used to allocate a GPU buffer, the buffer is undersized
+relative to the actual tensor data. Subsequent kernel execution writes past
+the end of the allocated buffer based on the original (non-truncated)
+tensor layout, resulting in GPU memory corruption.
+
+The attacker-controlled values originate from model file headers. The GGUF
+format, used by llama.cpp, Ollama, vLLM, and other inference tools, stores
+tensor dimension arrays (ne[]), data type indicators, string lengths, and
+byte offsets that flow directly into the affected code paths. An attacker
+crafts a model file with dimension values exceeding 2^31-1, uploads it to a
+public model hub (e.g., HuggingFace), and waits for a victim to download
+and load the model.
+
+This weakness is distinct from general integer truncation (CWE-197)
+because: (1) the source of attacker-controlled input is a model file, not a
+network protocol or user form, establishing a threat model analogous to
+malicious document/image parsing; (2) the truncation occurs at a framework
+boundary between Python-level ML APIs and C++/CUDA kernel code, an
+architectural seam where both sides appear correct in isolation; (3) the
+consequence is GPU memory corruption, which is not detected by conventional
+CPU-side memory safety tools (AddressSanitizer, Valgrind) and requires
+specialized GPU debugging tools (compute-sanitizer, CUDA-memcheck) that are
+rarely integrated into ML project CI/CD pipelines.
+
+This pattern has produced CVEs across multiple inference engines:
+CVE-2025-53630 and CVE-2026-27940 (llama.cpp integer overflow in GGUF size
+calculation), CVE-2025-49847 (llama.cpp size_t to int32_t cast),
+CVE-2026-33298 (llama.cpp integer overflow in ggml_nbytes), and three Cisco
+Talos advisories (TALOS-2024-1913/1914/1915) for crafted GGUF header
+values. A systematic audit of vLLM commit 63babd1 identified 221 additional
+instances of this pattern across 20+ source files in the csrc/ directory,
+with 159 from tensor.size(), 28 from tensor.stride(), 22 from
+tensor.numel(), and 12 from tensor.sizes()[].
+
+The fix requires replacing narrow integer types with int64_t for all
+variables receiving tensor metadata, and adding explicit bounds checks
+(e.g., TORCH_CHECK(dim <= INT_MAX)) where 32-bit types are required by
+hardware API constraints such as CUDA grid dimension limits.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-197
+   ChildOf CWE-681
+
+REFERENCES:
+
+Title: Full research report
+URL: https://github.com/Aviral2642/vllm-integer-truncation-audit
+
+Title: CVE-2025-53630 (llama.cpp integer overflow)
+URL: https://nvd.nist.gov/vuln/detail/CVE-2025-53630
+
+Title: CVE-2026-27940 (llama.cpp fix bypass)
+URL: https://nvd.nist.gov/vuln/detail/CVE-2026-27940
+
+Title: CVE-2025-49847 (llama.cpp size_t cast)
+URL: https://nvd.nist.gov/vuln/detail/CVE-2025-49847
+
+Title: TALOS-2024-1913 (Cisco Talos GGUF advisory)
+URL: https://talosintelligence.com/vulnerability_reports/TALOS-2024-1913
+
+Title: TALOS-2024-1914
+URL: https://talosintelligence.com/vulnerability_reports/TALOS-2024-1914
+
+Title: TALOS-2024-1915
+URL: https://talosintelligence.com/vulnerability_reports/TALOS-2024-1915
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-04-04
+
+Ack-Receipt: 2026-04-10
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
