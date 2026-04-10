@@ -1,0 +1,169 @@
+SUBMISSION COMMUNICATION ID: ES2604-0e3749e8
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-04-02 04:50:26
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #183
+
+MTRACKER: #1315
+
+GITHUBUSER: Aviral2642
+
+SUBMISSION TYPE: Software
+
+NAME:  Improper Isolation of Executable Logic in AI/ML Workflow Definitions
+
+DESCRIPTION:
+
+AI/ML workflow orchestration platforms let users build pipelines by
+connecting nodes in a visual interface. Each node can contain executable
+logic (Python code, shell commands, API calls). The complete workflow is
+serialized as a "flow definition," typically stored as JSON or YAML on the
+server.The weakness occurs when a platform exposes an endpoint that accepts
+externally supplied flow definitions and executes the embedded code without
+enforcing a trust boundary between server-authored definitions and
+attacker-controlled input. Because executing code within flow definitions
+is the platform's core functionality, this is architecturally distinct from
+traditional code injection.
+
+Why this should concern developers:
+
+In conventional code injection (CWE-94), user input unexpectedly reaches an
+eval() or exec() call due to missing sanitization. The standard fix is to
+sanitize input or avoid dynamic evaluation. In AI/ML pipeline platforms,
+this advice does not apply. The platform must execute code in flow
+definitions to function. The exec() call is not a mistake; it is the
+mechanism by which flows run. The weakness is not that untrusted data
+reaches a code execution function. It is that the platform fails to
+distinguish between flow definitions authored by trusted users (stored
+server-side) and definitions supplied by anonymous external parties through
+public-facing endpoints.
+Developers building features like "public flows" or "shared templates" may
+not recognize that exposing a flow execution endpoint to unauthenticated
+users is equivalent to offering unauthenticated remote code execution. The
+flow definition is both data and code simultaneously, and the trust model
+must account for this.
+
+Technical impact:
+
+Exploitation results in unauthenticated remote code execution. A single
+HTTP POST with crafted JSON containing malicious Python in a flow node
+definition achieves immediate RCE. An attacker can then harvest credentials
+from environment variables and .env files, access connected databases and
+cloud services, exfiltrate API keys and model artifacts, pivot to internal
+networks, and compromise downstream systems. No authentication, user
+interaction, or prior target knowledge is required beyond the endpoint URL.
+
+Subtleties and variations:
+
+1. The surface is not limited to one endpoint. In one real-world case
+(CVE-2026-33017 and CVE-2025-3248 in the same codebase), two separate
+endpoints exposed the same exec() path through different API routes. Fixing
+one while leaving the pattern intact allowed the second to persist. The
+root cause is the design pattern, not any individual endpoint.
+2. The "public flow" feature creates inherent tension. The endpoint must be
+unauthenticated because its purpose is to serve flows to anonymous users.
+Adding auth breaks the feature. The correct fix is ensuring public
+endpoints only execute stored server-side flow logic and never accept
+externally supplied definitions with executable content. This requires
+separating the data plane (flow parameters) from the code plane (executable
+node logic) at the architecture level.
+3. WAFs are largely ineffective. The payload is embedded within
+legitimate-looking JSON matching the expected schema. The code appears in a
+field where code is normally expected. Signature-based detection cannot
+distinguish legitimate definitions from weaponized ones without
+understanding the trust context of the request source.
+4. The weakness extends beyond Python exec(). Any platform serializing
+executable logic into transferable definitions and processing them from
+mixed-trust sources exhibits this pattern: visual AI agent builders,
+low-code automation platforms, and pipeline tools supporting custom code
+nodes.
+5. Exploitation occurs extremely rapidly after disclosure. For
+CVE-2026-33017, attackers built working exploits from the advisory alone
+within 20 hours, with no public PoC. The payload is a standard HTTP POST
+with JSON, requiring no specialized tooling.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-94
+   ChildOf CWE-95
+
+REFERENCES:
+
+Title: CVE-2026-33017: Critical Langflow RCE via Public Flow Build Endpoint (CVSS 9.3, CISA KEV)
+URL: https://thehackernews.com/2026/03/critical-langflow-flaw-cve-2026-33017.html
+
+Title:  CVE-2025-3248: Langflow RCE via Validate Code Endpoint - Same Root Cause, Different Endpoint
+URL: https://nvd.nist.gov/vuln/detail/CVE-2025-3248
+
+Title: CISA Known Exploited Vulnerabilities Catalog Entry for CVE-2026-33017
+URL: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+
+Title: Sysdig Threat Research: CVE-2026-33017 Exploited Within 20 Hours of Disclosure Without Public PoC
+URL: https://sysdig.com/blog/cve-2026-33017-langflow
+
+Title: GitHub Security Advisory for Langflow CVE-2026-33017
+URL: https://github.com/langflow-ai/langflow/security/advisories
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-04-02
+
+Ack-Receipt: 2026-04-10
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
