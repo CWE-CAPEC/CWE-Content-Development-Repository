@@ -1,0 +1,97 @@
+SUBMISSION COMMUNICATION ID: ES2604-7d364742
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-04-15 08:02:01
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #187
+
+MTRACKER: #1319
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Unknown
+
+NAME: CWE-50 modification add CanPrecede of CWE-601
+
+DESCRIPTION:
+
+We suggest adding a CanPrecede relation of CWE-601. Similarly, CWE-601
+should document CanFollow of CWE-50.
+
+Context: There has been multiple open-redirect CVE entries caused by
+mistreatment of double slashes in the Location header. Those programs
+generally accept user input that is prefixed with a slash, and use it
+directly for redirecting purposes. Because double-slash-prefixed URLs are
+schema-relative and not origin-relative, this produces open redirect.
+
+Example CVEs: CVE-2025-54793, CVE-2021-23387, CVE-2021-22964,
+CVE-2020-28724
+
+RELATED WEAKNESSES:
+
+   Other CWE-50
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-04-15
+
+Ack-Receipt: 2026-04-21
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
