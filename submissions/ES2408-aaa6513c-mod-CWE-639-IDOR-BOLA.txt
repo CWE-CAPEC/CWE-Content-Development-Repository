@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2408-aaa6513c
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-08-09 17:28:48
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #126
 
@@ -20,7 +20,7 @@ MTRACKER: #1154
 
 GITHUBUSER: 0tax00
 
-SUBMISSION TYPE: Unknown
+SUBMISSION TYPE: Software
 
 NAME: Modify CWE-639 alt terms for IDOR and BOLA
 
@@ -40,7 +40,7 @@ https://medium.com/@0ta/unraveling-vulnerabilities-understanding-the-difference-
 
 This information is covered in the article in the field "Insecure Direct
 Object Reference (IDOR) vs. Broken Object Level Authorization (BOLA)" and 
-"Differences in the Use of the Term u201cObjectu201d in Relation to IDOR
+"Differences in the Use of the Term "Object" in Relation to IDOR
 and BOLA"
 
 
@@ -62,8 +62,49 @@ RELATED WEAKNESSES:
 
 REFERENCES:
 
+Title: Unraveling Vulnerabilities: Understanding the difference between IDOR, BAC and BOLA
+
+URL: https://medium.com/@0ta/unraveling-vulnerabilities-understanding-the-difference-between-idor-bac-and-bola-0bc52cbc6dde
+
+Author: Mateus Pantoja
+
+Date: 2024-08-09
+
+
+Title: API1:2023 Broken Object Level Authorization
+
+URL: https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/
+
+Author: OWASP
+
+Date: 2023-06-05
+
+
+Title: API Broken Object Level Authorization
+
+URL: https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/12-API_Testing/02-API_Broken_Object_Level_Authorization
+
+Author: OWASP
+
+Date: N/A
+
 
 ACTIVE ISSUES:
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: We agree that BOLA is not properly cited in CWE-639. We will
+change CWE-639 accordingly. We need to study the usage of the IDOR and
+BOLA terms more carefully before making additional updates, but this
+will be treated as a separate task.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
 
 
 
@@ -83,7 +124,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-04-21
 
 Det-Requested: YYYY-MM-DD
 
@@ -115,3 +156,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2024-12-09 sent email
 2025-01-24 sent email
+2026-04-21 sent email
