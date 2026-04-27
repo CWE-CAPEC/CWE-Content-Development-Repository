@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-df916af6
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Det-Accepted
+SUBMISSION STATUS: Internal-Update
 
 AFFECTED CWES: CWE-22
 
@@ -166,7 +166,7 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: 2026-04-26
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2026-04-26
 
 CWE-Assigned: YYYY-MM-DD
 
@@ -191,4 +191,5 @@ COMMUNICATIONS LOG:
 2025-08-21 sent email
 2026-03-14 received comment
 2026-03-30 sent email
+2026-04-26 sent email
 2026-04-26 sent email
