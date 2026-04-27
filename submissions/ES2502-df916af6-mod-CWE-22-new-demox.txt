@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-df916af6
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
 AFFECTED CWES: CWE-22
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-02-08 05:20:48
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.MISSDET
+ISSUE DETAILS: 
 
 FIELDCHANGE: DEMOX
 
@@ -110,7 +110,7 @@ if (!isset($allowed_files[$key])) {
 
 $filepath = __DIR__ . '/' . $allowed_files[$key];
 
-if (!is_file($filepath) || !is_readable($filepath))
+if (!is_file($filepath) || !is_readable($filepath)) {
     http_response_code(404);
     exit('File not found.');
 }
@@ -121,6 +121,9 @@ echo htmlspecialchars(file_get_contents($filepath), ENT_QUOTES, 'UTF-8');
 
 
 ACTIVE ISSUES:
+
+
+RESOLVED ISSUES:
 
 SUB.MISSDET - "Missing details"
 
@@ -136,9 +139,6 @@ with the solution in general. We will modify the suggestion to use
 otherwise we will keep the suggested good code.
 
 Response: [NO RESPONSE NECESSARY]
-
-
-RESOLVED ISSUES:
 
 
 
@@ -170,7 +170,7 @@ Internal-Update: 2026-04-26
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2026-04-27
 
 Final-Coord: YYYY-MM-DD
 
@@ -193,3 +193,4 @@ COMMUNICATIONS LOG:
 2026-03-30 sent email
 2026-04-26 sent email
 2026-04-26 sent email
+2026-04-27 sent email
