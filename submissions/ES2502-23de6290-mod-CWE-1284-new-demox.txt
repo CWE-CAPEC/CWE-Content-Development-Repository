@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-23de6290
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Det-Review
+SUBMISSION STATUS: Det-Accepted
 
 AFFECTED CWES: 
 
@@ -74,11 +74,12 @@ LANGUAGE: PHP
 
 EXPLANATORY TEXT:
 
-However, this code does not validate or restrict the discount
-percentage. An attacker could submit a discount value of 100% or even
-a negative discount value, making the finalPrice zero or
-negative. This could result in unauthorized free purchases or even
-getting money credited instead of paying.
+This code does not validate or restrict the discount percentage. An
+attacker could submit a discount value of 100, making the final price
+zero, or a value greater than 100, making the final price
+negative. Depending on how processPayment() handles zero or negative
+amounts, this could result in unauthorized free purchases or other
+payment logic flaws, such as getting money credited instead of paying.
 
 GOOD CODE:
 LANGUAGE: PHP
@@ -166,7 +167,7 @@ Det-Review: 2026-03-30
 
 Det-Consultation: YYYY-MM-DD
 
-Det-Accepted: YYYY-MM-DD
+Det-Accepted: 2026-04-26
 
 Internal-Update: YYYY-MM-DD
 
@@ -192,3 +193,4 @@ COMMUNICATIONS LOG:
 2025-08-21 sent email
 2026-03-14 received comment
 2026-03-30 sent email
+2026-04-26 sent email
