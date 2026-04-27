@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-df916af6
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Det-Review
+SUBMISSION STATUS: Det-Accepted
 
 AFFECTED CWES: CWE-22
 
@@ -110,7 +110,7 @@ if (!isset($allowed_files[$key])) {
 
 $filepath = __DIR__ . '/' . $allowed_files[$key];
 
-if (!file_exists($filepath)) {
+if (!is_file($filepath) || !is_readable($filepath))
     http_response_code(404);
     exit('File not found.');
 }
@@ -130,26 +130,12 @@ for elements other than name and description.
 Resolution: The submission cannot progress to later phases if it does not
 have all required elements.
 
-Comments: We have added your suggestion to the "DEMONSTRATIVE
-EXAMPLES" section in this form.
+Comments: We have examined the suggested "good code" example and agree
+with the solution in general. We will modify the suggestion to use
+"is_file()" and "is_readable()" tests instead of file_exists(), but
+otherwise we will keep the suggested good code.
 
- - We wrote some "INTRO TEXT" to describe the behavior that the code
-   is attempting to do.  Please let us know if you agree with the
-   introduction, or suggest how to change it.
-
-  - We also added "EXPLANATORY TEXT" to the example, making small
-    changes to your suggested explanation. Please let us know if you
-    agree with the text, or suggest how to change it.
-
- - The "GOOD CODE" section needs to be filled in order to suggest to
-   developers how they could address the weakness. Please provide us
-   with example code that modifies the "bad code" in order to fix the
-   weakness.
-
- - Finally, fill the "Response" below to indicate that you have made
-   this change, or otherwise ask us for any clarification.
-
-Response: [SUBMITTER PROVIDED GOOD CODE EXAMPLE]
+Response: [NO RESPONSE NECESSARY]
 
 
 RESOLVED ISSUES:
@@ -178,7 +164,7 @@ Det-Review: 2026-03-30
 
 Det-Consultation: YYYY-MM-DD
 
-Det-Accepted: YYYY-MM-DD
+Det-Accepted: 2026-04-26
 
 Internal-Update: YYYY-MM-DD
 
@@ -205,3 +191,4 @@ COMMUNICATIONS LOG:
 2025-08-21 sent email
 2026-03-14 received comment
 2026-03-30 sent email
+2026-04-26 sent email
