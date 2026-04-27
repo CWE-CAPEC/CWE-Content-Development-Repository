@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2604-20e90224
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -58,7 +58,7 @@ Received: 2026-04-07
 
 Ack-Receipt: 2026-04-10
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2026-04-27
 
 Init-Consultation: YYYY-MM-DD
 
@@ -95,3 +95,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2026-04-10 sent email
+2026-04-27 sent email
