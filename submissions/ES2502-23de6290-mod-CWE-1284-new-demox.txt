@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-23de6290
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
 AFFECTED CWES: CWE-1284
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-02-28 15:37:18
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.MISSDET
+ISSUE DETAILS: 
 
 FIELDCHANGE: DEMOX
 
@@ -109,6 +109,9 @@ processPayment($final_price);
 
 ACTIVE ISSUES:
 
+
+RESOLVED ISSUES:
+
 SUB.MISSDET - "Missing details"
 
 Description: The submission is missing some requested or required details
@@ -137,10 +140,6 @@ EXAMPLES" section in this form.
    this change, or otherwise ask us for any clarification.
 
 Response: [SUBMITTER PROVIDED GOOD CODE AND MODIFIED EXPLANATORY TEXT]
-
-
-
-RESOLVED ISSUES:
 
 
 
@@ -173,7 +172,7 @@ Internal-Update: 2026-04-26
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2026-04-27
 
 Final-Coord: YYYY-MM-DD
 
@@ -195,3 +194,4 @@ COMMUNICATIONS LOG:
 2026-03-30 sent email
 2026-04-26 sent email
 2026-04-26 sent email
+2026-04-27 sent email
