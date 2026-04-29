@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2512-5a5a0447
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Internal-Update
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-598
 
 ORIGIN: sub-server
 
@@ -91,7 +91,7 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2026-04-28
 
 CWE-Assigned: YYYY-MM-DD
 
@@ -113,3 +113,4 @@ COMMUNICATIONS LOG:
 2026-01-13 sent email
 2026-03-31 action team-discuss
 2026-04-27 sent email
+2026-04-28 sent email
