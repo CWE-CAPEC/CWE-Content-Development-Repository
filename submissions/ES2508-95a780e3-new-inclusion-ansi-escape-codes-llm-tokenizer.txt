@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2508-95a780e3
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Det-Requested
+SUBMISSION STATUS: Internal-Update
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-150
 
 ORIGIN: sub-server
 
@@ -43,6 +43,7 @@ tokenizers should not contain these escape sequences.
 
 RELATED WEAKNESSES:
 
+   Other CWE-150
    ChildOf CWE-77
    ChildOf CWE-1426
    Other ES2406-ca98e75f
@@ -63,6 +64,22 @@ Title: Bad Characters: Imperceptible NLP Attacks
 URL: https://arxiv.org/pdf/2106.09898
 Author: <<put the information here>>
 Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+
+Title:
+URL: https://github.com/wunderwuzzi23/terminal-dillma/blob/main/dillma.py
+Author: <<put the information here>>
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+
+Title: [real observed example]
+URL: https://dgl.cx/2023/09/ansi-terminal-security#apple-terminal-dns-leaks
+Author: <<put the information here>>
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+
+Title:
+URL: https://interhumanagreement.substack.com/p/llm-output-can-take-over-your-computer
+Author: <<put the information here>>
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+
 
 
 MODES OF INTRODUCTION:
@@ -87,9 +104,10 @@ MODES OF INTRODUCTION:
 # https://cwe.mitre.org/community/submissions/guidelines.html#introduction
 
 
-Phase: <<PHASE1>>
+Phase: Build and Compilation
 
-Note: <<put the information here>>
+Note: during training, escape sequences are assigned within token
+entry values.
 
 
 Phase: <<PHASE2>>
@@ -128,17 +146,47 @@ DEMONSTRATIVE EXAMPLES:
 
 INTRO TEXT:
 
-<<put the information here>>
+Suppose there is an LLM-enabled code assistant for a user that
+processes a site (e.g. a StackOverflow response), which contains
+answers to a particular question or task.
+
+Consider VSCode / an AI-enabled IDE that is capable of retrieving
+content from web sites based on the user's prompt, e.g. to ask for
+help diagnosing an error.
+
 
 BAD CODE:
 LANGUAGE: <<LANGUAGE>>
 
-<<put the information here>>
+The output from the results aren't neutralized
+
+(some relationship with CWE-1426?)
+
+The product uses a tokenizer that does not restrict which token IDs
+are produced. It processes a file and translates it "faithfully."
 
 
 EXPLANATORY TEXT:
 
-<<put the information here>>
+Using the LLM output in an agent context - if an attacker gets their
+input into the LLM, it could be introduced via prompt injection (not
+user prompt or system prompt, but within the retrieved data that
+induces the language model to produce some content - more like
+"indirect" prompt injection).
+
+Suppose the victim is using a terminal emulator, interacting with the
+LLM on the command line. When the term emulator handles the escape
+code, it will act on it (e.g. changing color or flashing text);
+copying clipboard contents; DoS; etc.
+
+There was a vuln in a MacOS terminal that allowed zero-click infoleak.
+
+refs? https://github.com/wunderwuzzi23/terminal-dillma/blob/main/dillma.py
+
+https://dgl.cx/2023/09/ansi-terminal-security#apple-terminal-dns-leaks
+
+
+
 
 GOOD CODE:
 LANGUAGE: <<LANGUAGE>>
@@ -169,22 +217,38 @@ POTENTIAL MITIGATIONS:
 #    Discouraged Common Practice, Defense in Depth, None
 
 
-Phase: <<PHASE1>>
+Phase: Implementation
 
-Description: <<put the information here>>
+Description: examine the LLM output – neutralize or strip escape codes
+before redirecting output to the terminal or other rendering engine
+that would process the codes, e.g. requiring that the character be
+printable and/or allowable whitespace, such as a carriage return or
+newline. Be intentional/deliberate about what to allow.
 
-Effectiveness: <<EFFECT1>>
+Effectiveness: High
 
-Effectiveness Notes: <<put the information here>>
+Effectiveness Notes: By restricting output to only printable
+characters, this effectively removes any escape codes.
 
+---------
 
-Phase: <<PHASE2>>
+Phase: Build and Compilation
 
-Description: <<put the information here>>
+Description: in tokenizer training, suppress escape codes from the
+tokenizer's vocabulary. Depending on context, this could be
+accomplished by removing the codes from input to the tokenizer, or
+removing the map from the string to its token ID. It is generally
+unlikely that this removal would adversely affect the quality or
+correctness of what is generated, e.g. advice requests for terminal
+settings to change colors.
 
-Effectiveness: <<EFFECT2>>
+Effectiveness: Limited
 
-Effectiveness Notes: <<put the information here>>
+Effectiveness Notes: this could raise the effort necessary by an
+attacker, but the attacker could still get multiple tokens strung
+together that form the escape code.
+
+----------
 
 
 
@@ -204,7 +268,9 @@ Comments: For integration into CWE-150, the following elements might
 need to be changed: description / extended description; add a
 demonstrative example; consider adding an AI-specific mode of
 introduction; consider an AI-specific potential mitigation; add AI/ML
-as an Affected Platform.
+as an Affected Platform. It might also be appropriate to add a
+Research Gap element since this area is (still) not well-understood or
+researched closely.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -353,15 +419,15 @@ Init-Accepted: 2025-12-05
 
 Det-Requested: 2026-03-05
 
-Det-Received: YYYY-MM-DD
+Det-Received: 2026-04-08
 
-Det-Review: YYYY-MM-DD
+Det-Review: 2026-04-08
 
-Det-Consultation: YYYY-MM-DD
+Det-Consultation: 2026-04-08
 
-Det-Accepted: YYYY-MM-DD
+Det-Accepted: 2026-04-28
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2026-04-29
 
 CWE-Assigned: YYYY-MM-DD
 
@@ -385,3 +451,5 @@ COMMUNICATIONS LOG:
 2025-12-05 sent email
 2025-12-05 sent email
 2026-03-05 sent email
+2026-04-08 action meeting
+2026-04-29 action update
