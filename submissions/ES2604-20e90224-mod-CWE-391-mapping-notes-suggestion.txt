@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2604-20e90224
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Internal-Update
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-1069
 
 ORIGIN: sub-server
 
@@ -91,7 +91,7 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2026-04-29
 
 CWE-Assigned: YYYY-MM-DD
 
@@ -112,3 +112,4 @@ COMMUNICATIONS LOG:
 2026-04-10 sent email
 2026-04-27 sent email
 2026-04-27 sent email
+2026-04-29 sent email
