@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2508-95a780e3
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
 AFFECTED CWES: CWE-150
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-08-15 16:47:46
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.MISSDET, SUB.NEWTECH, SUB.OVERLAP
+ISSUE DETAILS: 
 
 FIELDCHANGE: DESC, INTROMODES, PLATFORMS, DEMOX, MITIGATION, REFS
 
@@ -254,7 +254,74 @@ together that form the escape code.
 
 ACTIVE ISSUES:
 
+
+
+
+RESOLVED ISSUES:
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: As discussed with the original submitter and the AI WG, this
+issue is too low-level to create a new CWE identifier. It will be
+integrated into CWE-150. This issue has already been resolved due to
+agreement by the submitter and the AI WG.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE.] Agreed by submitter and AI
+WG before initial consultation.
+
 ----------
+
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to Stage 3 (Content-Generation)
+until the informational needs are addressed.
+
+Comments: Per discussion with submitter and AI WG, this submission
+will be treated as a Modification instead of a New Entry.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE.]
+
+-----------
+
+SUB.COORD - "Requires extensive coordination"
+
+Description: The submission will require or is currently undergoing close
+coordination, discussion, and debate between multiple parties with
+different perspectives and opinions.  The communication could be taking
+place in CDR itself, or outside of CDR.  As a result, it might take longer
+to move the submission to later phases, although the submission is expected
+to be more robust and well-defined as a result of this coordination.
+
+Resolution: The submission cannot progress past the Init-Consultation or
+Det-Consultation phases until sufficient consensus has been reached, or if
+the CWE Team decides to move the submission to the next phase.
+
+Comments: This submission was actively reviewed and discussed in the
+AI WG, including the original submitter. While the AI WG will continue
+to be informed, there was sufficient consensus about how to progress
+with this submission.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE.]
+
+-----------
 
 SUB.MISSDET - "Missing details"
 
@@ -336,73 +403,6 @@ complications or delays in its integration into CWE.
 Response: [NO RESPONSE NEEDED]
 
 
-
-
-RESOLVED ISSUES:
-
-SUB.ABS.LOWLEVEL - "Low level of abstraction"
-
-Description: The submission identifies an issue, but its abstraction might
-be too low-level to merit its own CWE entry. If it is focused on a
-particular technology, framework, protocol, or function, then it might not
-be unique enough to get its own CWE ID.  This might lead to modification of
-an existing entry to include the additional details, or creation of a
-higher-level entry for which the submission is one example. (Note: some
-older CWE entries have this problem and would not be published today,
-generally because they were too specific to a particular language.)
-
-Resolution: The submission will be allowed to progress to later phases once
-the more-general concept is appropriately identified and described. The
-original, lower-level submission will serve as a primary example of the
-more general concept.
-
-Comments: As discussed with the original submitter and the AI WG, this
-issue is too low-level to create a new CWE identifier. It will be
-integrated into CWE-150. This issue has already been resolved due to
-agreement by the submitter and the AI WG.
-
-Response: [RESOLVED ISSUE; DO NOT CHANGE.] Agreed by submitter and AI
-WG before initial consultation.
-
-----------
-
-SUB.ACTCHANGE - "Change in action for submission"
-
-Description: The submission's action needs to change, e.g., from "New
-Entry" to "Modification," or vice versa. This potentially requires changes
-to the kinds of information that will need to be provided.
-
-Resolution: The submission cannot progress to Stage 3 (Content-Generation)
-until the informational needs are addressed.
-
-Comments: Per discussion with submitter and AI WG, this submission
-will be treated as a Modification instead of a New Entry.
-
-Response: [RESOLVED ISSUE; DO NOT CHANGE.]
-
------------
-
-SUB.COORD - "Requires extensive coordination"
-
-Description: The submission will require or is currently undergoing close
-coordination, discussion, and debate between multiple parties with
-different perspectives and opinions.  The communication could be taking
-place in CDR itself, or outside of CDR.  As a result, it might take longer
-to move the submission to later phases, although the submission is expected
-to be more robust and well-defined as a result of this coordination.
-
-Resolution: The submission cannot progress past the Init-Consultation or
-Det-Consultation phases until sufficient consensus has been reached, or if
-the CWE Team decides to move the submission to the next phase.
-
-Comments: This submission was actively reviewed and discussed in the
-AI WG, including the original submitter. While the AI WG will continue
-to be informed, there was sufficient consensus about how to progress
-with this submission.
-
-Response: [RESOLVED ISSUE; DO NOT CHANGE.]
-
-
 TIMELINE:
 
 Received: 2025-08-15
@@ -431,7 +431,7 @@ Internal-Update: 2026-04-29
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2026-04-29
 
 Final-Coord: YYYY-MM-DD
 
@@ -453,3 +453,4 @@ COMMUNICATIONS LOG:
 2026-03-05 sent email
 2026-04-08 action meeting
 2026-04-29 action update
+2026-04-29 sent email
