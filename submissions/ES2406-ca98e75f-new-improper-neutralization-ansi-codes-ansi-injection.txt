@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2406-ca98e75f
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
 AFFECTED CWES: CWE-150
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2024-06-15 16:03:17
 
-ISSUES: yes/active
+ISSUES: yes/resolved
 
-ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.MISC
+ISSUE DETAILS: 
 
 PUBTRACKER: #112
 
@@ -57,6 +57,30 @@ URL: https://dgl.cx/2023/09/ansi-terminal-security
 
 ACTIVE ISSUES:
 
+
+RESOLVED ISSUES:
+
+
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to Stage 3 (Content-Generation)
+until the informational needs are addressed.
+
+Comments: Because this submission occurs at such a low level
+(SUB.ABS.LOWLEVEL), it might be better to treat this submission as a
+modification to other entries (e.g. CWE-150) instead of a separate
+new entry. Further discussion and identification of the core weakness
+will help determine the appropriate action. Please indicate if you agree
+or disagree with this comment.
+
+Response: I agree with that judgement.
+
+---------
+
 SUB.MISC - "Miscellaneous/other problem"
 
 Description: The submission has some other problem that is not covered
@@ -72,7 +96,7 @@ the original submitter informed.
 Response: [NO RESPONSE NECESSARY; SUBMITTER HAS WITHDRAWN FROM ACTIVE
 PARTICIPATION.]
 
----------
+----------
 
 SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
@@ -106,29 +130,6 @@ The CWE Team will modify CWE-150 accordingly.
 Response: [NO RESPONSE NECESSARY; ISSUE TO BE RESOLVED BY THE CWE TEAM
 IN LATER PHASES.]
 
-----------
-
-RESOLVED ISSUES:
-
-
-SUB.ACTCHANGE - "Change in action for submission"
-
-Description: The submission's action needs to change, e.g., from "New
-Entry" to "Modification," or vice versa. This potentially requires changes
-to the kinds of information that will need to be provided.
-
-Resolution: The submission cannot progress to Stage 3 (Content-Generation)
-until the informational needs are addressed.
-
-Comments: Because this submission occurs at such a low level
-(SUB.ABS.LOWLEVEL), it might be better to treat this submission as a
-modification to other entries (e.g. CWE-150) instead of a separate
-new entry. Further discussion and identification of the core weakness
-will help determine the appropriate action. Please indicate if you agree
-or disagree with this comment.
-
-Response: I agree with that judgement.
-
 
 
 
@@ -160,7 +161,7 @@ Internal-Update: 2026-04-28
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2026-04-29
 
 Final-Coord: YYYY-MM-DD
 
@@ -182,3 +183,4 @@ COMMUNICATIONS LOG:
 2026-03-02 sent CDR comment
 2026-03-03 received comment
 2026-03-05 sent email
+2026-04-29 sent email
