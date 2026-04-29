@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2602-3885d54d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2026-02-16 14:18:20
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ATTACK, SUB.UNCLEAR, SUB.OVERLAP, SUB.RELS, SUB.ACTION, SUB.RELREFS
 
 PUBTRACKER: #181
 
@@ -38,6 +38,73 @@ Variations include any situation where unsafe assumptions about type
 integrity are made across execution paths and persistent state mutation is
 possible.
 
+Additional Comments from Submitter:
+
+I have found ASTC vulnerability in Axway SecureTransport MFT Software, I have
+reported it to them and they have acknowledged the bug but as DOS, I have
+reported it across tons of web applications also such as IBM, F-Secure, Dell,
+and others that have implmeneted the same software, however, I had to say its
+DOS so it becomes understandable, but I hate it being misunderstood as diff bug.
+
+I would like to add a clarification to further support this as a distinct,
+generalizable weakness class based on my extended research
+
+Generalizability
+
+This pattern is not language-specific. Although initially observed in PHP,
+similar behavior has been confirmed across:
+- Multiple languages (including Java). For example, in Axway SecureTransport,
+the issue did not stem from the language itself (as it doesn't allow changing
+data types), but from application-level handling (e.g., encoding/decoding
+inconsistencies), where input was not transformed as expected and was instead
+treated as a different data type, leading to the same class of failure
+- Different frameworks and technology stacks
+- Both web applications and enterprise softwares
+
+The root cause is architectural, not related to dynamic typing. The corruption
+originates from:
+- Internal processing inconsistencies
+- Encoding/decoding mismatches (e.g., authentication flows)
+- Storage/retrieval transformations
+- Application logic mutating persisted state (a key distinguishing
+characteristic of this weakness)
+
+Cross-Product Presence
+
+This pattern has been identified across multiple real-world products, indicating
+it is:
+- Systematic and repeatable
+- Present in shared design patterns
+- Likely widespread across additional codebases
+
+Impact Scope
+
+This issue is often misclassified as DoS. However, it more accurately represents
+persistent application state corruption or critical functionality disruption
+(e.g., complete authentication failure where no users can log in)
+
+Depending on context and execution flow, impacts include:
+- Authentication and security control bypass (MFA, lockout, rate limiting). In
+one observed case, malformed input led to authentication bypass and privilege
+escalation due to corrupted state propagation
+- Persistent state desynchronization
+- Cross-module failure propagation
+- Application-wide instability or collapse
+- Potential account takeover scenarios
+
+(Additional impact scenarios are detailed in the submitted research paper in the
+mega link)
+
+Key Distinction
+
+The defining property is:
+
+"The application mutates and persists structurally invalid state, and later
+execution paths assume integrity without validation"
+
+This combination of self-mutation + persistence + cross-module assumptions is
+not covered by existing CWE entries
+
 RELATED WEAKNESSES:
 
    Other CWE-20
@@ -53,6 +120,159 @@ URL: https://mega.nz/folder/6AFgWQCJ#c7YTzUeyDOxSjZ4vo0ZLmg
 ACTIVE ISSUES:
 
 
+SUB.ATTACK - "Too attack-focused"
+
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: Overall, the submission is too attack focused.  Much of the submission
+details the attack and how to "corrupt" the state of the application.  CWE is
+focused on what the root cause of the attack is.  Because the submission is
+focused on the conditions to carry out the attack it is unclear what the
+specific weakness being described is.  From the perspective of a researcher, it
+is understandable that to arrive at a weakness, a new attack is discovered and
+we need to work backwards.  The CWE team wants to understand exactly where the
+submitter believes the weakness is.  There appears to be two distinct actions
+that happen to cause this attack.
+
+1. The application changes the type of a resource based on unvalidated
+user input 2. The application accesses the changed data type with a
+previous data type that is now incompatible (type confusion - covered
+by CWE-843: Access of Resource Using Incompatible Type)
+
+We are hoping that the submitter can identify which of these scenarios they
+believe the proposed weakness to be.
+
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: Related to SUB.ATTACK, the exact weakness being described is still
+unclear.  It appears to be a type confusion weakness, although more clarity is
+needed to distinguish if this is truly a type confusion weakness or an issue
+with the application mutating object types.  If the submitter has responded to
+SUB.ATTACK above, they should only reply this submission problem with an
+acknowledgement.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses or other submissions,
+indicating problems with the submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This submission heavily overlaps with CWE-843: Access of Resource
+Using Incompatible Type ('Type Confusion').  In the reference to this
+submission, the submitter addresses this overlap by stating the difference is
+this submission involves "self-mutation of persisted state".  The claim is that
+this is different to type confusion because the type and access was originally
+correct, although the application mutates the type such that the access is no
+longer correct.  The CWE team disagrees that there is a difference here. CWE-843
+should cover the situation where the product accesses a resource using an
+incompatible type.  We would like the submitter to explain more about why the
+submission poses a unique weakness from CWE-843.  Is this issue with the
+phrasing from CWE-843: "incompatible with the original type", because the
+application has mutated the type to be something other than the original?
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: Because the described weakness is still not fully understood, exactly
+where in the hierarchy this submission will go is unclear.  If this is deemed to
+be different to CWE-843, perhaps it would be suited as a child to CWE-704:
+Incorrect Type Conversion or Cast.  If the weakness is determined to an issue
+with mutating object types then perhaps it would still work as a child to
+CWE-704.  There is no need for the submitter to reply to this until we agree
+more on what the weakness is.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ACTION - "Unable to determine action"
+
+Description: It is not clear what action to perform based on the
+submission, e.g., create new entry, update existing entry, etc.
+
+Resolution: The submission cannot progress to the Internal-Update stage
+until the relevant actions(s) are identified.
+
+Comments: Because the weakness is not yet clear, we are unable to determine if
+this submission would be best suited as a new entry or a modification to
+CWE-843: Access of Resource Using Incompatible Type ('Type Confusion') to
+include information about how an application can sometimes unintentionally
+change the types of objects.  Could the submitter please provide their thoughts
+on a potential modification to CWE-843?
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The submitter provided detailed writeups related to the
+issue, but access could be blocked to these references since they are
+on sites related to online storage or backups. It would be good if the
+submitter could publish these references in a way that is more easily
+accessible. Is there an issue related to disclosure with publishing
+these references?
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
 
 RESOLVED ISSUES:
 
@@ -66,7 +286,7 @@ Ack-Receipt: 2026-02-20
 
 Init-Review: 2026-04-01
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2026-04-29
 
 Init-Declined: YYYY-MM-DD
 
@@ -106,3 +326,4 @@ COMMUNICATIONS LOG:
 2026-03-20 received CDR comment
 2026-03-31 received CDR comment
 2026-04-01 sent email
+2026-04-29 sent email
