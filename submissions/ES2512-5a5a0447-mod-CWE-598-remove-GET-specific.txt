@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2512-5a5a0447
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Modified
+SUBMISSION STATUS: CWE-Published
 
 AFFECTED CWES: CWE-598
 
@@ -99,7 +99,7 @@ CWE-Modified: 2026-04-29
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2026-04-30
 
 Post-Publication: YYYY-MM-DD
 
