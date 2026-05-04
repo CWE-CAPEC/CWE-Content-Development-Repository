@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2406-ca98e75f
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Modified
+SUBMISSION STATUS: CWE-Published
 
 AFFECTED CWES: CWE-150
 
@@ -165,7 +165,7 @@ CWE-Modified: 2026-04-29
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2026-04-30
 
 Post-Publication: YYYY-MM-DD
 
@@ -184,3 +184,5 @@ COMMUNICATIONS LOG:
 2026-03-03 received comment
 2026-03-05 sent email
 2026-04-29 sent email
+2026-04-30 action published
+2026-05-03 sent email
