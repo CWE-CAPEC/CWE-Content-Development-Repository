@@ -1,0 +1,138 @@
+SUBMISSION COMMUNICATION ID: ES2605-ba9c4747
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-05-06 14:39:48
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #200
+
+MTRACKER: #1324
+
+GITHUBUSER: acyphus
+
+SUBMISSION TYPE: Software
+
+NAME: "Inconsistent Interpretation of URL" or "URL Parser Differential"
+
+DESCRIPTION:
+
+When a product processes a URL, it often performs the operation in two
+distinct stages: first parsing and validating the URL to enforce a security
+policy (such as restricting requests to certain hosts or schemes), then
+passing the URL to a separate component that performs the actual operation
+(such as issuing an HTTP request). If these two stages use different URL
+parsing implementations, they may disagree on how to interpret the same URL
+string. An attacker can craft a URL that satisfies the validation parser's
+security checks while the operational parser resolves it to a different
+destination entirely.
+
+This disagreement arises because the URL specification (RFC 3986) leaves
+certain edge cases ambiguous or underspecified, and different parsing
+libraries make different choices when handling these cases. Common sources
+of divergence include the treatment of backslash characters as path
+separators versus literal characters, the interpretation of the userinfo
+component (the portion before @ in the authority), handling of null bytes
+or encoded delimiters within the host component, and differences in how
+scheme-relative or schemeless URLs are resolved.
+
+The technical impact depends on the security policy being enforced. When
+the policy restricts which hosts the product can contact, the consequence
+is typically Server-Side Request Forgery-the product makes requests to
+hosts the developer intended to prohibit, such as internal services or
+cloud metadata endpoints. When the policy enforces authentication or
+authorization based on the URL's host or path, the consequence may be an
+authentication or authorization bypass. In either case, the attacker
+exploits the gap between what the validator approved and what the
+operational component actually does.
+
+This weakness is language-agnostic and affects any architecture where URL
+validation and URL consumption are handled by different parsing
+implementations. It has been observed across multiple language
+ecosystems-including Python, Go, Ruby, JavaScript, and C/C++-and in both
+application-level code and library/framework code. The weakness is
+particularly insidious because each parser may be individually correct
+according to its own interpretation of the specification; the vulnerability
+emerges only from their interaction.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-436
+   Other CWE-444
+   Other CWE-626
+   Other CWE-115
+
+REFERENCES:
+
+Title: A New Era of SSRF - Exploiting URL Parser in Trending Programming Languages!
+URL: https://blackhat.com/docs/us-17/thursday/us-17-Tsai-A-New-Era-Of-SSRF-Exploiting-URL-Parser-In-Trending-Programming-Languages.pdf
+
+Title: Python urllib.parse.urlsplit() accepts bracketed hosts that other parsers interpret differently-NVD description explicitly states "potentially enabled SSRF if a URL is processed by more than one URL parser" 
+URL: https://nvd.nist.gov/vuln/detail/CVE-2024-11168
+
+Title:  An alternative URL specification that differs from RFC 3986 in several security-relevant ways-notably, WHATWG normalizes backslashes to forward slashes (Section 4.3), while RFC 3986 does not define backslash handling. This specification divergence is a primary source of the parser confusion weakness.
+URL: https://url.spec.whatwg.org/
+
+Title: The URI specification. Section 3.2 (Authority) and Appendix A (Collected ABNF) are relevant-different parsing libraries make different implementation choices where the spec is ambiguous, particularly around backslash handling (not addressed in RFC 3986), userinfo/authority boundaries, and encoded delimiter interpretation.
+URL: https://www.rfc-editor.org/rfc/rfc3986
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-05-06
+
+Ack-Receipt: 2026-05-07
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
