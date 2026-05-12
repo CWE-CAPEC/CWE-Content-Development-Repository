@@ -52,6 +52,12 @@ REFERENCES:
 Title: NewsLetter-or-Verification-Email-Data-reflection Security Bug
 URL: https://github.com/mohamadpishdar/NewsLetter-or-Verification-Email-Data-reflection.
 
+Title: Html injection on subscription email
+URL: https://hackerone.com/reports/1108504
+
+Title: [Bug Bounty] Email Content Injection
+URL: https://infosecwriteups.com/bug-bounty-email-content-injection-544196d59e91
+
 
 ACTIVE ISSUES:
 
@@ -217,3 +223,6 @@ COMMUNICATIONS LOG:
 2025-02-25 sent email
 2025-12-23 sent email
 2025-12-23 received email
+2026-04-27 received comment
+2026-05-10 received comment
+2026-05-12 sent comment
