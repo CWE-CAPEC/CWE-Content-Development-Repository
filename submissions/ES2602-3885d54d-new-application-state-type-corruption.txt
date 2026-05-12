@@ -149,7 +149,28 @@ We are hoping that the submitter can identify which of these scenarios they
 believe the proposed weakness to be.
 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: The intended weakness is not the specific method used to
+introduce malformed state, but the failure to enforce structural
+invariants on persisted application state.
+
+Specifically, the weakness occurs when:
+
+- The application persists state that does not conform to the expected structure or type
+
+- That state is later treated as valid canonical data across execution boundaries
+
+- No validation or normalization is performed when rehydrating or
+accessing this persisted state The resulting data type inconsistency
+(e.g., object vs array) is one manifestation of this condition, but
+not the defining characteristic.
+
+The defining weakness is:
+
+Failure to validate the structure or type of persisted application
+state before use across execution contexts.
+
+This represents a failure to validate data when crossing a persistence
+boundary, rather than a failure limited to a single execution point.
 
 
 ----------
@@ -170,7 +191,14 @@ with the application mutating object types.  If the submitter has responded to
 SUB.ATTACK above, they should only reply this submission problem with an
 acknowledgement.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Acknowledged. The weakness is clarified as a failure to
+enforce and validate the structure or type of persisted application
+state across execution boundaries.
+
+This typically manifests when applications assume that data retrieved
+from storage (e.g., database, cache, session) will always conform to
+an expected type (such as an object), and access it without verifying
+its structure.
 
 
 ----------
@@ -199,8 +227,51 @@ submission poses a unique weakness from CWE-843.  Is this issue with the
 phrasing from CWE-843: "incompatible with the original type", because the
 application has mutated the type to be something other than the original?
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: This submission overlaps with CWE-843: Access of Resource
+Using Incompatible Type, but differs in the origin and propagation of
+the failure.
 
+In CWE-843, the issue is primarily at the point of access, where a
+resource is used with an incompatible type.
+
+In this submission, the issue arises earlier in the lifecycle:
+
+- The application persists or stores state that does not conform to
+  the expected structure or type
+
+- That state is later assumed to be valid without revalidation or
+  normalization
+
+- This leads to downstream type mismatches during usage
+
+The distinguishing aspect is the implicit trust boundary between
+persistent storage and application logic.
+
+In this case, the application treats persisted data as inherently
+trustworthy and structurally valid, without revalidation when crossing
+this boundary. This allows structurally inconsistent state to
+propagate across execution contexts.
+
+This aspect is not explicitly emphasized in CWE-843, which focuses on
+incompatible type usage but does not highlight persistence boundaries
+or state rehydration assumptions.
+
+If this is not considered sufficient for a new entry, this behavior
+could be incorporated into CWE-843 by explicitly extending its scope
+to include:
+
+- Persistent storage of data that does not conform to the expected
+  structure or type
+
+- Lack of validation during state rehydration
+
+- Cross-execution reuse of inconsistent or invalid state
+
+CWE-843 assumes the incompatible type exists at point-of-use
+
+This submission introduces a precondition failure before access
+occurs, where persisted state becomes part of the trusted execution
+model without revalidation across boundaries.
 
 ----------
 
@@ -227,7 +298,20 @@ with mutating object types then perhaps it would still work as a child to
 CWE-704.  There is no need for the submitter to reply to this until we agree
 more on what the weakness is.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: Acknowledged.
+
+This weakness can be viewed as:
+
+- A variant or extension of CWE-843 when the incompatible type arises
+  from persisted state assumptions
+
+- Related to CWE-704 where incorrect transformations contribute to
+  inconsistent stored structures
+
+If modeled separately, it may belong under weaknesses involving
+improper handling of persistent data or missing validation across
+trust boundaries.
+
 
 ----------
 
@@ -246,7 +330,33 @@ include information about how an application can sometimes unintentionally
 change the types of objects.  Could the submitter please provide their thoughts
 on a potential modification to CWE-843?
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:
+
+Two possible actions are proposed:
+
+- Modify CWE-843 (preferred if considered overlap)
+
+  Extend CWE-843 to include:
+
+  - Persistence of data that does not conform to the expected
+    structure or type
+
+  - Lack of validation during state rehydration
+
+  - Cross-execution propagation of inconsistent or invalid types
+
+- Create new CWE entry (if deemed distinct)
+
+  If the lifecycle aspect is considered fundamentally different,
+  define a new weakness covering:
+
+  - Violations of expected structure or type in persisted application
+    state
+
+  - Missing validation across execution boundaries
+
+I defer to the CWE team’s decision on classification.
+
 
 
 ----------
@@ -269,8 +379,27 @@ submitter could publish these references in a way that is more easily
 accessible. Is there an issue related to disclosure with publishing
 these references?
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:
 
+Acknowledged.
+
+Supporting materials have been prepared in a publicly accessible
+technical write-up, including:
+
+- Minimal reproducible examples
+- Execution flow analysis
+- Demonstration of state persistence and rehydration behavior
+- Cross-module impact evidence
+
+Cases are subject to disclosure limitations or were not publicly
+disclosed by vendors; additionally, some reports were triaged or not
+accepted due to triage-related factors. However, representative
+examples and reproducible cases are provided.
+
+Link:
+https://www.notion.so/Weakness-Application-State-Type-Corruption-ASTC-351e7d2d6bca80e7b184e9c22deeb143?source=copy_link
+
+Please advise if a specific reference format is required.
 
 ----------
 
@@ -327,3 +456,6 @@ COMMUNICATIONS LOG:
 2026-03-31 received CDR comment
 2026-04-01 sent email
 2026-04-29 sent email
+2026-04-30 received comment
+2026-05-06 received comment
+2026-05-12 sent comment
