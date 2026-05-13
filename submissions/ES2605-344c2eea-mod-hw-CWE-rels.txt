@@ -1,0 +1,134 @@
+SUBMISSION COMMUNICATION ID: ES2605-344c2eea
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-05-13 19:35:33
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #201
+
+MTRACKER: #1325
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Unknown
+
+NAME: Add relationships to certain hardware CWEs
+
+DESCRIPTION:
+
+Background - Through a recent third-party IP (3PIP) assurance project,
+we have reviewed HW CWEs in extensive detail and identified several
+overlaps.
+
+Source of Confusion - The root cause for many CWEs ended up being
+interpreted to be the same, which resulted in re-use of verification
+data for multiple CWEs.
+
+Recommendation - Possible improvements to the Relationship entries to
+clarify these similarities.
+
+Recommendations
+---------------
+
+1) CWE-1220: Insufficient Granularity of Access Control
+
+  CWE-1262, CWE-1299, and CWE-1222
+
+  Make all ChildOf of CWE-1220 (CWE-1222 is already a child of CWE-1220)
+
+  There was a lot of disucssion on this one since this deals with
+  Access Control.
+
+2) CWE-1299: Missing Protection Mechanism for Alternate Hardware Interface
+
+  Create a PeerOf relationship between CWE-1262 and CWE-1299
+
+3) CWE-1303: Non-Transparent Sharing of Microarchitectural Resources
+
+  Add PeerOf or CanAlsoBe realstionship between CWE-1303 and CWE-1421
+
+  CWE entries can have relationship notes that we can use to compare
+  and contrast CWEs. For this one we may want to clarify so people
+  won't pick the wrong CWE.
+
+4) CWE-1272: Sensitive Information Uncleared Before Debug/Power State
+Transition
+
+  - Make CWE-1258 a ChildOf CWE-1272
+
+  - Add CWE-1239 a CanAlsoBe relationship to both CWE-1272 and CWE-1258
+
+5) CWE-1240: Use of a Cryptographic Primitive with a Risky Implementation
+
+  - Make CWE-1431 a ChildOf CWE-325
+
+  - Make CWE-1431 a PeerOf CWE-1420 and maybe CWE-1258? (via Jason Fung)
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-1220
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-05-13
+
+Ack-Receipt: 2026-05-13
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
