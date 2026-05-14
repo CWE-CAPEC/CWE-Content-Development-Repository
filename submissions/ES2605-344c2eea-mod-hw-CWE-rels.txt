@@ -37,6 +37,12 @@ data for multiple CWEs.
 Recommendation - Possible improvements to the Relationship entries to
 clarify these similarities.
 
+CWE entries can have relationship notes that we can use to compare and
+contrast CWEs. For CWE-1239's CanAlsoBe relationships - and possibly
+others - relationship notes could be used to clarify so people won't
+pick the wrong CWE.
+
+
 Recommendations
 ---------------
 
@@ -46,7 +52,7 @@ Recommendations
 
   Make all ChildOf of CWE-1220 (CWE-1222 is already a child of CWE-1220)
 
-  There was a lot of disucssion on this one since this deals with
+  There was a lot of discussion on this one since this deals with
   Access Control.
 
 2) CWE-1299: Missing Protection Mechanism for Alternate Hardware Interface
@@ -55,11 +61,7 @@ Recommendations
 
 3) CWE-1303: Non-Transparent Sharing of Microarchitectural Resources
 
-  Add PeerOf or CanAlsoBe realstionship between CWE-1303 and CWE-1421
-
-  CWE entries can have relationship notes that we can use to compare
-  and contrast CWEs. For this one we may want to clarify so people
-  won't pick the wrong CWE.
+  Add PeerOf or CanAlsoBe relationship between CWE-1303 and CWE-1421
 
 4) CWE-1272: Sensitive Information Uncleared Before Debug/Power State
 Transition
