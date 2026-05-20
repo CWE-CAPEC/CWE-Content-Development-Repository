@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2510-159c6475
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: CWE-Published
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: CWE-1268
 
@@ -132,7 +132,7 @@ CWE-Published: 2026-04-30
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2026-05-19
 
 
 
@@ -149,3 +149,4 @@ COMMUNICATIONS LOG:
 2026-04-29 sent email
 2026-04-30 action published
 2026-05-03 sent email
+2026-05-19 sent email
