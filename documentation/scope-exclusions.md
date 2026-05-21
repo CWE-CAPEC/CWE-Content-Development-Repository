@@ -1,8 +1,10 @@
 # CWE Scope Exclusions
 
-Last generated: 2024-06-14 17:24:39
+Last generated: 2026-05-20 17:36:08
 
 WARNING: this file was automatically generated. Do not edit.
+
+[[_TOC_]]
 
 ## Scope Exclusions - Summary
 

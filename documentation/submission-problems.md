@@ -1,6 +1,6 @@
 # CWE - Submission Problems
 
-Last generated: 2024-06-14 17:28:17
+Last generated: 2026-05-20 17:50:46
 
 WARNING: this file was automatically generated. Do not edit.
 
@@ -26,6 +26,7 @@ WARNING: this file was automatically generated. Do not edit.
 |[SUB.MISC](#SUB.MISC)|Miscellaneous/other problem|
 |[SUB.COORD](#SUB.COORD)|Requires extensive coordination|
 |[SUB.NEWTECH](#SUB.NEWTECH)|New/Emerging Technology|
+|[SUB.WITHDRAWN](#SUB.WITHDRAWN)|Withdrawn Submission|
 
 
 # Submission Problem Details
@@ -314,7 +315,7 @@ spelling checks. American English is used for spelling.
 ### Description
 
 A detailed submission was provided, but it did not go through the
-Initial Review / Initial Consultation phases (stage 1) and has
+Initial Review / Initial Consultation phases (Stage 1) and has
 significant problems that should have been resolved in that phase
 (e.g., SUB.UNCLEAR).  This primarily applies to situations when
 external requesters provided a "Full Submission" form (Internal-Update
@@ -459,6 +460,36 @@ understand the weaknesses that enable the attacks to succeed; analysis
 of mitigations to understand how the underlying weaknesses are
 perceived; and/or other methods.  Such analysis might require
 consultation with a variety of Subject Matter Experts (SMEs).
+
+
+
+<a name="SUB.WITHDRAWN"></a>
+## SUB.WITHDRAWN - Withdrawn Submission
+**Block Phase** - any
+
+
+### Description
+
+The original submitter has withdrawn from active participation in
+further development of the submission, or the submitter has not
+responded to multiple requests for feedback. The submitter's
+withdrawal may be due to reasons such as lack of time, changing
+priorities, technical challenges in resolving issues with the
+submission, email address or other contact information that is no
+longer valid, etc.
+
+
+
+
+### Resolution
+
+The CWE Team must decide what to do with the submission in its current
+state, such as: (1) decline or close the submission outright; or (2)
+continue to work independently with the submission.
+
+For submissions that are ultimately integrated into CWE, the CWE Team
+will decide which credits to provide - based on the public information
+in the submission - or credit an "anonymous contributor."
 
 
 
