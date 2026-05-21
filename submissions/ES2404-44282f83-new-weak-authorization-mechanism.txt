@@ -76,7 +76,10 @@ the submission. The aforementioned CWEs were derived from the attack description
 and reference provided. Please indicate if you agree or disagree with this
 comment. 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree. Since the vulnerability involves a complex mix of
+issues, including missing phone number validation, clear text
+transmission, and a lack of rate limiting. I understand why mapping it
+to a single new weakness is difficult.
 
 
 ----------
@@ -97,7 +100,9 @@ others. Although there is overlap with existing CWEs, there may be a
 possibility to include examples from this submission in existing
 CWEs. Please indicate if you agree or disagree with this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree. There is clear overlap with existing categories
+like CWE-639 and CWE-201. I am fully on board with using this
+submission to add examples to those existing entries.
 
 
 ----------
@@ -117,7 +122,10 @@ absence of a rate limit, among others. While this submission is not suited for a
 new entry given this, it may be suited to add an example to several existing
 CWEs. Please indicate if you agree or disagree with this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree. Because the submission highlights multiple
+independent weaknesses like IDOR and clear text credentials, breaking
+it down and using it as an example across several existing CWEs is the
+right approach.
 
 
 ----------
@@ -137,7 +145,9 @@ it's not even a general attack but a very specific attack on a specific product.
 This may indiciate that the submission is better suited as an example to be
 added to a CWE(s). Please indicate if you agree or disagree with this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree. The write-up describes a very specific attack
+vector on the EV application. Framing it as an observed example within
+broader, existing CWEs fits perfectly.
 
 
 ----------
@@ -163,7 +173,9 @@ modifications (e.g., CWE-20 ("no proper validation of phone number"),
 CWE-319 ("clear text transmission of credentials"), CWE-799 ("no rate
 limit")).  Please indicate if you agree with this evaluation.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I completely agree with this evaluation. Changing the action
+to a Modification to add demonstrative examples to CWE-639 and CWE-201
+is a great outcome, and I am happy to proceed with this plan.
 
 ----------
 
@@ -220,3 +232,4 @@ COMMUNICATIONS LOG:
 2025-01-20 sent email
 2025-12-23 sent email
 2026-05-15 sent email
+2026-05-15 received comment
