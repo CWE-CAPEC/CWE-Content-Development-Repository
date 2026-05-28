@@ -1,0 +1,106 @@
+SUBMISSION COMMUNICATION ID: ES2605-2daaff2c
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-05-24 17:25:18
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #202
+
+MTRACKER: #1328
+
+GITHUBUSER: 0581raghav
+
+SUBMISSION TYPE: Software
+
+NAME: Failure to Revoke Previously Registered Passkeys During Account Recovery
+
+DESCRIPTION:
+
+Modern applications increasingly support passwordless authentication using
+passkeys based on WebAuthn/FIDO2. Passkeys are intentionally designed to
+operate independently from passwords using asymmetric cryptography, where:
+
+- the private key remains on the user's device,
+- the public key is stored server-side,
+- and authentication occurs through cryptographic challenge signing rather
+than password verification.
+
+Because of this architecture, password resets do not automatically
+invalidate previously enrolled passkeys. This behavior is commonly
+considered 
+
+RELATED WEAKNESSES:
+
+   Other CWE-613
+   Other CWE-305
+   Other CWE-451
+
+REFERENCES:
+
+Title: Google Security Blog - Passwordless by Default
+URL: https://security.googleblog.com/2023/05/so-long-passwords-thanks-for-all-phish.html
+
+Title: WebAuthn Level 3 Specification
+URL: https://www.w3.org/TR/webauthn-3/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-05-24
+
+Ack-Receipt: 2026-05-28
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
