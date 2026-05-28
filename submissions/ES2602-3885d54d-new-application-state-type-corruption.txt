@@ -12,7 +12,7 @@ SUBMISSION DATE: 2026-02-16 14:18:20
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ATTACK, SUB.UNCLEAR, SUB.OVERLAP, SUB.RELS, SUB.ACTION, SUB.RELREFS
+ISSUE DETAILS: SUB.UNCLEAR
 
 PUBTRACKER: #181
 
@@ -107,18 +107,57 @@ not covered by existing CWE entries
 
 RELATED WEAKNESSES:
 
-   Other CWE-20
-   Other CWE-843
-   Other CWE-704
+   CanPrecede CWE-843
+   ChildOf CWE-704
 
 REFERENCES:
 
-Title: ASTC Research Documentation - Persistent Data Type Corruption (includes everything)
-URL: https://mega.nz/folder/6AFgWQCJ#c7YTzUeyDOxSjZ4vo0ZLmg
+Title: Weakness: Application State Type Corruption (ASTC)
+URL: https://www.notion.so/Weakness-Application-State-Type-Corruption-ASTC-351e7d2d6bca80e7b184e9c22deeb143?source=copy_link
 
 
 ACTIVE ISSUES:
 
+
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: In the reply to the original question for SUB.UNCLEAR, the
+submitter stated: "The weakness is clarified as a failure to enforce
+and validate the structure or type of persisted application state
+across execution boundaries...  This typically manifests when
+applications assume that data retrieved from storage (e.g., database,
+cache, session) will always conform to an expected type (such as an
+object), and access it without verifying its structure."
+
+The CWE Team believes that there are probably two separate issues
+here: a type confusion weakness or an issue with the application
+mutating object types.
+
+From the submitter's responses on 04/30/26, with a focus on the response in
+SUB.ATTACK, it seems that there might be a new weakness that happens when the
+application stores persistent data as a type that is different from the
+specification.  This later leads to potential type confusion weaknesses, but is
+a separate weakness itself.  It would help to understand further in what
+situations this can occur.  Is this intended behavior by persistent storage to
+allow mutating data types, or is this happening in situations such as relational
+databases?  Is this weakness happening in application logic that interacts with
+persistent storage or by the persistent storage itself?
+
+
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+RESOLVED ISSUES:
 
 SUB.ATTACK - "Too attack-focused"
 
@@ -148,10 +187,18 @@ by CWE-843: Access of Resource Using Incompatible Type)
 We are hoping that the submitter can identify which of these scenarios they
 believe the proposed weakness to be.
 
+From the submitter's response on 04/30/26, the submission is moving more towards
+a weakness than a focus on the attack.  The additional explanation of the steps
+of the attack have identified a potentially new weakness that occurs when the
+application persists data that does not conform to the specified type of the
+data in storage.  Later when this data is accessed, a type confusion weakness
+also happens.  This submission problem can be closed as discussion moves into
+other submission problems.
 
-Response: The intended weakness is not the specific method used to
-introduce malformed state, but the failure to enforce structural
-invariants on persisted application state.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] The intended weakness is not the
+specific method used to introduce malformed state, but the failure to enforce
+structural invariants on persisted application state.
 
 Specifically, the weakness occurs when:
 
@@ -171,34 +218,6 @@ state before use across execution contexts.
 
 This represents a failure to validate data when crossing a persistence
 boundary, rather than a failure limited to a single execution point.
-
-
-----------
-
-SUB.UNCLEAR - "Unclear weakness"
-
-Description: The submission's name and/or description does not clearly
-identify a weakness, or it is written in a way that is vague and could
-cause the submission to be incorrectly mapped to.
-
-Resolution: A submission cannot progress past the consultation phase until
-SUB.UNCLEAR is addressed.
-
-Comments: Related to SUB.ATTACK, the exact weakness being described is still
-unclear.  It appears to be a type confusion weakness, although more clarity is
-needed to distinguish if this is truly a type confusion weakness or an issue
-with the application mutating object types.  If the submitter has responded to
-SUB.ATTACK above, they should only reply this submission problem with an
-acknowledgement.
-
-Response: Acknowledged. The weakness is clarified as a failure to
-enforce and validate the structure or type of persisted application
-state across execution boundaries.
-
-This typically manifests when applications assume that data retrieved
-from storage (e.g., database, cache, session) will always conform to
-an expected type (such as an object), and access it without verifying
-its structure.
 
 
 ----------
@@ -227,9 +246,17 @@ submission poses a unique weakness from CWE-843.  Is this issue with the
 phrasing from CWE-843: "incompatible with the original type", because the
 application has mutated the type to be something other than the original?
 
-Response: This submission overlaps with CWE-843: Access of Resource
-Using Incompatible Type, but differs in the origin and propagation of
-the failure.
+From the submitter's responses on 04/30/26 and tracked in SUB.ATTACK and
+SUB.UNCLEAR, this submission contains two separate weaknesses.  Firstly, the
+application somehow stores persistent storage in a type that is different than
+the specification.  Secondly, a type confusion weakness happens due to the
+assumption that persistent storage would retain the specified data type.
+Therefore, if we focus on the first weakness in this submission, there is no
+overlap with CWE-843.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] This submission overlaps with CWE-843:
+Access of Resource Using Incompatible Type, but differs in the origin and
+propagation of the failure.
 
 In CWE-843, the issue is primarily at the point of access, where a
 resource is used with an incompatible type.
@@ -298,7 +325,14 @@ with mutating object types then perhaps it would still work as a child to
 CWE-704.  There is no need for the submitter to reply to this until we agree
 more on what the weakness is.
 
-Response: Acknowledged.
+From the submitter's response on 04/30/26, it was identified that this
+submission is likely best suited as a new entry describing a situation where
+data in persistent storage is stored as an incompatible type than is defined in
+the specification.  Currently, it seems that CWE-704 would be best suited as a
+parent for this, although that might change as we discuss details of the
+weakness further in SUB.UNCLEAR.  It is also important that if this new entry proceeds, it is documented as a CanPrecede relationship to CWE-843, so the submission file contents have been changed accordingly.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] Acknowledged.
 
 This weakness can be viewed as:
 
@@ -330,7 +364,11 @@ include information about how an application can sometimes unintentionally
 change the types of objects.  Could the submitter please provide their thoughts
 on a potential modification to CWE-843?
 
-Response:
+From the submitter's responses on 04/30/26, this submission has been identified
+as a likely child of CWE-704, potentially warranting a new CWE pending
+discussion in SUB.UNCLEAR.  
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
 Two possible actions are proposed:
 
@@ -379,7 +417,7 @@ submitter could publish these references in a way that is more easily
 accessible. Is there an issue related to disclosure with publishing
 these references?
 
-Response:
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
 Acknowledged.
 
@@ -402,10 +440,6 @@ https://www.notion.so/Weakness-Application-State-Type-Corruption-ASTC-351e7d2d6b
 Please advise if a specific reference format is required.
 
 ----------
-
-RESOLVED ISSUES:
-
-
 
 TIMELINE:
 
@@ -459,3 +493,4 @@ COMMUNICATIONS LOG:
 2026-04-30 received comment
 2026-05-06 received comment
 2026-05-12 sent comment
+2026-05-28 sent email
