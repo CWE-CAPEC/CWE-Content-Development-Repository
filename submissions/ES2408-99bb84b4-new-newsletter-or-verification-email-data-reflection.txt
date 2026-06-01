@@ -104,6 +104,52 @@ notification security logic and contextual output encoding for email
 delivery systems, rather than a traditional injection flaw limited to
 web or template execution contexts.
 
+[Additional Comment added 2026-05-13]
+
+Thank you for the thoughtful analysis and for providing additional
+references.
+
+I agree that there is some overlap with existing concepts such as Content
+Spoofing and CWE-79. However, I would like to clarify several important
+distinctions to help refine classification:
+
+1. Distinction from CWE-79 (XSS): This weakness does not require any script
+execution or browser-based context. The attack is effective even in
+plain-text emails and relies purely on user perception and trust in the
+sender, not on client-side code execution.
+
+2. Relationship to Content Spoofing: The references to content spoofing are
+relevant in terms of impact (misleading the user). However, the mechanism
+differs significantly: - In this case, the application itself generates and
+sends the malicious content - The delivery occurs via authenticated email
+infrastructure (SPF/DKIM/DMARC) - This creates an abuse of trust in
+system-generated communication channels, rather than simple UI
+misrepresentation
+
+3. Root Cause Clarification: The underlying weakness is: Improper
+contextual neutralization of user-controlled input in outbound
+communication channels
+
+This is not limited to general input validation issues. In many cases: -
+The system behaves as designed - But fails to apply context-aware encoding
+or restrictions for email templates
+
+4. Scope of the Weakness: Included: - Transactional emails (verification,
+newsletters, notifications) - Reflection of user-controlled fields into
+email body or links
+
+Excluded: - Script execution (CWE-79) - Server-side template execution
+(SSTI) - Pure UI spoofing without server-side reflection
+
+Because of these characteristics, this weakness represents a distinct class
+of "trusted channel injection," where the system becomes a delivery
+mechanism for attacker-controlled content.
+
+I believe this could either: - warrant a dedicated CWE entry, or - be
+defined as a specialized variant under existing injection categories
+
+I am happy to provide additional concrete examples or real-world cases if
+that would assist further classification.
 
 ----------
 
@@ -226,3 +272,4 @@ COMMUNICATIONS LOG:
 2026-04-27 received comment
 2026-05-10 received comment
 2026-05-12 sent comment
+2026-05-13 received comment
