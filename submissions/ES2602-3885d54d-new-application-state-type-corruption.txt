@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2602-3885d54d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2026-02-16 14:18:20
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR
+ISSUE DETAILS: SUB.UNCLEAR, SUB.RELS, SUB.ABS.MULTWEAK
 
 PUBTRACKER: #181
 
@@ -118,6 +118,55 @@ URL: https://www.notion.so/Weakness-Application-State-Type-Corruption-ASTC-351e7
 
 ACTIVE ISSUES:
 
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The CWE Team will work with the submitter to determine the
+nature of relationships between the new entry and other CWEs such as
+843, 175, and 1287. These might involve chaining relationships such as
+CanPrecede or CanFollow.
+
+Response: [NO RESPONSE NECESSARY; TO BE ADDRESSED IN LATER PHASES.]
+
+----------
+
+SUB.ABS.MULTWEAK - "Multiple weaknesses"
+
+Description: The submission describes or suggests multiple independent
+weaknesses that each might deserve a separate CWE ID.
+
+Resolution: The submission cannot progress past the consultation phase
+until the number of relevant weaknesses is identified. If there are
+multiple weaknesses, separate names and descriptions are needed.
+
+Comments: We disagree with the submitter's statement that it "is an
+implementation detail" to include the "specific mechanism that causes
+the structural inconsistency — whether serialization, ORM behavior,
+encoding mismatch, or internal logic."  Namely - because CWEs focus on
+behaviors - errors in these behaviors lead to the ASTC, and might be
+more likely to be the root cause. For one of them - encoding mismatch
+- we have CWE-175: Improper Handling of Mixed Encoding, and its more
+general, poorly-named-and-poorly-written parent CWE-172: Encoding
+Error. We will work with the submitter to further analyze the mistakes
+that lead to ASTC.
+
+Response: [NO RESPONSE NECESSARY; TO BE ADDRESSED IN LATER PHASES.]
+
+----------
 
 SUB.UNCLEAR - "Unclear weakness"
 
@@ -152,10 +201,53 @@ persistent storage or by the persistent storage itself?
 
 
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:
 
+[NO RESPONSE NECESSARY; TO BE ADDRESSED IN LATER PHASES.]
 
-----------
+Is this intended behavior by persistent storage?
+No. The weakness is not in the
+storage technology. Relational databases, caches, and session stores behave as
+expected. The weakness resides entirely in application logic — specifically in
+how the application handles state across persistence boundaries.
+
+Is this happening in application logic or in the persistent storage itself?
+It is happening in application logic. The storage layer is not the source of the
+problem. The problem is that application logic permits structurally inconsistent
+state to be written to and later read from persistent storage without enforcing
+or validating type/structural invariants at either boundary.
+
+Proposed weakness definition (refined):
+
+The weakness occurs when application logic fails to enforce structural or type
+invariants across a persistence boundary — specifically:
+
+The application constructs or receives data conforming to an expected structure
+or type. Internal application logic — through processing, transformation,
+serialization, ORM mapping, encoding/decoding, or state normalization —
+unintentionally converts that data into a structurally or type-incompatible
+form. This structurally inconsistent state is persisted and implicitly treated
+as canonical trusted state. Later execution paths, potentially across separate
+requests or modules, rehydrate and consume this persisted state while assuming
+the original structure or type remains valid, without performing revalidation or
+normalization. This assumption failure can result in downstream crashes, type
+confusion, authentication failures, security control bypasses, or persistent
+application instability. The specific mechanism that causes the structural
+inconsistency — whether serialization, ORM behavior, encoding mismatch, or
+internal logic — is an implementation detail. The defining weakness is the
+absence of invariant enforcement at the persistence and rehydration boundaries
+within application logic.
+
+Relationship to CWE-843: Type confusion may occur as a downstream consequence
+when the inconsistently-typed persisted state is later accessed. However, the
+primary weakness occurs earlier, at the point where invalid state is persisted
+and implicitly trusted, not at the point of access. This lifecycle distinction —
+precondition failure during persistence rather than access-time misuse — is what
+differentiates this weakness from CWE-843.
+
+I hope this addresses the localization question precisely. Happy to provide
+further clarification if needed.
+
 
 RESOLVED ISSUES:
 
@@ -453,7 +545,7 @@ Init-Consultation: 2026-04-29
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-06-03
 
 Det-Requested: YYYY-MM-DD
 
@@ -494,3 +586,7 @@ COMMUNICATIONS LOG:
 2026-05-06 received comment
 2026-05-12 sent comment
 2026-05-28 sent email
+2026-05-28 received comment
+2026-05-30 received comment
+2026-06-01 sent comment
+2026-06-03 sent email
