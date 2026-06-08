@@ -1,0 +1,138 @@
+SUBMISSION COMMUNICATION ID: ES2605-6b802369
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-05-28 08:09:31
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #203
+
+MTRACKER: #1332
+
+GITHUBUSER: V4bel
+
+SUBMISSION TYPE: Software
+
+NAME: Reliance on Asynchronous Work Cancellation as Resource Lifetime Barrier
+
+DESCRIPTION:
+
+This weakness arises from conflating two distinct meanings of the
+cancellation operation. The first meaning is the stopping of any instance
+that has already been queued or is currently executing. The second meaning
+is the guarantee that no further execution will occur through any path.
+Many standard cancellation APIs provide only the former. Even after the
+cancellation call returns, if a concurrent execution path (such as deferred
+processing in interrupt context, or another thread) reschedules the same
+work item before the resource is released, the work item becomes pending
+again. When the resource release code treats the cancellation return as the
+end of the item's lifetime, the work item can be queued again within the
+time window between cancellation and release, and the callback then
+executes while still referencing the released resource.
+
+If the memory of the affected resource has already been reallocated to
+another object by the time the callback executes, consequences may include
+unintended writes to or reads from the object now occupying the reallocated
+region, control flow hijacking via a function pointer within the callback
+structure, or information disclosure. The resulting impact is similar to
+that of CWE-416 and CWE-825. When triggerable from unprivileged user space,
+the weakness can lead to privilege escalation; when reachable over the
+network, it can lead to remote code execution.
+
+This weakness occurs in deferred dispatch mechanisms where software
+explicitly performs schedule, arm, or queue calls (for example, kernel
+workqueues, tasklets, software timers, deferred procedure calls, and BSD
+taskqueues). Some systems provide a separate API that blocks future
+scheduling itself, but when the API names corresponding to the two meanings
+(stopping the current instance and blocking future execution) are adjacent
+within the same family of functions, incorrect assumptions readily form.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-362
+   ChildOf CWE-666
+   Other CWE-672
+   Other CWE-826
+   Other CWE-416
+   Other CWE-825
+
+REFERENCES:
+
+Title: Out-of-Cancel: A Vulnerability Class Rooted in Workqueue Cancellation APIs
+URL: https://v4bel.github.io/linux/2026/03/23/ooc.html
+
+Title: Linux kernel "Workqueue" documentation
+URL: https://docs.kernel.org/core-api/workqueue.html
+
+Title: LWN.net - "workqueue: Implement disable/enable_work()"
+URL: https://lwn.net/Articles/963218/
+
+Title: Microsoft Bug Check 0xC7 TIMER_OR_DPC_INVALID
+URL: https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/bug-check-0xc7--timer-or-dpc-invalid
+
+Title: FreeBSD taskqueue(9) man page
+URL: https://man.freebsd.org/cgi/man.cgi?query=taskqueue&sektion=9
+
+Title: NVD - CVE-2026-23239: espintcp_close() race condition
+URL: https://nvd.nist.gov/vuln/detail/CVE-2026-23239
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-05-28
+
+Ack-Receipt: 2026-06-08
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
