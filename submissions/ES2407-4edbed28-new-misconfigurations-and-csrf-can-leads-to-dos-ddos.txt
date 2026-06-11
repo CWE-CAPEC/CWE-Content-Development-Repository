@@ -153,7 +153,13 @@ is the weakness of a webpage allowing a redirect loop.  We want to ensure we foc
 fleshing out the exact root cause weakness at this stage.  Please indicate if you agree 
 with focusing on the redirect loops.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree that the core weakness should be described as the
+existence of an uncontrolled redirect cycle (redirect loop) rather
+than the resulting attacks. My intent was to highlight the potential
+security impact, but I agree that the root cause is the application's
+ability to enter an unbounded redirection sequence due to
+configuration or implementation errors. I am willing to refocus the
+submission accordingly.
 
 
 ----------
@@ -176,7 +182,12 @@ the submission too attack focused and we need to focus more on the weakness of t
 redirect loops.  Please indicate if you agree the discussion around DoS and CSRF is too
 attack focused.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree that the current submission places too much emphasis
+on DoS and CSRF scenarios. These were intended as examples of possible
+consequences and attack paths, not as the weakness itself. I agree
+that the weakness should be described independently from any specific
+attack technique, with DoS-related effects treated as potential
+impacts rather than defining characteristics.
 
 
 ----------
@@ -204,7 +215,13 @@ would be fitting in the CWE-834 subtree, which is for "Excessive Iteration".  Pl
 indicate if you agree with the CWE-834 subtree being a good fit for a parent or potential
 modification if we determine that is the best course of action.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree that CWE-352 (CSRF) is not an appropriate direct
+relationship if the submission is focused on redirect loops
+themselves. Based on the feedback, CWE-834 (Excessive Iteration)
+appears to be a reasonable parent candidate because a redirect loop
+creates an unintended and potentially unbounded iteration of requests
+and responses. I am open to further discussion regarding the most
+appropriate placement within the CWE-834 subtree.
 
 
 ----------
@@ -233,7 +250,12 @@ submission is better suited as a modification to an existing entry to discuss re
 loops once we better understand the weakness.  Please indicate that you have seen this 
 comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I have seen this comment and understand the concern. I agree
+that redirect loops may represent a specific manifestation of a more
+general weakness involving uncontrolled iteration or cyclic
+processing. I am open to the possibility that the submission is better
+addressed as an extension, clarification, or example within an
+existing CWE rather than as a standalone entry.
 
 
 ----------
@@ -254,7 +276,11 @@ redirect loops.  The references only describe general CSRF and DoS attacks, as
 well as a reference that just explains the redirect HTTP response.  Please include
 a reference that specifically talks to the weakness regarding redirect loops.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree that additional references specifically discussing
+redirect loops would be helpful. I will look for technical references,
+implementation guidance, or vulnerability discussions that describe
+redirect cycles, infinite redirection behavior, and their operational
+or security impacts, and provide them for further review.
 
 
 ----------
@@ -272,7 +298,12 @@ and SUB.ABS.LOWLEVEL, more discussion will be needed to determine whether
 this submission is better suited as it's own entry or a modification to a 
 CWE in the CWE-834 tree.  Please indicate you have seen this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I have seen this comment. Based on the discussion so far, I
+understand that the appropriate action may be either creation of a new
+entry or modification of an existing CWE within the CWE-834
+hierarchy. I am open to either outcome and would appreciate guidance
+from the CWE Team regarding the most appropriate approach after the
+weakness definition is refined.
 
 
 ----------
@@ -330,3 +361,4 @@ COMMUNICATIONS LOG:
 2025-08-25 sent email
 2025-12-21 sent email
 2026-05-15 sent email
+2026-06-08 received comment
