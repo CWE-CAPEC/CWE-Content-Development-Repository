@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2503-821d9ec2
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-03-19 18:24:54
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.MISC, SUB.RELS
 
 PUBTRACKER: #151
 
@@ -121,6 +121,68 @@ URL: https://github.com/chipsalliance/rocket-chip.git
 
 ACTIVE ISSUES:
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: The underlying weakness needs to be clarified. The CWE Team
+believes that the submitter is trying to state that, when a chip has
+multiple configuration options, there may be combinations of options
+that are incompatible with each other, in ways that the processor
+should enforce.  However they may be situations where the processor
+does not enforce the prohibition of certain combinations, and those
+combinations may lead to vulnerable conditions. Please respond to
+confirm or clarify this point.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: Is the Rocket-Chip example a known issue? CWE cannot include
+vulnerabilities that have not been reported to the vendor.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: We agree that CWE-440: Expected Behavior Violation may be an
+appropriate CWE, but we need more clarity on the underlying weakness
+(see SUB.UNCLEAR). It appears that the mappings to CWE-269 and CWE-284
+might be inappropriate; it appears the author is considering the
+technical impact of the demonstrative example and mapping to these
+CWEs. Please provide your feedback on this question.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
 
 
 RESOLVED ISSUES:
@@ -135,7 +197,7 @@ Ack-Receipt: 2025-05-09
 
 Init-Review: 2025-08-21
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2026-06-17
 
 Init-Declined: YYYY-MM-DD
 
@@ -173,3 +235,4 @@ COMMUNICATIONS LOG:
 2025-06-26 received comment
 2025-07-22 received comment
 2025-08-21 sent email
+2026-06-17 sent email
