@@ -117,6 +117,7 @@ Best regards,
 RELATED WEAKNESSES:
 
    Other CWE-352
+   Other ES2311-4f94c251
 
 REFERENCES:
 
