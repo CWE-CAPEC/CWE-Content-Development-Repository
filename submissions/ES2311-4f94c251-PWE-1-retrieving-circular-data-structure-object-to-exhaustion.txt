@@ -42,6 +42,7 @@ RELATED WEAKNESSES:
 
    Other CWE-409
    Other CWE-1047
+   Other ES2407-4edbed28
 
 REFERENCES:
 
