@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2605-344c2eea
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -104,7 +104,7 @@ Init-Consultation: 2026-05-21
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-06-17
 
 Det-Requested: YYYY-MM-DD
 
@@ -139,3 +139,4 @@ COMMUNICATIONS LOG:
 2026-05-13 action update
 2026-05-15 action meeting
 2026-05-21 action group-discussion
+2026-06-17 sent email
