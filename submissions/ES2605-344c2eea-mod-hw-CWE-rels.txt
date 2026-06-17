@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2605-344c2eea
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,7 +10,7 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2026-05-13 19:35:33
 
-ISSUES: not-analyzed
+ISSUES: no
 
 ISSUE DETAILS: 
 
@@ -61,7 +61,7 @@ Recommendations
 
 3) CWE-1303: Non-Transparent Sharing of Microarchitectural Resources
 
-  Add PeerOf or CanAlsoBe relationship between CWE-1303 and CWE-1421
+  Add PeerOf relationship between CWE-1303 and CWE-1421
 
 4) CWE-1272: Sensitive Information Uncleared Before Debug/Power State
 Transition
@@ -74,7 +74,7 @@ Transition
 
   - Make CWE-1431 a ChildOf CWE-325
 
-  - Make CWE-1431 a PeerOf CWE-1420 and maybe CWE-1258? (via Jason Fung)
+  - Make CWE-1431 a PeerOf CWE-1420 and CWE-1258
 
 
 RELATED WEAKNESSES:
@@ -98,9 +98,9 @@ Received: 2026-05-13
 
 Ack-Receipt: 2026-05-13
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2026-05-13
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2026-05-21
 
 Init-Declined: YYYY-MM-DD
 
@@ -134,4 +134,8 @@ Closed: YYYY-MM-DD
 
 
 COMMUNICATIONS LOG:
+2026-04-16 action meeting
 2026-05-13 sent email
+2026-05-13 action update
+2026-05-15 action meeting
+2026-05-21 action group-discussion
