@@ -1,0 +1,105 @@
+SUBMISSION COMMUNICATION ID: ES2606-64e040da
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-06-22 18:05:34
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #204
+
+MTRACKER: #1335
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Isolation of Task-Relevant Context
+
+DESCRIPTION:
+
+The output quality, correctness, or security of an AI model is influenced
+by information that is unrelated to the task being performed (i.e. user
+prompt). The model fails to reliably separate the requested task from
+surrounding contextual cues, causing irrelevant topics, words, or concepts
+to alter its behavior. As a result, the same task may produce significantly
+different outcomes depending on unrelated prompt content. This can lead to
+degraded performance, incorrect results, or security vulnerabilities that
+are difficult for users to anticipate or detect.
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-436
+   Other CWE-807
+
+REFERENCES:
+
+Title: Large Language Models Can Be Easily Distracted by Irrelevant Context
+URL: https://proceedings.mlr.press/v202/shi23a.html
+
+Title: Spurious Prompts: Can Irrelevant Prompts Steer Large Language Models?
+URL: http://arxiv.org/abs/2605.29678
+
+Title: CrowdStrike Researchers Identify Hidden Vulnerabilities in AI-Coded Software
+URL: https://www.crowdstrike.com/en-us/blog/crowdstrike-researchers-identify-hidden-vulnerabilities-ai-coded-software/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-06-22
+
+Ack-Receipt: 2026-06-25
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
