@@ -1,0 +1,133 @@
+SUBMISSION COMMUNICATION ID: ES2606-acab2eba
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-06-24 08:53:56
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #205
+
+MTRACKER: #1336
+
+GITHUBUSER: jharv1
+
+SUBMISSION TYPE: Software
+
+NAME: Incorrect mode of operation selection when using cryptographic block cipher primitives
+
+DESCRIPTION:
+
+Cryptographic block cipher primitives are generally able to operate in one
+of several different modes. The block cipher AES as an example includes
+ECB, CBC among numerous other modes of operation. Modes of operation may
+fall into one of a number of broad categories (confidentiality-only,
+authenticated encryption AEAD etc) which will significantly impact the
+desired security properties of the ciphertext. Additionally, there are a
+number of fine grain characteristics for each mode of operation. Using a
+block cipher with an inappropriate mode of operation can result in one or
+more security properties (confidentiality, integrity, authenticity) failing
+critically. Such mistakes often lead to information disclosure, loss of
+message integrity and other vulnerabilities.
+
+For example, disk encryption modes are designed specifically for
+block-oriented storage systems and should generally be restricted to those
+use cases. Many other use cases require authenticated encryption modes,
+such as AES-GCM or ChaCha20-Poly1305, to ensure both confidentiality and
+integrity.
+
+It is beyond the scope of the CWE to detail out guidance on specific mode
+of operation usage, expert advice should be sought out when selecting modes
+of operation. 
+
+Additionally, the highest level of abstraction should always be used which
+greatly limits practitioner exposure to issues arising from incorrect mode
+of operation selection.
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-310
+
+REFERENCES:
+
+Title: Everyday Cryptograph (Oxford)
+URL: https://www.amazon.co.uk/Everyday-Cryptography-Fundamental-Principles-Applications/dp/0198903286/ref=sr_1_1?crid=2S8D83CD7VFUE&dib=eyJ2IjoiMSJ9.xnkq2fLJRrR14csYEigF8Vaa4obSNfaBiwsLQuZifxCfbcL578YZiGzXtv9YC7AR2Q7UmxAI-4EK_-CvUlAp-ocuZ47ouKnHaNGej7-7BBIu4Dh7F5XqSMJfbLHxT56MsLkK826qgsGQW4HUB2mcUFh2toc0V2p2ImNq3V9GLmbkWC1Hg7ke9NE4gF5Yx1iFmkz4Y2Z68x3j2eKvvXtneRuVuM1UxZ9Sx7Snp6MKJEs.P69ChYlJE6KxOePqNBfxcAiu87wl8pK3QmmT55DBhvo&dib_tag=se&keywords=everyday+cryptography&qid=1782291018&sprefix=everyday+cryptopgrah%2Caps%2C162&sr=8-1&ufe=app_do%3Aamzn1.fos.95fd378e-6299-4723-b1f1-3952ffba15af
+
+Title: NIST 800-38a
+URL: https://csrc.nist.gov/pubs/sp/800/38/a/final
+
+Title: How to choose authenticated encryption
+URL: https://blog.cryptographyengineering.com/2012/05/19/how-to-choose-authenticated-encryption/
+
+Title: Cryptographic Modes of Operation: The Hidden Architecture Behind Secure Encryption
+URL: https://www.linkedin.com/pulse/cryptographic-modes-operation-hidden-architecture-behind-tomar-p0gue/
+
+Title: vulnerabilities-due-to-improper-use-of-ciphers-mode-of-operation
+URL: https://security.stackexchange.com/questions/260661/vulnerabilities-due-to-improper-use-of-ciphers-mode-of-operation
+
+Title: Introduction to cryptography modes of operation
+URL: https://www.cs.columbia.edu/~smb/classes/f20/l_crypto-3-modes.pdf
+
+Title: how-to-choose-an-aes-encryption-mode-cbc-ecb-ctr-ocb-cfb
+URL: https://stackoverflow.com/questions/1220751/how-to-choose-an-aes-encryption-mode-cbc-ecb-ctr-ocb-cfb
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-06-24
+
+Ack-Receipt: 2026-06-29
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
