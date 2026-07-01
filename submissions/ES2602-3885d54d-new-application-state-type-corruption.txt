@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2602-3885d54d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Det-Requested
 
 AFFECTED CWES: 
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2026-02-16 14:18:20
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.RELS, SUB.ABS.MULTWEAK
+ISSUE DETAILS: SUB.MISC, SUB.RELS, SUB.ABS.MULTWEAK
 
 PUBTRACKER: #181
 
@@ -105,18 +105,547 @@ execution paths assume integrity without validation"
 This combination of self-mutation + persistence + cross-module assumptions is
 not covered by existing CWE entries
 
+
+MODES OF INTRODUCTION:
+
+# This provides information about how and when a given weakness may be
+# introduced. Information should list the Phase of the development life
+# cycle in which the weakness can introduced. A descriptive Note is
+# optional but preferred.
+# 
+# If the weakness can be introduced in multiple phases, include separate
+# items for each Phase. Copy and paste as needed.
+# 
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
+
+
+Phase: <<PHASE1>>
+
+Note: <<put the information here>>
+
+
+Phase: <<PHASE2>>
+
+Note: <<put the information here>>
+
+
+************************************************************************************************
+
+APPLICABLE PLATFORMS:
+
+# This element specifies the programming languages, operating systems,
+# architectures, and technologies in which this weakness is usually
+# found. If an element does not apply to this submission, you can use
+# the "Not X-Specific" where "X" is the type of element.
+
+# If there are multiple languages, OSes, architectures, and/or
+# technologies, then list each one separately.
+# 
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#platforms
+
+
+# Values for Prevalence: Often, Sometimes, Rarely, Undetermined
+
+# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
+#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
+#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
+#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
+#    Assembly, Other
+
+Language Name: <<LANGUAGE1>>
+Prevalence: <<PREVALENCE1>>
+
+
+Language Name: <<LANGUAGE2>>
+Prevalence: <<PREVALENCE2>>
+
+
+Language Name: <<LANGUAGE3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Language Class: Assembly, Compiled, Hardware Description
+#    Language, Interpreted, Not Language-Specific
+
+Language Class: <<LANGCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Language Class: <<LANGCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Operating System Name: AIX, Android, BlackBerry OS,
+#    Chrome OS, Darwin, FreeBSD, iOS, macOS, NetBSD, OpenBSD, Red Hat,
+#    Solaris, SUSE, tvOS, Ubuntu, watchOS, Windows 9x, Windows
+#    Embedded, Windows NT
+
+Operating System Name: <<OS1>>
+Prevalence: <<PREVALENCE1>>
+
+Operating System Name: <<OS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Operating System Class: Linux, macOS, Unix, Windows,
+#    Not OS-Specific
+
+
+Operating System Class: <<OSCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Operating System Class: <<OSCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Architecture Name: Alpha, ARM, Itanium, Power
+#     Architecture, SPARC, x86, Other
+
+
+Architecture Name: <<ARCH1>>
+Prevalence: <<PREVALENCE1>>
+
+Architecture Name: <<ARCH2>>
+Prevalence: <<PREVALENCE2>>
+
+Architecture Name: <<ARCH3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Architecture Class: Embedded, Microcomputer, Workstation,
+#     Not Architecture-Specific
+
+Architecture Class: <<ARCHCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Architecture Class: <<ARCHCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Technology Name: AI/ML, Web Server, Database Server, Accelerator
+#    Hardware, Analog and Mixed Signal Hardware, Audio/Video Hardware,
+#    Bus/Interface Hardware, Clock/Counter Hardware, Communication
+#    Hardware, Controller Hardware, Memory Hardware, Microcontroller
+#    Hardware, Network on Chip Hardware, Power Management Hardware,
+#    Processor Hardware, Security Hardware, Sensor Hardware, Storage
+#    Hardware, Test/Debug Hardware
+
+
+Technology Name: <<TECH1>>
+Prevalence: <<PREVALENCE1>>
+
+Technology Name: <<TECH2>>
+Prevalence: <<PREVALENCE2>>
+
+Technology Name: <<TECH3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Technology Class: Client Server, Cloud Computing, ICS/OT,
+#     Mainframe, Mobile, N-Tier, SOA, System on Chip, Web Based, Not
+#     Technology-Specific
+	
+Technology Class: <<TECHCLASS1>>
+Prevalence: <<PREVALENCE1>>
+
+Technology Class: <<TECHCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+************************************************************************************************
+
+COMMON CONSEQUENCES:
+
+# This element will cover the typical negative security impact (or
+# impacts) that occurs if this weakness can be exploited by an
+# attacker. Each Consequence must include a Scope and Impact. Both the
+# Likelihood and Note elements are optional.
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#conseq
+
+
+
+# Values for Scope: Confidentiality, Integrity, Availability, Access
+#    Control, Accountability, Authentication, Authorization,
+#    Non-Repudiation, Other
+
+
+# Values for Impact: Modify Memory, Read Memory, Modify Files or
+#    Directories, Read Files or Directories, Modify Application Data,
+#    Read Application Data, DoS: Crash, Exit, or Restart, DoS:
+#    Amplification, DoS: Instability, DoS: Resource Consumption (CPU),
+#    DoS: Resource Consumption (Memory), DoS: Resource Consumption
+#    (Other), Execute Unauthorized Code or Commands, Gain Privileges
+#    or Assume Identity, Bypass Protection Mechanism, Hide Activities,
+#    Alter Execution Logic, Quality Degradation, Unexpected State,
+#    Varies by Context, Reduce Maintainability, Reduce Performance,
+#    Reduce Reliability, Other
+
+
+# Values for Likelihood: High, Medium, Low, Unknown
+
+
+Scope: <<SCOPE1>>
+
+Impact: <<IMPACT1a>>; <<IMPACT1b>>; <<IMPACT1c>>
+
+Likelihood: <<LIKELIHOOD1>>
+
+Note: <<put the information here>>
+
+
+
+
+Scope: <<SCOPE2>>
+
+Impact: <<IMPACT2a>>; <<IMPACT2b>>; <<IMPACT2c>>
+
+Likelihood: <<LIKELIHOOD2>>
+
+Note: <<put the information here>>
+
+
+
+
+Scope: <<SCOPE3>>
+
+Impact: <<IMPACT3a>>; <<IMPACT3b>>; <<IMPACT3c>>
+
+Likelihood: <<LIKELIHOOD3>>
+
+Note: <<put the information here>>
+
+
+
+************************************************************************************************
+
+# 8. DEMONSTRATIVE EXAMPLES (required)
+
+DEMONSTRATIVE EXAMPLES:
+
+# The entry should have one or more demonstrative examples, but
+# submitters should not put significant effort into these until the CWE
+# team has reviewed and accepted the general concepts behind the
+# submission. Submissions can include example information for either
+# Software, Hardware, or both, as relevant.
+
+# "BAD CODE" and "GOOD CODE" can be code snippets, descriptions of a
+# design or architecture, or an algorithm or protocol.
+#
+# * If you would like to submit diagrams/images to support any
+# weakness descriptive examples, please attach it to the email
+# submission in a png format and reference it by filename where
+# desired. For an example, please see:
+# https://cwe.mitre.org/data/definitions/1256.html
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#demox
+
+# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
+#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
+#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
+#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
+#    Assembly, Other
+
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+---------------
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+
+************************************************************************************************
+
+OBSERVED EXAMPLES:
+
+# Where known, the submission should identify multiple
+# publicly-reported vulnerabilities in real-world products that
+# exhibit the weakness. If possible, include CVE Identifier, its
+# corresponding weblink, and a short summary. If a CVE ID is
+# unavailable, use the Link to point to the reference that explains
+# the vulnerability.
+
+# The ID should be the CVE Identifier, if available. If not available,
+# then supply a title or alternate ID used by the reference.
+
+# The Link should be the URL to the reference that explains the
+# weakness that leads to the vulnerability.
+
+# The ObexSummary should be a brief sentence or two that focuses solely on
+# the weakness in the affected product.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#obex
+
+ID: <<CVE1>>
+
+Link: <<LINK1>>
+
+ObexSummary: <<SUM1>>
+
+
+ID: <<CVE2>>
+
+Link: <<LINK2>>
+
+ObexSummary: <<SUM2>>
+
+
+ID: <<CVE3>>
+
+Link: <<LINK3>>
+
+ObexSummary: <<SUM3>>
+
+
+ID: <<CVE4>>
+
+Link: <<LINK4>>
+
+ObexSummary: <<SUM4>>
+
+
+
+************************************************************************************************
+
+DETECTION METHODS:
+
+# Detection Methods should identify commonly-used methods of finding
+# the weakness within the product's code, design, etc. This is NOT
+# intended for detecting how the weakness is exploited in a
+# vulnerability. There can be one or more methods provided.
+
+# Values for Method: Automated Analysis, Automated Dynamic Analysis,
+#    Automated Static Analysis, Automated Static Analysis - Source
+#    Code, Automated Static Analysis - Binary or Bytecode, Fuzzing,
+#    Manual Analysis, Manual Dynamic Analysis, Manual Static Analysis,
+#    Manual Static Analysis - Source Code, Manual Static Analysis -
+#    Binary or Bytecode, White Box, Black Box, Architecture or Design
+#    Review, Dynamic Analysis with Manual Results Interpretation,
+#    Dynamic Analysis with Automated Results Interpretation, Formal
+#    Verification, Simulation / Emulation, Other
+
+# Values for Effectiveness: High, Moderate, Opportunistic, Limited, None
+
+Method: <<METHOD1>>
+
+Desc: <<put the information here>>
+
+Effectiveness: <<EFFECTIVENESS1>>
+
+Notes: <<put the information here>>
+
+
+Method: <<METHOD2>>
+
+Desc: <<put the information here>>
+
+Effectiveness: <<EFFECTIVENESS2>>
+
+Notes: <<put the information here>>
+
+
+Method: <<METHOD3>>
+
+Desc: <<put the information here>>
+
+Effectiveness: <<EFFECTIVENESS3>>
+
+Notes: <<put the information here>>
+
+
+
+************************************************************************************************
+
+POTENTIAL MITIGATIONS:
+
+# This element should cover one or more techniques that will eliminate
+# and/or reduce the frequency or impact of the weakness. Each mitigation
+# must include a Phase and Description, while the Effectiveness element
+# is optional. A descriptive Effectiveness Note is also optional.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#mitigations
+
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+# Values for Effectiveness: High, Moderate, Limited, Incidental,
+#    Discouraged Common Practice, Defense in Depth, None
+
+
+Phase: <<PHASE1>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT1>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: <<PHASE2>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT2>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: <<PHASE3>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT3>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+
+
+
 RELATED WEAKNESSES:
 
-   CanPrecede CWE-843
-   ChildOf CWE-704
+RelType: CanPrecede
+ID: CWE-843
+View-ID: CWE-1000
+
+RelType: ChildOf
+ID: CWE-704
+View-ID: CWE-1000
+
+RelType: Other
+ID: CWE-175
+View-ID: CWE-1000
+
+RelType: Other
+ID: CWE-1287
+View-ID: CWE-1000
+
 
 REFERENCES:
 
 Title: Weakness: Application State Type Corruption (ASTC)
 URL: https://www.notion.so/Weakness-Application-State-Type-Corruption-ASTC-351e7d2d6bca80e7b184e9c22deeb143?source=copy_link
+Author: <<put the information here>>
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+
+
+Title: <<put the information here>>
+
+URL: <<put the information here>>
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+
+
+Title: <<put the information here>>
+
+URL: <<put the information here>>
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
 
 
 ACTIVE ISSUES:
+
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: We will generalize this submission to apply to more than just PHP.
+
+We suggest the following:
+
+- new entry name: "Persistence of Data with Incorrect Type"
+
+- new description: "A persistent storage mechanism is used that
+  expects data to be of a certain type, but the functionality that
+  populates the persistent storage does so in a way that allows for
+  data with incorrect types to be persisted, leading to unintended
+  consequences when the data is later retrieved and used downstream."
+
+- new extended description: "When a persistent storage is created and
+  used as part of an application, it is often assumed by the
+  downstream consumer that the data types will remain structurally
+  consistent.  If the upstream application stores a type that is
+  incorrect (i.e.: Array instead of Object), this can lead to Type
+  Confusion or other consequences later in the execution chain when
+  the data is retrieved and operated on.  This more easily happens in
+  weakly typed languages such as PHP or JavaScript where unexpected
+  input is processed by an application without validation and the
+  original value's type is transformed by the programming language to
+  conform to the type of the input.  This weakness occurs when the
+  resultant type is not validated before storing in persistent state."
+
+1) Please let us know if you agree with this characterization. We will
+   work with you to include more specific details, as you have
+   provided, into other portions of the new entry that will be
+   produced.
+
+2) We request that you provide a PHP-specific demonstrative
+   example. For other requested fields such as mitigations, you could
+   provide more general advice, or PHP-specific details.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 ----------
 
@@ -160,93 +689,12 @@ encoding mismatch, or internal logic."  Namely - because CWEs focus on
 behaviors - errors in these behaviors lead to the ASTC, and might be
 more likely to be the root cause. For one of them - encoding mismatch
 - we have CWE-175: Improper Handling of Mixed Encoding, and its more
-general, poorly-named-and-poorly-written parent CWE-172: Encoding
-Error. We will work with the submitter to further analyze the mistakes
-that lead to ASTC.
+general parent CWE-172: Encoding Error. We will work with the
+submitter to further analyze the mistakes that lead to ASTC.
 
 Response: [NO RESPONSE NECESSARY; TO BE ADDRESSED IN LATER PHASES.]
 
 ----------
-
-SUB.UNCLEAR - "Unclear weakness"
-
-Description: The submission's name and/or description does not clearly
-identify a weakness, or it is written in a way that is vague and could
-cause the submission to be incorrectly mapped to.
-
-Resolution: A submission cannot progress past the consultation phase until
-SUB.UNCLEAR is addressed.
-
-Comments: In the reply to the original question for SUB.UNCLEAR, the
-submitter stated: "The weakness is clarified as a failure to enforce
-and validate the structure or type of persisted application state
-across execution boundaries...  This typically manifests when
-applications assume that data retrieved from storage (e.g., database,
-cache, session) will always conform to an expected type (such as an
-object), and access it without verifying its structure."
-
-The CWE Team believes that there are probably two separate issues
-here: a type confusion weakness or an issue with the application
-mutating object types.
-
-From the submitter's responses on 04/30/26, with a focus on the response in
-SUB.ATTACK, it seems that there might be a new weakness that happens when the
-application stores persistent data as a type that is different from the
-specification.  This later leads to potential type confusion weaknesses, but is
-a separate weakness itself.  It would help to understand further in what
-situations this can occur.  Is this intended behavior by persistent storage to
-allow mutating data types, or is this happening in situations such as relational
-databases?  Is this weakness happening in application logic that interacts with
-persistent storage or by the persistent storage itself?
-
-
-
-Response:
-
-[NO RESPONSE NECESSARY; TO BE ADDRESSED IN LATER PHASES.]
-
-Is this intended behavior by persistent storage?
-No. The weakness is not in the
-storage technology. Relational databases, caches, and session stores behave as
-expected. The weakness resides entirely in application logic — specifically in
-how the application handles state across persistence boundaries.
-
-Is this happening in application logic or in the persistent storage itself?
-It is happening in application logic. The storage layer is not the source of the
-problem. The problem is that application logic permits structurally inconsistent
-state to be written to and later read from persistent storage without enforcing
-or validating type/structural invariants at either boundary.
-
-Proposed weakness definition (refined):
-
-The weakness occurs when application logic fails to enforce structural or type
-invariants across a persistence boundary — specifically:
-
-The application constructs or receives data conforming to an expected structure
-or type. Internal application logic — through processing, transformation,
-serialization, ORM mapping, encoding/decoding, or state normalization —
-unintentionally converts that data into a structurally or type-incompatible
-form. This structurally inconsistent state is persisted and implicitly treated
-as canonical trusted state. Later execution paths, potentially across separate
-requests or modules, rehydrate and consume this persisted state while assuming
-the original structure or type remains valid, without performing revalidation or
-normalization. This assumption failure can result in downstream crashes, type
-confusion, authentication failures, security control bypasses, or persistent
-application instability. The specific mechanism that causes the structural
-inconsistency — whether serialization, ORM behavior, encoding mismatch, or
-internal logic — is an implementation detail. The defining weakness is the
-absence of invariant enforcement at the persistence and rehydration boundaries
-within application logic.
-
-Relationship to CWE-843: Type confusion may occur as a downstream consequence
-when the inconsistently-typed persisted state is later accessed. However, the
-primary weakness occurs earlier, at the point where invalid state is persisted
-and implicitly trusted, not at the point of access. This lifecycle distinction —
-precondition failure during persistence rather than access-time misuse — is what
-differentiates this weakness from CWE-843.
-
-I hope this addresses the localization question precisely. Happy to provide
-further clarification if needed.
 
 
 RESOLVED ISSUES:
@@ -533,6 +981,89 @@ Please advise if a specific reference format is required.
 
 ----------
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: In the reply to the original question for SUB.UNCLEAR, the
+submitter stated: "The weakness is clarified as a failure to enforce
+and validate the structure or type of persisted application state
+across execution boundaries...  This typically manifests when
+applications assume that data retrieved from storage (e.g., database,
+cache, session) will always conform to an expected type (such as an
+object), and access it without verifying its structure."
+
+The CWE Team believes that there are probably two separate issues
+here: a type confusion weakness or an issue with the application
+mutating object types.
+
+From the submitter's responses on 04/30/26, with a focus on the response in
+SUB.ATTACK, it seems that there might be a new weakness that happens when the
+application stores persistent data as a type that is different from the
+specification.  This later leads to potential type confusion weaknesses, but is
+a separate weakness itself.  It would help to understand further in what
+situations this can occur.  Is this intended behavior by persistent storage to
+allow mutating data types, or is this happening in situations such as relational
+databases?  Is this weakness happening in application logic that interacts with
+persistent storage or by the persistent storage itself?
+
+
+
+Response:
+
+[NO RESPONSE NECESSARY; TO BE ADDRESSED IN LATER PHASES.]
+
+Is this intended behavior by persistent storage?
+No. The weakness is not in the
+storage technology. Relational databases, caches, and session stores behave as
+expected. The weakness resides entirely in application logic — specifically in
+how the application handles state across persistence boundaries.
+
+Is this happening in application logic or in the persistent storage itself?
+It is happening in application logic. The storage layer is not the source of the
+problem. The problem is that application logic permits structurally inconsistent
+state to be written to and later read from persistent storage without enforcing
+or validating type/structural invariants at either boundary.
+
+Proposed weakness definition (refined):
+
+The weakness occurs when application logic fails to enforce structural or type
+invariants across a persistence boundary — specifically:
+
+The application constructs or receives data conforming to an expected structure
+or type. Internal application logic — through processing, transformation,
+serialization, ORM mapping, encoding/decoding, or state normalization —
+unintentionally converts that data into a structurally or type-incompatible
+form. This structurally inconsistent state is persisted and implicitly treated
+as canonical trusted state. Later execution paths, potentially across separate
+requests or modules, rehydrate and consume this persisted state while assuming
+the original structure or type remains valid, without performing revalidation or
+normalization. This assumption failure can result in downstream crashes, type
+confusion, authentication failures, security control bypasses, or persistent
+application instability. The specific mechanism that causes the structural
+inconsistency — whether serialization, ORM behavior, encoding mismatch, or
+internal logic — is an implementation detail. The defining weakness is the
+absence of invariant enforcement at the persistence and rehydration boundaries
+within application logic.
+
+Relationship to CWE-843: Type confusion may occur as a downstream consequence
+when the inconsistently-typed persisted state is later accessed. However, the
+primary weakness occurs earlier, at the point where invalid state is persisted
+and implicitly trusted, not at the point of access. This lifecycle distinction —
+precondition failure during persistence rather than access-time misuse — is what
+differentiates this weakness from CWE-843.
+
+I hope this addresses the localization question precisely. Happy to provide
+further clarification if needed.
+
+
+----------
+
 TIMELINE:
 
 Received: 2026-02-16
@@ -547,7 +1078,7 @@ Init-Declined: YYYY-MM-DD
 
 Init-Accepted: 2026-06-03
 
-Det-Requested: YYYY-MM-DD
+Det-Requested: 2026-07-01
 
 Det-Received: YYYY-MM-DD
 
@@ -592,3 +1123,4 @@ COMMUNICATIONS LOG:
 2026-06-03 sent email
 2026-06-14 received comment
 2026-06-17 sent comment
+2026-07-01 sent email
