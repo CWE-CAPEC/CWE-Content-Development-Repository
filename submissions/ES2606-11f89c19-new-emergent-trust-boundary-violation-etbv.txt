@@ -28,53 +28,53 @@ DESCRIPTION:
 
 A systemic vulnerability class where multiple components, each with
 individual weaknesses, are arranged architecturally so that an attacker can
-chain those weaknesses across trust boundaries, leading to full2system
+chain those weaknesses across trust boundaries, leading to full-system
 compromise not possible via any single flaw.
 
 Formal Condition:
-A system exhibits ETBV if there exist components C2, C2, 2, C2 with
-vulnerabilities V2, V2, 2, trust boundaries B2, B2, 2 between them, and an
-attack path P where exploiting V1 enables exploiting V2 across B2,
-resulting in system2level breach.
+A system exhibits ETBV if there exist components C1, C2, ..., Cn with
+vulnerabilities Vi, Vj, ... trust boundaries B1, B2, ... between them, and an
+attack path P where exploiting Vi enables exploiting Vj across B2,
+resulting in system-level breach.
 
 Key Properties:
 - Emergent: Risk appears only when components interact
 - Chainable: Requires 2+ weaknesses across 1+ boundary
 - Architectural: Root cause in system/component layout
-- Boundary2aware: Must cross logical/physical trust boundaries
-- System2level impact: Full breach of CIA triad
+- Boundary-aware: Must cross logical/physical trust boundaries
+- System-level impact: Full breach of CIA triad
 
-Real2World Example (PFTT Case Study):
+Real-World Example (PFTT Case Study):
 1. CWE-77: Command injection in update service
 2. CWE-347: PFTT magic header bypasses signature verification
 3. CWE-94: Direct code execution in bootloader
 4. CWE-250: Unnecessary privileges in kernel
-Result: Full device control (bootloader 2 kernel 2 TrustZone)
+Result: Full device control (bootloader --> kernel --> TrustZone)
 
 Additional Examples:
 - 46d1 hardcoded backdoor in ATM firmware (SCDU) - chain across vendor
 boundaries
 - Ubiquiti UniFi OS vulnerabilities (CVE-2026-34908, CVE-2026-34909,
 CVE-2026-34910) - CISA KEV validated
-- Android adbd zero2click (CVE2202620073) - forensic disassembly report
+- Android adbd zero-click (CVE-2026-0073) - forensic disassembly report
 - Rockwell CIP protocol bypass - PoC demonstrated against DoD
 infrastructure
 
 Why This Is a Distinct Weakness Class:
 ETBV is not captured by existing CWEs because it focuses on how individual
-weaknesses combine across trust boundaries to create system2level
+weaknesses combine across trust boundaries to create system-level
 compromise. Existing CWEs describe isolated flaws; ETBV describes the
 architectural conditions that allow those flaws to be chained.
 
 Detection Methodology:
-Boundary mapping 2 vulnerability identification per component 2
-cross2boundary chain analysis 2 risk scoring
+Boundary mapping --> vulnerability identification per component -->
+cross-boundary chain analysis --> risk scoring
 
 Mitigation Patterns:
 - Zero implicit trust across boundaries
 - Strict boundary enforcement with validation at every crossing
 - Defense in depth with independent security layers
-- Fail2secure - boundary failures default to deny
+- Fail-secure - boundary failures default to deny
 
 Evidence:
 - CISA VINCE Case VU#302619 (active federal coordination)
@@ -83,10 +83,10 @@ Evidence:
 - ETB AAV LayerZero framework validated against 364,000+ vulnerabilities
 - CISA KEV listing for Ubiquiti vulnerabilities based on this research
 
-This weakness class explains why AI2driven vulnerability discovery tools
-(e.g., OpenAI GPT25.52Cyber) are finding systemic flaws that traditional
+This weakness class explains why AI-driven vulnerability discovery tools
+(e.g., OpenAI GPT-5.5-Cyber) are finding systemic flaws that traditional
 scanners miss. ETBV provides the missing taxonomy for understanding and
-preventing chained, boundary2crossing attacks.
+preventing chained, boundary-crossing attacks.
 
 Related Weaknesses: CWE-306, CWE-347, CWE-77, CWE-284, CWE-250, CWE-94,
 CWE-20, CWE-668
