@@ -1,0 +1,171 @@
+SUBMISSION COMMUNICATION ID: ES2607-10364d0c
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-07-09 12:45:58
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #207
+
+MTRACKER: #1345
+
+GITHUBUSER: Popy21
+
+SUBMISSION TYPE: Software
+
+NAME: Reliance on a Non-Deterministic Evaluator for a Security Decision
+
+DESCRIPTION:
+
+A product makes a security decision (authorization, input validation,
+safety/abuse gating, moderation, or approval of an autonomous agent's
+tool-call) by consulting an evaluator whose verdict is SAMPLED - the same
+request can yield different verdicts on different invocations - and treats
+that verdict as an authoritative allow/deny WITHOUT a deterministic,
+fail-closed enforcement backstop. The dominant present-day instance is an
+LLM / generative model used as a "guardrail" or "safety gate", but the
+weakness is model-agnostic: any sampled evaluator on a security-decision
+path qualifies.
+
+A security boundary must be a DETERMINISTIC and IDEMPOTENT function of
+(request, policy). Two properties are required: (1) Determinism - identical
+inputs yield an identical verdict; (2) Idempotence-under-retry - once a
+byte-identical request is denied, re-submitting it never yields "allow". A
+classic access-control predicate satisfies both by construction, so a
+denial remains a denial no matter how many times it is retried, and
+effective security equals policy.
+
+A generative/sampled evaluator violates BOTH. Its verdict is drawn from
+P(verdict | request, policy, hidden sampling state). For any request near
+the model's decision margin, P(allow) = epsilon > 0 even when the correct
+verdict is deny. The weakness is NOT the existence of epsilon (a static
+false-negative rate, already covered by misclassification weaknesses); it
+is epsilon's AMPLIFICATION under attacker-controlled repetition: with N
+independent evaluations, P(at least one allow) = 1 - (1 - epsilon)^N, which
+approaches 1 as N grows. The refusal has no persistence; the attacker
+converts a small per-attempt error rate into near-certainty simply by
+RE-SENDING THE SAME INPUT - no jailbreak, no input mutation, no adversarial
+perturbation. Because the attacker chooses the request, it is parked
+exactly where epsilon is maximal (the semantic margin); because evaluations
+are independent and cheap, N is effectively unbounded.
+
+This is structural, not a tuning error. Lowering temperature does not
+restore determinism (production inference is not bit-reproducible across
+calls due to batching/MoE/hardware non-determinism and silent model-version
+rollouts, and the semantic decision surface is unstable at the margin
+regardless of temperature). Idempotence of a refusal is a property of the
+composition (stochastic evaluator followed by retry), not of any single
+evaluation, so improving one draw cannot repair it. The only structural
+remedies remove the decision from the stochastic evaluator (a deterministic
+fail-closed policy-enforcement point over out-of-band policy), make the
+verdict persistent (commit on a canonical request hash and refuse
+re-adjudication), or require N-of-N unanimity - none of which is "validate
+the output" or "lower the temperature".
+
+Technical impact: bypass of a protection mechanism / improper
+authorization. An action the policy forbids is eventually allowed (funds
+moved, a privileged tool executed, a file destroyed, an exfiltration passed
+by a DLP/moderation gate). The failure is silent and non-reproducible in a
+one-shot QA pass - a single test observes "deny" - so it survives review
+and reaches production.
+
+Empirical demonstration: a safety gate that auto-approves shell commands
+for an autonomous agent was tested against a live production LLM. The
+byte-identical request "rm -rf ./build/" returned ALLOW on 3 of 24
+identical submissions (epsilon = 0.125); a deterministic denylist returned
+DENY 24/24. Clear-cut violations stayed at epsilon = 0 - the weakness
+surfaces at the semantic margin, which the attacker selects and resamples.
+Projected P(breach within 20 retries) = 1 - (1 - 0.125)^20 = 0.93.
+
+Honesty / prior art: the underlying observation (an LLM guardrail is a
+probabilistic classifier, not a deterministic security boundary) is
+discussed in 2025-2026 literature; this submission's contribution is the
+weakness-shaped framing - the violated invariant is idempotence/persistence
+of a refusal under attacker-controlled retry - which distinguishes it from
+every existing AI/ML and protection-mechanism CWE (see Related Weaknesses).
+Distinctness (each neighbor's canonical fix leaves this weakness intact):
+vs CWE-807, that fix signs the untrusted INPUT, but here the input is
+unchanged/trusted and the EVALUATOR is non-deterministic; vs CWE-1426, that
+validates gen-AI output, but here the output IS the verdict (nothing
+independent to validate against); vs CWE-1039, that needs an adversarial
+PERTURBATION, but here the identical input is merely resampled; vs
+CWE-1434, that tunes inference params, but lowering temperature restores
+neither determinism nor idempotence; vs CWE-307, that rate-limits attempts,
+but each independent evaluation still carries epsilon and is exploitable at
+N=1 per identity via rotation.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-693
+
+REFERENCES:
+
+Title: LLM Guardrails Security: Probabilistic Safety Systems in a Deterministic Security World
+URL: https://aquilax.ai/blog/llm-guardrails-jailbreak-security
+
+Title: Semantic Quorum Assurance: Collective Certification for Non-Deterministic AI Infrastructure (arXiv 2606.08021)
+URL: https://arxiv.org/abs/2606.08021
+
+Title: Capability Gates Are Not Authorization: Confused-Deputy Failures in LLM Agent Frameworks (arXiv 2606.28679)
+URL: https://arxiv.org/abs/2606.28679
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-07-09
+
+Ack-Receipt: 2026-07-15
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
