@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2602-3885d54d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Det-Requested
+SUBMISSION STATUS: Det-Received
 
 AFFECTED CWES: 
 
@@ -108,86 +108,55 @@ not covered by existing CWE entries
 
 MODES OF INTRODUCTION:
 
-# This provides information about how and when a given weakness may be
-# introduced. Information should list the Phase of the development life
-# cycle in which the weakness can introduced. A descriptive Note is
-# optional but preferred.
-# 
-# If the weakness can be introduced in multiple phases, include separate
-# items for each Phase. Copy and paste as needed.
-# 
+Phase: Architecture and Design
 
-# Values for Phase: Policy, Requirements, Architecture and Design,
-#    Implementation, Build and Compilation, Testing, Documentation,
-#    Bundling, Distribution, Installation, System Configuration,
-#    Operation, Patching and Maintenance, Porting, Integration,
-#    Manufacturing, Decommissioning and End-of-Life
-
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
+Note: The weakness can be introduced when the application's design
+does not define or enforce structural/type invariants at persistence
+boundaries — i.e., no contract is established for what a "valid"
+persisted state looks like before it is written or before it is
+rehydrated.
 
 
-Phase: <<PHASE1>>
+Phase: Implementation
 
-Note: <<put the information here>>
-
-
-Phase: <<PHASE2>>
-
-Note: <<put the information here>>
+Note: Even where a valid structure is intended, this weakness is
+introduced when application logic (serialization, ORM mapping,
+encoding/decoding, or normalization routines) transforms data into a
+structurally inconsistent form before persisting it, and no validation
+step is added at write-time or read-time to catch the inconsistency.
 
 
 ************************************************************************************************
 
 APPLICABLE PLATFORMS:
 
-# This element specifies the programming languages, operating systems,
-# architectures, and technologies in which this weakness is usually
-# found. If an element does not apply to this submission, you can use
-# the "Not X-Specific" where "X" is the type of element.
 
-# If there are multiple languages, OSes, architectures, and/or
-# technologies, then list each one separately.
-# 
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#platforms
+Language Name: PHP
+Prevalence: Often
 
+Language Name: JavaScript
+Prevalence: Sometimes
 
-# Values for Prevalence: Often, Sometimes, Rarely, Undetermined
+Language Name: Java
 
-# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
-#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
-#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
-#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
-#    Assembly, Other
+Prevalence: Sometimes
 
-Language Name: <<LANGUAGE1>>
-Prevalence: <<PREVALENCE1>>
+Note: occurs less often at the language level, since Java doesn't
+permit implicit type changes, but the same pattern appears at the
+application-logic level, e.g., encoding/decoding mismatches during
+authentication flows.
 
 
-Language Name: <<LANGUAGE2>>
-Prevalence: <<PREVALENCE2>>
+Language Class:  Interpreted
+
+Prevalence: Often
+
+Note: weakly typed, interpreted languages more readily allow silent
+type transformation of persisted values without a compile-time
+contract catching it.
 
 
-Language Name: <<LANGUAGE3>>
-Prevalence: <<PREVALENCE3>>
 
-
-# Values for Language Class: Assembly, Compiled, Hardware Description
-#    Language, Interpreted, Not Language-Specific
-
-Language Class: <<LANGCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Language Class: <<LANGCLASS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Operating System Name: AIX, Android, BlackBerry OS,
-#    Chrome OS, Darwin, FreeBSD, iOS, macOS, NetBSD, OpenBSD, Red Hat,
-#    Solaris, SUSE, tvOS, Ubuntu, watchOS, Windows 9x, Windows
-#    Embedded, Windows NT
 
 Operating System Name: <<OS1>>
 Prevalence: <<PREVALENCE1>>
@@ -196,135 +165,82 @@ Operating System Name: <<OS2>>
 Prevalence: <<PREVALENCE2>>
 
 
-# Values for Operating System Class: Linux, macOS, Unix, Windows,
-#    Not OS-Specific
 
-
-Operating System Class: <<OSCLASS1>>
+Operating System Class: Not OS-Specific
 Prevalence: <<PREVALENCE1>>
 
-Operating System Class: <<OSCLASS2>>
-Prevalence: <<PREVALENCE2>>
 
-
-# Values for Architecture Name: Alpha, ARM, Itanium, Power
-#     Architecture, SPARC, x86, Other
-
-
-Architecture Name: <<ARCH1>>
+Architecture Class: Not Architecture-Specific
 Prevalence: <<PREVALENCE1>>
 
-Architecture Name: <<ARCH2>>
-Prevalence: <<PREVALENCE2>>
 
-Architecture Name: <<ARCH3>>
-Prevalence: <<PREVALENCE3>>
+Technology Class: Web Based
+Prevalence: Often
 
-
-# Values for Architecture Class: Embedded, Microcomputer, Workstation,
-#     Not Architecture-Specific
-
-Architecture Class: <<ARCHCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Architecture Class: <<ARCHCLASS2>>
-Prevalence: <<PREVALENCE2>>
-
-
-# Values for Technology Name: AI/ML, Web Server, Database Server, Accelerator
-#    Hardware, Analog and Mixed Signal Hardware, Audio/Video Hardware,
-#    Bus/Interface Hardware, Clock/Counter Hardware, Communication
-#    Hardware, Controller Hardware, Memory Hardware, Microcontroller
-#    Hardware, Network on Chip Hardware, Power Management Hardware,
-#    Processor Hardware, Security Hardware, Sensor Hardware, Storage
-#    Hardware, Test/Debug Hardware
-
-
-Technology Name: <<TECH1>>
-Prevalence: <<PREVALENCE1>>
-
-Technology Name: <<TECH2>>
-Prevalence: <<PREVALENCE2>>
-
-Technology Name: <<TECH3>>
-Prevalence: <<PREVALENCE3>>
-
-
-# Values for Technology Class: Client Server, Cloud Computing, ICS/OT,
-#     Mainframe, Mobile, N-Tier, SOA, System on Chip, Web Based, Not
-#     Technology-Specific
-	
-Technology Class: <<TECHCLASS1>>
-Prevalence: <<PREVALENCE1>>
-
-Technology Class: <<TECHCLASS2>>
-Prevalence: <<PREVALENCE2>>
+Technology Class: Client Server
+Prevalence: Sometimes
 
 
 ************************************************************************************************
 
 COMMON CONSEQUENCES:
 
-# This element will cover the typical negative security impact (or
-# impacts) that occurs if this weakness can be exploited by an
-# attacker. Each Consequence must include a Scope and Impact. Both the
-# Likelihood and Note elements are optional.
-#
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#conseq
+Scope: Availability
+
+Impact: DoS: Crash, Exit, or Restart; DoS: Instability
+
+Likelihood: High
+
+Note: Persisted state corruption can propagate across requests,
+leading to persistent authentication failure or functional
+unavailability affecting some or all users, not just the original
+triggering request. In some observed cases, the corrupted state
+disrupted application access entirely, rendering core functionality
+unusable until the underlying persisted state was manually
+corrected. The specific manifestation is highly dependent on
+application context — how a given codebase handles the resulting
+inconsistent state determines whether the outcome is a contained
+error, a degraded feature, or a full outage.
 
 
+Scope: Authentication; Access Control
 
-# Values for Scope: Confidentiality, Integrity, Availability, Access
-#    Control, Accountability, Authentication, Authorization,
-#    Non-Repudiation, Other
+Impact: Bypass Protection Mechanism; Gain Privileges or Assume Identity
 
+Likelihood: Medium
 
-# Values for Impact: Modify Memory, Read Memory, Modify Files or
-#    Directories, Read Files or Directories, Modify Application Data,
-#    Read Application Data, DoS: Crash, Exit, or Restart, DoS:
-#    Amplification, DoS: Instability, DoS: Resource Consumption (CPU),
-#    DoS: Resource Consumption (Memory), DoS: Resource Consumption
-#    (Other), Execute Unauthorized Code or Commands, Gain Privileges
-#    or Assume Identity, Bypass Protection Mechanism, Hide Activities,
-#    Alter Execution Logic, Quality Degradation, Unexpected State,
-#    Varies by Context, Reduce Maintainability, Reduce Performance,
-#    Reduce Reliability, Other
-
-
-# Values for Likelihood: High, Medium, Low, Unknown
-
-
-Scope: <<SCOPE1>>
-
-Impact: <<IMPACT1a>>; <<IMPACT1b>>; <<IMPACT1c>>
-
-Likelihood: <<LIKELIHOOD1>>
-
-Note: <<put the information here>>
+Note: When corrupted state desynchronizes authentication or
+authorization logic, downstream modules may make incorrect trust
+decisions based on the invalid structure, potentially enabling bypass
+or privilege escalation. In one observed case, corrupted state led to
+an account-takeover-like condition where the application granted an
+authenticated-looking session (dashboard access with a functioning
+logout control) without any underlying valid account. Because the
+outcome depends on how each application's logic interprets the
+malformed state, the same root cause can also result in the opposite
+behavior — an application may instead treat the anomalous state as
+intrusive and lock out a legitimate account. This variability across
+implementations is itself notable: the same weakness can manifest as
+either an authentication bypass or a false-positive lockout, depending
+entirely on how downstream logic reacts to structurally invalid
+persisted state.
 
 
+Scope: Integrity
 
+Impact: Unexpected State; Alter Execution Logic
 
-Scope: <<SCOPE2>>
+Likelihood: Medium
 
-Impact: <<IMPACT2a>>; <<IMPACT2b>>; <<IMPACT2c>>
-
-Likelihood: <<LIKELIHOOD2>>
-
-Note: <<put the information here>>
-
-
-
-
-Scope: <<SCOPE3>>
-
-Impact: <<IMPACT3a>>; <<IMPACT3b>>; <<IMPACT3c>>
-
-Likelihood: <<LIKELIHOOD3>>
-
-Note: <<put the information here>>
-
+Note: Once invalid state is persisted and treated as canonical, any
+module that consumes it inherits the inconsistency, causing cascading
+failures across otherwise-unrelated components. Because the range of
+possible downstream behaviors is broad and context-dependent, this
+weakness functions less like a single well-defined bug and more like a
+precursor condition — an attack vector that can give rise to many
+distinct classes of impact (authentication bypass, lockout, crash,
+privilege escalation) depending on how a specific application is
+built.
 
 
 ************************************************************************************************
@@ -333,96 +249,464 @@ Note: <<put the information here>>
 
 DEMONSTRATIVE EXAMPLES:
 
-# The entry should have one or more demonstrative examples, but
-# submitters should not put significant effort into these until the CWE
-# team has reviewed and accepted the general concepts behind the
-# submission. Submissions can include example information for either
-# Software, Hardware, or both, as relevant.
-
-# "BAD CODE" and "GOOD CODE" can be code snippets, descriptions of a
-# design or architecture, or an algorithm or protocol.
-#
-# * If you would like to submit diagrams/images to support any
-# weakness descriptive examples, please attach it to the email
-# submission in a png format and reference it by filename where
-# desired. For an example, please see:
-# https://cwe.mitre.org/data/definitions/1256.html
-
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#demox
-
-# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
-#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
-#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
-#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
-#    Assembly, Other
-
+---------------
 
 INTRO TEXT:
 
-<<put the information here>>
+The following example is drawn from CI4MS, an open-source CodeIgniter
+4 CMS. The application's login lockout logic retrieves a "locked"
+record from the database and assumes it will always be an object,
+without validating its structure before accessing a property on
+it. This example demonstrates a persistent Availability impact
+(authentication denial-of-service).
 
 BAD CODE:
-LANGUAGE: <<LANGUAGE>>
+LANGUAGE: PHP
 
-<<put the information here>>
+```php
+$where = ['islocked' => true];
+$where_or = ['username' => $username, 'ip_address' => $this->ipAddress];
+$countLocked = $this->userModel->getOneOr('locked', $where, 'id DESC', 'id,counter,expiry_date', $where_or);
 
+if (!$countLocked) $countLockedValue = 0;
+else $countLockedValue = $countLocked->counter;
+```
 
 EXPLANATORY TEXT:
 
-<<put the information here>>
+`getOneOr()` is expected to return either an object representing a
+single "locked" record, or a falsy value if no record exists. The code
+only guards against the falsy case (`if (!$countLocked)`); it does not
+verify that a truthy return value is actually an object before
+accessing `$countLocked->counter`.
+
+Under certain internal conditions, the persisted "locked" record can
+be retrieved in an array-structured form rather than the expected
+object form — the application itself produces this inconsistency
+during normal processing, not the attacker directly. Once such a
+record exists, every subsequent login attempt that reaches this code
+path retrieves it and immediately fails, since PHP raises a fatal
+error when a property is accessed on an array (`Attempt to read
+property "counter" on array`).
+
+Impact: Because this check runs before authentication is evaluated,
+the resulting fatal error blocks login for the affected account on
+every subsequent attempt — including for legitimate users and
+administrators — until the underlying database record is manually
+corrected. This is a persistent Availability impact: a single instance
+of corrupted state causes an ongoing denial-of-service condition that
+outlives the original triggering request.
 
 GOOD CODE:
-LANGUAGE: <<LANGUAGE>>
+LANGUAGE: PHP
 
-<<put the information here>>
+```php
+$where = ['islocked' => true];
+$where_or = ['username' => $username, 'ip_address' => $this->ipAddress];
+$countLocked = $this->userModel->getOneOr('locked', $where, 'id DESC', 'id,counter,expiry_date', $where_or);
 
+if (!$countLocked || !is_object($countLocked) || !property_exists($countLocked, 'counter')) {
+    $countLockedValue = 0;
+} else {
+    $countLockedValue = $countLocked->counter;
+}
+```
+
+The corrected version validates both that the retrieved record is an
+object and that it has the expected `counter` property before
+accessing it, falling back to a safe default otherwise. This prevents
+a single malformed record from causing a persistent authentication
+outage, and creates an opportunity to log or alert on the unexpected
+structure for further investigation.
 
 ---------------
 
 INTRO TEXT:
 
-<<put the information here>>
+The following example shows the same weakness occurring outside of
+authentication logic entirely — in a settings/preferences flow — to
+illustrate that this weakness is not limited to login or lockout
+mechanisms. This example demonstrates an Availability impact confined
+to a single feature rather than the whole application.
 
 BAD CODE:
-LANGUAGE: <<LANGUAGE>>
+LANGUAGE: PHP
 
-<<put the information here>>
+```php
+class UserPreferences {
+    public $theme = 'dark';
+}
 
+// Module A: a settings update endpoint
+function update_preferences($input) {
+    // $input may come directly from $_POST['prefs'] as an associative
+    // array instead of the expected UserPreferences structure.
+    // No validation is performed before persisting it.
+    $_SESSION['user_prefs'] = $input;
+}
+
+update_preferences(['theme' => 'light']);
+
+// Module B: the dashboard, rendered in a separate request
+$prefs = $_SESSION['user_prefs'];
+echo "Current theme: " . $prefs->theme;
+// Fatal error: Attempt to read property 'theme' on array
+```
 
 EXPLANATORY TEXT:
 
-<<put the information here>>
+The settings endpoint persists whatever shape it receives without
+checking it against the `UserPreferences` contract. The dashboard,
+running in a completely separate request, assumes the session still
+holds a `UserPreferences` object. Because the corrupted value is
+stored in the session rather than a one-off variable, it persists
+across every subsequent page load until the session is cleared or
+overwritten.
+
+Impact: This produces a per-user Availability impact — the affected
+user's dashboard becomes permanently broken on every subsequent visit,
+without any error occurring in the module (settings update) where the
+actual corruption was introduced. This illustrates how the weakness's
+blast radius depends entirely on which downstream module happens to
+consume the corrupted state, not on where it originated.
 
 GOOD CODE:
-LANGUAGE: <<LANGUAGE>>
+LANGUAGE: PHP
 
-<<put the information here>>
+```php
+function render_dashboard_safe() {
+    $prefs = $_SESSION['user_prefs'] ?? null;
 
+    if (!($prefs instanceof UserPreferences)) {
+        $theme = is_array($prefs) && isset($prefs['theme']) ? $prefs['theme'] : 'dark';
+        $prefs = new UserPreferences();
+        $prefs->theme = $theme;
+    }
+
+    echo "Current theme: " . $prefs->theme;
+}
+```
+
+---------------
+
+INTRO TEXT:
+
+The following example illustrates a non-crashing manifestation of the
+same weakness in Python, where corrupted persisted state causes an
+incorrect authorization decision rather than a fatal error. This
+example demonstrates an Access Control impact.
+
+BAD CODE:
+LANGUAGE: Python
+
+```python
+class UserSession:
+    def __init__(self, user_id, role="user"):
+        self.user_id = user_id
+        self.role = role
+
+# Module A: a profile-update endpoint
+def update_session_state(store, session_id, input_data):
+    # input_data is a raw dict decoded from a request body,
+    # e.g. {"user_id": 42, "role": "user"}, rather than a UserSession
+    # instance. No validation is performed before persisting it.
+    store[session_id] = input_data
+
+update_session_state(store, "sess_123", {"user_id": 42, "role": "user"})
+
+# Module B: an admin panel access check, evaluated in a later request
+def check_admin_access(store, session_id):
+    session = store[session_id]
+    # Assumes session is a UserSession instance with attribute access;
+    # a dict does not raise here because .get behaves permissively
+    # if this code were written defensively -- but if written as
+    # session.role, it would instead silently evaluate a stale or
+    # default attribute depending on how the surrounding code
+    # tolerates the mismatch, rather than crashing outright.
+    if getattr(session, "role", "admin") == "admin":
+        grant_admin_access(session.user_id)
+```
+
+EXPLANATORY TEXT:
+
+Here, `getattr(session, "role", "admin")` is written with a default
+fallback value intended for a different purpose (avoiding a crash on
+missing attributes), but because `session` is actually a plain `dict`
+rather than a `UserSession` object, `getattr` cannot find a `role`
+attribute on it at all and silently returns the fallback default —
+`"admin"` — regardless of the role that was actually persisted.
+
+Impact: This results in a silent Access Control impact — a user
+session that was persisted with `role: "user"` is granted admin
+access, not because of any explicit privilege escalation exploit, but
+because the code's fallback-on-missing-attribute behavior interacts
+with the structurally-wrong persisted type in a way that defeats the
+intended authorization check. No error or crash occurs, which makes
+this manifestation harder to detect than the DoS-style examples above.
+
+GOOD CODE:
+LANGUAGE: Python
+
+```python
+def check_admin_access_safe(store, session_id):
+    session = store.get(session_id)
+    if not isinstance(session, UserSession):
+        raise ValueError("Invalid or corrupted session state")
+    if session.role == "admin":
+        grant_admin_access(session.user_id)
+```
+
+---------------
+
+INTRO TEXT:
+
+The following example shows the weakness in a statically-typed
+language, where a loosely-typed container is used to bridge dynamic
+data (such as decoded JSON) into the rest of the application,
+bypassing compile-time type guarantees. This example demonstrates an
+Availability impact via an unrecovered runtime panic.
+
+BAD CODE:
+LANGUAGE: Go
+
+```go
+type UserPreferences struct {
+    Theme string
+}
+
+var session = map[string]interface{}{}
+
+// Module A: an update handler
+func updatePreferences(input interface{}) {
+    // input may be a map[string]interface{} decoded from a JSON
+    // request body, not a UserPreferences struct. No validation
+    // is performed before persisting it.
+    session["user_prefs"] = input
+}
+
+func main() {
+    updatePreferences(map[string]interface{}{"theme": "light"})
+
+    // Module B: a separate render function, called later
+    prefs := session["user_prefs"].(UserPreferences) // type assertion
+    fmt.Println("Current theme:", prefs.Theme)
+    // panic: interface conversion: interface {} is map[string]interface {},
+    // not main.UserPreferences
+}
+```
+
+EXPLANATORY TEXT:
+
+Storing data as `interface{}` allows any type to be persisted without
+a compile-time guarantee that it matches the expected struct. The
+single-value type assertion `.(UserPreferences)` assumes the stored
+value's type without checking it, so Go's runtime panics the moment
+the assumption is false.
+
+Impact: An unrecovered panic in Go terminates the goroutine handling
+the request, and if unhandled by surrounding middleware, can crash the
+entire process — an Availability impact that, depending on deployment
+(e.g., no per-request recovery middleware), can affect all concurrent
+users of the service, not just the one whose data was malformed.
+
+GOOD CODE:
+LANGUAGE: Go
+
+```go
+prefs, ok := session["user_prefs"].(UserPreferences)
+if !ok {
+    // Value is not the expected type; fall back to a safe default
+    prefs = UserPreferences{Theme: "dark"}
+}
+fmt.Println("Current theme:", prefs.Theme)
+```
+
+---------------
+
+INTRO TEXT:
+
+The following example shows a silent Authentication impact in
+JavaScript, where corrupted persisted state results in a user being
+treated as authenticated without a valid underlying account. This
+example demonstrates an Authentication bypass impact, distinct from
+the crash-based examples above.
+
+BAD CODE:
+LANGUAGE: JavaScript
+
+```javascript
+class AuthenticatedSession {
+  constructor(userId) {
+    this.userId = userId;
+    this.isAuthenticated = true;
+  }
+}
+
+// Module A: a token-refresh endpoint
+function persistSession(store, sessionId, input) {
+  // input is expected to be an AuthenticatedSession instance, but
+  // if constructed from a partially-processed token payload
+  // (e.g. JSON.parse of a refresh token body), it may instead be
+  // a plain object that happens to have compatible-looking fields.
+  store[sessionId] = input;
+}
+
+persistSession(store, "sess_abc", { userId: undefined, isAuthenticated: true });
+
+// Module B: the dashboard route, evaluated on a later request
+function renderDashboard(store, sessionId) {
+  const session = store[sessionId];
+  if (session.isAuthenticated) {
+    // No check that session is actually an AuthenticatedSession
+    // instance, or that userId corresponds to a real account.
+    showDashboard(session.userId);
+  }
+}
+```
+
+EXPLANATORY TEXT:
+
+The persisted object satisfies the surface-level shape the dashboard
+route checks for (`isAuthenticated: true`) without ever having gone
+through the actual authentication flow that constructs a real
+`AuthenticatedSession` tied to a verified account. Because JavaScript
+does not enforce that `session` is truly an instance of
+`AuthenticatedSession`, and the code only checks a single boolean
+property rather than the object's type or the validity of `userId`,
+the dashboard renders as if the user is logged in.
+
+Impact: This results in an Authentication impact — a session that was
+never validated against a real account is treated as authenticated,
+granting the appearance of a logged-in state (e.g., a dashboard with a
+functioning logout control) without any underlying valid account. This
+is a more severe manifestation than a crash, since the application
+continues running and actively grants access rather than failing
+safely.
+
+GOOD CODE:
+LANGUAGE: JavaScript
+
+```javascript
+function renderDashboardSafe(store, sessionId) {
+  const session = store[sessionId];
+  if (!(session instanceof AuthenticatedSession) || !session.userId) {
+    return redirectToLogin();
+  }
+  showDashboard(session.userId);
+}
+```
+
+---------------
+
+INTRO TEXT:
+
+The following example shows the weakness in C, where the absence of a
+type tag or structure validation on a persisted buffer allows adjacent
+memory to be silently reinterpreted as a different, more privileged
+structure. This example demonstrates a silent Access Control /
+privilege escalation impact with no crash at all.
+
+BAD CODE:
+LANGUAGE: C
+
+```c
+typedef enum { TYPE_USER_PREFS, TYPE_ADMIN_PREFS } PrefsType;
+
+typedef struct {
+    PrefsType type;
+    char theme[32];
+} UserPreferences;
+
+typedef struct {
+    PrefsType type;
+    char theme[32];
+    int  admin_level;
+} AdminPreferences;
+
+static unsigned char session_store[128];
+
+// Module A: writes a UserPreferences-sized buffer without
+// validating that its size matches its claimed type
+void update_preferences(void *input, size_t input_size) {
+    memcpy(session_store, input, input_size);
+}
+
+void handle_settings_update(void) {
+    UserPreferences fake = { TYPE_USER_PREFS, "light" };
+    update_preferences(&fake, sizeof(fake));
+}
+
+// Module B: reads the buffer later, assuming it is always safe
+// to reinterpret as the larger AdminPreferences structure
+void render_dashboard(void) {
+    AdminPreferences *prefs = (AdminPreferences *)session_store;
+    printf("Theme: %s\n", prefs->theme);
+    printf("Admin level: %d\n", prefs->admin_level);
+}
+```
+
+EXPLANATORY TEXT:
+
+`update_preferences()` writes only `sizeof(UserPreferences)` bytes
+into `session_store`, but `render_dashboard()` reinterprets the same
+buffer as the larger `AdminPreferences` structure without checking the
+`type` tag or verifying that enough bytes were actually written for
+that structure. The `admin_level` field read by `render_dashboard()`
+falls outside the bytes that were actually written, so it reads
+whatever bytes happen to already be present in that memory
+(uninitialized memory, or leftover data from a previous unrelated
+write).
+
+Impact: This produces a silent Access Control impact with no crash and
+no visible error: depending on what happens to occupy that memory, a
+normal user's session can be read back as having an arbitrary
+`admin_level`, potentially granting elevated privileges the user was
+never assigned. Because nothing fails or logs an error, this
+manifestation is the hardest of all the examples here to detect
+through normal application monitoring.
+
+GOOD CODE:
+LANGUAGE: C
+
+```c
+void update_preferences_safe(void *input, size_t input_size, PrefsType claimed_type) {
+    size_t expected_size = (claimed_type == TYPE_ADMIN_PREFS)
+        ? sizeof(AdminPreferences)
+        : sizeof(UserPreferences);
+
+    if (input_size != expected_size) {
+        // Reject writes that don't match the claimed type's actual size
+        return;
+    }
+    memcpy(session_store, input, input_size);
+}
+
+void render_dashboard_safe(void) {
+    PrefsType *type_tag = (PrefsType *)session_store;
+    if (*type_tag != TYPE_ADMIN_PREFS) {
+        printf("Admin level: 0 (not an admin session)\n");
+        return;
+    }
+    AdminPreferences *prefs = (AdminPreferences *)session_store;
+    printf("Theme: %s\n", prefs->theme);
+    printf("Admin level: %d\n", prefs->admin_level);
+}
+```
+
+The corrected version validates the size of the data before persisting
+it, ensuring that the stored buffer is consistent with the claimed
+structure type. When the data is later consumed, it verifies the
+embedded type tag before reinterpreting the buffer as an
+AdminPreferences structure. Together, these checks prevent a smaller
+or differently structured object from being treated as a more
+privileged structure, eliminating the possibility of reading
+unintended memory as an admin_level and preventing the resulting
+Access Control impact.
 
 
 ************************************************************************************************
 
 OBSERVED EXAMPLES:
-
-# Where known, the submission should identify multiple
-# publicly-reported vulnerabilities in real-world products that
-# exhibit the weakness. If possible, include CVE Identifier, its
-# corresponding weblink, and a short summary. If a CVE ID is
-# unavailable, use the Link to point to the reference that explains
-# the vulnerability.
-
-# The ID should be the CVE Identifier, if available. If not available,
-# then supply a title or alternate ID used by the reference.
-
-# The Link should be the URL to the reference that explains the
-# weakness that leads to the vulnerability.
-
-# The ObexSummary should be a brief sentence or two that focuses solely on
-# the weakness in the affected product.
-
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#obex
 
 ID: <<CVE1>>
 
@@ -457,48 +741,151 @@ ObexSummary: <<SUM4>>
 
 DETECTION METHODS:
 
-# Detection Methods should identify commonly-used methods of finding
-# the weakness within the product's code, design, etc. This is NOT
-# intended for detecting how the weakness is exploited in a
-# vulnerability. There can be one or more methods provided.
+Method: Automated Static Analysis
 
-# Values for Method: Automated Analysis, Automated Dynamic Analysis,
-#    Automated Static Analysis, Automated Static Analysis - Source
-#    Code, Automated Static Analysis - Binary or Bytecode, Fuzzing,
-#    Manual Analysis, Manual Dynamic Analysis, Manual Static Analysis,
-#    Manual Static Analysis - Source Code, Manual Static Analysis -
-#    Binary or Bytecode, White Box, Black Box, Architecture or Design
-#    Review, Dynamic Analysis with Manual Results Interpretation,
-#    Dynamic Analysis with Automated Results Interpretation, Formal
-#    Verification, Simulation / Emulation, Other
+Desc: LLM-assisted code review, given a dataset of known vulnerable
+code patterns (persisted data read and used without a preceding
+type/shape check), can search a codebase for structurally similar
+patterns regardless of variable names or exact logic shape. This bug
+is an application logic flaw in how the app does things, and requires
+knowing the necessary locations, inputs, and comparing behavior end to
+end — so an LLM can search for this pattern across source code in any
+shape, given a dataset of vulnerable code examples to reference.
 
-# Values for Effectiveness: High, Moderate, Opportunistic, Limited, None
+Effectiveness: Moderate
 
-Method: <<METHOD1>>
+Notes: This weakness is an application-logic flaw rather than a fixed
+syntactic pattern — it depends on tracing how a specific value flows
+from a persistence write to a later persistence read, across different
+variable names, functions, and modules. Traditional automated static
+analyzers struggle with this, since the issue isn't a bad function
+call but a missing validation step relative to a data flow the tool
+has to understand contextually. LLM-assisted review is meaningfully
+more capable of this kind of contextual pattern matching than
+conventional static analyzers, making it one of the more efficient
+available methods for this weakness class. However, it comes with a
+con: AI could hallucinate or miss context/logic of the app and flag
+incorrect findings, so manual verification is required. Regarding full
+automation (tracing the whole process end-to-end automatically), this
+would be very exhaustive and may not lead to desired results, since
+variables, logic, and input context differ heavily app to app —
+someone may eventually develop better automated testing styles for
+this, but it remains inherently difficult to fully automate given how
+logic-dependent this weakness is. This method also extends to compiled
+binaries (.exe): reverse engineering to recover source or just
+depending on source code, then scanning the recovered code via AI or
+manual review follows the same approach described above.
 
-Desc: <<put the information here>>
+----
 
-Effectiveness: <<EFFECTIVENESS1>>
+Method: Manual Static Analysis - Source Code
 
-Notes: <<put the information here>>
+Desc: Manually reviewing source code to identify locations where data
+is retrieved from persistent storage (database, session, cache) and
+used without a type or structure check (e.g., missing instanceof,
+is_object, property_exists, or schema validation).
+
+Effectiveness: Moderate, but somewhat exhaustive
+
+Notes: More reliable than automated static analysis for this weakness
+since a human reviewer can trace logic and context accurately, but it
+is time-intensive, since instances can appear anywhere persisted state
+is read — similar in scope to auditing an entire codebase for missing
+output encoding in an XSS review. This can be tolerated as a method,
+but requires checking many areas across the codebase.
 
 
-Method: <<METHOD2>>
+Method: Automated Dynamic Analysis
 
-Desc: <<put the information here>>
+Desc: Automated tooling can probe live applications by submitting
+known trigger patterns (malformed/mixed-type input) to common entry
+points, particularly authentication flows, and observing whether the
+application later fails, behaves inconsistently, or produces evidence
+of corrupted persisted state. In my own testing, this focused mostly
+on the authentication component, and automation could work by scanning
+domains, getting into login pages, and trying out common/known
+techniques for triggering this weakness using specific payloads,
+instead of manually trying each domain individually. For real-world
+web apps, this can also involve getting into frontend sources (JS
+files) and having an AI scan them, or scanning them manually — though
+this is generally harder than working with backend source code
+directly.
 
-Effectiveness: <<EFFECTIVENESS2>>
+Effectiveness: Moderate
 
-Notes: <<put the information here>>
+Notes: Effective for the specific classes of entry points already
+known to be common triggers (e.g., login/session handling), but
+coverage is limited to what the tooling is configured to target — the
+weakness can occur anywhere persisted state is written and reused, not
+only in authentication logic, so blind automated scanning risks
+missing instances outside the tested surface.
 
+Method: Manual Dynamic Analysis / Black Box Testing (including fuzzing)
 
-Method: <<METHOD3>>
+Desc: Since the bug is context-dependent, this requires testing a
+variety of payloads, as some will work against some targets/fields and
+not others. For example: supplying a dict/array where an object is
+expected may trigger the weakness, but supplying a dict where a dict
+is already expected won't; a value like '@gmail.com may trigger it if
+the field is later base64-encoded, but not if it's treated as a plain
+string. Based on the app's context, logic, and how it's built, you
+keep iterating a set of payloads to assess how the process behaves and
+identify which kinds of payloads work for that specific edge case.
 
-Desc: <<put the information here>>
+Example "ultimate" payload used during research (not guaranteed to
+trigger every instance of this weakness, since each manifestation can
+be highly context-dependent):
 
-Effectiveness: <<EFFECTIVENESS3>>
+!"#$%&'()*+,-./0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[]^_`abcdefghijklmnopqrstuvwxyz{|}~ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡
 
-Notes: <<put the information here>>
+The effectiveness of this payload depends on context, such as input
+field length restrictions, allowed character sets, and
+application-specific filtering. By analyzing how the application
+handles each character, you can identify which inputs violate
+structural assumptions and reliably trigger the weakness. This
+approach allows systematic exploration across different fields,
+modules, and applications, helping confirm generalizability and
+reproducibility across diverse web apps and software. Additional
+example payloads used during research are included in the attached
+supporting research documentation.
+
+Effectiveness: Moderate
+
+Notes: This was the primary method used during initial research,
+though testing was concentrated on authentication components
+specifically (login, session, lockout logic), since that is where
+failures were most immediately visible. It reliably surfaces instances
+of the weakness within that scope, but is inherently exploratory and
+context-dependent — there is no single input that reliably triggers
+the weakness across all applications, so testing requires iterating
+based on the specific target's behavior.
+
+Method: Architecture or Design Review
+
+Desc: When you review an application's architecture and design, you
+start to understand how the app works — what locations exist, what
+data is written, what data types are used, and what persistent storage
+mechanisms are involved — which gives insight into how this weakness
+could be generated. If you find one instance, this understanding can
+help you identify the same shared pattern repeated across multiple
+components/processes.
+
+Effectiveness: High
+
+Notes: Since the weakness is a property of the design (absence of a
+validation contract at persistence boundaries) rather than something
+only observable through a specific triggering input, this method can
+surface the vulnerable pattern even in code paths not yet exercised by
+testing. This proved important during my own research: initial testing
+focused heavily on the authentication component, but design review of
+the broader application revealed the same unvalidated-access pattern
+could also occur outside authentication entirely — for example, in
+dashboard/preference rendering logic reading persisted state that was
+never validated at write time. Once one instance is found in a
+codebase, this method is useful for identifying whether the same
+pattern repeats elsewhere, since a missing validation contract is
+often applied inconsistently rather than uniformly across the
+codebase.
 
 
 
@@ -506,52 +893,121 @@ Notes: <<put the information here>>
 
 POTENTIAL MITIGATIONS:
 
-# This element should cover one or more techniques that will eliminate
-# and/or reduce the frequency or impact of the weakness. Each mitigation
-# must include a Phase and Description, while the Effectiveness element
-# is optional. A descriptive Effectiveness Note is also optional.
+Phase: Architecture and Design
 
-# See details at:
-# https://cwe.mitre.org/community/submissions/guidelines.html#mitigations
+Description: Define and enforce an explicit structural/type contract
+at every persistence boundary — i.e., specify what a "valid" persisted
+record looks like before it is ever written or read, rather than
+relying on an implicit assumption that data will always arrive in its
+expected shape.
 
+Effectiveness: High
 
-# Values for Phase: Policy, Requirements, Architecture and Design,
-#    Implementation, Build and Compilation, Testing, Documentation,
-#    Bundling, Distribution, Installation, System Configuration,
-#    Operation, Patching and Maintenance, Porting, Integration,
-#    Manufacturing, Decommissioning and End-of-Life
-
-# Values for Effectiveness: High, Moderate, Limited, Incidental,
-#    Discouraged Common Practice, Defense in Depth, None
-
-
-Phase: <<PHASE1>>
-
-Description: <<put the information here>>
-
-Effectiveness: <<EFFECT1>>
-
-Effectiveness Notes: <<put the information here>>
+Effectiveness Notes: This is the most effective mitigation because it
+addresses the weakness at its root: the absence of a defined contract
+is what allows a structurally-invalid value to be silently accepted,
+both at write time and at read time. Establishing this contract during
+design also makes the remaining implementation-level mitigations
+(below) straightforward to apply consistently.
 
 
-Phase: <<PHASE2>>
+Phase: Implementation
 
-Description: <<put the information here>>
+Description: Validate the structure and type of any value retrieved
+from persistent storage (database, session, cache, or similar) before
+it is used, rather than assuming it matches the type it was originally
+written as. In weakly-typed or dynamically-typed languages, this means
+explicit checks such as `is_object()`/`instanceof` (PHP),
+`isinstance()` (Python), type assertions with the "comma ok" idiom
+(Go), or `instanceof` (JavaScript) before accessing properties or
+methods on the retrieved value.
 
-Effectiveness: <<EFFECT2>>
+Effectiveness: High
 
-Effectiveness Notes: <<put the information here>>
-
-
-Phase: <<PHASE3>>
-
-Description: <<put the information here>>
-
-Effectiveness: <<EFFECT3>>
-
-Effectiveness Notes: <<put the information here>>
+Effectiveness Notes: This directly prevents the weakness from causing
+a fatal error, silent misbehavior, or incorrect trust decision,
+regardless of how the persisted value became structurally invalid in
+the first place. It is effective even when the root cause of the
+corruption (e.g., an upstream encoding mismatch or incorrect cast) is
+never identified or fixed, since it treats every read from persistent
+storage as untrusted until validated.
 
 
+Phase: Implementation
+
+Description: Validate and normalize data before it is persisted, not
+only when it is read back. This includes enforcing input validation at
+entry points (addressing CWE-20-style precursors) and ensuring that
+any transformation applied to the data (serialization, ORM mapping,
+encoding/decoding) produces output that conforms to the expected
+structure before it is written to storage.
+
+Effectiveness: Moderate
+
+Effectiveness Notes: Validating on write reduces how often invalid
+state is introduced in the first place, but on its own it is not
+sufficient: it does not protect against cases where the application's
+own internal processing corrupts otherwise-valid data after the
+initial write (as documented in the CI4MS case, where no malformed
+external input was involved). This mitigation is most effective when
+combined with validation on read, rather than used as a substitute for
+it.
+
+
+Phase: Implementation
+
+Description: In languages or systems where a persisted value's actual
+type must be reconstructed dynamically (e.g., binary/serialized
+formats, or loosely-typed containers such as `interface{}` in Go or
+`void*`/untyped buffers in C), include an explicit type tag or schema
+identifier alongside the data itself, and verify that tag before
+reinterpreting the underlying bytes or structure.
+
+Effectiveness: Moderate
+
+Effectiveness Notes: This is particularly important for preventing the
+more severe, silent manifestations of this weakness (such as the C
+example where a smaller struct is misread as a larger, more privileged
+one), since without an explicit tag there is no reliable way to detect
+a structural mismatch before the data is used.
+
+
+Phase: Testing
+
+Description: Include structural/type mismatch scenarios in test suites
+for any code path that reads from persistent storage — for example,
+deliberately persisting a value in an unexpected shape and asserting
+that the consuming code fails safely (e.g., returns a default or
+raises a handled error) rather than crashing unhandled or silently
+proceeding with incorrect assumptions.
+
+Effectiveness: Moderate
+
+Effectiveness Notes: Testing can catch regressions once the
+mitigations above are in place, but is unlikely to discover the
+weakness on its own in the first place, since the conditions that
+produce structurally-invalid persisted state are often
+context-dependent and not obvious from reading a single function in
+isolation. This mitigation is best used to confirm that
+Architecture/Design and Implementation-phase fixes are actually
+effective, not as a primary detection method.
+
+
+Phase: Operation
+
+Description: Where feasible, monitor and alert on unexpected
+structural mismatches encountered when reading persisted state (e.g.,
+logging when a validation-on-read check fails), so that ongoing
+corruption can be detected and investigated even if the underlying
+root cause has not yet been fully diagnosed or fixed.
+
+Effectiveness: Defense in Depth
+
+Effectiveness Notes: This does not prevent the weakness, but reduces
+the risk of it going unnoticed — particularly important for the
+silent, non-crashing manifestations of this weakness (such as
+incorrect authorization decisions), which would otherwise produce no
+visible symptom at all.
 
 
 
@@ -560,18 +1016,65 @@ RELATED WEAKNESSES:
 RelType: CanPrecede
 ID: CWE-843
 View-ID: CWE-1000
+Note: Once invalid state is persisted and later rehydrated
+without validation, the natural downstream consequence is a module
+accessing it while assuming the original type — which is what CWE-843
+describes. My submission's weakness is the root behavioral flaw
+(persisting invalid state and trusting it without revalidation);
+CWE-843 is one possible consequence that can follow from it. This
+mirrors how most CWE entries relate to their consequences — e.g.,
+CWE-79 (XSS) is the flawed behavior, while account takeover or session
+theft are possible downstream impacts, not the weakness itself.
 
 RelType: ChildOf
 ID: CWE-704
 View-ID: CWE-1000
+Note: A CWE-704-style incorrect conversion or cast is one
+concrete mechanism that can produce the structurally-inconsistent
+value in the first place. My weakness follows from that: the
+badly-converted value gets persisted and later reused without
+revalidation. CWE-704 is the conversion event; my submission is the
+missing safeguard afterward that allows the bad conversion to
+propagate and cause harm. I believe this is a cleaner fit than
+ChildOf, since these describe two distinct root behaviors that can
+co-occur rather than one being a subtype of the other — related to the
+SUB.ABS.MULTWEAK discussion.
 
 RelType: Other
 ID: CWE-175
 View-ID: CWE-1000
+Note: Encoding/decoding mismatches are one concrete mechanism
+observed to produce the structurally-inconsistent state my weakness
+describes (seen directly in the Axway SecureTransport case). Framing
+this as CanFollow makes the directional relationship explicit: an
+encoding-handling failure can lead to the type/structure being
+persisted incorrectly, which is then trusted without revalidation
+downstream.
+
+RelType: CanFollow
+ID: CWE-20 (Improper Input Validation)
+View-ID: CWE-1000
+
+Note: In cases where the structurally-invalid value originates
+from externally-supplied input (rather than purely internal
+processing), a failure to validate that input at the entry point is a
+common precursor — the unvalidated input is what ends up persisted in
+the wrong shape. This is not a required precondition, however: my
+submission's whitepaper documents a case (CI4MS) where the application
+mutates its own persisted state internally, with no malformed external
+input involved at all. I'm proposing CanFollow rather than a stronger
+relationship (e.g., ChildOf) to reflect that CWE-20 is one possible
+upstream cause among several, not a dependency of the weakness itself.
 
 RelType: Other
-ID: CWE-1287
+ID: CWE-1287 (Improper Validation of Specified Type of Input)
 View-ID: CWE-1000
+Note: These weaknesses share a theme — type not validated at a
+trust boundary — but occur at different boundaries. CWE-1287 concerns
+validation at the point of input entry (external data entering the
+system). My submission concerns validation at the point of reuse,
+after data has already been persisted and is treated as internal,
+trusted state.
 
 
 REFERENCES:
@@ -645,7 +1148,23 @@ We suggest the following:
    example. For other requested fields such as mitigations, you could
    provide more general advice, or PHP-specific details.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: I agree with the proposed name "Persistence of Data with
+Incorrect Type" and the description/extended description as the
+primary entry content.
+
+One request: could "Application State Type Corruption (ASTC)" be
+included as an Alternate Term for this entry? The term has already
+been used in vendor communications during my research and disclosure
+process (Axway, IBM), so keeping it listed helps trace those
+references back to this entry. It also gives the weakness a compact
+shorthand for researchers cross-referencing findings, similar to how
+other entries pair a descriptive name with a common shorthand (e.g.,
+XSS for Cross-Site Scripting). It doesn't compete with the primary
+name — "corruption of type" in persisted application state is just
+describing the same root cause more compactly.
+
+SUMMARY / EXTENDED DESCRIPTION - Confirmed, no corrections needed to
+the text as proposed.
 
 ----------
 
@@ -669,7 +1188,31 @@ nature of relationships between the new entry and other CWEs such as
 843, 175, and 1287. These might involve chaining relationships such as
 CanPrecede or CanFollow.
 
-Response: [NO RESPONSE NECESSARY; TO BE ADDRESSED IN LATER PHASES.]
+Response: [SUBMITTER PROVIDED ADDITIONAL RELATIONSHIPS AND GAVE A
+RATIONALE FOR EACH RELATIONSHIP.] Additional comment:
+
+I'd note that CWE already distinguishes validation failures by
+boundary and mechanism elsewhere in the taxonomy, rather than folding
+all "type not checked" cases into a single entry. I believe the same
+reasoning supports keeping this as a distinct entry:
+
+- Different threat model: CWE-1287 assumes externally-supplied
+  adversarial input. My weakness occurs even with zero external
+  attacker input — the application's own internal processing
+  (serialization, ORM mapping, encoding/decoding) can silently corrupt
+  its own state.
+- Different mitigation: CWE-1287's mitigation is validation at the
+  API/input boundary. My weakness's mitigation is
+  validation/normalization at read-time from persistent storage — a
+  different code location and design pattern (schema-on-read,
+  defensive rehydration).
+- Different detection surface: CWE-1287 is typically caught by input
+  fuzzing at the boundary. My weakness requires reasoning about state
+  after it has already been written and reread across separate
+  execution contexts.
+
+Happy to adjust any of these based on the team's own analysis — these
+are offered as a starting point rather than a final position.
 
 ----------
 
@@ -687,12 +1230,44 @@ implementation detail" to include the "specific mechanism that causes
 the structural inconsistency — whether serialization, ORM behavior,
 encoding mismatch, or internal logic."  Namely - because CWEs focus on
 behaviors - errors in these behaviors lead to the ASTC, and might be
-more likely to be the root cause. For one of them - encoding mismatch
-- we have CWE-175: Improper Handling of Mixed Encoding, and its more
+more likely to be the root cause. For one of them, encoding mismatch,
+we have CWE-175: Improper Handling of Mixed Encoding, and its more
 general parent CWE-172: Encoding Error. We will work with the
 submitter to further analyze the mistakes that lead to ASTC.
 
-Response: [NO RESPONSE NECESSARY; TO BE ADDRESSED IN LATER PHASES.]
+Response: I want to clarify rather than concede the "implementation
+detail" point, since I think there's a presentation issue rather than
+a conceptual one.
+
+My position is still that the specific mutation mechanism (encoding
+mismatch, ORM behavior, incorrect cast, or other internal logic) does
+not belong in the weakness's core definition — the same way CWE-79
+doesn't require specifying whether unsanitized input arrived via a
+form field, header, or API parameter. The weakness is defined by what
+happens after the mutation: persisted, structurally-invalid state
+being trusted and reused without validation, regardless of how it
+became invalid.
+
+Where I think the confusion came from: I listed several mutation
+mechanisms (encoding, ORM, casting) in the original submission as
+evidence that this pattern occurs across many different technical
+causes and products — supporting the generalizability argument — not
+as characteristics that define the weakness itself. In hindsight,
+presenting that evidence inline with the definition made it look like
+the mechanisms were part of the weakness, which I understand is the
+actual source of the multiple-weaknesses concern.
+
+To be explicit: I believe this submission describes one weakness —
+missing validation of persisted state before reuse across an execution
+boundary — and that mechanisms like encoding mismatches (CWE-175) or
+incorrect casts (CWE-704) are possible causes that can precede it,
+already covered elsewhere in CWE, not separate weaknesses within this
+submission. I've reflected this as CanFollow relationships in the
+RELATED WEAKNESSES response already provided.
+
+Happy to revise the SUMMARY/EXTENDED DESCRIPTION text further if any
+of the mechanism-specific language there still reads as part of the
+weakness's definition rather than supporting context.
 
 ----------
 
@@ -1080,7 +1655,7 @@ Init-Accepted: 2026-06-03
 
 Det-Requested: 2026-07-01
 
-Det-Received: YYYY-MM-DD
+Det-Received: 2026-07-01
 
 Det-Review: YYYY-MM-DD
 
@@ -1124,3 +1699,8 @@ COMMUNICATIONS LOG:
 2026-06-14 received comment
 2026-06-17 sent comment
 2026-07-01 sent email
+2026-07-01 received response
+2026-07-07 sent comment
+2026-07-17 received comment
+2026-07-26 received comment
+2026-07-28 action update
