@@ -22,20 +22,45 @@ GITHUBUSER: LHMisme420
 
 SUBMISSION TYPE: Software
 
-NAME: New VATA publication: "Improper Validation of Identifier Uniqueness After Lossy Normalization: A Cross-Framework Weakness Class in AI Agent Orchestration Systems"  Two independently discovered, live-reproduced vulnerabilities in unrelated open-source AI agent frameworks (n8n, CrewAI) share the exact same root mechanism: a lossy identifier-normalization step silently lets a lower-trust component displace a higher-trust one.  - n8n: a routing collision silently redirected a request meant for hardened, human-approval-only payroll processing into an automated AI agent - which fraudulently approved an unverified payroll change, live. - CrewAI: an external MCP-sourced tool silently shadowed a developer's trusted identity-verification tool just by choosing a colliding name - the agent had no way to detect the swap.  This isn't two isolated bugs. It's a pattern. Full weakness definition, live PoC code, cross-framework comparison, and recommendations - plus a CWE candidate submission based on this work:  https://zenodo.org/records/21251776  Receipts over promises.
+NAME: Improper Validation of Identifier Uniqueness After Lossy Normalization
 
 DESCRIPTION:
+
+New VATA publication: "Improper Validation of Identifier Uniqueness
+After Lossy Normalization: A Cross-Framework Weakness Class in AI
+Agent Orchestration Systems"
+
+Two independently discovered, live-reproduced vulnerabilities in
+unrelated open-source AI agent frameworks (n8n, CrewAI) share the
+exact same root mechanism: a lossy identifier-normalization step
+silently lets a lower-trust component displace a higher-trust one.
+
+- n8n: a routing collision silently redirected a request meant for
+  hardened, human-approval-only payroll processing into an automated
+  AI agent - which fraudulently approved an unverified payroll change,
+  live.
+
+- CrewAI: an external MCP-sourced tool silently shadowed a developer's
+  trusted identity-verification tool just by choosing a colliding name
+  - the agent had no way to detect the swap.  This isn't two isolated
+  bugs. It's a pattern.
+
+Full weakness definition, live PoC code, cross-framework comparison,
+and recommendations - plus a CWE candidate submission based on this
+work: https://zenodo.org/records/21251776 Receipts over promises.
 
 This paper formally defines a new software weakness class - Improper
 Validation of Identifier Uniqueness After Lossy Normalization - and backs
 it with two real, independently confirmed vulnerabilities in unrelated AI
 agent orchestration frameworks.
+
 The core idea: when a system cleans up or standardizes identifiers (route
 paths, tool names, etc.) before comparing them, that cleanup step can
 accidentally make two genuinely different identifiers look identical. If
 the system doesn't check for that, it silently lets one identifier quietly
 take over for another - and when the two identifiers represent different
 trust levels, that's exploitable.
+
 The evidence: in n8n, this let a request meant for a hardened,
 human-approval-only payroll endpoint get silently redirected to a much
 weaker, automated AI-agent endpoint - which then approved a fraudulent,
@@ -45,6 +70,7 @@ from a third-party MCP server) silently replace a developer's trusted
 "verify identity" tool just by picking a name that collides after
 normalization - meaning an agent could think it's calling a real
 verification tool while actually running attacker-controlled logic.
+
 Both findings are backed by live proof-of-concept code run against the
 real, unmodified software, and every result is hashed and anchored on the
 Ethereum blockchain before publication as a tamper-evident timestamp.
@@ -52,6 +78,8 @@ The paper closes by arguing this is a systemic pattern worth its own name
 in the industry's standard vulnerability catalog (CWE), not just two
 unrelated bugs - and gives concrete recommendations for how developers can
 avoid it.
+
+
 
 RELATED WEAKNESSES:
 
