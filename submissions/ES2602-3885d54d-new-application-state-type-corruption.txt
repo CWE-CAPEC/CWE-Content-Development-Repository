@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2602-3885d54d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Det-Received
+SUBMISSION STATUS: Det-Review
 
 AFFECTED CWES: 
 
@@ -1657,7 +1657,7 @@ Det-Requested: 2026-07-01
 
 Det-Received: 2026-07-01
 
-Det-Review: YYYY-MM-DD
+Det-Review: 2026-07-29
 
 Det-Consultation: YYYY-MM-DD
 
@@ -1704,3 +1704,4 @@ COMMUNICATIONS LOG:
 2026-07-17 received comment
 2026-07-26 received comment
 2026-07-28 action update
+2026-07-29 sent email
