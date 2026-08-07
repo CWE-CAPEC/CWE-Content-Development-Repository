@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2407-4edbed28
 
-ACTION TYPE: Undetermined
+ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2024-07-04 23:10:12
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.ATTACK, SUB.RELS, SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.ACTION
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ATTACK, SUB.RELS, SUB.ABS.LOWLEVEL, SUB.RELREFS
 
 PUBTRACKER: #116
 
@@ -135,6 +135,12 @@ URL: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
 
 Title: Network Denial of Service
 URL: https://attack.mitre.org/techniques/T1498/
+
+Title: Help! I’m Stuck in a Redirect Loop!
+URL: https://medium.com/identityserver/help-im-stuck-in-a-redirect-loop-8f6db2cf9d4e
+
+Title: Redirect loops and redirect chains: identifying and resolving common URL redirect issues.
+URL: https://www.urllo.com/resources/learn/what-is-a-redirect-loop
 
 
 ACTIVE ISSUES:
@@ -277,14 +283,17 @@ redirect loops.  The references only describe general CSRF and DoS attacks, as
 well as a reference that just explains the redirect HTTP response.  Please include
 a reference that specifically talks to the weakness regarding redirect loops.
 
-Response: I agree that additional references specifically discussing
+Response: [CWE TEAM HAS ADDED TWO REFS]
+I agree that additional references specifically discussing
 redirect loops would be helpful. I will look for technical references,
 implementation guidance, or vulnerability discussions that describe
 redirect cycles, infinite redirection behavior, and their operational
 or security impacts, and provide them for further review.
 
 
-----------
+
+RESOLVED ISSUES:
+
 
 SUB.ACTION - "Unable to determine action"
 
@@ -299,19 +308,13 @@ and SUB.ABS.LOWLEVEL, more discussion will be needed to determine whether
 this submission is better suited as it's own entry or a modification to a 
 CWE in the CWE-834 tree.  Please indicate you have seen this comment.
 
-Response: I have seen this comment. Based on the discussion so far, I
+Response: [ACTION WILL BE TO CREATE A NEW ENTRY]
+I have seen this comment. Based on the discussion so far, I
 understand that the appropriate action may be either creation of a new
 entry or modification of an existing CWE within the CWE-834
 hierarchy. I am open to either outcome and would appreciate guidance
 from the CWE Team regarding the most appropriate approach after the
 weakness definition is refined.
-
-
-----------
-
-
-
-RESOLVED ISSUES:
 
 
 
@@ -327,7 +330,7 @@ Init-Consultation: 2025-08-25
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-08-07
 
 Det-Requested: YYYY-MM-DD
 
@@ -363,3 +366,4 @@ COMMUNICATIONS LOG:
 2025-12-21 sent email
 2026-05-15 sent email
 2026-06-08 received comment
+2026-08-07 sent email
