@@ -1,0 +1,130 @@
+SUBMISSION COMMUNICATION ID: ES2607-f7b34142
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-07-27 08:24:37
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #209
+
+MTRACKER: #1353
+
+GITHUBUSER: AryanChehreghani
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Enforcement of Safety Policy Across Intent-Equivalent Inputs in LLM-Based Software
+
+DESCRIPTION:
+
+The product uses a large language model to enforce a safety, authorization,
+or content policy, but it does not enforce that policy consistently across
+inputs that preserve the same underlying user objective while changing the
+semantic, narrative, temporal, or analytical frame of the request.
+
+As a result, the product may restrict a direct request but provide
+materially equivalent or more actionable information when the request is
+reframed as retrospective incident analysis, a forensic puzzle, an
+investigative task, a historical reconstruction, a counterfactual scenario,
+or the correction of an apparently innocent misunderstanding. The weakness
+is not the presence of any specific wording or jailbreak instruction. The
+mistake is that policy enforcement depends too heavily on the surface
+presentation or inferred conversational frame instead of evaluating the
+underlying requested capability and the actionability of the resulting
+output.
+
+This weakness can cause inconsistent enforcement of security policy,
+disclosure of restricted or security-sensitive information, bypass of
+content controls, and loss of intended separation between permitted
+explanation and prohibited facilitation. In systems where the model can
+invoke tools, retrieve protected data, generate executable actions, or
+affect external resources, the same weakness may contribute to unauthorized
+actions or access, depending on the surrounding authorization controls.
+
+Relevant variations include single-turn and multi-turn interactions, direct
+and indirect semantic reframing, and combinations with narrative context,
+professional roles, humor, contradictory evidence, historical distance, or
+long conversational context. These elements may increase the likelihood of
+exploitation but are not required for the weakness to exist.
+
+The weakness should be distinguished from ordinary differences between
+legitimate retrospective analysis and prospective instructions. A valid
+instance requires evidence that intent-equivalent or capability-equivalent
+inputs receive materially inconsistent safety treatment, and that the
+reframed output provides a meaningful increase in policy-relevant
+specificity, actionability, or access.
+
+Cognitive Reframing is a proposed attack family that may exploit this
+underlying weakness. It describes techniques in which an attacker preserves
+the underlying information objective while changing the semantic,
+narrative, temporal, or analytical framing of the request.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-693
+
+REFERENCES:
+
+Title: Cognitive Reframing in LLM Security: Research Repository and Supporting Manuscripts
+URL: https://github.com/AryanChehreghani/cognitive-reframing-llm-security
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-07-27
+
+Ack-Receipt: 2026-08-07
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
