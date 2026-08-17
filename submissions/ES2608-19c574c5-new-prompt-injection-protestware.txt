@@ -1,0 +1,105 @@
+SUBMISSION COMMUNICATION ID: ES2608-19c574c5
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-08-12 17:41:39
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #214
+
+MTRACKER: #1363
+
+GITHUBUSER: loganaden
+
+SUBMISSION TYPE: Software
+
+NAME: Prompt injection in open source software which is triggered only when interpreted by an AI 
+
+DESCRIPTION:
+
+https://snyk.io/blog/protestware-open-source-maintainer-qwik-1-10-0-prompt-injection/
+qwik is a good case of an upstream developer injection malicious prompt
+that will not impact a human or (non-AI) automated tool but will trigger an
+AI which will cause it to delete the qwik package on the target system.
+
+This novel type of protest ware would fit in a new CWE as a child of
+"CWE-506: Embedded Malicious Code". Unlike other categories this one
+impacts only AI agents. 
+
+The author added this as a way to protest against usage of AI agents. There
+could be other type of similar protest-ware against AI.
+
+
+
+A possible new CWE would be "AI prompt injection".
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-506
+
+REFERENCES:
+
+Title: Protestware by open source maintainer to hinder agentic coding: The jqwik 1.10.0 Prompt Injection
+URL: https://snyk.io/blog/protestware-open-source-maintainer-qwik-1-10-0-prompt-injection/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-08-12
+
+Ack-Receipt: 2026-08-17
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
