@@ -1,0 +1,184 @@
+SUBMISSION COMMUNICATION ID: ES2608-a21c00a6
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-08-10 11:21:56
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #213
+
+MTRACKER: #1362
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: Missing Revalidation of Attested State Before Security-Sensitive Use
+
+DESCRIPTION:
+
+The product performs a security-sensitive action based on an attestation
+that correctly proved a property of a system or resource at an earlier
+time, but does not ensure that the attested property still holds when the
+action is performed.
+
+Attestation is commonly used to establish properties such as the software
+measurement of a remote device, the code or configuration of a trusted
+execution environment, or another integrity-relevant state. A verifier may
+correctly authenticate the evidence, validate its signature, and confirm
+that the reported measurement satisfies policy. However, those checks
+establish what was true when the measurement or evidence was produced. They
+do not necessarily guarantee that a mutable property remains unchanged
+until a later security-sensitive use.
+
+The weakness occurs when the product treats a previously successful
+attestation as continuing proof of current state even though the attested
+state can change between the check and the protected operation. The
+attestation may be genuine, correctly signed, associated with the correct
+attester, and still within its permitted validity period. The mistake is
+the missing temporal binding between the property that was checked and the
+operation that relies on that property.
+
+For example, a secret-management service may verify that a remote execution
+environment has an approved code measurement and then authorize release of
+a secret. If relevant software or mutable state can be modified after
+measurement but before the secret is released or used, the relying party
+can act on a security property that is no longer true.
+
+This is a time-of-check/time-of-use problem specialized to attested state.
+Remote-attestation research has demonstrated that malicious software can be
+present between attestations or that software state can differ at time of
+use even though a legitimate measurement was obtained at time of check. The
+attestation mechanism can therefore operate correctly while the relying
+product makes an unsafe assumption about how long the attested property
+remains valid.
+
+This weakness is distinct from simple capture-replay. Replay can be
+prevented by binding evidence to a fresh verifier challenge, but challenge
+freshness only establishes that the evidence belongs to a particular
+attestation exchange. It does not, by itself, prove that mutable measured
+state cannot change after measurement and before the protected operation.
+Likewise, this weakness does not require an expired token, invalid
+signature, or forged evidence. The assertion can be authentic and fresh
+while the underlying property has ceased to hold.
+
+Consequences depend on the property and protected action. A product may
+release secrets to an environment whose trusted state has changed, permit
+privileged operations based on obsolete integrity evidence, accept output
+from software that no longer matches the approved measurement, or otherwise
+bypass a protection mechanism based on a once-true property.
+
+A secure design must ensure that the attested state remains applicable to
+the security-sensitive use. Depending on the platform and threat model,
+this can involve binding fresh evidence to the specific session or
+operation, minimizing the interval between measurement and use,
+re-attesting when relevant state can change, invalidating cached trust
+decisions after state-changing events, using continuous or runtime
+attestation, or using mechanisms that detect or prevent modification of the
+attested state between verification and use.
+
+For example, vulnerable logic may verify an approved measurement once and
+cache the result for a session:
+
+tok = verify_attestation(evidence)
+if tok.measurement == APPROVED:
+session.trusted = True
+
+# Relevant state can change here.
+
+if session.trusted:
+release_secret()
+
+The error is not that verify_attestation() accepted bad evidence. It
+accepted evidence that was correct when generated. The error is that the
+later protected operation relies on that earlier result without
+establishing that the property still holds.
+
+A stronger design treats an attestation decision as having a lifetime tied
+to the state it describes and the operation it authorizes. Fresh challenges
+should be used to prevent replay, but systems whose attested state can
+change after measurement also require a mechanism to close or sufficiently
+bound the check-to-use window.
+
+This weakness should not be used for every stale signed token or ordinary
+expiration error. It applies when a security decision relies on an attested
+property of mutable state, the property can change after it is checked, and
+the product fails to preserve or re-establish the relationship between the
+checked state and the state that exists when the protected action occurs.
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-367
+
+REFERENCES:
+
+Title: On the TOCTOU Problem in Remote Attestation
+URL: https://dl.acm.org/doi/10.1145/3460120.3484532
+
+Title: A TOCTOU Attack on DICE Attestation
+URL: https://dl.acm.org/doi/10.1145/3508398.3511507
+
+Title: TOCTOU Resilient Attestation for IoT Networks
+URL: https://dl.acm.org/doi/10.1145/3715014.3722057
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-08-10
+
+Ack-Receipt: 2026-08-17
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
