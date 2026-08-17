@@ -1,0 +1,157 @@
+SUBMISSION COMMUNICATION ID: ES2608-8a08a8f6
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-08-08 03:00:49
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #210
+
+MTRACKER: #1359
+
+GITHUBUSER: cleitonaugusto
+
+SUBMISSION TYPE: Software
+
+NAME: Reliance on Preservation of Authentication Material Placed Outside the Protocol's Declared Message Boundary
+
+DESCRIPTION:
+
+The product attaches authentication material to a message outside the
+extent declared by the protocol's framing, and relies on that material
+reaching the receiver unchanged. A protocol-aware intermediary that
+reconstructs the message from its parsed representation does not reproduce
+material outside that extent, so the receiver acts on a message that was
+authenticated in intent but is unauthenticated in fact.
+
+Relays, bridges, gateways and brokers commonly rebuild a message from the
+fields they parsed rather than forwarding the octets they received. This is
+normal, specification-conformant behaviour, and is frequently the
+intermediary's stated purpose, for example when translating between
+protocol versions or transport domains. When authentication material sits
+outside the region the framing accounts for -- appended past a length
+field, carried in a metadata field the intermediary is not obliged to
+forward, or otherwise outside the parsed structure -- it is not part of
+what the intermediary reconstructs, and therefore does not appear in what
+it emits.
+
+The distinguishing property is that no attacker participates in the loss.
+The sender behaves as designed, the intermediary behaves as specified, and
+the receiver accepts a well-formed message. An adversary is required only
+afterwards, to exploit the resulting unauthenticated channel, and the
+capability required is whatever injection on that network segment already
+required before the authentication was deployed. Deploying the
+authentication therefore does not reduce the feasibility of that injection
+at all, although a risk assessment will normally record it as if it did.
+
+The failure is silent in both directions. The sender observes an
+authenticated message leaving. The receiver observes a valid message
+arriving, and cannot distinguish "no authenticator was attached" from "one
+was attached and was not carried". Nothing on the path necessarily logs
+anything. A system that authenticates correctly in a two-endpoint test
+therefore stops authenticating the moment an intermediary is introduced,
+which is the production topology for most deployments of this kind. This
+makes the weakness resistant to testing that assumes tampering produces an
+error.
+
+Technical impact is to Integrity, Non-Repudiation and Access Control. The
+receiver acts on commands whose origin cannot be established, and any
+record that assumed the authentication was present loses its evidentiary
+value. Where the receiver actuates, the impact is the actuation itself.
+
+The weakness is introduced in architecture and design, typically when
+authentication is retrofitted onto a protocol whose framing was not
+designed to carry it, because the authenticator does not fit the field
+available. Migration to post-quantum signatures makes this systematic
+rather than occasional: their sizes exceed the fixed authenticator fields
+of most embedded and control protocols by two to three orders of magnitude,
+so an implementer adding them is structurally pushed to place them outside
+the counted region.
+
+The weakness is present when all four of the following hold, and absent if
+any one fails: (1) messages are delimited by a length field or by a schema;
+(2) authentication is placed outside what that delimitation accounts for;
+(3) something on the path parses and reconstructs rather than forwarding
+octets; (4) the receiver performs no integrity check over the raw octets it
+received. The fourth condition is what makes the loss silent, and it is
+frequently the cheapest one to remove.
+
+Note that this differs from weaknesses describing an adversary who modifies
+a message in transit. Here the intermediary is not compromised, not
+misconfigured, and not in violation of any specification. That difference
+changes both the attack feasibility rating and the effective mitigation:
+hardening the channel against interference does not address it, and neither
+does strengthening the authentication algorithm, since the algorithm is
+never reached.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-345
+   Other CWE-924
+   Other CWE-353
+
+REFERENCES:
+
+Title: Authentication-Stripping in Relay-Mediated Protocols: Characterizing and Detecting a Vulnerability Class
+URL: https://doi.org/10.5281/zenodo.21840073
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-08-08
+
+Ack-Receipt: 2026-08-17
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
