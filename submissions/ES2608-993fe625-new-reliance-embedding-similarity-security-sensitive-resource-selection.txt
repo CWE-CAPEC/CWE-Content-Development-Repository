@@ -1,0 +1,182 @@
+SUBMISSION COMMUNICATION ID: ES2608-993fe625
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-08-10 11:04:59
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #212
+
+MTRACKER: #1361
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: Reliance on Embedding Similarity for Security-Sensitive Resource Selection
+
+DESCRIPTION:
+
+The product uses embedding similarity, vector distance, or nearest-neighbor
+ranking as evidence that a retrieved resource is authorized, trusted, or
+otherwise eligible for a security-sensitive use, instead of enforcing that
+security property independently.
+
+Embedding and vector-search systems are designed to estimate relevance. A
+high similarity score means that two representations are close according to
+the configured model and distance metric. It does not prove that the
+selected resource belongs to the requester's authorization scope,
+originated from a trusted source, is appropriate for a privileged workflow,
+or is permitted to influence a security-sensitive decision.
+
+The weakness occurs when resources from different trust, tenant,
+provenance, or authorization spheres participate in the same
+similarity-based selection process and the product treats the top-ranked or
+top-k results as sufficiently eligible for use. In that design, semantic
+proximity becomes part of the security boundary even though retrieval was
+designed to answer "what is relevant?", not "what is allowed?" or "what is trusted"
+
+For example, a RAG system may index both internally approved documents and
+material submitted by external users. If a privileged agent receives the top
+five nearest documents and uses them without checking each document's trust or
+authorization metadata, an externally controlled document can enter the
+privileged context solely because it ranks highly. The nearest-neighbor
+calculation may be completely correct; the mistake is treating that ranking as
+proof that the document is eligible for the privileged context.
+
+A second example is a multi-tenant semantic search service that stores records
+for several customers in a shared vector index. If the application relies on
+similarity to determine which records may be returned, rather than constraining
+candidates by tenant or independently authorizing each result, a record outside
+the requester's security sphere may be disclosed because it is semantically
+close to the query. If the system merely forgot to apply an ordinary tenant
+filter, however, an existing authorization CWE may be more appropriate. This
+proposed weakness is intended for cases where similarity itself is used, in
+whole or in part, as evidence of eligibility.
+
+A third example is an agent-memory system containing memories with different
+trust levels. If the agent retrieves whichever memories are closest to the
+current task and treats them as trusted instructions or facts without checking
+provenance, a less-trusted memory can influence a more-privileged action merely
+by ranking as highly relevant.
+
+The weakness is important because embedding similarity can be
+attacker-influenced. An attacker who can create or modify indexed content may
+shape that content so its representation ranks highly for queries or query
+classes. The attacker does not need to break the embedding model or cause an
+incorrect mathematical result. The system can behave exactly as designed and
+still cross a security boundary because the developer assigned security meaning
+to a relevance score.
+
+Possible consequences include attacker-controlled content entering a privileged
+or trusted processing context; bypass of protections intended to separate
+resources by tenant, provenance, or trust level; disclosure of resources outside
+an intended authorization sphere; manipulation of downstream automated
+decisions; and displacement of legitimate resources from a limited top-k result
+set.
+
+This weakness is distinct from ordinary prompt injection, adversarial
+classification, and generic data poisoning. Prompt injection concerns how
+content is interpreted after selection. Adversarial classification concerns
+causing a recognizer to assign an incorrect label or category. Generic poisoning
+can involve many root causes. Here, the defining mistake is that
+similarity-based selection is treated as establishing a security property that
+similarity does not provide.
+
+It is also narrower than "vector database insecurity." A vector database can be
+used safely if the candidate set is restricted to resources authorized and
+trusted for the requested operation. Similarity can also safely rank resources
+after an ACL, tenant boundary, provenance rule, or trust filter has established
+which resources are eligible.
+
+A secure design separates relevance from security eligibility. Authorization,
+tenant, provenance, and trust constraints should be applied before similarity
+ranking when filtered retrieval is supported. Otherwise, every retrieved item
+should be independently checked before it is returned to a requester or supplied
+to a privileged component. Systems should preserve trust metadata through
+indexing and retrieval rather than discarding it when content is converted into
+vectors.
+
+The central security rule is: similarity may determine which eligible resource
+is most relevant, but it must not by itself determine whether a resource is
+eligible, authorized, or trusted.
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-807
+
+REFERENCES:
+
+Title: LLM08:2025 Vector and Embedding Weaknesses
+URL: https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/
+
+Title: Poisoning Retrieval Corpora by Injecting Adversarial Passages
+URL: https://openreview.net/forum?id=8FgdMHbW27
+
+Title: Controlled Generation of Natural Adversarial Documents for Stealthy Retrieval Poisoning
+URL: https://arxiv.org/abs/2410.02163
+
+Title: Unsupervised Corpus Poisoning Attacks in Continuous Space for Dense Retrieval
+URL: https://arxiv.org/abs/2504.17884
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-08-10
+
+Ack-Receipt: 2026-08-17
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
