@@ -1,0 +1,135 @@
+SUBMISSION COMMUNICATION ID: ES2608-28b3382f
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-08-13 02:45:33
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #215
+
+MTRACKER: #1364
+
+GITHUBUSER: windshock
+
+SUBMISSION TYPE: Unknown
+
+NAME: Modify CWE-69 to Include Info about Alternate Data Stream Filename Gate Bypass
+
+DESCRIPTION:
+
+Elements: Extended Description; Common Consequences; Potential Mitigations;
+Related Weaknesses
+
+Proposed modification:
+CWE-69 should explicitly cover cases in which a Windows NTFS Alternate Data
+Stream (ADS) pathname passes a filesystem-based filename-validation gate
+while preserving characters that are prohibited in an ordinary filename
+component, and those characters later acquire control semantics when the
+same pathname is interpreted by a downstream parser.
+
+Extended Description:
+A product may incorrectly treat successful creation or access of a pathname
+as evidence that an externally controlled filename is safe for subsequent
+use. NTFS stream names follow a different character grammar from ordinary
+filename components. For example, the double quote (") is prohibited in an
+ordinary filename component but permitted in an ADS stream name. Therefore,
+successful filesystem handling of an ADS pathname does not establish that
+the original pathname string is safe for use by another parser.
+
+Common Consequences:
+Scope: Access Control, Integrity
+Impact: Bypass Protection Mechanism
+An ADS pathname may bypass a filename-validation protection that relies on
+filesystem acceptance. Code or command execution is not asserted as a
+direct consequence of CWE-69; execution requires a separate downstream
+weakness.
+
+Potential Mitigations:
+If ADS is not required, reject pathnames containing stream-name components.
+If ADS support is required, parse and validate the volume, base filename,
+stream name, and stream type separately. Do not treat successful filesystem
+access as validation for use in another syntax-sensitive context. Avoid
+concatenating accepted pathnames into shell commands.
+
+Related Weaknesses:
+Proposed CanPrecede CWE-78. Improper handling of an ADS pathname may allow
+command-significant characters to pass a filesystem-based validation gate,
+after which a separate command-construction weakness can result in OS
+command injection. CWE-69 is the enabling ADS-specific validation bypass;
+CWE-78 is the downstream command-injection weakness.
+
+CWE-641 is the closest neighboring weakness, but it describes the general
+resource-name restriction problem. This modification is limited to the
+Windows ADS-specific Variant and its stream-name/virtual-resource semantics
+already represented by CWE-69 under CWE-66.
+
+Full rationale, generalized demonstrator, evidence, overlap analysis, and
+references:
+https://github.com/windshock/cwe-69-ads-filename-gate-bypass/blob/main/submission/modification-details.md
+
+RELATED WEAKNESSES:
+
+   Other CWE-69
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-08-13
+
+Ack-Receipt: 2026-08-17
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
