@@ -1,0 +1,185 @@
+SUBMISSION COMMUNICATION ID: ES2608-5df528b1
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-08-10 10:44:26
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #211
+
+MTRACKER: #1360
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Unknown
+
+NAME: Modify CWE-348 to Improve Discoverability
+
+DESCRIPTION:
+
+CWE-348 is already the correct conceptual home for trust of unverified HTTP
+forwarding information. Its demonstrative example uses HTTP_X_FORWARDED_FOR
+as a less-trusted source in place of REMOTE_ADDR, and two of its four
+observed examples are forwarding-header cases (CVE-2004-1950,
+CVE-2006-1126). I am not asking to redefine the weakness, only to improve
+its discoverability and mapping consistency.
+
+In a corpus I generated of 78 instances of this mechanism published
+2024-2026, assignments spread across 34 CWE IDs: CWE-290 20 times, CWE-348
+18, CWE-345 8, CWE-807 6, CWE-307 5. CVE-2026-9561 received CWE-345,
+CWE-348 and CWE-807 at once. Analysts appear to be mapping the downstream
+consequence rather than the underlying trust error. These statistics come
+from a gap-mining study I ran over 122,061 NVD records and have not been
+independently reproduced; I re-checked each CVE cited below against NVD,
+and can supply the full corpus on request.
+
+I propose four changes.
+
+1. ADD ALTERNATE TERMS
+
+CWE-348 currently has no Alternate Terms section. Suggested entries:
+
+- X-Forwarded-For spoofing
+- Client IP spoofing via forwarding header
+- Trust of untrusted reverse-proxy headers
+- Proxy header spoofing
+
+These are the terms vulnerability reports use, and they have little lexical
+connection to "Use of Less Trusted Source." Indexing them would make
+CWE-348 reachable from the language analysts hold, without changing its
+scope.
+
+2. ADD MODERN OBSERVED EXAMPLES
+
+The four current observed examples date from 2001 to 2006, understating how
+live this weakness remains.
+
+- CVE-2026-9561: client-supplied forwarding header trusted as the
+authoritative client address in audit log entries, allowing forged
+attribution.
+- CVE-2026-63220: forwarded-protocol header trusted without provenance
+verification, causing a plaintext request to be treated as secure.
+- CVE-2026-63770: attacker-controlled X-Forwarded-For bypasses per-IP
+brute-force lockout.
+- CVE-2026-46356: forwarding headers accepted without validating that a
+trusted proxy supplied them, bypassing API rate limiting.
+- CVE-2026-58122: spoofed loopback forwarding value bypasses a local-origin
+restriction.
+- CVE-2024-0787: X-Forwarded-For consulted in place of the peer address,
+bypassing IP-based brute-force protection.
+
+These affect several different controls and share one trust error.
+
+3. ADD MAPPING GUIDANCE
+
+Suggested text: "Where a product derives security-relevant client
+provenance, such as the client IP address or the connection scheme, from
+X-Forwarded-For, X-Real-IP, True-Client-IP, X-Forwarded-Proto, Forwarded or
+similar, without adequately establishing that trusted proxy infrastructure
+supplied or vouched for the value, CWE-348 is an appropriate mapping
+target. The weakness is the selection of a less-trusted representation of
+client provenance over one established by the transport connection or by
+trusted infrastructure; the downstream consequence does not change it.
+CWE-290 may describe an authentication-bypass consequence in some
+instances, but does not naturally cover rate-limit evasion, audit-log
+forgery or transport-scheme confusion. CWE-307 may describe the brute-force
+control that was defeated, while CWE-348 describes the trust defect that
+made that control ineffective."
+
+4. EXTEND THE DEMONSTRATIVE EXAMPLE TO FORWARDING-CHAIN TRUST
+
+A modern failure mode occurs when an application does verify that its
+immediate peer is a trusted proxy, but misinterprets a multi-valued
+forwarding chain.
+
+The left-most X-Forwarded-For value is not inherently unsafe. Where a
+trusted edge strips inbound forwarding headers and writes a new
+authoritative value, reading it is correct. The defect appears where
+infrastructure preserves or appends to attacker-supplied forwarding
+information and the application selects a chain position without reference
+to the deployment's trust topology. In an append-based deployment, an
+attacker prepends arbitrary values and the trusted proxy then appends
+genuine connection information, so code returning chain[0] remains
+vulnerable even though the peer check passed.
+
+The application must either know which infrastructure establishes the value
+and interpret the chain accordingly, or rely on a trusted edge that strips
+inbound forwarding headers and writes a new one. Showing this alongside the
+existing REMOTE_ADDR example would address the common misreading that a
+peer check alone is sufficient.
+
+I have separately proposed a Variant beneath CWE-348, "Reliance on an
+Unverified HTTP Forwarding Header as the Source of Client Provenance." The
+two are independent; if the Variant is judged unnecessary, I ask that this
+modification still be considered on its own. My objective is not a
+particular CWE ID; it is that an analyst encountering X-Forwarded-For
+spoofing, client IP spoofing, untrusted proxy headers, forwarding-header
+rate-limit bypass or a spoofed forwarded scheme arrives reliably at the
+same entry.
+
+RELATED WEAKNESSES:
+
+   Other CWE-348
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-08-10
+
+Ack-Receipt: 2026-08-17
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
