@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-02-17 23:12:48
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.OVERLAP, SUB.ACTION
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.LOWLEVEL, SUB.RELREFS, SUB.OVERLAP
 
 PUBTRACKER: #64
 
@@ -150,26 +150,18 @@ resolve by providing additional details such as a section name and quote
 from the reference.  If no suitable references can be found, the CWE Team
 may decide to make an exception.
 
-Comments: The submission only provides a Wikipedia reference, which by itself
-isn't a credible reference. Please provide other real-world references of this
-issue.
+Comments: The original submitter originally provided a Wikipedia
+reference, which by itself isn't a credible reference. The submitter
+also stated that "the issue had been observed firsthand in real-world
+products, including in responsible disclosure reports. While public
+references may be scarce due to the sensitive nature of such findings
+(often under private VDP or bug bounty programs), I can provide more
+anonymized examples or documented reports if needed." The CWE Team
+will work with the submitter to identify possible demonstrative
+examples, which are typically taken directly from real product
+vulnerabilities.
 
-Response: At the time of submission, the issue had been observed
-firsthand in real-world products, including in responsible disclosure
-reports. While public references may be scarce due to the sensitive
-nature of such findings (often under private VDP or bug bounty
-programs), I can provide more anonymized examples or documented
-reports if needed. Additionally, this pattern of behavior is
-observable in several modern applications that attempt to normalize
-email addresses but fail to inform users. Given that this is a subtle
-but dangerous behavior, it is underreported in public documentation,
-but exploitation is feasible and impactful.
-
-CWE-319 / CWE-201 (Information Exposure)
-
-CWE-640 (Weak Password Recovery Mechanism for Forgotten Password)
-
-CWE-345 / CWE-346 (Insufficient Verification of Data Authenticity / Source)
+Response: [NO RESPONSE NECESSARY]
 
 ----------
 
@@ -185,21 +177,20 @@ duplicate/overlap.
 
 Comments: This submission is similar to the one proposed in
 ES2503-a0f69c3b (CDR #150).  Therefore, the CWE team will treat both
-submissions at the same time, possibly combining them if
-appropriate. Note that both submitters would receive credit.
+submissions at the same time, probably combining them if
+appropriate. Note that both submitters would receive credit. The
+submitter has acknowledged and agrees with this decision, saying "I
+support combining them, provided that the scenario involving silent
+modification of aliases leading to notification redirection and ATO
+risks is preserved as an example or subclass."
 
-Response: I understand the similarity with ES2503-a0f69c3b. If the
-weaknesses are closely related, I support combining them, provided
-that the scenario involving silent modification of aliases leading to
-notification redirection and ATO risks is preserved as an example or
-subclass. I'm fully open to collaborative refinement if that helps
-clarify and generalize the core weakness. As long as the security
-impact and exploit path are accurately conveyed, I'm satisfied with
-the merged representation.
+Response: [NO RESPONSE NECESSARY; ISSUE TO BE RESOLVED IN LATER
+STAGES.]
 
-PS. This submission was sent on 2023.
 
 ----------
+
+RESOLVED ISSUES:
 
 SUB.ACTION - "Unable to determine action"
 
@@ -213,9 +204,11 @@ Comments: Given that the submission's weakness isn't clear and the specificity
 of a niche products/technology, it is difficult to determine which action 
 (e.g., create a new entry or update an existing entry) is needed.
 
-Response: Given the nature of the weakness and its potential security
-impact, I believe the most appropriate action would be to either (1)
-create a new CWE that addresses silent input transformation leading to
+Response: [RESOLVED ISSUE; DO NOT CHANGE. The CWE Team has decided to
+create a new, more-general entry for this issue.] Given the nature of
+the weakness and its potential security impact, I believe the most
+appropriate action would be to either (1) create a new CWE that
+addresses silent input transformation leading to
 authentication/notification mismatches or (2) extend an existing CWE
 such as CWE-345 or CWE-222 to include this scenario. I’m also open to
 this being used as a high-impact example under CWE-319 (Information
@@ -223,12 +216,6 @@ Exposure via altered notification address). My primary goal is to
 ensure this class of bug — where a product silently transforms user
 identity data leading to ATO or disclosure — is captured, even if not
 as a standalone CWE.
-
-
-----------
-
-RESOLVED ISSUES:
-
 
 
 TIMELINE:
