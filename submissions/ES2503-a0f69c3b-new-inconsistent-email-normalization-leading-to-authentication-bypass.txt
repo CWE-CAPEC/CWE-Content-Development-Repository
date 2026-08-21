@@ -12,7 +12,7 @@ SUBMISSION DATE: 2025-03-05 13:08:37
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ATTACK, SUB.RELS, SUB.RELREFS, SUB.OVERLAP
+ISSUE DETAILS: SUB.ATTACK, SUB.RELS, SUB.RELREFS, SUB.OVERLAP, SUB.WITHDRAWN
 
 PUBTRACKER: #150
 
@@ -112,14 +112,17 @@ be suitable for inclusion in CAPEC.
 Resolution: An initial submission cannot progress to later phases unless it
 also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
 
-Comments: The current submission is too attack focused because it focuses on the technical
-impact which is "authentication bypass" and also explains a proof of concept attack.  In order
-to make the submission more general, it should focus on the weakness that is occurring, which is
-that the incoming email address is not being properly normalized. There are other technical impacts
-that could arise from improper normalization, so if the submission is changed to focus more on the 
-email address normalization it will encompass more scenarios.  Please indicate if you agree with 
-focusing solely on improper normalization and consider suggesting an alternate description that 
-aligns with this suggestion.
+Comments: The current submission is too attack focused because it
+focuses on the technical impact which is "authentication bypass" and
+also explains a proof of concept attack.  In order to make the
+submission more general, it should focus on the weakness that is
+occurring, which is that the incoming email address is not being
+properly normalized. There are other technical impacts that could
+arise from improper normalization, so if the submission is changed to
+focus more on the email address normalization it will encompass more
+scenarios.  Please indicate if you agree with focusing solely on
+improper normalization and consider suggesting an alternate
+description that aligns with this suggestion.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -198,10 +201,37 @@ duplicate/overlap.
 
 Comments: This submission is similar to the one proposed in
 ES2302-0697c4d4 (CDR #64).  Therefore, the CWE team will treat both
-submissions at the same time, possibly combining them if
-appropriate. Note that both submitters would receive credit.
+submissions at the same time, combining them as part of a more general
+CWE entry. Note that both submitters would receive credit.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.WITHDRAWN - "Withdrawn Submission"
+
+Description: The original submitter has withdrawn from active participation
+in further development of the submission, or the submitter has not
+responded to multiple requests for feedback. The submitter's withdrawal may
+be due to reasons such as lack of time, changing priorities, technical
+challenges in resolving issues with the submission, email address or other
+contact information that is no longer valid, etc.
+
+Resolution: The CWE Team must decide what to do with the submission in its
+current state, such as: (1) decline or close the submission outright; or
+(2) continue to work independently with the submission. For submissions
+that are ultimately integrated into CWE, the CWE Team will decide which
+credits to provide - based on the public information in the submission - or
+credit an "anonymous contributor."
+
+Comments: The CWE Team has not received responses to multiple
+requests. Since the submission is described well enough, the CWE Team
+will continue with its efforts to integrate this information into a
+more general, new CWE entry.  The CWE Team will continue to
+communicate important developments as the submission progresses.
+
+Response: [NO RESPONSE NECESSARY]
+
 
 
 ----------
