@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-05-08 18:52:35
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.RELS, SUB.ABS.SUBTREE
+ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.RELS, SUB.ABS.SUBTREE, SUB.WITHDRAWN
 
 PUBTRACKER: #59
 
@@ -70,6 +70,35 @@ URL: https://www.zerodayinitiative.com/blog/2023/4/5/bash-privileged-mode-vulner
 ACTIVE ISSUES:
 
 
+----------
+
+SUB.WITHDRAWN - "Withdrawn Submission"
+
+Description: The original submitter has withdrawn from active participation
+in further development of the submission, or the submitter has not
+responded to multiple requests for feedback. The submitter's withdrawal may
+be due to reasons such as lack of time, changing priorities, technical
+challenges in resolving issues with the submission, email address or other
+contact information that is no longer valid, etc.
+
+Resolution: The CWE Team must decide what to do with the submission in its
+current state, such as: (1) decline or close the submission outright; or
+(2) continue to work independently with the submission. For submissions
+that are ultimately integrated into CWE, the CWE Team will decide which
+credits to provide - based on the public information in the submission - or
+credit an "anonymous contributor."
+
+Comments: The CWE Team attempted to contact the submitter through
+email, CDR comments, and LinkedIn, without apparent response. The CWE
+team will proceed with this submission by creating a more-general CWE
+entry about not clearing environment variables. The scenario described
+in this submission will be converted to a demonstrative example.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+
 SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
 Description: The submission identifies an issue, but its abstraction might
@@ -103,7 +132,7 @@ details related to this specific submission.  Please indicate whether
 or not you agree with this interpretation of the weakness and our
 proposal for handling this submission.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE NECESSARY. ISSUE WILL BE MANAGED IN A LATER STAGE.]
 
 
 ----------
@@ -143,7 +172,7 @@ at a later time once there is shared agreement on the nature of the
 weakness being proposed. Please provide your current thoughts on these
 proposed relationships.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE NECESSARY. ISSUE WILL BE MANAGED IN A LATER STAGE.]
 
 ----------
 
@@ -167,7 +196,7 @@ se. Some subtree reorganization might be necessary. The CWE Team will
 try to separate any subtree work from processing of this submission as
 much as possible. Please acknowledge that you have read this comment.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE NECESSARY. ISSUE WILL BE MANAGED IN A LATER STAGE.]
 
 
 
