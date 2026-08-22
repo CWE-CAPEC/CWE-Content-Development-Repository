@@ -12,7 +12,7 @@ SUBMISSION DATE: 2025-05-20 23:13:35
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.MULTWEAK, SUB.COORD
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.MULTWEAK, SUB.COORD, SUB.MISSDET
 
 PUBTRACKER: #152
 
@@ -54,6 +54,22 @@ URL: https://docs.google.com/spreadsheets/d/1FlUX9KU7GLk6c8m5ApkEKR2zhLWdCV47u0H
 
 
 ACTIVE ISSUES:
+
+SUB.MISSDET - "Missing details"
+
+Description: The submission is missing some requested or required details
+for elements other than name and description.
+
+Resolution: The submission cannot progress to later phases if it does not
+have all required elements.
+
+Comments: This submission originated from two separate people. Both
+people will need to be credited in the Submission element(s) once this
+is published.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
 
 SUB.COORD - "Requires extensive coordination"
 
