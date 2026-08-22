@@ -12,7 +12,7 @@ SUBMISSION DATE: 2025-01-08 05:52:06
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.RELREFS
+ISSUE DETAILS: SUB.ABS.SUBTREE, SUB.RELREFS, SUB.WITHDRAWN
 
 PUBTRACKER: #136
 
@@ -92,8 +92,33 @@ Please provide additional references that address this particular aspect.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
+----------
+
+SUB.WITHDRAWN - "Withdrawn Submission"
+
+Description: The original submitter has withdrawn from active participation
+in further development of the submission, or the submitter has not
+responded to multiple requests for feedback. The submitter's withdrawal may
+be due to reasons such as lack of time, changing priorities, technical
+challenges in resolving issues with the submission, email address or other
+contact information that is no longer valid, etc.
+
+Resolution: The CWE Team must decide what to do with the submission in its
+current state, such as: (1) decline or close the submission outright; or
+(2) continue to work independently with the submission. For submissions
+that are ultimately integrated into CWE, the CWE Team will decide which
+credits to provide - based on the public information in the submission - or
+credit an "anonymous contributor."
+
+Comments: The submitter has not responded to multiple requests. The
+CWE Team plans to create a more-general CWE related to "Unnecessary
+Functionality" (or "Unnecessary Code") and will use this submission as
+an example and/or technical details.
+
+Response: [NO RESPONSE NECESSARY.]
 
 ----------
+
 
 RESOLVED ISSUES:
 
