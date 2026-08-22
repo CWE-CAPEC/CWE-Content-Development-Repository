@@ -12,7 +12,7 @@ SUBMISSION DATE: 2024-07-05 14:04:55
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.ATTACK
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ATTACK, SUB.WITHDRAWN
 
 PUBTRACKER: #117
 
@@ -103,6 +103,32 @@ URL: https://www.esentire.com/blog/securing-passkeys-thwarting-authentication-me
 ACTIVE ISSUES:
 
 
+SUB.WITHDRAWN - "Withdrawn Submission"
+
+Description: The original submitter has withdrawn from active participation
+in further development of the submission, or the submitter has not
+responded to multiple requests for feedback. The submitter's withdrawal may
+be due to reasons such as lack of time, changing priorities, technical
+challenges in resolving issues with the submission, email address or other
+contact information that is no longer valid, etc.
+
+Resolution: The CWE Team must decide what to do with the submission in its
+current state, such as: (1) decline or close the submission outright; or
+(2) continue to work independently with the submission. For submissions
+that are ultimately integrated into CWE, the CWE Team will decide which
+credits to provide - based on the public information in the submission - or
+credit an "anonymous contributor."
+
+Comments: The submitter did not respond to multiple requests. Since it
+has significant issues (SUB.UNCLEAR and SUB.ATTACK), it will be
+declined.
+
+Response: [NO RESPONSE NECESSARY; SUBMISSION IS BEING DECLINED.]
+
+
+----------
+
+
 SUB.UNCLEAR - "Unclear weakness"
 
 Description: The submission's name and/or description does not clearly
@@ -117,7 +143,7 @@ causing the situation in which the user interface, HTML, CSS, etc.,
 can be manipulated. Please provide details on any mistake that
 warrants a new CWE.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE PROVIDED.]
 
 
 ----------
@@ -142,7 +168,7 @@ the mistake that was made. If there is no new weakness for CWE to
 cover, it may be possible to capture this attack as a modification to
 existing CWE(s) that enable the UI to be modified.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE PROVIDED.]
 
 
 ----------
