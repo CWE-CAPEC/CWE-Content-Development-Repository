@@ -78,6 +78,35 @@ URL: https://simonwillison.net/2024/Mar/5/prompt-injection-jailbreaking/
 
 ACTIVE ISSUES:
 
+----------
+
+SUB.OVERLAP - "Duplicate/Overlap"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Resolution: The submission cannot progress to later phases until (1) the
+duplicate/overlap is understood and (2) it is clear how to resolve this
+duplicate/overlap.
+
+Comments: This submission overlaps CWE-1427 (prompt injection) and is
+not distinguishable from other "regular" input-validation problems
+that are covered (or will be covered) by CWE. In addition, significant
+progress has been made in understanding AI/ML issues, especially in
+generative AI, since the time the original submission was made. Since
+there would be too much overlap, this submission will be
+declined. Note: this submission replaces two earlier ones,
+ES2308-6b80112d (CDR #58) and ES2303-fad91ac9 (CDR #29). The two
+earlier submissions have been declined and will be closed once their
+information (e.g., references) has been merged into this submission.
+The original submitters will receive appropriate credit in any new
+entry/entries.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
 SUB.UNCLEAR - "Unclear weakness"
 
 Description: The submission's name and/or description does not clearly
@@ -125,28 +154,6 @@ this case, there is such a significant emphasis on input validation by
 the wider community, that the best option might be to create a new CWE
 entry that is focused on improper input validation for generative AI
 applications.
-
-Response: <SUBMITTER SHOULD REPLY HERE>
-
-
-----------
-
-SUB.OVERLAP - "Duplicate/Overlap"
-
-Description: The submission identifies a weakness, but it is a duplicate of
-(or partially overlaps) existing weaknesses, indicating problems with the
-submission or associated CWE entries.
-
-Resolution: The submission cannot progress to later phases until (1) the
-duplicate/overlap is understood and (2) it is clear how to resolve this
-duplicate/overlap.
-
-Comments: This new submission replaces two earlier ones,
-ES2308-6b80112d (CDR #58) and ES2303-fad91ac9 (CDR #29). The two
-earlier submissions have been declined and will be closed once their
-information (e.g., references) has been merged into this submission.
-The original submitters will receive appropriate credit in any new
-entry/entries.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
