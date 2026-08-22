@@ -104,6 +104,33 @@ URL: https://gist.github.com/PharaohBM7/fake123456example
 
 ACTIVE ISSUES:
 
+SUB.WITHDRAWN - "Withdrawn Submission"
+
+Description: The original submitter has withdrawn from active participation
+in further development of the submission, or the submitter has not
+responded to multiple requests for feedback. The submitter's withdrawal may
+be due to reasons such as lack of time, changing priorities, technical
+challenges in resolving issues with the submission, email address or other
+contact information that is no longer valid, etc.
+
+Resolution: The CWE Team must decide what to do with the submission in its
+current state, such as: (1) decline or close the submission outright; or
+(2) continue to work independently with the submission. For submissions
+that are ultimately integrated into CWE, the CWE Team will decide which
+credits to provide - based on the public information in the submission - or
+credit an "anonymous contributor."
+
+Comments: The submitter has not responded to recent inquiries. The CWE
+Team will update CWE-601 with a "redirect chain" example borrowing
+from this submission.
+
+Response: [NO RESPONSE NECESSARY.]
+
+
+----------
+
+
+
 SUB.OVERLAP - "Duplicate/Overlap"
 
 Description: The submission identifies a weakness, but it is a duplicate of
@@ -121,7 +148,7 @@ based on user input. We can include your suggestion as an example which shows
 a redirect chain as part of CWE-601. Let us know if you are okay with this 
 approach.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE NECESSARY.]
 
 
 ----------
@@ -147,7 +174,7 @@ that the application is doing a redirect based on user input. This distinction
 of using chained redirects is too low level to warrant a child entry to 
 CWE-601. Please confirm if you agree with this.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE NECESSARY.]
 
 
 ----------
@@ -167,10 +194,12 @@ Comments: The GitHub reference currently leads to a 404 error. Could you
 please provide alternative references or real-world examples that demonstrate 
 the significance of this weakness?
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [NO RESPONSE NECESSARY.]
 
 
 ----------
+
+RESOLVED ISSUES:
 
 SUB.ACTCHANGE - "Change in action for submission"
 
@@ -181,16 +210,12 @@ to the kinds of information that will need to be provided.
 Resolution: The submission cannot progress to Stage 3 (Content-Generation)
 until the informational needs are addressed.
 
-Comments: As mentioned in SUB.OVERLAP, your submission highlights another 
-way of doing an Open Redirect. As such, we would be happy to modify CWE-601
-to include redirect chains. Please let us know if you agree with the change.
+Comments: The CWE Team has chosen to treat this submission as a
+modification of CWE-601 to include redirect chains. See SUB.OVERLAP
+for more details.
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response: [RESOLVED ISSUE; DO NOT CHANGE]
 
-
-----------
-
-RESOLVED ISSUES:
 
 
 
