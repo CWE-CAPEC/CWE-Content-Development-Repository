@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2405-84711fc4
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Declined
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: 
 
@@ -265,7 +265,7 @@ CWE-Published: YYYY-MM-DD
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2026-08-28
 
 
 
