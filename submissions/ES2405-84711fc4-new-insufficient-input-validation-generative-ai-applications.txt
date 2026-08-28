@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2405-84711fc4
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Declined
 
 AFFECTED CWES: 
 
@@ -239,7 +239,7 @@ Init-Review: 2024-05-09
 
 Init-Consultation: 2024-05-16
 
-Init-Declined: YYYY-MM-DD
+Init-Declined: 2026-08-28
 
 Init-Accepted: YYYY-MM-DD
 
