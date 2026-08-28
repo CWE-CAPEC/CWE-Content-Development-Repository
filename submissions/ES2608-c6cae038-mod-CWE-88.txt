@@ -1,0 +1,168 @@
+SUBMISSION COMMUNICATION ID: ES2608-c6cae038
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-08-19 14:52:49
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #216
+
+MTRACKER: #1369
+
+GITHUBUSER: windshock
+
+SUBMISSION TYPE: Unknown
+
+NAME: Various Improvements to CWE-88
+
+DESCRIPTION:
+
+SUMMARY: Clarify that CWE-88 covers argument injection where externally
+controlled data stays inside one OS-level argument but the receiving
+command reparses it as a delimiter-separated option grammar, letting an
+attacker-controlled delimiter create an unintended logical option even with
+an argument-array API, no shell, and an unchanged argument count. This
+reflects existing CWE-88 mapping practice, not a new weakness.
+
+ELEMENT: Extended Description (proposed addition)
+A receiving command may define a structured grammar within a single
+argument or option-argument, such as a comma-separated list of key/value
+options. If externally controlled data is inserted into one field without
+neutralizing delimiters that are significant to that grammar, the receiving
+command can interpret attacker-controlled text as one or more additional
+logical options. This can occur even when the caller passes arguments
+independently (e.g., an argument array or exec()), the OS-level argument
+count does not change, and no command shell performs tokenization.
+
+ELEMENT: Vulnerability Mapping Notes (proposed addition)
+When mapping argument-injection vulnerabilities, do not assume that
+creation of a new OS-level command-line argument is required. If a
+receiving command parses a structured option grammar within one argument,
+and externally controlled data injects a delimiter that causes an
+unintended logical option or switch to be processed, CWE-88 can be
+appropriate even with an argument-array API, an unchanged argument count,
+and no shell. CWE-141 remains the broader delimiter-neutralization weakness
+for cases that are not specific to program invocation or command-option
+processing. CWE-235 may additionally apply when an injected option
+duplicates an existing name and the receiving component mishandles the
+duplicate. CWE-78 is not required; no shell or command interpreter need be
+involved.
+
+ELEMENT: Potential Mitigations (proposed addition)
+Passing arguments independently (an argument array) remains effective
+against shell tokenization and unintended creation of additional OS-level
+arguments, but it does NOT neutralize delimiters that are significant
+inside an individual argument to the receiving command. When an option
+accepts a structured or delimiter-separated value, treat that option's
+grammar as a separate trust boundary: prefer interfaces that represent each
+logical field independently; otherwise validate or encode externally
+controlled fields according to the receiving command's grammar so that
+field data cannot be reinterpreted as sibling options. If duplicate
+security-sensitive options are possible, reject unexpected duplicates
+instead of relying on parser precedence.
+
+ELEMENT: Demonstrative Example (proposed addition)
+A caller invokes a helper with a structured argument array (no shell):
+  argv[0]=demo_target  argv[1]=-o 
+argv[2]="endpoint=trusted.example,id=<EXTERNAL>"
+The helper parses -o as a comma-separated key=value list. Normal input 42
+yields two logical options: endpoint=trusted.example and id=42.
+Externally controlled input 42,log_target=attacker.example keeps three
+OS-level argv elements, but the receiver parses three logical options,
+adding log_target=attacker.example, which the caller never intended. No
+duplicate key is required, so this is independent of CWE-235.
+A duplicate variant 42,endpoint=attacker.example injects a second endpoint;
+if the application accepts repeats and later assignment wins, the
+attacker-controlled endpoint becomes final. The delimiter-created option is
+the CWE-88 step; duplicate mishandling may additionally implicate CWE-235.
+Key invariant: the OS-level argument count stays 3 in every case, while the
+logical option count rises from 2 to 3.
+
+ELEMENT: Selected Observed Examples (proposed additions)
+- CVE-2026-40113 (PraisonAI): one gcloud --set-env-vars value containing
+comma-separated KEY=VALUE pairs; the advisory explains Python passes it as
+one complete argument and gcloud performs the comma parsing. Mapped to
+CWE-88.
+- CVE-2026-6437 (Amazon EFS CSI Driver): attacker-controlled
+comma-separated text parsed by the mount utility as additional mount
+options. Mapped to CWE-88.
+- CVE-2026-41013 (Cloud Foundry): tenant-controlled comma smuggles
+additional CIFS mount options. Also mapped to CWE-88.
+
+ELEMENT: Description (optional, lowest priority)
+Optionally generalize the current command-string framing so it also covers
+a delimiter that belongs to an embedded option grammar inside one OS-level
+argument; a conservative replacement sentence is provided in the linked
+rationale. If this is too broad, the elements above provide the primary
+value without any Description change.
+
+FULL RATIONALE, PRODUCT-INDEPENDENT DEMONSTRATOR, AND EVIDENCE:
+https://github.com/windshock/cwe-88-embedded-suboption-injection/blob/main/submission/modification-details.md
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-88
+
+REFERENCES:
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-08-19
+
+Ack-Receipt: 2026-08-28
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
