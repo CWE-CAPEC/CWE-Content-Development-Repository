@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2606-11f89c19
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2026-06-28 14:35:09
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.ATTACK, SUB.RELREFS
 
 PUBTRACKER: #206
 
@@ -104,6 +104,72 @@ URL: https://github.com/caseit1987/etbv-framework
 ACTIVE ISSUES:
 
 
+SUB.ATTACK - "Too attack-focused"
+
+Description: The submission's name and/or description emphasizes the
+attack, not the weakness. Either the submission's weakness is not
+well-understood, or it is better described as an attack pattern, which may
+be suitable for inclusion in CAPEC.
+
+Resolution: An initial submission cannot progress to later phases unless it
+also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
+
+Comments: The submission highlights a chain of several different
+weaknesses to carry out attacks which cross trust boundaries, leading
+to full system compromise.  CWE is focused on categorizing specific,
+isolated weaknesses - that is, mistakes or flaws - and does not
+include entries whose sole purpose is to show potential chains in
+existing CWEs.  If there is a specific behavior in the chain leading
+to these types of attacks that is not currently covered by CWE, that
+would be useful to know.  There are some elements in existing CWE
+entries where ETBV could potentially be represented.  The first is
+documenting chaining relationships within the relationships of
+existing CWEs.  CWE includes information in the relationships when one
+weakness can potentially precede a different weakness in a chain.  If
+there are unique chaining relationships to ETBV, then these could be
+represented in the relationships of existing CWEs. You can see the
+list of all the current chaining relationships in CWE here
+https://cwe.mitre.org/data/reports/chains_and_composites.html. Another
+element that could be added to existing entries is observed examples.
+Observed examples are real world vulnerabilities, most commonly CVEs,
+that are associated with a given weakness.  If there are existing CVEs
+that cover ETBV that could be included as examples to existing CWEs,
+this would be a useful addition.  Lastly, we could include
+demonstrative examples, which are theoretical examples of a weakness.
+These often come in code examples, but could include a written example
+of how any of the ETBV related weaknesses work together in a chain.
+Please respond with your thoughts below if you think any of these
+three elements could be modified for existing CWEs to include ETBV.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The currently provided reference results in a 404 error from GitHub
+when attempting to access.  This most likely is an access issue rather than an
+invalid link issue as GitHub returns 404 error codes in situations where a user
+does not have access.  Please make the included reference public either through
+GitHub or by hosting through some other service.  If there are concerns with
+making this reference publicly available, please let us know.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+
 
 RESOLVED ISSUES:
 
@@ -117,7 +183,7 @@ Ack-Receipt: 2026-06-29
 
 Init-Review: 2026-07-02
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2026-08-28
 
 Init-Declined: YYYY-MM-DD
 
@@ -153,3 +219,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2026-06-29 sent email
 2026-07-02 sent email
+2026-08-28 sent email
