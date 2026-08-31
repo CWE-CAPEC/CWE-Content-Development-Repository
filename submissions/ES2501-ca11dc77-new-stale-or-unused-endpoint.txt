@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2501-ca11dc77
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -136,7 +136,7 @@ Init-Consultation: 2025-08-19
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-08-31
 
 Det-Requested: YYYY-MM-DD
 
@@ -171,3 +171,4 @@ COMMUNICATIONS LOG:
 2025-08-19 sent email
 2025-12-23 sent email
 2026-05-14 sent email
+2026-08-31 sent email
