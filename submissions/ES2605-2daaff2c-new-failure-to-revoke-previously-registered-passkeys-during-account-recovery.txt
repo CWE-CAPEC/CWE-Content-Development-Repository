@@ -37,7 +37,113 @@ than password verification.
 
 Because of this architecture, password resets do not automatically
 invalidate previously enrolled passkeys. This behavior is commonly
-considered 
+considered “by design” within the WebAuthn ecosystem.
+
+However, the weakness described here is not related to broken
+cryptography, authentication bypass, or flaws in the WebAuthn standard
+itself. The issue instead lies in how many applications currently
+implement account recovery and compromise remediation flows around
+persistent passkey authenticators.
+
+A common user expectation during account recovery is:
+
+- resetting the password,
+- reviewing suspicious activity,
+- revoking active sessions,
+- or selecting “logout all devices”
+
+should remove unauthorized access from previously compromised
+accounts.
+
+In practice, many applications continue trusting previously enrolled
+passkeys after these recovery actions without:
+
+- prominently informing the user,
+- forcing review of registered passkeys,
+- distinguishing passkeys from normal sessions,
+- or clearly communicating that attacker-controlled authenticators may still remain active.
+
+This creates a security gap between:
+
+1. the technical behavior of passkeys, and
+2. the security expectations created by recovery workflows.
+
+The weakness becomes particularly important in real-world compromise
+scenarios involving temporary account access.
+
+Example attack scenario:
+
+1. An attacker temporarily compromises a victim’s account through
+phishing, session theft, malware, social engineering, or physical
+device access.
+2. The attacker registers their own device as a passkey authenticator.
+3. The victim later detects suspicious activity and performs standard recovery actions such as:
+     - changing the password,
+     - logging out sessions/devices,
+     - reviewing suspicious activity,
+     - or initiating account recovery workflows.
+4. The victim reasonably believes the account has been secured.
+5. However, the attacker may still authenticate using the previously
+enrolled passkey because the passkey remains trusted independently of
+the password.
+
+From a technical perspective, this behavior may be
+intentional. However, from a security design and recovery integrity
+perspective, the problem is that:
+
+- the attacker persistence mechanism survives recovery,
+- users are not clearly informed,
+- and the recovery workflow may communicate a misleading sense of remediation completeness.
+
+This weakness effectively creates a form of long-term persistence
+through trusted authenticators.
+
+The issue is especially relevant because passkeys are intentionally designed to be:
+- phishing resistant,
+- difficult to revoke accidentally,
+- persistent across devices/ecosystems,
+- and treated as high-trust authenticators.
+
+As adoption of passwordless authentication increases, this persistence
+model introduces new account recovery risks that differ significantly
+from traditional password-based systems.
+
+Potential consequences include:
+
+- incomplete account recovery,
+- persistent unauthorized access after remediation,
+- reduced effectiveness of password-reset-based incident response,
+- misleading security assumptions by users,
+- difficulty identifying attacker-controlled authenticators and long-term attacker persistence through trusted passkeys.
+
+This weakness does not require broken authentication
+controls. Instead, it emerges from insufficient authenticator
+lifecycle transparency during security-sensitive recovery operations.
+
+The severity of this issue depends heavily on user expectations and
+implementation details. In environments where recovery flows strongly
+imply that “all unauthorized access has been removed,” persistent
+passkey authenticators may undermine the integrity of the recovery
+process itself.
+
+This issue may commonly affect:
+
+- WebAuthn/FIDO2 passkeys,
+- passwordless authentication systems,
+- hardware security keys,
+- and persistent authenticators independent from passwords.
+
+Possible mitigations include:
+
+- clearly warning users that passkeys remain active after password reset,
+- requiring passkey review during suspicious activity remediation,
+- optionally revoking passkeys during high-risk recovery events,
+- or introducing stronger visibility into previously registered authenticators.
+
+Therefore, this weakness arises when applications fail to properly
+communicate or manage persistent passkey authenticators during account
+recovery, potentially allowing attacker persistence after users
+believe compromise remediation has completed.
 
 RELATED WEAKNESSES:
 
