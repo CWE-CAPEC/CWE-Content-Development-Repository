@@ -1,0 +1,163 @@
+SUBMISSION COMMUNICATION ID: ES2609-b86fc2c1
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-09-07 18:36:59
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #222
+
+MTRACKER: #1378
+
+GITHUBUSER: kurvx
+
+SUBMISSION TYPE: Software
+
+NAME: Insufficient Verification of Authorization Prior to Recovery-Channel Identity Binding (PEW - Phantom Entity Weaponization)
+
+DESCRIPTION:
+
+This weakness occurs when a system permits a recovery or contact channel
+(such as an email address) to be reassigned to an account without
+requiring authorization from the real owner of that channel, and the
+subsequent claim or verification step treats successful interaction with
+the channel as sufficient proof that the reassignment was legitimate.
+
+The weakness is a failure to distinguish two separate facts that a
+correct system must verify independently: (1) whether the party
+completing a claim/verification action actually controls the channel in
+question, and (2) whether the assignment of that channel to the account
+being verified was itself authorized by the channel's real owner. A
+system exhibiting this weakness only ever checks the first fact. It
+never checks the second, and silently treats confirmation of the first
+as if it also confirmed the second.
+
+This is a design-level authorization gap, not an implementation defect
+in the verification mechanism itself: the mechanism that confirms
+channel possession (e.g., a verification link or code sent to the
+channel) may function exactly as intended. The flaw is that the system
+was never designed to ask whether the party who initiated the
+channel-to-account assignment had the standing to do so on behalf of the
+channel's real owner. As a result, an assignment made without the real
+owner's knowledge or consent is treated as validated the moment the real
+owner performs an ordinary, good-faith interaction with the channel -
+such as completing what they believe is their own registration or
+resolving a routine account notification.
+
+This should concern developers and designers because the resulting
+binding is not transient or easily detected: once the claim/verification
+step completes, the system has no further signal indicating anything
+irregular occurred, since every individual action involved (assigning a
+channel value, dispatching a verification communication, and the
+recipient's interaction with that communication) appears legitimate in
+isolation. The weakness is only observable in the composition of these
+steps, not in any single step examined alone, which makes it difficult
+to catch through standard code review or unit-level security testing
+focused on individual functions.
+
+The technical impact is the unauthorized and typically irreversible
+binding of a real identity's verified channel to an account or resource
+the channel's owner did not choose and has no relationship to. Depending
+on system design, this can result in denial of the channel owner's
+ability to independently use that channel elsewhere on the same
+platform, unauthorized attribution of a verified real-world identity to
+an account controlled by another party, or, where the party completing
+the initial reassignment also controls the destination channel, full
+unauthorized control of the affected account.
+
+A significant variation of this weakness is that it does not require the
+channel's real owner to hold any account, privilege, or prior
+relationship with the system, the account being modified, or the actor
+who performed the reassignment. The verification step's failure to check
+authorization of the assignment applies equally whether the real owner
+is a first-time visitor to the system or an established user of an
+entirely separate, unrelated account or organization within the same
+platform, since the missing check is agnostic to the claimant's prior
+context.
+
+A further variation involves the party who performs the initial
+reassignment already possessing legitimate authorization to modify the
+account being reassigned to (for example, modifying an account they
+already own or administer). In such cases, no separate authorization
+failure occurs at the reassignment step itself; the weakness is confined
+entirely to the claim-acceptance step's failure to verify that the new
+channel's real owner consented to the binding, independent of whether
+the party initiating the change had standing over the account.
+
+This weakness is distinct from failures where the same party is both the
+account holder and the party harmed by an unverified change to their own
+credentials, since here the party harmed by the unauthorized binding is
+never the party who held authorization over the account being modified.
+It is likewise distinct from workflow-sequencing failures confined to a
+single actor's own transaction, since the defining characteristic here
+is that an uninvolved party's ordinary, good-faith interaction with a
+legitimate system communication is what completes the unauthorized
+binding, without that party ever being aware a reassignment occurred.
+
+RELATED WEAKNESSES:
+
+
+REFERENCES:
+
+
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-09-07
+
+Ack-Receipt: 2026-09-14
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
