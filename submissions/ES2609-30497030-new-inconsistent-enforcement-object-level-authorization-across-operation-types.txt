@@ -1,0 +1,110 @@
+SUBMISSION COMMUNICATION ID: ES2609-30497030
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-09-04 20:30:03
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #220
+
+MTRACKER: #1376
+
+GITHUBUSER: hackwither
+
+SUBMISSION TYPE: Software
+
+NAME: Inconsistent Enforcement of Object-Level Authorization Across Operation Types
+
+DESCRIPTION:
+
+The product enforces an object-level authorization check on some operations
+against a resource but not on others, such that an actor who is correctly
+denied read access to an object may still perform state-changing operations
+on that same object.
+
+Object-level authorization is typically implemented first on retrieval
+paths, where the consequence of a gap (data exposure) is well understood
+and widely tested. Operations that modify, delete, transfer, or otherwise
+change the state of the same object are frequently reached through separate
+code paths in which the ownership binding is re-derived independently, or
+not derived at all. The result is an enforcement surface that is correct in
+one dimension and incomplete in another. Because the read path behaves
+correctly, test protocols that verify cross-actor read access return a
+clean result, and the gap on the mutation path is not surfaced by that
+testing.
+In an empirical analysis of 84 confirmed object-level authorization
+failures drawn from publicly disclosed reports, this pattern accounted for
+over 40% of cases, the single largest family observed. Deletion operations
+form a notable subset, since a successful unauthorized deletion produces no
+exfiltration signal for monitoring to detect.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-424
+   Other CWE-863
+
+REFERENCES:
+
+Title: Broken Object Level Authorization in the Wild: An Empirical Taxonomy from 100+ Bug Bounty Disclosures
+URL: https://arxiv.org/abs/2605.25865
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-09-04
+
+Ack-Receipt: 2026-09-14
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
