@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2505-cd0e973a
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Declined
 
 AFFECTED CWES: CWE-598
 
@@ -144,7 +144,7 @@ Init-Review: 2025-06-25
 
 Init-Consultation: 2025-08-19
 
-Init-Declined: YYYY-MM-DD
+Init-Declined: 2026-09-14
 
 Init-Accepted: YYYY-MM-DD
 
@@ -181,3 +181,4 @@ COMMUNICATIONS LOG:
 2025-08-19 sent email
 2025-12-23 sent email
 2026-05-14 sent email
+2026-09-14 sent email
