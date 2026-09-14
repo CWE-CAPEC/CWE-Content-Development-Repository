@@ -1,0 +1,160 @@
+SUBMISSION COMMUNICATION ID: ES2609-739b4868
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-09-07 14:59:57
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: 
+
+MTRACKER: #1377
+
+GITHUBUSER: Unrealisedd
+
+SUBMISSION TYPE: Software
+
+NAME: Insufficient Constraints in Cryptographic Proof Relations
+
+DESCRIPTION:
+
+The product relies on a cryptographic proof to establish a computation or
+predicate, but the relation used for proof verification omits or
+incorrectly encodes a required security condition. Consequently, a proof
+that satisfies the implemented relation can be accepted even though the
+intended computation or predicate has not been established.
+
+Proof-based software separates the production of supporting values, called
+the witness, from the constraints that establish which values are
+acceptable. An honest witness generator may calculate every value
+correctly, while the enforced constraints permit other values that violate
+the intended security property. Successful tests using the honest generator
+therefore do not establish that the proof relation adequately constrains
+the computation.
+
+The defining mistake is that the enforced relation establishes a weaker
+claim than the application relies upon. This can arise when a condition is
+checked only during witness generation, when required bounds or
+relationships are omitted, when program logic is incorrectly translated
+into constraints, or when circuit components are combined without enforcing
+their shared assumptions.
+
+Affected contexts include zero-knowledge proof circuits, virtual machines
+that prove program execution, recursive proof aggregation,
+privacy-preserving credential checks, and outsourced computation. The
+weakness is not specific to one programming language, proof protocol, or
+blockchain.
+
+For example, a helper may compute a result without the proof relation
+adequately binding that result to the claimed calculation. A credential
+circuit may establish possession of a valid credential while omitting a
+predicate required for eligibility. An aggregation circuit may verify
+component proofs individually without enforcing a required relationship
+between their public states. These are illustrative manifestations of the
+same constraint-enforcement failure.
+
+Potential consequences include acceptance of incorrect computational
+claims, unauthorized state changes, or acceptance of ineligible
+credentials. The impact depends on how the application uses the verified
+claim.
+
+This weakness concerns missing or incorrect constraints in the proved
+relation. It excludes defects in an underlying cryptographic protocol or
+verification algorithm that accepts a proof violating that relation. It
+also excludes witness-generation errors that only prevent valid proofs, and
+internal values whose freedom does not weaken a required security property.
+Multiple valid witnesses alone do not establish underconstraint.
+
+Prevention requires specifying the intended security claim and ensuring
+that the enforced constraints establish it, including relevant domain
+restrictions and composition invariants. Correcting only an untrusted
+witness generator does not repair an inadequate proof relation. Changes to
+the relation must also be reflected in the verification artifacts accepted
+by relying parties.
+
+Underconstrained circuits are an established research topic. This proposal
+seeks a dedicated CWE representation of their recurring failure mechanism,
+rather than claiming first discovery. Existing validation and verification
+CWEs provide broad or partial coverage; the proposed entry would supply
+proof-specific boundaries, detection guidance, and remediation.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-20
+
+REFERENCES:
+
+Title: SoK: What Don't We Know? Understanding Security Vulnerabilities in SNARKs
+URL: https://www.usenix.org/conference/usenixsecurity24/presentation/chaliasos
+
+Title: Practical Security Analysis of Zero-Knowledge Proof Circuits
+URL: https://www.usenix.org/conference/usenixsecurity24/presentation/wen
+
+Title: zkVM Underconstrained Vulnerability
+URL: https://github.com/risc0/risc0/security/advisories/GHSA-g3qg-6746-3mg9
+
+Title: Insufficient range checks of BabyBear arithmetic
+URL: https://github.com/succinctlabs/sp1/security/advisories/GHSA-f77q-r5qm-w4m8
+
+Title: Compiler hints - gnark documentation
+URL: https://docs.gnark.consensys.io/HowTo/write/hints
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-09-07
+
+Ack-Receipt: 2026-09-14
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
