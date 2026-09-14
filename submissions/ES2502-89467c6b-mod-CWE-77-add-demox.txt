@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-89467c6b
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Declined
 
 AFFECTED CWES: 
 
@@ -104,7 +104,7 @@ Init-Review: 2025-03-18
 
 Init-Consultation: 2025-05-20
 
-Init-Declined: YYYY-MM-DD
+Init-Declined: 2026-09-14
 
 Init-Accepted: YYYY-MM-DD
 
@@ -141,3 +141,4 @@ COMMUNICATIONS LOG:
 2025-05-20 sent email
 2025-12-23 sent email
 2026-05-20 sent email
+2026-09-14 sent email
