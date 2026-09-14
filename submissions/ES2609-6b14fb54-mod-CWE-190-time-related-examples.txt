@@ -1,0 +1,103 @@
+SUBMISSION COMMUNICATION ID: ES2609-6b14fb54
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-09-03 14:15:44
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #218
+
+MTRACKER: #1373
+
+GITHUBUSER: kripthor
+
+SUBMISSION TYPE: Unknown
+
+NAME: Modify CWE-190 to include time-related content
+
+DESCRIPTION:
+
+CWE-190 currently has no time-related content. All Observed Examples are
+memory-corruption chains, and the entry text does not mention timestamp
+arithmetic. Integer overflow of time values is a distinct manifestation of
+this weakness. It has a fixed deadline (signed 32-bit time_t wraps at
+03:14:07 UTC on 19 January 2038), it already has published CVEs mapped to
+CWE-190 by CISA/ICS-CERT, and its consequences (authentication failure,
+denial of service, log corruption, loss of safety functions) differ from
+the buffer-overflow chains the entry currently illustrates. Adding one
+observed example and two short demonstrative examples would make the entry
+representative of this class and help raise awareness at the same time.
+This class is subject of active work under the ITU-T SG17 Technical Paper
+XSTP.epoch and IEEE P4150.
+
+I have observed examples and code to share, but this does not fit all in
+5000 chars. 
+
+RELATED WEAKNESSES:
+
+   Other CWE-190
+
+REFERENCES:
+
+
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-09-03
+
+Ack-Receipt: 2026-09-14
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
