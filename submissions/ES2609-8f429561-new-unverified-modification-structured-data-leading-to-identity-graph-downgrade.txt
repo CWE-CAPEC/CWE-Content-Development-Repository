@@ -1,0 +1,176 @@
+SUBMISSION COMMUNICATION ID: ES2609-8f429561
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-09-08 17:42:45
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #219
+
+MTRACKER: #1374
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: Unverified Modification of Structured Data Leading to Identity-Graph Downgrade
+
+DESCRIPTION:
+
+CWE Summary
+
+Unverified Modification of Structured Data Leading to Identity Graph
+Downgrade is a semantic layer integrity failure in which structured data
+(e.g., JSON LD, microdata, RDFa) can be silently modified, removed, or
+downgraded without triggering validation errors, logging, or provenance
+alerts. The affected system accepts the altered data as canonical, enabling
+identity graph manipulation, authority suppression, and misclassification.
+This is the core of the weakness.
+
+CWE Description
+
+The product accepts structured data (such as schema.org JSON LD) without
+verifying the authenticity, completeness, or integrity of the semantic
+fields. Because structured data is treated as authoritative by search
+engines, identity systems, and automated classifiers, unverified
+modification of these fields can lead to silent downgrade of identity
+authority, removal of canonical attributes, suppression of roles, or
+misclassification of the entity.
+
+This weakness occurs when the system lacks semantic integrity checks,
+provenance validation, or canonical field protection. As a result,
+attackers or automated systems can remove or alter fields (e.g.,
+description, hasOccupation, sameAs, subjectOf, identifier,
+mainEntityOfPage) without detection. The modified data is then ingested as
+legitimate, causing downstream identity graph corruption.
+
+Extended Description
+
+Unlike traditional integrity failures (e.g., checksum bypass, signature
+forgery), this weakness targets the semantic layer of structured data.
+Because schema markup is not cryptographically protected and is often
+treated as authoritative, attackers or automated systems can manipulate
+identity critical fields without triggering syntactic validation errors.
+
+This weakness is especially impactful for individuals, organizations, and
+systems whose identity, authority, or classification depends on structured
+data. Silent removal or modification of schema fields can cause search
+engines and identity systems to downgrade or misinterpret the entity.
+
+Attack Surface
+
+Each item begins with a Guided Link.
+* Structured data - JSON LD, microdata, RDFa
+* Identity graphs - search engines, knowledge panels
+* Canonical fields - occupations, identifiers, sameAs links
+* Authority signals - résumé links, biography pages
+* Semantic ingestion pipelines - automated classification systems
+
+Impact
+
+Each item begins with a Guided Link.
+* Identity downgrade - removal of contextual authority
+* Misclassification - incorrect or incomplete identity representation
+* Suppression - disappearance of canonical fields
+* Authority loss - weakened or incomplete identity signals
+* Semantic drift - schema no longer matches reality
+
+Demonstrative Example from HunterStorm.com
+
+A system silently removed the description field from the structured data
+for the Person entity on hunterstorm.com. The modified schema remained
+syntactically valid, so search engines ingested the downgraded identity
+representation without alerting the publisher. This resulted in loss of
+contextual authority and a weaker, less informative identity graph entry
+for the affected person. The absence of the description field caused search
+engines to treat the entity as less authoritative, contributing to
+misclassification and diminished identity clarity.
+
+Root Cause
+* No semantic integrity checks
+* No provenance validation
+* No canonical field protection
+* Schema treated as authoritative without verification
+
+Potential Mitigations
+
+Each item begins with a Guided Link.
+
+* Canonical hashing - hash the schema block
+* Digital signatures - sign structured data
+* Provenance chains - track schema changes
+* Schema monitoring - alert on field removal
+* Redundant authority anchors - multiple sameAs links
+
+RELATED WEAKNESSES:
+
+   Other CWE-345
+   Other CWE-353
+   Other CWE-1286
+   Other CWE-354
+
+REFERENCES:
+
+Title: CWE-HS-000001 - Unverified Modification of Structured Data Leading to Identity-Graph Downgrade
+URL: https://hunterstorm.com/research/mitre/cwe-catalog/cwe-hs-000001-unverified-modification-of-structured-data-leading-to-identity-graph-downgrade/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-09-08
+
+Ack-Receipt: 2026-09-14
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
