@@ -1,0 +1,146 @@
+SUBMISSION COMMUNICATION ID: ES2609-707f9982
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-09-14 05:30:04
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #223
+
+MTRACKER: #1380
+
+GITHUBUSER: tomasilluminati
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Handling of Filesystem Name-Equivalence Semantics in Security Controls
+
+DESCRIPTION:
+
+The product applies a security control to files or directories using rules
+for comparing names that are incompatible with the target filesystem's
+lookup rules. This disagreement can cause the control to overlook another
+name for a protected resource or to treat a different resource as
+authorized.
+
+Some filesystems resolve distinct Unicode spellings to the same directory
+entry. These spellings may be canonically equivalent, such as composed and
+decomposed representations of the same text, or equivalent under the
+filesystem's case-insensitive comparison rules. The filesystem may also
+preserve the spelling used to create the entry while accepting equivalent
+spellings during lookup. A control that compares names byte for byte may
+therefore distinguish names that refer to the same resource.
+
+Applying normalization before validation does not necessarily resolve the
+problem. The control may use incomplete case mappings, combine
+normalization and case mapping incorrectly, or rely on Unicode character
+data whose relevant mappings differ from those used by the filesystem. The
+control may also make names compare equal even though the filesystem
+resolves them to separate resources. Compatibility normalization, for
+example, can introduce equivalences that the filesystem does not recognize.
+Both kinds of mismatch can occur in the same implementation.
+
+The consequences depend on the control. Missed equivalence may allow access
+to a file or directory covered by a deny rule, include excluded content in
+a generated or published artifact, or assign different synchronization keys
+to operations on the same resource. Those operations may then run
+concurrently despite a requirement to serialize them. Excess equivalence
+may cause an allow rule to grant access to an unintended resource. The
+resulting access remains subject to the privileges of the process
+performing the operation.
+
+This weakness concerns developers and designers who enforce permissions,
+exclusions, collision checks, or synchronization in application code and
+then rely on the filesystem to resolve the names involved. A control that
+works as intended on one filesystem may fail on another with different
+lookup rules, even when every operation is checked. A difference in
+comparison behavior alone is not sufficient to establish the weakness. It
+must cause the control to violate an intended security property.
+
+The mismatch can occur with well-formed Unicode names and does not require
+visual deception, malformed encodings, or a change in a name's binding
+between check and use. A race condition is not required, although incorrect
+synchronization keys can contribute to race-condition vulnerabilities.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-436
+   ChildOf CWE-436
+
+REFERENCES:
+
+Title: CVE-2026-23950 - Unicode filename equivalence mismatch in node-tar path reservations
+URL: https://github.com/isaacs/node-tar/security/advisories/GHSA-r6q2-hw4h-h46w
+
+Title: CVE-2026-49401 - Unicode pathname equivalence mismatch in Deno permissions
+URL: https://github.com/denoland/deno/security/advisories/GHSA-8xpq-cjcf-3wh9
+
+Title: CVE-2026-59890 - Unicode normalization mismatch in setuptools manifest exclusions
+URL: https://github.com/pypa/setuptools/security/advisories/GHSA-h35f-9h28-mq5c
+
+Title: CVE-2026-14978 - Unicode normalization mismatch in go-slug exclusions
+URL: https://discuss.hashicorp.com/t/hcsec-2026-31-go-slug-vulnerable-to-exclusion-bypass-in-terraformignore-handling/77668
+
+Title: CVE-2026-45110 - libarchive exclusion-normalization proposal
+URL: https://github.com/libarchive/libarchive/pull/3359
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-09-14
+
+Ack-Receipt: 2026-09-14
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
