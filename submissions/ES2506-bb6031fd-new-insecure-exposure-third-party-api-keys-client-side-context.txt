@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2506-bb6031fd
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Consultation
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2025-06-09 12:17:39
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.UNCLEAR, SUB.ABS.MULTWEAK, SUB.ABS.LOWLEVEL, SUB.RELS, SUB.RELREFS
 
 PUBTRACKER: #156
 
@@ -74,6 +74,145 @@ URL: https://arxiv.org/abs/2005.08698
 
 ACTIVE ISSUES:
 
+SUB.UNCLEAR - "Unclear weakness"
+
+Description: The submission's name and/or description does not clearly
+identify a weakness, or it is written in a way that is vague and could
+cause the submission to be incorrectly mapped to.
+
+Resolution: A submission cannot progress past the consultation phase until
+SUB.UNCLEAR is addressed.
+
+Comments: While it is clear how API keys could be exposed if inserted
+into client side source code, it is not clear what weakness in
+configuration of a JavaScript-accessible runtime environment would
+lead to exposure of an API key.  For instance, is this just an
+authorization issue that leads to any user having access?  Is this an
+authentication issue where the runtime environment does not check who
+a user is before accessing?  Is this some other type of issue?  Please
+expand more on the weakness being described specifically for runtime
+environment storing of API keys.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+
+SUB.ABS.MULTWEAK - "Multiple weaknesses"
+
+Description: The submission describes or suggests multiple independent
+weaknesses that each might deserve a separate CWE ID.
+
+Resolution: The submission cannot progress past the consultation phase
+until the number of relevant weaknesses is identified. If there are
+multiple weaknesses, separate names and descriptions are needed.
+
+Comments: While the general idea of protecting API keys on the client
+side is clear from the submission, two different weakness scenarios
+are described which could potentially be in different parts of the
+subtree.  The first is including API keys in client side code.  The
+second is not properly protecting API keys in JavaScript runtime
+environments.
+
+For the first weakness, there could potentially be a child entry to
+CWE-540: Inclusion of Sensitive Information in Source Code that
+specifically talks about client side source code, or the first
+weakness could be included as part of CWE-540.  API keys could then be
+used as an example.
+
+For the second weakness, it is still unclear exactly where this would
+fit in as more details are needing on the specifics of the weakness
+(see SUB.UNCLEAR).
+
+Please indicate if you agree or disagree with the assessment that
+there are two weaknesses in this submission.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: The submission focuses solely on third party API keys, which
+could potentially be too low level.  It might be better suited to
+frame a new entry (or modification) around any sensitive info being
+inserted into client-side source code.  Once we have a better idea of
+where this submission will proceed, it will be easier to ensure that
+the new entry is not too specific.  Please indicate your agreement or
+disagreement.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: Because there is uncertainty around the exact weakness or
+weaknesses being described it is difficult to know where a new entry
+or entries would fall in the CWE hierarchy.  For a weakness focused on
+including sensitive info into client side source code, a parent of
+CWE-540: Inclusion of Sensitive Information in Source Code might make
+sense.  For the weakness about misconfiguring a runtime environment
+that stores sensitive info we will need more details, but the
+suggested relationship of CWE-522: Insufficiently Protected
+Credentials could apply.  Please indicate if you agree or disagree
+with this assessment.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+----------
+
+SUB.RELREFS - "No relevant references"
+
+Description: The submission does not provide relevant references that
+explain the weakness, or the relevance is not easily found.
+
+Resolution: The submission is not likely to progress to later phases if
+there are no applicable, easily-accessible references. The submitter could
+resolve by providing additional details such as a section name and quote
+from the reference.  If no suitable references can be found, the CWE Team
+may decide to make an exception.
+
+Comments: The two provided references do not seem to match their
+titles.  The first reference explains setting up firebase rules, so it
+might be applicable, but it does not directly explain the weakness.
+The second reference does not appear to be the correct link, as there
+does not seem to be an arxiv reference titled "Harvesting Public Cloud
+Secrets from GitHub Repositories".  Please correct the titles and
+links and provide an additional reference that talks specifically to
+the weakness (or weaknesses).
+
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 
 RESOLVED ISSUES:
@@ -88,7 +227,7 @@ Ack-Receipt: 2025-06-10
 
 Init-Review: 2025-06-10
 
-Init-Consultation: YYYY-MM-DD
+Init-Consultation: 2026-09-28
 
 Init-Declined: YYYY-MM-DD
 
@@ -124,3 +263,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2025-06-10 sent email
 2025-06-10 sent email
+2026-09-28 sent email
