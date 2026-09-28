@@ -1,0 +1,226 @@
+SUBMISSION COMMUNICATION ID: ES2609-4e5b4da0
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-09-23 05:36:24
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #225
+
+MTRACKER: #1389
+
+GITHUBUSER: ninadphalak
+
+SUBMISSION TYPE: Software
+
+NAME: Emission of Sensitive Information Before Incremental Inspection Can Complete
+
+DESCRIPTION:
+
+-------------------------------------------------------------------------------
+NAME
+-------------------------------------------------------------------------------
+Emission of Sensitive Information Before Incremental Inspection Can
+Complete
+
+-------------------------------------------------------------------------------
+DESCRIPTION
+-------------------------------------------------------------------------------
+The product inspects an outgoing stream for sensitive information in
+increments, and emits each increment before it can determine whether that
+increment forms part of a sensitive value that is still arriving.
+
+A product that streams generated output to a client commonly applies a
+redaction or content filter to each increment as it is produced, so that
+the
+client can begin consuming output before generation completes. Where the
+inspection operates on an increment in isolation, a sensitive value divided
+across an increment boundary matches no pattern in either part, and the
+client
+reassembles the original value.
+
+The intuitive remedy -- retaining a fixed number of trailing characters
+from
+the previous increment and inspecting the join -- does not remove the
+weakness,
+and produces a more serious variant of it. Inspection of the join
+identifies
+the value correctly, and the product records a successful redaction, but
+the
+leading part of the value was emitted with the previous increment and
+cannot be
+recalled. The client therefore receives a fragment of the sensitive value
+followed by a redaction marker. The product's own logs report that the
+value
+was redacted.
+
+A fixed retention window is additionally insufficient whenever the patterns
+being matched have no bounded length. Cryptographic key blocks, signed
+tokens
+and several classes of credential have no fixed length, so no constant
+window
+size is large enough for all of them.
+
+The weakness is not that a value is missed. It is that the product commits
+output to an irreversible channel before it has established that the output
+is
+safe to commit. Correctness requires that no text be emitted until it is
+known
+that no match could still extend into it.
+
+-------------------------------------------------------------------------------
+COMMON CONSEQUENCES
+-------------------------------------------------------------------------------
+Scope:	Confidentiality
+Impact: Read Application Data
+Note:	Sensitive data the product was configured to withhold is delivered
+to
+	the client, and the product's audit record states that it was
+withheld,
+	so the disclosure is not detectable from the product's own logs.
+
+Scope:	Integrity
+Impact: Modify Application Data
+Note:	Output is corrupted where a redaction marker is concatenated onto a
+	leading fragment of the value it was meant to replace.
+
+-------------------------------------------------------------------------------
+DETECTION METHOD
+-------------------------------------------------------------------------------
+The distinguishing property is invariance to increment boundaries. For any
+division of the same input into increments, the concatenation of the
+emitted
+output must be byte-identical to the result of inspecting the whole input
+at
+once.
+
+Testing whether the reassembled output contains the complete sensitive
+value is
+necessary but NOT sufficient: an implementation using a fixed retention
+window
+satisfies that weaker check while having already emitted the leading
+fragment.
+The stronger invariant detects boundary disclosure, duplicate redaction and
+partial redaction with a single assertion.
+
+-------------------------------------------------------------------------------
+POTENTIAL MITIGATIONS
+-------------------------------------------------------------------------------
+Phase: Architecture and Design
+
+1. Accumulate output to a natural boundary and inspect the accumulated
+block
+   before emitting it. Correct, and costs the latency benefit of streaming
+in
+   proportion to the block size.
+
+2. Compute, for each increment, the furthest position past which no pattern
+   could still extend, emit up to that position and retain the remainder.
+This
+   preserves streaming. The retained remainder must be bounded so that
+input
+   without delimiters cannot grow it without limit, and on reaching that
+bound
+   the product must fail closed rather than emit the retained text. A bound
+that
+   releases on overflow reintroduces the weakness with a larger constant.
+
+Phase: Implementation
+
+3. Do not write redacted text back into the buffer being inspected.
+Rewriting
+   the inspected buffer displaces match offsets and deduplication keys,
+which
+   has been observed to delete unrelated output on overlapping matches.
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-212
+   Other CWE-201
+   Other CWE-359
+   Other CWE-200
+
+REFERENCES:
+
+Title: Split-Boundary Leaks in Streaming Guardrails (Phalak, N., Zenodo, 2026)
+URL: https://doi.org/10.5281/zenodo.22909585
+
+Title: [Bug]: Streaming guardrails: value split across two SSE chunks can pass per-chunk checks
+URL: https://github.com/BerriAI/litellm/issues/41611
+
+Title: Streaming bypasses guardrails/middleware
+URL: https://github.com/langchain-ai/langchain/issues/35011
+
+Title: bug: mask sensitive data on output rail is unusable in 0.24.0
+URL: https://github.com/NVIDIA-NeMo/Guardrails/issues/2375
+
+Title: Language Model Middleware (AI SDK Core documentation)
+URL: https://ai-sdk.dev/docs/ai-sdk-core/middleware
+
+Title: docs: guardrails example leaves wrapStream unimplemented
+URL: https://github.com/vercel/ai/issues/21209
+
+Title: [BUG] PIIDetector emits PII in the clear when a match is split across stream chunks, and deletes text on overlapping detections
+URL: https://github.com/mastra-ai/mastra/issues/23783
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-09-23
+
+Ack-Receipt: 2026-09-28
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
