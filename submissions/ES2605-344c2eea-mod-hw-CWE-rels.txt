@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2605-344c2eea
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Modified
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-1220, CWE-1299, CWE-1303, CWE-1272, CWE-1240
 
 ORIGIN: sub-server
 
@@ -120,7 +120,7 @@ Internal-Update: 2026-06-18
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2026-09-30
 
 Final-Coord: YYYY-MM-DD
 
@@ -141,3 +141,4 @@ COMMUNICATIONS LOG:
 2026-05-21 action group-discussion
 2026-06-17 sent email
 2026-06-18 sent email
+2026-09-30 sent email
