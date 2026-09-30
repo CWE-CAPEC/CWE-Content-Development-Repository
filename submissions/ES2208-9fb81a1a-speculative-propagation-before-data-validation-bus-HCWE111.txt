@@ -6,7 +6,7 @@ ACTION TYPE: New Entry
 
 AFFECTED CWES:
 
-SUBMISSION STATUS: Det-Review
+SUBMISSION STATUS: Det-Consultation
 
 ORIGIN: sub-server
 
@@ -14,7 +14,9 @@ SUBMISSION DATE: 2022-08-25 15:18:55
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.UNCLEAR, SUB.RELS
+ISSUE DETAILS: SUB.RELS, SUB.MISC
+
+FIELDCHANGE: PLATFORMS, CONSEQ, DEMOX, OBEX, MITIGATION, REFS, RELATED
 
 PUBTRACKER: #13
 
@@ -36,10 +38,6 @@ timely manner.
 
 EXTENDED DESCRIPTION:
 
-(ADDITIONAL DESCRIPTION FOLLOWS; this needs to be corrected and
-refined in later phases after completion of the Initial-Consultation
-phase.)
-
 Some products may use an architecture with a shared bus that is
 accessible by multiple devices, in which these devices can issue
 requests that utilize the shared bus. There may be an on-chip
@@ -56,29 +54,34 @@ write request from a controller initiator (e.g., sending the header to
 the interconnect for writing N words of data, with N ranging from 1 to
 the maximum burst length allowed). The interconnect then speculatively
 propagates the request to the target peripheral through the shared bus
-before the corresponding data are received at the interconnect.  This
+before the corresponding data are received at the interconnect. Here,
+the word "speculatively" refers to the fact that the interconnect
+propagates the request assuming that the controller will at some point
+provide the data, thus releasing the use of the bus.  This
 speculatively reserves the bus to the manager transaction issuer,
-which is left free to delay its data provisioning phase.    This reserves
-the whole bus path between the initiator and the target peripheral
-until all of the words associated with the request are provided by the
-controller.
+which is left free to delay its data provisioning phase.  This
+reserves the whole bus path between the initiator and the target
+peripheral until all of the words associated with the request are
+provided by the controller.
 
-Here, the word "speculatively" refers to the fact that the
-interconnect propagates the request assuming that the controller will
-at some point provide the data, thus releasing the use of the bus. The
-interconnect assumes a cooperative behavior from the controller, thus
-implicitly trusting that the controller will complete the transaction
-and release the bus for the use from the other controllers.
+The interconnect assumes a cooperative behavior from the controller,
+thus implicitly trusting that the controller will complete the
+transaction and release the bus for the use from the other
+controllers. A malicious, faulty, or misbehaving manager module can
+generate a denial-of-service condition in preventing access to the
+write data link from all of the other managers in the system, and
+unboundedly inhibit the write access to one or multiple peripherals in
+the system (i.e., memories, I/Os, etc.).
 
-A malicious, faulty, or misbehaving manager module can generate a
-denial-of-service condition in preventing access to the write data
-link from all of the other managers in the system, and unboundedly
-inhibit the write access to one or multiple peripherals in the system
-(i.e., memories, I/Os, etc.).
-
-A full description and investigation of the issue for one of the most
-popular standards for on-chip communication deployed in modern systems on a
-chip is reported in [REF-XXX] and [REF-YYY].
+Some switching methodologies may be susceptible to this weakness in
+modern on-chip multi-channel communication standards, such as the
+cut-through switching policy, a switching methodology for high
+performance commonly implemented at the interconnect level. In
+cut-through, a request is propagated independently on the receipt at
+the interconnect level of the corresponding data. If the controller
+issuing a write request delays the provisioning of the corresponding
+data, the other controllers experience delays in accessing the
+bus. Such delays are capable of generating denial of service."
 
 MODES OF INTRODUCTION:
 
@@ -127,7 +130,7 @@ Impact: Memory-access delays; Denial-of-Service; I/O access delays, Deadline mis
 Likelihood: High
 
 Note: The attacker can leverage this weakness to generate unbounded
-delays and Denial-of-Service in the access of shared resources. The
+delays and denial of service (DoS) in the access of shared resources. The
 system interconnect might be left in an inconsistent state, requiring
 a partial or full reset of the network, according to the
 implementation.
@@ -140,17 +143,13 @@ DEMONSTRATIVE EXAMPLES:
 
 INTRO TEXT:
 
-Architectural description reported
-
-BAD CODE:
-
-LANGUAGE: Not language-specific
-
 The interconnect designer might use an interconnect using cut-through
-switching or using a third-party interconnect not disclosing the type
-of implemented switching. Cut-through has been demonstrated to
-generate the provided issue in modern on-chip multi-channel
-communication standards.
+switching or a third-party interconnect that does not disclose the type
+of implemented switching. The cut-through switching policy is a
+switching methodology for high performance commonly implemented at the
+interconnect level. In cut-through, a request is propagated
+independently on the receipt at the interconnect level of the
+corresponding data.
 
 The following figure provides an example on the AMBA AXI full on-chip
 communication standard, deployed on an FPGA SoC platform for
@@ -158,69 +157,195 @@ demonstration. The architecture is multi-manager. However, for
 simplicity, only one generic hardware manager module $HA_i$ is
 reported.
 
-[SEE IMAGE ES2208-9fb81a1a-demox-intro.png]
-
-
-EXPLANATORY TEXT:
-
 The figure reports a schematic representation of the behavior of an
 interconnect implementing cut-through switching ($S_i^{I,CT}$) on a
 sample AXI write transaction.
 
-(a) $HA_i$ starts the write transaction issuing the address request $A$. In this example, $A$ is a four-word burst request.
-(b) $A$ is sampled by $S_i^{I,CT}$ and immediately routed to $M^I$. $HA_i$ starts providing the data words corresponding to $A$. The data words $W = {W_1, ... , W_4^L}$ are consecutively sampled by $S_i^{I,CT}$. The last word of the burst is marked by $HA_i$ as last (L) word, hence named $W_4^L$.
-(c) $W$ are routed through the network following the address request $A$, until the last word $W_4^L$ is sampled by the FPGA-PS interface $S_{PS}$.
-(d) After a service delay, $S_{PS}$ replies with a write response $B$ to acknowledge $HA_i$ about the completion of the transaction. $B$ is routed to $HA_i$ by $I_{\text{AXI}}$. The write transaction is completed.
+(a) $HA_i$ starts the write transaction issuing the address request
+$A$. In this example, $A$ is a four-word burst request.
 
-In step (b), $S_i^{I,CT}$ propagates $A$ to $M^I$ regardless of the provisioning of the corresponding data words $W$ by $HA_i$.
-The propagation of $A$ to $M^I$ books the $M^I$'s write channel to $HA_i$, which should provide the write data $W$ corresponding to $A$.
-No timing constraints on $HA_i$ to provide $W$ after $A$ has been propagated to $M^I$ are defined in the AXI standard. Thus, $HA_i$ can arbitrarily delay the provisioning of $W$.
-$M^I$ is the shared port among all the hardware managers in the system to access the shared subordinate resource (the memory).
-Therefore, once $A$ is propagated to $M^I$ and $HA_i$ does not provide $W$, $M^I$ is stalled and no other hardware managers in the system can access it.
-Cut-through $S_i^{I,CT}$ implicitly trusts $HA_i$ that once $A$ is propagated to $M^I$, $HA_i$ will complete the transaction as soon as possible providing $W$ and then leaving the access of $M^I$ to the other hardware managers in the system.
+(b) $A$ is sampled by $S_i^{I,CT}$ and immediately routed to
+$M^I$. $HA_i$ starts providing the data words corresponding to
+$A$. The data words $W = {W_1, ... , W_4^L}$ are consecutively sampled
+by $S_i^{I,CT}$. The last word of the burst is marked by $HA_i$ as
+last (L) word, hence named $W_4^L$.
 
-A single malicious/misbehaving manager delaying the provisioning of the data can delay the access to the shared resource from the other hardware managers in the system, endangering the availability of the shared resources, thus generating a DoS for all the other hardware managers in the system.
-Since AXI does not provide a methodology to abort a faulty transaction once initiated, if no other recovery mechanisms are provided, a reset of the interconnect network is required.
+(c) $W$ are routed through the network following the address request
+$A$, until the last word $W_4^L$ is sampled by the FPGA-PS interface
+$S_{PS}$.
+
+(d) After a service delay, $S_{PS}$ replies with a write response $B$
+to acknowledge $HA_i$ about the completion of the transaction. $B$ is
+routed to $HA_i$ by $I_{\text{AXI}}$. The write transaction is
+completed.
+
+
+BAD CODE:
+
+LANGUAGE: Not language-specific
+
+[SEE IMAGE ES2208-9fb81a1a-demox-intro.png]
+https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2208-9fb81a1a-demox-intro.png
+
+
+EXPLANATORY TEXT:
+
+In step (b), $S_i^{I,CT}$ propagates $A$ to $M^I$ regardless of the
+provisioning of the corresponding data words $W$ by $HA_i$.  The
+propagation of $A$ to $M^I$ books the $M^I$'s write channel to $HA_i$,
+which should provide the write data $W$ corresponding to $A$.  No
+timing constraints on $HA_i$ to provide $W$ after $A$ has been
+propagated to $M^I$ are defined in the AXI standard. Thus, $HA_i$ can
+arbitrarily delay the provisioning of $W$. $M^I$ is the shared port
+among all the hardware managers in the system to access the shared
+subordinate resource (the memory).
+
+Therefore, once $A$ is propagated to $M^I$ and $HA_i$ does not provide
+$W$, $M^I$ is stalled and no other hardware managers in the system can
+access it.
+
+Cut-through $S_i^{I,CT}$ implicitly trusts $HA_i$ that once $A$ is
+propagated to $M^I$, $HA_i$ will complete the transaction as soon as
+possible providing $W$ and then leaving the access of $M^I$ to the
+other hardware managers in the system.
+
+A single malicious/misbehaving manager delaying the provisioning of
+the data can delay the access to the shared resource from the other
+hardware managers in the system, endangering the availability of the
+shared resources, thus generating a DoS for all the other hardware
+managers in the system.
+
+Since AXI does not provide a methodology to abort a faulty transaction
+once initiated, if no other recovery mechanisms are provided, a reset
+of the interconnect network is required.
 
 GOOD CODE:
 
 LANGUAGE: Not language-specific
 
-The designer should prefer to use a switching policy preventing bus stalls to be propagated in the interconnect (like Cut-and-Forward or Store-and-Forward, according to the design tradeoffs [REF-XXX][REF-ZZZ]). Alternatively, the designer can use a monitoring logic capable of detecting dangerous stalls introduced by misbehaving managers and a recovery logic capable of restoring a safe condition of the interconnect [REF-YYY]. Following is a short description of the safe methodologies.
+The designer should prefer to use a switching policy preventing bus
+stalls to be propagated in the interconnect (like Cut-and-Forward or
+Store-and-Forward, according to the design tradeoffs
+[REF-XXX][REF-ZZZ]). Alternatively, the designer can use a monitoring
+logic capable of detecting dangerous stalls introduced by misbehaving
+managers and a recovery logic capable of restoring a safe condition of
+the interconnect [REF-YYY]. Following is a short description of the
+safe methodologies.
 
-Solution 1: A monitor and recovery logic is placed between the system interconnect and the managers. This logic should be capable of detecting the stall condition and intervene whenever the manager introduces long stalls [REF-YYY].
-In such scenarios, the monitor logic can abort the execution of the stalling transaction and solve the stall condition by completing the transaction with dummy data beats to restore a safe condition of the interconnect, thus making the shared bus again available to the other hardware managers in the system.
-A monitor and recovery logic does not stop bus stalls to be propagated. Thus a careful analysis of acceptable stall length is required as these stalls will anyway generate delays n accessing shared resources for the other managers in the system  [REF-YYY].
+Solution 1: A monitor and recovery logic is placed between the system
+interconnect and the managers. This logic should be capable of
+detecting the stall condition and intervene whenever the manager
+introduces long stalls [REF-YYY].
 
-Solution 2: store-and-forward switching is used instead of cut-through. Store-and-forward follow a more conservative approach with respect to cut-through preventing bus stalls to be propagated to the interconnect. When a write request $A$ is issued by $HA_i$, store-and-forward waits to internally buffer all the data words $W$ corresponding to $A$ before booking the shared manager port $M^I$. Thus, the request and the corresponding data are consequently propagated to $M^I$ without any stalls. The following figure describes the behavior of store-and-forward $S_i^{I,\text{S\&F}}$ on a sample write transaction.
+In such scenarios, the monitor logic can abort the execution of the
+stalling transaction and solve the stall condition by completing the
+transaction with dummy data beats to restore a safe condition of the
+interconnect, thus making the shared bus again available to the other
+hardware managers in the system.
+
+A monitor and recovery logic does not stop bus stalls to be
+propagated. Thus a careful analysis of acceptable stall length is
+required as these stalls will anyway generate delays n accessing
+shared resources for the other managers in the system [REF-YYY].
+
+
+Solution 2: store-and-forward switching is used instead of
+cut-through. Store-and-forward follow a more conservative approach
+with respect to cut-through preventing bus stalls to be propagated to
+the interconnect. When a write request $A$ is issued by $HA_i$,
+store-and-forward waits to internally buffer all the data words $W$
+corresponding to $A$ before booking the shared manager port
+$M^I$. Thus, the request and the corresponding data are consequently
+propagated to $M^I$ without any stalls. The following figure describes
+the behavior of store-and-forward $S_i^{I,\text{S\&F}}$ on a sample
+write transaction.
+
 
 [SEE IMAGE ES2208-9fb81a1a-demox-sol2.png]
+https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2208-9fb81a1a-demox-sol2.png
 
 The description follows:
-(a) $HA_i$ issues the address write request $A$. Again, $A$ is a request for a 4-word burst transaction.
-(b) $A$ is sampled by $S_i^{I,\text{S\&F}}$ and internally buffered. $S_i^{I,\text{S\&F}}$ waits to receive the corresponding data words $W={W_1, ... , W_4^L}$. $HA_i$ starts providing $W$, one word after the other. $A$ has not been propagated to $M^I$ yet.
-(c) $S_i^{I,\text{S\&F}}$ has buffered the 4 words $W$ associated with $A$. $S_i^{I,\text{S\&F}}$ propagates now $A$ to $M^I$, booking $M^I$ for 4 data words.
-(d) The data words $W$ are immediately propagated after $A$ by $S_i^{I,\text{S\&F}}$, one word after the other. The propagation of the last word $W_4^L$ completes the data phase related to $A$ and releases $M^I$ to the other HAs.
-At last, the FPGA-PS interface replies $HA_i$ with the write response $B$.
 
-In store-and-forward, the shared bus $M^I$ is booked by $S_i^{I,\text{S\&F}}$ only when all the data words corresponding to $A$ have been buffered and are ready to be transmitted.
-Any stall in data propagation introduced by $HA_i$, bounded or unbounded, is internally contained by $S_i^{I,\text{S\&F}}$.
+(a) $HA_i$ issues the address write request $A$. Again, $A$ is a
+request for a 4-word burst transaction.
 
-Store-and-forward requires higher cost in latency and area consumption that might not be acceptable in all the implementations. A full discussion is reported on [REF-XXX].
+(b) $A$ is sampled by $S_i^{I,\text{S\&F}}$ and internally
+buffered. $S_i^{I,\text{S\&F}}$ waits to receive the corresponding
+data words $W={W_1, ... , W_4^L}$. $HA_i$ starts providing $W$, one
+word after the other. $A$ has not been propagated to $M^I$ yet.
 
-Solution 3: cut-and-forward provides a methodology to prevent DoS of shared resources while providing configurability on latency and area impact. The following figure shows the behavior of the cut-and-forward buffer $S_i^{I,\text{C\&F}}$ on an AXI write transaction. The following figure describes the behavior of cut-and-forward $S_i^{I,\text{C\&F}}$ on a sample write transaction. In this example, $S_i^{I,\text{C\&F}}$ is configured with $C=2$. Full details can be found in [REF XXX][REF ZZZ].
+(c) $S_i^{I,\text{S\&F}}$ has buffered the 4 words $W$ associated with
+$A$. $S_i^{I,\text{S\&F}}$ propagates now $A$ to $M^I$, booking $M^I$
+for 4 data words.
+
+(d) The data words $W$ are immediately propagated after $A$ by
+$S_i^{I,\text{S\&F}}$, one word after the other. The propagation of
+the last word $W_4^L$ completes the data phase related to $A$ and
+releases $M^I$ to the other HAs.  At last, the FPGA-PS interface
+replies $HA_i$ with the write response $B$.
+
+In store-and-forward, the shared bus $M^I$ is booked by
+$S_i^{I,\text{S\&F}}$ only when all the data words corresponding to
+$A$ have been buffered and are ready to be transmitted.
+
+Any stall in data propagation introduced by $HA_i$, bounded or
+unbounded, is internally contained by $S_i^{I,\text{S\&F}}$.
+
+Store-and-forward requires higher cost in latency and area consumption
+that might not be acceptable in all the implementations. A full
+discussion is reported on [REF-XXX].
+
+Solution 3: cut-and-forward provides a methodology to prevent DoS of
+shared resources while providing configurability on latency and area
+impact. The following figure shows the behavior of the cut-and-forward
+buffer $S_i^{I,\text{C\&F}}$ on an AXI write transaction. The
+following figure describes the behavior of cut-and-forward
+$S_i^{I,\text{C\&F}}$ on a sample write transaction. In this example,
+$S_i^{I,\text{C\&F}}$ is configured with $C=2$. Full details can be
+found in [REF-XXX][REF-ZZZ].
 
 [SEE IMAGE ES2208-9fb81a1a-demox-sol3.png]
+https://github.com/CWE-CAPEC/CWE-Content-Development-Repository/blob/main/submissions/ES2208-9fb81a1a-demox-sol3.png
+
 
 (a) $HA_i$ issues a four-word burst address write request $A$.
-(b) $A$ is internally buffered by $S_i^{I,\text{C\&F}}$.
-Subsequently, $HA_i$ starts providing the data words $W = {W_1, \ldots, W_4^L}$ corresponding to $A$.
-(c) $S_i^{I,\text{C\&F}}$ has buffered $C=2$ data words associated with $A$ ($W_1$ and $W_2$). $S_i^{I,\text{C\&F}}$ generates a two-word burst subrequest $A_1$ and propagates it to $M^I$. $M^I$ is booked for two data words. $W_1$ and $W_2$ have already been buffered by $S_i^{I,\text{C\&F}}$ and can be propagated immediately after $A_1$. $W_2$ is converted by $S_i^{I,\text{C\&F}}$ into a last data word $W_2^L$. In parallel with the propagation of $W_1$ and $W_2$, $S_i^{I,\text{C\&F}}$ buffers $W_3$ and $W_4^L$.
-(d) $W_3$ and $W_4^L$ have been buffered into $S_i^{I,\text{C\&F}}$. $S_i^{I,\text{C\&F}}$ generates a second sub-request $A_2$ for $C=2$ data words. The address of $A_2$ is calculated according to $C$. $A_2$ is propagated to $M^I$. $M^I$ is booked for two data words. $W_3$ and $W_4^L$ are propagated to $M^I$ immediately after $A_2$.
-(e) After a service delay, the FPGA-PS interface replies with the two write responses $B_1$ and $B_2$ corresponding to $A_1$ and $A_2$, respectively. $B_1$ is the response for $A_1$ and it is first one to reach $I_{\text{AXI}}$. $S_i^{I,\text{C\&F}}$ buffers $B_1$ while waiting for $B_2$.
-(f) $B_2$ has reached $S_i^{I,\text{C\&F}}$. $S_i^{I,\text{C\&F}}$ merges $B_1$ and $B_2$ into a single response $B$ for the original request $A$. $B$ is propagated to $HA_i$. The write transaction is concluded.
 
-Cut-and-forward provides a methodology to address this issue with a configurable tradeoff in latency and resource consumption impact. The more complex switching methodology might require slightly higher resource consumption for implementation.
+(b) $A$ is internally buffered by $S_i^{I,\text{C\&F}}$.
+Subsequently, $HA_i$ starts providing the data words $W = {W_1,
+\ldots, W_4^L}$ corresponding to $A$.
+
+(c) $S_i^{I,\text{C\&F}}$ has buffered $C=2$ data words associated
+with $A$ ($W_1$ and $W_2$). $S_i^{I,\text{C\&F}}$ generates a two-word
+burst subrequest $A_1$ and propagates it to $M^I$. $M^I$ is booked for
+two data words. $W_1$ and $W_2$ have already been buffered by
+$S_i^{I,\text{C\&F}}$ and can be propagated immediately after
+$A_1$. $W_2$ is converted by $S_i^{I,\text{C\&F}}$ into a last data
+word $W_2^L$. In parallel with the propagation of $W_1$ and $W_2$,
+$S_i^{I,\text{C\&F}}$ buffers $W_3$ and $W_4^L$.
+
+(d) $W_3$ and $W_4^L$ have been buffered into
+$S_i^{I,\text{C\&F}}$. $S_i^{I,\text{C\&F}}$ generates a second
+sub-request $A_2$ for $C=2$ data words. The address of $A_2$ is
+calculated according to $C$. $A_2$ is propagated to $M^I$. $M^I$ is
+booked for two data words. $W_3$ and $W_4^L$ are propagated to $M^I$
+immediately after $A_2$.
+
+(e) After a service delay, the FPGA-PS interface replies with the two
+write responses $B_1$ and $B_2$ corresponding to $A_1$ and $A_2$,
+respectively. $B_1$ is the response for $A_1$ and it is first one to
+reach $I_{\text{AXI}}$. $S_i^{I,\text{C\&F}}$ buffers $B_1$ while
+waiting for $B_2$.
+
+(f) $B_2$ has reached $S_i^{I,\text{C\&F}}$. $S_i^{I,\text{C\&F}}$
+merges $B_1$ and $B_2$ into a single response $B$ for the original
+request $A$. $B$ is propagated to $HA_i$. The write transaction is
+concluded.
+
+
+Cut-and-forward provides a methodology to address this issue with a
+configurable tradeoff in latency and resource consumption impact. The
+more complex switching methodology might require slightly higher
+resource consumption for implementation.
 
 
 
@@ -260,7 +385,7 @@ Method: Formal Verification
 
 Desc: Instances of this issue can be found in manager modules by using
 property-based verification specifically targeting the detection of
-stalls propagated to the shared resources [REF-KKK].
+stalls propagated to the shared resources [REF-VVV].
 
 Effectiveness: High
 
@@ -291,22 +416,23 @@ Phase: Architecture and Design
 
 Description: SoC architects can use a switching methodology stopping
 stalls from being propagated to the interconnect, such as
-Cut-and-Forward [REF XXX][REF ZZZ] or
+Cut-and-Forward [REF-XXX][REF-ZZZ] or
 Store-and-Forward. Alternatively, a monitoring and recovery module can
 be added between the interconnect and each manager module to detect
 stalls introduced by the module and restore a safe state in the
-interconnect after a stall has been detected [REF YYY].
+interconnect after a stall has been detected [REF-YYY].
 
 Effectiveness: High
 
 Effectiveness Notes: The architect should evaluate which methodology
 better suits the target platform, trading off performance and resource
-consumption impact [REF XXX][REF YYY][REF ZZZ].
+consumption impact [REF-XXX][REF-YYY][REF-ZZZ].
 
 
 RELATED WEAKNESSES:
 
 ChildOf CWE-841
+Overlaps CWE-1264
 
 
 REFERENCES:
@@ -338,7 +464,7 @@ Author:  Thomas Benz, Alessandro Ottaviano, Robert Balas, Angelo Garofalo, Franc
 Date: 2024
 
 
-Title: [REF-KKK] Safety verification of third-party hardware modules via information flow tracking
+Title: [REF-VVV] Safety verification of third-party hardware modules via information flow tracking
 
 URL: Safety verification of third-party hardware modules via information flow tracking
 
@@ -350,6 +476,197 @@ Date: 2022
 
 
 ACTIVE ISSUES:
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The following issues still need to be addressed.
+
+C1) Note: throughout the CWE corpus, the CWE Team has begun modifying
+    extended descriptions to place (most) content into other
+    elements. We plan to copyedit this submission's extended
+    description and move the relevant information to other parts of
+    the submission. For example, some of the extended description
+    contains background details or modes of introduction, along with
+    some of the technical impact (such as "indefinitely lock the write
+    access").  We plan to share our final edits with you for
+    review. Please let us know if you agree with this approach for
+    your submission.
+
+C2) The CWE team modified the current extended description slightly to
+    improve flow and better clarify what "speculatively" means, to
+    account for potential confusion with "speculative execution" as
+    used with issues like SPECTRE/MELTDOWN. Please let us know if you
+    agree with the current writeup (subject to upcoming changes as
+    mentioned in C1.)
+
+C3) The CWE team modified the current extended description to
+    integrate some submitter-provided details about cut-through.
+    Please let us know if you agree with the current writeup (subject
+    to upcoming changes as mentioned in C1.)
+
+C4) We need to decide whether to use the "manager module" or
+    "controller module" term, and how to best clarify that we mean "a
+    hardware module capable of initiating transactions on the bus
+    through its manager interface. Examples of manager modules are
+    processors, DMAs, hardware accelerators, etc." This word choice
+    will need to be reflected in the extended description, demox, and
+    other fields.
+
+C5) During September 2026, we separately worked with you to simplify
+    the demonstrative example, such as simplifying the complex
+    notation. Thank you. We plan to state that the demonstractive
+    example is an adaptation of the example as covered in "C. Source
+    of Bus Stalls: Cut-Through Switching" in [REF-XXX] Cut and
+    Forward: Safe and Secure Communication for FPGA System on Chips.
+    (See REFERENCES section of this submission.) Do you agree with
+    this linkage?
+
+C6) Are any of your papers published to locations besides IEEE?  Since
+    IEEE publications are typically behind a paywall, this could make
+    it difficult for some readers to access the papers. Especially
+    since we simplified the demonstrative example to point to the
+    solution(s) outlined in your papers, this connection could be more
+    important.  If no such papers are available, then we can keep the
+    IEEE links.
+
+C7) Observed examples: is there a public, documented URL for this
+    example? If we can't provide a CVE or at least a link, then this
+    information will need to be integrated into other elements of CWE.
+
+C8) Observed examples: is there a public, documented URL for this
+    example? We don't know if there is a public report that we could
+    point to. If we can't provide a CVE (or at least a link), then
+    this information might need to be integrated into other elements
+    of CWE, or otherwise omitted.
+
+C9) For the Detection Method Simulation / Emulation, the note reads,
+    "Simulations should be capable...". The term SHOULD is not a high
+    confidence term. Then the note further states "Not all...might be
+    capable of triggering this issue." With those caveats, it is not
+    clear that the effectiveness should be High. Please let us know
+    your opinion on this.
+
+C10) As a separate task - outside of this submission - we will
+    separately record the submitter's comment on CWE-1059: "I would
+    like to highlight a subtle distinction: as I understand it,
+    CWE-1059 primarily addresses cases where documentation is
+    incomplete or missing. In contrast, the issue in (i) pertains to a
+    specification that is, either intentionally or unintentionally,
+    underspecified. If you believe this falls under the category
+    covered by CWE-1059, then I agree with your determination." In the
+    future, we might create a new entry that covers under-specified
+    protocols, requirements, etc. - or otherwise develop a "mode of
+    introduction" that might be commonly used, related to
+    requirements/specification - and this submission may be helpful.
+
+Please provide us with responses to comments C1 through C9 as listed
+above, and give feedback. (The CWE Team is responsible for C10; we are
+recording it here for completeness.)
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments:
+
+C1) For your awareness: The 2025-03-07 response agreed with our
+    decision to make this a child of CWE-841: Improper Enforcement of
+    Behavioral Workflow. Separately, we will modify CWE-841's
+    description so that it is more clearly consistent with this
+    submission.
+
+C2) For your awareness: there appears to be a relationship with
+    CWE-1264, as noticed by a CWE team member and independently raised
+    during the HW-SIG presentation on 2025-10-10. We plan to make an
+    "Overlaps" relationship between this submission and CWE-1264. We
+    also plan to add a Relationship Note to this new submission that
+    roughly covers the submitter's response during the HW-SIG meeting
+    (lightly edited): "CWE-1264 focuses on security checks, while
+    [this submission] is focusing on normal bus
+    communication. CWE-1264 deals with delays in security checks, and
+    during that delay something malicious occurs. [This submission] is
+    about sending a request, and the product wants to complete the
+    request or transaction.  Since there is an issue with the
+    combination of the switching policy and on-chip communication
+    standard, an attacker can take over the whole interconnect as long
+    as they want. CWE-1264 does not address issues regarding the
+    interconnect or the switching policy. It is just about the delay."
+
+C3) Under the hardware View-1194
+    (https://cwe.mitre.org/data/definitions/1194.html), which category
+    do you believe this submission should be a member of? Some
+    possibilities:
+
+  - Category-1203: Peripherals, On-chip Fabric, and Interface/IO Problems
+    (https://cwe.mitre.org/data/definitions/1203.html)
+  - Category-1196: Security Flow Issues
+    (https://cwe.mitre.org/data/definitions/1196.html)?
+  - or another category?
+  - Note: it is possible for a CWE entry to be a part of multiple
+    categories.
+
+
+Response: <SUBMITTER SHOULD REPLY HERE> Please reply to comment
+C3. You may reply to the other comments if you wish.
+
+----------
+
+RESOLVED ISSUES:
+
+
+SUB.ABS.LOWLEVEL - "Low level of abstraction"
+
+Description: The submission identifies a weakness, but it is a duplicate of
+(or partially overlaps) existing weaknesses, indicating problems with the
+submission or associated CWE entries.
+
+Description: The submission identifies an issue, but its abstraction might
+be too low-level to merit its own CWE entry. If it is focused on a
+particular technology, framework, protocol, or function, then it might not
+be unique enough to get its own CWE ID.  This might lead to modification of
+an existing entry to include the additional details, or creation of a
+higher-level entry for which the submission is one example. (Note: some
+older CWE entries have this problem and would not be published today,
+generally because they were too specific to a particular language.)
+
+Resolution: The submission will be allowed to progress to later phases once
+the more-general concept is appropriately identified and described. The
+original, lower-level submission will serve as a primary example of the
+more general concept.
+
+Comments: The submitter said "the weakness is associated with general
+concepts such as cut-through switching and multi-channel bus protocols
+rather than only with the specific standard under analysis in the
+references." We agree with the general concept and will separately
+work to create a more general CWE (and/or update CWE-841: Improper
+Enforcement of Behavioral Workflow as needed). This submission's level
+of abstraction does not need to be changed, and it can remain
+applicable to bus architectures. Please let us know if you agree with
+this comment.
+
+Response: I agree.
+
 ----------
 
 SUB.UNCLEAR - "Unclear weakness"
@@ -398,69 +715,8 @@ you believe this falls under the category covered by CWE-1059, then I
 agree with your determination."
 
 
-Response: [NO RESPONSE NECESSARY; ISSUE TO BE RESOLVED IN STAGE 2]
-
-----------
-
-SUB.RELS - "Unclear relationships"
-
-Description: The submission suggests some relationships, but the
-name/description is not explained in a way in which the relationship is
-relevant; or, the weakness is apparent, but it is not clear what the best
-parent/child relationship(s) would be.
-
-Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
-is present. It can progress to other phases if the CWE Team agrees that the
-potential relationships may require closer investigation.  The submission
-cannot progress to the publication stage until clear relationships and
-direct parents are identified. The CWE Team may decide to use high-level
-relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
-exist and cannot be quickly resolved.
-
-Comments: The 2025-03-07 response agreed with our decision to make
-this a child of CWE-841: Improper Enforcement of Behavioral
-Workflow. Separately, we will modify CWE-841's description so that it
-is more clearly consistent with this submission.  No response is
-needed.
-
-Response: [NO RESPONSE NECESSARY; ISSUE TO BE RESOLVED INDEPENDENT OF THIS SUBMISSION]
-
-----------
-
-RESOLVED ISSUES:
-
-
-SUB.ABS.LOWLEVEL - "Low level of abstraction"
-
-Description: The submission identifies a weakness, but it is a duplicate of
-(or partially overlaps) existing weaknesses, indicating problems with the
-submission or associated CWE entries.
-
-Description: The submission identifies an issue, but its abstraction might
-be too low-level to merit its own CWE entry. If it is focused on a
-particular technology, framework, protocol, or function, then it might not
-be unique enough to get its own CWE ID.  This might lead to modification of
-an existing entry to include the additional details, or creation of a
-higher-level entry for which the submission is one example. (Note: some
-older CWE entries have this problem and would not be published today,
-generally because they were too specific to a particular language.)
-
-Resolution: The submission will be allowed to progress to later phases once
-the more-general concept is appropriately identified and described. The
-original, lower-level submission will serve as a primary example of the
-more general concept.
-
-Comments: The submitter said "the weakness is associated with general
-concepts such as cut-through switching and multi-channel bus protocols
-rather than only with the specific standard under analysis in the
-references." We agree with the general concept and will separately
-work to create a more general CWE (and/or update CWE-841: Improper
-Enforcement of Behavioral Workflow as needed). This submission's level
-of abstraction does not need to be changed, and it can remain
-applicable to bus architectures. Please let us know if you agree with
-this comment.
-
-Response: I agree.
+Response: [NO RESPONSE NECESSARY; ISSUE HAS BEEN MARKED RESOLVED IN
+STAGE 2; REMAINING QUESTIONS ARE INTEGRATED INTO SUB.MISC]
 
 
 ----------
@@ -484,7 +740,7 @@ Det-Received: 2025-04-23
 
 Det-Review: 2025-06-12
 
-Det-Consultation: YYYY-MM-DD
+Det-Consultation: 2026-09-29
 
 Det-Accepted: YYYY-MM-DD
 
@@ -516,3 +772,13 @@ COMMUNICATIONS LOG:
 2025-04-23 received comment
 2025-05-07 action update
 2025-06-12 sent email
+2025-08-05 sent email
+2025-10-10 action meeting
+2026-09-02 received email
+2026-09-03 sent email
+2026-09-10 received email
+2026-09-28 sent email
+2026-09-28 received email
+2026-09-29 sent email
+2026-09-28 received email
+2026-09-29 sent email
