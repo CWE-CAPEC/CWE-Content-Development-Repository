@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2501-8daa7a2d
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Det-Review
+SUBMISSION STATUS: Det-Accepted
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-798
 
 ORIGIN: sub-server
 
@@ -89,8 +89,11 @@ echo "Connected successfully";
 
 EXPLANATORY TEXT:
 
-This code is storing the password in plaintext in the PHP file. An
-adversary who can read the source code can obtain the password.
+This code hardcodes the database password directly in a PHP file that
+is part of the web application. If the source code is ever exposed
+(through other weaknesses such as directory traversal,
+misconfiguration, version control leaks, backups, or server
+compromise, etc.), the attacker can obtain the password.
 
 GOOD CODE:
 LANGUAGE: PHP
@@ -109,24 +112,42 @@ return [
 The main script that connect to its config.php file:
 
 <?php
-// Load config
-$config = require 'config.php';
+  // Load config
+  $config = require DIR . '/../config.php';
 
-// Create connection
-$conn = new mysqli(
+  // Create connection
+  $conn = new mysqli(
     $config['db_host'],
     $config['db_username'],
     $config['db_password'],
     $config['db_name']
-);
+  );
 
-// Check connection
-if ($conn->connect_error) {
+  // Check connection
+  if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
+  }
+  echo "Connected successfully";
 ?>
 
+EXPLANATORY TEXT:
+
+Note that this code moves the credentials into a separate
+configuration file that can be stored outside the webroot, but it is
+not a complete fix. This reduces the risk that the credentials can be
+accessed directly, and it makes it easier to manage configuration
+separately from code. However, the password is still stored in
+plaintext on the server, so filesystem access still exposes the
+password.  If an attacker can gain access to the file using a separate
+weakness - such as with path traversal or if the configuration file is
+checked in to source control - this fix would still be subject to
+CWE-260: Password in Configuration File.
+
+For stronger security, using environment variables or a secrets
+manager in addition to proper file permissions would be a significant
+improvement. A complete solution might require design changes that
+would depend on the specific context, environment, and available
+protection mechanisms.
 
 
 ACTIVE ISSUES:
@@ -138,59 +159,13 @@ elsewhere.
 
 Resolution: This will depend on the nature of the problem.
 
-Comments: We have added your suggestion to the "DEMONSTRATIVE
-EXAMPLES" section in this form.
+Comments: The submitter provided a Good code example. We modified it
+slightly to expand on explanatory text and make some minor changes,
+including an observation that the good code is still subject to
+CWE-260, but fixes are very dependent on the context. See the updates
+in the raw submission file.
 
- - We wrote some "INTRO TEXT" to describe the behavior that the code
-   is attempting to do.  Please let us know if you agree with the
-   introduction, or suggest how to change it.
-
-  - We also added "EXPLANATORY TEXT" to the example. Please let us
-    know if you agree with the text, or suggest how to change it.
-
- - The "GOOD CODE" section needs to be filled in order to suggest to
-   developers how they could address the weakness. Please provide us
-   with example code that modifies the "bad code" in order to fix the
-   weakness.
-
- - Finally, fill the "Response" below to indicate that you have made
-   this change, or otherwise ask us for any clarification.
-
-Response:
-
-The description that you comment here seems to be good ! Regarding the
-Good Code below is the code that i think it is good as compared to bad
-Code. We can store the config.php outside the webroot directory.
-
-<?php
-// config.php
-return [
-    'db_username' => 'secretUsername',
-    'db_password' => 'secretPassword',
-    'db_host'     => 'localhost',
-    'db_name'     => 'exampleDatabase',
-];
-
-The main script that connect to its config.php file 
-
-<?php
-// Load config
-$config = require 'config.php';
-
-// Create connection
-$conn = new mysqli(
-    $config['db_host'],
-    $config['db_username'],
-    $config['db_password'],
-    $config['db_name']
-);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-?>
+Response: [NO RESPONSE NECESSARY; ISSUE HAS BEEN ADDRESSED.]
 
 				    
 
@@ -220,7 +195,7 @@ Det-Review: 2025-12-05
 
 Det-Consultation: YYYY-MM-DD
 
-Det-Accepted: YYYY-MM-DD
+Det-Accepted: 2026-09-30
 
 Internal-Update: YYYY-MM-DD
 
@@ -248,3 +223,4 @@ COMMUNICATIONS LOG:
 2025-05-10 received comment
 2025-06-13 sent email
 2025-12-05 sent email
+2026-09-30 sent email
