@@ -1,0 +1,162 @@
+SUBMISSION COMMUNICATION ID: ES2609-46011d92
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-09-30 00:32:42
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #226
+
+MTRACKER: #1391
+
+GITHUBUSER: vgudur-dev
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Validation of Persistent AI Context State
+
+DESCRIPTION:
+
+The product stores or retrieves persistent context for a generative-AI
+agent, but it does not validate one or more security-relevant properties of
+that state-such as provenance, integrity, principal/tenant/task scope,
+authorization or delegation scope, freshness, or revocation status-before
+the state influences model context, decisions, or actions.
+
+Persistent context includes saved preferences, episodic or semantic
+memories, conversation summaries, stored chat history, agent-managed
+experience, and reusable procedures. Such state may be written from user
+input, tool output, retrieved documents, model-generated summaries, or
+other external sources, then reused across sessions. If the product treats
+a stored item as trusted solely because it exists in an internal memory
+store, content originating from an attacker-controlled or lower-trust
+source can cross a trust boundary and persist. Separately, an authentic
+earlier record can become unsafe when it is replayed or restored after a
+user, tenant, task, policy, or delegated authority has changed or been
+revoked.
+
+This weakness concerns the product's validation and lifecycle handling of
+durable context. It is distinct from CWE-1427, which addresses construction
+of an LLM prompt that fails to distinguish external input from system
+directives. CWE-1427 may precede this weakness when injected content is
+persisted, but persistent-context failure can also arise without prompt
+injection-for example, cross-tenant retrieval, restoration of a superseded
+summary, acceptance of a record with missing provenance, or reuse after
+authorization revocation. It is also more specific than general improper
+authorization because the affected resource is security-relevant state that
+is later reintroduced into an agent's operating context.
+
+Common consequences include persistent behavioral manipulation, disclosure
+of another user's or tenant's information, unauthorized tool use, execution
+under obsolete authority, corruption of future decisions, and propagation
+of poisoned state across sessions.
+
+Example: an agent summarizes a session containing untrusted webpage output
+and stores the summary as durable memory. A later session automatically
+inserts that memory into a high-authority context without preserving the
+source, checking integrity, or re-evaluating the current user/task
+authorization. The stored instruction then changes planning or causes a
+privileged tool call after the original session has ended. A related
+failure occurs when an authentic checkpoint is restored after its delegated
+authority was revoked, but the product has no protected
+version/invalidation relationship and silently resumes it.
+
+Mitigations include recording authenticated or otherwise verifiable
+provenance for memory writes; binding durable state to the appropriate
+principal, tenant, agent, task/dialog identifier, policy, and
+authorization/delegation scope; protecting integrity and version
+relationships; checking current validity on both reads and writes;
+invalidating or quarantining state on cancellation, termination,
+revocation, or trust change; enforcing server-side authorization before
+state can trigger privileged effects; failing closed when required metadata
+is absent; retaining auditable history and known-good recovery points; and
+testing cross-session, cross-tenant, rollback, replay, and revocation
+cases.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-345
+   Other CWE-1427
+   Other CWE-863
+   Other CWE-613
+
+REFERENCES:
+
+Title: From Untrusted Input to Trusted Memory: A Systematic Study of Memory Poisoning Attacks in LLM Agents
+URL: https://arxiv.org/html/2606.04329v1
+
+Title: Identifying and remediating a persistent memory compromise in Claude Code
+URL: https://blogs.cisco.com/ai/identifying-and-remediating-a-persistent-memory-compromise-in-claude-code
+
+Title: Memory Is a Feature. It Is Also an Attack Surface
+URL: https://genai.owasp.org/2026/05/13/memory-is-a-feature-it-is-also-an-attack-surface/
+
+Title: When AI Remembers Too Much - Persistent Behaviors in LLM Agent Systems
+URL: https://unit42.paloaltonetworks.com/indirect-prompt-injection-poisons-ai-longterm-memory/
+
+Title: CWE-1427: Improper Neutralization of Input Used for LLM Prompting
+URL: https://cwe.mitre.org/data/definitions/1427.html
+
+Title: CWE-345: Insufficient Verification of Data Authenticity
+URL: https://cwe.mitre.org/data/definitions/345.html
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-09-30
+
+Ack-Receipt: 2026-10-01
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
