@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2602-3885d54d
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Det-Review
+SUBMISSION STATUS: Det-Accepted
 
 AFFECTED CWES: 
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2026-02-16 14:18:20
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.MISC, SUB.RELS, SUB.ABS.MULTWEAK
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #181
 
@@ -22,9 +22,29 @@ GITHUBUSER: bugmithlegend
 
 SUBMISSION TYPE: Software
 
-NAME: Application State Type Corruption (ASTC) - Persistent Data Type Assumptions in PHP Applications
+NAME: Persistence of Data with Incorrect Type
 
 DESCRIPTION:
+
+The product uses a persistent storage mechanism that expects data to
+be of a certain type, but the functionality that populates the
+persistent storage does so in a way that allows for data with
+incorrect types to be persisted.
+
+When a persistent storage is created and used as part of an
+application, it is often assumed by the downstream consumer that the
+data types will remain structurally consistent.  If the upstream
+application stores a type that is incorrect (i.e.: Array instead of
+Object), this can lead to Type Confusion or other consequences later
+in the execution chain when the data is retrieved and operated on.
+This more easily happens in weakly typed languages such as PHP or
+JavaScript where unexpected input is processed by an application
+without validation and the original value's type is transformed by the
+programming language to conform to the type of the input.  This
+weakness occurs when the resultant type is not validated before
+storing in persistent state.
+
+[Additional text or comments, to be managed in Stage 3.]
 
 This weakness occurs when an application assumes that persisted data
 structures will always conform to an expected type (e.g., objects) without
@@ -228,7 +248,7 @@ persisted state.
 
 Scope: Integrity
 
-Impact: Unexpected State; Alter Execution Logic
+Impact: Unexpected State; Alter Execution Logic; Varies by Context
 
 Likelihood: Medium
 
@@ -1066,7 +1086,7 @@ input involved at all. I'm proposing CanFollow rather than a stronger
 relationship (e.g., ChildOf) to reflect that CWE-20 is one possible
 upstream cause among several, not a dependency of the weakness itself.
 
-RelType: Other
+RelType: PeerOf
 ID: CWE-1287 (Improper Validation of Specified Type of Input)
 View-ID: CWE-1000
 Note: These weaknesses share a theme — type not validated at a
@@ -1114,160 +1134,34 @@ elsewhere.
 
 Resolution: This will depend on the nature of the problem.
 
-Comments: We will generalize this submission to apply to more than just PHP.
+Comments:
 
-We suggest the following:
+C1) We will add "Application State Type Corruption (ASTC)" as an
+alternate term, and your paper will be added as a reference.
 
-- new entry name: "Persistence of Data with Incorrect Type"
+C2) We will reduce the number of demonstrative examples per previous
+discussion.
 
-- new description: "A persistent storage mechanism is used that
-  expects data to be of a certain type, but the functionality that
-  populates the persistent storage does so in a way that allows for
-  data with incorrect types to be persisted, leading to unintended
-  consequences when the data is later retrieved and used downstream."
+C3) We agree with delaying citation of Observed Examples until CVEs
+are publicly available. If they do not become available before October
+23 (shortly before the next CWE release), then we can update observed
+examples in the following version.
 
-- new extended description: "When a persistent storage is created and
-  used as part of an application, it is often assumed by the
-  downstream consumer that the data types will remain structurally
-  consistent.  If the upstream application stores a type that is
-  incorrect (i.e.: Array instead of Object), this can lead to Type
-  Confusion or other consequences later in the execution chain when
-  the data is retrieved and operated on.  This more easily happens in
-  weakly typed languages such as PHP or JavaScript where unexpected
-  input is processed by an application without validation and the
-  original value's type is transformed by the programming language to
-  conform to the type of the input.  This weakness occurs when the
-  resultant type is not validated before storing in persistent state."
+C4) We believe that there may be too many mitigations, and the writing
+could be less verbose. We will review this more closely and propose
+edits to you.
 
-1) Please let us know if you agree with this characterization. We will
-   work with you to include more specific details, as you have
-   provided, into other portions of the new entry that will be
-   produced.
+C5) We generally agree with the detection methods, although they are
+too verbose. We will work on some copyediting to clean them up and get
+back to you.
 
-2) We request that you provide a PHP-specific demonstrative
-   example. For other requested fields such as mitigations, you could
-   provide more general advice, or PHP-specific details.
+C6) For credits, we only cite a single name / identity. If you wish to
+include a handle, that could be done by adding it in parentheses. Note
+that we do not have links in credits.
 
-Response: I agree with the proposed name "Persistence of Data with
-Incorrect Type" and the description/extended description as the
-primary entry content.
-
-One request: could "Application State Type Corruption (ASTC)" be
-included as an Alternate Term for this entry? The term has already
-been used in vendor communications during my research and disclosure
-process (Axway, IBM), so keeping it listed helps trace those
-references back to this entry. It also gives the weakness a compact
-shorthand for researchers cross-referencing findings, similar to how
-other entries pair a descriptive name with a common shorthand (e.g.,
-XSS for Cross-Site Scripting). It doesn't compete with the primary
-name — "corruption of type" in persisted application state is just
-describing the same root cause more compactly.
-
-SUMMARY / EXTENDED DESCRIPTION - Confirmed, no corrections needed to
-the text as proposed.
+Response: <SUBMITTER SHOULD REPLY HERE>
 
 ----------
-
-SUB.RELS - "Unclear relationships"
-
-Description: The submission suggests some relationships, but the
-name/description is not explained in a way in which the relationship is
-relevant; or, the weakness is apparent, but it is not clear what the best
-parent/child relationship(s) would be.
-
-Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
-is present. It can progress to other phases if the CWE Team agrees that the
-potential relationships may require closer investigation.  The submission
-cannot progress to the Publication stage until clear relationships and
-direct parents are identified. The CWE Team may decide to use high-level
-relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
-exist and cannot be quickly resolved.
-
-Comments: The CWE Team will work with the submitter to determine the
-nature of relationships between the new entry and other CWEs such as
-843, 175, and 1287. These might involve chaining relationships such as
-CanPrecede or CanFollow.
-
-Response: [SUBMITTER PROVIDED ADDITIONAL RELATIONSHIPS AND GAVE A
-RATIONALE FOR EACH RELATIONSHIP.] Additional comment:
-
-I'd note that CWE already distinguishes validation failures by
-boundary and mechanism elsewhere in the taxonomy, rather than folding
-all "type not checked" cases into a single entry. I believe the same
-reasoning supports keeping this as a distinct entry:
-
-- Different threat model: CWE-1287 assumes externally-supplied
-  adversarial input. My weakness occurs even with zero external
-  attacker input — the application's own internal processing
-  (serialization, ORM mapping, encoding/decoding) can silently corrupt
-  its own state.
-- Different mitigation: CWE-1287's mitigation is validation at the
-  API/input boundary. My weakness's mitigation is
-  validation/normalization at read-time from persistent storage — a
-  different code location and design pattern (schema-on-read,
-  defensive rehydration).
-- Different detection surface: CWE-1287 is typically caught by input
-  fuzzing at the boundary. My weakness requires reasoning about state
-  after it has already been written and reread across separate
-  execution contexts.
-
-Happy to adjust any of these based on the team's own analysis — these
-are offered as a starting point rather than a final position.
-
-----------
-
-SUB.ABS.MULTWEAK - "Multiple weaknesses"
-
-Description: The submission describes or suggests multiple independent
-weaknesses that each might deserve a separate CWE ID.
-
-Resolution: The submission cannot progress past the consultation phase
-until the number of relevant weaknesses is identified. If there are
-multiple weaknesses, separate names and descriptions are needed.
-
-Comments: We disagree with the submitter's statement that it "is an
-implementation detail" to include the "specific mechanism that causes
-the structural inconsistency — whether serialization, ORM behavior,
-encoding mismatch, or internal logic."  Namely - because CWEs focus on
-behaviors - errors in these behaviors lead to the ASTC, and might be
-more likely to be the root cause. For one of them, encoding mismatch,
-we have CWE-175: Improper Handling of Mixed Encoding, and its more
-general parent CWE-172: Encoding Error. We will work with the
-submitter to further analyze the mistakes that lead to ASTC.
-
-Response: I want to clarify rather than concede the "implementation
-detail" point, since I think there's a presentation issue rather than
-a conceptual one.
-
-My position is still that the specific mutation mechanism (encoding
-mismatch, ORM behavior, incorrect cast, or other internal logic) does
-not belong in the weakness's core definition — the same way CWE-79
-doesn't require specifying whether unsanitized input arrived via a
-form field, header, or API parameter. The weakness is defined by what
-happens after the mutation: persisted, structurally-invalid state
-being trusted and reused without validation, regardless of how it
-became invalid.
-
-Where I think the confusion came from: I listed several mutation
-mechanisms (encoding, ORM, casting) in the original submission as
-evidence that this pattern occurs across many different technical
-causes and products — supporting the generalizability argument — not
-as characteristics that define the weakness itself. In hindsight,
-presenting that evidence inline with the definition made it look like
-the mechanisms were part of the weakness, which I understand is the
-actual source of the multiple-weaknesses concern.
-
-To be explicit: I believe this submission describes one weakness —
-missing validation of persisted state before reuse across an execution
-boundary — and that mechanisms like encoding mismatches (CWE-175) or
-incorrect casts (CWE-704) are possible causes that can precede it,
-already covered elsewhere in CWE, not separate weaknesses within this
-submission. I've reflected this as CanFollow relationships in the
-RELATED WEAKNESSES response already provided.
-
-Happy to revise the SUMMARY/EXTENDED DESCRIPTION text further if any
-of the mechanism-specific language there still reads as part of the
-weakness's definition rather than supporting context.
 
 ----------
 
@@ -1589,9 +1483,7 @@ persistent storage or by the persistent storage itself?
 
 
 
-Response:
-
-[NO RESPONSE NECESSARY; TO BE ADDRESSED IN LATER PHASES.]
+Response: [NO RESPONSE NECESSARY; TO BE ADDRESSED IN LATER PHASES.]
 
 Is this intended behavior by persistent storage?
 No. The weakness is not in the
@@ -1636,6 +1528,110 @@ differentiates this weakness from CWE-843.
 I hope this addresses the localization question precisely. Happy to provide
 further clarification if needed.
 
+----------
+
+SUB.ABS.MULTWEAK - "Multiple weaknesses"
+
+Description: The submission describes or suggests multiple independent
+weaknesses that each might deserve a separate CWE ID.
+
+Resolution: The submission cannot progress past the consultation phase
+until the number of relevant weaknesses is identified. If there are
+multiple weaknesses, separate names and descriptions are needed.
+
+Comments: We disagree with the submitter's statement that it "is an
+implementation detail" to include the "specific mechanism that causes
+the structural inconsistency — whether serialization, ORM behavior,
+encoding mismatch, or internal logic."  Namely - because CWEs focus on
+behaviors - errors in these behaviors lead to the ASTC, and might be
+more likely to be the root cause. For one of them, encoding mismatch,
+we have CWE-175: Improper Handling of Mixed Encoding, and its more
+general parent CWE-172: Encoding Error. We will work with the
+submitter to further analyze the mistakes that lead to ASTC.
+
+Response: [RESOLVED ISSUE; DO NOT CHANGE] I want to clarify rather
+than concede the "implementation detail" point, since I think there's
+a presentation issue rather than a conceptual one.
+
+My position is still that the specific mutation mechanism (encoding
+mismatch, ORM behavior, incorrect cast, or other internal logic) does
+not belong in the weakness's core definition — the same way CWE-79
+doesn't require specifying whether unsanitized input arrived via a
+form field, header, or API parameter. The weakness is defined by what
+happens after the mutation: persisted, structurally-invalid state
+being trusted and reused without validation, regardless of how it
+became invalid.
+
+Where I think the confusion came from: I listed several mutation
+mechanisms (encoding, ORM, casting) in the original submission as
+evidence that this pattern occurs across many different technical
+causes and products — supporting the generalizability argument — not
+as characteristics that define the weakness itself. In hindsight,
+presenting that evidence inline with the definition made it look like
+the mechanisms were part of the weakness, which I understand is the
+actual source of the multiple-weaknesses concern.
+
+To be explicit: I believe this submission describes one weakness —
+missing validation of persisted state before reuse across an execution
+boundary — and that mechanisms like encoding mismatches (CWE-175) or
+incorrect casts (CWE-704) are possible causes that can precede it,
+already covered elsewhere in CWE, not separate weaknesses within this
+submission. I've reflected this as CanFollow relationships in the
+RELATED WEAKNESSES response already provided.
+
+Happy to revise the SUMMARY/EXTENDED DESCRIPTION text further if any
+of the mechanism-specific language there still reads as part of the
+weakness's definition rather than supporting context.
+
+----------
+
+SUB.RELS - "Unclear relationships"
+
+Description: The submission suggests some relationships, but the
+name/description is not explained in a way in which the relationship is
+relevant; or, the weakness is apparent, but it is not clear what the best
+parent/child relationship(s) would be.
+
+Resolution: The submission cannot progress to the next phase if SUB.UNCLEAR
+is present. It can progress to other phases if the CWE Team agrees that the
+potential relationships may require closer investigation.  The submission
+cannot progress to the Publication stage until clear relationships and
+direct parents are identified. The CWE Team may decide to use high-level
+relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
+exist and cannot be quickly resolved.
+
+Comments: The CWE Team will work with the submitter to determine the
+nature of relationships between the new entry and other CWEs such as
+843, 175, and 1287. These might involve chaining relationships such as
+CanPrecede or CanFollow.
+
+Response: [NO RESPONSE NECESSARY. SUBMITTER PROVIDED ADDITIONAL
+RELATIONSHIPS AND GAVE A RATIONALE FOR EACH RELATIONSHIP.] Additional
+comment:
+
+I'd note that CWE already distinguishes validation failures by
+boundary and mechanism elsewhere in the taxonomy, rather than folding
+all "type not checked" cases into a single entry. I believe the same
+reasoning supports keeping this as a distinct entry:
+
+- Different threat model: CWE-1287 assumes externally-supplied
+  adversarial input. My weakness occurs even with zero external
+  attacker input — the application's own internal processing
+  (serialization, ORM mapping, encoding/decoding) can silently corrupt
+  its own state.
+- Different mitigation: CWE-1287's mitigation is validation at the
+  API/input boundary. My weakness's mitigation is
+  validation/normalization at read-time from persistent storage — a
+  different code location and design pattern (schema-on-read,
+  defensive rehydration).
+- Different detection surface: CWE-1287 is typically caught by input
+  fuzzing at the boundary. My weakness requires reasoning about state
+  after it has already been written and reread across separate
+  execution contexts.
+
+Happy to adjust any of these based on the team's own analysis — these
+are offered as a starting point rather than a final position.
+
 
 ----------
 
@@ -1661,7 +1657,7 @@ Det-Review: 2026-07-29
 
 Det-Consultation: YYYY-MM-DD
 
-Det-Accepted: YYYY-MM-DD
+Det-Accepted: 2026-10-01
 
 Internal-Update: YYYY-MM-DD
 
@@ -1705,3 +1701,4 @@ COMMUNICATIONS LOG:
 2026-07-26 received comment
 2026-07-28 action update
 2026-07-29 sent email
+2026-10-01 sent email
