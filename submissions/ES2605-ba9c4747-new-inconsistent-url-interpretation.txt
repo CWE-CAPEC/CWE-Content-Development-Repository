@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2605-ba9c4747
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2026-05-06 14:39:48
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #200
 
@@ -88,6 +88,32 @@ URL: https://www.rfc-editor.org/rfc/rfc3986
 
 ACTIVE ISSUES:
 
+----------
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: CWE has had a gap with "Parser Differentials" for some time
+now. It has been difficult to integrate into CWE as-is because of how
+much conceptual overlap it has with many other CWE entries. However,
+the CWE Team plans to create a more-general CWE that covers partial
+differentials. We plan to create your submission as a child of the new
+entry for parser differentials, but that will require obtaining many
+additional details in Stage 2 of the CDR process.
+
+If we are not able to achieve a full entry for URL parser
+differentials by the time of release of the next CWE version (end of
+October), then we will at least integrate some of your submission into
+the general entry, and we will continue to work with you on developing
+a new entry for this lower-level submission that is focused on URL
+parser differentials. Let us know if this will work for you.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
 
 
 RESOLVED ISSUES:
@@ -106,7 +132,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-09-30
 
 Det-Requested: YYYY-MM-DD
 
@@ -138,3 +164,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2026-05-07 sent email
 2026-09-21 sent email
+2026-09-30 sent email
