@@ -1,8 +1,8 @@
 SUBMISSION COMMUNICATION ID: ES2408-db30bcbe
 
-ACTION TYPE: New Entry
+ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2024-08-20 01:03:10
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ATTACK, SUB.UNCLEAR, SUB.RELS
+ISSUE DETAILS: SUB.ATTACK, SUB.UNCLEAR, SUB.RELS, SUB.WITHDRAWN, SUB.ACTCHANGE
 
 PUBTRACKER: #128
 
@@ -107,17 +107,42 @@ links.
 
 RELATED WEAKNESSES:
 
+   ChildOf CWE-841
    Other CWE-451
-   ChildOf CWE-602
-   ChildOf CWE-441
 
 REFERENCES:
 
 Title: Discovering a New Vulnerability Type: False Interaction Feedback (FIF) and Its Implications
 URL: https://blog.andreruegg.com//posts/2024-08-18-identifying-a-new-vulnerability-type-fif/
+Author: Andre Ruegg
+Date: 2024-08-18
 
 
 ACTIVE ISSUES:
+
+SUB.WITHDRAWN - "Withdrawn Submission"
+
+Description: The original submitter has withdrawn from active participation
+in further development of the submission, or the submitter has not
+responded to multiple requests for feedback. The submitter's withdrawal may
+be due to reasons such as lack of time, changing priorities, technical
+challenges in resolving issues with the submission, email address or other
+contact information that is no longer valid, etc.
+
+Resolution: The CWE Team must decide what to do with the submission in its
+current state, such as: (1) decline or close the submission outright; or
+(2) continue to work independently with the submission. For submissions
+that are ultimately integrated into CWE, the CWE Team will decide which
+credits to provide - based on the public information in the submission - or
+credit an "anonymous contributor."
+
+Comments: The submitter did not reply to requests for feedback on the
+currently active issues. The CWE Team will progress with analyzing
+this submission and integrating it into CWE.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
 
 SUB.ATTACK - "Too attack-focused"
 
@@ -129,15 +154,13 @@ be suitable for inclusion in CAPEC.
 Resolution: An initial submission cannot progress to later phases unless it
 also includes a clear weakness (i.e., is not subject to SUB.UNCLEAR).
 
-Comments: This submission largely focuses on the attack described as "False Interaction Feedback"
-but does not describe the inherent weakness that allows this attack vector to exist.
-The submission should be more clear about what weakness is occurring.  For instance,
-could this be an authorization issue where the success pages should not be displayed unless a logged
-in user who just accomplished that action accesses the page?  Please propose a rephrased description
-that focuses solely on the weakness.
+Comments: This submission largely focuses on the attack described as
+"False Interaction Feedback" but does not sufficiently describe the
+inherent weakness that allows this attack vector to exist.  The
+submission needs to be more clear about what weakness is
+occurring. (See SUB.UNCLEAR below.)  Any feedback is welcome.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
-
 
 ----------
 
@@ -150,17 +173,37 @@ cause the submission to be incorrectly mapped to.
 Resolution: A submission cannot progress past the consultation phase until
 SUB.UNCLEAR is addressed.
 
-Comments: Related to the above submission problem for SUB.ATTACK, the submission
-does not make the weakness clear in the description due to being too attack focused.
-It is important to identify and be explicit about what the root weakness is that allows
-for FIF to occur.  In the SUB.ATTACK explanation, one possible proposal is that this
-could be an authorization issue for viewing the page, maybe related to 
-CWE-425: Direct Request ('Forced Browsing').  Mitigations can sometimes help identify
-the root cause weakness, although that is not always that case.  Please propose a 
-rephrased description that focuses solely on the weakness.
+Comments: Related to the above submission problem for SUB.ATTACK, the
+submission does not make the weakness clear in the description due to
+being too attack focused.  It is important to identify and be explicit
+about what the root weakness is that allows for FIF to occur.
+
+Instead of creating a new entry, we plan to treat FIF as an
+attack-oriented example of CWE-841: "Improper Enforcement of
+Behavioral Workflow", which we will regard as the primary weakness in
+which FIF will be mentioned. This is because the feedback is made
+available at the wrong time; to quote an example provided in this
+submission, the software "did not implement a flow such that the
+feedback for the download is only shown with the logic that downloads
+their legitimate file." Also, the submitter's reference states "FIF
+involves the UI providing accurate and expected feedback, but this
+feedback is presented outside its intended sequence or context within
+the application... This can only be caused by a developer failing to
+secure feedback flows or ensure proper sequencing."
+
+The CWE Team believes that the underlying weakness could, in some
+cases, be an example of CWE-425: Direct Request ('Forced Browsing') -
+a missing or incorrect authorization issue in which success pages
+should not be displayed unless a logged-in user accesses the page just
+after accomplishing an action. While it appears that FIF (as written
+as an attack) is always part of CWE-841, only some direct requests are
+an example of CWE-841, so there is not a parent/child relationship
+between CWE-425 and CWE-841.
+
+Any feedback is welcome, especially with an improved description that
+is more focused on the weakness that enables the attack.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
-
 
 ----------
 
@@ -179,29 +222,41 @@ direct parents are identified. The CWE Team may decide to use high-level
 relationships (e.g., to Pillars) if deeper problems such as SUB.ABS.SUBTREE
 exist and cannot be quickly resolved.
 
-Comments: Because the weakness is not entirely clear based on the
-current state of the submission, it is also not clear if the proposed
-relationships are correct.  CWE-451: "User Interface (UI)
-Misrepresentation of Critical Information" seems very related to what
-is being described, although it is still unclear if this is related in
-part due to the attack scenario described or the actual weakness.
-Perhaps a child weakness of CWE-451 could be applicable, or the
-extended description updated to discuss displaying confirmation pages
-at improper times. CWE-841: "Improper Enforcement of Behavioral
-Workflow" might be a good parent for this, if the key weakness is that
-the feedback is made available at the wrong time, e.g. as stated in
-the original description where "GoodSoftware did not implement a flow
-such that the feedback for the download is only shown with the logic
-that downloads their legitimate file."  CWE-602: "Client-Side
-Enforcement of Server-Side Security" was proposed, but it does not
-seem to relate because there do not seem to be any Client-Side
-security checks happening that enable FIF. The proposal for CWE-441:
-"Unintended Proxy or Intermediary ('Confused Deputy')" seems
-tangential to the concept of the attack, but does not appear to be a
-fitting parent.  It is still hard to make these distinctions without
-fully understanding the weakness.  Once we can better articulate the
-weakness we can arrive at suitable relationships.  Please indicate if
-you agree or disagree with any of these current assessments.
+Comments: Because the weakness was not clearly specified in the
+original submission, it was difficult to tell if the proposed
+relationships were correct. As mentioned in SUB.UNCLEAR, we are now
+treating this weakness as an example of CWE-841, with some possible
+relationships to CWE-425.
+
+Regarding original relationships provided by the submitter:
+
+- The submitter originally proposed CWE-602: "Client-Side Enforcement
+  of Server-Side Security" as a relationship, but it only seems
+  tangentially related, and the client-side enforcement would likely
+  be related to behavioral order.
+- The submitter also proposed CWE-441: "Unintended Proxy or
+  Intermediary ('Confused Deputy')" but this also seems tangential to
+  the concept of the attack, and it does not appear to be a fitting
+  parent.
+
+Any feedback is welcome.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+----------
+
+SUB.ACTCHANGE - "Change in action for submission"
+
+Description: The submission's action needs to change, e.g., from "New
+Entry" to "Modification," or vice versa. This potentially requires changes
+to the kinds of information that will need to be provided.
+
+Resolution: The submission cannot progress to Stage 3 (Content-Generation)
+until the informational needs are addressed.
+
+Comments: As mentioned in previous explanations, we will treat FIF as
+an example in CWE-841 and possibly CWE-425 - that is, a Modification,
+instead of a New Entry.
 
 Response: <SUBMITTER SHOULD REPLY HERE>
 
@@ -222,7 +277,7 @@ Init-Consultation: 2025-06-24
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-10-05
 
 Det-Requested: YYYY-MM-DD
 
@@ -257,3 +312,4 @@ COMMUNICATIONS LOG:
 2025-06-24 sent email
 2025-12-22 sent email
 2026-05-15 sent email
+2026-10-05 sent email
