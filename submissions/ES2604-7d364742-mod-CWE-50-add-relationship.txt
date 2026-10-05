@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2604-7d364742
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2026-04-15 08:02:01
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #187
 
@@ -49,6 +49,29 @@ ACTIVE ISSUES:
 
 
 
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The CWE team agrees that there is a viable chaining
+relationship with CWE-50 that could lead to an open redirect.  We
+wonder if CWE-50 is one of several different path equivalence
+weaknesses under CWE-41 for the scenario that you described, but we
+will file it as a separate research task to determine if it makes
+sense to add the CanPrecede relationship to the higher level parent
+"CWE-41: Improper Resolution of Path Equivalence". For the purposes of
+this submission, we will make the change to CWE-50.
+
+Response: [NO RESPONSE NECESSARY; SUBMISSION HAS BEEN ACCEPTED AS-IS.]
+
+
+----------
+
+
 RESOLVED ISSUES:
 
 
@@ -65,7 +88,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-10-05
 
 Det-Requested: YYYY-MM-DD
 
@@ -97,3 +120,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2026-04-21 sent email
 2026-04-27 sent email
+2026-10-05 sent email
