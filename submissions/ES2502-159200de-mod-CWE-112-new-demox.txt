@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2502-159200de
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Det-Review
+SUBMISSION STATUS: Det-Accepted
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-112
 
 ORIGIN: sub-server
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2025-02-28 15:16:10
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.MISSDET
+ISSUE DETAILS: SUB.MISC
 
 FIELDCHANGE: DEMOX
 
@@ -53,66 +53,70 @@ DEMONSTRATIVE EXAMPLES:
 
 INTRO TEXT:
 
-The following PHP code receives a file argument for an XML file, loads
-the XML file, and prints the results back to the user.
+The following PHP code receives XML content from an HTTP request body,
+loads the XML content into a PHP SimpleXMLElement Object, and prints
+the results back to the user.
 
 BAD CODE:
 LANGUAGE: PHP
 
-$xmlFile = $_GET['file'];
-$xml = simplexml_load_file($xmlFile);
+$xmlContent = file_get_contents('php://input');
+
+if (empty($xmlContent)) {
+    http_response_code(400);
+    exit('No XML content received.');
+}
+
+$xml = simplexml_load_string($xmlContent, 'SimpleXMLElement');
+
 echo $xml->asXML();
 
 EXPLANATORY TEXT:
 
-The above PHP code is vulnerable because it directly loads an XML file
-from user input without validating its structure against a schema
-(XSD) or a Document Type Definition (DTD). This lack of validation
-allows an attacker to exploit XML External Entity (XXE) Injection
-(CWE-611), potentially accessing local files or executing arbitrary
-requests on the server. Additionally, improper handling of the file
-parameter can lead to file inclusion vulnerabilities (CWE-22),
-allowing an attacker to load unexpected or malicious files from the
-server.
+The above PHP code is vulnerable because it directly loads XML from
+user-controlled input. It might assume that the XML is already
+compliant with the schema. According to PHP documentation,
+simplexml_load_string() only assumes a "well-formed XML
+string". [REF-XXX]. So, the code does not actually validate its
+structure against a schema (XSD) or a Document Type Definition (DTD).
+
+If the XML does not comply with the expected schema, this lack of
+validation could result in the application processing and handling
+malformed or unexpected data.
+
+A separate validation step can ensure that any provided data is valid
+with respect to the expected XSD/DTD, to address CWE-112.
+
 
 GOOD CODE:
 LANGUAGE: PHP
 
-<?php
+$xmlContent = file_get_contents('php://input');
 
-$allowed_files = [
-    'products' => __DIR__ . '/xml/products.xml',
-    'catalog'  => __DIR__ . '/xml/catalog.xml',
-];
-
-$key = $_GET['file'] ?? '';
-
-if (!isset($allowed_files[$key])) {
-    http_response_code(404);
-    exit('File not found.');
-}
-
-$filepath = $allowed_files[$key];
-
-if (!file_exists($filepath)) {
-    http_response_code(404);
-    exit('File not found.');
-}
+// We skip a check that $xmlContent is empty
 
 // Disable external entity loading to prevent XXE
 libxml_disable_entity_loader(true);
 libxml_use_internal_errors(true);
 
-$xml = simplexml_load_file($filepath);
+$dom = new DOMDocument();
+$dom->loadXML($xmlString, LIBXML_NONET);
 
-if ($xml === false) {
-    http_response_code(400);
-    exit('Invalid XML file.');
+if (!$dom->schemaValidate('/xml/schema.xsd')) {
+   http_response_code(400);
+   exit('Invalid XML file.');
 }
 
-header('Content-Type: application/xml; charset=UTF-8');
-echo $xml->asXML();
-?>
+echo $dom->saveXML();
+
+
+EXPLANATORY TEXT:
+
+Note that the validation step in this code could be inefficient if it
+is only applied to inherently trusted files, but there are some
+scenarios in which an application must accept externally-submitted
+XML. In such cases, the schema validation could occur at an earlier
+step.
 
 
 RELATED WEAKNESSES:
@@ -121,8 +125,39 @@ RELATED WEAKNESSES:
 
 REFERENCES:
 
+Title: [REF-XXX] simplexml_load_string
+URL: https://www.php.net/manual/en/function.simplexml-load-string.php
 
 ACTIVE ISSUES:
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: The CWE Team reviewed the "Good Code" provided by the
+submitter, but we realized that there is a small limitation of the
+example - namely, that it is also subject to path traversal (CWE-22),
+as you stated, because of the use of $_GET['file'].
+
+We acknowledge that we might not have communicated well about this
+change to the demonstrative example, and we apologize.
+
+We changed the example to use contents from php://input to avoid the
+path traversal variant. We also added explanatory text to explicitly
+state the limitations of simplexml_load_string(), i.e., it doesn't
+validate against an XSD/DTD.
+
+Please see the raw submission file for the change that we will make to
+CWE-112. See the "DEMONSTRATIVE EXAMPLE" section.
+
+Response: [OPTIONAL SUBMITTER REPLY HERE; THE CWE TEAM WILL CONTINUE
+AS STATED IN THIS COMMENT.]
+
+
+RESOLVED ISSUES:
 
 SUB.MISSDET - "Missing details"
 
@@ -142,7 +177,24 @@ details. We can work with you to finalize this.
    attempting to do. Please let us know if you agree with this
    summary.
 
-2) The demonstrative example needs to include a "GOOD CODE" example
+2) The "GOOD CODE" provided correctly prevents against XXE issues (CWE-611), but
+   still does not validate the provided XML to a schema (CWE-112).  We agree that
+   preventing against XXE is good to show in the good code here, but we still need
+   to validate to a schema utilizing "DomDocument" "schemaValidate".  The code should load the xml into the DOM and then validate, something like the following:
+
+      $doc = new DOMDocument();
+      $doc->load($filepath);
+
+      if (!$doc->schemaValidate('/xml/schema.xsd')) {
+         http_response_code(400);
+         exit('Invalid XML file.');
+      }
+
+      echo $doc->saveXML();
+
+   Please let us know if you agree with the newly proposed code or have any suggested changes.
+
+3) The demonstrative example needs to include a "GOOD CODE" example
    that avoids the multiple weaknesses that the "BAD CODE" has, such
    as path traversal (CWE-22). We suggest validating the $xmlFile
    result against a regular expression such as "/^\w+\.xml$/" such as:
@@ -151,20 +203,17 @@ details. We can work with you to finalize this.
 
    Let us know if you agree with this approach.
 
-3) Once this demonstrative example is finished for CWE-112, the CWE
-   plans to reuse it for CWE-22, and also adapt it for CWE-611 to use
-   the PHP XML validation library, libxml2, which appears to prevent
-   XXE by
-   default. https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html#:~:text=the%20NSXMLDocument.-,PHP,-%C2%B6
+4) Once this demonstrative example is finished for CWE-112, the CWE
+   plans to reuse it for CWE-22, and also adapt it for CWE-611, also using the
+   PHP XML validation library, libxml2, to prevent XXE as was done in this demox
+   and stated here
+   https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html#:~:text=the%20NSXMLDocument.-,PHP,-%C2%B6
 
    We welcome your insights and suggestions on this approach.
 
 
 Response: [SUBMITTER PROVIDED GOOD CODE EXAMPLE]
 
-
-
-RESOLVED ISSUES:
 
 
 
@@ -190,7 +239,7 @@ Det-Review: 2026-03-31
 
 Det-Consultation: YYYY-MM-DD
 
-Det-Accepted: YYYY-MM-DD
+Det-Accepted: 2026-10-12
 
 Internal-Update: YYYY-MM-DD
 
@@ -216,3 +265,4 @@ COMMUNICATIONS LOG:
 2025-11-05 sent email
 2026-03-14 received comment
 2026-03-31 sent email
+2026-10-12 sent email
