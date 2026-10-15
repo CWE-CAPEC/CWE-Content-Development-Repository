@@ -569,7 +569,74 @@ Please provide us with responses to comments C1 through C9 as listed
 above, and give feedback. (The CWE Team is responsible for C10; we are
 recording it here for completeness.)
 
-Response: <SUBMITTER SHOULD REPLY HERE>
+Response:
+
+C1: I agree with this approach. Please share the final revised version
+for review when ready.
+
+C2: I agree with the clarification of the term ‘speculatively’ and
+with distinguishing it from speculative execution. Please share the
+final revised wording for technical review when ready.
+
+C3: I agree with integrating the Cut-Through details. I suggest
+keeping the terminology consistent with the revised DEMOX, in
+particular referring to the affected shared write path rather than
+implying that the entire bus or target is necessarily reserved.
+
+C4) I recommend using ‘manager module’, defined as a hardware
+component that initiates transactions on the interconnect, such as a
+processor, DMA engine, or hardware accelerator. I suggest keeping the
+definition at this level and omitting ‘through its manager interface’
+to avoid unnecessary interface-specific terminology. ‘Manager’ also
+matches the terminology used throughout the simplified DEMOX. Current
+Arm material also uses Manager/Subordinate terminology for AXI.
+
+C5) Yes, I agree. The simplified demonstrative example is an
+adaptation of the Cut-Through example and associated stalling behavior
+described in Section II-C, ‘The Source of Bus Stalls: Cut-Through
+Switching,’ of [REF-XXX].
+
+C6) The papers are published by IEEE, so I would retain the IEEE links
+as the canonical publication references. However, publicly accessible
+author versions are also available. If the CWE reference format allows
+an additional open-access link, the following could be included for
+accessibility;
+
+REF-XXX: https://frestucc.github.io/papers/Cut-and-forward-Safe-and-secure-communication-for-fpga-system-on-chips.pdf
+
+REF-YYY: https://frestucc.github.io/papers/Safely-preventing-unbounded-delays-during-bus-transactions-in-FPGA-based-SoC.pdf
+
+REF-ZZZ: https://arxiv.org/abs/2501.10161
+
+C7-C8) The current OBSERVED EXAMPLES section contain two statements:
+
+(1) “We observed this issue in commercial AXI interconnect IPs,” and
+
+(2) “Several other interconnects using cut-through switching on a multi-channel on-chip communication standard might be affected.”
+
+For the first statement, [REF-YYY] provides a public documented
+example on Xilinx Zynq-7000 and Zynq UltraScale+ platforms using
+Xilinx AXI SmartConnect. The paper experimentally demonstrates bus
+stalls caused by a misbehaving manager. A publicly accessible copy is
+available at:
+https://frestucc.github.io/papers/Safely-preventing-unbounded-delays-during-bus-transactions-in-FPGA-based-SoC.pdf. I
+suggest using this as the documented observed example if it meets
+CWE’s requirements for a non-CVE observed example.
+
+For the second statement, I do not have a separate public
+product-specific report documenting additional affected
+interconnects. I therefore suggest moving this broader applicability
+statement out of observed examples and, if useful, retaining it in the
+description or applicable-platform discussion.
+
+C9) I agree that ‘Moderate’ is more appropriate as the general
+effectiveness rating. Targeted simulation/emulation can reliably
+detect the weakness when the testbench deliberately delays or
+withholds write data after the request has been forwarded onto the
+shared downstream write path, and observes whether the resulting stall
+propagates to that shared path. However, conventional protocol
+Verification IP may not generate this behavior without dedicated test
+sequences.
 
 ----------
 
@@ -627,8 +694,37 @@ C3) Under the hardware View-1194
     categories.
 
 
-Response: <SUBMITTER SHOULD REPLY HERE> Please reply to comment
-C3. You may reply to the other comments if you wish.
+Response:
+
+C1) ok with me.
+
+C2) I agree with the proposed Overlaps relationship with CWE-1264. I
+would only suggest slightly narrowing the proposed Relationship
+Note. Rather than stating that an attacker can “take over the whole
+interconnect as long as they want,” I suggest stating that the
+attacker can hold the affected shared write path indefinitely,
+preventing competing transactions that require that path from making
+progress. This more precisely reflects the scope of the weakness. I
+agree with the distinction that CWE-1264 focuses on delayed security
+checks, whereas this submission concerns normal bus communication and
+the interaction between transaction progress, switching policy, and
+shared-resource commitment.
+
+C3) I believe Category-1203: Peripherals, On-chip Fabric, and
+Interface/IO Problems is the most appropriate category. The weakness
+arises in the behavior of an on-chip interconnect/shared bus and its
+transaction-switching policy. I do not think Category-1196: Security
+Flow Issues is necessary, since the weakness does not concern a system
+security flow such as secure boot, update, or attestation. A plausible
+secondary category could be Category-1197: Integration Issues, since
+the weakness can arise from the interaction between manager modules,
+the interconnect, and the communication protocol during SoC
+integration. However, integration is not required for the weakness to
+exist, since the problematic behavior may be intrinsic to the
+interconnect design itself. I therefore view Category-1203 as the
+primary category and leave it to the CWE Team whether Category-1197
+would also be useful as an additional membership.
+
 
 ----------
 
@@ -782,3 +878,4 @@ COMMUNICATIONS LOG:
 2026-09-29 sent email
 2026-09-28 received email
 2026-09-29 sent email
+2026-09-30 received comments
