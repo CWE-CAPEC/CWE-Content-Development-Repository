@@ -444,7 +444,7 @@ Date: 2024
 
 Title: [REF-VVV] Safety verification of third-party hardware modules via information flow tracking
 
-URL: Safety verification of third-party hardware modules via information flow tracking
+URL: https://kastner.ucsd.edu/wp-content/uploads/2022/08/admin/rage22-safety.pdf
 
 Author: Andres Meza, Francesco Restuccia, Ryan Kastner, Jason Oberg
 
