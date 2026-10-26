@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2505-cd0e973a
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Declined
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: CWE-598
 
@@ -170,7 +170,7 @@ CWE-Published: YYYY-MM-DD
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2026-10-26
 
 
 
@@ -182,3 +182,4 @@ COMMUNICATIONS LOG:
 2025-12-23 sent email
 2026-05-14 sent email
 2026-09-14 sent email
+2026-10-26 sent email
