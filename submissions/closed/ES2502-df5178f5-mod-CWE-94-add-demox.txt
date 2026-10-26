@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2502-df5178f5
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Declined
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: 
 
@@ -133,7 +133,7 @@ CWE-Published: YYYY-MM-DD
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2026-10-26
 
 
 
@@ -145,3 +145,4 @@ COMMUNICATIONS LOG:
 2025-12-23 sent email
 2026-05-20 sent email
 2026-09-08 sent email
+2026-10-26 sent email
