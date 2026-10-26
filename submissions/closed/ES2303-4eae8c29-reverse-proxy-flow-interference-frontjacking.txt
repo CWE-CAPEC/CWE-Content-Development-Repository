@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2303-4eae8c29
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Declined
+SUBMISSION STATUS: Closed
 
 AFFECTED CWES: 
 
@@ -237,7 +237,7 @@ CWE-Published: YYYY-MM-DD
 
 Post-Publication: YYYY-MM-DD
 
-Closed: YYYY-MM-DD
+Closed: 2026-10-26
 
 
 COMMUNICATIONS LOG:
@@ -252,3 +252,4 @@ COMMUNICATIONS LOG:
 2025-12-22 sent email
 2026-05-14 sent email
 2026-09-14 sent email
+2026-10-26 sent email
