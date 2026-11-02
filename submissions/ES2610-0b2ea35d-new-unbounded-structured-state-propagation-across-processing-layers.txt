@@ -1,0 +1,185 @@
+SUBMISSION COMMUNICATION ID: ES2610-0b2ea35d
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-10-11 08:15:10
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #228
+
+MTRACKER: #1410
+
+GITHUBUSER: lostmon
+
+SUBMISSION TYPE: Software
+
+NAME: Unbounded Structured-State Propagation Across Processing Layers
+
+DESCRIPTION:
+
+Summary
+
+Unbounded Structured-State Propagation Across Processing Layers occurs when
+software accepts or transports structured input without enforcing an
+appropriate resource bound, and the input, or state derived from it, is
+subsequently retained, propagated, materialized, transformed, or serialized
+across multiple processing layers.
+
+Downstream components may independently process the resulting state without
+applying limits that account for its origin or cumulative resource impact.
+Repeated materialization and serialization across independent consumers can
+cause large inter-process communication (IPC) transactions, excessive
+resource consumption, transaction failures, incomplete state
+reconstruction, application failures, or cascading denial of service.
+
+Technical Description
+
+The weakness arises from the interaction between unbounded structured state
+and resource-constrained processing boundaries. Relevant inputs may include
+URLs, URIs, deep links, intent data, structured text, serialized objects,
+and associated metadata or extras.
+
+The originating component may accept or transport the input without a
+security-relevant size or complexity bound. The input, or state derived
+from it, can then become part of persistent or semi-persistent application
+or framework state. Subsequent components may retrieve that state and
+construct new representations for task management, lifecycle operations,
+window management, IPC, user-interface updates, or other consumers.
+
+Each individual component may behave according to its local implementation
+contract, while the system as a whole fails to constrain the cumulative
+resource requirements of the propagated state. A representation may be
+serialized repeatedly or delivered through multiple independent interfaces.
+The same state, or state derived from the original input, may therefore
+reach consumers that did not participate in the original validation
+decision.
+
+When a transaction or processing operation exceeds an
+implementation-specific resource limit, the result may include
+TransactionTooLargeException, failed IPC delivery, incomplete
+deserialization or state reconstruction, application termination, repeated
+component restarts, or cascading denial of service. Recovery mechanisms
+that repeatedly reconstruct or redistribute the affected state may prolong
+or intensify the failure.
+
+Distinguishing Characteristics
+
+The weakness is characterized by the combination of:
+
+1. Structured input or derived state that lacks an effective
+security-relevant resource bound.
+2. Propagation of that state across multiple processing layers.
+3. Repeated or independent materialization, transformation, or
+serialization by downstream components.
+4. Failure to enforce appropriate resource limits at relevant processing
+and communication boundaries.
+5. Resource exhaustion or cascading failures arising from the interaction
+between these layers.
+
+The weakness does not require a specific serialization format, programming
+language, operating system, IPC mechanism, or fixed amplification ratio. It
+may occur even when no individual component performs an obvious
+multiplicative expansion. Its defining property is the cross-layer
+propagation and repeated processing of insufficiently bounded state.
+
+Potential Impact
+
+Depending on the affected architecture, exploitation may cause denial of
+service, failed application launches, process termination, user-interface
+instability, repeated recovery cycles, or disruption of system services. In
+operating-system frameworks, a failure affecting shared components may
+impact applications beyond the component that originally received the
+input.
+
+Scope and Limitations
+
+The presence of large structured input or a large serialized transaction
+alone does not establish this weakness. The relevant condition is the
+propagation and processing of insufficiently bounded state across layers,
+resulting in a demonstrated or technically substantiated
+resource-exhaustion or failure condition.
+
+The weakness is distinct from a conventional resource-exhaustion issue in
+which a single operation consumes excessive resources: the relevant
+mechanism involves the interaction between state propagation, repeated
+materialization or serialization, and downstream resource constraints.
+
+RELATED WEAKNESSES:
+
+   Other CWE-400
+   Other CWE-770
+   Other CWE-405
+   Other CWE-130
+   Other CWE-502
+
+REFERENCES:
+
+Title: Security Research Blog
+URL: https://Lostmon.blogspot.com
+
+Title: Repository
+URL: https://github.com/lostmon/
+
+Title: Conceptual Structured Text Amplificatiin
+URL: https://lostmon.blogspot.com/2026/06/structured-text-amplification-sta.htm
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-10-11
+
+Ack-Receipt: 2026-11-02
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
