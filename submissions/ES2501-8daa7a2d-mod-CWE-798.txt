@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2501-8daa7a2d
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Internal-Update
+SUBMISSION STATUS: CWE-Published
 
 AFFECTED CWES: CWE-798
 
@@ -201,11 +201,11 @@ Internal-Update: 2026-10-12
 
 CWE-Assigned: YYYY-MM-DD
 
-CWE-Modified: YYYY-MM-DD
+CWE-Modified: 2026-10-14
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2026-10-28
 
 Post-Publication: YYYY-MM-DD
 
@@ -225,3 +225,5 @@ COMMUNICATIONS LOG:
 2025-12-05 sent email
 2026-09-30 sent email
 2026-10-12 sent email
+2026-10-28 action published
+2026-11-09 sent email
