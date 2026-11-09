@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2604-a5ac90a6
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Review
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2026-04-03 13:39:04
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #184
 
@@ -69,6 +69,22 @@ URL: https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Securi
 
 ACTIVE ISSUES:
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: This is not being used as to indicate a problem with the original
+submission, but as a way to track and notify the submitter that this submission
+was expedited through the process as part of an effort to improve session
+related content in CWE and was included directly in the latest CWE 5.0 release
+on October 28th, 2026 as CWE-1467.  In a coming phase change, the CWE team will
+ask the submitter to review this new entry and provide any updates they would
+like to make in the next CWE release.
+
+Response: [NO RESPONSE NECESSARY]
 
 
 RESOLVED ISSUES:
@@ -87,7 +103,7 @@ Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-11-09
 
 Det-Requested: YYYY-MM-DD
 
@@ -119,3 +135,4 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2026-04-10 sent email
 2026-08-10 sent email
+2026-11-09 sent email
