@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2609-6b14fb54
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Review
 
 AFFECTED CWES: 
 
@@ -65,7 +65,7 @@ Received: 2026-09-03
 
 Ack-Receipt: 2026-09-14
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2026-11-09
 
 Init-Consultation: YYYY-MM-DD
 
@@ -102,3 +102,4 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2026-09-14 sent email
+2026-11-09 sent email
