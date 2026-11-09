@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2503-a0f69c3b
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Consultation
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -252,7 +252,7 @@ Init-Consultation: 2025-07-17
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-11-09
 
 Det-Requested: YYYY-MM-DD
 
@@ -287,3 +287,4 @@ COMMUNICATIONS LOG:
 2025-07-17 sent email
 2025-12-22 sent email
 2026-05-15 sent email
+2026-11-09 sent email
