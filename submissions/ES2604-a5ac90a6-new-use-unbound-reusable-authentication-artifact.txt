@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2604-a5ac90a6
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: Det-Requested
 
 AFFECTED CWES: 
 
@@ -22,9 +22,18 @@ GITHUBUSER: aphroph
 
 SUBMISSION TYPE: Software
 
-NAME: Use of Unbound, Reusable Authentication Artifact
+NAME: Use of Singular Authentication Artifact for Multiple User Sessions
 
-DESCRIPTION:
+SUMMARY:
+
+# From the published CWE-1467:
+
+The product provides an authentication artifact, such as an authentication
+token, for an authenticated user session, but the same artifact is used for
+every authenticated user session, potentially across multiple different
+applications.
+
+# From the submitter's original submission
 
 The product authenticates users solely based on possession of a single
 reusable authentication artifact (e.g., cookie, token, or session
@@ -32,6 +41,10 @@ identifier) issued after successful authentication, including username,
 password, and multi-factor verification. Because the artifact alone is
 sufficient to gain access, no additional verification or contextual binding
 is required, creating a single point of failure.
+
+TECHNICAL NUANCE:
+
+# From the submitter's original submission
 
 If the artifact is compromised or stolen, an attacker can immediately
 impersonate the user across multiple devices and applications without
@@ -52,19 +65,553 @@ Technical impact: account takeover, unauthorized access, session hijacking,
 elevated blast radius, and immediate compromise of all systems that trust
 the artifact.
 
+
+MODES OF INTRODUCTION:
+
+# This provides information about how and when a given weakness may be
+# introduced. Information should list the Phase of the development life
+# cycle in which the weakness can introduced. A descriptive Note is
+# optional but preferred.
+# 
+# If the weakness can be introduced in multiple phases, include separate
+# items for each Phase. Copy and paste as needed.
+# 
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#introduction
+
+
+Phase: Atchitecutre and Design
+
+Note: <<put the information here>>
+
+
+Phase: <<PHASE2>>
+
+Note: <<put the information here>>
+
+
+************************************************************************************************
+
+APPLICABLE PLATFORMS:
+
+# This element specifies the programming languages, operating systems,
+# architectures, and technologies in which this weakness is usually
+# found. If an element does not apply to this submission, you can use
+# the "Not X-Specific" where "X" is the type of element.
+
+# If there are multiple languages, OSes, architectures, and/or
+# technologies, then list each one separately.
+# 
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#platforms
+
+
+# Values for Prevalence: Often, Sometimes, Rarely, Undetermined
+
+# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
+#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
+#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
+#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
+#    Assembly, Other
+
+Language Name: <<LANGUAGE1>>
+Prevalence: <<PREVALENCE1>>
+
+
+Language Name: <<LANGUAGE2>>
+Prevalence: <<PREVALENCE2>>
+
+
+Language Name: <<LANGUAGE3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Language Class: Assembly, Compiled, Hardware Description
+#    Language, Interpreted, Not Language-Specific
+
+Language Class: Not Lanuage-Specific
+Prevalence: <<PREVALENCE1>>
+
+Language Class: <<LANGCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Operating System Name: AIX, Android, BlackBerry OS,
+#    Chrome OS, Darwin, FreeBSD, iOS, macOS, NetBSD, OpenBSD, Red Hat,
+#    Solaris, SUSE, tvOS, Ubuntu, watchOS, Windows 9x, Windows
+#    Embedded, Windows NT
+
+Operating System Name: <<OS1>>
+Prevalence: <<PREVALENCE1>>
+
+Operating System Name: <<OS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Operating System Class: Linux, macOS, Unix, Windows,
+#    Not OS-Specific
+
+
+Operating System Class: Not OS-Specific
+Prevalence: <<PREVALENCE1>>
+
+Operating System Class: <<OSCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Architecture Name: Alpha, ARM, Itanium, Power
+#     Architecture, SPARC, x86, Other
+
+
+Architecture Name: <<ARCH1>>
+Prevalence: <<PREVALENCE1>>
+
+Architecture Name: <<ARCH2>>
+Prevalence: <<PREVALENCE2>>
+
+Architecture Name: <<ARCH3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Architecture Class: Embedded, Microcomputer, Workstation,
+#     Not Architecture-Specific
+
+Architecture Class: Not Architecture-Specific
+Prevalence: <<PREVALENCE1>>
+
+Architecture Class: <<ARCHCLASS2>>
+Prevalence: <<PREVALENCE2>>
+
+
+# Values for Technology Name: AI/ML, Web Server, Database Server, Accelerator
+#    Hardware, Analog and Mixed Signal Hardware, Audio/Video Hardware,
+#    Bus/Interface Hardware, Clock/Counter Hardware, Communication
+#    Hardware, Controller Hardware, Memory Hardware, Microcontroller
+#    Hardware, Network on Chip Hardware, Power Management Hardware,
+#    Processor Hardware, Security Hardware, Sensor Hardware, Storage
+#    Hardware, Test/Debug Hardware
+
+
+Technology Name: <<TECH1>>
+Prevalence: <<PREVALENCE1>>
+
+Technology Name: <<TECH2>>
+Prevalence: <<PREVALENCE2>>
+
+Technology Name: <<TECH3>>
+Prevalence: <<PREVALENCE3>>
+
+
+# Values for Technology Class: Client Server, Cloud Computing, ICS/OT,
+#     Mainframe, Mobile, N-Tier, SOA, System on Chip, Web Based, Not
+#     Technology-Specific
+	
+Technology Class: Client Server
+Prevalence: <<PREVALENCE1>>
+
+Technology Class: Web Based
+Prevalence: <<PREVALENCE2>>
+
+Technology Class: <<TECHCLASS3>>
+Prevalence: <<PREVALENCE3>>
+
+
+************************************************************************************************
+
+COMMON CONSEQUENCES:
+
+# This element will cover the typical negative security impact (or
+# impacts) that occurs if this weakness can be exploited by an
+# attacker. Each Consequence must include a Scope and Impact. Both the
+# Likelihood and Note elements are optional.
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#conseq
+
+
+
+# Values for Scope: Confidentiality, Integrity, Availability, Access
+#    Control, Accountability, Authentication, Authorization,
+#    Non-Repudiation, Other
+
+
+# Values for Impact: Modify Memory, Read Memory, Modify Files or
+#    Directories, Read Files or Directories, Modify Application Data,
+#    Read Application Data, DoS: Crash, Exit, or Restart, DoS:
+#    Amplification, DoS: Instability, DoS: Resource Consumption (CPU),
+#    DoS: Resource Consumption (Memory), DoS: Resource Consumption
+#    (Other), Execute Unauthorized Code or Commands, Gain Privileges
+#    or Assume Identity, Bypass Protection Mechanism, Hide Activities,
+#    Alter Execution Logic, Quality Degradation, Unexpected State,
+#    Varies by Context, Reduce Maintainability, Reduce Performance,
+#    Reduce Reliability, Other
+
+
+# Values for Likelihood: High, Medium, Low, Unknown
+
+
+Scope: Authentication
+
+Impact: Gain Privileges or Assume Identity; <<IMPACT1b>>; <<IMPACT1c>>
+
+Likelihood: <<LIKELIHOOD1>>
+
+Note: If an authentication artifact is used across multiple applications or
+services, it allows an adversary who is able to compromise the authentication
+artifact to gain access to all applications or services that use that artifact.
+
+
+
+
+Scope: Availability
+
+Impact: Other; <<IMPACT2b>>; <<IMPACT2c>>
+
+Likelihood: <<LIKELIHOOD2>>
+
+Note: In order to revoke access to an adversary who has compromised a shared
+authentication artifact, that artifact must be invalidated which would affect
+the availability of any user who has legitimately obtained the artifact to
+authenticate.
+
+
+
+
+Scope: <<SCOPE3>>
+
+Impact: <<IMPACT3a>>; <<IMPACT3b>>; <<IMPACT3c>>
+
+Likelihood: <<LIKELIHOOD3>>
+
+Note: <<put the information here>>
+
+
+
+************************************************************************************************
+
+# 8. DEMONSTRATIVE EXAMPLES (required)
+
+DEMONSTRATIVE EXAMPLES:
+
+# The entry should have one or more demonstrative examples, but
+# submitters should not put significant effort into these until the CWE
+# team has reviewed and accepted the general concepts behind the
+# submission. Submissions can include example information for either
+# Software, Hardware, or both, as relevant.
+
+# "BAD CODE" and "GOOD CODE" can be code snippets, descriptions of a
+# design or architecture, or an algorithm or protocol.
+#
+# * If you would like to submit diagrams/images to support any
+# weakness descriptive examples, please attach it to the email
+# submission in a png format and reference it by filename where
+# desired. For an example, please see:
+# https://cwe.mitre.org/data/definitions/1256.html
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#demox
+
+# Values for Language Name: Ada, ARM Assembly, ASP, ASP.NET, Basic, C,
+#    C++, C#, COBOL, Fortran, F#, Go, HTML, Java, JavaScript, JSON,
+#    JSP, Objective-C, Pascal, Perl, PHP, Pseudocode, Python, Ruby,
+#    Rust, Shell, SQL, Swift, VB.NET, Verilog, VHDL, XML, x86
+#    Assembly, Other
+
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+---------------
+
+INTRO TEXT:
+
+<<put the information here>>
+
+BAD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+EXPLANATORY TEXT:
+
+<<put the information here>>
+
+GOOD CODE:
+LANGUAGE: <<LANGUAGE>>
+
+<<put the information here>>
+
+
+
+************************************************************************************************
+
+OBSERVED EXAMPLES:
+
+# Where known, the submission should identify multiple
+# publicly-reported vulnerabilities in real-world products that
+# exhibit the weakness. If possible, include CVE Identifier, its
+# corresponding weblink, and a short summary. If a CVE ID is
+# unavailable, use the Link to point to the reference that explains
+# the vulnerability.
+
+# The ID should be the CVE Identifier, if available. If not available,
+# then supply a title or alternate ID used by the reference.
+
+# The Link should be the URL to the reference that explains the
+# weakness that leads to the vulnerability.
+
+# The ObexSummary should be a brief sentence or two that focuses solely on
+# the weakness in the affected product.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#obex
+
+ID: <<CVE1>>
+
+Link: <<LINK1>>
+
+ObexSummary: <<SUM1>>
+
+
+ID: <<CVE2>>
+
+Link: <<LINK2>>
+
+ObexSummary: <<SUM2>>
+
+
+ID: <<CVE3>>
+
+Link: <<LINK3>>
+
+ObexSummary: <<SUM3>>
+
+
+ID: <<CVE4>>
+
+Link: <<LINK4>>
+
+ObexSummary: <<SUM4>>
+
+
+
+************************************************************************************************
+
+DETECTION METHODS:
+
+# Detection Methods should identify commonly-used methods of finding
+# the weakness within the product's code, design, etc. This is NOT
+# intended for detecting how the weakness is exploited in a
+# vulnerability. There can be one or more methods provided.
+
+# Values for Method: Automated Analysis, Automated Dynamic Analysis,
+#    Automated Static Analysis, Automated Static Analysis - Source
+#    Code, Automated Static Analysis - Binary or Bytecode, Fuzzing,
+#    Manual Analysis, Manual Dynamic Analysis, Manual Static Analysis,
+#    Manual Static Analysis - Source Code, Manual Static Analysis -
+#    Binary or Bytecode, White Box, Black Box, Architecture or Design
+#    Review, Dynamic Analysis with Manual Results Interpretation,
+#    Dynamic Analysis with Automated Results Interpretation, Formal
+#    Verification, Simulation / Emulation, Other
+
+# Values for Effectiveness: High, Moderate, Opportunistic, Limited, None
+
+Method: <<METHOD1>>
+
+Desc: <<put the information here>>
+
+Effectiveness: <<EFFECTIVENESS1>>
+
+Notes: <<put the information here>>
+
+
+Method: <<METHOD2>>
+
+Desc: <<put the information here>>
+
+Effectiveness: <<EFFECTIVENESS2>>
+
+Notes: <<put the information here>>
+
+
+Method: <<METHOD3>>
+
+Desc: <<put the information here>>
+
+Effectiveness: <<EFFECTIVENESS3>>
+
+Notes: <<put the information here>>
+
+
+
+************************************************************************************************
+
+POTENTIAL MITIGATIONS:
+
+# This element should cover one or more techniques that will eliminate
+# and/or reduce the frequency or impact of the weakness. Each mitigation
+# must include a Phase and Description, while the Effectiveness element
+# is optional. A descriptive Effectiveness Note is also optional.
+
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#mitigations
+
+
+# Values for Phase: Policy, Requirements, Architecture and Design,
+#    Implementation, Build and Compilation, Testing, Documentation,
+#    Bundling, Distribution, Installation, System Configuration,
+#    Operation, Patching and Maintenance, Porting, Integration,
+#    Manufacturing, Decommissioning and End-of-Life
+
+# Values for Effectiveness: High, Moderate, Limited, Incidental,
+#    Discouraged Common Practice, Defense in Depth, None
+
+
+Phase: Implementation
+
+Description: Enforce re-authentication per user device. This prevents another
+user from obtaining the singular authentication artifact and making
+authenticated requests without authenticating.
+
+Effectiveness: <<EFFECT1>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: Implementation
+
+Description: Use unique authentication artifacts per user device that will only
+be accepted if used on that device.
+
+Effectiveness: <<EFFECT2>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: Implementation
+
+Description: Ensure that unique authentication artifacts are used for each
+application or service within an organization to prevent potential reuse across
+applications.
+
+Effectiveness: <<EFFECT3>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+Phase: <<PHASE4>>
+
+Description: <<put the information here>>
+
+Effectiveness: <<EFFECT4>>
+
+Effectiveness Notes: <<put the information here>>
+
+
+
+************************************************************************************************
+
 RELATED WEAKNESSES:
 
-   ChildOf CWE-287
-   Other CWE-384
-   Other CWE-613
+
+# Identify the parent CWE(s) under which this weakness should be
+# classified. Ensure that these parents are Weakness types, not
+# categories. "MemberOf" relationships to categories are allowed, but
+# at least one parent must be a Weakness.  The CWE team will perform
+# additional analysis to ensure that the appropriate relationships
+# exist.
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#rels
+
+# Relationships are of the form:
+#
+#   RelationshipType ID View-ID
+#
+# For example, CWE-78 (OS command injection) is a ChildOf CWE-77
+# (command injection) under View-ID 1000 (the Research view).
+# 
+# Values for RelType: ChildOf, MemberOf, ParentOf, PeerOf, etc.
+#
+# The ID is the numeric CWE ID to which this submission has a relationship.
+#
+# The View-ID is the view under which the relationship is
+# defined, typically View-1000, or View-1194 (for hardware), etc.
+#
+# There should be at least one ChildOf relationship in view 1000.
+
+RelType: ChildOf
+ID: CWE-1462
+View-ID: View-1000
+
+
+RelType: MemberOf
+ID: CWE-1217
+View-ID: View-699
+
+
+
+************************************************************************************************
+
 
 REFERENCES:
 
+# The submission should have one or more references that explain the
+# weakness, how to mitigate it, or some other relevant details.
+# 
+# References can include one or more academic papers, white papers, blog
+# posts, slide presentations, or videos that describe the weakness, with
+# URLs.
+# 
+# References should be easy to understand, freely available at their
+# URL, and clearly applicable to the weakness.
+#
+# See details at:
+# https://cwe.mitre.org/community/submissions/guidelines.html#references
+
+
 Title: The Golden Cookie: When SSO Session Boundaries Fail
+
 URL: https://allaboutinfosec.blogspot.com/2026/03/the-golden-cookie-when-sso-session.html
 
-Title: OWASP WSTG - Session Management Testing Guide
-URL: https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/06-Session_Management_Testing/06-Testing_for_Logout_Functionality.md
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
+
+
+Title: <<put the information here>>
+
+URL: <<put the information here>>
+
+Author: <<put the information here>>
+
+Date: <<put the publication date here - either "YYYY-MM-DD", "Monthname, YYYY", or "YYYY">>
 
 
 ACTIVE ISSUES:
@@ -105,7 +652,7 @@ Init-Declined: YYYY-MM-DD
 
 Init-Accepted: 2026-11-09
 
-Det-Requested: YYYY-MM-DD
+Det-Requested: 2026-11-09
 
 Det-Received: YYYY-MM-DD
 
@@ -135,4 +682,5 @@ Closed: YYYY-MM-DD
 COMMUNICATIONS LOG:
 2026-04-10 sent email
 2026-08-10 sent email
+2026-11-09 sent email
 2026-11-09 sent email
