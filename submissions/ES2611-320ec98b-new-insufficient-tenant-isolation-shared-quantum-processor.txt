@@ -1,0 +1,124 @@
+SUBMISSION COMMUNICATION ID: ES2611-320ec98b
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-07 22:49:54
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #236
+
+MTRACKER: #1416
+
+GITHUBUSER: garrv105
+
+SUBMISSION TYPE: Hardware
+
+NAME: Insufficient Tenant Isolation on a Shared Quantum Processor
+
+DESCRIPTION:
+
+The product operates a quantum processor in a multi-tenant mode but does
+not sufficiently isolate co-resident tenants, so one tenant's circuit can
+corrupt, or leak state to, another tenant through crosstalk between
+physically coupled qubits or through incomplete qubit reset between tenant
+jobs.
+
+On a shared quantum processor, multiple tenants' circuits are scheduled
+onto qubits of the same physical device. Qubits that are physically coupled
+exhibit crosstalk: operations on one qubit perturb its neighbors. If the
+scheduler places an aggressor tenant on qubits coupled to a victim
+tenant's, the aggressor's gate activity can bias or degrade the victim's
+results without any access to the victim's circuit. The same physical
+adjacency, combined with incomplete reset between jobs, can leak residual
+state from one tenant to the next. Because the effect manifests as elevated
+error on the victim's output, it is difficult to distinguish from ordinary
+device noise, and the victim has no signal that another tenant caused it.
+
+Example: Tenants A and B are co-scheduled on adjacent qubits. Tenant A
+repeatedly drives high-rate operations on its qubits; the induced crosstalk
+shifts Tenant B's measured expectation values beyond B's tolerance,
+silently corrupting B's computation while A's own results appear nominal.
+Consequences span integrity (victim computation silently biased),
+confidentiality (residual state leaking across tenants), and availability
+(degraded results). The weakness is introduced at architecture and design
+time when multi-tenant scheduling is built without isolation buffers or
+crosstalk-aware qubit placement.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-653
+
+REFERENCES:
+
+Title: A Preliminary Taxonomy of Attacks on Quantum Computers
+URL: https://arxiv.org/abs/2404.12465
+
+Title: Quantum Hardware Threat Matrix (QHTM) v1.0
+URL: https://github.com/garrv105/qhtm
+
+Title: Crosstalk-induced Side Channel Threats in Multi-Tenant NISQ Computers
+URL: https://www.ndss-symposium.org/ndss-paper/crosstalk-induced-side-channel-threats-in-multi-tenant-nisq-computers
+
+Title: Analysis of Crosstalk in NISQ Devices and Security Implications in Multi-Programming Regime
+URL: https://pure.psu.edu/en/publications/analysis-of-crosstalk-in-nisq-devices-and-security-implications-i/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-07
+
+Ack-Receipt: 2026-11-13
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
