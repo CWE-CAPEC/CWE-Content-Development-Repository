@@ -1,0 +1,131 @@
+SUBMISSION COMMUNICATION ID: ES2611-f8d1f5a6
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-02 21:35:10
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #229
+
+MTRACKER: #1411
+
+GITHUBUSER: smziaurrashid
+
+SUBMISSION TYPE: Software
+
+NAME: Missing Compensating Adjustment to Derived Value on Transaction Reversal (Alternative: Improper Reconciliation of Derived Value After Transaction Reversal)
+
+DESCRIPTION:
+
+Products often compute or credit a secondary value from a completed
+transaction and store it separately from the transaction itself. Common
+examples are cashback, loyalty points, store credit, referral bonuses,
+affiliate commissions, promotional discounts, and running totals used for
+caps or tax. Correct behavior requires that this derived value stay
+consistent with the net economic state of the transactions it was computed
+from. When a transaction is later reversed through a refund, return,
+chargeback, cancellation, or dispute, the product updates the primary
+record, so the principal is returned, but it fails to apply the
+corresponding update to the derived value. The derived value then reflects
+an economic event that no longer stands.
+
+The weakness appears in several forms that a designer should treat as one
+underlying mistake. The compensating update may be absent, so no adjustment
+code path exists for reversals. It may exist but cover only a bounded
+window, so a reversal that arrives after a finalization point such as a
+statement close is never applied. It may compute the adjustment but discard
+it, for example by flooring a balance at zero instead of recording the
+debt. It may compute and record the adjustment correctly but allow the
+derived value to be extracted or spent before the adjustment settles, so
+the correction arrives too late to matter.
+
+Developers and designers should be concerned because the derived value
+subsystem is frequently modeled as if only positive, forward events occur,
+and reversals are treated as an afterthought in operations or marketing
+logic rather than as a required state transition. The result is a quantity
+that misstates entitlement. The technical impact is an integrity violation
+in the derived value ledger, a direct and potentially uncapped financial
+loss when that value is convertible to money or goods, and inconsistent
+treatment across users, since whether the derived value survives a reversal
+can depend on incidental timing rather than on stated policy.
+
+One subtlety worth recording is that this is distinct from incorrect
+ordering of workflow steps that already exist and from concurrency faults.
+The defect is usually deterministic and follows from a design choice to
+treat derived value as final once credited, independent of any race.
+Another subtlety is that the problem is a propagation failure between a
+primary record and the state derived from it, so it recurs across payments,
+loyalty, billing, advertising, and commission systems that share that
+structure, not only in one product category.
+
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-840
+   Other CWE-841
+
+REFERENCES:
+
+Title: Refunded but Rewarded: The Double Dip Attack on Cashback Reward Engines
+URL: https://www.sciencedirect.com/science/article/pii/S0167404826003056
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-02
+
+Ack-Receipt: 2026-11-13
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
