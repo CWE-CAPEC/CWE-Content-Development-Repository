@@ -1,0 +1,120 @@
+SUBMISSION COMMUNICATION ID: ES2611-95ff7de7
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-07 21:54:44
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #235
+
+MTRACKER: #1415
+
+GITHUBUSER: garrv105
+
+SUBMISSION TYPE: Hardware, Software
+
+NAME: Improper Verification of Compiled Quantum Circuit Integrity
+
+DESCRIPTION:
+
+Between submission and execution, a quantum circuit passes through a
+classical compiler/transpiler, calibration pipeline, scheduler, and result
+path. This weakness exists when the system executes a compiled or
+transpiled quantum circuit without verifying that the executed circuit
+faithfully corresponds to the circuit the user submitted. An adversary who
+controls any stage of that classical pipeline can then silently modify the
+circuit - perturbing rotation angles, deleting gates, inserting hidden
+gates, remapping qubits, or substituting gates - so the computation that
+runs differs from the one intended.
+
+The primary technical impact is to Integrity: the executed computation
+silently diverges from the user's intent and can be biased toward an
+attacker-chosen result; a secondary impact is to Availability, through
+degraded or incorrect results. Because each per-circuit modification can be
+kept small and the quantum output is inherently noisy, the corruption is
+hard to distinguish from ordinary device noise, and a persistent implant
+can keep every deviation below single-run integrity tolerances while
+accumulating an effect across many jobs. Variations include rotation-angle
+perturbation, gate deletion, hidden-gate insertion, qubit remapping, and
+gate substitution. The weakness is typically introduced at architecture and
+design time, when the execution pipeline is specified without end-to-end
+verification that the executed circuit matches the submitted circuit.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-345
+
+REFERENCES:
+
+Title: A Preliminary Taxonomy of Attacks on Quantum Computers
+URL: https://arxiv.org/abs/2404.12465
+
+Title: Quantum Hardware Threat Matrix (QHTM) v1.0
+URL: https://github.com/garrv105/qhtm
+
+Title: Fault Attacks on ML-based Quantum Control and Error Correction -
+URL: https://arxiv.org/abs/2512.20077
+
+Title: Jailbreaking Quantum Computers
+URL: https://arxiv.org/abs/2406.05941
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-07
+
+Ack-Receipt: 2026-11-13
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
