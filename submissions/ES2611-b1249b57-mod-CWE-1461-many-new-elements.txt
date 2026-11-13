@@ -1,0 +1,136 @@
+SUBMISSION COMMUNICATION ID: ES2611-b1249b57
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-03 08:23:21
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #230
+
+MTRACKER: #1412
+
+GITHUBUSER: meetbhadra701-cloud
+
+SUBMISSION TYPE: Unknown
+
+NAME: Modify CWE-1461 to Improve Many Elements
+
+DESCRIPTION:
+
+Suggested additions to CWE-1461 (element names given for each item).
+
+1. Extended Description (entry currently has only a Description): The
+mismatch can also originate in the synthesis or logic-optimization tool
+rather than in the HDL. Verification of security or safety properties is
+commonly performed on RTL, and the design is then transformed by many
+synthesis passes (for example arithmetic mapping, compressor-tree
+generation, constant propagation, FSM re-encoding, technology mapping). If
+a pass is incorrect for a corner case, such as signed versus unsigned
+extension in wide arithmetic, the resulting netlist can compute different
+results from the RTL even though the RTL is unambiguous and simulates
+correctly. RTL-level verification results then do not carry over to the
+implementation unless equivalence between RTL and netlist is checked.
+
+2. Potential Mitigations:
+- Implementation / Physical Design: run formal equivalence checking between
+RTL and the post-synthesis netlist (and, where feasible, between
+intermediate synthesis passes) for security-relevant logic.
+- Implementation / Physical Design: re-run security property checks
+(assertions, information-flow checks) on the gate-level netlist, not only
+on RTL.
+- Testing: include signed/unsigned and boundary-width arithmetic in
+gate-level simulation regressions.
+
+3. Detection Methods: Formal equivalence checking of RTL against the
+netlist; pass-by-pass equivalence checking to localize the transformation
+that introduced a divergence; gate-level simulation compared against an RTL
+reference.
+
+4. Observed Examples (no CVE is known to the submitter; this is a publicly
+documented tool bug fix, not a CVE): Yosys PR 6231, "Fix signed FMA
+correction in wide compressor trees", merged 2026-10-07. With synth
+-arith_tree, the Modified Baugh-Wooley correction in the compressor-tree
+generator was wrong for signed multiply-add accumulated wider than the
+native product width. A SAT equivalence check against an independently
+elaborated RTL reference produced a counterexample (a=6, b=7) before the
+fix and passed after it. This is a functional miscompilation; the PR does
+not claim a security impact.
+
+5. References: Yosys PR 6231, https://github.com/YosysHQ/yosys/pull/6231
+
+6. Relationships (optional, for the CWE team to decide): note CWE-733 and
+CWE-1038 as software-side analogs.
+
+Rationale: CWE-1461 currently attributes the mismatch to HDL constructs
+that simulation and synthesis interpret differently. This suggestion
+extends it to defects in the synthesis tool itself, which the existing
+mitigations (coding practices, preserving redundancy) do not address.
+
+RELATED WEAKNESSES:
+
+   Other CWE-1461
+
+REFERENCES:
+
+
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-03
+
+Ack-Receipt: 2026-11-13
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
