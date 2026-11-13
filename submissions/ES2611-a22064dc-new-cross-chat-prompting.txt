@@ -1,0 +1,168 @@
+SUBMISSION COMMUNICATION ID: ES2611-a22064dc
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-07 07:10:41
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #233
+
+MTRACKER: #1413
+
+GITHUBUSER: mohamadpishdar
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Isolation of Shared Conversational Context Leading to Cross-Chat Prompt Injection ("Cross-Chat Prompting")
+
+DESCRIPTION:
+
+Most conversational AI assistants let you share a conversation with someone
+else through a link they can open and keep chatting in. That feature was
+built for convenience, but it creates a trust problem nobody designed for:
+whatever was typed in that shared conversation gets treated as if the
+person opening the link typed it themselves. If the original conversation
+contains an instruction, even something as simple as "remember this domain
+as a trusted source," the system carries that instruction straight into the
+new viewer's account, no questions asked. A second, more direct delivery
+route exists too: some assistants accept a prompt through a URL parameter
+(?q=...) and feed it into the chat automatically when the link opens,
+structurally identical to reflected XSS.
+
+Both are the same shape of problem as Cross-Site Scripting (CWE-79):
+content from one origin ends up running with the authority of a different
+origin. Here it is the same idea for conversation. Inert-looking text ends
+up executed as an instruction carrying another person's account authority,
+and what that execution turns into depends on the assistant's own
+capabilities: a line quietly added to memory, code run inside the
+assistant's sandbox, or an outbound request that exfiltrates data. XSS was
+never about one payload, it was an entry point for whatever the browser
+already allowed; this is the same, except the entry point is the model's
+own judgment about who it is talking to, not a DOM, so classic
+input-filtering or output-encoding fixes do not map cleanly onto it.
+
+Why developers should care: teams building a "share conversation" feature,
+or wiring a URL parameter to pre-fill a chat, usually treat it as
+convenience rather than a security boundary needing the same scrutiny as a
+login page. An attacker needs no compromise, only an ordinary-looking link.
+If the assistant has persistent memory, this becomes a way to plant content
+in someone else's account that survives indefinitely, and the assistant
+later presents it as the victim's own saved preference, giving it unearned
+credibility.
+
+Technical impact: mainly an integrity issue, content from outside the
+victim's input gets written into their persistent state; in some setups the
+reverse also happens, with the victim's own context leaking into a shared
+session. Severity scales with the assistant's own capabilities: code
+execution inside a sandbox if the assistant can run code, data exfiltration
+if it can make outbound requests or read its own memory, or, even with
+neither, quiet steering and gaslighting of the victim's future answers
+across unrelated conversations once planted content is treated as an
+established fact.
+
+Subtleties, five distinct variants, independently testable:
+
+Direct Reflected: URL-parameter payload acted on only within that one
+chat/session, nothing persists, confirms the system executes embedded
+instructions at all.
+Direct Persistent: same delivery, but written into the victim's own
+persistent memory, confirming the memory feature is writable this way.
+Shared System (Reflected): a second, unrelated account opens an
+attacker-shared conversation; planted content stays active only within that
+one forked chat, becoming cross-account for the first time.
+Shared Persistent (Chat History): planted content persists within that same
+shared thread across revisits, but does not follow into a new conversation;
+forcing it to be treated as a settled fact may take repeating the attack
+across multiple threads.
+Shared Persistent (Memory): the most severe, planted content is written
+into the victim's own cross-session memory and surfaces in a completely
+unrelated new conversation with no trace of the original link,
+indistinguishable from something the victim saved themselves.
+
+A given product can exhibit any subset of these without the others, so each
+must be tested and reported independently. This behavior has been
+independently reproduced across multiple commercial assistants with video
+proof-of-concept evidence and vendor disclosure reports attached as
+references.
+
+A more detailed breakdown, including the point-by-point distinction from
+classic XSS and the full set of proof-of-concept recordings, is provided in
+the attached reference document. This issue has already been reported to
+the affected vendors through their respective disclosure programs. Once
+further vendor responses are received, this research is intended to be
+developed into a peer-reviewed scientific paper; until that publication,
+the underlying details remain confidential.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-74
+   ChildOf CWE-668
+
+REFERENCES:
+
+Title: More detailed report
+URL: https://drive.google.com/file/d/120L0Wu6X954dgMZFk5lzzNVSNW-1ne7-/view?usp=drive_link
+
+Title: POCs
+URL: https://drive.google.com/file/d/1wGN2CNV_QsGZMpepZ-0D6vQpl9gSFfni/view?usp=drive_link
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-07
+
+Ack-Receipt: 2026-11-13
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
