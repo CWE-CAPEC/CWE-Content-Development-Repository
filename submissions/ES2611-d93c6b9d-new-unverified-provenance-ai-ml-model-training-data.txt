@@ -1,0 +1,103 @@
+SUBMISSION COMMUNICATION ID: ES2611-d93c6b9d
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-13 15:33:18
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #231
+
+MTRACKER: #1419
+
+GITHUBUSER: stevechristeycoley
+
+SUBMISSION TYPE: Software
+
+NAME: Unverified Provenance of AI/ML Model Training Data
+
+DESCRIPTION:
+
+The product uses a model whose weights have been generated or adjusted
+using training data with unverified provenance.
+
+(Technical Nuance) ... This applies to any phase of the training process,
+e.g., pre-training, fine-tuning, etc.
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-912
+   Other CWE-345
+   Other CWE-346
+
+REFERENCES:
+
+Title: Pot, Justin [@jhpot@mastodon.social], "incredible stuff here Bing,"
+URL: https://mastodon.social/@jhpot/109859745864083061
+
+Title: Poisoning Web-Scale Training Datasets is Practical 
+URL: https://arxiv.org/abs/2302.10149
+
+Title: Poisoning Attacks on LLMs Require a Near-constant Number of Poison Samples
+URL: https://arxiv.org/abs/2510.07192
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-13
+
+Ack-Receipt: 2026-11-13
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
