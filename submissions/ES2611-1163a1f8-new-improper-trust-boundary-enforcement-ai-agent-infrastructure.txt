@@ -1,0 +1,138 @@
+SUBMISSION COMMUNICATION ID: ES2611-1163a1f8
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-08 19:46:50
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #238
+
+MTRACKER: #1418
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Trust Boundary Enforcement in AI Agent Infrastructure
+
+DESCRIPTION:
+
+AI/ML agent infrastructure treats data crossing a trust boundary - model
+outputs, serialized artifacts, inter-agent messages, or network requests -
+as trusted code or configuration, without validation proportional to the
+privilege of the operation performed.
+
+Agent systems connect untrusted reasoning engines (language models) to
+privileged execution environments (shells, databases, file systems,
+browsers) through interfaces that lack authentication, origin validation,
+input sanitization, or authorization proportional to the operation's
+privilege. Unlike traditional web applications, the exposed endpoints are
+designed to execute arbitrary operations (run code, control devices, query
+databases) - the weakness is not what they do, but that the trust boundary
+between the requester and the execution environment is absent or
+insufficient.
+
+This weakness manifests in six recurring patterns across 40+ frameworks
+(200,000+ combined GitHub stars):
+
+1. Agent frameworks bind network sockets on all interfaces without
+authentication, exposing tool execution to any network peer.
+2. ML pipeline tools deserialize model artifacts using formats that permit
+arbitrary code execution (pickle, logging.config), with blocklist-based
+safety scanners that are structurally incomplete.
+3. Model Context Protocol (MCP) servers expose powerful tool operations
+over HTTP/SSE without origin validation or DNS rebinding protection.
+4. Agent code execution sandboxes use application-layer string-matching
+denylists that are bypassable via shell builtins and interpreted languages.
+5. SSRF guards trust stdlib IP classification (e.g., Python
+ipaddress.is_global) without unwrapping IPv6 transition addresses (NAT64,
+6to4) that embed private IPv4 targets.
+6. Per-tool authorization has coverage gaps where synthesized or
+alternative code paths bypass the authorization check.
+
+The class is distinct from prompt injection (which targets model reasoning)
+- ATBV exploits the infrastructure layer and may be exploitable without any
+LLM in the loop. Based on empirical analysis of 62 confirmed
+vulnerabilities discovered through responsible disclosure (2026).
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-269
+   Other CWE-94
+   Other CWE-502
+   Other CWE-918
+   Other CWE-306
+   Other CWE-346
+   Other CWE-863
+
+REFERENCES:
+
+Title: OWASP Top 10 for LLM Applications (2025)
+URL: https://owasp.org/www-project-top-10-for-large-language-model-applications/
+
+Title: MCP Specification
+URL: https://spec.modelcontextprotocol.io/
+
+Title: ShadowRay: Unauthenticated Ray Cluster Endpoints (Oligo Security, 2024)
+URL: https://www.oligo.security/blog/shadowray-attack-ai-workloads-actively-exploited-in-the-wild
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-08
+
+Ack-Receipt: 2026-11-13
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
