@@ -1,0 +1,121 @@
+SUBMISSION COMMUNICATION ID: ES2611-e66da56a
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-07 22:54:31
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #237
+
+MTRACKER: #1417
+
+GITHUBUSER: garrv105
+
+SUBMISSION TYPE: Hardware
+
+NAME: Improper Control of Classical Feed-Forward Enabling a Covert Channel on a Quantum Computer
+
+DESCRIPTION:
+
+The product supports mid-circuit measurement and classical feed-forward
+(conditional operations) on a quantum computer without policy controls on
+their use, enabling a covert channel between quantum registers that share
+no two-qubit gate or, on shared hardware, between tenants.
+
+Dynamic-circuit features let a classical outcome measured mid-circuit
+control later quantum operations. This is legitimate and expected within a
+single job. The weakness is the absence of controls governing feed-forward:
+an actor can measure a sender register and conditionally drive a receiver
+register that is otherwise unconnected, encoding information into the
+receiver's state. On a shared processor the same primitive can bridge
+tenants. Because feed-forward is ordinary functionality, nothing in a
+conventional circuit check flags its use as a channel, so the transmission
+is covert.
+
+Example: A sender register is measured mid-circuit; based on the measured
+bit, a controlled operation is conditionally applied to a receiver register
+that shares no entangling gate with the sender. Decoding the receiver
+recovers the transmitted bit, establishing a channel between two registers
+that appear independent. On a shared processor the same primitive can
+bridge tenants. Consequences are primarily confidentiality (covert
+transmission of information across registers or tenants) and integrity
+(policy bypass). The weakness is introduced at architecture and design time
+when dynamic-circuit features (mid-circuit measurement, classical
+feed-forward) are exposed without policy controls governing their use.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-514
+   Other CWE-385
+
+REFERENCES:
+
+Title: A Preliminary Taxonomy of Attacks on Quantum Computers
+URL: https://arxiv.org/abs/2404.12465
+
+Title: Quantum Hardware Threat Matrix (QHTM) v1.0
+URL: https://github.com/garrv105/qhtm
+
+Title: Toward Covert Quantum Computing
+URL: https://arxiv.org/abs/2605.14325
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-07
+
+Ack-Receipt: 2026-11-13
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
