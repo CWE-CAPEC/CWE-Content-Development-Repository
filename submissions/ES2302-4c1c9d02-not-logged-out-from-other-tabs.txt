@@ -2,9 +2,9 @@ SUBMISSION COMMUNICATION ID: ES2302-4c1c9d02
 
 ACTION TYPE: Modification
 
-SUBMISSION STATUS: Init-Accepted
+SUBMISSION STATUS: CWE-Published
 
-AFFECTED CWES: 
+AFFECTED CWES: CWE-1465
 
 ORIGIN: sub-server
 
@@ -12,7 +12,7 @@ SUBMISSION DATE: 2023-02-20 23:23:35
 
 ISSUES: yes/active
 
-ISSUE DETAILS: SUB.ABS.LOWLEVEL, SUB.ABS.SUBTREE
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #1
 
@@ -52,6 +52,59 @@ Title: How to Logout of Multiple Tabs | React Web App
 URL: https://dev.to/demawo/how-to-logout-of-multiple-tabs-react-web-app-2egf
 
 ACTIVE ISSUES:
+
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: We included parts of this submission in CWE 5.0, where we
+made several new entries related to session management. This
+submission now falls under the new CWE-1465: Improper Session
+Invalidation after User Logout. Please review the entry (click the
+"Complete" button in the "View customized information" section near
+the top) and let us know if you have any concerns. Also, please review
+the content history "Contributions" section for your credits.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
+
+RESOLVED ISSUES:
+
+----------
+
+SUB.GRAMMAR - "Grammar/Spelling issues"
+
+Description: The submission has multiple occurrences of errors with
+grammar, spelling, etc. that should be fixed before publication.
+
+Resolution: The submission will not be allowed to progress to later phases
+if the grammar or spelling problems are so significant that they are likely
+to cause difficulty for readers to understand the weakness. If the issues
+are minor, then the submission could progress.	However, no submission can
+be published without grammar and spelling checks. American English is used
+for spelling.
+
+Comments: The existing description does not adhere to the standard
+rules of American English grammar and style. Here's a proposed
+revision for enhanced clarity and correctness. "During the logout
+process, the user is not logged out from other tabs opened in the same
+browser window from the same app or web application. This can lead the
+user to believe that all their data is secure, eliminating the need or
+desire to check other tabs. However, a malicious actor (another user
+of the device - such as in a public library, organization/company,
+etc.) can still access sensitive data if they check other tabs after
+the logout action. This issue is particularly risky for services like
+invoices and payments, or any other situations that contain sensitive
+data. This weakness is dangerous overall, because even data that is
+not initially sensitive can be useful to a malicious actor, depending
+on the situation." Please let us know if you agree or disagree with
+the newly proposed description.
+
+Response: Agree (sorry for that and thank you for your help!)
+
 
 SUB.ABS.LOWLEVEL - "Low level of abstraction"
 
@@ -105,44 +158,6 @@ Response: Agree
 
 
 
-----------
-
-RESOLVED ISSUES:
-
-----------
-
-SUB.GRAMMAR - "Grammar/Spelling issues"
-
-Description: The submission has multiple occurrences of errors with
-grammar, spelling, etc. that should be fixed before publication.
-
-Resolution: The submission will not be allowed to progress to later phases
-if the grammar or spelling problems are so significant that they are likely
-to cause difficulty for readers to understand the weakness. If the issues
-are minor, then the submission could progress.	However, no submission can
-be published without grammar and spelling checks. American English is used
-for spelling.
-
-Comments: The existing description does not adhere to the standard
-rules of American English grammar and style. Here's a proposed
-revision for enhanced clarity and correctness. "During the logout
-process, the user is not logged out from other tabs opened in the same
-browser window from the same app or web application. This can lead the
-user to believe that all their data is secure, eliminating the need or
-desire to check other tabs. However, a malicious actor (another user
-of the device - such as in a public library, organization/company,
-etc.) can still access sensitive data if they check other tabs after
-the logout action. This issue is particularly risky for services like
-invoices and payments, or any other situations that contain sensitive
-data. This weakness is dangerous overall, because even data that is
-not initially sensitive can be useful to a malicious actor, depending
-on the situation." Please let us know if you agree or disagree with
-the newly proposed description.
-
-Response: Agree (sorry for that and thank you for your help!)
-
-
-
 
 TIMELINE:
 
@@ -168,15 +183,15 @@ Det-Consultation: YYYY-MM-DD
 
 Det-Accepted: YYYY-MM-DD
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2026-10-23
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Assigned: YYYY-MM-DD
+CWE-Assigned: 2026-10-23
 
 CWE-Modified: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2026-10-28
 
 Post-Publication: YYYY-MM-DD
 
@@ -190,3 +205,5 @@ COMMUNICATIONS LOG:
 2024-09-10 sent email
 2024-09-12 received comment
 2025-09-14 sent email
+2026-10-28 action published
+2026-11-17 sent email
