@@ -4,9 +4,9 @@ ALTERNATE ID: HCWE111
 
 ACTION TYPE: New Entry
 
-AFFECTED CWES:
+AFFECTED CWES: CWE-1476
 
-SUBMISSION STATUS: Det-Accepted
+SUBMISSION STATUS: CWE-Published
 
 ORIGIN: sub-server
 
@@ -32,8 +32,8 @@ SUMMARY:
 
 The product uses a multi-manager shared bus architecture with an
 on-chip interconnect that speculatively propagates a request for a
-write transaction, but it does not ensure that the remaining steps -
-required by the manager module to complete the request - are fulfilled
+write transaction, but it does not ensure that the remaining steps
+required by the manager module to complete the request are fulfilled
 in a timely manner.
 
 TECHNICAL NUANCE:
@@ -64,7 +64,7 @@ accelerator.
 
 MODES OF INTRODUCTION:
 
-Phase: Architecture and Design
+Phase: Hardware Requirements
 
 Note: This occurs if the on-chip communication interconnect is based
 on a multi-channel on-chip communication standard assuming cooperative
@@ -389,7 +389,7 @@ triggering this issue.
 
 POTENTIAL MITIGATIONS:
 
-Phase: Architecture and Design
+Phase: Hardware Architecture, Hardware Microarchitecture
 
 Description: SoC architects can use a switching methodology stopping
 stalls from being propagated to the interconnect, such as
@@ -894,15 +894,15 @@ Det-Consultation: 2026-09-29
 
 Det-Accepted: 2026-10-21
 
-Internal-Update: YYYY-MM-DD
+Internal-Update: 2026-10-27
 
 Final-Coord: YYYY-MM-DD
 
-CWE-Assigned: YYYY-MM-DD
+CWE-Assigned: 2026-10-27
 
 CWE-Modified: YYYY-MM-DD
 
-CWE-Published: YYYY-MM-DD
+CWE-Published: 2026-10-28
 
 Post-Publication: YYYY-MM-DD
 
@@ -934,3 +934,6 @@ COMMUNICATIONS LOG:
 2026-09-29 sent email
 2026-09-30 received comments
 2026-10-21 sent email
+2026-10-27 action update
+2026-10-28 action published
+2026-11-17 sent email
