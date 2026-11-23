@@ -1,0 +1,163 @@
+SUBMISSION COMMUNICATION ID: ES2611-e7ed6229
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-10 03:37:54
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #241
+
+MTRACKER: #1422
+
+GITHUBUSER: Uvi-12
+
+SUBMISSION TYPE: Software
+
+NAME: Approval Decision Not Bound to the Approved Action Content, Arguments, or Target
+
+DESCRIPTION:
+
+The product records an approval decision for a pending action and later
+uses that decision to authorize execution, but the decision is not bound to
+the content of the action that was approved. The approval identifies only a
+reference, such as a tool-call identifier, task identifier, pull request
+number, or workflow name. It does not include or verify the action's
+arguments, target, or reviewed content. If the action changes after
+approval, the product still treats the original approval as valid and
+executes the changed action.
+ 
+The approval is genuine. An authorized person made a real decision. The
+failure is that the product does not check, at execution time, whether the
+action about to run is the action that person reviewed.
+ 
+The action can change between approval and execution in several ways.
+ 
+1. Argument mutation. The arguments of an approved tool call or task, such
+as an amount, recipient, file path, or command, are modified in persisted
+state after approval and before execution.
+ 
+2. Object change. The reviewed object changes after review. New commits are
+pushed to an approved pull request, the pull request is retargeted to a
+different branch, or an approved infrastructure plan is regenerated with
+different resources.
+ 
+3. Display and execution divergence. The approver is shown one action, but
+the product resolves and executes a different one, for example when a
+displayed file path resolves through a symbolic link to a different
+location.
+ 
+4. Re-application. The approval is attached to a different action that
+shares the same reference, or is presented again for an action it was not
+issued for.
+ 
+In each case the product performs the changed action under its own identity
+and privileges, and its records show a genuine approval by a genuine
+approver. Because the approval record is authentic, review of the audit
+trail cannot detect that the executed action differs from the approved
+action. This defeats the approval control, allows actions that no
+authorized party reviewed, and produces records that misrepresent what was
+approved.
+ 
+The weakness appears in AI agent frameworks that pause for human approval
+of tool calls, durable workflow and BPMN engines with approval tasks, CI/CD
+manual approval and protected deployment environments, and code-review
+systems that use approvals as merge requirements.
+ 
+This entry differs from related entries as follows. CWE-345 and CWE-807
+concern whether the decision itself is authentic or attacker-supplied. Here
+the decision is authentic but applied to content it does not cover. CWE-367
+requires a race between check and use, while this weakness occurs without
+any race because the product never re-checks binding. CWE-863 describes the
+incorrect authorization outcome without naming the cause.
+ 
+Products avoid this weakness when the approval is bound to a cryptographic
+digest of the canonical action content (action name, arguments, target, and
+reviewed object version), and the product recomputes and compares that
+digest immediately before execution. Alternatively, products automatically
+invalidate approvals whenever the approved object or its arguments change,
+and require a new approval for the changed content.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-345
+   Other CWE-367
+   Other CWE-863
+   Other CWE-807
+
+REFERENCES:
+
+Title: Ghost Approvals: Approval-Provenance Failure in Agentic AI Frameworks. Y. Pradhan, A. Singh, A. Kumari, A. K. Pradhan, D. K. Singh. 19th ACM Workshop on Artificial Intelligence and Security (AISec 2026)
+URL: https://doi.org/10.1145/3847352.3848101
+
+Title: Proposed child of Class submission ES2611-52048c94 (Insufficient Verification of Recorded Authorization Decision)
+URL: https://doi.org/10.1145/3847352.3848101
+
+Title: CVE-2026-58439: Gitea stale official approval preserved after pull request retargeting
+URL: https://nvd.nist.gov/vuln/detail/CVE-2026-58439
+
+Title: CVE-2023-4812: GitLab CODEOWNERS approval preserved after new changes
+URL: https://nvd.nist.gov/vuln/detail/CVE-2023-4812
+
+Title: CVE-2024-0410: GitLab CODEOWNERS approval re-evaluation bypass
+URL: https://nvd.nist.gov/vuln/detail/CVE-2024-0410
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-10
+
+Ack-Receipt: 2026-11-23
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
