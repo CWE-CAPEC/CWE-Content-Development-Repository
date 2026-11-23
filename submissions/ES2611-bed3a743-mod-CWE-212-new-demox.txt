@@ -1,0 +1,145 @@
+SUBMISSION COMMUNICATION ID: ES2611-bed3a743
+
+ACTION TYPE: Modification
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-13 21:04:29
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #242
+
+MTRACKER: #1423
+
+GITHUBUSER: autoCAT6
+
+SUBMISSION TYPE: Unknown
+
+NAME: Modify CWE-212 to Add a New Demonstrative Example
+
+DESCRIPTION:
+
+Element: Demonstrative Examples
+
+I suggest adding a second demonstrative example to CWE-212. The existing
+example shows a field that is removed in one output path (HTML) and
+forgotten in another (JSON). The case below is different: a
+de-identification step removes the fields that are known to hold
+identifiers, and the same identifiers survive in a free-text field and in a
+field that was never reviewed for export.
+
+Proposed example
+
+Intro text: This code exports customer support tickets to an outside
+analytics vendor. Before the export it removes the customer's name, email
+address and phone number.
+
+Bad code (Python):
+
+IDENTIFIER_FIELDS = {"name", "email", "phone"}
+
+def deidentify(ticket):
+    # Drop the fields that are known to hold identifiers; keep everything
+else.
+    return {field: value for field, value in ticket.items() if field not in
+IDENTIFIER_FIELDS}
+
+def export_tickets(tickets):
+    return [deidentify(ticket) for ticket in tickets]
+
+Explanation: The code removes the three identifier fields and passes every
+other field through. A support agent's free-text "notes" field often
+repeats the customer's name, email address or phone number ("reply to
+dana@example.com"), so those values still reach the vendor. A field added
+to the ticket later, such as an internal comment, is also exported without
+anyone deciding that it should be.
+
+Fix, in outline: export only fields that have been reviewed for export, and
+scrub the free-text fields that remain, both for that customer's own
+identifier values and for strings shaped like email addresses or phone
+numbers. Pattern matching will miss some identifiers, for example another
+person's name, so free text that the recipient does not need should be left
+out of the export.
+
+I have corrected code (about 30 lines of Python) and a small test showing
+the leak in the bad version and its absence in the corrected one. I can
+send both if the idea is accepted.
+
+Why I think this belongs in CWE-212: the tickets are shared on purpose, a
+cleansing step exists, and that step is incomplete. That matches the
+description and the Common Consequences text about insufficient redaction
+of PII. CWE-532 does not fit because nothing is written to a log, and
+CWE-359 describes the resulting exposure and not the faulty removal step.
+
+Reference: Simson L. Garfinkel, "De-Identification of Personal
+Information", NISTIR 8053, October 2015, Section 4.1,
+https://doi.org/10.6028/NIST.IR.8053. It notes that in free-format text,
+direct identifiers such as names and addresses may not be clearly marked.
+
+
+RELATED WEAKNESSES:
+
+   Other CWE-212
+
+REFERENCES:
+
+
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-13
+
+Ack-Receipt: 2026-11-23
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
