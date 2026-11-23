@@ -1,0 +1,152 @@
+SUBMISSION COMMUNICATION ID: ES2611-2ed19d3a
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-10 03:32:52
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #240
+
+MTRACKER: #1421
+
+GITHUBUSER: Uvi-12
+
+SUBMISSION TYPE: Software
+
+NAME: Insufficient Verification of Persisted Approval Decision When Resuming a Human-Gated Action
+
+DESCRIPTION:
+
+The product suspends execution at a human approval gate and persists the
+pending decision to a state store such as a checkpoint, session, task
+record, or execution history. On resume, the product reads a persisted
+approval value and treats it as authorization to execute the gated action.
+That value can be an approved flag, a completed human-task status, an
+approval review record, or an approval event. The product does not verify
+that the value originated from the authorized approval path, and it does
+not verify that the value is bound to the action being executed.
+ 
+A persisted approval value records a decision but does not prove its
+origin. Any principal with write access to the state store can create the
+value the resume path accepts, without authenticating as the approver.
+ 
+Write access to workflow state is a narrower privilege than approval
+authority. Migration jobs, recovery services, sidecars, backup agents, and
+scoped database roles write workflow state as part of normal operation, but
+hold neither approval rights nor the credentials of the gated action. When
+such a principal sets the approval value, the product executes the action
+with its own service identity. This is a confused-deputy condition. The
+approval control is bypassed, and a privileged operation such as a payment,
+deployment, access grant, or tool invocation executes on behalf of a
+principal that cannot perform it directly.
+ 
+The audit trail is also compromised. Execution records attribute the
+decision to a named approver who never acted, which produces false evidence
+of human oversight and breaks accountability and non-repudiation.
+ 
+The weakness arises at the trust boundary between a framework and the
+application deployed on it. The framework exposes the gate as a security
+control but assigns state integrity to the application. The application
+relies on the gate to enforce approval. Neither component verifies approval
+provenance.
+
+Variants:
+ 
+1. Argument rebinding. The approval is not bound to the action's arguments.
+The arguments are modified after approval, and the original approval
+authorizes the modified action.
+2. Replay. The approval is not bound to a run, target, validity window, or
+single use. It is reused outside its intended scope.
+3. Gate suppression. Persisted state, such as a risk classification,
+approver policy, or trusted-tool list, determines whether the gate
+executes. Modifying it skips the gate, and no approval record is created.
+4. Approval laundering. A downstream system accepts an unverified upstream
+approval as authorization, which grants it authority it never carried.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-345
+   Other CWE-642
+   Other CWE-602
+   Other CWE-807
+
+REFERENCES:
+
+Title: Ghost Approvals: Approval-Provenance Failure in Agentic AI Frameworks. Y. Pradhan, A. Singh, A. Kumari, A. K. Pradhan, D. K. Singh. 19th ACM Workshop on Artificial Intelligence and Security (AISec 2026)
+URL: https://doi.org/10.1145/3847352.3848101
+
+Title: Proposed child of Class submission ES2611-52048c94 (Insufficient Verification of Recorded Authorization Decision)
+URL: https://doi.org/10.1145/3847352.3848101
+
+Title: Microsoft Agent Framework: Workflow Checkpoints, Security Considerations
+URL: https://learn.microsoft.com/en-us/agent-framework/workflows/checkpoints
+
+Title: Haystack: Human-in-the-Loop
+URL: https://docs.haystack.deepset.ai/docs/human-in-the-loop
+
+Title: Apache Airflow Security Model
+URL: https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html
+
+Title: Strands Agents: Responsible AI
+URL: https://strandsagents.com/latest/documentation/docs/user-guide/safety-security/responsible-ai/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-10
+
+Ack-Receipt: 2026-11-23
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
