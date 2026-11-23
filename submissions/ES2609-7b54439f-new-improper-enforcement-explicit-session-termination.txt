@@ -2,7 +2,7 @@ SUBMISSION COMMUNICATION ID: ES2609-7b54439f
 
 ACTION TYPE: New Entry
 
-SUBMISSION STATUS: Ack-Receipt
+SUBMISSION STATUS: Init-Accepted
 
 AFFECTED CWES: 
 
@@ -10,9 +10,9 @@ ORIGIN: sub-server
 
 SUBMISSION DATE: 2026-09-15 23:10:09
 
-ISSUES: not-analyzed
+ISSUES: yes/active
 
-ISSUE DETAILS: 
+ISSUE DETAILS: SUB.MISC
 
 PUBTRACKER: #224
 
@@ -113,6 +113,23 @@ URL: https://github.com/advisories/GHSA-vr7m-c6v4-8cx8
 ACTIVE ISSUES:
 
 
+SUB.MISC - "Miscellaneous/other problem"
+
+Description: The submission has some other problem that is not covered
+elsewhere.
+
+Resolution: This will depend on the nature of the problem.
+
+Comments: This is not being used as to indicate a problem with the original
+submission, but as a way to track and notify the submitter that this submission
+was expedited through the process as part of an effort to improve session
+related content in CWE and was included directly in the latest CWE 5.0 release
+on October 28th, 2026 as CWE-1464: Improper Session Invalidation.  In a coming
+phase change, the CWE team will ask the submitter to review this new entry and
+provide any updates they would like to make in the next CWE release.
+
+Response: <SUBMITTER SHOULD REPLY HERE>
+
 
 RESOLVED ISSUES:
 
@@ -124,13 +141,13 @@ Received: 2026-09-15
 
 Ack-Receipt: 2026-09-21
 
-Init-Review: YYYY-MM-DD
+Init-Review: 2026-10-05
 
 Init-Consultation: YYYY-MM-DD
 
 Init-Declined: YYYY-MM-DD
 
-Init-Accepted: YYYY-MM-DD
+Init-Accepted: 2026-11-23
 
 Det-Requested: YYYY-MM-DD
 
@@ -161,3 +178,5 @@ Closed: YYYY-MM-DD
 
 COMMUNICATIONS LOG:
 2026-09-21 sent email
+2026-10-28 action update
+2026-11-23 sent email
