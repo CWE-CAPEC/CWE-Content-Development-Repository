@@ -1,0 +1,186 @@
+SUBMISSION COMMUNICATION ID: ES2611-52048c94
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-10 02:42:32
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #239
+
+MTRACKER: #1420
+
+GITHUBUSER: Uvi-12
+
+SUBMISSION TYPE: Software
+
+NAME: Insufficient Verification of Recorded Authorization Decision
+
+DESCRIPTION:
+
+The product accepts a previously recorded authorization decision as
+permission to perform an action. Examples of such decisions are a human
+approval, a code-review vote, a deployment approval, a completed approval
+task, or a delegated grant. The product does not verify two properties
+before acting on the decision. First, that the decision was issued by an
+entity with authority to make it. Second, that the decision applies to the
+exact action, arguments, target, execution, and time window in which it is
+being used.
+
+The weakness occurs when the moment a decision is made is separated from
+the moment it is enforced. The decision is stored as data in a checkpoint,
+session, database row, task record, review record, or event history, and is
+read back later. If the product treats the stored value as the decision
+itself, the stored value becomes the only evidence of authorization. It
+describes a decision but does not prove one was made, by whom, or for what.
+
+Two distinct failures follow.
+
+Issuer not verified. Any principal with write access to the stored decision
+can create one. Write access to operational state is routinely held by
+components that have no authority to approve the action, such as migration
+jobs, recovery services, backup agents, sidecars, integration accounts, and
+scoped database roles. The product cannot distinguish a decision written by
+the authorized approval path from one written by any of these components.
+Binding not verified. A genuine decision made by an authorized party is
+applied to something it was never issued for. This happens when the
+arguments of the approved action change after approval, when the approved
+object changes after review (new commits, a changed target branch, a
+modified plan), when the decision is reused in another execution or after
+its intended lifetime, or when it is consumed by a downstream system for a
+different action.
+
+In both cases the product performs the action under its own identity and
+privileges. The principal that caused the action never holds the
+credentials the action uses and never authenticates as the approver. This
+is a confused-deputy condition. The product's records then attribute the
+action to an approver who either never acted or approved something else.
+The weakness therefore defeats the authorization control and also corrupts
+the evidence that the control operated, which breaks accountability and
+non-repudiation.
+
+A related form affects the requirement rather than the decision. When the
+rule that decides whether a decision is required (approval policy, required
+approvers, protected-resource settings, trusted-action lists) is itself
+stored in state that a lower-privileged principal can modify, that
+principal can remove the requirement. The action then executes with no
+decision and no record that one was required.
+
+The weakness appears across technologies that separate decision from
+enforcement: AI agent frameworks with human-in-the-loop tool approval,
+durable execution and workflow engines with pause and resume, BPMN user
+tasks, CI/CD manual approvals and protected deployment environments,
+code-review merge rules, identity governance approval workflows, and
+maker-checker or four-eyes controls in financial systems.
+
+This entry differs from related entries as follows. CWE-345 covers
+unverified authenticity of data in general but does not identify the
+authorization decision as the critical artifact or require binding to
+action, target, and time. CWE-807 covers security decisions that rely on
+attacker-modifiable input, but does not cover an authentic decision applied
+to the wrong action, target, or time. CWE-863 describes an incorrect
+authorization outcome without naming the cause. Vulnerabilities with this
+root cause are currently mapped inconsistently across CWE-284, CWE-472,
+CWE-841, CWE-862, CWE-863, and CWE-1280.
+
+Products avoid this weakness when the evidence accepted at enforcement is
+produced by an authority the state writer cannot write, and is bound to the
+action it authorizes. Examples are a signed decision artifact covering
+issuer, action, argument digest, target, execution identifier, expiry, and
+single-use nonce, verified immediately before the action runs, a
+per-execution task token issued and validated by the service, an
+identity-bound vote recorded and enforced by the server, and approvals
+automatically invalidated when the approved object changes.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-345
+   Other CWE-807
+   Other CWE-863
+   Other CWE-441
+
+REFERENCES:
+
+Title: Ghost Approvals: Approval-Provenance Failure in Agentic AI Frameworks (AISec 2026)
+URL: https://doi.org/10.1145/3847352.3848101
+
+Title: CVE-2026-58439: Gitea stale official approval preserved after pull request retargeting
+URL: https://nvd.nist.gov/vuln/detail/CVE-2026-58439
+
+Title: CVE-2023-4812: GitLab CODEOWNERS approval preserved after new changes
+URL: https://nvd.nist.gov/vuln/detail/CVE-2023-4812
+
+Title: CVE-2024-0410: GitLab CODEOWNERS approval re-evaluation bypass
+URL: https://nvd.nist.gov/vuln/detail/CVE-2024-0410
+
+Title: CVE-2026-7487: GitLab approval rules reset by merge request author
+URL: https://nvd.nist.gov/vuln/detail/CVE-2026-7487
+
+Title: CVE-2026-1751: GitLab unauthorized modification of merge request approval rules
+URL: https://nvd.nist.gov/vuln/detail/CVE-2026-1751
+
+Title: Beyond Task Success: An Evidence-Synthesis Framework for Evaluating, Governing, and Orchestrating Agentic AI. C. Koch, J. A. Wellbrock. arXiv:2604.19818
+URL: https://arxiv.org/abs/2604.19818
+
+Title: Microsoft Agent Framework: Workflow Checkpoints, Security Considerations
+URL: https://learn.microsoft.com/en-us/agent-framework/workflows/checkpoints
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-10
+
+Ack-Receipt: 2026-11-23
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
