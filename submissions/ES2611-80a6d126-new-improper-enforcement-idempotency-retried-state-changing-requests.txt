@@ -1,0 +1,124 @@
+SUBMISSION COMMUNICATION ID: ES2611-80a6d126
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-21 04:30:01
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #244
+
+MTRACKER: #1425
+
+GITHUBUSER: sandeep-dhuri
+
+SUBMISSION TYPE: Software
+
+NAME: Improper Enforcement of Idempotency for Retried State-Changing Requests
+
+DESCRIPTION:
+
+The product performs a state-changing operation, such as creating an order
+or a payment, each time it receives a request, and does not recognise a
+repeated request that a client, proxy or message system sent again after a
+timeout or failure.
+
+Networks fail after a server has acted but before the client hears back.
+Clients, HTTP libraries, load balancers, queues and webhook senders then
+retry, often automatically. If the server treats each retry as new, one
+intended action happens two or more times: a customer is charged twice, two
+orders are created, or a record is written twice.
+
+CWE-837 covers an actor repeating an action that should happen once, and
+its examples are deliberate repeats such as vote stuffing. This weakness is
+different in cause and fix. No one intends the repeat. It comes from normal
+retry behaviour, so access control and rate limits do not stop it. The fix
+is an idempotency mechanism: the client sends a unique key with the
+request, and the server stores the key with the first result and returns
+that same result for any repeat.
+
+It also differs from CWE-294 (capture-replay), where an attacker resends a
+captured request on purpose. The same defence helps with both, but this
+weakness occurs with no attacker present. An attacker can still use it on
+purpose by triggering timeouts or sending the same request in parallel.
+
+The weakness is easy to miss in review and testing, because a single
+request works correctly. It appears only under retries or concurrent
+duplicates. The technical impact is unintended modification of application
+data, such as duplicate charges, orders or records, and in some cases
+resource consumption when an attacker forces many duplicates.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-837
+
+REFERENCES:
+
+Title: The Idempotency-Key HTTP Header Field (IETF Internet-Draft, version 08, 22 October 2026)
+URL: https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/
+
+Title: RFC 9110 HTTP Semantics, Section 9.2.2 Idempotent Methods
+URL: https://www.rfc-editor.org/rfc/rfc9110#name-idempotent-methods
+
+Title: Specification Before Generation: A Pre-Registered, Five-Model Paired Evaluation of a Specification Frame for LLM-Generated Code in Money, Time, Idempotency, and Access Tasks
+URL: https://arxiv.org/abs/2609.23270
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-21
+
+Ack-Receipt: 2026-11-23
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
