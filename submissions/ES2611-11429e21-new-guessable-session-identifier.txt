@@ -1,0 +1,97 @@
+SUBMISSION COMMUNICATION ID: ES2611-11429e21
+
+ACTION TYPE: New Entry
+
+SUBMISSION STATUS: Ack-Receipt
+
+AFFECTED CWES: 
+
+ORIGIN: sub-server
+
+SUBMISSION DATE: 2026-11-19 09:59:32
+
+ISSUES: not-analyzed
+
+ISSUE DETAILS: 
+
+PUBTRACKER: #243
+
+MTRACKER: #1424
+
+GITHUBUSER: 
+
+SUBMISSION TYPE: Software
+
+NAME: Guessable Session Identifier
+
+DESCRIPTION:
+
+Session identifiers, such as cookies, should be sufficiently random, ASVS
+suggest at least 128 bits, to prevent an attacker from guessing it within a
+realistic timeframe.
+If a session identifier can be guessed by an attacker, the user's session
+can be hijacked.
+
+RELATED WEAKNESSES:
+
+   ChildOf CWE-1462
+
+REFERENCES:
+
+Title: OpenCRE 704-530 Enforce high entropy session tokens
+URL: https://opencre.org/cre/704-530
+
+Title: ASVS v5.0 7.2.3 Verify that if reference tokens are used to represent user sessions, they are unique and generated using a cryptographically secure pseudo-random number generator (CSPRNG) and possess at least 128 bits of entropy.
+URL: https://asvs.owasp.org/
+
+
+ACTIVE ISSUES:
+
+
+
+RESOLVED ISSUES:
+
+
+
+TIMELINE:
+
+Received: 2026-11-19
+
+Ack-Receipt: 2026-11-23
+
+Init-Review: YYYY-MM-DD
+
+Init-Consultation: YYYY-MM-DD
+
+Init-Declined: YYYY-MM-DD
+
+Init-Accepted: YYYY-MM-DD
+
+Det-Requested: YYYY-MM-DD
+
+Det-Received: YYYY-MM-DD
+
+Det-Review: YYYY-MM-DD
+
+Det-Consultation: YYYY-MM-DD
+
+Det-Accepted: YYYY-MM-DD
+
+Internal-Update: YYYY-MM-DD
+
+CWE-Assigned: YYYY-MM-DD
+
+CWE-Modified: YYYY-MM-DD
+
+Final-Coord: YYYY-MM-DD
+
+CWE-Published: YYYY-MM-DD
+
+Post-Publication: YYYY-MM-DD
+
+Closed: YYYY-MM-DD
+
+
+
+
+COMMUNICATIONS LOG:
